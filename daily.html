@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Iran News Review — April 19, 2026</title>
+<title>Daily News Brief — April 19, 2026 Morning</title>
 <style>
   :root {
     --bg: #0b0e14;
@@ -149,49 +149,21 @@
     letter-spacing: 1.5px;
     text-transform: uppercase;
   }
-  .faction-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
-    margin: 20px 0;
-  }
-  .faction-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 22px 26px;
-    border-left: 4px solid var(--border);
-  }
-  .faction-card.f-irgc { border-left-color: var(--danger); }
-  .faction-card.f-hawk { border-left-color: var(--warn); }
-  .faction-card.f-civ { border-left-color: var(--accent); }
-  .faction-card.f-ref { border-left-color: var(--accent2); }
-  .faction-card.f-cler { border-left-color: var(--purple); }
-  .faction-card h4 {
-    font-size: 16px;
-    color: var(--heading);
-    margin-bottom: 4px;
-  }
-  .faction-card .lead {
-    font-size: 12px;
-    color: var(--text-dim);
-    margin-bottom: 14px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  .faction-card .row {
-    display: grid;
-    grid-template-columns: 110px 1fr;
-    gap: 10px;
+  .delta-callout {
+    background: var(--surface2);
+    border-left: 3px solid var(--warn);
+    border-radius: 0 6px 6px 0;
+    padding: 14px 18px;
+    margin: 16px 0 24px;
     font-size: 13.5px;
-    margin-bottom: 8px;
   }
-  .faction-card .row .k {
-    color: var(--text-dim);
-    text-transform: uppercase;
+  .delta-callout .label {
     font-size: 10px;
-    letter-spacing: 1px;
-    padding-top: 2px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--warn);
+    margin-bottom: 6px;
   }
   .scenario-grid {
     display: grid;
@@ -233,13 +205,6 @@
     font-style: italic;
     color: var(--text);
     border-radius: 0 6px 6px 0;
-  }
-  .quote-box .src {
-    display: block;
-    margin-top: 8px;
-    font-style: normal;
-    font-size: 12px;
-    color: var(--text-dim);
   }
   .honest-box {
     background: var(--surface);
@@ -334,282 +299,512 @@
     font-size: 12px;
     text-align: center;
   }
+  .calibration-flag {
+    background: rgba(179,157,219,0.08);
+    border: 1px solid rgba(179,157,219,0.3);
+    border-radius: 6px;
+    padding: 12px 16px;
+    margin: 12px 0;
+    font-size: 13px;
+    color: var(--text);
+  }
+  .calibration-flag .flag-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--purple);
+    margin-bottom: 4px;
+  }
 </style>
 </head>
 <body>
 
 <div class="header">
-  <div class="day-tag">News Review · Iran Deep Dive</div>
-  <h1>Iran — Divided Power, Broken Talks</h1>
-  <div class="subtitle">Why the Islamabad round collapsed and what a post-Khamenei regime can and can't sign</div>
-  <div class="subtitle-sub">April 19, 2026 — Day 51 of the war · Ceasefire expires in ~72 hours (Apr 21–22)</div>
+  <div class="day-tag">Morning Brief &middot; Day 51 of Iran War</div>
+  <h1>April 19, 2026 &mdash; Morning Brief</h1>
+  <div class="subtitle">Ceasefire expires T&minus;48h &middot; Kushner/Witkoff in Islamabad today</div>
+  <div class="subtitle-sub">Run: ~07:30 PT &middot; Ceasefire expiry Apr 21 &middot; Apr 29 FOMC in 10 days &middot; Polymarket: 74% ceasefire broken</div>
 </div>
 
 <div class="container">
 
-<!-- ====================== TL;DR ====================== -->
+<!-- =================== TL;DR =================== -->
 <div class="tldr-box">
-  <h3>TL;DR — The Apr 8 picture is obsolete</h3>
-  <p><strong>Your CLAUDE.md (Apr 8) still assumes Path A held. It didn't.</strong> Between Apr 11 and Apr 18 the ceasefire effectively broke, the Islamabad round failed, and the Strait whipsawed open→closed in 24 hours. The driver is not Trump posturing — it's a <strong>structurally divided Iranian regime</strong> with no internal arbitrator.</p>
+  <h3>TL;DR &mdash; What changed since last run</h3>
   <ul>
-    <li><strong>Khamenei was killed Feb 28, 2026</strong> in the opening Israeli strike. This is the critical fact — all Apr 8 analysis was written as if the Supreme Leader was still alive and mediating factions. He wasn't.</li>
-    <li><strong>The IRGC (Ahmad Vahidi) now holds de facto power.</strong> Pezeshkian is sidelined, appointments blocked, intelligence portfolio seized. A "military council" wraps the designated successor Mojtaba Khamenei in a security cordon and filters his information flow.</li>
-    <li><strong>Islamabad (Apr 11–12) failed</strong> on Hormuz administration and uranium enrichment. Delegation led by Ghalibaf (pragmatic hawk, IRGC-aligned) — <em>could not commit Iran without Vahidi's approval</em>. Vance offered a "final" deal; it was refused.</li>
-    <li><strong>US responded with a naval blockade of Iranian ports (Apr 13+).</strong> Araghchi called it a ceasefire violation.</li>
-    <li><strong>Hormuz whiplash (Apr 17–18):</strong> Foreign Ministry reopened the Strait, IRGC closed it hours later and fired on tankers. Fars and Tasnim publicly attacked Araghchi — open intra-regime warfare on front pages.</li>
-    <li><strong>Pezeshkian warned of economic collapse "within 3–4 weeks"</strong> without a deal. That is the one real pressure lever left.</li>
+    <li><strong>Polymarket prices 74% ceasefire collapse by Apr 21.</strong> Kushner + Witkoff dispatched to Islamabad for Apr 20 talks &mdash; the last realistic window. Iranian parliament speaker claiming "progress" is the wrong faction. IRGC has shown zero willingness to be bound by FM or parliament signals. T&minus;48h is the watch.</li>
+    <li><strong>TSMC Q1 blowout (Apr 17): $35.9B revenue, +35% Y/Y, 58% profit surge.</strong> HPC/AI is now 61% of TSMC revenue. Q2 guided $39&ndash;40.2B. The foundry-irreplaceable thesis is confirmed, not just asserted.</li>
+    <li><strong>Amazon's Jassy declared war on NVIDIA in his annual shareholder letter (Apr 9).</strong> Trainium chip business claims $20B+ annualized revenue worth $50B if sold externally. Trainium2 sold out; T3 nearly subscribed; T4 (18 months out) nearly sold out. First CEO-level public escalation of the custom silicon war.</li>
+    <li><strong>Private credit crystallized:</strong> Blue Owl capped redemptions at 5% after 21.9% OCIC / 40.7% OTIC requests, Moody's cut to negative. Apollo CEO publicly called non-meeting managers "idiots" &mdash; two-tier market forming. The bear case on OWL is $4.2B in aggregate queue, not resolved by the cap.</li>
+    <li><strong>Markets: S&amp;P +1.2% to ~7,126, oil ~$83&ndash;84 (stabilized after 11% plunge).</strong> Stocks and oil both up on extension hypothesis. Divergence from closed-Hormuz fundamentals. Watch: if Apr 20 talks fail, oil likely retests $100+.</li>
   </ul>
 </div>
 
-<!-- ====================== TIMELINE ====================== -->
-<h2>What Actually Happened Since Apr 8</h2>
-<div class="timeline">
-  <div class="item green">
-    <div class="date">Apr 7–8</div>
-    <div class="text">2-week ceasefire announced. Markets rally. Hormuz reopening "promised." — <em>This is where CLAUDE.md freezes.</em></div>
-  </div>
-  <div class="item">
-    <div class="date">Apr 11–12</div>
-    <div class="text"><strong>Islamabad Talks.</strong> 21 hours, three rounds. 300-person US team (Vance, Witkoff, Kushner) vs. 70-person Iranian team (Ghalibaf, Araghchi). Agreement on 8 of 10 points — broke on Hormuz administration and uranium enrichment. No MoU.</div>
-  </div>
-  <div class="item red">
-    <div class="date">Apr 13</div>
-    <div class="text"><strong>US imposes naval blockade of Iranian ports.</strong> Trump warns Iran. Ceasefire effectively on life support.</div>
-  </div>
-  <div class="item yellow">
-    <div class="date">Apr 14–16</div>
-    <div class="text">Pakistan shuttles between capitals. "Narrow window" framing. No second-round date set.</div>
-  </div>
-  <div class="item green">
-    <div class="date">Apr 17 (Fri)</div>
-    <div class="text">Araghchi (Foreign Ministry): <strong>Strait "completely open"</strong> to shipping. Trump announces the reopening. Markets rally briefly.</div>
-  </div>
-  <div class="item red">
-    <div class="date">Apr 18 (Sat)</div>
-    <div class="text"><strong>IRGC reverses Araghchi within 24 hours.</strong> Strait closed. Tankers fired upon. Tasnim calls Araghchi's announcement "a complete lack of tact"; Fars says Iran "plunged into confusion." <em>Public intra-regime fight.</em></div>
-  </div>
-  <div class="item red">
-    <div class="date">Apr 21–22</div>
-    <div class="text"><strong>Ceasefire expiry.</strong> No second round scheduled. No mechanism to extend.</div>
-  </div>
+<!-- =================== IRAN =================== -->
+<h2>Iran / Middle East Geopolitics</h2>
+
+<div class="delta-callout">
+  <div class="label">Delta since last run (Apr 19 seed)</div>
+  Trump accused Iran of "total violation" Apr 19; Kushner+Witkoff dispatched for Apr 20 Islamabad talks; Iranian parliament speaker claimed "progress"; Polymarket now at 74% breakdown. Oil stabilized at $83&ndash;84 despite Hormuz still closed. <strong>The next 48 hours are binary.</strong>
 </div>
 
-<!-- ====================== THE THESIS ====================== -->
-<h2>The Core Thesis: Iran Cannot Negotiate Coherently</h2>
-<p>The conventional read is "hardliners vs. moderates, hardliners winning." That's too simple. The real picture, after Khamenei's death, is that <strong>there is no faction with authority to bind the regime</strong>. Every signed commitment needs ratification by a power center that did not send a representative. That is the structural reason Islamabad failed and why the Hormuz reopening lasted less than 24 hours.</p>
+<p>The regime coherence problem has not changed since the founding analysis. What has changed is the diplomatic calendar: the US chose to dispatch Kushner and Witkoff to Islamabad rather than walk away, which signals Washington still wants the extension pathway. But the structural constraint is unchanged &mdash; <strong>the IRGC did not send representatives to Islamabad Round 1, and there is no indication Vahidi's faction has changed its position.</strong></p>
 
-<div class="quote-box">
-  "Because the main arbitrator is gone, the fight between different factions has started."
-  <span class="src">— Saeid Golkar, University of Tennessee, quoted in Fortune (Apr 18)</span>
+<p>Iranian parliament speaker touting "progress" on Apr 19 is a Pragmatic Hawks signal &mdash; the faction that <em>wants</em> a deal but <em>cannot bind</em> the regime. Araghchi and parliament can agree to anything; the IRGC cancels it within 24 hours, as demonstrated by the Hormuz whiplash on Apr 17&ndash;18.</p>
+
+<h3>Faction Map</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Faction</th>
+      <th>Leader</th>
+      <th>Can Commit?</th>
+      <th>Apr 19 Signal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Hard-core IRGC</td>
+      <td>Ahmad Vahidi</td>
+      <td><span class="badge badge-red">Veto power</span></td>
+      <td>Silent. Hormuz still closed. Indian vessel incident not disavowed.</td>
+    </tr>
+    <tr>
+      <td>Pragmatic Hawks</td>
+      <td>Ghalibaf (Qalibaf)</td>
+      <td><span class="badge badge-yellow">Needs Vahidi</span></td>
+      <td>Parliament "progress" claim &mdash; likely Ghalibaf faction signaling to Washington</td>
+    </tr>
+    <tr>
+      <td>Civilian Pragmatists</td>
+      <td>Pezeshkian / Araghchi</td>
+      <td><span class="badge badge-red">No &mdash; reversed in 24h</span></td>
+      <td>Silent post-IRGC reversal of Apr 17 Hormuz announcement</td>
+    </tr>
+    <tr>
+      <td>Clerical (nominal SL)</td>
+      <td>Mojtaba Khamenei</td>
+      <td><span class="badge badge-purple">Only if cordon breaks</span></td>
+      <td>No public appearance &mdash; under IRGC security cordon</td>
+    </tr>
+    <tr>
+      <td>Reformists</td>
+      <td>Khatami / Rouhani</td>
+      <td><span class="badge badge-red">No leverage</span></td>
+      <td>Irrelevant to this decision</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Scenario Weights &mdash; Polymarket-Calibrated</h3>
+
+<div class="calibration-flag">
+  <div class="flag-label">Calibration Update &mdash; Prior thesis revised</div>
+  Prior 40% "ugly deal" weight was too aggressive on speed. Polymarket pricing 74% breakdown by Apr 21 forces revision. Analyst holds 35% extension (vs. Polymarket's ~26%) because Apr 20 Islamabad talks represent a new signal not yet reflected in prices. The 9pp divergence is modest &mdash; not high-conviction. The IRGC's track record is the strongest prior against extension.
 </div>
-
-<div class="quote-box">
-  The Institute for the Study of War called the IRGC's public repudiation of Araghchi a reflection of "broader divisions within the Iranian regime," with Khamenei's absence removing the unifying force that previously mediated factional disputes.
-</div>
-
-<!-- ====================== FACTION MAP ====================== -->
-<h2>The Faction Map</h2>
-<p>Five centers of power. The IRGC is dominant but not monopolistic — and its dominance is <em>recent and contested</em>, not consolidated.</p>
-
-<div class="faction-grid">
-
-  <div class="faction-card f-irgc">
-    <h4>1. Hard-Core IRGC <span class="badge badge-red">Dominant</span></h4>
-    <div class="lead">Leader: Ahmad Vahidi, IRGC Commander-in-Chief</div>
-    <div class="row"><div class="k">Position</div><div>War continuation until "strategic objectives" met. Hormuz is non-negotiable leverage.</div></div>
-    <div class="row"><div class="k">Leverage</div><div>Controls military, the Strait, and ~30–40% of GDP via IRGC commercial empire. Has seized intel portfolio and blocks presidential appointments.</div></div>
-    <div class="row"><div class="k">Weakness</div><div>Economic collapse is the one thing they can't absorb. Sanctions + blockade pressure is designed to break this faction, not persuade it.</div></div>
-    <div class="row"><div class="k">Negotiating</div><div>Did <strong>not</strong> send a representative to Islamabad. They veto outcomes, not negotiate them.</div></div>
-  </div>
-
-  <div class="faction-card f-hawk">
-    <h4>2. Pragmatic Hawks <span class="badge badge-yellow">Interface</span></h4>
-    <div class="lead">Leader: Mohammad-Baqer Qalibaf, Parliament Speaker</div>
-    <div class="row"><div class="k">Position</div><div>Willing to trade <em>tactically</em> if IRGC power and regime survival are preserved. Will not touch nuclear program or Hormuz sovereignty.</div></div>
-    <div class="row"><div class="k">Leverage</div><div>Trump identified Qalibaf as the primary diplomatic contact. Led the 70-person delegation to Islamabad.</div></div>
-    <div class="row"><div class="k">Constraint</div><div><strong>Cannot bind Iran without Vahidi's sign-off.</strong> This is the reason Islamabad failed: Ghalibaf agreed to 8 points, couldn't deliver on 2.</div></div>
-  </div>
-
-  <div class="faction-card f-civ">
-    <h4>3. Civilian Pragmatists <span class="badge badge-blue">Sidelined</span></h4>
-    <div class="lead">Leader: Masoud Pezeshkian, President; Abbas Araghchi, FM</div>
-    <div class="row"><div class="k">Position</div><div>Ceasefire + full sanctions relief. Willing to dilute 60% HEU. Wants the economy saved.</div></div>
-    <div class="row"><div class="k">Leverage</div><div>Close to zero. Intelligence minister appointments vetoed. Cannot secure a meeting with Mojtaba Khamenei. The Hormuz whiplash exposed how little authority Araghchi actually holds.</div></div>
-    <div class="row"><div class="k">Key Quote</div><div>Pezeshkian: economy faces <strong>"total collapse within three to four weeks"</strong> without a ceasefire. This is the pressure dial — and the timer.</div></div>
-  </div>
-
-  <div class="faction-card f-ref">
-    <h4>4. Reformists &amp; Moderates <span class="badge badge-green">Latent</span></h4>
-    <div class="lead">Leaders: Khatami, Rouhani, Azar Mansouri</div>
-    <div class="row"><div class="k">Position</div><div>Structural reform, negotiation, re-engagement with international system.</div></div>
-    <div class="row"><div class="k">Leverage</div><div>None today. Lost the succession battle. Positioned to benefit <em>only if</em> the IRGC overreaches and triggers elite or street backlash (ongoing protests are at least a bystander asset here).</div></div>
-  </div>
-
-  <div class="faction-card f-cler">
-    <h4>5. Clerical Establishment <span class="badge badge-purple">Fractured</span></h4>
-    <div class="lead">Leader: Mojtaba Khamenei (nominal Supreme Leader); Assembly of Experts</div>
-    <div class="row"><div class="k">Position</div><div>Split. Some clerics back the IRGC; others see IRGC dominance as a direct threat to <em>velayat-e faqih</em> (clerical rule).</div></div>
-    <div class="row"><div class="k">Leverage</div><div>Mojtaba is nominally in charge but effectively under IRGC "security cordon." Ali Asghar Hejazi warned the Assembly that Mojtaba's succession would "hand full control of the country to the IRGC" — he is now facing removal.</div></div>
-    <div class="row"><div class="k">Implication</div><div>If Mojtaba ever asserts independence, the game changes. Low probability near-term. If it happens, it is the single event that unlocks a real deal.</div></div>
-  </div>
-
-</div>
-
-<!-- ====================== ISLAMABAD POSTMORTEM ====================== -->
-<h2>Why Islamabad Failed — The Real Story</h2>
-<p>The surface story is "nuclear disagreement." The deeper story is a <strong>principal-agent problem</strong>: the US negotiated with an Iranian team that had no principal at home willing to ratify.</p>
-
-<h3>Agreed (8 of 10 points)</h3>
-<ul>
-  <li>Ceasefire extension framework</li>
-  <li>Lebanon strike pause</li>
-  <li>Process for frozen assets review</li>
-  <li>Prisoner exchange mechanics</li>
-  <li>Humanitarian corridors</li>
-  <li>Baseline Hormuz navigation (no tolls compromise)</li>
-  <li>Regional de-escalation language</li>
-  <li>Communication channels</li>
-</ul>
-
-<h3>Broke on (2 of 10 points)</h3>
-<ul>
-  <li><strong>Nuclear program.</strong> US demanded: zero enrichment, dismantlement of major facilities, removal of HEU stockpile. Iran offered: dilute 60% HEU, not dismantle. Trump: <em>"They want to have nuclear weapons. It's not going to happen."</em></li>
-  <li><strong>Strait of Hormuz administration.</strong> US wanted joint administration; Iran wanted sovereignty + right to charge vessels. This is the IRGC's core leverage asset — non-negotiable for them.</li>
-</ul>
-
-<div class="quote-box">
-  Qalibaf: the US "ultimately failed to gain the trust of the Iranian delegation." Araghchi: Iran came "within inches of an understanding" but met "maximalism, shifting goalposts, and blockade."
-  <span class="src">— Al Jazeera / TIME (Apr 13)</span>
-</div>
-
-<p><strong>The tell:</strong> Iran came with a delegation whose authority stopped exactly where IRGC equities began. A US team that came looking for finality ran into a counterparty that can negotiate everything except the two things that matter most. That is not a failure of will — it is a <strong>structural incapacity</strong> of post-Khamenei Iran to make strategic concessions.</p>
-
-<!-- ====================== HORMUZ WHIPLASH ====================== -->
-<h2>The Hormuz Whiplash as Diagnostic</h2>
-<p>The 24-hour reopen-reclose sequence on April 17–18 is the single most important data point for how negotiations play out from here. It wasn't Iran being duplicitous — it was Iran being <strong>incoherent</strong>. The Foreign Ministry genuinely believed it was announcing policy. The IRGC believed the Foreign Ministry had no authority to announce it. Fars and Tasnim (IRGC-aligned) <strong>publicly humiliated Araghchi on the front page</strong>.</p>
-<p>This is not a regime that can hold to a ceasefire. It is a regime whose left hand does not know what its right hand just signed — and the right hand has the guns.</p>
-
-<!-- ====================== SCENARIOS ====================== -->
-<h2>Negotiation Scenarios — How This Plays Out</h2>
-<p>Adapting from Atalayar's faction analysis, recalibrated against the failed Islamabad round, ongoing blockade, and 72 hours to ceasefire expiry.</p>
 
 <div class="scenario-grid">
   <div class="scenario-card yellow">
-    <div class="pct">~40%</div>
-    <h4>Economic-Forced "Ugly" Deal</h4>
-    <p>IRGC's commercial empire buckles under blockade. Iran accepts face-saving partial deal: HEU dilution (not dismantlement), tolled Hormuz with US inspection rights, phased sanctions relief. Vahidi allows Qalibaf to finalize. <strong>Timeline: 4–8 weeks.</strong></p>
+    <div class="pct">35%</div>
+    <h4>Ceasefire Extended (Apr 20 Talks)</h4>
+    <p>Kushner/Witkoff + Pakistani pressure produces 2-week extension. No substantive deal &mdash; just time. Oil stays $80&ndash;90. Markets rally modestly. Polymarket prices ~26%; analyst holds 35% on new-signal basis.</p>
   </div>
   <div class="scenario-card red">
-    <div class="pct">~30%</div>
-    <h4>Ceasefire Collapse / Re-escalation</h4>
-    <p>Apr 21–22 passes with no deal and no extension. Iran re-closes Hormuz fully. US strikes escalate. Infrastructure warfare resumes. Oil spikes back above $110. Eventually forced to UN framework. This is the baseline path if Vahidi concludes a deal weakens IRGC more than war weakens it.</p>
+    <div class="pct">30%</div>
+    <h4>Ceasefire Collapses Apr 21</h4>
+    <p>IRGC refuses extension. Fighting resumes or blockade tightens. Oil retests $100&ndash;110. XLE hedge earns. S&amp;P 500 -3 to -5%. Polymarket prices ~45% on broken ceasefire &mdash; analyst at 30%, below market. Divergence: analyst credits Apr 20 talks more than Polymarket.</p>
   </div>
-  <div class="scenario-card red">
-    <div class="pct">~15%</div>
+  <div class="scenario-card">
+    <div class="pct">20%</div>
+    <h4>Delayed Ugly Deal (3&ndash;6 weeks)</h4>
+    <p>Extension bought, Islamabad Round 2 eventually fails on same sticking points. Pezeshkian collapse clock runs out; IRGC commercial empire buckles. Partial deal with face-saving. Down from prior 40% &mdash; timeline was unrealistic.</p>
+  </div>
+  <div class="scenario-card">
+    <div class="pct">10%</div>
     <h4>Frozen Conflict</h4>
-    <p>No deal, no full war. Low-intensity mutual harassment. IRGC survives on Chinese economic support + domestic repression. Hormuz semi-open. Economy grinds. Could last 6–18 months. Worst outcome for markets: no resolution catalyst, perpetual tail risk.</p>
-  </div>
-  <div class="scenario-card green">
-    <div class="pct">~10%</div>
-    <h4>Mojtaba Asserts Authority</h4>
-    <p>Nominal Supreme Leader breaks free of the IRGC cordon (possibly enabled by Assembly of Experts or a clerical revolt against Vahidi). Actually commits Iran. Real deal possible on US terms. Low probability but this is the only scenario that produces a <em>durable</em> resolution.</p>
+    <p>Low-intensity, no resolution. China provides economic support enabling IRGC to stall indefinitely. Worst for oil volatility &mdash; chronic discount, neither rally nor crash.</p>
   </div>
   <div class="scenario-card purple">
-    <div class="pct">~5%</div>
-    <h4>Regime Fracture</h4>
-    <p>Economic collapse + continued protests + IRGC-clerical rupture = Pezeshkian invokes constitutional authority or IRGC splits internally. Unpredictable outcomes. Could produce reformist opening or military takeover. Tail risk in both directions.</p>
+    <div class="pct">5%</div>
+    <h4>Mojtaba / Regime Fracture</h4>
+    <p>Mojtaba breaks IRGC cordon or Assembly of Experts moves. Only path to durable deal. Any Mojtaba public appearance is the high-impact signal to watch for.</p>
   </div>
 </div>
 
-<p><strong>The bimodal risk is real:</strong> ~40% probability of an ugly deal that the market reads as resolution (rally), ~45% probability of deterioration (collapse or freeze). That's not a coin flip — it's a weighted call that ceasefire expiry will not produce clean good news.</p>
+<h3>The Apr 19 Structural Read</h3>
+<p>Trump's threat to "knock out every single Power Plant and Bridge" on Apr 19 is simultaneous with dispatching Kushner/Witkoff to Islamabad. This is the standard Trump dual-track: public maximalism + private dealmaking. The question is whether the IRGC reads this as leverage or as genuine ultimatum. The Foreign Ministry's read is irrelevant; Vahidi's is everything.</p>
 
-<!-- ====================== PORTFOLIO IMPLICATIONS ====================== -->
-<h2>What This Means for the Portfolio</h2>
+<p><a href="https://www.theweek.in/news/middle-east/2026/04/19/what-led-to-closure-of-strait-of-hormuz-just-24-hours-after-iran-announced-its-completely-open.html">India summoned the Iranian envoy</a> after Indian-flagged vessels were fired upon approaching Hormuz. This is a new pressure dimension: third-party shipping nations are now formally objecting, marginally reducing Iran's ability to frame the closure as a US-only dispute. Whether this moves Vahidi is unknown &mdash; the IRGC has demonstrated indifference to international commercial pressure throughout this conflict.</p>
+
+<div class="watchlist">
+  <strong>Watch today (Apr 19&ndash;20):</strong>
+  <ul>
+    <li><strong>CRITICAL:</strong> <a href="https://www.cbsnews.com/live-updates/iran-war-trump-israel-lebanon-ceasefire-hezbollah-strait-hormuz/" style="color:var(--accent)">Islamabad talks output (Kushner/Witkoff, Apr 20).</a> Extension agreed, collapsed, or inconclusive? Polymarket will move sharply on any real signal.</li>
+    <li>Polymarket ceasefire-broken market: does 74% move? A drop below 65% signals real extension probability; a rise above 80% signals the talks have already failed.</li>
+    <li>Any IRGC public statement on the Islamabad talks &mdash; endorsement is seismic; silence is business as usual.</li>
+    <li>Oil: WTI holding $83&ndash;84 or climbing toward $90 as market re-prices for collapse?</li>
+    <li>Mojtaba Khamenei public appearance &mdash; still the single highest-impact, lowest-probability event.</li>
+  </ul>
+</div>
+
+<!-- =================== MARKETS =================== -->
+<h2>Markets / Macro</h2>
+
+<div class="delta-callout">
+  <div class="label">Delta since last run (first live refresh)</div>
+  S&amp;P +1.2% to ~7,126. WTI plunged 11% on Apr 17 Hormuz reopening; stabilized $83&ndash;84 post-IRGC reclosure. BTC ~$75,600. Fed Apr 29: 99.3% no change (Polymarket). Hyperscaler capex revised UP to ~$750B top-5. Key divergence: stocks and oil both up &mdash; extension hypothesis being priced.
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Indicator</th>
+      <th>Level</th>
+      <th>Move</th>
+      <th>Causal Read</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>S&amp;P 500</td>
+      <td>~7,126</td>
+      <td>+1.2%</td>
+      <td>Extension hypothesis + AI capex narrative. The index is diverging from the Iran risk fundamentals.</td>
+    </tr>
+    <tr>
+      <td>WTI Crude</td>
+      <td>~$83&ndash;84</td>
+      <td>&minus;11% Apr 17, then stable</td>
+      <td><a href="https://www.pbs.org/newshour/world/irans-military-closes-strait-of-hormuz-again-citing-u-s-blockade" style="color:var(--accent)">Plunged on Araghchi reopening announcement; held after IRGC reclosure.</a> Market is pricing extension, not full collapse. If Apr 21 breaks, $100+ easily accessible.</td>
+    </tr>
+    <tr>
+      <td>Bitcoin</td>
+      <td>~$75,600</td>
+      <td>&minus;1.8%</td>
+      <td>Mild risk-off post-Hormuz whiplash. Still elevated vs. pre-ceasefire. Tracking geopolitical mood.</td>
+    </tr>
+    <tr>
+      <td>Gold</td>
+      <td>~$4,700 est.</td>
+      <td>Stale (no fresh data)</td>
+      <td>War premium partially evaporating if extension holds; reverses sharply if ceasefire breaks. Need fresh data next run.</td>
+    </tr>
+    <tr>
+      <td>Fed Funds</td>
+      <td>3.50&ndash;3.75%</td>
+      <td>Hold</td>
+      <td><a href="https://www.ainvest.com/news/polymarket-daily-war-ceasefires-fed-won-budge-2604/" style="color:var(--accent)">Apr 29 FOMC: 99.3% no change (Polymarket).</a> March CPI 3.3% Y/Y on energy surge. NFP +178K. Fed will not move before Iran oil path is clear.</td>
+    </tr>
+    <tr>
+      <td>Oil Implied Vol (1M)</td>
+      <td>51%</td>
+      <td>Down from 68% peak</td>
+      <td>De-risking, but 51% remains elevated. Market is saying extension has probability but uncertainty is high.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>The Key Divergence</h3>
+<p>Stocks and oil both up Apr 19 while Hormuz is technically still closed. This is the market pricing an extension, not the fundamental reality of a closed strait. <strong>The divergence resolves Apr 21: extension = oil holds or dips + stocks rally; collapse = oil through $95+ + S&amp;P sells off.</strong> The ceasefire binary is the single most important market event of the week.</p>
+
+<p>Bear case on the current S&amp;P level: <a href="https://know.creditsights.com/insights/tech-raising-hyperscaler-capex-2026-estimates/">hyperscaler FCF is being destroyed by capex</a> &mdash; $750B total, ~90% of operating cash flow. Meta FCF -90%, Amazon going negative. The market is pricing capex as demand signal, not FCF headwind. At some point CFO pressure mounts. That is a 2027 story, not a today story &mdash; but it is the structural deterioration that sits beneath the surface of the AI narrative.</p>
+
+<!-- =================== AI =================== -->
+<h2>AI Ecosystem</h2>
+
+<div class="delta-callout">
+  <div class="label">Delta since last run (synthesized from ai-ecosystem-analyst + web search)</div>
+  TSMC Q1 beat (Apr 17): $35.9B, +58% profit, AI = 61% of revenue. Amazon Trainium war declaration (Apr 9 shareholder letter). Frontier model ceiling unchanged at Intelligence Index 57.18 since Feb. CRWV +54% YTD / NBIS +70% YTD on massive Meta deals. Hyperscaler capex revised to ~$750B.
+</div>
+
+<p><em>Primary analysis source: <a href="/Users/andresrodriguez/Documents/ai-ecosystem-analyst/output/2026-02-10-ecosystem-state-of-play.md" style="color:var(--accent)">ai-ecosystem-analyst Feb 10 state-of-play</a> and <a href="/Users/andresrodriguez/Documents/ai-ecosystem-analyst/output/2026-03-10-update.html" style="color:var(--accent)">Mar 10 update</a>. No new files found in ai-ecosystem-analyst/output/ since Mar 26. This section surfaces deltas and portfolio implications only.</em></p>
+
+<h3>TSMC Q1 2026: Supply-Side Confirmed</h3>
+<p><a href="https://www.cnbc.com/2026/04/16/tsmc-q1-profit-58-percent-ai-chip-demand-record.html">TSMC reported April 17</a>: revenue $35.9B (+35% Y/Y, beat guidance), gross margin 66.2%, net income +58% Y/Y (fourth consecutive record quarter). HPC/AI is now 61% of total revenue, up from ~40% two years ago. Advanced chips = 75% of wafer revenue. Q2 guided $39&ndash;40.2B (+10% QoQ). Full-year >30% USD growth confirmed.</p>
+
+<p>The structural read: TSMC is the foundry that wins regardless of whether NVIDIA, AMD, or custom silicon (Google TPU, Amazon Trainium, Broadcom XPU) dominates the architecture war. The one risk that breaks the TSMC thesis is geopolitical &mdash; Taiwan contingency is binary and unhedgeable. The Q1 print removes any near-term demand doubt.</p>
+
+<div class="calibration-flag">
+  <div class="flag-label">Price action note</div>
+  <a href="https://www.tradingkey.com/analysis/stocks/us-stocks/261793957-tsm-tsmc-taiwan-semi-q1-earnings-us-iran-chip-tradingkey" style="color:var(--accent)">TSMC fell ~3% post-earnings despite the beat</a>, attributed to Iran war geopolitical concern. The counter-argument: if the Iran war ends or extends without escalation, TSMC has the cleanest rerating in the AI stack. The post-earnings dip warrants defining a buy zone &mdash; this is the action item for next run.
+</div>
+
+<h3>Amazon's Trainium Declaration</h3>
+<p>Andy Jassy's <a href="https://techcrunch.com/2026/04/09/amazon-ceo-takes-aim-at-nvidia-intel-starlink-more-in-annual-shareholder-letter/">April 9 shareholder letter</a> is the most significant public CEO-level escalation of the custom silicon war since Anthropic's TPU shift disclosure. Key facts: custom chip business (Graviton + Trainium + Nitro) = $20B+ annualized; Trainium2 sold out; Trainium3 (shipping 2026, 30&ndash;40% better price-performance) nearly subscribed; Trainium4 (18 months out) nearly sold out. <a href="https://thenextweb.com/news/amazon-custom-chips-jassy-letter-fifty-billion-trainium">Jassy estimates the business worth $50B if sold externally</a> and hints at doing so.</p>
+
+<p>The bear case on the NVIDIA threat: Amazon lacks NVIDIA's software stack, ISV ecosystem, and developer mindshare outside of AWS. Trainium is a cost tool, not a capability upgrade. The declared intent to sell externally is speculative &mdash; execution requires competing on software, not just silicon. <strong>The structural threat to NVIDIA is to margins over 2&ndash;3 years, not to 2026 revenue.</strong></p>
+
+<h3>Frontier Model Ceiling: No Breakthrough Since February</h3>
+<p>Intelligence Index ceiling at 57.18 since Gemini 3.1 Pro Preview (February). GPT-5.4 (March 5) matched it but did not break through. As of April 19, no new frontier capability breakthrough has been announced. <strong>If the ceiling holds through Q2 2026, it begins to weaken the inference demand growth thesis for 2H 2026</strong> &mdash; reasoning model token consumption is the demand multiplier, and that requires models to actually keep getting more capable. This is the one signal worth watching for a thesis change.</p>
+
+<h3>Neocloud Snapshot</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Ticker</th>
+      <th>YTD</th>
+      <th>Material News</th>
+      <th>Entry?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CRWV</td>
+      <td>+54% (~$110)</td>
+      <td><a href="https://247wallst.com/investing/2026/03/31/coreweave-surges-8-nebius-gains-7-ai-infrastructure-stocks-rally-on-landmark-financing-and-platform-news/" style="color:var(--accent)">$35B Meta deal (incl. $21B extension through 2032) + Anthropic agreement.</a> BofA PT $120.</td>
+      <td><span class="badge badge-yellow">No &mdash; above zone</span></td>
+    </tr>
+    <tr>
+      <td>NBIS</td>
+      <td>+70% (est.)</td>
+      <td><a href="https://www.fool.com/investing/2026/04/05/nebius-stock-jumped-15-on-its-meta-deal-is-this-th/" style="color:var(--accent)">$27B Meta deal ($12B dedicated + $15B additional compute over 5 years).</a> BofA PT $175. Deep-dive: ai-ecosystem-analyst/output/2026-03-26-nebius.</td>
+      <td><span class="badge badge-yellow">No &mdash; above zone</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- =================== PORTFOLIO =================== -->
+<h2>Portfolio Tickers</h2>
+
+<div class="delta-callout">
+  <div class="label">Delta since last run (material news only)</div>
+  NVDA ~$200 (Amazon shareholder letter is a public competitive shot). AMZN ~$213&ndash;216 (at zone, FCF going negative). TSMC beat all metrics, fell 3% post-print. AMD earnings May 5. MU: last known price $401&ndash;418 (Mar 10 data &mdash; stale). CRWV/NBIS far above any entry zone.
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ticker</th>
+      <th>Level (Apr 19)</th>
+      <th>Zone Status</th>
+      <th>Material News</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>AMZN</td>
+      <td>~$213&ndash;216</td>
+      <td><span class="badge badge-yellow">Zone lower bound ($215&ndash;230)</span></td>
+      <td><a href="https://techcrunch.com/2026/04/09/amazon-ceo-takes-aim-at-nvidia-intel-starlink-more-in-annual-shareholder-letter/" style="color:var(--accent)">Jassy letter: $50B chip business, Trainium sold out, possible external sales.</a> Bullish AI infra narrative. Bear: $200B capex driving negative FCF. Q1 earnings late April &mdash; confirm date before entry decision.</td>
+    </tr>
+    <tr>
+      <td>NVDA</td>
+      <td>~$199&ndash;202</td>
+      <td><span class="badge badge-red">Above zone ($155&ndash;165)</span></td>
+      <td><a href="https://www.fool.com/investing/2026/04/18/did-amazon-just-say-checkmate-to-nvidia/" style="color:var(--accent)">Amazon shareholder letter is a direct CEO-level challenge.</a> Not existential in 2026 &mdash; custom silicon is ~15-20% of training. But declared intent to sell Trainium externally is a 2&ndash;3 year structural margin headwind. Zone only reopens on hard ceasefire collapse.</td>
+    </tr>
+    <tr>
+      <td>AMD</td>
+      <td>~$258&ndash;274</td>
+      <td><span class="badge badge-red">Above zone ($190&ndash;210)</span></td>
+      <td><a href="https://247wallst.com/investing/2026/04/16/amd-gains-6-ahead-of-may-earnings-is-the-ai-chip-challenger-finally-ready-to-rival-nvidia/" style="color:var(--accent)">+21% YTD. Q1 earnings May 5. $9.84B rev projected, +33% EPS Y/Y.</a> French government AI collaboration. Zone reopens on war re-escalation only.</td>
+    </tr>
+    <tr>
+      <td>TSMC</td>
+      <td>~$350+ est.</td>
+      <td><span class="badge badge-blue">No zone defined yet</span></td>
+      <td><a href="https://www.cnbc.com/2026/04/16/tsmc-q1-profit-58-percent-ai-chip-demand-record.html" style="color:var(--accent)">Q1 beat: $35.9B, +58% profit, AI = 61% of revenue. Fell ~3% post-print</a> on geopolitical concern. Action item: define a buy zone for next run. The dip is a potential entry signal.</td>
+    </tr>
+    <tr>
+      <td>MU</td>
+      <td>~$401&ndash;418 (Mar 10, stale)</td>
+      <td><span class="badge badge-red">Likely above zone ($350&ndash;380)</span></td>
+      <td>HBM sold out through 2026. No new news this run. Need fresh Apr 19 price confirmed.</td>
+    </tr>
+    <tr>
+      <td>CRWV</td>
+      <td>~$110 (+54% YTD)</td>
+      <td><span class="badge badge-red">Far above zone ($70&ndash;85)</span></td>
+      <td><a href="https://247wallst.com/investing/2026/03/31/coreweave-surges-8-nebius-gains-7-ai-infrastructure-stocks-rally-on-landmark-financing-and-platform-news/" style="color:var(--accent)">$35B Meta deal + Anthropic agreement.</a> BofA PT $120. Track only.</td>
+    </tr>
+    <tr>
+      <td>NBIS</td>
+      <td>Est. +70% YTD</td>
+      <td><span class="badge badge-red">No zone defined &mdash; track only</span></td>
+      <td><a href="https://www.fool.com/investing/2026/04/05/nebius-stock-jumped-15-on-its-meta-deal-is-this-th/" style="color:var(--accent)">$27B Meta deal.</a> BofA PT $175. Deep-dive available in ai-ecosystem-analyst. Track only.</td>
+    </tr>
+    <tr>
+      <td>XLE</td>
+      <td>TBD</td>
+      <td><span class="badge badge-yellow">Hold hedge through Apr 21</span></td>
+      <td>Apr 8 "trim" signal was premature &mdash; confirmed. Ceasefire still fragile. Do not trim before the binary resolves.</td>
+    </tr>
+    <tr>
+      <td>OWL</td>
+      <td>$7.95 ATL; +19.2% bounce</td>
+      <td><span class="badge badge-red">Structurally distressed</span></td>
+      <td><a href="https://www.cnbc.com/2026/04/02/blue-owl-private-credit-funds-redemptions-requests.html" style="color:var(--accent)">Caps confirmed, Moody's negative.</a> Bounce bought time; $4.2B aggregate queue remains. Not an entry.</td>
+    </tr>
+    <tr>
+      <td>APO</td>
+      <td>~$105</td>
+      <td><span class="badge badge-yellow">Watch &mdash; define entry</span></td>
+      <td><a href="https://www.bloomberg.com/news/articles/2026-03-23/apollo-caps-private-credit-fund-withdrawals-as-requests-hit-11" style="color:var(--accent)">ADS capped at 5% after 11.2% requests.</a> CEO "idiots" comment. Record Q1 FRE $531M. Structural survivor thesis forming. Define entry zone for next run.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>State of Play</h3>
+<p>Zero positions entered during the 39-day Iran war. The portfolio is still waiting. The Apr 21 binary is the gate: if ceasefire collapses, NVDA/AMD/BRCM zones reopen on a risk-off selloff &mdash; higher-conviction entry set. If it extends, AMZN ~$216 at zone lower bound becomes the first trade to consider, but only after Q1 earnings confirm AWS re-acceleration. Do not enter AMZN before earnings absorbs the FCF compression risk.</p>
+
+<!-- =================== PRIVATE CREDIT =================== -->
+<h2>Private Credit</h2>
+
+<div class="delta-callout">
+  <div class="label">Delta since last run (seed to live)</div>
+  Blue Owl capped at 5% (OCIC 21.9% / OTIC 40.7% requests). Moody's downgrade to negative. OWL ATL $7.95, +19.2% post-cap bounce. Apollo ADS capped after 11.2% requests; CEO Rowan called non-meeting managers "idiots." Two-tier market forming. Queue overhang is the key risk on OWL.
+</div>
+
+<h3>Blue Owl: The Queue Is the Story</h3>
+<p><a href="https://www.cnbc.com/2026/04/02/blue-owl-private-credit-funds-redemptions-requests.html">Blue Owl capped redemptions at 5%</a> for both OCIC (21.9% requests, $988M honored, <strong>$3.2B still in queue</strong>) and OTIC (40.7% requests, $179M honored, <strong>~$1B still in queue</strong>). <a href="https://www.benzinga.com/markets/private-markets/26/04/51718536/moodys-clips-blue-owls-wings-slashes-rating-to-negative-amid-rising-redemptions">Moody's cut to negative</a> the same period.</p>
+
+<p>The +19.2% bounce post-cap is technically interesting but structurally misleading. At 5% caps per quarter, the $3.2B OCIC queue takes ~4 quarters to clear &mdash; assuming no new requests enter the queue, which is not safe to assume with a Moody's negative outlook. <strong>The bear case: the queue grows faster than it can be honored, and a second-order credit event forces deeper NAV marks.</strong> Blue Owl attributed the elevated OCIC requests to "AI-related disruption to software companies" &mdash; meaning the SaaS lending book is the problem.</p>
+
+<h3>Apollo: Positioning as the Survivor</h3>
+<p><a href="https://www.benzinga.com/markets/private-markets/26/04/51874618/apollo-ceo-rowan-calls-private-credit-lenders-who-cant-meet-5-redemptions-idiots">Apollo CEO Marc Rowan publicly called managers who can't meet 5% redemptions "idiots."</a> His subtext: Apollo's book is cleaner, capital structure more durable, LP relationships stickier. <a href="https://markets.financialcontent.com/stocks/article/barchart-2026-4-10-apollo-global-managements-quarterly-earnings-preview-what-you-need-to-know">Q1 FRE record $531M.</a> Apollo Debt Solutions capped after only 11.2% requests vs. Blue Owl's 21.9&ndash;40.7% &mdash; a 2x better ratio.</p>
+
+<p>The open question: is this stress driven by (a) LP liquidity pressure (fear-driven, cyclical, recoverable) or (b) actual credit-quality deterioration? Blue Owl attributed it to SaaS-sector concerns. If Apollo's infrastructure-focused lending books are genuinely higher-quality, the two-tier thesis has legs. If it's systemic redemption behavior regardless of book quality, Apollo's moat is smaller than Rowan's rhetoric implies.</p>
+
+<!-- =================== POLYMARKET =================== -->
+<h2>Polymarket Calibration</h2>
+
+<div class="delta-callout">
+  <div class="label">Delta since seed (all markets refreshed for first time)</div>
+  Ceasefire-broken-by-Apr-21 at 74% is the new critical market. Permanent resolution by Dec 31 now 97% skeptical (down from 93%). Fed Apr 29 at 99.3% hold (up from 97%). Analyst diverges on ceasefire extension: 35% vs. market 26%.
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Market</th>
+      <th>Apr 8</th>
+      <th>Apr 19</th>
+      <th>Delta</th>
+      <th>Edge Read</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://polymarket.com/event/trump-announces-us-x-iran-ceasefire-broken-by/will-trump-announce-that-the-us-x-iran-ceasefire-has-been-broken-by-april-21-2026" style="color:var(--accent)">Ceasefire broken by Apr 21</a></td>
+      <td>N/A (new)</td>
+      <td><strong>74% YES</strong></td>
+      <td>NEW</td>
+      <td>Most important market this week. Analyst at ~65% (holds 35% extension). 9pp divergence based on Apr 20 talks signal. Modest divergence &mdash; not a strong fade.</td>
+    </tr>
+    <tr>
+      <td><a href="https://polymarket.com/event/us-x-iran-ceasefire-extended-by" style="color:var(--accent)">Ceasefire extended by Apr 21</a></td>
+      <td>N/A (new)</td>
+      <td>~26% implied</td>
+      <td>NEW</td>
+      <td>Analyst holds 35% extension. Kushner/Witkoff dispatch is the basis. Confirm or deny at Apr 20 Islamabad output.</td>
+    </tr>
+    <tr>
+      <td><a href="https://polymarket.com/event/iran-x-israelus-conflict-ends-by" style="color:var(--accent)">Conflict ends by Dec 31</a></td>
+      <td>~7% YES</td>
+      <td>~3% YES</td>
+      <td>&minus;4pp YES</td>
+      <td>More pessimistic. Hormuz whiplash confirmed the structural incoherence thesis. This market is dead weight on the "deal" side.</td>
+    </tr>
+    <tr>
+      <td><a href="https://polymarket.com/event/us-x-iran-permanent-peace-deal-by" style="color:var(--accent)">Permanent deal by Jun 30</a></td>
+      <td>N/A</td>
+      <td>30% YES</td>
+      <td>NEW</td>
+      <td>Analyst view: ~15%. The market implies a 30% chance of a signed durable deal within 10 weeks. Given the faction map, this requires Vahidi to change his calculation. The Pezeshkian collapse clock is the only mechanism, and even economic collapse doesn't guarantee IRGC cooperation. This market looks too high.</td>
+    </tr>
+    <tr>
+      <td><a href="https://polymarket.com/event/fed-decision-in-april" style="color:var(--accent)">Apr 29 FOMC no change</a></td>
+      <td>97%</td>
+      <td><strong>99.3%</strong></td>
+      <td>+2.3pp</td>
+      <td>Near-certainty. March CPI 3.3%, NFP 178K, Fed minutes confirmed hold. No scenario changes this.</td>
+    </tr>
+  </tbody>
+</table>
+
 <div class="honest-box">
-  <h3>Honest Reframing</h3>
+  <h3>Where the Analyst Diverges from Polymarket</h3>
   <ol>
-    <li><strong>Path A is dead.</strong> The Apr 8 "ceasefire → peace → AI infra rally" scenario assumed the ceasefire held. It hasn't. Zones that were "gone" on Apr 8 because of the rally may <em>reopen</em> if the ceasefire expires without extension. <em>This is the unexpected second chance.</em></li>
-    <li><strong>The war trade is not over.</strong> If Apr 21–22 expires without a deal, oil spikes back, tech sells off, and the February–March entry zones reopen. Amazon at $216 could revisit $200. NVIDIA could see $165 again. Watch the Apr 21–22 window.</li>
-    <li><strong>Energy hedge — reconsider the trim.</strong> CLAUDE.md said trim XLE on ceasefire. The ceasefire is broken. If you trimmed on Apr 8, that was premature. If you held, the hedge is still earning its keep. Do not fully trim until a <em>durable</em> resolution, not a headline one.</li>
-    <li><strong>Polymarket calibration.</strong> The 93% skepticism on permanent resolution by Dec 31 looks correct now. Lean into Polymarket pricing over headlines — Apr 7's "ceasefire rally" was a headline-driven trade that priced a durable resolution Polymarket already said would not come.</li>
-    <li><strong>Private credit dislocation (Tier D) is untouched.</strong> OWL / APO / ARCC redemption pressure is not a war-driven thesis. It remains actionable regardless of what happens in Islamabad. If the war resumes, it gets worse. If a deal happens, it improves modestly (risk-on) but the structural redemption problem doesn't vanish.</li>
-    <li><strong>Do not confuse factional whiplash with policy.</strong> Each Iranian "announcement" over the next two weeks should be read through the faction lens: <em>which faction is speaking, and do they have the authority to deliver what they're promising?</em> Araghchi on Apr 17 did not.</li>
+    <li><strong>Ceasefire extension (analyst 35% vs. market ~26%):</strong> The basis is that Kushner/Witkoff being dispatched Apr 19 for Apr 20 talks is a new signal. However, the structural argument against is strong: Polymarket traders have watched the IRGC reverse every Pragmatic Hawks signal within 24 hours. The 9pp divergence is not high-conviction. Would not bet against the market on this without confirmation from Islamabad Apr 20.</li>
+    <li><strong>Permanent deal by Jun 30 (analyst ~15% vs. market 30%):</strong> The market appears to be weighting a scenario where the extension produces a real deal. Given the faction map, this requires Vahidi to change his calculation within 10 weeks. The Pezeshkian collapse clock is the only plausible mechanism &mdash; but even economic collapse doesn't guarantee the IRGC makes a deal rather than doubling down. Market 30% looks ~15pp too high.</li>
   </ol>
 </div>
 
-<!-- ====================== WATCHLIST ====================== -->
-<h2>What to Watch Before Apr 21–22</h2>
+<!-- =================== BOTTOM LINE =================== -->
+<div class="punchline-box">
+  <h3>Bottom Line &mdash; Portfolio Implication</h3>
+  <p>The portfolio is still waiting, and the Apr 21 binary is the gate. Polymarket prices 74% ceasefire collapse &mdash; if that resolves YES, NVDA/AMD/BRCM zones reopen on a risk-off selloff and that is the higher-conviction entry set for AI infrastructure. If it resolves NO (extension), AMZN ~$216 at zone lower bound becomes the first trade to consider, but only after Q1 earnings confirm AWS re-acceleration. The one action today: hold XLE through Apr 21. Do not trim the energy hedge before the binary resolves.</p>
+  <p>On AI infrastructure: Amazon's Trainium declaration and TSMC's Q1 blowout are both confirming the computational abundance demand signal. The custom silicon war is a structural threat to NVIDIA's margins, not its 2026 revenue. The TSMC post-earnings dip (~3%) on Iran geopolitical concern is a potential entry signal &mdash; the foundry-irreplaceable thesis just got its strongest earnings confirmation yet. Define a TSMC buy zone in the next run.</p>
+  <p>On private credit: Apollo is the structural survivor narrative; Blue Owl has $4.2B in aggregate queue overhang that takes 4+ quarters to clear at 5% caps. Neither is a buy signal today, but Apollo at ~$105 deserves a defined entry level for the next run. The two-tier market thesis is strengthening.</p>
+</div>
+
+<!-- =================== WATCH TODAY =================== -->
 <div class="watchlist">
+  <strong style="color:var(--warn); font-size:14px;">What to Watch Today (Apr 19&ndash;20)</strong>
   <ul>
-    <li><strong>Second-round talks:</strong> Does Pakistan lock a date before expiry? Absence = ceasefire dies.</li>
-    <li><strong>Who Iran sends:</strong> If Qalibaf comes back alone = same deadlock. If a senior IRGC figure actually joins the delegation = real movement. If Vahidi himself signals involvement = major shift.</li>
-    <li><strong>Mojtaba Khamenei visibility:</strong> Any public appearance, statement, or meeting with a non-IRGC figure = potential crack in the security cordon.</li>
-    <li><strong>Hormuz status:</strong> Does Iran distinguish commercial from military/US-escorted traffic? Selective reopening would signal factional compromise forming.</li>
-    <li><strong>US blockade posture:</strong> Is the blockade tightened (squeeze for a deal) or paused (gesture of good faith)?</li>
-    <li><strong>Iranian street:</strong> Protests continue. Any major IRGC crackdown or defection would change the elite calculation.</li>
-    <li><strong>Pezeshkian's "3–4 week" economic warning:</strong> He said this ~Apr 10. That clock runs out early May. Watch rial, bread lines, fuel queues.</li>
-    <li><strong>Tasnim / Fars tone:</strong> IRGC-aligned media attacking Foreign Ministry = factional conflict live. Silence from them = possible accommodation brewing.</li>
-    <li><strong>Polymarket:</strong> Hormuz normalization by end-May odds, ceasefire-extension markets, Dec 31 resolution probability. These are the calibration signal over headline reading.</li>
+    <li><strong>CRITICAL:</strong> Islamabad talks output (Kushner/Witkoff). Extension agreed, collapsed, or inconclusive? Polymarket will move sharply on any real signal.</li>
+    <li>Oil: WTI holding $83&ndash;84 or drifting toward $90 as the market re-prices for collapse?</li>
+    <li>Any IRGC public statement on the Islamabad talks &mdash; silence = status quo; endorsement = seismic.</li>
+    <li>AMZN Q1 earnings date &mdash; confirm. The entry decision hinges on this print.</li>
+    <li>TSMC stock action: does the post-earnings dip extend or reverse? Define a zone for next run.</li>
+    <li>MU: get fresh Apr 19 price to confirm zone status ($350&ndash;380 likely passed).</li>
+    <li>APO: define an entry level for next run based on structural survivor thesis.</li>
+    <li>Fed pre-blackout period speakers (if any) &mdash; does anyone signal more hawkish path on oil inflation?</li>
   </ul>
 </div>
 
-<!-- ====================== PUNCHLINE ====================== -->
-<div class="punchline-box">
-  <h3>Bottom Line</h3>
-  <p>Iran's negotiating position is not being set by a strategy — it is being set by a <strong>factional deadlock with no arbitrator</strong>. The IRGC has veto power but not authorship. The Foreign Ministry has authorship but no authority. Mojtaba Khamenei has the title but not the freedom. This is why Islamabad failed, why Hormuz whipsawed, and why the ceasefire will not cleanly extend on Apr 21.</p>
-  <p>For the portfolio, the implication is inverted from the Apr 8 framing: <strong>the war dislocation may be reopening, not closing.</strong> Amazon at $216 was the "last surviving zone" only if resolution was durable. If the ceasefire dies this week, every zone comes back — and the Feb–Mar thesis gets a second chance. Do not chase the Apr 7 rally levels. Watch Apr 21–22 closely.</p>
-</div>
-
-<!-- ====================== SOURCES ====================== -->
+<!-- =================== SOURCES =================== -->
 <h2>Sources</h2>
 <div class="sources">
-  <p><strong>Factional analysis &amp; IRGC power seizure:</strong></p>
+  <p><strong>Iran / Geopolitics:</strong></p>
   <ul>
-    <li><a href="https://fortune.com/2026/04/18/iran-strait-of-hormuz-regime-factional-infighting-us-naval-blockade-oil-irgc/">Fortune — Iran's Hormuz whiplash highlights divide within regime (Apr 18)</a></li>
-    <li><a href="https://www.iranintl.com/en/202604015321">Iran International — IRGC takes de facto control of Iran government</a></li>
-    <li><a href="https://thefederal.com/category/international/irgc-tightens-grip-on-power-says-iran-media-president-pezeshkian-sidelined-237168">The Federal — Has IRGC tightened grip over Iran power reins</a></li>
-    <li><a href="https://www.atalayar.com/en/articulo/gustavo-aristegui/iran-s-internal-struggle-factions-power-and-the-paths-to-peace-or-the-opposite/20260406120632224529.html">Atalayar — Iran's Internal Struggle: Factions, Power and the Paths to Peace</a></li>
-    <li><a href="https://nationalsecuritynews.com/2026/04/inside-irans-irgc-power-influence-and-losses-in-the-2026-war/">National Security News — Inside Iran's IRGC: power and losses in the 2026 war</a></li>
-    <li><a href="https://www.ncr-iran.org/en/news/iran-power-struggle-widens-as-irgc-leadership-change-fuels-questions-amid-growing-political-infighting/">NCRI — Iran power struggle widens as IRGC leadership change fuels questions</a></li>
-    <li><a href="https://www.washingtonpost.com/national-security/2026/03/16/iran-regime-intelligence-irgc-war/">Washington Post — US intelligence says Iran's regime is consolidating power</a></li>
-    <li><a href="https://www.foreignaffairs.com/iran/new-khamenei">Foreign Affairs — The New Khamenei</a></li>
+    <li><a href="https://www.npr.org/2026/04/19/nx-s1-5790378/iran-us-hormuz-closed-impossible">NPR &mdash; US negotiators prepare for more talks as Trump repeats threats (Apr 19)</a></li>
+    <li><a href="https://www.aljazeera.com/news/liveblog/2026/4/19/iran-war-live-tehran-says-no-date-set-for-us-talks-hormuz-strait-closed">Al Jazeera live &mdash; Tehran: no date set, Hormuz closed (Apr 19)</a></li>
+    <li><a href="https://www.cbsnews.com/live-updates/iran-war-trump-israel-lebanon-ceasefire-hezbollah-strait-hormuz/">CBS News live &mdash; Kushner/Witkoff to Pakistan after Iran closes Hormuz</a></li>
+    <li><a href="https://www.pbs.org/newshour/world/irans-military-closes-strait-of-hormuz-again-citing-u-s-blockade">PBS NewsHour &mdash; Iran closes Hormuz again, cites US blockade</a></li>
+    <li><a href="https://www.theweek.in/news/middle-east/2026/04/19/what-led-to-closure-of-strait-of-hormuz-just-24-hours-after-iran-announced-its-completely-open.html">The Week &mdash; What led to closure 24h after "completely open"</a></li>
+    <li><a href="https://www.cnbc.com/2026/04/17/iran-war-hormuz-strait-israel-lebanon-ceasefire.html">CNBC &mdash; Iran declares Strait open, Trump says US blockade still active (Apr 17)</a></li>
+    <li><a href="https://time.com/article/2026/04/13/iran-US-peace-talks-islamabad-war-nuclear/">Time &mdash; Why the Iran-US Peace Talks Failed</a></li>
+    <li><a href="https://www.cnbc.com/2026/04/15/trump-iran-war-peace-talks-pakistan.html">CNBC &mdash; US and Iran could meet in Pakistan next week</a></li>
+    <li><a href="https://polymarket.com/event/trump-announces-us-x-iran-ceasefire-broken-by/will-trump-announce-that-the-us-x-iran-ceasefire-has-been-broken-by-april-21-2026">Polymarket &mdash; Ceasefire broken by Apr 21 (74%)</a></li>
   </ul>
-  <p><strong>Islamabad talks &amp; ceasefire status:</strong></p>
+  <p><strong>Markets:</strong></p>
   <ul>
-    <li><a href="https://www.aljazeera.com/news/2026/4/12/us-and-iran-fail-to-reach-peace-deal-after-marathon-talks-in-pakistan">Al Jazeera — US and Iran fail to reach a deal after marathon talks</a></li>
-    <li><a href="https://www.aljazeera.com/news/2026/4/13/how-the-us-iran-talks-in-islamabad-unfolded">Al Jazeera — How the US-Iran talks in Islamabad unfolded</a></li>
-    <li><a href="https://time.com/article/2026/04/13/iran-US-peace-talks-islamabad-war-nuclear/">TIME — Why the Iran-US Peace Talks Failed</a></li>
-    <li><a href="https://www.cfr.org/articles/u-s-iran-peace-talks-hit-an-impasse-what-comes-next">CFR — US-Iran Peace Talks Hit an Impasse. What Comes Next?</a></li>
-    <li><a href="https://www.aljazeera.com/news/2026/4/13/pakistan-eyes-narrow-window-to-resuscitate-us-iran-talks-after-breakdown">Al Jazeera — Pakistan eyes narrow window to resuscitate US-Iran talks</a></li>
-    <li><a href="https://www.aljazeera.com/news/2026/4/16/no-date-set-for-us-iran-talks-as-pakistan-pushes-to-keep-diplomacy-alive">Al Jazeera — No date set for US-Iran talks (Apr 16)</a></li>
-    <li><a href="https://time.com/article/2026/04/14/us-iran-talks-war-ceasefire-trump-nuclear-enrichment-strait-hormuz/">TIME — Officials Considering Second Round of US-Iran Talks</a></li>
-    <li><a href="https://europeanbusinessmagazine.com/business/business-iran-ceasefire-expiry-april-22-hormuz-blockade-2026/">European Business Magazine — Iran Ceasefire Expiry: Seven Days to Avoid War Resuming</a></li>
+    <li><a href="https://finance.yahoo.com/quote/%5EGSPC/">Yahoo Finance &mdash; S&amp;P 500 quote</a></li>
+    <li><a href="https://finance.yahoo.com/quote/BTC-USD/">Yahoo Finance &mdash; BTC-USD quote</a></li>
+    <li><a href="https://www.ainvest.com/news/polymarket-daily-war-ceasefires-fed-won-budge-2604/">ainvest &mdash; Polymarket Daily: Fed won't budge</a></li>
+    <li><a href="https://polymarket.com/event/fed-decision-in-april">Polymarket &mdash; Fed decision in April (99.3% hold)</a></li>
+    <li><a href="https://know.creditsights.com/insights/tech-raising-hyperscaler-capex-2026-estimates/">CreditSights &mdash; Raising Hyperscaler Capex 2026 Estimates (~$750B)</a></li>
   </ul>
-  <p><strong>Hormuz &amp; blockade:</strong></p>
+  <p><strong>AI / Tickers:</strong></p>
   <ul>
-    <li><a href="https://time.com/article/2026/04/18/iran-strait-of-hormuz-trump-attacks-blockade-lebanon-ceasefire/">TIME — Iran Reimposes Control of Strait of Hormuz and Fires on Tankers</a></li>
-    <li><a href="https://www.npr.org/2026/04/18/nx-s1-5789780/iran-middle-east-updates">NPR — Iran says it has closed the Strait of Hormuz again</a></li>
-    <li><a href="https://www.cnn.com/2026/04/18/world/live-news/iran-war-trump-israel">CNN — Day 50 of Middle East conflict (Apr 18)</a></li>
-    <li><a href="https://www.cnn.com/2026/04/13/world/live-news/iran-us-war-trump-hormuz">CNN — Trump warns Iran as US military blockade takes effect</a></li>
-    <li><a href="https://www.ms.now/news/iran-reimposes-restrictions-on-strait-of-hormuz-accusing-us-of-violating-deal-to-reopen-it">MS NOW — Iran closes Strait of Hormuz again</a></li>
-    <li><a href="https://www.irishtimes.com/world/middle-east/2026/04/18/iran-us-israel-strait-of-hormuz-latest-live-updates/">Irish Times — Iran studying fresh US proposals, says Hormuz blockade a "violation"</a></li>
+    <li><a href="https://www.cnbc.com/2026/04/16/tsmc-q1-profit-58-percent-ai-chip-demand-record.html">CNBC &mdash; TSMC Q1 profit +58%, beats estimates</a></li>
+    <li><a href="https://www.tradingkey.com/analysis/stocks/us-stocks/261793957-tsm-tsmc-taiwan-semi-q1-earnings-us-iran-chip-tradingkey">TradingKey &mdash; TSMC Q1: why it fell 3% post-results</a></li>
+    <li><a href="https://techcrunch.com/2026/04/09/amazon-ceo-takes-aim-at-nvidia-intel-starlink-more-in-annual-shareholder-letter/">TechCrunch &mdash; Amazon CEO takes aim at NVIDIA in shareholder letter</a></li>
+    <li><a href="https://thenextweb.com/news/amazon-custom-chips-jassy-letter-fifty-billion-trainium">The Next Web &mdash; Amazon chip business $50B, Jassy hints at external sales</a></li>
+    <li><a href="https://www.fool.com/investing/2026/04/18/did-amazon-just-say-checkmate-to-nvidia/">Motley Fool &mdash; Did Amazon just say checkmate to NVIDIA?</a></li>
+    <li><a href="https://247wallst.com/investing/2026/04/16/amd-gains-6-ahead-of-may-earnings-is-the-ai-chip-challenger-finally-ready-to-rival-nvidia/">24/7 Wall St. &mdash; AMD gains 6% ahead of May earnings</a></li>
+    <li><a href="https://247wallst.com/investing/2026/03/31/coreweave-surges-8-nebius-gains-7-ai-infrastructure-stocks-rally-on-landmark-financing-and-platform-news/">24/7 Wall St. &mdash; CoreWeave +8%, Nebius +7%</a></li>
+    <li><a href="https://www.fool.com/investing/2026/04/05/nebius-stock-jumped-15-on-its-meta-deal-is-this-th/">Motley Fool &mdash; Nebius +15% on Meta deal</a></li>
+    <li><a href="https://www.thestreet.com/investing/stocks/bank-of-america-revamps-price-targets-on-coreweave-nebius-stocks">TheStreet &mdash; BofA revamps PT on CRWV, NBIS</a></li>
   </ul>
-  <p><strong>Wikipedia reference:</strong></p>
+  <p><strong>Private Credit:</strong></p>
   <ul>
-    <li><a href="https://en.wikipedia.org/wiki/2026_Iran_war">2026 Iran war</a></li>
-    <li><a href="https://en.wikipedia.org/wiki/Islamabad_Talks">Islamabad Talks</a></li>
-    <li><a href="https://en.wikipedia.org/wiki/2026_Iran_war_ceasefire">2026 Iran war ceasefire</a></li>
-    <li><a href="https://en.wikipedia.org/wiki/2026_Strait_of_Hormuz_crisis">2026 Strait of Hormuz crisis</a></li>
-    <li><a href="https://en.wikipedia.org/wiki/Islamic_Revolutionary_Guard_Corps">Islamic Revolutionary Guard Corps</a></li>
+    <li><a href="https://www.cnbc.com/2026/04/02/blue-owl-private-credit-funds-redemptions-requests.html">CNBC &mdash; Blue Owl caps private credit funds redemptions at 5%</a></li>
+    <li><a href="https://www.bloomberg.com/news/articles/2026-04-02/blue-owl-bdcs-impose-caps-after-facing-41-22-requests-to-exit">Bloomberg &mdash; Blue Owl BDCs impose caps after 41.22% OTIC requests</a></li>
+    <li><a href="https://www.benzinga.com/markets/private-markets/26/04/51718536/moodys-clips-blue-owls-wings-slashes-rating-to-negative-amid-rising-redemptions">Benzinga &mdash; Moody's cuts Blue Owl to negative</a></li>
+    <li><a href="https://simplywall.st/stocks/us/diversified-financials/nyse-owl/blue-owl-capital/news/why-blue-owl-capital-owl-is-up-192-after-capping-redemptions">Simply Wall St &mdash; OWL +19.2% after capping redemptions</a></li>
+    <li><a href="https://www.bloomberg.com/news/articles/2026-03-23/apollo-caps-private-credit-fund-withdrawals-as-requests-hit-11">Bloomberg &mdash; Apollo caps withdrawals after 11% requests</a></li>
+    <li><a href="https://www.benzinga.com/markets/private-markets/26/04/51874618/apollo-ceo-rowan-calls-private-credit-lenders-who-cant-meet-5-redemptions-idiots">Benzinga &mdash; Apollo CEO Rowan calls managers "idiots"</a></li>
   </ul>
+  <p><em>All prices and odds as of approximately 07:30 PT, April 19, 2026. Market data from Yahoo Finance, Polymarket, and financial news sources cited above. Not investment advice.</em></p>
 </div>
 
 <div class="footer">
-  News review compiled April 19, 2026 · Day 51 of the war · 72 hours to ceasefire expiry<br>
-  <em>Portfolio context frozen at Apr 8 (CLAUDE.md); this report is the post-Apr 8 update.</em>
+  Daily News Brief &mdash; Morning Run &middot; April 19, 2026 &middot; ~07:30 PT &middot; Day 51 of Iran War &middot; Ceasefire expiry T&minus;48h
 </div>
 
 </div>
-
 </body>
 </html>
