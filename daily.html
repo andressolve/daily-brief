@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Iran News Review — April 19, 2026</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --surface: #121820;
+    --surface2: #1a2230;
+    --border: #243044;
+    --text: #c8d3e0;
+    --text-dim: #6b7d93;
+    --heading: #e8edf3;
+    --accent: #4fc3f7;
+    --accent2: #81c784;
+    --warn: #ffb74d;
+    --danger: #ef5350;
+    --gold: #ffd54f;
+    --purple: #b39ddb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a0a0a 0%, #2a0a1a 50%, #0a1a2e 100%);
+    border-bottom: 1px solid var(--danger);
+    padding: 50px 40px 40px;
+    text-align: center;
+  }
+  .header .day-tag {
+    display: inline-block;
+    background: rgba(239,83,80,0.2);
+    border: 1px solid rgba(239,83,80,0.4);
+    color: var(--danger);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--heading);
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .header .subtitle {
+    font-size: 18px;
+    color: var(--warn);
+    font-weight: 400;
+  }
+  .header .subtitle-sub {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 10px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--heading);
+    margin: 48px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 28px 0 12px;
+  }
+  p { margin-bottom: 14px; }
+  strong { color: var(--heading); }
+  em { color: var(--accent); font-style: italic; }
+  ul, ol { margin: 0 0 14px 22px; }
+  li { margin-bottom: 6px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  table tr:last-child td { border-bottom: none; }
+  table td:first-child {
+    font-weight: 700;
+    color: var(--heading);
+  }
+  .badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+  .badge-red { background: var(--danger); color: #fff; }
+  .badge-green { background: var(--accent2); color: var(--bg); }
+  .badge-blue { background: var(--accent); color: var(--bg); }
+  .badge-yellow { background: var(--warn); color: var(--bg); }
+  .badge-purple { background: var(--purple); color: var(--bg); }
+  .tldr-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.1), rgba(255,183,77,0.05));
+    border: 2px solid var(--danger);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin: 24px 0 32px;
+  }
+  .tldr-box h3 {
+    color: var(--danger);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .faction-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .faction-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px 26px;
+    border-left: 4px solid var(--border);
+  }
+  .faction-card.f-irgc { border-left-color: var(--danger); }
+  .faction-card.f-hawk { border-left-color: var(--warn); }
+  .faction-card.f-civ { border-left-color: var(--accent); }
+  .faction-card.f-ref { border-left-color: var(--accent2); }
+  .faction-card.f-cler { border-left-color: var(--purple); }
+  .faction-card h4 {
+    font-size: 16px;
+    color: var(--heading);
+    margin-bottom: 4px;
+  }
+  .faction-card .lead {
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .faction-card .row {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 10px;
+    font-size: 13.5px;
+    margin-bottom: 8px;
+  }
+  .faction-card .row .k {
+    color: var(--text-dim);
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 1px;
+    padding-top: 2px;
+  }
+  .scenario-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+    margin: 20px 0;
+  }
+  .scenario-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 20px;
+  }
+  .scenario-card .pct {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+  .scenario-card h4 {
+    font-size: 14px;
+    color: var(--heading);
+    margin: 4px 0 10px;
+  }
+  .scenario-card p {
+    font-size: 13px;
+    color: var(--text);
+    margin: 0;
+  }
+  .scenario-card.red .pct { color: var(--danger); }
+  .scenario-card.yellow .pct { color: var(--warn); }
+  .scenario-card.green .pct { color: var(--accent2); }
+  .scenario-card.purple .pct { color: var(--purple); }
+  .quote-box {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 16px 22px;
+    margin: 16px 0;
+    font-style: italic;
+    color: var(--text);
+    border-radius: 0 6px 6px 0;
+  }
+  .quote-box .src {
+    display: block;
+    margin-top: 8px;
+    font-style: normal;
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+  .honest-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--purple);
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin: 24px 0;
+  }
+  .honest-box h3 {
+    color: var(--purple);
+    margin-top: 0;
+    margin-bottom: 14px;
+  }
+  .honest-box ol { margin-left: 20px; }
+  .honest-box ol li { margin-bottom: 12px; }
+  .timeline {
+    border-left: 2px solid var(--border);
+    margin: 16px 0 24px 10px;
+    padding-left: 22px;
+  }
+  .timeline .item {
+    position: relative;
+    margin-bottom: 18px;
+  }
+  .timeline .item::before {
+    content: '';
+    position: absolute;
+    left: -30px;
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--bg);
+  }
+  .timeline .item.red::before { background: var(--danger); }
+  .timeline .item.green::before { background: var(--accent2); }
+  .timeline .item.yellow::before { background: var(--warn); }
+  .timeline .date {
+    font-size: 11px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+  }
+  .timeline .text {
+    font-size: 14px;
+    color: var(--text);
+    margin-top: 4px;
+  }
+  .punchline-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.08), rgba(79,195,247,0.05));
+    border: 2px solid rgba(239,83,80,0.3);
+    border-radius: 10px;
+    padding: 28px;
+    margin: 32px 0;
+    text-align: center;
+  }
+  .punchline-box h3 {
+    color: var(--danger);
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .punchline-box p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    max-width: 760px;
+    margin: 0 auto 10px;
+    color: var(--text);
+  }
+  .watchlist {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 24px;
+    margin: 20px 0;
+  }
+  .watchlist ul { margin-left: 20px; }
+  .watchlist ul li { margin-bottom: 8px; font-size: 14px; }
+  .sources { font-size: 12.5px; color: var(--text-dim); }
+  .sources a { color: var(--accent); text-decoration: none; }
+  .sources a:hover { text-decoration: underline; }
+  .footer {
+    border-top: 1px solid var(--border);
+    margin-top: 50px;
+    padding-top: 20px;
+    color: var(--text-dim);
+    font-size: 12px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="day-tag">News Review · Iran Deep Dive</div>
+  <h1>Iran — Divided Power, Broken Talks</h1>
+  <div class="subtitle">Why the Islamabad round collapsed and what a post-Khamenei regime can and can't sign</div>
+  <div class="subtitle-sub">April 19, 2026 — Day 51 of the war · Ceasefire expires in ~72 hours (Apr 21–22)</div>
+</div>
+
+<div class="container">
+
+<!-- ====================== TL;DR ====================== -->
+<div class="tldr-box">
+  <h3>TL;DR — The Apr 8 picture is obsolete</h3>
+  <p><strong>Your CLAUDE.md (Apr 8) still assumes Path A held. It didn't.</strong> Between Apr 11 and Apr 18 the ceasefire effectively broke, the Islamabad round failed, and the Strait whipsawed open→closed in 24 hours. The driver is not Trump posturing — it's a <strong>structurally divided Iranian regime</strong> with no internal arbitrator.</p>
+  <ul>
+    <li><strong>Khamenei was killed Feb 28, 2026</strong> in the opening Israeli strike. This is the critical fact — all Apr 8 analysis was written as if the Supreme Leader was still alive and mediating factions. He wasn't.</li>
+    <li><strong>The IRGC (Ahmad Vahidi) now holds de facto power.</strong> Pezeshkian is sidelined, appointments blocked, intelligence portfolio seized. A "military council" wraps the designated successor Mojtaba Khamenei in a security cordon and filters his information flow.</li>
+    <li><strong>Islamabad (Apr 11–12) failed</strong> on Hormuz administration and uranium enrichment. Delegation led by Ghalibaf (pragmatic hawk, IRGC-aligned) — <em>could not commit Iran without Vahidi's approval</em>. Vance offered a "final" deal; it was refused.</li>
+    <li><strong>US responded with a naval blockade of Iranian ports (Apr 13+).</strong> Araghchi called it a ceasefire violation.</li>
+    <li><strong>Hormuz whiplash (Apr 17–18):</strong> Foreign Ministry reopened the Strait, IRGC closed it hours later and fired on tankers. Fars and Tasnim publicly attacked Araghchi — open intra-regime warfare on front pages.</li>
+    <li><strong>Pezeshkian warned of economic collapse "within 3–4 weeks"</strong> without a deal. That is the one real pressure lever left.</li>
+  </ul>
+</div>
+
+<!-- ====================== TIMELINE ====================== -->
+<h2>What Actually Happened Since Apr 8</h2>
+<div class="timeline">
+  <div class="item green">
+    <div class="date">Apr 7–8</div>
+    <div class="text">2-week ceasefire announced. Markets rally. Hormuz reopening "promised." — <em>This is where CLAUDE.md freezes.</em></div>
+  </div>
+  <div class="item">
+    <div class="date">Apr 11–12</div>
+    <div class="text"><strong>Islamabad Talks.</strong> 21 hours, three rounds. 300-person US team (Vance, Witkoff, Kushner) vs. 70-person Iranian team (Ghalibaf, Araghchi). Agreement on 8 of 10 points — broke on Hormuz administration and uranium enrichment. No MoU.</div>
+  </div>
+  <div class="item red">
+    <div class="date">Apr 13</div>
+    <div class="text"><strong>US imposes naval blockade of Iranian ports.</strong> Trump warns Iran. Ceasefire effectively on life support.</div>
+  </div>
+  <div class="item yellow">
+    <div class="date">Apr 14–16</div>
+    <div class="text">Pakistan shuttles between capitals. "Narrow window" framing. No second-round date set.</div>
+  </div>
+  <div class="item green">
+    <div class="date">Apr 17 (Fri)</div>
+    <div class="text">Araghchi (Foreign Ministry): <strong>Strait "completely open"</strong> to shipping. Trump announces the reopening. Markets rally briefly.</div>
+  </div>
+  <div class="item red">
+    <div class="date">Apr 18 (Sat)</div>
+    <div class="text"><strong>IRGC reverses Araghchi within 24 hours.</strong> Strait closed. Tankers fired upon. Tasnim calls Araghchi's announcement "a complete lack of tact"; Fars says Iran "plunged into confusion." <em>Public intra-regime fight.</em></div>
+  </div>
+  <div class="item red">
+    <div class="date">Apr 21–22</div>
+    <div class="text"><strong>Ceasefire expiry.</strong> No second round scheduled. No mechanism to extend.</div>
+  </div>
+</div>
+
+<!-- ====================== THE THESIS ====================== -->
+<h2>The Core Thesis: Iran Cannot Negotiate Coherently</h2>
+<p>The conventional read is "hardliners vs. moderates, hardliners winning." That's too simple. The real picture, after Khamenei's death, is that <strong>there is no faction with authority to bind the regime</strong>. Every signed commitment needs ratification by a power center that did not send a representative. That is the structural reason Islamabad failed and why the Hormuz reopening lasted less than 24 hours.</p>
+
+<div class="quote-box">
+  "Because the main arbitrator is gone, the fight between different factions has started."
+  <span class="src">— Saeid Golkar, University of Tennessee, quoted in Fortune (Apr 18)</span>
+</div>
+
+<div class="quote-box">
+  The Institute for the Study of War called the IRGC's public repudiation of Araghchi a reflection of "broader divisions within the Iranian regime," with Khamenei's absence removing the unifying force that previously mediated factional disputes.
+</div>
+
+<!-- ====================== FACTION MAP ====================== -->
+<h2>The Faction Map</h2>
+<p>Five centers of power. The IRGC is dominant but not monopolistic — and its dominance is <em>recent and contested</em>, not consolidated.</p>
+
+<div class="faction-grid">
+
+  <div class="faction-card f-irgc">
+    <h4>1. Hard-Core IRGC <span class="badge badge-red">Dominant</span></h4>
+    <div class="lead">Leader: Ahmad Vahidi, IRGC Commander-in-Chief</div>
+    <div class="row"><div class="k">Position</div><div>War continuation until "strategic objectives" met. Hormuz is non-negotiable leverage.</div></div>
+    <div class="row"><div class="k">Leverage</div><div>Controls military, the Strait, and ~30–40% of GDP via IRGC commercial empire. Has seized intel portfolio and blocks presidential appointments.</div></div>
+    <div class="row"><div class="k">Weakness</div><div>Economic collapse is the one thing they can't absorb. Sanctions + blockade pressure is designed to break this faction, not persuade it.</div></div>
+    <div class="row"><div class="k">Negotiating</div><div>Did <strong>not</strong> send a representative to Islamabad. They veto outcomes, not negotiate them.</div></div>
+  </div>
+
+  <div class="faction-card f-hawk">
+    <h4>2. Pragmatic Hawks <span class="badge badge-yellow">Interface</span></h4>
+    <div class="lead">Leader: Mohammad-Baqer Qalibaf, Parliament Speaker</div>
+    <div class="row"><div class="k">Position</div><div>Willing to trade <em>tactically</em> if IRGC power and regime survival are preserved. Will not touch nuclear program or Hormuz sovereignty.</div></div>
+    <div class="row"><div class="k">Leverage</div><div>Trump identified Qalibaf as the primary diplomatic contact. Led the 70-person delegation to Islamabad.</div></div>
+    <div class="row"><div class="k">Constraint</div><div><strong>Cannot bind Iran without Vahidi's sign-off.</strong> This is the reason Islamabad failed: Ghalibaf agreed to 8 points, couldn't deliver on 2.</div></div>
+  </div>
+
+  <div class="faction-card f-civ">
+    <h4>3. Civilian Pragmatists <span class="badge badge-blue">Sidelined</span></h4>
+    <div class="lead">Leader: Masoud Pezeshkian, President; Abbas Araghchi, FM</div>
+    <div class="row"><div class="k">Position</div><div>Ceasefire + full sanctions relief. Willing to dilute 60% HEU. Wants the economy saved.</div></div>
+    <div class="row"><div class="k">Leverage</div><div>Close to zero. Intelligence minister appointments vetoed. Cannot secure a meeting with Mojtaba Khamenei. The Hormuz whiplash exposed how little authority Araghchi actually holds.</div></div>
+    <div class="row"><div class="k">Key Quote</div><div>Pezeshkian: economy faces <strong>"total collapse within three to four weeks"</strong> without a ceasefire. This is the pressure dial — and the timer.</div></div>
+  </div>
+
+  <div class="faction-card f-ref">
+    <h4>4. Reformists &amp; Moderates <span class="badge badge-green">Latent</span></h4>
+    <div class="lead">Leaders: Khatami, Rouhani, Azar Mansouri</div>
+    <div class="row"><div class="k">Position</div><div>Structural reform, negotiation, re-engagement with international system.</div></div>
+    <div class="row"><div class="k">Leverage</div><div>None today. Lost the succession battle. Positioned to benefit <em>only if</em> the IRGC overreaches and triggers elite or street backlash (ongoing protests are at least a bystander asset here).</div></div>
+  </div>
+
+  <div class="faction-card f-cler">
+    <h4>5. Clerical Establishment <span class="badge badge-purple">Fractured</span></h4>
+    <div class="lead">Leader: Mojtaba Khamenei (nominal Supreme Leader); Assembly of Experts</div>
+    <div class="row"><div class="k">Position</div><div>Split. Some clerics back the IRGC; others see IRGC dominance as a direct threat to <em>velayat-e faqih</em> (clerical rule).</div></div>
+    <div class="row"><div class="k">Leverage</div><div>Mojtaba is nominally in charge but effectively under IRGC "security cordon." Ali Asghar Hejazi warned the Assembly that Mojtaba's succession would "hand full control of the country to the IRGC" — he is now facing removal.</div></div>
+    <div class="row"><div class="k">Implication</div><div>If Mojtaba ever asserts independence, the game changes. Low probability near-term. If it happens, it is the single event that unlocks a real deal.</div></div>
+  </div>
+
+</div>
+
+<!-- ====================== ISLAMABAD POSTMORTEM ====================== -->
+<h2>Why Islamabad Failed — The Real Story</h2>
+<p>The surface story is "nuclear disagreement." The deeper story is a <strong>principal-agent problem</strong>: the US negotiated with an Iranian team that had no principal at home willing to ratify.</p>
+
+<h3>Agreed (8 of 10 points)</h3>
+<ul>
+  <li>Ceasefire extension framework</li>
+  <li>Lebanon strike pause</li>
+  <li>Process for frozen assets review</li>
+  <li>Prisoner exchange mechanics</li>
+  <li>Humanitarian corridors</li>
+  <li>Baseline Hormuz navigation (no tolls compromise)</li>
+  <li>Regional de-escalation language</li>
+  <li>Communication channels</li>
+</ul>
+
+<h3>Broke on (2 of 10 points)</h3>
+<ul>
+  <li><strong>Nuclear program.</strong> US demanded: zero enrichment, dismantlement of major facilities, removal of HEU stockpile. Iran offered: dilute 60% HEU, not dismantle. Trump: <em>"They want to have nuclear weapons. It's not going to happen."</em></li>
+  <li><strong>Strait of Hormuz administration.</strong> US wanted joint administration; Iran wanted sovereignty + right to charge vessels. This is the IRGC's core leverage asset — non-negotiable for them.</li>
+</ul>
+
+<div class="quote-box">
+  Qalibaf: the US "ultimately failed to gain the trust of the Iranian delegation." Araghchi: Iran came "within inches of an understanding" but met "maximalism, shifting goalposts, and blockade."
+  <span class="src">— Al Jazeera / TIME (Apr 13)</span>
+</div>
+
+<p><strong>The tell:</strong> Iran came with a delegation whose authority stopped exactly where IRGC equities began. A US team that came looking for finality ran into a counterparty that can negotiate everything except the two things that matter most. That is not a failure of will — it is a <strong>structural incapacity</strong> of post-Khamenei Iran to make strategic concessions.</p>
+
+<!-- ====================== HORMUZ WHIPLASH ====================== -->
+<h2>The Hormuz Whiplash as Diagnostic</h2>
+<p>The 24-hour reopen-reclose sequence on April 17–18 is the single most important data point for how negotiations play out from here. It wasn't Iran being duplicitous — it was Iran being <strong>incoherent</strong>. The Foreign Ministry genuinely believed it was announcing policy. The IRGC believed the Foreign Ministry had no authority to announce it. Fars and Tasnim (IRGC-aligned) <strong>publicly humiliated Araghchi on the front page</strong>.</p>
+<p>This is not a regime that can hold to a ceasefire. It is a regime whose left hand does not know what its right hand just signed — and the right hand has the guns.</p>
+
+<!-- ====================== SCENARIOS ====================== -->
+<h2>Negotiation Scenarios — How This Plays Out</h2>
+<p>Adapting from Atalayar's faction analysis, recalibrated against the failed Islamabad round, ongoing blockade, and 72 hours to ceasefire expiry.</p>
+
+<div class="scenario-grid">
+  <div class="scenario-card yellow">
+    <div class="pct">~40%</div>
+    <h4>Economic-Forced "Ugly" Deal</h4>
+    <p>IRGC's commercial empire buckles under blockade. Iran accepts face-saving partial deal: HEU dilution (not dismantlement), tolled Hormuz with US inspection rights, phased sanctions relief. Vahidi allows Qalibaf to finalize. <strong>Timeline: 4–8 weeks.</strong></p>
+  </div>
+  <div class="scenario-card red">
+    <div class="pct">~30%</div>
+    <h4>Ceasefire Collapse / Re-escalation</h4>
+    <p>Apr 21–22 passes with no deal and no extension. Iran re-closes Hormuz fully. US strikes escalate. Infrastructure warfare resumes. Oil spikes back above $110. Eventually forced to UN framework. This is the baseline path if Vahidi concludes a deal weakens IRGC more than war weakens it.</p>
+  </div>
+  <div class="scenario-card red">
+    <div class="pct">~15%</div>
+    <h4>Frozen Conflict</h4>
+    <p>No deal, no full war. Low-intensity mutual harassment. IRGC survives on Chinese economic support + domestic repression. Hormuz semi-open. Economy grinds. Could last 6–18 months. Worst outcome for markets: no resolution catalyst, perpetual tail risk.</p>
+  </div>
+  <div class="scenario-card green">
+    <div class="pct">~10%</div>
+    <h4>Mojtaba Asserts Authority</h4>
+    <p>Nominal Supreme Leader breaks free of the IRGC cordon (possibly enabled by Assembly of Experts or a clerical revolt against Vahidi). Actually commits Iran. Real deal possible on US terms. Low probability but this is the only scenario that produces a <em>durable</em> resolution.</p>
+  </div>
+  <div class="scenario-card purple">
+    <div class="pct">~5%</div>
+    <h4>Regime Fracture</h4>
+    <p>Economic collapse + continued protests + IRGC-clerical rupture = Pezeshkian invokes constitutional authority or IRGC splits internally. Unpredictable outcomes. Could produce reformist opening or military takeover. Tail risk in both directions.</p>
+  </div>
+</div>
+
+<p><strong>The bimodal risk is real:</strong> ~40% probability of an ugly deal that the market reads as resolution (rally), ~45% probability of deterioration (collapse or freeze). That's not a coin flip — it's a weighted call that ceasefire expiry will not produce clean good news.</p>
+
+<!-- ====================== PORTFOLIO IMPLICATIONS ====================== -->
+<h2>What This Means for the Portfolio</h2>
+<div class="honest-box">
+  <h3>Honest Reframing</h3>
+  <ol>
+    <li><strong>Path A is dead.</strong> The Apr 8 "ceasefire → peace → AI infra rally" scenario assumed the ceasefire held. It hasn't. Zones that were "gone" on Apr 8 because of the rally may <em>reopen</em> if the ceasefire expires without extension. <em>This is the unexpected second chance.</em></li>
+    <li><strong>The war trade is not over.</strong> If Apr 21–22 expires without a deal, oil spikes back, tech sells off, and the February–March entry zones reopen. Amazon at $216 could revisit $200. NVIDIA could see $165 again. Watch the Apr 21–22 window.</li>
+    <li><strong>Energy hedge — reconsider the trim.</strong> CLAUDE.md said trim XLE on ceasefire. The ceasefire is broken. If you trimmed on Apr 8, that was premature. If you held, the hedge is still earning its keep. Do not fully trim until a <em>durable</em> resolution, not a headline one.</li>
+    <li><strong>Polymarket calibration.</strong> The 93% skepticism on permanent resolution by Dec 31 looks correct now. Lean into Polymarket pricing over headlines — Apr 7's "ceasefire rally" was a headline-driven trade that priced a durable resolution Polymarket already said would not come.</li>
+    <li><strong>Private credit dislocation (Tier D) is untouched.</strong> OWL / APO / ARCC redemption pressure is not a war-driven thesis. It remains actionable regardless of what happens in Islamabad. If the war resumes, it gets worse. If a deal happens, it improves modestly (risk-on) but the structural redemption problem doesn't vanish.</li>
+    <li><strong>Do not confuse factional whiplash with policy.</strong> Each Iranian "announcement" over the next two weeks should be read through the faction lens: <em>which faction is speaking, and do they have the authority to deliver what they're promising?</em> Araghchi on Apr 17 did not.</li>
+  </ol>
+</div>
+
+<!-- ====================== WATCHLIST ====================== -->
+<h2>What to Watch Before Apr 21–22</h2>
+<div class="watchlist">
+  <ul>
+    <li><strong>Second-round talks:</strong> Does Pakistan lock a date before expiry? Absence = ceasefire dies.</li>
+    <li><strong>Who Iran sends:</strong> If Qalibaf comes back alone = same deadlock. If a senior IRGC figure actually joins the delegation = real movement. If Vahidi himself signals involvement = major shift.</li>
+    <li><strong>Mojtaba Khamenei visibility:</strong> Any public appearance, statement, or meeting with a non-IRGC figure = potential crack in the security cordon.</li>
+    <li><strong>Hormuz status:</strong> Does Iran distinguish commercial from military/US-escorted traffic? Selective reopening would signal factional compromise forming.</li>
+    <li><strong>US blockade posture:</strong> Is the blockade tightened (squeeze for a deal) or paused (gesture of good faith)?</li>
+    <li><strong>Iranian street:</strong> Protests continue. Any major IRGC crackdown or defection would change the elite calculation.</li>
+    <li><strong>Pezeshkian's "3–4 week" economic warning:</strong> He said this ~Apr 10. That clock runs out early May. Watch rial, bread lines, fuel queues.</li>
+    <li><strong>Tasnim / Fars tone:</strong> IRGC-aligned media attacking Foreign Ministry = factional conflict live. Silence from them = possible accommodation brewing.</li>
+    <li><strong>Polymarket:</strong> Hormuz normalization by end-May odds, ceasefire-extension markets, Dec 31 resolution probability. These are the calibration signal over headline reading.</li>
+  </ul>
+</div>
+
+<!-- ====================== PUNCHLINE ====================== -->
+<div class="punchline-box">
+  <h3>Bottom Line</h3>
+  <p>Iran's negotiating position is not being set by a strategy — it is being set by a <strong>factional deadlock with no arbitrator</strong>. The IRGC has veto power but not authorship. The Foreign Ministry has authorship but no authority. Mojtaba Khamenei has the title but not the freedom. This is why Islamabad failed, why Hormuz whipsawed, and why the ceasefire will not cleanly extend on Apr 21.</p>
+  <p>For the portfolio, the implication is inverted from the Apr 8 framing: <strong>the war dislocation may be reopening, not closing.</strong> Amazon at $216 was the "last surviving zone" only if resolution was durable. If the ceasefire dies this week, every zone comes back — and the Feb–Mar thesis gets a second chance. Do not chase the Apr 7 rally levels. Watch Apr 21–22 closely.</p>
+</div>
+
+<!-- ====================== SOURCES ====================== -->
+<h2>Sources</h2>
+<div class="sources">
+  <p><strong>Factional analysis &amp; IRGC power seizure:</strong></p>
+  <ul>
+    <li><a href="https://fortune.com/2026/04/18/iran-strait-of-hormuz-regime-factional-infighting-us-naval-blockade-oil-irgc/">Fortune — Iran's Hormuz whiplash highlights divide within regime (Apr 18)</a></li>
+    <li><a href="https://www.iranintl.com/en/202604015321">Iran International — IRGC takes de facto control of Iran government</a></li>
+    <li><a href="https://thefederal.com/category/international/irgc-tightens-grip-on-power-says-iran-media-president-pezeshkian-sidelined-237168">The Federal — Has IRGC tightened grip over Iran power reins</a></li>
+    <li><a href="https://www.atalayar.com/en/articulo/gustavo-aristegui/iran-s-internal-struggle-factions-power-and-the-paths-to-peace-or-the-opposite/20260406120632224529.html">Atalayar — Iran's Internal Struggle: Factions, Power and the Paths to Peace</a></li>
+    <li><a href="https://nationalsecuritynews.com/2026/04/inside-irans-irgc-power-influence-and-losses-in-the-2026-war/">National Security News — Inside Iran's IRGC: power and losses in the 2026 war</a></li>
+    <li><a href="https://www.ncr-iran.org/en/news/iran-power-struggle-widens-as-irgc-leadership-change-fuels-questions-amid-growing-political-infighting/">NCRI — Iran power struggle widens as IRGC leadership change fuels questions</a></li>
+    <li><a href="https://www.washingtonpost.com/national-security/2026/03/16/iran-regime-intelligence-irgc-war/">Washington Post — US intelligence says Iran's regime is consolidating power</a></li>
+    <li><a href="https://www.foreignaffairs.com/iran/new-khamenei">Foreign Affairs — The New Khamenei</a></li>
+  </ul>
+  <p><strong>Islamabad talks &amp; ceasefire status:</strong></p>
+  <ul>
+    <li><a href="https://www.aljazeera.com/news/2026/4/12/us-and-iran-fail-to-reach-peace-deal-after-marathon-talks-in-pakistan">Al Jazeera — US and Iran fail to reach a deal after marathon talks</a></li>
+    <li><a href="https://www.aljazeera.com/news/2026/4/13/how-the-us-iran-talks-in-islamabad-unfolded">Al Jazeera — How the US-Iran talks in Islamabad unfolded</a></li>
+    <li><a href="https://time.com/article/2026/04/13/iran-US-peace-talks-islamabad-war-nuclear/">TIME — Why the Iran-US Peace Talks Failed</a></li>
+    <li><a href="https://www.cfr.org/articles/u-s-iran-peace-talks-hit-an-impasse-what-comes-next">CFR — US-Iran Peace Talks Hit an Impasse. What Comes Next?</a></li>
+    <li><a href="https://www.aljazeera.com/news/2026/4/13/pakistan-eyes-narrow-window-to-resuscitate-us-iran-talks-after-breakdown">Al Jazeera — Pakistan eyes narrow window to resuscitate US-Iran talks</a></li>
+    <li><a href="https://www.aljazeera.com/news/2026/4/16/no-date-set-for-us-iran-talks-as-pakistan-pushes-to-keep-diplomacy-alive">Al Jazeera — No date set for US-Iran talks (Apr 16)</a></li>
+    <li><a href="https://time.com/article/2026/04/14/us-iran-talks-war-ceasefire-trump-nuclear-enrichment-strait-hormuz/">TIME — Officials Considering Second Round of US-Iran Talks</a></li>
+    <li><a href="https://europeanbusinessmagazine.com/business/business-iran-ceasefire-expiry-april-22-hormuz-blockade-2026/">European Business Magazine — Iran Ceasefire Expiry: Seven Days to Avoid War Resuming</a></li>
+  </ul>
+  <p><strong>Hormuz &amp; blockade:</strong></p>
+  <ul>
+    <li><a href="https://time.com/article/2026/04/18/iran-strait-of-hormuz-trump-attacks-blockade-lebanon-ceasefire/">TIME — Iran Reimposes Control of Strait of Hormuz and Fires on Tankers</a></li>
+    <li><a href="https://www.npr.org/2026/04/18/nx-s1-5789780/iran-middle-east-updates">NPR — Iran says it has closed the Strait of Hormuz again</a></li>
+    <li><a href="https://www.cnn.com/2026/04/18/world/live-news/iran-war-trump-israel">CNN — Day 50 of Middle East conflict (Apr 18)</a></li>
+    <li><a href="https://www.cnn.com/2026/04/13/world/live-news/iran-us-war-trump-hormuz">CNN — Trump warns Iran as US military blockade takes effect</a></li>
+    <li><a href="https://www.ms.now/news/iran-reimposes-restrictions-on-strait-of-hormuz-accusing-us-of-violating-deal-to-reopen-it">MS NOW — Iran closes Strait of Hormuz again</a></li>
+    <li><a href="https://www.irishtimes.com/world/middle-east/2026/04/18/iran-us-israel-strait-of-hormuz-latest-live-updates/">Irish Times — Iran studying fresh US proposals, says Hormuz blockade a "violation"</a></li>
+  </ul>
+  <p><strong>Wikipedia reference:</strong></p>
+  <ul>
+    <li><a href="https://en.wikipedia.org/wiki/2026_Iran_war">2026 Iran war</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Islamabad_Talks">Islamabad Talks</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/2026_Iran_war_ceasefire">2026 Iran war ceasefire</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/2026_Strait_of_Hormuz_crisis">2026 Strait of Hormuz crisis</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Islamic_Revolutionary_Guard_Corps">Islamic Revolutionary Guard Corps</a></li>
+  </ul>
+</div>
+
+<div class="footer">
+  News review compiled April 19, 2026 · Day 51 of the war · 72 hours to ceasefire expiry<br>
+  <em>Portfolio context frozen at Apr 8 (CLAUDE.md); this report is the post-Apr 8 update.</em>
+</div>
+
+</div>
+
+</body>
+</html>
