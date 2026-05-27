@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily News Brief — May 25, 2026 Evening Wrap</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --surface: #121820;
+    --surface2: #1a2230;
+    --border: #243044;
+    --text: #c8d3e0;
+    --text-dim: #6b7d93;
+    --heading: #e8edf3;
+    --accent: #4fc3f7;
+    --accent2: #81c784;
+    --warn: #ffb74d;
+    --danger: #ef5350;
+    --gold: #ffd54f;
+    --purple: #b39ddb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  .header {
+    background: linear-gradient(135deg, #0a0a1a 0%, #1a102a 50%, #0a1a2e 100%);
+    border-bottom: 1px solid var(--purple);
+    padding: 50px 40px 40px;
+    text-align: center;
+  }
+  .header .day-tag {
+    display: inline-block;
+    background: rgba(179,157,219,0.2);
+    border: 1px solid rgba(179,157,219,0.4);
+    color: var(--purple);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--heading);
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .header .subtitle {
+    font-size: 18px;
+    color: var(--purple);
+    font-weight: 400;
+  }
+  .header .subtitle-sub {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 10px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--heading);
+    margin: 48px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 28px 0 12px;
+  }
+  p { margin-bottom: 14px; }
+  strong { color: var(--heading); }
+  em { color: var(--accent); font-style: italic; }
+  ul, ol { margin: 0 0 14px 22px; }
+  li { margin-bottom: 6px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  table tr:last-child td { border-bottom: none; }
+  table td:first-child {
+    font-weight: 700;
+    color: var(--heading);
+  }
+  .badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+  .badge-red { background: var(--danger); color: #fff; }
+  .badge-green { background: var(--accent2); color: var(--bg); }
+  .badge-blue { background: var(--accent); color: var(--bg); }
+  .badge-yellow { background: var(--warn); color: var(--bg); }
+  .badge-purple { background: var(--purple); color: var(--bg); }
+  .tldr-box {
+    background: linear-gradient(135deg, rgba(179,157,219,0.1), rgba(79,195,247,0.05));
+    border: 2px solid var(--purple);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin: 24px 0 32px;
+  }
+  .tldr-box h3 {
+    color: var(--purple);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .delta-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--warn);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 16px 0;
+    font-size: 14px;
+  }
+  .delta-box .label {
+    font-size: 10px;
+    color: var(--warn);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .morning-check {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--purple);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 16px 0;
+    font-size: 14px;
+  }
+  .morning-check .label {
+    font-size: 10px;
+    color: var(--purple);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .scenario-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+    margin: 20px 0;
+  }
+  .scenario-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 20px;
+  }
+  .scenario-card .pct {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+  .scenario-card h4 {
+    font-size: 14px;
+    color: var(--heading);
+    margin: 4px 0 10px;
+  }
+  .scenario-card p {
+    font-size: 13px;
+    color: var(--text);
+    margin: 0;
+  }
+  .scenario-card.red .pct { color: var(--danger); }
+  .scenario-card.yellow .pct { color: var(--warn); }
+  .scenario-card.green .pct { color: var(--accent2); }
+  .scenario-card.purple .pct { color: var(--purple); }
+  .punchline-box {
+    background: linear-gradient(135deg, rgba(179,157,219,0.08), rgba(79,195,247,0.05));
+    border: 2px solid rgba(179,157,219,0.3);
+    border-radius: 10px;
+    padding: 28px;
+    margin: 32px 0;
+    text-align: center;
+  }
+  .punchline-box h3 {
+    color: var(--purple);
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .punchline-box p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    max-width: 760px;
+    margin: 0 auto 10px;
+    color: var(--text);
+  }
+  .check-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .check-item:last-child { border-bottom: none; }
+  .check-icon {
+    font-size: 18px;
+    flex-shrink: 0;
+    width: 24px;
+    text-align: center;
+    padding-top: 2px;
+  }
+  .check-content { flex: 1; }
+  .check-content .q { font-weight: 700; color: var(--heading); margin-bottom: 4px; }
+  .check-content .a { color: var(--text); font-size: 14px; }
+  .sources { font-size: 12.5px; color: var(--text-dim); margin-top: 40px; }
+  .sources a { color: var(--accent); text-decoration: none; }
+  .sources a:hover { text-decoration: underline; }
+  .sources ul { list-style: none; margin: 0; padding: 0; }
+  .sources li { margin-bottom: 4px; padding-left: 12px; position: relative; }
+  .sources li::before { content: "->"; position: absolute; left: 0; color: var(--text-dim); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="day-tag">Day 87 &mdash; Iran War &mdash; Evening Wrap</div>
+  <h1>Daily News Brief &mdash; May 25, 2026</h1>
+  <div class="subtitle">Evening Wrap</div>
+  <div class="subtitle-sub">~18:00 PT &middot; Memorial Day &middot; Rubio's "deal today" did NOT happen &middot; Brent settled ~$96.93 (-6.4%) &middot; Polymarket Dec 31 compressed 84%&rarr;74% (-10pp) &middot; Saudi silent on Abraham Accords &middot; Netanyahu set nuclear maximalist terms &middot; Iran talks ongoing in Qatar</div>
+</div>
+
+<div class="container">
+
+<!-- TL;DR -->
+<div class="tldr-box">
+  <h3>TL;DR &mdash; Evening Wrap</h3>
+  <ul>
+    <li><strong>Rubio's "deal today" did not materialize.</strong> No formal announcement. Iran delegation continuing "intense talks" in Qatar. Iran FM: deal "not imminent." The most aggressive morning signal proved premature. (<a href="https://www.nbcnews.com/world/iran/iran-deal-trump-talks-war-nuclear-hormuz-rubio-rcna346781">NBC News</a>)</li>
+    <li><strong>Oil settled even lower: Brent ~$96.93</strong> (-6.38% from Friday). Dropped below the morning's ~$98 estimate. Oil holding below $97 <em>despite no announcement</em> is the strongest market signal of the day: the physical market prices a deal as structurally inevitable, not just headline-reactive. (<a href="https://tradingeconomics.com/commodity/brent-crude-oil">Trading Economics</a>)</li>
+    <li><strong>Polymarket compressed -10pp on Dec 31</strong> (84%&rarr;~74%). Morning surge partially reversed as "deal today" failed. Our morning skepticism about Abraham Accords scope creep was <strong>validated within 12 hours</strong>. Analyst-market gap narrowed from 22pp to 14pp. (<a href="https://polymarket.com/event/us-x-iran-permanent-peace-deal-by">Polymarket</a>)</li>
+    <li><strong>Saudi Arabia silent on Abraham Accords</strong> &mdash; leaders were "surprised" by Trump's request. MBS maintaining Palestinian statehood precondition. No positive signal from any named country. Confirms scope creep risk. (<a href="https://www.jpost.com/middle-east/abraham-accords/article-897252">Jerusalem Post</a>)</li>
+    <li><strong>Netanyahu set maximalist nuclear terms</strong> &mdash; demands deal "dismantle enrichment sites + remove enriched material." Also escalating Lebanon: "we will intensify strikes." New spoiler variable. (<a href="https://thehill.com/policy/international/5893368-israel-us-iran-agreement/">The Hill</a>)</li>
+  </ul>
+</div>
+
+<!-- MORNING SCORECARD -->
+<h2>Morning &rarr; Evening: What Moved <span class="badge badge-purple">Scorecard</span></h2>
+
+<div class="morning-check">
+  <div class="label">Morning watchlist resolution</div>
+
+  <div class="check-item">
+    <div class="check-icon" style="color: var(--danger);">&#x2717;</div>
+    <div class="check-content">
+      <div class="q">1. Does a formal announcement come today?</div>
+      <div class="a"><strong>No.</strong> Rubio said "today." It didn't happen. Iran delegation still in Qatar in "intense talks" (<a href="https://www.cnn.com/2026/05/25/world/live-news/iran-war-us-peace-deal">CNN live blog</a>). Iran FM: "not imminent." The most aggressive morning signal was overridden by Iran's negotiating patience.</div>
+    </div>
+  </div>
+
+  <div class="check-item">
+    <div class="check-icon" style="color: var(--warn);">&#x25CB;</div>
+    <div class="check-content">
+      <div class="q">2. Abraham Accords response from Saudi Arabia, Pakistan, Turkey?</div>
+      <div class="a"><strong>Silence/resistance.</strong> Leaders "surprised" by Trump's request &mdash; <a href="https://www.axios.com/2026/05/24/trump-iran-war-israel-muslim-countries-abraham-accords">Axios</a>: "silence on the line, and Trump joked and asked if they are still there." Saudi maintaining Palestinian statehood precondition. No positive signal from any named country. Our morning read ("aspirational, not conditional") was correct, but the Saudi response is worse than aspirational &mdash; it's dismissive.</div>
+    </div>
+  </div>
+
+  <div class="check-item">
+    <div class="check-icon" style="color: var(--accent2);">&#x2713;</div>
+    <div class="check-content">
+      <div class="q">3. Oil stability at new level?</div>
+      <div class="a"><strong>Oil went LOWER.</strong> Brent settled ~$96.93, below the morning's ~$98 estimate. The physical market held below $97 despite no deal announcement. This is the strongest signal: oil is pricing structural deal probability, not headline reaction. The gap between "no announcement" and "Brent still below $97" means the market views a deal as inevitable on a multi-week horizon.</div>
+    </div>
+  </div>
+
+  <div class="check-item">
+    <div class="check-icon" style="color: var(--text-dim);">&#x2014;</div>
+    <div class="check-content">
+      <div class="q">4. Tuesday equity open?</div>
+      <div class="a"><strong>Still pending.</strong> Memorial Day closure. Oil's further decline strengthens the case: XLE gap down, tech up, VIX compressed. Tuesday is the first real market test.</div>
+    </div>
+  </div>
+
+  <div class="check-item">
+    <div class="check-icon" style="color: var(--danger);">&#x26A0;</div>
+    <div class="check-content">
+      <div class="q">5. Israeli response to Abraham Accords?</div>
+      <div class="a"><strong>Netanyahu set maximalist terms.</strong> <a href="https://thehill.com/policy/international/5893368-israel-us-iran-agreement/">Backed the MOU</a> but demanded any final deal "must eliminate the nuclear danger" &mdash; dismantle enrichment sites + remove enriched material. This is a position Iran will never accept. Also <strong>escalated on Lebanon</strong>: "we are at war with Hezbollah, and we will intensify our strikes." <strong>New spoiler variable.</strong></div>
+    </div>
+  </div>
+
+</div>
+
+<!-- IRAN / GEOPOLITICS -->
+<h2>Iran / Geopolitics <span class="badge badge-red">Priority</span></h2>
+
+<div class="delta-box">
+  <div class="label">Delta since morning run</div>
+  <strong>Timeline slipped, momentum intact.</strong> "Deal today" &rarr; didn't happen. Saudi silent on Abraham Accords. Netanyahu demands nuclear dismantlement (nonstarter for Iran). But talks continuing in Qatar and oil held below $97. Combined deal paths: 60% (from 62% this morning).
+</div>
+
+<h3>Scenario Weights &mdash; Evening Revision</h3>
+<div class="scenario-grid">
+  <div class="scenario-card green">
+    <div class="pct">33%</div>
+    <h4>Framework Deal with Nuclear Language</h4>
+    <p>-1pp from morning. "Today" didn't happen. Timeline pushed to Jun 7 window. But structure of talks unchanged.</p>
+  </div>
+  <div class="scenario-card">
+    <div class="pct">27%</div>
+    <h4>Nominal Extension</h4>
+    <p>-1pp. 60-day framework remains base case within deal. Abraham Accords aspiration now confirmed as non-binding.</p>
+  </div>
+  <div class="scenario-card red">
+    <div class="pct">20%</div>
+    <h4>De Facto Escalation</h4>
+    <p>+1pp. Netanyahu Lebanon escalation + nuclear maximalism adds friction. Not a break, but new complexity.</p>
+  </div>
+  <div class="scenario-card yellow">
+    <div class="pct">12%</div>
+    <h4>Israeli Independent Action</h4>
+    <p>+1pp. "We will intensify strikes" on Hezbollah is escalatory. If Lebanon operations expand, bilateral track gets harder.</p>
+  </div>
+  <div class="scenario-card purple">
+    <div class="pct">8%</div>
+    <h4>Mojtaba Fracture</h4>
+    <p>Unchanged. No fracture signals. Internal Iranian politics not the driver today.</p>
+  </div>
+</div>
+<p style="text-align:center; color: var(--text-dim); font-size: 13px;"><strong>Combined deal paths: 60%</strong> (from 62% this morning, 58% yesterday). Net positive vs. yesterday, slight correction from morning overshoot. Gap to Polymarket Dec 31 (~74%): ~14pp.</p>
+
+<!-- POLYMARKET -->
+<h2>Polymarket Calibration <span class="badge badge-yellow">Corrected</span></h2>
+
+<div class="delta-box">
+  <div class="label">Delta since morning run</div>
+  <strong>Morning overshoot corrected.</strong> Rubio's "deal today" didn't materialize &rarr; Dec 31 dropped ~10pp (84%&rarr;~74%). Our structural skepticism was validated. Analyst-market gap narrowed from 22pp to ~14pp as the market corrected toward our view.
+</div>
+
+<table>
+  <tr><th>Market</th><th>May 25 AM</th><th>May 25 PM</th><th>Intraday</th><th>Read</th></tr>
+  <tr><td>Peace deal by May 31</td><td>35%</td><td>~34%</td><td style="color: var(--text-dim);">-1pp</td><td>Flat. Deadline approaching without deal.</td></tr>
+  <tr><td>Peace deal by Jun 7</td><td>46%</td><td>~49%</td><td style="color: var(--accent2);">+3pp</td><td>Leading near-term bucket. Market shifted from "today" to "next two weeks."</td></tr>
+  <tr><td>Peace deal by Jun 15</td><td>52%</td><td>~48%</td><td style="color: var(--danger);">-4pp</td><td>Compressed from morning. No longer majority.</td></tr>
+  <tr><td>Peace deal by Jun 30</td><td>62%</td><td>~56%</td><td style="color: var(--danger);">-6pp</td><td>Morning's +12pp surge partially unwound.</td></tr>
+  <tr><td>Peace deal by Dec 31</td><td style="color: var(--accent2);">84%</td><td>~74%</td><td style="color: var(--danger);"><strong>-10pp</strong></td><td><strong>Most significant pullback.</strong> Market correcting toward analyst view.</td></tr>
+</table>
+
+<p><strong>Key insight:</strong> The -10pp on Dec 31 means the "deal today" signal was responsible for most of the morning's enthusiasm. Without it materializing, the market corrected. But Jun 7 <em>rising</em> 3pp means the market has shifted timing from "today/this week" to "first two weeks of June" &mdash; not abandoning the deal thesis, just adjusting the clock.</p>
+
+<p><strong>Our morning caution was right.</strong> The 22pp analyst-market gap narrowed to ~14pp (60% vs 74% on Dec 31). Abraham Accords complexity, Netanyahu maximalism, and Saudi resistance were all confirmed within 12 hours.</p>
+
+<!-- MARKETS -->
+<h2>Markets <span class="badge badge-yellow">Oil Deepened</span></h2>
+
+<div class="delta-box">
+  <div class="label">Delta since morning run</div>
+  Oil settled even lower. Brent ~$96.93 (from ~$98 morning estimate). Memorial Day &mdash; no equity data. Tuesday open is the first real test.
+</div>
+
+<table>
+  <tr><th>Asset</th><th>Friday Close</th><th>Morning</th><th>Evening</th><th>Read</th></tr>
+  <tr><td>Brent Crude</td><td>$104.52</td><td>~$98</td><td style="color: var(--danger);"><strong>~$96.93</strong></td><td>Held below $97 even without announcement. Structural bet on deal.</td></tr>
+  <tr><td>WTI Crude</td><td>~$96</td><td>~$91</td><td>~$90</td><td>Continued drift lower. Tuesday reaction will be significant.</td></tr>
+  <tr><td>Gold</td><td>~$4,522</td><td>$4,562.69</td><td>~$4,560</td><td>Stable. Safe haven bid persists.</td></tr>
+  <tr><td>BTC</td><td>~$77,447</td><td>~$77,300</td><td>~$77,200</td><td>Flat. No conviction.</td></tr>
+  <tr><td>S&amp;P 500</td><td>7,473</td><td colspan="2">Closed (Memorial Day)</td><td>Tuesday open. Gap up expected if oil stays below $100.</td></tr>
+</table>
+
+<p><strong>The oil story is actually <em>more</em> bullish than the morning read.</strong> Brent dropping further despite the lack of an announcement means the market is pricing structural deal probability, not just reacting to Rubio's words. A headline-driven move would have reversed when "today" didn't happen. It didn't. This is durable positioning.</p>
+
+<p><strong>Bear case unchanged:</strong> Physical Hormuz reality is the same. IRGC still claims sovereignty. No ships have transited. If talks collapse, oil snaps back above $105 violently.</p>
+
+<!-- AI / PORTFOLIO / PRIVATE CREDIT -->
+<h2>AI / Portfolio / Private Credit</h2>
+
+<div class="delta-box">
+  <div class="label">Delta since morning run</div>
+  No material change on any of these beats. Memorial Day. Tuesday is the first data point.
+</div>
+
+<p><strong>AI:</strong> No developments. SpaceX IPO Jun 12 (18 days). Oil's continued decline reinforces energy-cost tailwind for AI infrastructure.</p>
+
+<p><strong>Portfolio:</strong> No ticker-specific news. Oil holding below $97 strengthens the "deal dividend" setup for Tuesday. XLE gap down, tech gap up expected. Entry zones remain far above for all Tier A names.</p>
+
+<p><strong>Private credit:</strong> No developments. The rate-path question sharpens if oil stays low &mdash; lower oil &rarr; lower inflation expectations &rarr; rate-cut revival &rarr; net negative for floating-rate BDC NII. Watch Tuesday's bond market closely.</p>
+
+<!-- OVERNIGHT WATCHLIST -->
+<h2>Overnight Watchlist &mdash; for Tomorrow Morning</h2>
+
+<ol>
+  <li><strong>Qatar talks overnight.</strong> Iran delegation still in "intense talks." A breakthrough = oil gaps down further, Tuesday equity open is massive. A breakdown = oil bounces, Polymarket compresses further.</li>
+  <li><strong>Netanyahu Lebanon escalation.</strong> "We will intensify strikes." Any significant Israeli military action in Lebanon overnight = second-front risk, complicates the bilateral Iran track.</li>
+  <li><strong>Oil Asia-session open.</strong> Does Brent hold below $97 or bounce? A bounce above $100 means the market overtraded the deal thesis. Holding below $97 = structural positioning confirmed.</li>
+  <li><strong>Saudi/Pakistan/Turkey follow-up on Abraham Accords.</strong> Any formal public response changes the scope assessment.</li>
+  <li><strong>Polymarket overnight.</strong> Watch Dec 31 &mdash; if it drops below 70%, the market is telling us something important. If it stabilizes at ~74%, the correction is done.</li>
+</ol>
+
+<!-- PUNCHLINE -->
+<div class="punchline-box">
+  <h3>Bottom Line / Portfolio Implication</h3>
+  <p><strong>Morning thesis partially held, partially corrected.</strong> The structural direction was right: deal momentum is real, oil below $100 is a regime signal. But Rubio's "deal today" proved premature, and the Polymarket compression (-10pp on Dec 31) confirms we were right to be more cautious than the market at 84%. The two new variables: Saudi silence on Abraham Accords confirms scope creep risk, and Netanyahu's maximalist nuclear demand + Lebanon escalation is the most underpriced spoiler risk. <strong>Net assessment: deal paths 60%, timeline shifted from "this week" to "first two weeks of June."</strong> Oil holding below $97 without an announcement is actually a <em>stronger</em> signal than the morning's headline-driven crash &mdash; it means the market's positioning is structural, not reactive. <strong>Tuesday is the first real test.</strong> If Brent opens below $97 in Asia tonight, the "deal dividend" regime is confirmed and Tuesday's equity open will be significant: XLE down, tech up, VIX compressed.</p>
+</div>
+
+<!-- SOURCES -->
+<div class="sources">
+  <h3 style="color: var(--text-dim); font-size: 13px; margin-bottom: 10px;">Sources</h3>
+  <ul>
+    <li><a href="https://www.cnn.com/2026/05/25/world/live-news/iran-war-us-peace-deal">CNN: Iran delegation continuing 'intense talks' in Qatar</a></li>
+    <li><a href="https://www.nbcnews.com/world/iran/iran-deal-trump-talks-war-nuclear-hormuz-rubio-rcna346781">NBC News: Iran says no deal 'imminent' despite progress</a></li>
+    <li><a href="https://thehill.com/policy/international/5893368-israel-us-iran-agreement/">The Hill: Netanyahu backs Trump on Iran MOU, says final deal must cover nukes</a></li>
+    <li><a href="https://www.jpost.com/middle-east/abraham-accords/article-897252">Jerusalem Post: Why Saudi Arabia is still resisting Trump's pressure to join Abraham Accords</a></li>
+    <li><a href="https://www.axios.com/2026/05/24/trump-iran-war-israel-muslim-countries-abraham-accords">Axios: Trump asked Muslim leaders to sign peace deal with Israel</a></li>
+    <li><a href="https://www.bloomberg.com/news/articles/2026-05-25/trump-pushes-saudis-to-recognize-israel-via-abraham-accords-as-part-of-iran-deal">Bloomberg: Trump pushes Saudis to recognize Israel via Abraham Accords</a></li>
+    <li><a href="https://www.cnbc.com/2026/05/25/trump-links-abraham-accords-to-iran-deal.html">CNBC: Trump links Abraham Accords to Iran deal</a></li>
+    <li><a href="https://tradingeconomics.com/commodity/brent-crude-oil">Trading Economics: Brent crude oil prices</a></li>
+    <li><a href="https://polymarket.com/event/us-x-iran-permanent-peace-deal-by">Polymarket: US x Iran permanent peace deal</a></li>
+    <li><a href="https://www.npr.org/2026/05/25/nx-s1-5833690/u-s-iran-negotiations-updates">NPR: U.S.-Iran negotiations updates</a></li>
+    <li><a href="https://www.cbsnews.com/live-updates/iran-us-war-trump-deal-obstacles-remain/">CBS News: Iran and U.S. agree deal taking shape, but obstacles remain</a></li>
+  </ul>
+</div>
+
+</div>
+</body>
+</html>
