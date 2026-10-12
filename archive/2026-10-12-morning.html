@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily News Brief — October 12, 2026 (Morning)</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --surface: #121820;
+    --surface2: #1a2230;
+    --border: #243044;
+    --text: #c8d3e0;
+    --text-dim: #6b7d93;
+    --heading: #e8edf3;
+    --accent: #4fc3f7;
+    --accent2: #81c784;
+    --warn: #ffb74d;
+    --danger: #ef5350;
+    --gold: #ffd54f;
+    --purple: #b39ddb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a0a0a 0%, #2a0a1a 50%, #0a1a2e 100%);
+    border-bottom: 1px solid var(--danger);
+    padding: 50px 40px 40px;
+    text-align: center;
+  }
+  .header .day-tag {
+    display: inline-block;
+    background: rgba(239,83,80,0.2);
+    border: 1px solid rgba(239,83,80,0.4);
+    color: var(--danger);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--heading);
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .header .subtitle {
+    font-size: 18px;
+    color: var(--warn);
+    font-weight: 400;
+  }
+  .header .subtitle-sub {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 10px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--heading);
+    margin: 48px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 28px 0 12px;
+  }
+  p { margin-bottom: 14px; }
+  strong { color: var(--heading); }
+  em { color: var(--accent); font-style: italic; }
+  ul, ol { margin: 0 0 14px 22px; }
+  li { margin-bottom: 6px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  table tr:last-child td { border-bottom: none; }
+  table td:first-child {
+    font-weight: 700;
+    color: var(--heading);
+  }
+  .badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+  .badge-red { background: var(--danger); color: #fff; }
+  .badge-green { background: var(--accent2); color: var(--bg); }
+  .badge-blue { background: var(--accent); color: var(--bg); }
+  .badge-yellow { background: var(--warn); color: var(--bg); }
+  .badge-purple { background: var(--purple); color: var(--bg); }
+  .tldr-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.1), rgba(255,183,77,0.05));
+    border: 2px solid var(--danger);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin: 24px 0 32px;
+  }
+  .tldr-box h3 {
+    color: var(--danger);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .delta-box {
+    background: var(--surface2);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 20px;
+    margin: 0 0 18px;
+    font-size: 13.5px;
+    color: var(--text-dim);
+  }
+  .delta-box strong { color: var(--accent); }
+  .faction-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .faction-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px 26px;
+    border-left: 4px solid var(--border);
+  }
+  .faction-card.f-irgc { border-left-color: var(--danger); }
+  .faction-card.f-hawk { border-left-color: var(--warn); }
+  .faction-card.f-civ { border-left-color: var(--accent); }
+  .faction-card h4 {
+    font-size: 16px;
+    color: var(--heading);
+    margin-bottom: 4px;
+  }
+  .faction-card .lead {
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .scenario-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+    margin: 20px 0;
+  }
+  .scenario-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 20px;
+  }
+  .scenario-card .pct {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+  .scenario-card h4 {
+    font-size: 14px;
+    color: var(--heading);
+    margin: 4px 0 10px;
+  }
+  .scenario-card p {
+    font-size: 13px;
+    color: var(--text);
+    margin: 0;
+  }
+  .scenario-card.red .pct { color: var(--danger); }
+  .scenario-card.yellow .pct { color: var(--warn); }
+  .scenario-card.green .pct { color: var(--accent2); }
+  .quote-box {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 16px 22px;
+    margin: 16px 0;
+    font-style: italic;
+    color: var(--text);
+    border-radius: 0 6px 6px 0;
+  }
+  .quote-box .src {
+    display: block;
+    margin-top: 8px;
+    font-style: normal;
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+  .honest-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--purple);
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin: 24px 0;
+  }
+  .honest-box h3 {
+    color: var(--purple);
+    margin-top: 0;
+    margin-bottom: 14px;
+  }
+  .punchline-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.08), rgba(79,195,247,0.05));
+    border: 2px solid rgba(239,83,80,0.3);
+    border-radius: 10px;
+    padding: 28px;
+    margin: 32px 0;
+    text-align: center;
+  }
+  .punchline-box h3 {
+    color: var(--danger);
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .punchline-box p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    max-width: 760px;
+    margin: 0 auto 10px;
+    color: var(--text);
+  }
+  .watchlist {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 24px;
+    margin: 20px 0;
+  }
+  .watchlist ul { margin-left: 20px; }
+  .watchlist ul li { margin-bottom: 8px; font-size: 14px; }
+  .sources { font-size: 12.5px; color: var(--text-dim); }
+  .sources a { color: var(--accent); text-decoration: none; }
+  .sources a:hover { text-decoration: underline; }
+  .footer {
+    border-top: 1px solid var(--border);
+    margin-top: 50px;
+    padding-top: 20px;
+    color: var(--text-dim);
+    font-size: 12px;
+    text-align: center;
+  }
+  .pos { color: var(--accent2); }
+  .neg { color: var(--danger); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="day-tag">Day 227 of the Iran War · Monday Morning Brief</div>
+  <h1>Daily News Brief — October 12, 2026</h1>
+  <div class="subtitle">The real story this morning isn't Iran — it's a widening chip selloff, while CRWV's bounce never came.</div>
+  <div class="subtitle-sub">Run: 08:00 PT · Columbus Day, bond markets/banks closed · Midterms T-22 days · TSMC earnings T-3 days · ARCC earnings T-15 days · OWL earnings T-17 days</div>
+</div>
+
+<div class="container">
+
+<!-- ====================== TL;DR ====================== -->
+<div class="tldr-box">
+  <h3>TL;DR — What changed since Sunday morning</h3>
+  <ul>
+    <li><strong>CRWV's test resolved negative: four sessions after Thursday's -7.77% OpenAI-revenue-gap drop, it still hasn't round-tripped</strong> — trading ~$80.91 Monday, still below pre-selloff levels. The market hasn't un-decided what it decided Thursday.</li>
+    <li><strong>A second, broader AI-financing thread opened: a Chinese state-linked DRAM maker (CXMT) is nearing capacity parity with Micron</strong>, a genuine longer-horizon threat to the memory-pricing-power story — landing the same morning Amazon raised 2026 AI capex to $220B citing higher memory costs and said capacity won't meet demand through 2027.</li>
+    <li><strong>The chip/AI-infra complex sold off hard — SOXX's worst week in a month, NVDA/AMD/MU/NBIS/TSM all down Monday</strong> — on valuation and China-competition concerns distinct from both Iran and the CRWV/OpenAI question. Three independent AI-financing threads are now running in parallel.</li>
+    <li><strong>Polymarket's Hormuz contract fell a third straight session (17%→15%)</strong> — now a confirmed, consistent trend, not a one-off, tracking the weekend's hardened rhetoric and Pakistan/Turkey's pledge to send troops to defend Saudi Arabia. Trump still hasn't moved from "weighing" to a decision on direct strikes.</li>
+    <li><strong>Blue Owl's co-CEOs went on the record, together, to directly rebut AI-bubble/credit-quality fears</strong> — "are Microsoft and Amazon going to pay their bills?" — the first direct management pushback this file has logged, landing the same morning Amazon's own capex news gave it partial support.</li>
+  </ul>
+</div>
+
+<!-- ====================== IRAN ====================== -->
+<h2>Iran / Middle East Geopolitics</h2>
+<div class="delta-box"><strong>Delta since Sunday morning:</strong> Rhetoric hardened, operations didn't. Trump issued an explicit public ultimatum; Saudi Arabia's actual response stayed within the existing pattern. The real structural fact: Pakistan and Turkey pledged troops to help defend Saudi Arabia.</div>
+
+<p>At a Syracuse, NY rally dated Oct 11 (a search summary labeled this "Friday," which cannot be right against this file's own established day-count — Oct 11 was Day 226, a Sunday — so only the date is logged as fact), Trump told supporters: <strong>"Iran will be very quick one way or the other. Either they give us everything, or they don't exist any longer."</strong> That ultimatum is explicitly deferred to "after the election" — and it sits oddly next to a same-day headline that both Trump and Iranian officials said the midterms are "not a factor" in peace talks. That's a real messaging contradiction, not a resolved signal, and it fits this file's running pattern of hedged, inconsistent US timing statements rather than a genuine hardening.</p>
+
+<p>Houthi military spokesman Yahya Saree separately reiterated that Saudi airports and airspace remain targets "until the Houthis achieve their objectives" — the campaign isn't pausing. Saudi Arabia's actual retaliation stayed within the established pattern: continued coalition air strikes on Houthi positions and communications infrastructure in Yemen, supporting Yemeni government-aligned ground forces — the same frame as last week's Sanaa strikes, not a new direct Saudi-Iran confrontation. That answers this file's standing flag (does Saudi's response escalate beyond the pattern) with: not yet.</p>
+
+<h3>The structural read</h3>
+<p>The one genuinely new fact is structural, not rhetorical: <strong>Pakistan and Turkey pledged to mobilize troops to help defend Saudi Arabia</strong> — a real internationalization step, widening the coalition with direct stakes in the outcome beyond the US-Saudi axis this file has tracked all war. That doesn't change Iran's or the Houthis' capabilities, but it raises the cost of any further Saudi-mainland attack by adding two more state actors with skin in the game. Trump's rally language is the sharpest public ultimatum this file has logged, but "weighing" still hasn't become a decision on direct US strikes — the same hedge every prior strike-timing statement this war has carried.</p>
+
+<div class="quote-box">
+  "Iran will be very quick one way or the other. Either they give us everything, or they don't exist any longer." — Trump, Syracuse, NY campaign rally, deferred to "after the election."
+  <span class="src">Sources: The Hill, inshorts.com</span>
+</div>
+
+<p><strong>Bear case:</strong> a broadening defensive coalition plus an explicit public ultimatum is exactly the combination that becomes harder to walk back even without a concrete decision yet. <strong>Bull case:</strong> three straight days of hardening rhetoric with zero operational escalation beyond the existing pattern, on a morning oil actually eased (Brent -0.74%, see Markets below), both argue the market's calm is still outperforming the headlines as a forecast.</p>
+
+<p><strong>Cross-beat:</strong> Polymarket's Hormuz contract fell a third consecutive session (17%→15%, see Polymarket below) — the cleanest hard evidence available this morning that the deterioration is real and continuing, not a single-headline spike.</p>
+
+<!-- ====================== MARKETS ====================== -->
+<h2>Markets / Macro</h2>
+<div class="delta-box"><strong>Delta since Sunday morning:</strong> First trading session since Friday. The real story isn't geopolitics — it's a widening semiconductor/AI-infra selloff getting priced hard while the weekend's much worse Iran/Saudi news gets a muted reaction.</div>
+
+<p>Equities opened mixed-to-flat: Dow +0.3%, S&P 500 +0.1%, Nasdaq Composite -0.1%, coming off a week that set fresh S&P/Nasdaq record highs — a notably muted open given the weekend's deadliest-attack-of-the-war headlines. VIX held flat (~14.84-15.30) — no fear spike. Oil diverged in a way worth flagging, not resolving: <strong>Brent eased -0.74% to $103.94, while WTI rose +2.04% to $93.72</strong> — plausibly a thin-volume Columbus Day artifact (bond markets and banks are closed for the holiday; no new 10Y print, a genuine data gap) rather than a clean directional signal. BTC ~$83,906, a modest uptick; gold ~$4,216/oz, a fresh high in the range this file has tracked.</p>
+
+<p><strong>The real action is in chips.</strong> SOXX fell ~5% last week, its worst week in a month, and chip names opened mixed-to-down again Monday: NVDA -1.72%, AMD -3.01%, MU -4.55% premarket; Nebius -3% Monday and -11% over the week despite a fresh Rosenblatt Buy rating; TSMC -2.3% ahead of Thursday's (Oct 15) earnings. Financial media is explicitly framing this as "AI chip confidence suddenly cracks" — valuation concerns, doubts about whether AI capex is "peaking faster than expected," and rising Chinese memory-chip competition. Full detail: AI and Portfolio sections, below.</p>
+
+<h3>The structural read</h3>
+<p>Monday's tape bifurcates cleanly. Geopolitics got meaningfully worse over the weekend and the market barely moved — the same complacency pattern this file has logged for over a week. But the chip/AI-infra complex is reacting, hard, to a structurally separate concern: valuation and China-competition risk, not Iran, and not even directly the OpenAI-revenue question. Worth being explicit: this file now has two independent, not-yet-converged AI-adjacent repricing threads running in parallel — the OpenAI-demand-quality thread (CRWV, still unresolved, see AI below) and this broader chip-valuation/China-competition thread — reinforcing each other narratively even though the underlying evidence for each is genuinely different.</p>
+
+<p><strong>Bear case:</strong> a market that won't react to a widening war but reacts hard to a Chinese memory-maker's roadmap slide may be mispricing risk in both directions simultaneously. <strong>Bull case:</strong> distinguishing the two threads is itself useful — if the semis selloff really is a narrower China-DRAM-capacity-and-valuation story rather than a full AI-bubble unwind, that's a more contained, more analyzable repricing than the headlines suggest.</p>
+
+<!-- ====================== AI ====================== -->
+<h2>AI Ecosystem</h2>
+<div class="delta-box"><strong>Delta since Sunday morning:</strong> CRWV's round-trip test resolved negative. A second, broader AI-financing thread opened: CXMT's capacity-parity threat to Micron, partially offset by Amazon's capex raise.</div>
+
+<p>CRWV trades ~$80.91, down modestly Monday — still below pre-selloff levels and has not recovered Thursday's -7.77% drop even four sessions later. That directly resolves the standing flag this file has carried since Thursday ("does CRWV round-trip") toward the bear case: the market has not re-rated the stock back to where it was before the OpenAI revenue-gap story broke. Still zero on-record statement from OpenAI or Microsoft specifically rebutting the $50B/$70B gap; Microsoft's FY26 10-K disclosure ($24.1B in OpenAI-related revenue, ~7% of total revenue) remains the only hard number, and it addresses the relationship's scale, not the gap itself.</p>
+
+<p><strong>New, material: CXMT</strong> — a Chinese state-linked DRAM maker — is now estimated to finish 2026 at ~350,000 wafer starts/month against Micron's ~375,000, within 25,000 WSPM of parity, and unveiled a 4F² DRAM architecture Oct 10, targeting DDR5 RDIMM production by year-end. That's a direct, longer-horizon threat to the Micron/memory-pricing-power thesis that has quietly underpinned part of the broader AI-capex story. The counterpoint, also new: Amazon raised 2026 AI capex guidance to $220B from $200B, explicitly citing higher memory costs, and said capacity won't meet demand through 2027. These aren't contradictory — one is a 2026-2027 pricing/demand story (bullish for MU now), the other is a 2027-plus competitive-capacity story (bearish for MU's moat later).</p>
+
+<h3>The structural read</h3>
+<p>This file's highest-stakes standing question — whether the AI financing/demand story is sound — just widened from one thread to three: CRWV/OpenAI demand quality (now resolved toward "still unconfirmed, market still skeptical"), CXMT/Micron capacity competition (brand new), and broad semis valuation (newly concrete via the SOXX selloff). None has resolved; all three got harder evidence today, in the same week. Anthropic's public S-1 remains missing from EDGAR, consistent with the standing November listing window; the ai-ecosystem-analyst pipeline remains dormant — nothing newer than Sept 9, now 34 days.</p>
+
+<p><strong>Bear case:</strong> three independent AI-financing-adjacent threads deteriorating or complicating simultaneously is a worse pattern than any one alone, and CRWV's failure to round-trip is the clearest direct evidence the market is re-rating something, not just reacting to a headline. <strong>Bull case:</strong> Amazon's capacity-shortfall framing and NBIS's own backlog-driven growth both still argue underlying demand is real and under-supplied — an under-supply problem (AWS) and an oversupply/competition problem (CXMT) can't both be the dominant story at once, and the hard disclosed number (AWS backlog +$132B in a quarter) currently favors the under-supply read.</p>
+
+<!-- ====================== PORTFOLIO ====================== -->
+<h2>Portfolio Tickers</h2>
+<div class="delta-box"><strong>Delta since Sunday morning:</strong> Two of three standing ticker questions got concrete answers today. 153rd consecutive zero-position session.</div>
+
+<table>
+  <tr><th>Ticker</th><th>Move</th><th>What's new</th></tr>
+  <tr><td>CRWV</td><td class="neg">~$80.91</td><td>Has not round-tripped Thursday's -7.77% drop, four sessions later. Standing flag resolves negative.</td></tr>
+  <tr><td>MU</td><td class="neg">-4.55% premarket</td><td>No surprise strike called; Oct 19/22 Taiwan dates unchanged. New, non-labor reason for weakness: CXMT's DRAM-capacity-parity story.</td></tr>
+  <tr><td>NVDA</td><td class="neg">-1.72% premarket</td><td>Part of the broad chip selloff, not company-specific news.</td></tr>
+  <tr><td>AMD</td><td class="neg">-3.01% premarket</td><td>Same — broad selloff, no company-specific catalyst found.</td></tr>
+  <tr><td>NBIS</td><td class="neg">-3% Mon / -11% week</td><td>Falling through a fresh Rosenblatt Buy rating — sentiment, not per-analyst fundamentals, driving the move. Earnings Oct 22, same day as Micron's Taichung mediation.</td></tr>
+  <tr><td>AMZN</td><td>—</td><td>Raised 2026 AI capex guidance to $220B (from $200B) citing higher memory costs; AWS backlog hit $496B (+$132B in a quarter), demand reserved through 2028; capacity won't meet demand through 2027 per Jassy. Reportedly in talks to acquire Decart AI (~$7B) after Anthropic reportedly walked away.</td></tr>
+  <tr><td>TSM</td><td>—</td><td>Earnings Thursday Oct 15 (quiet period since Oct 5) — nearest hard catalyst for the whole semis complex, landing mid-selloff.</td></tr>
+  <tr><td>XLE / OWL / ARCC / APO</td><td>—</td><td>See Markets and Private Credit sections.</td></tr>
+</table>
+
+<h3>The structural read</h3>
+<p>Monday is the first session giving this file hard, ticker-specific evidence on two of three standing open questions (CRWV: resolved negative; MU: newly concrete China-competition exposure) while the third (broad AI-capex sustainability) got sharper evidence in both directions simultaneously. Zero positions stands at <strong>153 sessions.</strong> <strong>Bear case on waiting:</strong> 153 sessions in, today is some of the clearest evidence yet that patience has been the right call — CRWV didn't bounce, and CXMT wasn't even on this file's radar a week ago. <strong>Bear case on entering:</strong> the same new information argues against any specific entry point this week regardless — TSM's Thursday print is a real, nearer-dated catalyst that favors waiting a few more days no matter which way the broader thesis resolves.</p>
+
+<!-- ====================== PRIVATE CREDIT ====================== -->
+<h2>Private Credit</h2>
+<div class="delta-box"><strong>Delta since Sunday morning:</strong> First genuinely new OWL-specific fact in several cycles — the co-CEOs went on the record, together, to directly rebut AI-bubble/credit-quality fears.</div>
+
+<p>OWL trades $9.28-9.61, last ~$9.39 — modestly up from Friday's $9.25, within its normal recent range; no new Jupiter-specific news. In a rare joint podcast appearance (Compound Interest; surfaced this cycle, dated ~Oct 8, not previously captured in this file — a different item from the Oct 8 FT insurance-expansion comment already on record), co-CEOs Marc Lipschultz and Doug Ostrover directly addressed AI-bubble concerns.</p>
+
+<div class="quote-box">
+  "All we really are determining is: are Microsoft and Amazon going to pay their bills?" — Marc Lipschultz, Blue Owl co-CEO, on AI-bubble concerns.
+  <span class="src">Source: Semafor</span>
+</div>
+
+<p>Both co-CEOs ruled out a management buyout; Ostrover said he expects "fantastic results" over the next 18 months. Cross-beat, directly relevant to Lipschultz's framing: this morning's AMZN news (see AI, Portfolio above) — Amazon just raised 2026 capex to $220B and said demand is reserved through 2028 — is a real, if partial, data point in his favor. No new facts on Project Jupiter's force-majeure negotiation or the Leon Black/DOJ referral. Standing watch unchanged: <strong>ARCC Oct 27, OWL Oct 29, OBDC early November, Nov 23 Jupiter air-quality permit decision.</strong></p>
+
+<h3>The structural read</h3>
+<p>The Lipschultz quote is the most direct, on-record management rebuttal this file has had of the standing credit-quality bear case — worth taking seriously because it reframes the question correctly (counterparty credit on AWS/Microsoft balance sheets, not speculative AI demand), but it's also exactly what a co-CEO defending a stock down ~70% from its highs would say, and it says nothing about Jupiter's force-majeure negotiation or OTIC's stuck-at-~39% redemption rate.</p>
+
+<p><strong>Bear case:</strong> a CEO's confidence is not evidence; the two actual tests (ARCC Oct 27, OWL Oct 29) are now just over two weeks away and nothing today changes what they need to show. <strong>Bull case:</strong> if the question really is as binary as Lipschultz frames it, today's AMZN capex raise and 2028-dated demand backlog is a genuine, independent data point in the bull direction, not cherry-picked.</p>
+
+<!-- ====================== POLYMARKET ====================== -->
+<h2>Polymarket Calibration</h2>
+<div class="delta-box"><strong>Delta since Sunday morning:</strong> Hormuz's decline extends to a third consecutive session — now a confirmed trend. Fed essentially unchanged.</div>
+
+<table>
+  <tr><th>Contract</th><th>Sunday</th><th>Monday AM</th><th>Delta</th></tr>
+  <tr><td>Hormuz normal by Dec 31</td><td>17%</td><td>15%</td><td>-2pts — third straight session of the same-magnitude decline (19%→17%→15%)</td></tr>
+  <tr><td>Oct FOMC: no change</td><td>84%</td><td>83%</td><td>Flat / within noise</td></tr>
+  <tr><td>Oct FOMC: +25bp</td><td>17%</td><td>17%</td><td>Flat</td></tr>
+  <tr><td>AI bubble burst, end-2026</td><td>6%</td><td>Not re-pulled</td><td>Carrying forward 6% — same contamination risk as before</td></tr>
+  <tr><td>US recession by end-2026</td><td>Not re-pulled</td><td>Not re-pulled</td><td>Carrying forward</td></tr>
+</table>
+
+<p>Three consecutive sessions, three 2-point declines, tracking three consecutive days of worsening Iran/Saudi news (the Riyadh attack, Trump's hardened rhetoric, Pakistan/Turkey's troop pledges) is the cleanest trend this file has tracked on any contract this month. The consistency is itself the signal: a market moving the same direction by a similar increment each session looks like steady updating on a worsening trend, not overreaction to any single headline — exactly the "calibrated, not lagging" read this file has been building toward since the flatline first broke Saturday.</p>
+
+<p><strong>Bear case:</strong> extrapolated, a 2-point-per-session decline gets this contract into single digits within one to two weeks if the news keeps deteriorating at this pace — worth watching whether the rate of decline itself accelerates or plateaus. <strong>Bull case:</strong> Monday's actual oil tape didn't confirm the same story — Brent eased, not rose — a genuine divergence between the futures market and the prediction market worth flagging, not yet resolving in either direction.</p>
+
+<!-- ====================== BOTTOM LINE ====================== -->
+<div class="punchline-box">
+  <h3>Bottom Line / Portfolio Implication</h3>
+  <p>Today is the clearest split-screen this file has logged all month: the war got rhetorically sharper and structurally wider (Pakistan and Turkey now have troops in the mix) and the market shrugged, while a Chinese memory-chip maker's roadmap slide and a four-session-old revenue scare that still hasn't healed took a real bite out of the entire AI-infra complex. Those are not the same risk, and conflating them would be a mistake — one is geopolitical tail risk the market has spent months learning to ignore until it can't, the other is a demand/competition question the market is pricing in real time. CRWV's failed round-trip and CXMT's capacity story are both genuinely new, negative data points on the standing AI-financing thesis; Amazon's capex raise and Blue Owl's co-CEO rebuttal are both genuinely new, partial offsets. Nothing today resolves the question of when to stop waiting — if anything, TSM's Thursday print now gives this file a concrete reason to wait at least that much longer before any entry decision. Zero positions, 153 sessions, remains the defensible position: not because nothing happened today, but because what happened cuts in enough different directions that no single read justifies moving yet.</p>
+</div>
+
+<!-- ====================== SOURCES ====================== -->
+<h2>Sources</h2>
+<div class="sources">
+  <p><strong>Iran / Geopolitics:</strong></p>
+  <ul>
+    <li><a href="https://thehill.com/homenews/administration/6124187-trump-threatens-iran-peace-deal/">The Hill — Trump: Iran must give us everything or cease to exist</a></li>
+    <li><a href="https://inshorts.com/en/news/trump-warns-iran---give-us-everything-or-cease-to-exist--1791702726029">inshorts — Trump warns Iran: give us everything or cease to exist</a></li>
+    <li><a href="https://www.foxnews.com/live-news/iran-war-news-saudi-arabia-houthis-trump-october-11">Fox News — Trump and Iran both say midterm elections not a factor in peace talks</a></li>
+    <li><a href="https://www.aljazeera.com/news/2026/10/11/yemen-fighting-expands-as-houthis-attack-saudi-airport-what-to-know">Al Jazeera — Yemen fighting expands as Houthis attack Saudi airport: what to know</a></li>
+    <li><a href="https://www.washingtonpost.com/world/2026/10/11/saudi-arabia-vows-retaliation-against-houthis-after-riyadh-airport-strike/">Washington Post — Saudi Arabia vows retaliation against Houthis after airport strike</a></li>
+  </ul>
+  <p><strong>Markets:</strong></p>
+  <ul>
+    <li><a href="https://finance.yahoo.com/markets/live/stock-market-today-monday-october-12-dow-sp-500-nasdaq-080321571.html">Yahoo Finance — Stock market today, Monday October 12</a></li>
+    <li><a href="https://www.tradingkey.com/analysis/commodities/oil/262209599-crude-oil-price-forecast-wti-hormuz-crisis-tradingkey">TradingKey — Crude oil price forecast: WTI nears $92 as Hormuz crisis offsets Russian diesel supply</a></li>
+    <li><a href="https://finance.yahoo.com/technology/ai/articles/tsmc-slides-2-3-ai-194932749.html">Yahoo Finance — TSMC slides 2.3% as AI-chip confidence suddenly cracks</a></li>
+  </ul>
+  <p><strong>AI Ecosystem / Portfolio:</strong></p>
+  <ul>
+    <li><a href="https://www.tomshardware.com/pc-components/dram/cxmt-close-to-matching-microns-memory-capacity-in-2026-research-claims-would-put-china-on-track-to-become-worlds-second-largest-dram-producer">Tom's Hardware — CXMT close to matching Micron's memory capacity in 2026</a></li>
+    <li><a href="https://www.trendforce.com/news/2026/10/12/news-cxmt-accelerates-4f%C2%B2-dram-push-eyes-year-end-server-ddr5-rdimm-launch/">TrendForce — CXMT accelerates 4F² DRAM push, eyes year-end server DDR5 RDIMM launch</a></li>
+    <li><a href="https://mlq.ai/news/amazon-raises-2026-ai-capex-to-220b-says-capacity-wont-meet-demand-through-2027/">mlq.ai — Amazon raises 2026 AI capex to $220B, says capacity won't meet demand through 2027</a></li>
+    <li><a href="https://www.marketbeat.com/instant-alerts/coreweave-inc-class-a-common-stock-nasdaqcrwv">MarketBeat — CoreWeave (CRWV) stock price</a></li>
+    <li><a href="https://www.benzinga.com/trading-ideas/movers/26/10/62300289/why-is-nebius-group-stock-falling-monday">Benzinga — Why is Nebius Group stock falling Monday?</a></li>
+  </ul>
+  <p><strong>Private Credit:</strong></p>
+  <ul>
+    <li><a href="https://www.semafor.com/article/10/08/2026/blue-owl-ceos-rebuff-credit-fears">Semafor — Exclusive: Blue Owl CEOs rebuff credit fears</a></li>
+  </ul>
+  <p><strong>Polymarket:</strong></p>
+  <ul>
+    <li><a href="https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-december-31">Polymarket — Strait of Hormuz traffic returns to normal by Dec 31</a></li>
+    <li><a href="https://polymarket.com/event/fed-decision-in-october-20260617190323537">Polymarket — Fed decision in October</a></li>
+  </ul>
+</div>
+
+<div class="footer">
+  Daily News Brief · October 12, 2026 · Monday Morning Run · Day 227 of the Iran war<br>
+  <em>Andres's daily analyst. Structural reads, not headline regurgitation. Deltas since 2026-10-11 morning (~08:00 PT).</em>
+</div>
+
+</div>
+
+</body>
+</html>
