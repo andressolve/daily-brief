@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily News Brief — October 12, 2026 (Evening)</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --surface: #121820;
+    --surface2: #1a2230;
+    --border: #243044;
+    --text: #c8d3e0;
+    --text-dim: #6b7d93;
+    --heading: #e8edf3;
+    --accent: #4fc3f7;
+    --accent2: #81c784;
+    --warn: #ffb74d;
+    --danger: #ef5350;
+    --gold: #ffd54f;
+    --purple: #b39ddb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a0a0a 0%, #2a0a1a 50%, #0a1a2e 100%);
+    border-bottom: 1px solid var(--danger);
+    padding: 50px 40px 40px;
+    text-align: center;
+  }
+  .header .day-tag {
+    display: inline-block;
+    background: rgba(239,83,80,0.2);
+    border: 1px solid rgba(239,83,80,0.4);
+    color: var(--danger);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--heading);
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .header .subtitle {
+    font-size: 18px;
+    color: var(--warn);
+    font-weight: 400;
+  }
+  .header .subtitle-sub {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 10px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--heading);
+    margin: 48px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 28px 0 12px;
+  }
+  p { margin-bottom: 14px; }
+  strong { color: var(--heading); }
+  em { color: var(--accent); font-style: italic; }
+  ul, ol { margin: 0 0 14px 22px; }
+  li { margin-bottom: 6px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  table tr:last-child td { border-bottom: none; }
+  table td:first-child {
+    font-weight: 700;
+    color: var(--heading);
+  }
+  .badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+  .badge-red { background: var(--danger); color: #fff; }
+  .badge-green { background: var(--accent2); color: var(--bg); }
+  .badge-blue { background: var(--accent); color: var(--bg); }
+  .badge-yellow { background: var(--warn); color: var(--bg); }
+  .badge-purple { background: var(--purple); color: var(--bg); }
+  .tldr-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.1), rgba(255,183,77,0.05));
+    border: 2px solid var(--danger);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin: 24px 0 32px;
+  }
+  .tldr-box h3 {
+    color: var(--danger);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .delta-box {
+    background: var(--surface2);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 20px;
+    margin: 0 0 18px;
+    font-size: 13.5px;
+    color: var(--text-dim);
+  }
+  .delta-box strong { color: var(--accent); }
+  .faction-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .faction-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px 26px;
+    border-left: 4px solid var(--border);
+  }
+  .faction-card.f-irgc { border-left-color: var(--danger); }
+  .faction-card.f-hawk { border-left-color: var(--warn); }
+  .faction-card.f-civ { border-left-color: var(--accent); }
+  .faction-card h4 {
+    font-size: 16px;
+    color: var(--heading);
+    margin-bottom: 4px;
+  }
+  .faction-card .lead {
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .scenario-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+    margin: 20px 0;
+  }
+  .scenario-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 20px;
+  }
+  .scenario-card .pct {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+  .scenario-card h4 {
+    font-size: 14px;
+    color: var(--heading);
+    margin: 4px 0 10px;
+  }
+  .scenario-card p {
+    font-size: 13px;
+    color: var(--text);
+    margin: 0;
+  }
+  .scenario-card.red .pct { color: var(--danger); }
+  .scenario-card.yellow .pct { color: var(--warn); }
+  .scenario-card.green .pct { color: var(--accent2); }
+  .quote-box {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 16px 22px;
+    margin: 16px 0;
+    font-style: italic;
+    color: var(--text);
+    border-radius: 0 6px 6px 0;
+  }
+  .quote-box .src {
+    display: block;
+    margin-top: 8px;
+    font-style: normal;
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+  .honest-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--purple);
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin: 24px 0;
+  }
+  .honest-box h3 {
+    color: var(--purple);
+    margin-top: 0;
+    margin-bottom: 14px;
+  }
+  .punchline-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.08), rgba(79,195,247,0.05));
+    border: 2px solid rgba(239,83,80,0.3);
+    border-radius: 10px;
+    padding: 28px;
+    margin: 32px 0;
+    text-align: center;
+  }
+  .punchline-box h3 {
+    color: var(--danger);
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .punchline-box p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    max-width: 760px;
+    margin: 0 auto 10px;
+    color: var(--text);
+  }
+  .watchlist {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 24px;
+    margin: 20px 0;
+  }
+  .watchlist ul { margin-left: 20px; }
+  .watchlist ul li { margin-bottom: 8px; font-size: 14px; }
+  .sources { font-size: 12.5px; color: var(--text-dim); }
+  .sources a { color: var(--accent); text-decoration: none; }
+  .sources a:hover { text-decoration: underline; }
+  .footer {
+    border-top: 1px solid var(--border);
+    margin-top: 50px;
+    padding-top: 20px;
+    color: var(--text-dim);
+    font-size: 12px;
+    text-align: center;
+  }
+  .pos { color: var(--accent2); }
+  .neg { color: var(--danger); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="day-tag">Day 227 of the Iran War · Monday Evening Wrap</div>
+  <h1>Daily News Brief — October 12, 2026</h1>
+  <div class="subtitle">The morning read held: semis led the close down, the Brent/WTI split survived the full session, and Hormuz's three-session Polymarket decline paused.</div>
+  <div class="subtitle-sub">Run: 17:20 PT · Close of session · Anthropic investor day T-2 days · TSMC earnings T-3 days · ARCC earnings T-15 days · OWL earnings T-17 days</div>
+</div>
+
+<div class="container">
+
+<!-- ====================== TL;DR ====================== -->
+<div class="tldr-box">
+  <h3>TL;DR — What changed between morning and close</h3>
+  <ul>
+    <li><strong>Close confirms the morning's bifurcation, doesn't reverse it:</strong> S&P 500 7,807.24 (-0.06%), Dow 51,850.55 (+0.38%), Nasdaq 27,245.90 (-0.44%) — indexes roughly flat while semis led the Nasdaq down on memory-chip weakness.</li>
+    <li><strong>CXMT's threat to Micron just went from analyst estimate to company statement</strong> — CXMT's own president confirmed a year-end server-DRAM shipment target at a Shanghai event. MU closed down ~4% specifically on this, alongside SK Hynix and the Roundhill Memory ETF — a clean, company-attributable move, not generic chip-selloff noise.</li>
+    <li><strong>The Brent/WTI split held through the full regular session</strong> (Brent $103.94 -0.74%, WTI $92.92 +1.94%) — this morning's "thin-volume Columbus Day artifact" hedge should be retired; equities and oil traded a normal session, only bonds/banks were closed.</li>
+    <li><strong>Hormuz's Polymarket decline paused: flat at 15%</strong> on a same-day re-fetch, despite the day's actual news being worse, not better (Riyadh airport closure extended through Oct 17, a repeat Houthi strike on the same target). The three-session 2pt/session trend needed a genuinely new event to keep moving — an extension of existing bad news wasn't enough.</li>
+    <li><strong>CRWV closed ~$80.3, down ~2.2%</strong> — five sessions now without round-tripping Thursday's drop. Separately, Iran's own foreign ministry publicly pushed Saudi Arabia toward diplomacy with the Houthis on the same day its proxy struck the same airport again — the clearest instance yet of the Tehran/Houthi factional split this file tracks.</li>
+  </ul>
+</div>
+
+<!-- ====================== MORNING -> EVENING ====================== -->
+<h2>Morning → Evening: What Moved</h2>
+<div class="delta-box"><strong>Every flag from this morning's brief got a direct answer by the close — all four confirmed the morning's framing rather than overturning it.</strong></div>
+
+<table>
+  <tr><th>Flag from this morning</th><th>Resolution by close</th></tr>
+  <tr><td>Does the semis selloff extend into a second session?</td><td class="neg">Yes — PHLX Semiconductor Index fell ~2.3% intraday, extending the losing streak to ~7% off highs. MU closed ~-4%, specifically on CXMT's company-confirmed timeline.</td></tr>
+  <tr><td>Does Trump's rally ultimatum harden into a decision on strikes?</td><td>No — still "weighing," not deciding. No walk-back either; simply unchanged.</td></tr>
+  <tr><td>Does Hormuz's ~2pt/session Polymarket decline continue, or plateau?</td><td>Plateaued — flat at 15% despite worse on-the-ground news (extended airport closure, repeat strike).</td></tr>
+  <tr><td>Brent/WTI divergence — thin-volume artifact or real split?</td><td class="neg">Held through the full regular session — now a real, unexplained divergence, not a holiday footnote.</td></tr>
+</table>
+
+<!-- ====================== IRAN ====================== -->
+<h2>Iran / Middle East Geopolitics</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> The airport closure got worse, not better — extended through Oct 17 — while Iran's own foreign ministry is publicly pushing Saudi Arabia toward diplomacy with the Houthis. Trump's posture is unchanged.</div>
+
+<p>Saudi aviation authorities extended King Khalid International Airport's shutdown through Oct 17 — longer than the "through Sunday evening" window logged earlier this week, a real deterioration, not a holding pattern. Houthis claimed fresh ballistic-missile launches at Saudi targets including the same airport again Monday; Saudi air defenses intercepted them, with no new casualties confirmed. Travel advisories widened further, with Australia and New Zealand joining the US/UK/Canada/France/Germany/Japan advisories against Riyadh airport travel.</p>
+
+<h3>The structural read: Tehran and its proxy aren't moving together</h3>
+<p>The notable new thread tonight: Iranian FM Abbas Araghchi called his Saudi counterpart, Prince Faisal bin Farhan, and explicitly urged a diplomatic solution — warning that "insisting on a military approach... would only further complicate the situation" — and offered to help facilitate Houthi-Saudi dialogue. That's <strong>Iran's government positioning itself as mediator on the same day its own proxy executed another strike on the same target.</strong> This file isn't resolving whether that's a genuine crack in Tehran-Houthi command-and-control, or cost-free diplomatic cover for a campaign Iran isn't actually restraining — either reading leaves the Houthi campaign itself, the only variable that matters for Hormuz/oil risk, unconstrained.</p>
+
+<div class="quote-box">
+  "Insisting on a military approach... would only further complicate the situation." — Iranian FM Abbas Araghchi, in a call with Saudi FM Prince Faisal bin Farhan, urging diplomacy — the same day Houthis struck Riyadh's airport again.
+  <span class="src">Source: Al Jazeera</span>
+</div>
+
+<p>Trump: no new statement found today — still at "weighing," not deciding, on direct US strikes, no change from Sunday/Monday morning.</p>
+
+<p><strong>Bear case:</strong> an extended airport closure plus continued strikes plus zero movement off "weighing" describes a war still grinding worse with no resolution mechanism engaged. <strong>Bull case:</strong> Iran actively offering to mediate is a real, if soft, de-escalatory signal that didn't exist a week ago, and the Polymarket pause (below) suggests the market isn't chasing every incremental headline reflexively.</p>
+
+<!-- ====================== MARKETS ====================== -->
+<h2>Markets / Macro</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> The close confirms the morning's bifurcation rather than reversing it — semis led the tape down all day, the Brent/WTI split held through the full session, and the indexes stayed basically flat despite worse geopolitical news.</div>
+
+<p><strong>Close:</strong> S&P 500 7,807.24 (-0.06%), Dow 51,850.55 (+195.6pts / +0.38%), Nasdaq Composite 27,245.90 (-0.44%) — the Dow's gain reflects rotation into non-tech sectors, while the Nasdaq's loss is specifically memory-chip weakness, matching the morning's bifurcation exactly through the close.</p>
+
+<p><strong>Oil:</strong> Brent $103.94 (-0.74%), WTI $92.92 (+1.94%) — the same split flagged this morning held all day on regular-hours trading (equities and oil trade on Columbus Day; only bonds and banks were closed). That weakens this morning's "thin-volume holiday artifact" hedge — this is now a real, if still unexplained, Brent/WTI divergence, not a data-quality footnote.</p>
+
+<p><strong>Semis:</strong> the PHLX Semiconductor Index fell ~2.3% intraday, extending the losing streak to roughly 7% off highs; Micron fell specifically on CXMT's own president confirming a year-end server-DRAM target at a Shanghai event — company-sourced now, not a third-party estimate (full detail in AI section below). VIX: no material change found from the morning's flat 14.84-15.30 read. BTC ~$83,390-83,670, essentially flat on the day. Gold ~$4,163-4,221/oz, consistent with this morning's fresh-range-high read — no further move found.</p>
+
+<h3>The structural read</h3>
+<p>The headline split survived the full session: a market that shrugged off a worse Iran/Saudi weekend closed basically flat on the big indexes, while the semis-specific selloff deepened on a company-confirmed, not analyst-estimated, competitive threat. That's a stronger version of this morning's "narrative-driven, not ground-truth-driven" read, not a new one.</p>
+
+<p><strong>Bear case:</strong> the Brent/WTI split holding through a full regular session is now a real divergence this file doesn't have an explanation for yet — not resolving it risks missing whichever side is the actual signal. <strong>Bull case:</strong> VIX staying flat through a day with both worse geopolitical news and a fresh China-competition shock is itself informative — realized volatility isn't picking up either thread yet.</p>
+
+<!-- ====================== AI ====================== -->
+<h2>AI Ecosystem</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> CXMT's threat to Micron went from analyst estimate to company statement. Anthropic's IPO timeline picked up a concrete near-dated marker.</div>
+
+<p>CXMT president Cao Kanyu said at a Shanghai industrial event Monday that the company plans to ship a new server-memory product by end-2026 — this is <strong>CXMT's own leadership confirming</strong> the year-end DDR5/server-DRAM target this file logged this morning as a third-party (TrendForce) estimate, a meaningfully harder data point. Micron fell specifically on this news Monday — SK Hynix and the Roundhill Memory ETF (DRAM) also fell ~4% on the same news, a company-attributable move distinct from the broader SOXX/valuation selloff.</p>
+
+<p>Separately: Anthropic's investor day is now set for Oct 14 — two days out — with the roadshow still targeted to open around Nov 9 and the public S-1 still not on EDGAR (134 days since the confidential June 1 submission). The November listing window is unchanged, but now has its next concrete checkpoint dated. The ai-ecosystem-analyst pipeline remains dormant; no new output found.</p>
+
+<h3>The structural read</h3>
+<p>The CXMT story hardening from "estimate" to "company confirmation" in one session is exactly the kind of incremental-but-real update this file should flag rather than let ride as unchanged — it doesn't change the multi-year framing, but it does mean Friday's architecture unveiling wasn't a one-off PR moment; there's a company-stated delivery date behind it now.</p>
+
+<p><strong>Bear case:</strong> a competitor confirming its own timeline, on the record, is more credible than an outside estimate of the same thing. <strong>Bull case:</strong> "plans to ship by end-2026" is still a claim, not a shipped product, and Amazon's capacity-shortfall framing (logged this morning) is a harder, already-realized data point on the other side of this same trade.</p>
+
+<!-- ====================== PORTFOLIO ====================== -->
+<h2>Portfolio Tickers</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> CRWV and MU both closed with the morning's reads confirmed, not reversed. 153rd consecutive zero-position session holds through the close.</div>
+
+<table>
+  <tr><th>Ticker</th><th>Close</th><th>What's new</th></tr>
+  <tr><td>CRWV</td><td class="neg">~$80.3 (range $79.03-$81.91), -2.2%</td><td>Five sessions now without round-tripping Thursday's -7.77% drop. Non-bounce thesis is a resolved fact, not an open question.</td></tr>
+  <tr><td>MU</td><td class="neg">~-4%</td><td>Specifically on CXMT's company-confirmed (not estimated) year-end server-DRAM target. SK Hynix and the Roundhill Memory ETF fell the same amount on the identical news — clean attribution.</td></tr>
+  <tr><td>NVDA / AMD</td><td>No confirmed close distinct from premarket</td><td>Data gap, flagged rather than papered over — PHLX Semiconductor Index's ~2.3% intraday move is the best available proxy for the group's direction.</td></tr>
+  <tr><td>TSM</td><td>—</td><td>No new news since this morning. Thursday Oct 15 earnings stands as the nearest hard catalyst for the whole complex.</td></tr>
+  <tr><td>AMZN / OWL / ARCC</td><td>—</td><td>See AI and Private Credit sections.</td></tr>
+</table>
+
+<h3>The structural read</h3>
+<p>Tonight doesn't change either standing thesis, it hardens both — CRWV's non-bounce is now a five-session pattern, and MU's CXMT-driven decline now rests on the competitor's own statement rather than a third-party estimate. <strong>Bear case:</strong> patience (153 sessions) keeps being rewarded by not catching a falling CRWV, but that's survivorship, not proof the eventual entry point is close. <strong>Bull case:</strong> nothing today created urgency to act before Thursday's TSM print, which remains the cleanest near-dated catalyst for the whole complex.</p>
+
+<!-- ====================== PRIVATE CREDIT ====================== -->
+<h2>Private Credit</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> TD Cowen raised its OWL price target — the first analyst reaction to this morning's co-CEO rebuttal.</div>
+
+<p>TD Cowen analyst Bill Katz maintained a Buy rating on OWL and raised the price target to $16 from $15 — directionally consistent with, though not directly tied to, Lipschultz/Ostrover's "are Microsoft and Amazon going to pay their bills" framing logged this morning. No new facts on Project Jupiter's force-majeure negotiation, the Leon Black/DOJ referral, or OTIC's redemption rate. Standing watch unchanged: <strong>ARCC Oct 27, OWL Oct 29, OBDC early November, Nov 23 Jupiter air-quality permit decision.</strong></p>
+
+<h3>The structural read</h3>
+<p>A single price-target raise is weak evidence on its own, but it's the first external validation, however modest, to land the same day as management's own defense. The actual tests (ARCC Oct 27, OWL Oct 29) are unchanged and still over two weeks out.</p>
+
+<!-- ====================== POLYMARKET ====================== -->
+<h2>Polymarket Calibration</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> The three-session Hormuz decline paused — flat at 15% despite worse on-the-ground news, directly answering this morning's own flag.</div>
+
+<table>
+  <tr><th>Contract</th><th>This morning</th><th>Close</th><th>Delta</th></tr>
+  <tr><td>Hormuz normal by Dec 31</td><td>15%</td><td>15%</td><td>Flat — the 19%→17%→15% decline paused for a session</td></tr>
+  <tr><td>US-Iran ceasefire through Oct 15</td><td>—</td><td>96%</td><td>Re-confirmed clean</td></tr>
+  <tr><td>US-Iran ceasefire through Oct 31</td><td>—</td><td>81%</td><td>Re-confirmed clean</td></tr>
+  <tr><td>US invasion of Iran before 2027</td><td>—</td><td>18%</td><td>Re-confirmed clean, $74M volume</td></tr>
+  <tr><td>Oct FOMC / AI-bubble burst</td><td>83/17 · 6%</td><td>Not re-pulled</td><td>Carrying forward — evening run is lighter per house rules</td></tr>
+</table>
+
+<p>A contract that moved 2pts/session for three straight sessions just sat still on a day that brought an extended airport closure and a repeat strike on the same target — the cleanest test yet of whether this was a real trend or noise, and the answer is: it needs genuinely new information, not an extension of what's already priced.</p>
+
+<p><strong>Bear case:</strong> a market that doesn't reprice on "the same bad thing happening again, worse" could also just be under-reacting to duration/attrition risk, which doesn't show up as a single headline. <strong>Bull case:</strong> the plateau is consistent with good calibration — the contract already priced in continued deterioration, so a same-direction, same-magnitude headline doesn't move it further.</p>
+
+<!-- ====================== BOTTOM LINE ====================== -->
+<div class="punchline-box">
+  <h3>Bottom Line / Portfolio Implication</h3>
+  <p>The close didn't overturn a single thing this morning's brief flagged — it hardened all of it. CXMT's threat to Micron is now a company statement, not an analyst's model; the Brent/WTI split survived a full normal-volume session and needs an explanation this file doesn't have yet; and Hormuz's Polymarket contract proved it needs genuinely new information, not a repeat of existing bad news, to keep moving. The one soft, non-obvious thread worth carrying into tomorrow is Iran's own foreign ministry publicly pushing Saudi Arabia toward diplomacy while its proxy keeps striking the same target — a real crack in message discipline, whether or not it's a crack in control. Nothing tonight creates urgency to act before Thursday's TSM print. Zero positions, 153 sessions, remains the defensible position.</p>
+</div>
+
+<!-- ====================== SOURCES ====================== -->
+<h2>Sources</h2>
+<div class="sources">
+  <p><strong>Iran / Geopolitics:</strong></p>
+  <ul>
+    <li><a href="https://www.cbsnews.com/live-updates/iran-war-us-trump-saudi-arabia-houthi/">CBS News — Iran War Updates: Deadly Houthi attacks keep Saudi airport closed</a></li>
+    <li><a href="https://www.aljazeera.com/news/liveblog/2026/10/12/iran-war-live-riyadh-airport-hit-again-tehran-says-us-reply-inadequate">Al Jazeera — Iran war live: Riyadh airport hit again</a></li>
+    <li><a href="https://www.aljazeera.com/news/2026/10/12/irans-fm-urges-diplomacy-in-call-with-saudi-counterpart">Al Jazeera — Iran's FM urges diplomacy in call with Saudi counterpart</a></li>
+    <li><a href="https://www.foxnews.com/live-news/iran-war-news-us-trump-houthis-saudi-arabia-october-12">Fox News — Trump denounces Houthi attacks after Saudi crown prince call</a></li>
+  </ul>
+  <p><strong>Markets:</strong></p>
+  <ul>
+    <li><a href="https://finance.yahoo.com/markets/stocks/articles/stock-market-today-oct-12-212311190.html">Yahoo Finance — Stock Market Today, Oct. 12: Dow Gains as Memory Stocks Weigh on Nasdaq</a></li>
+    <li><a href="https://www.cnbc.com/2026/10/11/stock-market-today-live-updates.html">CNBC — S&P 500 closes near flat, pressured by higher oil prices and memory chip stock losses</a></li>
+  </ul>
+  <p><strong>AI Ecosystem / Portfolio:</strong></p>
+  <ul>
+    <li><a href="https://finance.yahoo.com/markets/stocks/articles/micron-stock-drops-china-cxmt-173326080.html">Yahoo Finance — Micron stock drops on China CXMT denser memory chip news</a></li>
+    <li><a href="https://www.fool.com/investing/2026/10/12/why-micron-stock-dropped-on-monday/">The Motley Fool — Why Micron Stock Dropped on Monday</a></li>
+    <li><a href="https://www.marketbeat.com/instant-alerts/price-coreweave-nasdaq-crwv-shares-down-22-whats-next-2026-10-12/">MarketBeat — CoreWeave (CRWV) shares down 2.2%</a></li>
+    <li><a href="https://financefeeds.com/anthropics-14-october-investor-day-nears-but-its-s-1-still-isnt-public-the-ipo-timeline-explained/">FinanceFeeds — Anthropic's Oct 14 investor day nears, S-1 still not public</a></li>
+  </ul>
+  <p><strong>Private Credit:</strong></p>
+  <ul>
+    <li><a href="https://gurufocus.com/news/9119617/owl-maintained-by-blue-owl-capital-price-target-raised-to-1600">GuruFocus — OWL maintained by Blue Owl Capital, price target raised to $16.00</a></li>
+  </ul>
+  <p><strong>Polymarket:</strong></p>
+  <ul>
+    <li><a href="https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-december-31">Polymarket — Strait of Hormuz traffic returns to normal by Dec 31</a></li>
+    <li><a href="https://polymarket.com/iran">Polymarket — Iran prediction markets</a></li>
+  </ul>
+</div>
+
+<div class="footer">
+  Daily News Brief · October 12, 2026 · Monday Evening Wrap · Day 227 of the Iran war<br>
+  <em>Andres's daily analyst. Structural reads, not headline regurgitation. Deltas since 2026-10-12 morning (~08:00 PT).</em>
+</div>
+
+</div>
+
+</body>
+</html>
