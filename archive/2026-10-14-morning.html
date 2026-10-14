@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily News Brief — October 14, 2026 (Morning)</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --surface: #121820;
+    --surface2: #1a2230;
+    --border: #243044;
+    --text: #c8d3e0;
+    --text-dim: #6b7d93;
+    --heading: #e8edf3;
+    --accent: #4fc3f7;
+    --accent2: #81c784;
+    --warn: #ffb74d;
+    --danger: #ef5350;
+    --gold: #ffd54f;
+    --purple: #b39ddb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a0a0a 0%, #2a0a1a 50%, #0a1a2e 100%);
+    border-bottom: 1px solid var(--danger);
+    padding: 50px 40px 40px;
+    text-align: center;
+  }
+  .header .day-tag {
+    display: inline-block;
+    background: rgba(239,83,80,0.2);
+    border: 1px solid rgba(239,83,80,0.4);
+    color: var(--danger);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--heading);
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .header .subtitle {
+    font-size: 18px;
+    color: var(--warn);
+    font-weight: 400;
+  }
+  .header .subtitle-sub {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 10px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--heading);
+    margin: 48px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 28px 0 12px;
+  }
+  p { margin-bottom: 14px; }
+  strong { color: var(--heading); }
+  em { color: var(--accent); font-style: italic; }
+  ul, ol { margin: 0 0 14px 22px; }
+  li { margin-bottom: 6px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  table tr:last-child td { border-bottom: none; }
+  table td:first-child {
+    font-weight: 700;
+    color: var(--heading);
+  }
+  .badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+  .badge-red { background: var(--danger); color: #fff; }
+  .badge-green { background: var(--accent2); color: var(--bg); }
+  .badge-blue { background: var(--accent); color: var(--bg); }
+  .badge-yellow { background: var(--warn); color: var(--bg); }
+  .badge-purple { background: var(--purple); color: var(--bg); }
+  .tldr-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.1), rgba(255,183,77,0.05));
+    border: 2px solid var(--danger);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin: 24px 0 32px;
+  }
+  .tldr-box h3 {
+    color: var(--danger);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .delta-box {
+    background: var(--surface2);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 20px;
+    margin: 0 0 18px;
+    font-size: 13.5px;
+    color: var(--text-dim);
+  }
+  .delta-box strong { color: var(--accent); }
+  .faction-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .faction-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px 26px;
+    border-left: 4px solid var(--border);
+  }
+  .faction-card.f-irgc { border-left-color: var(--danger); }
+  .faction-card.f-hawk { border-left-color: var(--warn); }
+  .faction-card.f-civ { border-left-color: var(--accent); }
+  .faction-card h4 {
+    font-size: 16px;
+    color: var(--heading);
+    margin-bottom: 4px;
+  }
+  .faction-card .lead {
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .scenario-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+    margin: 20px 0;
+  }
+  .scenario-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 20px;
+  }
+  .scenario-card .pct {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+  .scenario-card h4 {
+    font-size: 14px;
+    color: var(--heading);
+    margin: 4px 0 10px;
+  }
+  .scenario-card p {
+    font-size: 13px;
+    color: var(--text);
+    margin: 0;
+  }
+  .scenario-card.red .pct { color: var(--danger); }
+  .scenario-card.yellow .pct { color: var(--warn); }
+  .scenario-card.green .pct { color: var(--accent2); }
+  .quote-box {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 16px 22px;
+    margin: 16px 0;
+    font-style: italic;
+    color: var(--text);
+    border-radius: 0 6px 6px 0;
+  }
+  .quote-box .src {
+    display: block;
+    margin-top: 8px;
+    font-style: normal;
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+  .honest-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--purple);
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin: 24px 0;
+  }
+  .honest-box h3 {
+    color: var(--purple);
+    margin-top: 0;
+    margin-bottom: 14px;
+  }
+  .punchline-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.08), rgba(79,195,247,0.05));
+    border: 2px solid rgba(239,83,80,0.3);
+    border-radius: 10px;
+    padding: 28px;
+    margin: 32px 0;
+    text-align: center;
+  }
+  .punchline-box h3 {
+    color: var(--danger);
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .punchline-box p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    max-width: 760px;
+    margin: 0 auto 10px;
+    color: var(--text);
+  }
+  .watchlist {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 24px;
+    margin: 20px 0;
+  }
+  .watchlist ul { margin-left: 20px; }
+  .watchlist ul li { margin-bottom: 8px; font-size: 14px; }
+  .sources { font-size: 12.5px; color: var(--text-dim); }
+  .sources a { color: var(--accent); text-decoration: none; }
+  .sources a:hover { text-decoration: underline; }
+  .footer {
+    border-top: 1px solid var(--border);
+    margin-top: 50px;
+    padding-top: 20px;
+    color: var(--text-dim);
+    font-size: 12px;
+    text-align: center;
+  }
+  .pos { color: var(--accent2); }
+  .neg { color: var(--danger); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="day-tag">Day 229 of the Iran War · Wednesday Morning Brief</div>
+  <h1>Daily News Brief — October 14, 2026</h1>
+  <div class="subtitle">Hot CPI flips the Fed from a lock to a coin-flip, CoreWeave's own bonds spike to 15% and it raises $3B+ overnight, and Iran's own officials admit Hormuz is a midterm-timed pressure campaign.</div>
+  <div class="subtitle-sub">Run: 08:00 PT · Premarket · TSMC earnings tomorrow (Oct 15) · ARCC earnings T-13 days · OWL earnings T-15 days · Nov 3 US midterms — the date Iran's officials just named as their target</div>
+</div>
+
+<div class="container">
+
+<!-- ====================== TL;DR ====================== -->
+<div class="tldr-box">
+  <h3>TL;DR — What changed overnight and why it matters</h3>
+  <ul>
+    <li><strong>CPI broke the Fed's "no-change" lock:</strong> September CPI ran hot (headline 3.7% YoY, core 2.6% YoY), and Polymarket's October FOMC contract swung from 81%/19% (hold/hike) to roughly 61%/40% overnight — the sharpest single-session move this file has tracked.</li>
+    <li><strong>AI-infra financing stress jumped categories — from demand to cost of capital:</strong> CoreWeave's own unsecured 2032 bonds spiked to ~15% yield intraday; CRWV responded same-day with a 35M-share ATM plus a $3.0B convertible note, stock down ~12.6%. This is the credit market pricing AI-infra leverage risk directly, not just equity sentiment.</li>
+    <li><strong>Iran's own officials named the strategy out loud:</strong> two senior officials told Reuters Tehran is deliberately widening the Hormuz campaign to keep oil prices high and pressure Trump before the Nov 3 midterms. A Singapore-flagged container ship sank in the strait the same day — the war's second vessel lost outright.</li>
+    <li><strong>Anthropic's investor day delivered a valuation headline, not numbers:</strong> ~$2T IPO target floated, but Q3 financials and Claude Code revenue stayed in the room — no public disclosure, no S-1 on EDGAR. Oct 23 is the real next checkpoint.</li>
+    <li><strong>NBIS fell another 6-9.5%</strong> now reading as CoreWeave-contagion rather than its own still-unrebutted IREN/Anthropic deal-loss story; Burry reportedly doubled down on leveraged NBIS/MU puts.</li>
+  </ul>
+</div>
+
+<!-- ====================== IRAN ====================== -->
+<h2>Iran / Middle East Geopolitics</h2>
+<div class="delta-box"><strong>Delta since last night:</strong> two senior Iranian officials told Reuters, for the first time, that the Hormuz campaign is deliberate electoral-timing strategy — not escalation-by-accident — and a container ship sank in the strait today.</div>
+
+<p>Reuters reported that Tehran has changed "the type and pace" of its attacks and plans to widen them beyond the Strait of Hormuz into the Gulf of Oman, with the explicit stated goal of sustaining high oil prices and frustrating US efforts to bring them down before the Nov 3 midterm vote — one official warned of "complete closure soon." The numbers back the rhetoric: UKMTO logged 15 attacks on shipping Oct 6–14 (11 in just the last four days), commercial AIS-visible transit is running at roughly 10% of normal, and the US Navy-led Joint Maritime Information Center has the threat level at "severe," second-highest on its scale.</p>
+
+<div class="quote-box">
+  Tehran is deliberately widening the Hormuz shipping campaign to keep oil prices high and hurt Trump ahead of the midterms — the first time this file has seen the electoral-timing motive stated as strategy rather than inferred.
+  <span class="src">Source: Reuters, via Yahoo News / Iran International</span>
+</div>
+
+<p>The Singapore-flagged container ship <strong>GFS Pride sank</strong> in the strait Oct 14 after being hit by an unidentified projectile — the second vessel lost outright since the war began. Iran's IRGC is deflecting, claiming the ship struck a mine rather than acknowledging a strike — a familiar pattern of reframing attacks as accidents. Diplomatically, the track went cold: SNSC secretary Rezaei called the US's Hormuz-reopening response "insufficient" and said Iran is "no longer in the process of responding," while IRGC's Javani layered on deterrence rhetoric about a "forceful response" to any miscalculation. Trump made no new statement beyond Tuesday's unspecific "will soon decide" — no walk-back, no action.</p>
+
+<h3>The structural read: Tehran just handed over the model for free</h3>
+<p>This reframes every open question in this file at once: Trump's unchanged "will soon decide" line isn't indecision, it's exactly the outcome Tehran's stated strategy is betting on — the longer Washington delays, the longer the pressure campaign runs uncontested through the vote. It also gives the unexplained Brent/WTI divergence flagged in <em>markets.md</em> Tuesday a structural rather than noise-level explanation, and it cuts directly against Polymarket's Hormuz contract, which did not move on this story (see Polymarket section below) — a genuine divergence between a hard admission and the market's price, worth watching for whether the contract catches up with a lag.</p>
+
+<p><strong>Bear case:</strong> a political actor with an explicit incentive to prove the pain is real has no reason to de-escalate before the vote — intensity should be expected to hold or build through Nov 3, not fade. <strong>Bull case:</strong> if the motive really is midterm-timed, tempo should fall off a cliff right after Nov 3 — a clean, falsifiable tell this file can test in three weeks, and a reason not to extrapolate indefinite escalation from a dated political motive.</p>
+
+<!-- ====================== MARKETS ====================== -->
+<h2>Markets / Macro</h2>
+<div class="delta-box"><strong>Delta since last night:</strong> the two-catalyst day delivered a regime correction, not a data point — hot CPI flipped the Fed debate from "will it hold" to "will it hike again," while two of Tuesday's unresolved threads (Brent/WTI, the chip rout) both resolved, one worse than hoped.</div>
+
+<p><strong>September CPI</strong> accelerated for a second straight month — headline 3.7% YoY, core 2.6% YoY, both hotter than consensus — and that flipped October FOMC odds from ~81% no-change to roughly a coin-flip overnight (Polymarket), with year-end hike odds above 96%. This is a structural correction worth stating plainly: the Fed already hiked in September (12-0), so any residual "rate-cut cycle" framing is stale — reality has moved to a second-hike debate.</p>
+
+<p>Equities absorbed the repricing without panic — S&P -0.74%, Dow -0.12%, Nasdaq -0.93%, underperformance concentrated in rate-sensitive tech — while VIX barely moved (15.55). That gap between the size of the rates repricing and the calm in the vol index is worth flagging as possible complacency heading into a market that just priced in meaningfully higher odds of a second consecutive hike.</p>
+
+<p>Two secondary threads resolved: the Brent/WTI divergence this file had flagged unexplained for two sessions converged today — but on a worse cause than hoped, with both benchmarks rising together on the Houthi strike near Aramco's HQ, a physical escalation, not a technical quirk. The Asia chip selloff decelerated rather than extending a fourth violent session — Kospi -0.44%, SK Hynix -1.66%, Samsung flat.</p>
+
+<h3>The structural read: a real repricing, met with surprising calm</h3>
+<p>Treat today's Fed-odds flip as the dominant fact of the day across every beat this file tracks — it touches rates, gold, tech-equity beta, and the private-credit complex's funding costs simultaneously. The oil convergence is not the relief it looks like: a geopolitical-strike explanation for a benchmark move is a worse underlying cause than an unexplained technical quirk would have been, because it has no natural mean-reversion.</p>
+
+<p><strong>Bear case:</strong> a 20-point swing in Fed odds on one data print, absorbed by equities with almost no VIX reaction, is the textbook setup for a delayed, sharper repricing once the market actually digests what a second hike means for every rate-sensitive name in this portfolio. <strong>Bull case:</strong> markets have had months to prepare for a hawkish Fed path; a calm VIX could just as easily mean this was already mostly priced, not that it's being ignored.</p>
+
+<!-- ====================== AI ====================== -->
+<h2>AI Ecosystem</h2>
+<div class="delta-box"><strong>Delta since last night:</strong> AI-infra financing stress jumped from a demand-side story to a cost-of-capital story — CoreWeave's own bonds spiked to 15% yield and the company raised $3B+ in equity and converts same-day. Anthropic's investor day happened but delivered a valuation headline, not numbers.</div>
+
+<p><strong>CoreWeave's</strong> unsecured 2032 bonds spiked to ~15% yield intraday (closed ~14.5%) — the credit market pricing AI-infra leverage risk directly for the first time this cycle, a materially different and harder category of risk than the demand-side stories (OpenAI revenue gap, CXMT competition) this file has tracked for two weeks. CRWV responded same-day with a 35M-share ATM program plus a $3.0B convertible-note offering, with the stock down 8-12% intraday; Elon Musk tweeted "yikes" in reply to Chamath Palihapitiya's "private credit bubble" framing of the move.</p>
+
+<p><strong>NBIS</strong> fell a further 6-9.5%, but reporting now attributes the move to CoreWeave-contagion rather than yesterday's still-unrebutted IREN/Anthropic deal-loss thread. Separately, Michael Burry is reported to have doubled down on leveraged NBIS/MU puts (double-digit strikes, June 2027 expiry), alongside fresh NBIS insider selling (COO, CRO) — two independently bearish signals landing the same day.</p>
+
+<p>By contrast, the <strong>Asia memory selloff decelerated</strong> rather than extending a violent fourth session — Kospi closed -0.44% (a sixth down day, but an order of magnitude smaller than Tuesday's -5.5%), SK Hynix -1.66%, Samsung flat.</p>
+
+<p><strong>Anthropic's investor day</strong> happened today as scheduled, but as of this morning's search the actual Q3/Claude Code figures presented behind closed doors have not been publicly reported — "expected to disclose" never converted into "disclosed." A ~$2T IPO valuation target was floated; the S-1 is still not on EDGAR. Oct 23 is the real next checkpoint ahead of the targeted Nov 9 roadshow week.</p>
+
+<p><strong>ai-ecosystem-analyst pipeline:</strong> confirmed still dormant — 35 days since its last output (Sept 9, 2026, the Goldman Communacopia piece). No new files found in that analyst's output directory.</p>
+
+<h3>The structural read: the problem changed shape, not size</h3>
+<p>CoreWeave's bond yield spiking is the single most important fact in this file today, more than any equity move: it means lenders, not just traders, are now pricing AI-infra leverage risk directly. That's a harder problem to fix with a strong earnings quarter than a sentiment-driven equity selloff is, and it's the first genuine convergence between this beat's two previously separate threads (customer-demand quality at CRWV/OpenAI, and sponsor/lender exposure at OWL/ARCC — see private-credit.md) the file has caught. Anthropic's non-disclosure at its own investor day, on a day when the AI-infra complex badly needed a hard demand-side data point, is a missed opportunity whether or not it was deliberate.</p>
+
+<p><strong>Bear case:</strong> a credit-market repricing of AI-infra leverage, landing the same week as a hawkish Fed repricing, is a compounding — not independent — risk: higher base rates make any AI-infra name's existing bond stack look more expensive to refinance, right as CRWV's own bonds are proving the market will price that risk aggressively. <strong>Bull case:</strong> CRWV moved fast to raise capital rather than wait out the pressure, and the backlog (~$104B) and bull thesis are unchanged — a liquidity event met with a liquidity response is a different story than a solvency crisis.</p>
+
+<!-- ====================== PORTFOLIO ====================== -->
+<h2>Portfolio Tickers</h2>
+<div class="delta-box"><strong>Delta since last night:</strong> 156th consecutive zero-position session. CRWV's financing-cost break is the dominant item; MU picked up a new legal thread; APO surfaced in a reported SpaceX financing deal the same day CRWV needed its own.</div>
+
+<table>
+  <tr><th>Ticker</th><th>Move</th><th>What's new</th></tr>
+  <tr><td>CRWV</td><td class="neg">~-12.6% to ~$68</td><td>Bonds hit ~15% yield intraday; launched 35M-share ATM + $3.0B convertible notes due 2033 same day.</td></tr>
+  <tr><td>NBIS</td><td class="neg">~-6%</td><td>Reads as CoreWeave-contagion now, not the IREN deal-loss story; Burry reportedly added leveraged puts; fresh insider selling (COO, CRO).</td></tr>
+  <tr><td>MU</td><td class="neg">~-3.6% to ~$953</td><td>Netlist filed an ITC complaint over HBM3E/HBM4/HBM4E patents, plus a separate ITC probe on DDR5 RDIMM/MRDIMM imports — new legal thread atop standing CXMT-competition story.</td></tr>
+  <tr><td>APO</td><td></td><td>Reported role in a ~$40B SpaceX chip-financing package — notable timing, landing the same day CRWV needed its own emergency capital.</td></tr>
+  <tr><td>ARCC / AMD</td><td class="pos">PT raises</td><td>UBS to $21 (ARCC), BofA to $720 (AMD) — constructive but non-market-moving.</td></tr>
+  <tr><td>TSM / AMZN / OWL / NVDA</td><td>—</td><td>Nothing thesis-relevant; TSM quiet one day ahead of its Oct 15 print.</td></tr>
+</table>
+
+<h3>The structural read</h3>
+<p>CRWV's break is the dominant portfolio fact: it escalates the standing OpenAI-revenue-gap scare from a demand question into a cost-of-capital question, and it lands one session before TSM's print — raising the stakes on how the broader complex trades into and through Thursday. The APO/SpaceX item is worth watching less for its own sake than as a reminder that the private-credit sponsors this file tracks (private-credit.md) are underwriting the same AI/space-infra capital stack that just proved, via CRWV, how quickly its cost of capital can move.</p>
+
+<p><strong>Bear case:</strong> a legal threat (Netlist/MU) landing the same week as a financing-cost break (CRWV) and a hawkish Fed repricing is a worse setup into TSM's print than any single thread suggests on its own. <strong>Bull case:</strong> TSM itself remains un-downgraded ahead of its print, and CRWV's fast capital raise is a sign of a functioning, not frozen, financing market for this complex.</p>
+
+<!-- ====================== PRIVATE CREDIT ====================== -->
+<h2>Private Credit</h2>
+<div class="delta-box"><strong>Delta since last night:</strong> Oracle is actively working around the Jupiter pipeline delay rather than just negotiating around it — trucking in gas at 4x cost and petitioning FERC directly — and a fresh Fitch BDC-wide survey shows redemption pressure easing industry-wide, distinct from OTIC's still-stuck ~39%.</div>
+
+<p>Oracle has been trucking in compressed natural gas at roughly 4x pipeline-hub cost to bring early Project Jupiter capacity online (first reported ~Oct 9), and on Oct 13 its SVP of government affairs sent FERC a letter directly requesting expedited pipeline approval. This is Oracle actively spending real money to route around its own delay, not passively waiting on the force-majeure negotiation to resolve — a materially different signal than this file has carried on Jupiter to date.</p>
+
+<p>Separately, Fitch's Q3 2026 industry-wide BDC redemption survey (published Oct 13) shows average redemption requests easing to 9.8% of assets from 10.8% in Q2 — still well above the 5% cap most funds impose, with Fitch noting much of the above-cap demand is stale carryover rather than fresh outflows. That's a genuinely new, sector-wide data point, distinct from and not resolving OTIC's own fund-specific rate, stuck near 39% for three straight quarters.</p>
+
+<p>No change on the Leon Black/DOJ referral, stationary for four weeks now.</p>
+
+<h3>The structural read</h3>
+<p>The CNG-trucking and FERC-letter details raise the stakes on the Oct 27/29 print test: the market will now be pricing a confirmed, costlier delay (Oracle paying a 4x premium for interim power) rather than an abstract, open-ended negotiation. That's directly relevant to today's AI section: CoreWeave's own bonds just proved the credit market will reprice AI-infra leverage risk aggressively and fast — a precedent sponsors and lenders in the Jupiter complex should expect to be held to the same standard against.</p>
+
+<p><strong>Bear case:</strong> actively paying a 4x premium for power is the behavior of a company that doesn't expect its own force-majeure negotiation to resolve quickly, and the market should price Jupiter's delay as closer to confirmed than contingent. <strong>Bull case:</strong> the Fitch survey's industry-wide easing to 9.8% is real evidence the broader private-credit redemption story is calming, even if OTIC's specific number doesn't reflect it yet — and Oracle paying to keep the project moving at all is evidence it isn't walking away.</p>
+
+<p><strong>Standing watch unchanged:</strong> ARCC Oct 27, OWL Oct 29, OBDC early November, Nov 23 Jupiter air-quality permit decision.</p>
+
+<!-- ====================== POLYMARKET ====================== -->
+<h2>Polymarket Calibration</h2>
+<div class="delta-box"><strong>Delta since last night:</strong> the October FOMC contract just had its sharpest single-session move this file has tracked, on a clean CPI catalyst; Hormuz held exactly flat despite today's Iran-admission story — a useful divergence to watch.</div>
+
+<table>
+  <tr><th>Contract</th><th>Last night</th><th>This morning</th><th>Delta</th></tr>
+  <tr><td>Oct FOMC: no-change / +25bp</td><td>81% / 19%</td><td class="neg">61% / 40%</td><td>-20pt / +21pt — direct, well-explained reaction to hot CPI</td></tr>
+  <tr><td>Hormuz normal by Dec 31</td><td>14%</td><td>14%</td><td>Flat — no reaction to today's Iran electoral-timing admission</td></tr>
+  <tr><td>AI-bubble burst by end-2026</td><td>Not re-pulled</td><td>6.4%</td><td>Essentially flat vs. last clean read; unmoved by Anthropic's investor day</td></tr>
+</table>
+
+<p>Direct fetch, Oct FOMC: 61% no-change / 40% +25bp, $38.50M volume — a 20-point swing overnight, the sharpest single-session move this file has tracked on this contract, and a clean, well-explained reaction to September CPI's upside surprise rather than noise. Year-end hike odds sit above 96% per the same read. Direct fetch, Hormuz: 14% Yes, $14.76M volume — unchanged, despite today's Reuters story naming Iran's own officials admitting the campaign is deliberately timed to the midterms. That's a genuinely useful negative control: it suggests the contract tracks the Strait's physical/shipping status, not the general news cycle — worth watching whether it catches up with a lag once shipping-data providers price in the admission. AI-bubble-burst by end-2026: 6.4% Yes, $3.05M volume, direct fetch — no visible reaction to Anthropic's investor day.</p>
+
+<p><strong>Bear case:</strong> if Hormuz never catches up to today's admission, it may mean the market already assumed the electoral-timing motive and is pricing it in — in which case 14% is a more bearish number than it looks, not a sign of calm. <strong>Bull case:</strong> a flat Hormuz print on a rhetoric-only story, with no new physical/shipping data behind it, is exactly the discipline this file wants from the contract — it isn't overreacting to a headline the way a pundit take would.</p>
+
+<!-- ====================== BOTTOM LINE ====================== -->
+<div class="punchline-box">
+  <h3>Bottom Line / Portfolio Implication</h3>
+  <p>Today is the clearest example yet of two separate risk channels this file tracks converging on the same day: a hawkish rates repricing (CPI → Fed odds coin-flip) and an AI-infra credit-market repricing (CRWV's bond yield spike) landed together, each independently bad for the cost of capital underpinning the exact complex — chips, hyperscaler-adjacent names, sponsor/BDC lenders — this portfolio has been waiting 156 sessions to enter. Layer in Iran's own officials naming the midterms as their target date for sustained Hormuz pressure, and every standing "wait for the print" thesis in this file (TSM tomorrow, ARCC Oct 27, OWL Oct 29) now has to be read against a materially higher cost-of-capital backdrop than it did 24 hours ago. Zero positions remains the defensible call — nothing here is a buy signal, and several threads (CRWV's fast capital raise, TSM's un-downgraded status, Fitch's easing BDC survey) argue against overreacting — but the bar for what Thursday's TSM print and the Oct 27/29 BDC prints need to show just moved up, not down.</p>
+</div>
+
+<!-- ====================== SOURCES ====================== -->
+<h2>Sources</h2>
+<div class="sources">
+  <p><strong>Iran / Geopolitics:</strong></p>
+  <ul>
+    <li><a href="https://www.yahoo.com/news/us/articles/iran-adopting-tactics-hormuz-ahead-113113966.html">Yahoo/Reuters — Iran adopting new tactics on Hormuz ahead of US midterms</a></li>
+    <li><a href="https://www.iranintl.com/en/202610139692">Iran International — Iran officials on widening Hormuz campaign</a></li>
+    <li><a href="https://www.geo.tv/latest/686402-iran-shifting-tactics-to-step-up-attacks-on-shipping-before-us-vote-officials-say">Geo TV — Iran shifting tactics to step up attacks on shipping before US vote</a></li>
+    <li><a href="https://www.aljazeera.com/news/2026/10/14/iran-steps-up-hormuz-surveillance-attacks-soar-oil-flows-crash-again">Al Jazeera — Iran steps up Hormuz surveillance, attacks soar, oil flows crash again</a></li>
+    <li><a href="https://straits.live/briefs/2026-10-14">straits.live — Strait of Hormuz daily brief, Oct 14</a></li>
+    <li><a href="https://today.lorientlejour.com/article/1550820/container-ship-sinks-near-hormuz-after-being-hit-by-projectile-sources-say.html">L'Orient-Le Jour — Container ship sinks near Hormuz after being hit by projectile</a></li>
+    <li><a href="https://www.seatrade-maritime.com/security/iran-claims-mine-sank-container-ship-amid-fresh-hormuz-attacks">Seatrade Maritime — Iran claims mine sank container ship amid fresh Hormuz attacks</a></li>
+    <li><a href="https://kfgo.com/2026/10/11/iran-says-us-response-to-its-proposal-to-reopen-hormuz-was-insufficient/">KFGO/Reuters — Iran says US response to its proposal to reopen Hormuz was insufficient</a></li>
+  </ul>
+  <p><strong>Markets:</strong></p>
+  <ul>
+    <li><a href="https://www.cnbc.com/2026/10/14/cpi-inflation-report-september-2026.html">CNBC — September CPI inflation report</a></li>
+    <li><a href="https://www.tradingview.com/news/seekingalpha:8b486941a094b:0-october-rate-hike-probability-pops-to-49-now-a-coin-flip-chance-after-cpi-data/">TradingView/Seeking Alpha — October rate-hike probability pops to a coin-flip after CPI data</a></li>
+    <li><a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-oct-14-2026">TheStreet — Stock market today: Dow, S&P 500, Nasdaq updates, Oct 14</a></li>
+    <li><a href="https://sundayguardianlive.com/world/crude-oil-prices-today-october-14-why-are-oil-prices-rising-today-brent-crude-hits-10658-as-saudi-aramco-attack-and-strait-of-hormuz-risks-offset-hopes-of-higher-russian-diesel-exports-305338/">Sunday Guardian Live — Why oil prices are rising today: Aramco attack and Hormuz risks</a></li>
+    <li><a href="https://themarketperiodical.com/2026/10/14/asian-stocks-tumble-as-kospi/">The Market Periodical — Asian stocks move as Kospi reacts</a></li>
+    <li><a href="https://polymarket.com/event/fed-decision-in-october-20260617190323537">Polymarket — Fed decision in October</a></li>
+  </ul>
+  <p><strong>AI Ecosystem / Portfolio:</strong></p>
+  <ul>
+    <li><a href="https://www.benzinga.com/markets/equities/26/10/62345955/elon-musk-says-yikes-as-coreweave-bond-yield-hits-15-amid-chamath-palihapitiyas-private-credit-bubble-warning">Benzinga — Elon Musk says "yikes" as CoreWeave bond yield hits 15% amid "private credit bubble" warning</a></li>
+    <li><a href="https://finance.yahoo.com/markets/stocks/articles/coreweave-raises-3-billion-convertible-165635619.html">Yahoo Finance — CoreWeave raises $3 billion via convertible notes</a></li>
+    <li><a href="https://247wallst.com/investing/2026/10/14/coreweave-falls-10-as-bond-yield-touches-15-and-elon-musk-says-yikes-nebius-drops-6-oracle-slips/">24/7 Wall St — CoreWeave falls 10% as bond yield touches 15%; Nebius drops 6%, Oracle slips</a></li>
+    <li><a href="https://www.tipranks.com/news/why-are-nebius-and-coreweave-stocks-falling-in-premarket-today-october-14">TipRanks — Why are Nebius and CoreWeave stocks falling in premarket today</a></li>
+    <li><a href="https://finance.yahoo.com/markets/options/articles/michael-burry-swaps-mu-nbis-204243974.html">Yahoo Finance — Michael Burry's options swaps on MU, NBIS</a></li>
+    <li><a href="https://forkast.news/anthropics-public-s-1-still-missing-from-edgar-as-october-ipo-window-opens/">Forkast — Anthropic's public S-1 still missing from EDGAR as October IPO window opens</a></li>
+    <li><a href="https://www.cnbc.com/2026/10/13/anthropic-q3-financials-ipo.html">CNBC — Anthropic Q3 financials, IPO plans</a></li>
+    <li><a href="https://www.tradingkey.com/analysis/stocks/more/262215728-japan-south-korea-stocks-kospi-nikkei-softbank-sk-hynix-samsung-kioxia-tradingkey">TradingKey — Japan, South Korea stocks: Kospi, Nikkei, SK Hynix, Samsung, Kioxia</a></li>
+    <li><a href="https://stockstotrade.com/news/micron-technology-inc-mu-news-2026_10_14/">StocksToTrade — Micron Technology (MU) news</a></li>
+  </ul>
+  <p><strong>Private Credit:</strong></p>
+  <ul>
+    <li><a href="https://www.bloomberg.com/news/articles/2026-10-13/oracle-asks-regulators-to-expedite-gas-pipeline-for-data-center">Bloomberg — Oracle asks regulators to expedite gas pipeline for data center</a></li>
+    <li><a href="https://finance.yahoo.com/energy/articles/oracle-trucks-natural-gas-data-150844664.html">Yahoo Finance — Oracle trucks in natural gas for data centers</a></li>
+    <li><a href="https://www.pionline.com/alternative-investments/private-credit/pi-private-credit-redemptions-third-quarter-fitch-ratings/">Pensions & Investments — Private credit redemptions, Q3, Fitch Ratings</a></li>
+  </ul>
+  <p><strong>Polymarket:</strong></p>
+  <ul>
+    <li><a href="https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-december-31">Polymarket — Strait of Hormuz traffic returns to normal by Dec 31</a></li>
+    <li><a href="https://polymarket.com/event/fed-decision-in-october-20260617190323537">Polymarket — Fed decision in October</a></li>
+    <li><a href="https://polymarket.com/event/ai-bubble-burst-by/ai-industry-downturn-by-december-31-2026-857">Polymarket — AI industry downturn by Dec 31, 2026</a></li>
+  </ul>
+</div>
+
+<div class="footer">
+  Daily News Brief · October 14, 2026 · Wednesday Morning Brief · Day 229 of the Iran war<br>
+  <em>Andres's daily analyst. Structural reads, not headline regurgitation. Deltas since 2026-10-13 evening (~17:20 PT).</em>
+</div>
+
+</div>
+
+</body>
+</html>
