@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily News Brief — October 13, 2026 (Evening)</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --surface: #121820;
+    --surface2: #1a2230;
+    --border: #243044;
+    --text: #c8d3e0;
+    --text-dim: #6b7d93;
+    --heading: #e8edf3;
+    --accent: #4fc3f7;
+    --accent2: #81c784;
+    --warn: #ffb74d;
+    --danger: #ef5350;
+    --gold: #ffd54f;
+    --purple: #b39ddb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a0a0a 0%, #2a0a1a 50%, #0a1a2e 100%);
+    border-bottom: 1px solid var(--danger);
+    padding: 50px 40px 40px;
+    text-align: center;
+  }
+  .header .day-tag {
+    display: inline-block;
+    background: rgba(239,83,80,0.2);
+    border: 1px solid rgba(239,83,80,0.4);
+    color: var(--danger);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--heading);
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .header .subtitle {
+    font-size: 18px;
+    color: var(--warn);
+    font-weight: 400;
+  }
+  .header .subtitle-sub {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 10px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--heading);
+    margin: 48px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 28px 0 12px;
+  }
+  p { margin-bottom: 14px; }
+  strong { color: var(--heading); }
+  em { color: var(--accent); font-style: italic; }
+  ul, ol { margin: 0 0 14px 22px; }
+  li { margin-bottom: 6px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  table tr:last-child td { border-bottom: none; }
+  table td:first-child {
+    font-weight: 700;
+    color: var(--heading);
+  }
+  .badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+  .badge-red { background: var(--danger); color: #fff; }
+  .badge-green { background: var(--accent2); color: var(--bg); }
+  .badge-blue { background: var(--accent); color: var(--bg); }
+  .badge-yellow { background: var(--warn); color: var(--bg); }
+  .badge-purple { background: var(--purple); color: var(--bg); }
+  .tldr-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.1), rgba(255,183,77,0.05));
+    border: 2px solid var(--danger);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin: 24px 0 32px;
+  }
+  .tldr-box h3 {
+    color: var(--danger);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .delta-box {
+    background: var(--surface2);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 20px;
+    margin: 0 0 18px;
+    font-size: 13.5px;
+    color: var(--text-dim);
+  }
+  .delta-box strong { color: var(--accent); }
+  .faction-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .faction-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px 26px;
+    border-left: 4px solid var(--border);
+  }
+  .faction-card.f-irgc { border-left-color: var(--danger); }
+  .faction-card.f-hawk { border-left-color: var(--warn); }
+  .faction-card.f-civ { border-left-color: var(--accent); }
+  .faction-card h4 {
+    font-size: 16px;
+    color: var(--heading);
+    margin-bottom: 4px;
+  }
+  .faction-card .lead {
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .scenario-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+    margin: 20px 0;
+  }
+  .scenario-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 20px;
+  }
+  .scenario-card .pct {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+  .scenario-card h4 {
+    font-size: 14px;
+    color: var(--heading);
+    margin: 4px 0 10px;
+  }
+  .scenario-card p {
+    font-size: 13px;
+    color: var(--text);
+    margin: 0;
+  }
+  .scenario-card.red .pct { color: var(--danger); }
+  .scenario-card.yellow .pct { color: var(--warn); }
+  .scenario-card.green .pct { color: var(--accent2); }
+  .quote-box {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 16px 22px;
+    margin: 16px 0;
+    font-style: italic;
+    color: var(--text);
+    border-radius: 0 6px 6px 0;
+  }
+  .quote-box .src {
+    display: block;
+    margin-top: 8px;
+    font-style: normal;
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+  .honest-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--purple);
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin: 24px 0;
+  }
+  .honest-box h3 {
+    color: var(--purple);
+    margin-top: 0;
+    margin-bottom: 14px;
+  }
+  .punchline-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.08), rgba(79,195,247,0.05));
+    border: 2px solid rgba(239,83,80,0.3);
+    border-radius: 10px;
+    padding: 28px;
+    margin: 32px 0;
+    text-align: center;
+  }
+  .punchline-box h3 {
+    color: var(--danger);
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .punchline-box p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    max-width: 760px;
+    margin: 0 auto 10px;
+    color: var(--text);
+  }
+  .watchlist {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 24px;
+    margin: 20px 0;
+  }
+  .watchlist ul { margin-left: 20px; }
+  .watchlist ul li { margin-bottom: 8px; font-size: 14px; }
+  .sources { font-size: 12.5px; color: var(--text-dim); }
+  .sources a { color: var(--accent); text-decoration: none; }
+  .sources a:hover { text-decoration: underline; }
+  .footer {
+    border-top: 1px solid var(--border);
+    margin-top: 50px;
+    padding-top: 20px;
+    color: var(--text-dim);
+    font-size: 12px;
+    text-align: center;
+  }
+  .pos { color: var(--accent2); }
+  .neg { color: var(--danger); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="day-tag">Day 228 of the Iran War · Tuesday Evening Wrap</div>
+  <h1>Daily News Brief — October 13, 2026</h1>
+  <div class="subtitle">A real calibration miss on oil, a confirmed third-session chip rout, and a Houthi strike on Aramco's own HQ — escalation moved from volume to target selection today.</div>
+  <div class="subtitle-sub">Run: 17:20 PT · Market close · Sept CPI print + Anthropic investor day both land tomorrow · TSMC earnings T-2 days · ARCC earnings T-14 days · OWL earnings T-16 days</div>
+</div>
+
+<div class="container">
+
+<!-- ====================== TL;DR ====================== -->
+<div class="tldr-box">
+  <h3>TL;DR — What changed since this morning and why it matters</h3>
+  <ul>
+    <li><strong>Calibration miss, owned:</strong> this morning's call that the Brent/WTI divergence "resolved cleanly" (based on overnight futures) did not survive the actual close — Brent settled $105.69 (-0.9%), WTI $94.14 (+0.4%), the same split shape as Monday. Two sessions of this now, unexplained.</li>
+    <li><strong>Chip selloff confirmed a third session:</strong> SK Hynix closed -10.09%, Samsung -7.39%, Kospi -5.5% — this directly answers this morning's open question in the worse direction.</li>
+    <li><strong>Houthis hit Saudi Aramco's own Dhahran headquarters</strong> — confirmed by Bloomberg and others, not just a Houthi claim — and explicitly declared Saudi oil installations "legitimate targets." Escalation in target selection, not in intercepted-attack volume, which this morning's "same tempo" framing missed.</li>
+    <li><strong>Hormuz's Polymarket contract resumed its decline same-day:</strong> 14% Yes, down from this morning's 16% — the "plateau" read didn't hold, and the move lines up with the Aramco hit, the cleanest causal pairing this file has caught yet.</li>
+    <li><strong>NBIS and CRWV both extended lower into the close</strong> with no Nebius rebuttal found; indexes shrugged for a second straight session (S&P -0.02%, Dow -0.35%, Nasdaq -0.15%) despite all of the above.</li>
+  </ul>
+</div>
+
+<!-- ====================== MORNING -> EVENING ====================== -->
+<h2>Morning &rarr; Evening: What Moved</h2>
+<table>
+  <tr><th>Flag from this morning</th><th>Resolution</th></tr>
+  <tr><td>Chip selloff: 3rd session or 1-day catch-down?</td><td class="neg">Confirmed 3rd session — SK Hynix -10.09%, Samsung -7.39%, Kospi -5.5% at the close.</td></tr>
+  <tr><td>Brent/WTI divergence "resolved cleanly"</td><td class="neg">Did not hold — settled Brent -0.9% / WTI +0.4%, same split as Monday. Calibration miss, logged.</td></tr>
+  <tr><td>NBIS: any on-record Nebius statement?</td><td>Not found — stock kept sliding into the close ($204-207 range vs. Monday's $210.06).</td></tr>
+  <tr><td>Bessent "I don't know": walk-back or reinforcement?</td><td>Reinforced — Trump repeated the same "collapsing economy" framing today, no walk-back.</td></tr>
+  <tr><td>Houthi campaign: tempo or escalation?</td><td class="neg">Escalation in target selection (Aramco HQ hit) — tempo itself unchanged.</td></tr>
+</table>
+
+<!-- ====================== IRAN ====================== -->
+<h2>Iran / Middle East Geopolitics</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> the Houthi campaign escalated on target selection today — a missile hit Saudi Aramco's own Dhahran headquarters, and the Houthis explicitly declared Saudi oil installations "legitimate targets." Intercept volume itself was unchanged from Monday.</div>
+
+<p>A missile struck the Aramco headquarters compound in Dhahran Tuesday night, damaging the top three floors of an office tower and sparking a fire that was extinguished. This is confirmed independently by Bloomberg, World Oil, and other outlets — not just a Houthi claim — and Aramco says there were no injuries and operations are unaffected. It's the first direct hit on an energy company's own headquarters/operations center, distinct from the airport and transport-infrastructure targets hit all last week. The Houthis paired the strike with an explicit warning that Saudi oil installations are now legitimate targets, urging civilian staff to stay away. The Saudi-led coalition retaliated by striking Houthi-controlled fuel sites in Sanaa and loading piers at Hodeidah port.</p>
+
+<div class="quote-box">
+  Intercept tempo itself was unchanged from Monday — three drones north of Riyadh, two ballistic missiles toward Khamis Mushait intercepted. The escalation is in what the Houthis say they're willing to hit next, not in how often they're trying.
+  <span class="src">Source: Bloomberg</span>
+</div>
+
+<h3>The structural read: escalation moved from volume to doctrine</h3>
+<p>This morning's framing — intercepts "at the same tempo, not escalating" — was true for volume but missed the more important axis: target selection just moved from transport infrastructure to the oil major's own headquarters, paired with an explicit doctrinal statement that oil installations are fair game. That matters more for the oil-risk-premium thesis than another intercepted barrage would, because it changes what the Houthis say they're willing to hit next. Separately, Trump told reporters today the US "will soon" decide on Iran, repeating Bessent's exact talking points ("failed country," "300% inflation," "not paying their troops") from Monday — two senior administration voices using identical framing on consecutive days reads more like coordinated pressure messaging than independent assessment, still with no specifics on timing.</p>
+
+<p><strong>Bear case:</strong> a direct hit on Aramco's own HQ, even with no casualties, is the kind of target-escalation that could justify the conflict spilling further into oil infrastructure specifically — exactly the risk the Hormuz Polymarket contract just repriced for. <strong>Bull case:</strong> no injuries, no production impact, and the coalition's retaliation stayed proportionate (fuel depots, not a broader campaign) — so far this reads as controlled escalation, not a breakdown.</p>
+
+<!-- ====================== MARKETS ====================== -->
+<h2>Markets / Macro</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> this morning's "resolved cleanly" call on the Brent/WTI split didn't survive the actual close, the chip selloff confirmed a third session, and bank earnings widened from a two-name split to a four-bank picture as Citi also beat.</div>
+
+<p><strong>Close:</strong> S&P 500 7,805.45 (-0.02%, essentially flat), Dow 51,670.10 (-0.35%), Nasdaq 27,204.38 (-0.15%) — indexes shrugged off the chip selloff for a second straight session. Citigroup beat: EPS $2.85 vs. $2.66 expected, revenue $23.85B vs. $23.72B expected, profit +40% YoY — layered onto this morning's Goldman beat/JPMorgan miss, every outlet covering the four bank prints flagged the same forward caveat: rising rates and "sticky inflation" are expected to bite, a direct lead-in to tomorrow's CPI.</p>
+
+<p><strong>Oil settled Brent $105.69 (-$0.96, ~-0.9%), WTI $94.14 (+$0.40, ~+0.4%)</strong> — Brent down, WTI up, the same divergence shape as Monday's close. This morning's claim that overnight futures convergence "resolved" the split did not survive the regular session. Logged as a calibration miss, not a one-session artifact after all — two sessions of the same pattern now exist and this file doesn't have an explanation for it.</p>
+
+<p><strong>Chips:</strong> the Asia selloff confirmed a third session, not a one-day catch-down — SK Hynix closed -10.09%, Samsung -7.39%, Kospi -5.5%, driven by reports CXMT made "key progress" on a rival memory architecture plus Broadcom remarks. VIX closed 15.40 (flat), gold $4,208.10 (+0.43%), BTC $83,315 (+0.47%) — no macro signal from any of the quiet instruments.</p>
+
+<h3>The structural read: own the miss</h3>
+<p>Today is a genuine calibration miss worth owning: this morning's delta retired the Brent/WTI divergence as a resolved, one-session artifact based on overnight futures both falling together — but the actual regular session re-split in the same direction as Monday. Two sessions of the same pattern is harder to wave off as noise than one. The chip selloff compounding into a third session, with Kospi down 5.5%, confirms the worse of this morning's two scenarios.</p>
+
+<p><strong>Bear case:</strong> a third day of chip-sector deterioration plus an unexplained, recurring oil-benchmark split, arriving the day before CPI and an Anthropic investor day, is a worse setup than this morning's framing allowed for. <strong>Bull case:</strong> the S&P and Nasdaq barely moved for a second straight session despite all of that — either genuine resilience in the non-chip economy, or complacency that tomorrow's CPI print will test directly.</p>
+
+<!-- ====================== AI ====================== -->
+<h2>AI Ecosystem</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> the memory selloff confirmed a third session rather than bouncing; NBIS and CRWV both extended lower into the close with no official Nebius rebuttal found; Anthropic's investor day is now hours away.</div>
+
+<p>SK Hynix closed -10.09%, Samsung -7.39% — the overnight moves held through the full Asia session, and Kospi fell 5.5% at the close, direct confirmation this is compounding into a third session, not a one-day catch-down to Monday's US reaction.</p>
+
+<p><strong>NBIS</strong> closed down further on the IREN/Anthropic deal-loss thread (prints ranged $204-$207 vs. Monday's $210.06 close) — a full day's search found no on-record Nebius statement disputing or contextualizing the lost deal, so that watch item from this morning stays open and unresolved. Silence a full day in is itself a mildly bearish data point for the "Nebius was a plausible Anthropic partner" thesis. <strong>CRWV</strong> closed ~$77.81 (day range $75.90-$78.94), down from Monday's $80.26 close (~-3%) — a sixth session without round-tripping the prior week's -7.77% drop.</p>
+
+<p><strong>Anthropic's pre-IPO investor day is tomorrow (Oct 14) at its SF HQ</strong> — new detail confirmed today: financials and Claude Code developer revenue/usage metrics are expected to be disclosed publicly for the first time, ahead of a targeted IPO marketing launch the week of Nov 9 and a possible pre-Thanksgiving listing, at a reported $1.8-2T target valuation (vs. ~$965B at the May Series H). S-1 still not on EDGAR. TSM got the first bullish analyst move of the week — BofA raised its price target to $620 from $590 ahead of Thursday's print.</p>
+
+<h3>The structural read</h3>
+<p>Today answers this morning's open question cleanly: the memory selloff is compounding across a third session, not a one-day air pocket, and the Kospi's 5.5% drop is the clearest single data point of how far this has spread beyond Micron/NBIS/CRWV into the broader Korean tech complex. Tomorrow's investor-day disclosure of actual Claude Code revenue is the nearest real catalyst that could cut through the sentiment-driven selling in this complex with an actual demand-side data point.</p>
+
+<p><strong>Bear case:</strong> a chip/memory selloff this broad, landing the day before CPI and the investor day, raises the bar for what the disclosure needs to show to reverse sentiment. <strong>Bull case:</strong> nothing in today's moves is itself a demand-side negative — it's still competition (CXMT), one lost deal (NBIS), and routine selling (CRWV) — so a strong investor-day print could matter more than the week's accumulated sentiment damage.</p>
+
+<!-- ====================== PORTFOLIO ====================== -->
+<h2>Portfolio Tickers</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> 155th consecutive zero-position session. NBIS and CRWV both closed lower again, extending rather than reversing this morning's news; TSM picked up a BofA price-target raise two sessions ahead of Thursday's print.</div>
+
+<table>
+  <tr><th>Ticker</th><th>Move</th><th>What's new</th></tr>
+  <tr><td>NBIS</td><td class="neg">Closed $204-207, down from $210.06 Mon.</td><td>IREN/Anthropic deal-loss thread extended; no Nebius rebuttal found despite a full day's search.</td></tr>
+  <tr><td>CRWV</td><td class="neg">~$77.81, ~-3% vs. Mon. close</td><td>Sixth session without round-tripping prior week's -7.77% drop.</td></tr>
+  <tr><td>MU / chip complex</td><td class="neg">SK Hynix -10.09%, Samsung -7.39% close</td><td>Third straight session of the global memory-chip selloff — sustained, not one-day.</td></tr>
+  <tr><td>TSM</td><td class="pos">PT raised to $620 from $590</td><td>BofA — first explicitly bullish analyst move into Thursday's (Oct 15) print.</td></tr>
+  <tr><td>AMZN / NVDA / AMD / OWL / ARCC / APO</td><td>—</td><td>No new company-specific news found since this morning.</td></tr>
+</table>
+
+<h3>The structural read</h3>
+<p>Nothing today reverses either of this morning's two live threads (NBIS/IREN, CRWV insider-selling pattern) — both extended in the same direction, which is itself a small update: a one-day news-driven dip would plausibly have stabilized or bounced by the close, and neither did. <strong>Bear case:</strong> three straight sessions of chip-sector deterioration, plus two specific negative threads at NBIS and CRWV that aren't bouncing, is a worse setup heading into TSM's Thursday print than this morning allowed for. <strong>Bull case:</strong> TSM itself — the nearest hard catalyst for the whole complex — just got a price-target raise, not a cut, right before reporting.</p>
+
+<!-- ====================== PRIVATE CREDIT ====================== -->
+<h2>Private Credit</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> No material change.</div>
+
+<p>Only new item found: Cox Capital Partners pushed back the commencement date of its tender offer for Blue Owl Credit Income Corp. to Oct 23 (administrative, at Blue Owl's request; offer size/price/Nov 25 expiration unchanged) — not a signal about redemption pressure itself. No new facts on Project Jupiter's force-majeure negotiation, the Leon Black/DOJ referral, or OTIC's redemption rate. Standing watch unchanged: <strong>ARCC Oct 27, OWL Oct 29, OBDC early November, Nov 23 Jupiter air-quality permit decision.</strong></p>
+
+<h3>The structural read</h3>
+<p>A quiet evening is the expected outcome — nothing in today's bank-earnings tape, the chip selloff, or the Iran escalation touched this beat's core threads directly. The two-print test (ARCC Oct 27, OWL Oct 29) remains the real resolution point, still two weeks out.</p>
+
+<!-- ====================== POLYMARKET ====================== -->
+<h2>Polymarket Calibration</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> Hormuz gave back this morning's uptick and then some — the "plateau" read didn't hold, and the decline resumed the same day the Houthis hit Aramco's own HQ.</div>
+
+<table>
+  <tr><th>Contract</th><th>This morning</th><th>This evening</th><th>Delta</th></tr>
+  <tr><td>Hormuz normal by Dec 31</td><td>16%</td><td class="neg">14%</td><td>-2pt, below Monday evening's 15% too — the decline resumed, not a plateau after all</td></tr>
+  <tr><td>Oct FOMC: no change / +25bp</td><td>80% / 20%</td><td>81% / 19%</td><td>Essentially flat, ahead of tomorrow's CPI</td></tr>
+  <tr><td>AI-bubble burst by end-2026</td><td>Not re-pulled</td><td>Not re-pulled</td><td>Carrying forward Monday's 6% read</td></tr>
+</table>
+
+<p>Direct fetch, Hormuz: 14% Yes, $14.75M volume. The sequence is now 19%&rarr;17%&rarr;15%&rarr;16%&rarr;14% — noisy around a mid-teens level trending slowly down, not a clean plateau as this morning's entry framed it. The timing lines up with today's Aramco HQ hit (iran.md) — the first time this file has caught a same-day causal link between a real oil-infrastructure event and a Hormuz-contract move in the expected direction. The Fed contract sitting essentially flat ahead of CPI is the more boring but more reliable read: traders are waiting for the print rather than pre-positioning further.</p>
+
+<p><strong>Bear case:</strong> if Hormuz resumes its decline on the next incremental bad-news day too, the "stabilization" read from Monday/Tuesday morning was itself the noise, not the trend. <strong>Bull case:</strong> a 2pt move on ~$90K of incremental volume is still well within this contract's normal daily range — one data point doesn't yet prove the decline is back in earnest.</p>
+
+<!-- ====================== BOTTOM LINE ====================== -->
+<div class="punchline-box">
+  <h3>Bottom Line / Portfolio Implication</h3>
+  <p>Today's real lesson isn't any single data point — it's that two of this morning's "resolved" calls (Brent/WTI, Hormuz's plateau) turned out to be premature, while a third (the chip selloff extending) turned out to be exactly right. The Aramco HQ hit is the day's most structurally important fact: it's the first time the Houthi campaign has escalated on target selection rather than volume, and the Hormuz contract moved the same day in a way this file can finally point to as causally linked. None of this creates urgency to act before Thursday's TSM print — zero positions, 155 sessions, remains the defensible call — but the accumulated texture (three-session chip rout, two unreversed negative threads at NBIS/CRWV, an oil-infrastructure escalation, and tomorrow's CPI/investor-day double catalyst) is building toward a higher-stakes Wednesday than this morning's brief implied.</p>
+</div>
+
+<!-- ====================== SOURCES ====================== -->
+<h2>Sources</h2>
+<div class="sources">
+  <p><strong>Iran / Geopolitics:</strong></p>
+  <ul>
+    <li><a href="https://www.bloomberg.com/news/videos/2026-10-13/houthis-hit-saudi-aramco-headquarters-in-missile-attack-video">Bloomberg — Houthis hit Saudi Aramco headquarters in missile attack</a></li>
+    <li><a href="https://www.worldoil.com/news/2026/10/13/aramco-s-dhahran-headquarters-hit-during-houthi-missile-attack-on-saudi-arabia/">World Oil — Aramco's Dhahran headquarters hit during Houthi missile attack</a></li>
+    <li><a href="https://www.bloomberg.com/news/articles/2026-10-13/saudi-arabia-intercepts-new-houthi-attacks-as-conflict-drags-on">Bloomberg — Saudi Arabia intercepts new Houthi attacks as conflict drags on</a></li>
+    <li><a href="https://www.newsmax.com/politics/donald-trump-iran-war/2026/10/13/id/1272628/">Newsmax — Trump says US will make Iran decision amid threats</a></li>
+  </ul>
+  <p><strong>Markets:</strong></p>
+  <ul>
+    <li><a href="https://www.bbntimes.com/global-economy/s-p-500-falls-to-7-805-45-as-bank-earnings-meet-a-chip-selloff">BBNTimes — S&P 500 falls to 7,805.45 as bank earnings meet a chip selloff</a></li>
+    <li><a href="https://fortune.com/2026/10/13/jpmorgan-goldman-sachs-citigroup-wells-fargo-interest-inflation/">Fortune — JPMorgan, Goldman Sachs, Citigroup, Wells Fargo post strong profits, warn on rates</a></li>
+    <li><a href="https://investinglive.com/commodities/catch-up-time-oil-settles-mixed-brent-near-106-booms-reported-near-aramco-hq-in-dhahran">InvestingLive — Oil settles mixed, Brent near $106; booms reported near Aramco HQ</a></li>
+  </ul>
+  <p><strong>AI Ecosystem / Portfolio:</strong></p>
+  <ul>
+    <li><a href="https://www.koreajoongangdaily.com/business/samsung-sk-hynix-shares-plunge-on-black-tuesday-amid-concerns-over-chinese-chip/12918371">Korea JoongAng Daily — Samsung, SK Hynix plunge on "Black Tuesday" amid Chinese chip concerns</a></li>
+    <li><a href="https://sundayguardianlive.com/business/nebius-stock-today-nbis-shares-fall-283-to-20411-amid-ai-cloud-competition-iren-anthropic-deal-and-latest-market-updates-heres-what-investors-need-to-watch-305040/">Sunday Guardian Live — Nebius shares fall 2.83% amid AI cloud competition, IREN-Anthropic deal</a></li>
+    <li><a href="https://www.benzinga.com/trading-ideas/movers/26/10/62334171/coreweave-stock-dips-whats-going-on">Benzinga — CoreWeave stock dips: what's going on?</a></li>
+    <li><a href="https://www.bloomberg.com/news/articles/2026-10-01/anthropic-is-said-to-plan-pre-ipo-investor-day-as-listing-nears">Bloomberg — Anthropic is said to plan pre-IPO investor day as listing nears</a></li>
+  </ul>
+  <p><strong>Private Credit:</strong></p>
+  <ul>
+    <li><a href="https://finance.yahoo.com/markets/stocks/articles/cox-capital-adjusts-commencement-date-183400099.html">Yahoo Finance — Cox Capital adjusts commencement date for Blue Owl Credit Income Corp. tender offer</a></li>
+  </ul>
+  <p><strong>Polymarket:</strong></p>
+  <ul>
+    <li><a href="https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-december-31">Polymarket — Strait of Hormuz traffic returns to normal by Dec 31</a></li>
+    <li><a href="https://polymarket.com/event/fed-decision-in-october-20260617190323537">Polymarket — Fed decision in October</a></li>
+  </ul>
+</div>
+
+<div class="footer">
+  Daily News Brief · October 13, 2026 · Tuesday Evening Wrap · Day 228 of the Iran war<br>
+  <em>Andres's daily analyst. Structural reads, not headline regurgitation. Deltas since 2026-10-13 morning (~08:00 PT).</em>
+</div>
+
+</div>
+
+</body>
+</html>
