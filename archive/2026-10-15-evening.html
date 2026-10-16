@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily News Brief — October 15, 2026 (Evening)</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --surface: #121820;
+    --surface2: #1a2230;
+    --border: #243044;
+    --text: #c8d3e0;
+    --text-dim: #6b7d93;
+    --heading: #e8edf3;
+    --accent: #4fc3f7;
+    --accent2: #81c784;
+    --warn: #ffb74d;
+    --danger: #ef5350;
+    --gold: #ffd54f;
+    --purple: #b39ddb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a0a0a 0%, #2a0a1a 50%, #0a1a2e 100%);
+    border-bottom: 1px solid var(--danger);
+    padding: 50px 40px 40px;
+    text-align: center;
+  }
+  .header .day-tag {
+    display: inline-block;
+    background: rgba(239,83,80,0.2);
+    border: 1px solid rgba(239,83,80,0.4);
+    color: var(--danger);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--heading);
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .header .subtitle {
+    font-size: 18px;
+    color: var(--warn);
+    font-weight: 400;
+  }
+  .header .subtitle-sub {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 10px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--heading);
+    margin: 48px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 28px 0 12px;
+  }
+  p { margin-bottom: 14px; }
+  strong { color: var(--heading); }
+  em { color: var(--accent); font-style: italic; }
+  ul, ol { margin: 0 0 14px 22px; }
+  li { margin-bottom: 6px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  table tr:last-child td { border-bottom: none; }
+  table td:first-child {
+    font-weight: 700;
+    color: var(--heading);
+  }
+  .badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+  .badge-red { background: var(--danger); color: #fff; }
+  .badge-green { background: var(--accent2); color: var(--bg); }
+  .badge-blue { background: var(--accent); color: var(--bg); }
+  .badge-yellow { background: var(--warn); color: var(--bg); }
+  .badge-purple { background: var(--purple); color: var(--bg); }
+  .tldr-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.1), rgba(255,183,77,0.05));
+    border: 2px solid var(--danger);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin: 24px 0 32px;
+  }
+  .tldr-box h3 {
+    color: var(--danger);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .delta-box {
+    background: var(--surface2);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 20px;
+    margin: 0 0 18px;
+    font-size: 13.5px;
+    color: var(--text-dim);
+  }
+  .delta-box strong { color: var(--accent); }
+  .faction-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .faction-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px 26px;
+    border-left: 4px solid var(--border);
+  }
+  .faction-card.f-irgc { border-left-color: var(--danger); }
+  .faction-card.f-hawk { border-left-color: var(--warn); }
+  .faction-card.f-civ { border-left-color: var(--accent); }
+  .faction-card h4 {
+    font-size: 16px;
+    color: var(--heading);
+    margin-bottom: 4px;
+  }
+  .faction-card .lead {
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .scenario-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+    margin: 20px 0;
+  }
+  .scenario-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 20px;
+  }
+  .scenario-card .pct {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+  .scenario-card h4 {
+    font-size: 14px;
+    color: var(--heading);
+    margin: 4px 0 10px;
+  }
+  .scenario-card p {
+    font-size: 13px;
+    color: var(--text);
+    margin: 0;
+  }
+  .scenario-card.red .pct { color: var(--danger); }
+  .scenario-card.yellow .pct { color: var(--warn); }
+  .scenario-card.green .pct { color: var(--accent2); }
+  .quote-box {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 16px 22px;
+    margin: 16px 0;
+    font-style: italic;
+    color: var(--text);
+    border-radius: 0 6px 6px 0;
+  }
+  .quote-box .src {
+    display: block;
+    margin-top: 8px;
+    font-style: normal;
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+  .honest-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--purple);
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin: 24px 0;
+  }
+  .honest-box h3 {
+    color: var(--purple);
+    margin-top: 0;
+    margin-bottom: 14px;
+  }
+  .punchline-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.08), rgba(79,195,247,0.05));
+    border: 2px solid rgba(239,83,80,0.3);
+    border-radius: 10px;
+    padding: 28px;
+    margin: 32px 0;
+    text-align: center;
+  }
+  .punchline-box h3 {
+    color: var(--danger);
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .punchline-box p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    max-width: 760px;
+    margin: 0 auto 10px;
+    color: var(--text);
+  }
+  .watchlist {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 24px;
+    margin: 20px 0;
+  }
+  .watchlist ul { margin-left: 20px; }
+  .watchlist ul li { margin-bottom: 8px; font-size: 14px; }
+  .sources { font-size: 12.5px; color: var(--text-dim); }
+  .sources a { color: var(--accent); text-decoration: none; }
+  .sources a:hover { text-decoration: underline; }
+  .footer {
+    border-top: 1px solid var(--border);
+    margin-top: 50px;
+    padding-top: 20px;
+    color: var(--text-dim);
+    font-size: 12px;
+    text-align: center;
+  }
+  .pos { color: var(--accent2); }
+  .neg { color: var(--danger); }
+  .move-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  .move-table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  .move-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="day-tag">Day 230 of the Iran War · Thursday Evening Wrap</div>
+  <h1>Daily News Brief — October 15, 2026</h1>
+  <div class="subtitle">Equities reversed hard into the close. Credit markets didn't believe it — CoreWeave's own default-swap pricing hit a record the same day Jensen Huang talked the stock up 6%.</div>
+  <div class="subtitle-sub">Run: 17:20 PT · Close recap vs. this morning's brief · ARCC earnings T-12 days · OWL earnings T-14 days · Fed Chair Warsh/IMF fireside chat tomorrow (Oct 16)</div>
+</div>
+
+<div class="container">
+
+<!-- ====================== TL;DR ====================== -->
+<div class="tldr-box">
+  <h3>TL;DR — What changed since this morning and why it matters</h3>
+  <ul>
+    <li><strong>The morning selloff reversed hard — but not uniformly:</strong> Dow +1.1%, S&P +0.3%, Nasdaq trimmed a &gt;1% loss to +0.1%, as the 10Y fell a second straight session (5.09%) and VIX eased to 16.46. NVDA, AMD, and MU all stabilized or fully reversed their premarket losses. TSMC did not — it closed down another 1.8%, an eighth straight losing session for the broader complex.</li>
+    <li><strong>Equity and credit disagreed violently on CoreWeave, same name, same day:</strong> Nvidia CEO Jensen Huang said on the record that CoreWeave's "cost of capital is actually decreasing" and Nvidia sees no need to backstop it — CRWV rallied +5.94%. The same day, CoreWeave's 5-year credit default swaps hit a record, now implying a 60-63% probability of default within five years — roughly triple the June level. When equity and credit disagree this sharply, credit usually wins.</li>
+    <li><strong>A new Iran-adjacent policy lever surfaced:</strong> Washington is weighing easing sanctions on "shadow fleet" tankers specifically to bring down record freight rates — the first US policy response aimed at the economic symptom of the Hormuz war-risk premium, not the war itself. Expert skepticism is high (EU/UK insurance law is the real constraint), and Polymarket's Hormuz contract didn't react.</li>
+    <li><strong>Two concrete new Iran-war facts:</strong> the Houthis have now hit Riyadh's airport 20 times in October alone, and a planned EU-Gulf summit in Saudi Arabia was postponed because of the attacks — the first diplomatic-event disruption this file has logged.</li>
+    <li><strong>Polymarket held flat across the board</strong> despite a volatile day — Fed contract barely moved on two conflicting Fed-speaker comments (71%/28%), Hormuz drifted to 12%, AI-bubble-burst stayed at 7% even through the sharpest AI-financing divergence of the week.</li>
+  </ul>
+</div>
+
+<!-- ====================== MORNING -> EVENING ====================== -->
+<h2>Morning → Evening: What Moved</h2>
+<table class="move-table">
+  <tr><th>Indicator</th><th>This morning</th><th>Close</th><th>Read</th></tr>
+  <tr><td>S&P 500</td><td>-0.62% (7,670.75)</td><td class="pos">+0.3% (7,744.06)</td><td>Full reversal</td></tr>
+  <tr><td>Dow</td><td>+0.28%</td><td class="pos">+1.1% (~52,177.69)</td><td>Extended gain</td></tr>
+  <tr><td>Nasdaq</td><td>-1.39%</td><td class="neg">+0.1% (trimmed from -1%+)</td><td>Reversal, barely positive</td></tr>
+  <tr><td>10Y yield</td><td>5.066% (-13bp)</td><td class="pos">5.09% (-11bp more)</td><td>Second straight session lower</td></tr>
+  <tr><td>VIX</td><td>no clean print (gap)</td><td>16.46 (-2.43%)</td><td>Eased, not spiked</td></tr>
+  <tr><td>Brent / WTI</td><td>-2.05% / (flat AM)</td><td>-1.97% / <span class="pos">+3.35%</span></td><td>Sharp new divergence, unresolved</td></tr>
+  <tr><td>NVDA / AMD / MU</td><td>-1.9% / -3.4% / -4.3% premarket</td><td>-1.84% / -0.38% / <span class="pos">+1.87%</span></td><td>Stabilized or fully reversed</td></tr>
+  <tr><td>TSM</td><td>-2.6% to -5%</td><td class="neg">-1.8% to $422.15</td><td>Did not bounce — 8th down session</td></tr>
+  <tr><td>CRWV</td><td>-5% to $62.26</td><td class="pos">+5.94% to $69.69</td><td>Reversed on Huang comments; CDS hit record same day</td></tr>
+  <tr><td>NBIS</td><td>-4% to $177.68</td><td class="pos">+1.3% to ~$188.41</td><td>Sympathy bounce with CRWV</td></tr>
+</table>
+
+<!-- ====================== IRAN ====================== -->
+<h2>Iran / Middle East Geopolitics</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> a genuinely new US policy lever — easing shadow-fleet tanker sanctions to curb freight rates — plus two concrete new escalation/disruption facts.</div>
+
+<p>Washington is weighing partially lifting sanctions on "shadow fleet" tankers (vessels moving Russian/Iranian/Venezuelan oil) specifically to bring down record freight rates. Energy Secretary Chris Wright confirmed the administration is considering it, aimed directly at a freight-rate spike that has "significantly reduced demand for US crude oil." This is the first US policy response aimed at the economic symptom of the Hormuz war-risk premium (6-10% of hull value, logged this morning) rather than the war itself. Expert skepticism is specific and real: insurers still must comply with EU/UK law, which isn't expected to ease, and most shadow-fleet vessels are old and already running near-continuously, so added capacity would be limited even if sanctions relief proceeds.</p>
+
+<p>Two concrete new facts: the Saudi-led coalition said Thursday the Houthis have attacked Riyadh's airport <strong>20 times in October alone</strong> — the first cumulative monthly count logged — and the <strong>EU and Persian Gulf nations postponed a planned summit in Saudi Arabia</strong> because of the attacks, the first diplomatic-event disruption this file has tracked, distinct from flight cancellations and airport closures. Saudi Arabia's foreign ministry also directly accused Iran of arming, training, and encouraging the Houthis — sharper attribution language than prior statements, though consistent with the standing proxy-war read.</p>
+
+<h3>The structural read: a policy lever that targets the symptom, not the cause</h3>
+<p>That Washington is floating a sanctions carve-out at all is itself informative — it's a tacit admission that the war-risk-premium increase is biting enough to be worth a politically awkward trade-off. But the expert skepticism is well-founded: EU/UK insurance law is the actual binding constraint on whether ships can get coverage, and a US Treasury license doesn't fix that unilaterally. The summit postponement and the 20-attacks count both reinforce this week's structural read: steady, grinding persistence and widening economic/diplomatic cost, not one dramatic event, is the real shape of this conflict right now.</p>
+
+<p><strong>Bear case:</strong> a policy response this early, with insurers unlikely to follow, suggests Washington may be reaching for levers unlikely to actually work. <strong>Bull case:</strong> it's a genuinely new tool, and if it gains traction over time it would be the first concrete de-escalatory lever on the economic side of this war, distinct from the stalled diplomatic and military tracks.</p>
+
+<!-- ====================== MARKETS ====================== -->
+<h2>Markets / Macro</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> the selloff reversed hard — but the reversal was real for hardware names and not real for TSM or CoreWeave's credit.</div>
+
+<p>Close: S&P 500 <strong>7,744.06 (+0.3%)</strong>, Dow <strong>~52,177.69 (+1.1%)</strong>, Nasdaq <strong>+0.1%</strong> (having been down over 1% intraday). VIX closed <strong>16.46 (-2.43%)</strong> — easing through the recovery, the signature of a genuine de-escalation rather than short-covering panic. The 10Y fell a <strong>second straight session to 5.09%</strong> (-11bp), on top of this morning's -13bp — two consecutive sessions of falling yields despite two consecutive hot inflation prints (CPI, then PPI), the clearest evidence yet the bond market is pricing an AI-debt/growth scare over an inflation scare.</p>
+
+<p>Oil opened a fresh divergence: <strong>Brent -1.97% to $103.97, WTI +3.35% to $98.28</strong> — plausibly tied to the shadow-fleet-sanctions story (which should be Brent-bearish if effective), but WTI's jump in the same news cycle isn't cleanly explained. Gold rose to ~$4,169 (+1.55%); BTC eased modestly to ~$80,915.</p>
+
+<p>Fed speakers were mixed again: Goolsbee (dovish-leaning) called September "a disappointing month for inflation" but flagged AI-driven demand overheating as something that "must be addressed" if it's the real driver; Hammack (hawkish) said "more monetary-policy restraint is needed." Neither moved Polymarket's Fed contract, which held near flat. Fed Chair <strong>Warsh's fireside chat with IMF's Kristalina Georgieva lands tomorrow (Oct 16)</strong> — the next real test for that contract.</p>
+
+<h3>The structural read: the reversal split the complex, it didn't unify it</h3>
+<p>NVDA, AMD, and MU all stabilizing or fully reversing their premarket losses is real evidence today's panic was overdone for the broader hardware-adjacent names. But TSMC — the name with the single best fundamental print of the week — still couldn't catch a bid, and CoreWeave rallying hardest on a day its own credit market posted the most bearish reading of the cycle is not confirmation the scare is over. It's evidence equity and credit are now pricing the same risk completely differently.</p>
+
+<p><strong>Bear case:</strong> if credit is right and equity is wrong, today's recovery is a relief rally sitting on deteriorating fundamentals. <strong>Bull case:</strong> VIX easing through the rally and a second straight day of falling yields are genuine, falsifiable signs financial conditions are broadly easing — mechanically supportive for refinancing risk across the whole complex regardless of any single name's CDS print.</p>
+
+<!-- ====================== AI ====================== -->
+<h2>AI Ecosystem</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> the sharpest equity-vs-credit divergence this file has tracked — on the same name, the same day.</div>
+
+<div class="quote-box">
+  CoreWeave's strength is improving every day. I don't see a need for Nvidia to backstop the company.
+  <span class="src">Nvidia CEO Jensen Huang, speaking in Stockholm, to Bloomberg</span>
+</div>
+
+<p>Huang — the most senior, most directly-interested executive in the entire AI-infra complex — went on the record defending CoreWeave, saying its "cost of capital is actually decreasing." The market reaction was immediate: <strong>CRWV closed +5.94% to $69.69</strong>, recovering roughly a third of Wednesday's -15.5% drop. But the same day, Reuters reported the cost of insuring CoreWeave's debt against default climbed to levels implying a <strong>nearly 63% chance of default within five years</strong> — a record, and roughly triple where the same credit default swaps sat as recently as June.</p>
+
+<p>The distinction worth holding onto: Huang's comment answered a narrower question — does Nvidia need to step in — not the question the CDS market actually prices, which is whether CoreWeave's own balance sheet can service its debt. Those are different claims, and they moved in opposite directions on the same day. <strong>NBIS recovered in sympathy</strong>, trading around $188.41 (+1.3%), on no news of its own. <strong>TSMC did not participate</strong> in the recovery — it fell a further 1.8% to $422.15, an eighth consecutive down session for the broader chip complex per one tracker, confirming this morning's "beat and raise wasn't enough" read held through the full session.</p>
+
+<h3>The structural read: when equity and credit disagree, credit usually wins</h3>
+<p>This is the clearest single-day illustration yet of this file's demand-vs-financing framework, and it cuts in an unsettling direction: the two markets that should price the same underlying risk — CoreWeave's equity and its credit — moved opposite ways on the same news. Equity investors took Huang's reassurance at face value; the CDS market, run by people whose job is specifically pricing default risk, got more bearish on the same day. Credit investors have no upside from being wrong optimistically the way equity holders do, which is why credit usually calls these divergences correctly.</p>
+
+<p><strong>Bear case:</strong> a record CDS print on the day of the most positive equity news in weeks suggests specialized capital doesn't believe the reassurance — and Huang's comment, read literally, never actually claimed CoreWeave's own cost of capital is falling in a way that contradicts the CDS market, just that Nvidia won't need to backstop it. <strong>Bull case:</strong> CDS markets for a single, relatively illiquid name can overshoot on technical factors the way equity markets do, and Huang has visibility into CoreWeave's actual compute-demand backlog that the CDS market may not fully price.</p>
+
+<!-- ====================== PORTFOLIO ====================== -->
+<h2>Portfolio Tickers</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> 159th consecutive zero-position session. The chip complex stabilized; TSM and CoreWeave's credit did not.</div>
+
+<table>
+  <tr><th>Ticker</th><th>Close vs. premarket</th><th>What's new</th></tr>
+  <tr><td>NVDA</td><td class="neg">-1.84% to $217.23</td><td>Essentially unchanged net from premarket -1.9% — no further deterioration.</td></tr>
+  <tr><td>AMD</td><td class="pos">-0.38% to $560.07</td><td>Sharp recovery from -3.4% premarket.</td></tr>
+  <tr><td>MU</td><td class="pos">+1.87%</td><td>Full reversal from -4.3% premarket.</td></tr>
+  <tr><td>TSM</td><td class="neg">-1.8% to $422.15</td><td>Did not bounce — eighth straight down session for the broader complex.</td></tr>
+  <tr><td>CRWV</td><td class="pos">+5.94% to $69.69</td><td>Rallied on Huang's reassurance; CDS hit a record 60-63% implied 5yr default odds the same day (ai.md).</td></tr>
+  <tr><td>NBIS</td><td class="pos">+1.3% to ~$188.41</td><td>Sympathy bounce with CRWV, no name-specific news.</td></tr>
+  <tr><td>APO / ARCC / OWL</td><td>—</td><td>Stack Infrastructure's $6B loan remains at the mandate stage — no pricing or syndication news tonight.</td></tr>
+  <tr><td>XLE / AMZN</td><td>—</td><td>No material company-specific news found tonight.</td></tr>
+</table>
+
+<h3>The structural read</h3>
+<p>Today is the clearest test yet of whether patience (159 sessions) is still the right call, and it cuts both ways. NVDA, AMD, and MU stabilizing or reversing through the session, on falling yields and Huang's reassurance, is real evidence the premarket panic was overdone for the hardware-adjacent names specifically. But TSM — the name with the best fundamental print of the week — still couldn't catch a bid, and CRWV rallying on a CEO's reassurance the same day its own credit market posted a record-bearish reading is not confirmation the scare is over.</p>
+
+<p><strong>Bear case:</strong> a mixed day like today — where the "good" half of the complex recovers but the two hardest, most specific data points (TSM's continued weakness, CRWV's CDS) both stayed or got worse — argues for continued patience on timing, not urgency in either direction. <strong>Bull case:</strong> if NVDA/AMD/MU's stabilization holds through Friday, that's a genuine, if partial, de-escalation of this week's worst fears for the names most directly tied to AI chip demand, distinct from CRWV's company-specific financing-structure risk.</p>
+
+<!-- ====================== PRIVATE CREDIT ====================== -->
+<h2>Private Credit</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> no material change — the Stack Infrastructure loan remains at the mandate stage.</div>
+
+<p>No update found tonight on Project Jupiter, the Leon Black/DOJ referral, or OTIC's redemption rate. No pricing or syndication outcome reported on Blue Owl's Stack Infrastructure $6B Melbourne loan — still just mandated this week. The one cross-beat item worth noting without changing this file's standing read: CoreWeave's 5-year CDS hitting a record tonight (ai.md/portfolio-context.md) is the same category of sponsor/counterparty credit risk this beat's standing question exists to track, even though CRWV itself isn't a Blue Owl/ARCC vehicle.</p>
+
+<p>A quiet evening on this beat's own threads is the expected, correctly-reported outcome — the Stack loan's actual pricing and subscription result is still the real test, and mandates typically take days to weeks to price.</p>
+
+<p><strong>Standing watch unchanged:</strong> ARCC Oct 27, OWL Oct 29, OBDC early November, Nov 23 Jupiter air-quality permit decision.</p>
+
+<!-- ====================== POLYMARKET ====================== -->
+<h2>Polymarket Calibration</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> all three contracts held essentially flat through a volatile day — none of it moved the needle.</div>
+
+<table>
+  <tr><th>Contract</th><th>This morning</th><th>Tonight</th><th>Delta</th></tr>
+  <tr><td>Oct FOMC: no-change / +25bp</td><td>73% / 28%</td><td>71% / 28%</td><td>Essentially flat through two conflicting Fed-speaker comments</td></tr>
+  <tr><td>Hormuz normal by Dec 31</td><td>13%</td><td>12%</td><td>Slow continued drift — no reaction to the shadow-fleet-sanctions story</td></tr>
+  <tr><td>AI-bubble burst by end-2026</td><td>6.6%</td><td>7%</td><td>Flat — unmoved even by CRWV's equity-vs-credit split</td></tr>
+</table>
+
+<p>Direct fetch, Oct FOMC: 71% no-change / 28% +25bp — down marginally from this morning, holding through both Goolsbee's dovish-leaning and Hammack's hawkish comments today; neither Fed speaker moved this contract, consistent with it needing harder data or the Fed chair's own words to move materially. <strong>Fed Chair Warsh's fireside chat with IMF's Georgieva tomorrow (Oct 16)</strong> is the next real test. Direct fetch, Hormuz: 12% Yes — down 1pt, continuing its slow drift; notably it did not react to tonight's new shadow-fleet-sanctions story, consistent with the standing read that it tracks IMF PortWatch transit data specifically, not policy proposals with real implementation doubts. Direct fetch, AI-bubble-burst by end-2026: 7% Yes (mid-2027 variant 19%) — still the most useful negative control this file has, unmoved even by today's sharpest AI-financing divergence yet.</p>
+
+<p><strong>Bear case:</strong> if Hormuz needs an actual data change (not a policy proposal) to move, this file may be waiting weeks to see whether the sanctions-relief idea matters at all. <strong>Bull case:</strong> three contracts holding flat through a volatile day is the same "calibrated, not reflexively lagging" pattern this file has validated repeatedly — consistency itself remains the signal.</p>
+
+<!-- ====================== BOTTOM LINE ====================== -->
+<div class="punchline-box">
+  <h3>Bottom Line / Portfolio Implication</h3>
+  <p>Today split rather than resolved the question this file has carried all week. The bullish half is real: NVDA, AMD, and MU all stabilized or fully reversed their premarket losses as yields fell a second straight session and Jensen Huang personally defended CoreWeave. The bearish half is more structurally important: TSMC — this week's best fundamental print — still couldn't catch a bid, and CoreWeave's own credit market posted its most bearish reading of the cycle on the exact day its equity rallied hardest on a reassuring quote. When equity sentiment and credit pricing disagree this sharply on the same name, credit is usually the one to trust, because credit investors have no upside from being wrong optimistically. Zero positions remains the defensible call at 159 sessions — nothing today is a clean buy signal, and the CRWV divergence specifically argues for more caution, not less, about reading a relief rally as resolution. Overnight, watch whether the shadow-fleet-sanctions story gains any concrete traction (an actual Treasury license beats a proposal), and tomorrow, Fed Chair Warsh's fireside chat with the IMF is the first real test of whether Polymarket's flat-all-day Fed contract has priced the hot PPI print correctly.</p>
+</div>
+
+<!-- ====================== SOURCES ====================== -->
+<h2>Sources</h2>
+<div class="sources">
+  <p><strong>Iran / Geopolitics:</strong></p>
+  <ul>
+    <li><a href="https://www.yahoo.com/news/politics/articles/u-weighs-easing-sanctions-shadow-043303884.html">Reuters via Yahoo — US weighs easing sanctions on shadow fleet</a></li>
+    <li><a href="https://gcaptain.com/trump-weighs-lifting-shadow-fleet-sanctions-as-tanker-rates-soar/">gCaptain — Trump weighs lifting shadow fleet sanctions as tanker rates soar</a></li>
+    <li><a href="https://www.usnews.com/news/world/articles/2026-10-15/analysis-how-the-houthis-are-helping-iran-turn-saudi-arabia-into-a-pressure-point">US News — How the Houthis are helping Iran turn Saudi Arabia into a pressure point</a></li>
+    <li><a href="https://www.foxnews.com/live-news/us-iran-war-peace-donald-trump-strait-hormuz-oil-prices-midterms-october-15">Fox News — Iran peace made more difficult by taking out Iranian leaders, Trump laments</a></li>
+  </ul>
+  <p><strong>Markets:</strong></p>
+  <ul>
+    <li><a href="https://finance.yahoo.com/markets/live/stock-market-today-dow-sp-500-rise-nasdaq-trims-losses-as-treasury-yields-sink-153611834.html">Yahoo Finance — Dow, S&P 500 rise, Nasdaq trims losses as Treasury yields sink</a></li>
+    <li><a href="https://www.fxstreet.com/news/feds-goolsbee-warns-ai-demand-could-keep-inflation-running-hot-202610152337">FXStreet — Fed's Goolsbee warns AI demand could keep inflation running hot</a></li>
+    <li><a href="https://www.fxstreet.com/news/feds-hammack-urges-more-tightening-as-inflation-squeezes-households-202610152111">FXStreet — Fed's Hammack urges more tightening</a></li>
+    <li><a href="https://en.sedaily.com/international/2026/10/16/us-rate-path-clouded-as-markets-await-warshs-oct-16-remarks">Seoul Economic Daily — US rate path clouded as markets await Warsh's Oct. 16 remarks</a></li>
+  </ul>
+  <p><strong>AI Ecosystem / Portfolio:</strong></p>
+  <ul>
+    <li><a href="https://fourweekmba.com/ai-huang-coreweaves-cost-of-capital-is-falling-no-backstop/">FourWeekMBA — Huang: CoreWeave's cost of capital is falling, no backstop</a></li>
+    <li><a href="https://thenextweb.com/news/huang-coreweave-backstop-stockholm">TheNextWeb — Nvidia's Huang says CoreWeave needs no backstop, as its credit swaps hit a record</a></li>
+    <li><a href="https://fourweekmba.com/ai-daily-roundup-15-oct-2026-coreweave-default-odds-anthropic/">FourWeekMBA — AI Daily: CoreWeave's default odds and Anthropic's $16.8B</a></li>
+    <li><a href="https://www.marketbeat.com/instant-alerts/price-taiwan-semiconductor-manufacturing-nyse-tsm-stock-falls-18-heres-why-2026-10-15/">MarketBeat — TSM stock falls 1.8%</a></li>
+  </ul>
+  <p><strong>Polymarket:</strong></p>
+  <ul>
+    <li><a href="https://polymarket.com/event/fed-decision-in-october-20260617190323537">Polymarket — Fed decision in October</a></li>
+    <li><a href="https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-december-31">Polymarket — Strait of Hormuz traffic returns to normal by Dec 31</a></li>
+    <li><a href="https://polymarket.com/event/ai-bubble-burst-by/ai-industry-downturn-by-december-31-2026-857">Polymarket — AI industry downturn by Dec 31, 2026</a></li>
+  </ul>
+</div>
+
+<div class="footer">
+  Daily News Brief · October 15, 2026 · Thursday Evening Wrap · Day 230 of the Iran war<br>
+  <em>Andres's daily analyst. Structural reads, not headline regurgitation. Deltas since this morning's brief (~08:00 PT).</em>
+</div>
+
+</div>
+
+</body>
+</html>
