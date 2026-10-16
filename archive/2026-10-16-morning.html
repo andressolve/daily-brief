@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily News Brief — October 16, 2026 (Morning)</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --surface: #121820;
+    --surface2: #1a2230;
+    --border: #243044;
+    --text: #c8d3e0;
+    --text-dim: #6b7d93;
+    --heading: #e8edf3;
+    --accent: #4fc3f7;
+    --accent2: #81c784;
+    --warn: #ffb74d;
+    --danger: #ef5350;
+    --gold: #ffd54f;
+    --purple: #b39ddb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a0a0a 0%, #2a0a1a 50%, #0a1a2e 100%);
+    border-bottom: 1px solid var(--danger);
+    padding: 50px 40px 40px;
+    text-align: center;
+  }
+  .header .day-tag {
+    display: inline-block;
+    background: rgba(239,83,80,0.2);
+    border: 1px solid rgba(239,83,80,0.4);
+    color: var(--danger);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--heading);
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .header .subtitle {
+    font-size: 18px;
+    color: var(--warn);
+    font-weight: 400;
+  }
+  .header .subtitle-sub {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 10px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--heading);
+    margin: 48px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 28px 0 12px;
+  }
+  p { margin-bottom: 14px; }
+  strong { color: var(--heading); }
+  em { color: var(--accent); font-style: italic; }
+  ul, ol { margin: 0 0 14px 22px; }
+  li { margin-bottom: 6px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  table tr:last-child td { border-bottom: none; }
+  table td:first-child {
+    font-weight: 700;
+    color: var(--heading);
+  }
+  .badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+  .badge-red { background: var(--danger); color: #fff; }
+  .badge-green { background: var(--accent2); color: var(--bg); }
+  .badge-blue { background: var(--accent); color: var(--bg); }
+  .badge-yellow { background: var(--warn); color: var(--bg); }
+  .badge-purple { background: var(--purple); color: var(--bg); }
+  .tldr-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.1), rgba(255,183,77,0.05));
+    border: 2px solid var(--danger);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin: 24px 0 32px;
+  }
+  .tldr-box h3 {
+    color: var(--danger);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .delta-box {
+    background: var(--surface2);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 20px;
+    margin: 0 0 18px;
+    font-size: 13.5px;
+    color: var(--text-dim);
+  }
+  .delta-box strong { color: var(--accent); }
+  .faction-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .faction-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px 26px;
+    border-left: 4px solid var(--border);
+  }
+  .faction-card.f-irgc { border-left-color: var(--danger); }
+  .faction-card.f-hawk { border-left-color: var(--warn); }
+  .faction-card.f-civ { border-left-color: var(--accent); }
+  .faction-card h4 {
+    font-size: 16px;
+    color: var(--heading);
+    margin-bottom: 4px;
+  }
+  .faction-card .lead {
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .scenario-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+    margin: 20px 0;
+  }
+  .scenario-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 20px;
+  }
+  .scenario-card .pct {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+  .scenario-card h4 {
+    font-size: 14px;
+    color: var(--heading);
+    margin: 4px 0 10px;
+  }
+  .scenario-card p {
+    font-size: 13px;
+    color: var(--text);
+    margin: 0;
+  }
+  .scenario-card.red .pct { color: var(--danger); }
+  .scenario-card.yellow .pct { color: var(--warn); }
+  .scenario-card.green .pct { color: var(--accent2); }
+  .quote-box {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 16px 22px;
+    margin: 16px 0;
+    font-style: italic;
+    color: var(--text);
+    border-radius: 0 6px 6px 0;
+  }
+  .quote-box .src {
+    display: block;
+    margin-top: 8px;
+    font-style: normal;
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+  .honest-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--purple);
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin: 24px 0;
+  }
+  .honest-box h3 {
+    color: var(--purple);
+    margin-top: 0;
+    margin-bottom: 14px;
+  }
+  .punchline-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.08), rgba(79,195,247,0.05));
+    border: 2px solid rgba(239,83,80,0.3);
+    border-radius: 10px;
+    padding: 28px;
+    margin: 32px 0;
+    text-align: center;
+  }
+  .punchline-box h3 {
+    color: var(--danger);
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .punchline-box p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    max-width: 760px;
+    margin: 0 auto 10px;
+    color: var(--text);
+  }
+  .watchlist {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 24px;
+    margin: 20px 0;
+  }
+  .watchlist ul { margin-left: 20px; }
+  .watchlist ul li { margin-bottom: 8px; font-size: 14px; }
+  .sources { font-size: 12.5px; color: var(--text-dim); }
+  .sources a { color: var(--accent); text-decoration: none; }
+  .sources a:hover { text-decoration: underline; }
+  .footer {
+    border-top: 1px solid var(--border);
+    margin-top: 50px;
+    padding-top: 20px;
+    color: var(--text-dim);
+    font-size: 12px;
+    text-align: center;
+  }
+  .pos { color: var(--accent2); }
+  .neg { color: var(--danger); }
+  .move-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  .move-table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  .move-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="day-tag">Day 231 of the Iran War · Friday Morning Brief</div>
+  <h1>Daily News Brief — October 16, 2026</h1>
+  <div class="subtitle">Trump ruled out nukes against Iran while confirming MOAB contingency plans. CoreWeave's one-day bounce evaporated. The Fed-odds market moved — but not because of anything the Fed chair said.</div>
+  <div class="subtitle-sub">Run: 08:00 PT · Forward-looking: what to watch today · ARCC earnings T-11 days · OWL earnings T-13 days · Micron earnings Oct 19/22 · Nov 23 Jupiter permit decision · Nov 3 US midterms</div>
+</div>
+
+<div class="container">
+
+<!-- ====================== TL;DR ====================== -->
+<div class="tldr-box">
+  <h3>TL;DR — What changed overnight and why it matters</h3>
+  <ul>
+    <li><strong>Trump ruled out nuclear weapons against Iran for the first time</strong> — "No, I wouldn't use nuclear... We don't have to" — while the Pentagon simultaneously confirmed MOAB contingency plans for Iranian targets "if ordered." Net read: an escalation ceiling clarified, not lowered. Iran hardened its own reopening condition to explicit US troop withdrawal from the Middle East.</li>
+    <li><strong>CoreWeave's Huang-driven bounce lasted exactly one day.</strong> Friday is a third straight down session, shares opening down 5-8%, on pace for the worst week in 11+ months. New detail: co-founder Brannin McBee told the FT CoreWeave is chasing insurers for "unlimited" capital pools — markets are reading that as confirmation of a liquidity search, not confidence.</li>
+    <li><strong>Fed Chair Warsh's IMF fireside chat was a genuine non-event for rate signals</strong> — he gave no new guidance — yet Polymarket's October FOMC contract moved hard toward no-change anyway, with real dispersion across sources (70.5% to 87%). The move tracks data/positioning, not Warsh's own words.</li>
+    <li><strong>The Brent/WTI divergence is continuing, not resolving — but it's no longer a mystery:</strong> Brent is capped by shadow-fleet sanctions-relief chatter, WTI is lifted by a US crude stock draw. Two separate causes, not one unexplained split.</li>
+    <li><strong>Private credit: Stack Infrastructure's $6B Melbourne loan now has a named underwriter group</strong> (MUFG, Natixis, OCBC, SocGen, SMBC) moving into syndication — still unpriced. Blue Owl's James Clarke gave the firm's first on-record defense of its software credit book since the CoreWeave-driven stress began.</li>
+  </ul>
+</div>
+
+<!-- ====================== OVERNIGHT SNAPSHOT ====================== -->
+<h2>Overnight → This Morning: What Moved</h2>
+<table class="move-table">
+  <tr><th>Indicator</th><th>Thu close</th><th>Fri AM</th><th>Read</th></tr>
+  <tr><td>S&P futures</td><td>7,744.06</td><td class="pos">+0.2% (~7,805)</td><td>Modest follow-through</td></tr>
+  <tr><td>Dow futures</td><td>~52,177.69</td><td class="pos">+0.4% (~52,643)</td><td>Modest follow-through</td></tr>
+  <tr><td>Nasdaq futures</td><td>+0.1%</td><td>-0.06% (flat)</td><td>Pausing, not extending</td></tr>
+  <tr><td>10Y yield</td><td>5.09%</td><td class="neg">~5.06-5.10% (backing up)</td><td>AI-debt-scare trade partially unwinding</td></tr>
+  <tr><td>Brent</td><td>$103.97</td><td>~$105.3-105.9 (modest decline on day)</td><td>Capped by shadow-fleet sanctions chatter</td></tr>
+  <tr><td>WTI</td><td>$98.28</td><td class="pos">~$96-98 (+2-3%)</td><td>Lifted by crude stock draw</td></tr>
+  <tr><td>BTC</td><td>~$80,915</td><td class="pos">~$82,000-83,300</td><td>Bounced off brief sub-$80K dip</td></tr>
+  <tr><td>Gold</td><td>~$4,169</td><td class="pos">~$4,165-4,200 (+0.7%)</td><td>Firm</td></tr>
+  <tr><td>CRWV</td><td class="pos">+5.94% to $69.69</td><td class="neg">Down 5-8% premarket</td><td>Third straight down session; bounce fully reversed</td></tr>
+  <tr><td>TSM</td><td>-1.8% to $422.15</td><td>~$422.25 (flat)</td><td>Stabilizing, not recovering</td></tr>
+</table>
+
+<!-- ====================== IRAN ====================== -->
+<h2>Iran / Middle East Geopolitics</h2>
+<div class="delta-box"><strong>Delta since last night:</strong> Trump ruled out nukes while the Pentagon confirmed MOAB contingency plans; Iran hardened its reopening condition; Houthis struck Yemen's own presidential palace.</div>
+
+<p>Trump, Thursday: <strong>"No, I wouldn't use nuclear [against Iran]. We don't have to"</strong> — the first explicit ruling-out of the nuclear option in this conflict — and said no ground troops are planned. The same day, the White House and Pentagon confirmed contingency plans for MOAB (non-nuclear "mother of all bombs") strikes on Iranian military targets "if ordered." Pairing nuclear restraint with live conventional-strike planning is not de-escalation on net — it clarifies where the ceiling is rather than lowering it.</p>
+
+<p>Iran's official line hardened in response: Hormuz <strong>"would reopen only if the United States withdrew its forces from the Middle East... if it does not leave, we will expel it."</strong> That's a maximalist condition, not a negotiating opening. Oil flow through Hormuz is now down to <strong>68% of normal</strong> — the first time this file has had a clean, quantified transit figure. At least 10 ships have been attacked since Sunday, with the GFS Pride sinking still the highest-profile loss.</p>
+
+<p>The Houthis struck Yemen's own presidential palace (Maashiq, Aden) overnight, killing 4-5 security personnel — a new target category, escalation against the Yemeni government itself rather than the standing Riyadh-airport campaign. Saudi Arabia separately claims it intercepted a cruise missile near Medina (Houthis deny). On the shadow-fleet sanctions-relief trial balloon floated Thursday: still unexecuted — no Treasury license, no vessel specifically approved — and new reporting clarifies the scope is narrower than first read: only "legal oil" (non-Russian, non-Iranian cargo) on previously-sanctioned hulls, case-by-case OFAC license required. Germany's foreign minister added fresh rhetorical hardening from Europe: "Europe is in Iran's sights," Germany "will not tolerate" Iranian hostile activities.</p>
+
+<h3>The structural read: two Iranian tracks, visible in real time</h3>
+<div class="faction-grid">
+  <div class="faction-card f-irgc">
+    <h4>SNSC / IRGC-security track</h4>
+    <div class="lead">Mohsen Rezaei, SNSC Secretary — direct Khamenei line</div>
+    <p>Holds the strait shut "until Iran's rights are respected." Controls the actual closure decision. Has the least incentive to de-escalate if MOAB strikes proceed — this is the faction that would set Iran's retaliation calculus.</p>
+  </div>
+  <div class="faction-card f-civ">
+    <h4>Foreign Ministry / Pezeshkian track</h4>
+    <div class="lead">Spokesman Baghaei, President Pezeshkian — civilian government</div>
+    <p>Pushing a parallel Iran-Oman alternative corridor alongside conciliatory "no nukes sought"/"ecocide" framing — a face-saving side-channel that doesn't require US concessions up front.</p>
+  </div>
+</div>
+
+<p>This is not incoherence — it's a deliberate hard-track/soft-track split. Trump's nuclear-ruled-out-but-MOAB-on-the-table move is the mirror image on the US side: restraint on the irreversible step while keeping conventional escalation live, likely to preserve leverage without crossing a line that fractures the Gulf coalition or guarantees Iranian retaliation against Gulf/Israeli targets.</p>
+
+<p><strong>Bear case:</strong> pairing "no nukes" with confirmed MOAB contingency planning arguably reads as more escalatory than ambiguous silence would have — it removes the deterrent value of nuclear ambiguity while signaling conventional strikes are genuinely being teed up, and the SNSC/IRGC track, not the Foreign Ministry, would set the retaliation response. <strong>Bull case:</strong> ruling out nukes explicitly is a real, if narrow, de-escalatory signal, and the Oman-corridor track is a genuine parallel off-ramp worth watching independent of the SNSC's closure line.</p>
+
+<p>Polymarket's Hormuz-normal-by-Dec-31 contract held flat at <strong>12%</strong> through all of this — the sharpest test yet of its physical-transit-data-only behavior, given how much rhetorical movement happened on both sides overnight.</p>
+
+<!-- ====================== MARKETS ====================== -->
+<h2>Markets / Macro</h2>
+<div class="delta-box"><strong>Delta since last night:</strong> Warsh's fireside chat gave no new signal, but Fed odds moved anyway; the Brent/WTI split now has two clean, separate explanations instead of one mystery.</div>
+
+<p>Fed Chair Warsh spoke with IMF's Kristalina Georgieva at 10:30am Bangkok time and gave no new policy signal — he reiterated his standing refusal to pre-commit to forward guidance ("I don't believe in saying now what I might do at the meetings... in the balance of this year"), called global economic resilience "surprising," and separately flagged that the AI investment/development path will be <strong>"very bumpy."</strong> Despite that non-signal, Polymarket's October FOMC contract jumped toward no-change this morning — direct fetches show real dispersion across sources, from 70.5% up to as high as 87% no-change. That's a volatile, still-settling move, likely data/positioning-driven rather than Warsh-driven, and worth treating as noisy rather than locking in the high-end figure.</p>
+
+<p>Overnight levels: S&P futures +0.2% (~7,805), Dow futures +0.4%, Nasdaq futures roughly flat. The <strong>10Y is backing up to ~5.06-5.10%</strong>, off Thursday's lows — the two-session AI-debt-scare flight-to-bonds trade is partially unwinding this morning. Oil's Brent/WTI divergence is continuing, not resolving, but is now cleanly explained: <strong>Brent (~$105.3-105.9, down modestly) is capped by the shadow-fleet sanctions-relief chatter</strong> (iran.md), while <strong>WTI (~$96-98, +2-3%) gets idiosyncratic support from a large US crude stock draw</strong> — two separate causes, not one unexplained split. BTC bounced off a brief dip below $80K to ~$82,000-83,300; gold is firm around $4,165-4,200.</p>
+
+<h3>The structural read: separating rhetoric from data</h3>
+<p>Warsh's own words did nothing for Fed odds — he stuck to his no-forward-guidance posture exactly as he has all year — so whatever is moving Polymarket's FOMC contract this morning is a data or positioning story, not a Fed-chair-rhetoric story. That distinction matters for how much weight to put on the move given the dispersion across sources. The Brent/WTI split resolving into two distinct, identifiable causes is a small win for this file's discipline of flagging unexplained divergences rather than forcing a single narrative onto them.</p>
+
+<p><strong>Watch:</strong> whether the 10Y's backup off Thursday's lows extends through today's session — that's the tell for whether Thursday's "AI-debt scare beats inflation scare" framing was a durable regime shift or a two-day flight-to-safety spike that's already fading.</p>
+
+<!-- ====================== AI ====================== -->
+<h2>AI Ecosystem</h2>
+<div class="delta-box"><strong>Delta since last night:</strong> CoreWeave's bounce didn't survive 24 hours — third straight down day, with a new detail reading as funding strain, not reassurance.</div>
+
+<p>CoreWeave co-founder Brannin McBee told the FT (Oct 14, surfacing now) that the company is actively chasing insurers for <strong>"unlimited" pools of capital</strong> — markets are reading this as evidence of a company searching for emergency liquidity, not a confident balance sheet. CoreWeave's 2031-maturity bond yield cleared 16% on Thursday; the 5-year CDS hit a fresh intraday record ~1,194.5bp before easing to ~1,038bp — still up sharply week-over-week and year-over-year. Friday is a <strong>third consecutive down session</strong>, shares opening down 5-8%, on pace for the worst week in 11+ months. Sympathy selling is spreading: IREN -4%, and NBIS is slipping again, reversing Thursday's own sympathy bounce.</p>
+
+<p>TSMC shows no material new catalyst — essentially flat at ~$422.25 versus Thursday's $422.15. The eight-session slide has stalled, which is stabilization, not recovery. NVDA launched RTX Spark consumer/workstation AI PCs Friday and expanded its Mercedes-Benz autonomous-driving partnership — genuine news, but orthogonal to the CoreWeave financing story. On Anthropic: no major new disclosure since Wednesday's Q3 numbers, but the comparison point sharpened — OpenAI's 2026 revenue estimate was reportedly cut by ~$20B while Anthropic pushes toward a ~$2T IPO valuation target expected post-midterms in November. New to this file: Google's Gemini 4 Argon went GA (claiming #1 on the Vals Index) and Meta shipped Muse Wonder/Muse Wonder Full — both now live competitive products rather than announcements. The ai-ecosystem-analyst pipeline remains dormant, 37 days since its last output.</p>
+
+<h3>The structural read: equity catching down to credit, not credit recovering toward equity</h3>
+<p>The equity-vs-credit gap this file flagged Thursday is closing the way the bear case predicted — equity catching down to credit's view. Huang's reassurance bought exactly one green day; the McBee "unlimited capital" detail is the more important fact of the two, because a company publicly shopping for uncapped insurance-backed capital is market-legible as "we need more cushion than our balance sheet currently provides" — the opposite signal from a confident executive.</p>
+
+<p><strong>Bear case:</strong> absent some explicit new balance-sheet commitment from Nvidia or a hyperscaler customer this weekend, the credit market's ~60% five-year default pricing is more likely to keep dragging the equity lower than the equity's periodic bounces are to pull CDS spreads back in. <strong>Bull case:</strong> three consecutive down days on a stock that's already fallen sharply this month could be momentum/technical selling compounding on itself rather than new fundamental information.</p>
+
+<!-- ====================== PORTFOLIO ====================== -->
+<h2>Portfolio Tickers</h2>
+<div class="delta-box"><strong>Delta since last night:</strong> 160th consecutive zero-position session. CRWV/NBIS deteriorating further; TSM stabilizing; NVDA/AMD/MU quiet.</div>
+
+<table>
+  <tr><th>Ticker</th><th>Overnight / AM</th><th>What's new</th></tr>
+  <tr><td>CRWV</td><td class="neg">Down 5-8% premarket</td><td>Third straight down day; co-founder's "unlimited capital" insurer comments read as funding strain, not confidence.</td></tr>
+  <tr><td>NBIS</td><td class="neg">Slipping again</td><td>Reversing Thursday's sympathy bounce with CRWV.</td></tr>
+  <tr><td>TSM</td><td>~$422.25 (flat)</td><td>No material new catalyst — 8-session slide has stalled, not reversed.</td></tr>
+  <tr><td>NVDA</td><td>—</td><td>Launched RTX Spark AI PCs; expanded Mercedes-Benz AV partnership. Minor, non-credit-related.</td></tr>
+  <tr><td>AMD</td><td>Minor premarket weakness</td><td>Sympathy move only — no AMD-specific news.</td></tr>
+  <tr><td>MU</td><td>—</td><td>No material change. Oct 19/22 earnings remain the next catalyst.</td></tr>
+  <tr><td>AMZN</td><td>—</td><td>No material change — AWS items circulating all trace to Oct 13-14, already stale.</td></tr>
+  <tr><td>XLE</td><td>—</td><td>No company-specific news; oil firm on Hormuz risk (CENTCOM confirmed a container ship sunk this week was struck by an Iranian projectile).</td></tr>
+  <tr><td>APO / ARCC / OWL</td><td>—</td><td>See Private Credit section — Stack loan underwriter group named; Blue Owl's first on-record software-credit defense.</td></tr>
+</table>
+
+<h3>The structural read</h3>
+<p>160 sessions in, today sharpens rather than resolves the same question. A stock that can't hold a CEO-level reassurance for more than a single session (CRWV) is telling you something about how fragile the underlying sentiment actually is. TSM's stabilization without recovery and the absence of real NVDA/AMD/MU-specific news both argue for "nothing changed enough to act on," not "the complex found a bottom."</p>
+
+<p><strong>Bear case:</strong> continued patience risks missing a genuine bottom if CRWV's financing fears turn out to be idiosyncratic rather than complex-wide — but nothing this morning distinguishes that scenario from the alternative. <strong>Bull case:</strong> zero positions means zero downside from today's CRWV deterioration specifically, and the names most central to the actual portfolio thesis (NVDA, TSM, MU) are quiet, not falling further.</p>
+
+<!-- ====================== PRIVATE CREDIT ====================== -->
+<h2>Private Credit</h2>
+<div class="delta-box"><strong>Delta since last night:</strong> Stack Melbourne loan's underwriter group is named; Blue Owl's first on-record software-credit defense; two gap-fill items logged.</div>
+
+<p>The A$8.6B/~$6B five-year Stack Infrastructure Melbourne facility's underwriters are now identified — <strong>Mitsubishi UFJ Financial Group (MUFG), Natixis, OCBC, Société Générale, and SMBC</strong> — mandated this week and moving into broader syndication. Still no pricing, spread, or final allocation reported; that remains the real test. Separately, James Clarke, Blue Owl's global head of institutional capital, gave the firm's first on-record executive pushback on investor concern about software-sector credit exposure amid AI-disruption fears — calling Blue Owl's software book "highly differentiated," saying Q3 redemption pressure had already eased, and touting the firm's 130 global data-center locations (~14% APAC) as its growth leg.</p>
+
+<p>Two gap-fill items worth logging honestly rather than hiding: New Mexico's AG is formally pressing FERC to broaden its environmental review of the Green Chile pipeline to cover the combined data-center-plus-pipeline footprint before any approval (dated Oct 6, missed at the time) — a regulatory-scope fight layered on top of the Feb 2027 timeline slip. Separately, KKR's FS Income Trust Select fully met all 5.06% Q3 redemption requests without prorating (dated ~Oct 10) — a sector-wide, not Blue-Owl-specific, counter-data-point to the redemption-crisis framing. No movement on the Leon Black/DOJ referral.</p>
+
+<h3>The structural read</h3>
+<p>A named underwriter group is a real, incremental step toward the actual test — will the Melbourne loan price, and at what spread — but it is not the test itself. Clarke's on-record defense follows the same pattern as the Lipschultz/Ostrover podcast earlier this month: a senior executive defending the book publicly is informative precisely because it's a response to visible stress, not a resolution of it. The Jupiter regulatory-scope fight is a genuine new risk vector that could push the pipeline timeline further right.</p>
+
+<p><strong>Bull case:</strong> KKR's full redemption fulfillment is a real, if sector-wide, data point that the private-credit redemption stack isn't universally breaking. <strong>Bear case:</strong> a named underwriter group for a live $6B ask, landing the same week as a defensive executive interview, is consistent with a sponsor managing a nervous market in real time.</p>
+
+<p><strong>Standing watch unchanged:</strong> ARCC Oct 27, OWL Oct 29, OBDC early November, Nov 23 Jupiter air-quality permit decision.</p>
+
+<!-- ====================== POLYMARKET ====================== -->
+<h2>Polymarket Calibration</h2>
+<div class="delta-box"><strong>Delta since last night:</strong> Fed contract moved sharply but noisily; Hormuz held flat through real escalatory rhetoric; a larger, more liquid Hormuz-adjacent market identified.</div>
+
+<table>
+  <tr><th>Contract</th><th>Last night</th><th>This morning</th><th>Delta</th></tr>
+  <tr><td>Oct FOMC: no-change / +25bp</td><td>71% / 28%</td><td>~75-87% / ~13-25% <em>(noisy — see note)</em></td><td>Moved toward no-change, but not from Warsh's remarks</td></tr>
+  <tr><td>Hormuz normal by Dec 31</td><td>12%</td><td>12%</td><td>Flat — ignored Trump's no-nukes statement and Iran's hardened condition</td></tr>
+  <tr><td>AI-bubble burst by end-2026</td><td>7%</td><td>~6.1%</td><td>Flat/slightly down — still a negative control</td></tr>
+</table>
+
+<p>The Fed-contract dispersion is itself the finding this morning: direct fetches of the same market ranged from 70.5% to as high as 87% no-change within a single morning, which argues for flagging noise rather than anchoring on whichever number came back first. Warsh's fireside chat gave no new policy signal (markets.md), so whichever reading proves durable, the driver is data/positioning, not the Fed chair's own words. Hormuz's flatline through a night with this much rhetorical escalation on both sides — Trump's nuclear statement, Iran's hardened troop-withdrawal condition — is the sharpest test yet of this contract's physical-transit-data-only behavior; it didn't move. AI-bubble-burst remains a useful negative control, unmoved by CRWV's third consecutive down day.</p>
+
+<p><strong>New market worth tracking:</strong> an Iran/Hormuz "blockade end" market has drawn $33.5M in volume — materially more liquid than the Dec-31 contract this file has tracked — currently pricing ~24.5% Yes. Recommend adding as a parallel tracker going forward given its larger volume.</p>
+
+<!-- ====================== BOTTOM LINE ====================== -->
+<div class="punchline-box">
+  <h3>Bottom Line / Portfolio Implication</h3>
+  <p>Two threads converge this morning on the same lesson: reassurance that isn't backed by a balance-sheet commitment doesn't last. Trump's ruling-out of nuclear weapons sounds de-escalatory in isolation, but paired with confirmed MOAB contingency planning and Iran's own hardened reopening condition, it reads as an escalation ceiling clarified, not lowered — the war's shape (grinding persistence, widening economic cost, no resolution track gaining ground) is unchanged. CoreWeave's Thursday bounce on Jensen Huang's personal reassurance evaporated within 24 hours, and a co-founder's own comments about chasing "unlimited" insurer capital read as exactly the kind of fact credit markets, not equity markets, tend to get right first. Zero positions remains the defensible call at 160 sessions — nothing this morning is a catalyst to act on, and the CRWV deterioration specifically argues for continued caution about reading any single-day bounce as resolution. The one piece of real, falsifiable progress is informational, not directional: today's Brent/WTI divergence and the Fed-odds move both now have identifiable causes instead of being unexplained — worth tracking whether that clarity holds through the full session, and whether the Melbourne loan's newly-named underwriter group actually prices this cycle's real test of AI-infra lender appetite.</p>
+</div>
+
+<!-- ====================== SOURCES ====================== -->
+<h2>Sources</h2>
+<div class="sources">
+  <p><strong>Iran / Geopolitics:</strong></p>
+  <ul>
+    <li><a href="https://www.foxnews.com/live-news/us-iran-war-peace-donald-trump-strait-hormuz-oil-prices-midterms-october-15">Fox News — Trump rules out nuclear weapons against Iran</a></li>
+    <li><a href="https://www.aljazeera.com/news/2026/10/16/trump-rules-out-using-a-nuclear-bomb-on-iran-why-that-matters">Al Jazeera — Trump rules out using a nuclear bomb on Iran: why that matters</a></li>
+    <li><a href="https://www.cbsnews.com/live-updates/iran-war-us-houthi-saudi-arabia-trump/">CBS News — Iran war live updates: MOAB contingency, Yemen palace strike</a></li>
+    <li><a href="https://www.hngn.com/articles/273497/20261016/iran-hits-hormuz-oil-transfers-pushes-own-oman-corridor.htm">HNGN — Iran hardens Hormuz reopening condition, pushes Oman corridor</a></li>
+    <li><a href="https://investing.com/news/commodities-news/us-weighs-easing-sanctions-on-shadow-fleet-to-curb-shipping-costs--reuters-4950473">Reuters via Investing.com — US weighs easing shadow-fleet sanctions, scope clarified</a></li>
+  </ul>
+  <p><strong>Markets:</strong></p>
+  <ul>
+    <li><a href="https://www.cnbc.com/2026/10/16/feds-warsh-says-ai-development-path-will-be-very-bumpy-.html">CNBC — Fed's Warsh says AI development path will be "very bumpy"</a></li>
+    <li><a href="https://www.usnews.com/news/business/articles/2026-10-16/fed-chair-warsh-says-price-stability-is-key-but-shies-away-from-signals-about-rates">US News — Warsh shies away from rate signals</a></li>
+    <li><a href="https://finance.yahoo.com/markets/live/stock-market-today-dow-sp-500-nasdaq-futures-mixed-amid-volatile-week-112939401.html">Yahoo Finance — Futures mixed amid volatile week</a></li>
+    <li><a href="https://www.cnbc.com/2026/10/16/oil-edges-down-as-investors-weigh-possible-us-sanctions-on-shadow-fleet.html">CNBC — Oil edges down on shadow-fleet sanctions chatter</a></li>
+  </ul>
+  <p><strong>AI Ecosystem / Portfolio:</strong></p>
+  <ul>
+    <li><a href="https://247wallst.com/investing/2026/10/16/coreweave-drops-6-as-debt-worries-linger-iren-falls-4-nebius-slips/">24/7 Wall St — CoreWeave drops further as debt worries linger</a></li>
+    <li><a href="https://finance.yahoo.com/technology/ai/articles/coreweave-stock-wipeout-exposes-divide-085641444.html">Yahoo Finance — CoreWeave stock wipeout exposes equity/credit divide</a></li>
+    <li><a href="https://www.pymnts.com/news/artificial-intelligence/2026/anthropic-narrows-revenue-gap-with-openai-before-ipo/">PYMNTS — Anthropic narrows revenue gap with OpenAI before IPO</a></li>
+    <li><a href="https://www.pymnts.com/news/artificial-intelligence/2026/meta-raises-its-ai-game-as-google-opens-gemini-4-argon/">PYMNTS — Meta, Google ship Muse Wonder, Gemini 4 Argon</a></li>
+  </ul>
+  <p><strong>Private Credit:</strong></p>
+  <ul>
+    <li><a href="https://www.mingtiandi.com/real-estate/crelist/blue-owls-stack-seeks-5-9b-loan-for-melbourne-data-centre-and-more-apac-real-estate-headlines/">Mingtiandi — Stack Melbourne loan underwriter group named</a></li>
+    <li><a href="https://www.bloomberg.com/news/articles/2026-10-16/blue-owl-s-clarke-plays-down-software-risks-touts-data-centers">Bloomberg — Blue Owl's Clarke plays down software risks</a></li>
+    <li><a href="https://sourcenm.com/2026/10/06/new-mexico-ag-challenges-federal-commissions-review-of-proposed-project-jupiter-gas-pipeline/">Source NM — New Mexico AG challenges FERC's Jupiter pipeline review</a></li>
+  </ul>
+  <p><strong>Polymarket:</strong></p>
+  <ul>
+    <li><a href="https://polymarket.com/event/fed-decision-in-october-20260617190323537">Polymarket — Fed decision in October</a></li>
+    <li><a href="https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-december-31">Polymarket — Strait of Hormuz traffic returns to normal by Dec 31</a></li>
+    <li><a href="https://cryptonews.com/news/iran-war-polymarket-odds-blockade-end/">Cryptonews — Iran blockade-end market odds</a></li>
+  </ul>
+</div>
+
+<div class="footer">
+  Daily News Brief · October 16, 2026 · Friday Morning Brief · Day 231 of the Iran war<br>
+  <em>Andres's daily analyst. Structural reads, not headline regurgitation. Deltas since last night's close (~17:20 PT).</em>
+</div>
+
+</div>
+
+</body>
+</html>
