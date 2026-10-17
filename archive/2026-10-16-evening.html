@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily News Brief — October 16, 2026 (Evening)</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --surface: #121820;
+    --surface2: #1a2230;
+    --border: #243044;
+    --text: #c8d3e0;
+    --text-dim: #6b7d93;
+    --heading: #e8edf3;
+    --accent: #4fc3f7;
+    --accent2: #81c784;
+    --warn: #ffb74d;
+    --danger: #ef5350;
+    --gold: #ffd54f;
+    --purple: #b39ddb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a0a0a 0%, #2a0a1a 50%, #0a1a2e 100%);
+    border-bottom: 1px solid var(--danger);
+    padding: 50px 40px 40px;
+    text-align: center;
+  }
+  .header .day-tag {
+    display: inline-block;
+    background: rgba(239,83,80,0.2);
+    border: 1px solid rgba(239,83,80,0.4);
+    color: var(--danger);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--heading);
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .header .subtitle {
+    font-size: 18px;
+    color: var(--warn);
+    font-weight: 400;
+  }
+  .header .subtitle-sub {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 10px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--heading);
+    margin: 48px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 28px 0 12px;
+  }
+  p { margin-bottom: 14px; }
+  strong { color: var(--heading); }
+  em { color: var(--accent); font-style: italic; }
+  ul, ol { margin: 0 0 14px 22px; }
+  li { margin-bottom: 6px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  table tr:last-child td { border-bottom: none; }
+  table td:first-child {
+    font-weight: 700;
+    color: var(--heading);
+  }
+  .badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+  .badge-red { background: var(--danger); color: #fff; }
+  .badge-green { background: var(--accent2); color: var(--bg); }
+  .badge-blue { background: var(--accent); color: var(--bg); }
+  .badge-yellow { background: var(--warn); color: var(--bg); }
+  .badge-purple { background: var(--purple); color: var(--bg); }
+  .tldr-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.1), rgba(255,183,77,0.05));
+    border: 2px solid var(--danger);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin: 24px 0 32px;
+  }
+  .tldr-box h3 {
+    color: var(--danger);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .delta-box {
+    background: var(--surface2);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 20px;
+    margin: 0 0 18px;
+    font-size: 13.5px;
+    color: var(--text-dim);
+  }
+  .delta-box strong { color: var(--accent); }
+  .faction-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .faction-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px 26px;
+    border-left: 4px solid var(--border);
+  }
+  .faction-card.f-irgc { border-left-color: var(--danger); }
+  .faction-card.f-hawk { border-left-color: var(--warn); }
+  .faction-card.f-civ { border-left-color: var(--accent); }
+  .faction-card h4 {
+    font-size: 16px;
+    color: var(--heading);
+    margin-bottom: 4px;
+  }
+  .faction-card .lead {
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .honest-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--purple);
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin: 24px 0;
+  }
+  .honest-box h3 {
+    color: var(--purple);
+    margin-top: 0;
+    margin-bottom: 14px;
+  }
+  .punchline-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.08), rgba(79,195,247,0.05));
+    border: 2px solid rgba(239,83,80,0.3);
+    border-radius: 10px;
+    padding: 28px;
+    margin: 32px 0;
+    text-align: center;
+  }
+  .punchline-box h3 {
+    color: var(--danger);
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .punchline-box p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    max-width: 760px;
+    margin: 0 auto 10px;
+    color: var(--text);
+  }
+  .sources { font-size: 12.5px; color: var(--text-dim); }
+  .sources a { color: var(--accent); text-decoration: none; }
+  .sources a:hover { text-decoration: underline; }
+  .footer {
+    border-top: 1px solid var(--border);
+    margin-top: 50px;
+    padding-top: 20px;
+    color: var(--text-dim);
+    font-size: 12px;
+    text-align: center;
+  }
+  .pos { color: var(--accent2); }
+  .neg { color: var(--danger); }
+  .move-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  .move-table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  .move-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="day-tag">Day 231 of the Iran War · Friday Evening Wrap</div>
+  <h1>Daily News Brief — October 16, 2026</h1>
+  <div class="subtitle">The morning's "modest follow-through" call was wrong: a broad risk-off session hit the whole tape, VIX spiked 30% on an unconfirmed rumor, and CoreWeave's bonds crossed into distressed territory.</div>
+  <div class="subtitle-sub">Run: 17:20 PT · Evening wrap: what actually happened · ARCC earnings T-11 days · OWL earnings T-13 days · Micron earnings Oct 19/22 · Nov 23 Jupiter permit decision · Nov 3 US midterms</div>
+</div>
+
+<div class="container">
+
+<!-- ====================== TL;DR ====================== -->
+<div class="tldr-box">
+  <h3>TL;DR — What changed today and why it matters</h3>
+  <ul>
+    <li><strong>This was a market-wide risk-off day, not a CoreWeave-specific one.</strong> S&amp;P 500 -1.1% to 7,659.44, Nasdaq -2.1% to 26,140.03 — both posting their worst week since June. VIX spiked ~30% intraday to a 4-month high (~21.4, peak 22.3) on an <strong>unconfirmed</strong> rumor that a hedge fund was "getting blown out" of positions — no name or mechanism confirmed.</li>
+    <li><strong>CoreWeave didn't find a floor — it fell another 11.9% to $61.39, and its bonds crossed into "distressed" territory for the first time</strong> (some trading near 79% of face value, the 2031 bond yielding above 16%). CDS still near Thursday's record ~1,195bp.</li>
+    <li><strong>TSMC broke its stabilization, falling 2.2% despite a record-profit quarter and a raised price target</strong> (Barclays to $670). A demand-side name falling through good news is the clearest evidence this was systemic selling, not fundamentals.</li>
+    <li><strong>Polymarket's Fed dispersion resolved to the high end</strong> — October no-change hit an all-time high of 87%. <strong>Hormuz held flat at 12%</strong> through CENTCOM's direct rebuttal of Iran's "we control the strait" claim (19M barrels moved in a single day) — still tracking physical flow data, not rhetoric.</li>
+    <li><strong>Stack Infrastructure's $6B Melbourne loan remains unpriced</strong> — no material change, but tonight's broader selloff (CRWV's bonds turning distressed) raises the stakes on when and at what spread it eventually prices.</li>
+  </ul>
+</div>
+
+<!-- ====================== MORNING -> EVENING ====================== -->
+<h2>Morning → Evening: What Moved</h2>
+<table class="move-table">
+  <tr><th>Indicator</th><th>Fri AM (expected)</th><th>Fri PM (actual)</th><th>Read</th></tr>
+  <tr><td>S&P 500</td><td class="pos">Futures +0.2% (~7,805)</td><td class="neg">7,659.44 (-1.1%)</td><td>Morning call was wrong in direction and magnitude</td></tr>
+  <tr><td>Nasdaq</td><td>Futures roughly flat</td><td class="neg">26,140.03 (-2.1%)</td><td>Worst week since June</td></tr>
+  <tr><td>VIX</td><td>—</td><td class="neg">~21.4 (+~30% intraday, 4-mo high)</td><td>Triggered by an unconfirmed hedge-fund-distress rumor</td></tr>
+  <tr><td>CRWV</td><td>Down 5-8% premarket</td><td class="neg">-11.91% to $61.39</td><td>Accelerated; bonds now "distressed"</td></tr>
+  <tr><td>TSM</td><td>Stabilizing (~$422, flat)</td><td class="neg">-2.2% to ~$412-413</td><td>Broke stabilization despite a record quarter</td></tr>
+  <tr><td>Brent / WTI</td><td>Diverging (~$105.5 / ~$97)</td><td>Converged lower (~$105.2 / ~$97.4)</td><td>Moved together, not apart, today</td></tr>
+  <tr><td>Oct FOMC no-change</td><td>Dispersed 70.5-87%</td><td class="pos">87% (ATH)</td><td>Dispersion resolved to the high end</td></tr>
+  <tr><td>Hormuz normal by Dec 31</td><td>12%</td><td>~12% (flat)</td><td>Unmoved by CENTCOM/Iran claim-counterclaim</td></tr>
+</table>
+
+<!-- ====================== MARKETS ====================== -->
+<h2>Markets / Macro</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> a broad risk-off session the morning's futures read didn't anticipate — Nasdaq -2.1%, VIX +30% on an unconfirmed rumor.</div>
+
+<p>Close: S&amp;P 500 <strong>7,659.44 (-84.62, -1.1%)</strong>, Dow <strong>52,002.41 (-175.28, -0.3%)</strong>, Nasdaq <strong>26,140.03 (-572.99, -2.1%)</strong> — both the S&amp;P and Nasdaq posting their worst week since June. The VIX spiked roughly 30% intraday to a four-month high, closing near <strong>21.4</strong> after an intraday peak of 22.31. The proximate trigger was a rumor that a hedge fund was "getting blown out" of positions — <strong>no name or mechanism has been confirmed.</strong> One commentator speculated the fund was "Situational Awareness" (previously absorbed by Citadel after an earlier blowup); Jim Cramer separately floated margin clerks liquidating "Data Center &amp; Friends" positions after an oil spike. Both are speculation, not confirmed fact, and this file is flagging that gap explicitly rather than retrofitting a clean narrative onto an unverified cause.</p>
+
+<p>10Y little changed at <strong>~5.08%</strong>. Oil slipped modestly and moved <em>together</em> today rather than diverging further: <strong>Brent ~$105.2</strong> (down from Thursday's $105.92), <strong>WTI ~$97.4 (-0.55%)</strong>. The IEA's emergency release of over 20 million barrels of diesel from strategic stocks is new and Hormuz-related, but reported as "small next to the Hormuz shortfall" — it barely moved crude. BTC dipped toward $81K intraday on the equity selloff before holding near <strong>$82,300</strong>; gold held firm near <strong>$4,198</strong>.</p>
+
+<h3>The structural read: the morning's framing was too narrow</h3>
+<p>This morning's "modest follow-through" call was wrong in both direction and magnitude, and the reason matters: today wasn't a continuation of the AI-infra-specific stress this file tracked all week, it was a broader, unexplained volatility event. The honest position tonight is to not know yet whether this was (a) systemic AI-complex risk finally being priced broadly, with CoreWeave's distress as a leading indicator, or (b) an unrelated fund blowup that hit every high-beta name regardless of AI exposure. On the Fed: Polymarket's dispersed morning reading (70.5-87%) resolved to an <strong>87% all-time high</strong> for October no-change — the cleanest single resolution of the day.</p>
+
+<p><strong>Bear case:</strong> a VIX spike this sharp, landing the same week as CoreWeave's credit stress and a hot CPI print, looks like a market genuinely fragile and looking for a reason to sell. <strong>Bull case:</strong> an unconfirmed-rumor-driven spike that fades once confirmed or denied is exactly the kind of one-day event that shouldn't be read as a regime change — Monday's open is the real test, not tonight's close.</p>
+
+<!-- ====================== AI ====================== -->
+<h2>AI Ecosystem</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> CRWV didn't find a floor — bonds crossed into distressed territory. TSM broke its stabilization despite good news, implicating the broader selloff, not fundamentals.</div>
+
+<p>CRWV closed at <strong>$61.39 (-$8.30, -11.91%)</strong>, with some bonds trading near <strong>79% of face value</strong> and the October 2031 bond yield clearing <strong>16%</strong> — crossing into "distressed" territory by standard market convention, a discrete threshold event distinct from Thursday's CDS record (~1,195bp, which still stands). <strong>TSM fell 2.2% to ~$412-413</strong> despite reporting its <strong>sixth consecutive record-profit quarter</strong> (Q3 net income +69% YoY, advanced technologies 79% of wafer revenue) and Barclays raising its price target to <strong>$670 from $665</strong> (Overweight maintained). A stock falling through genuinely good company-specific news is itself the data point: today's move in chips was systemic-selloff-driven, not fundamentals-driven. NVDA (~-1.8%), AMD (~-1.5%), and MU (swinging from Thursday's +1.9% to roughly -5.6%) all tracked the broad Nasdaq -2.1% day rather than any AI-specific news.</p>
+
+<h3>The structural read: a revision to the "clean separation" thesis</h3>
+<p>This file has spent the week treating AI-infra financing stress (CoreWeave) and AI-infra demand (TSMC, NVDA) as genuinely separate stories. Today complicates that: TSM — the clearest demand-side name, with the best news of anyone in the complex today — fell by roughly the same proportion as the broader Nasdaq, on a day whose proximate catalyst had nothing confirmed to do with AI-infra at all. That doesn't kill the CRWV-financing thesis (bonds turning distressed is real and specific to CoreWeave), but it does mean today's selloff can't be read as pure CoreWeave contagion. Monday's test: does TSM recover if the broad tape stabilizes independent of CRWV-specific news (confirming today was a broad vol event that caught AI names incidentally), or does the complex keep falling together (confirming systemic AI risk is now being priced broadly)?</p>
+
+<p><strong>Bear case:</strong> CRWV's bonds crossing into distressed territory, on top of a market-wide panic, is a worse combination than either alone. <strong>Bull case:</strong> if the hedge-fund rumor resolves as idiosyncratic and unrelated to AI-infra, today's broad-based drop should mean-revert faster than CRWV's bond distress — which is real and won't reverse just because the broader tape does.</p>
+
+<!-- ====================== IRAN ====================== -->
+<h2>Iran / Middle East Geopolitics</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> No material change to the big picture — CENTCOM directly disputed Iran's "we control the strait" claim; Trump added a non-substantive quip about renaming Hormuz.</div>
+
+<p>Iran's army chief reiterated this evening that Hormuz "will stay shut until Iran's rights are respected" — the same hardened line logged this morning, not a further escalation. The US military pushed back directly on Iran's framing: <strong>CENTCOM said commercial and energy traffic continues to move through Hormuz, and that US forces and regional partners helped ship more than 19 million barrels of crude oil through the waterway in a single day</strong> — the most direct US counter-claim yet to Iran's own narrative of blockade effectiveness. That doesn't change the actual flow data this file tracks: Hormuz transit averaged <strong>11.62 million barrels/day in the week to Oct 13, against a 17.15M baseline — 67.8% of normal</strong>, independently corroborating this morning's 68% figure from a separate source. Trump separately floated, in lighter remarks, renaming the Strait of Hormuz the "Trump Strait" — color, not policy. Iranian President Pezeshkian said Tehran is "ready for dialogue" but will not "bow to coercion," consistent with the soft-track framing already on file. No confirmed movement tonight on MOAB contingency execution, the shadow-fleet sanctions license, or the Oman-corridor track.</p>
+
+<p>Polymarket's Hormuz-normal-by-Dec-31 contract held at <strong>~12% Yes</strong>, unmoved by either side's claim-and-counterclaim today — continuing to track physical flow data rather than rhetoric, the same pattern this file flagged this morning.</p>
+
+<!-- ====================== PRIVATE CREDIT ====================== -->
+<h2>Private Credit</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> No material change — Stack Melbourne loan remains unpriced, but today's broader market stress raises the stakes on its eventual pricing.</div>
+
+<p>No pricing, spread, or syndication update found tonight on the A$8.6B/~$6B Stack Infrastructure Melbourne facility; the underwriter group named this morning (MUFG, Natixis, OCBC, Société Générale, SMBC) stands. Worth flagging directly: CoreWeave's bonds crossing into distressed territory today is the kind of market backdrop that makes a live $6B AI-infra debt syndication a harder sell. No confirmation either way tonight, but the Melbourne loan's eventual pricing just became a more consequential signal of lender appetite than it was this morning. Standing watch unchanged: ARCC Oct 27, OWL Oct 29, OBDC early November, Nov 23 Jupiter permit decision.</p>
+
+<!-- ====================== PORTFOLIO ====================== -->
+<h2>Portfolio Tickers</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> 160th consecutive zero-position session holds. CRWV accelerated into distressed-bond territory; TSM, NVDA, AMD, MU all fell with the broad tape.</div>
+
+<table>
+  <tr><th>Ticker</th><th>Close</th><th>What's new</th></tr>
+  <tr><td>CRWV</td><td class="neg">-11.91% to $61.39</td><td>Bonds now "distressed" (~79% of face value, 2031 yield &gt;16%); CDS still near Thursday's record.</td></tr>
+  <tr><td>TSM</td><td class="neg">-2.2% to ~$412-413</td><td>Fell despite a record quarter and a raised Barclays price target ($670) — systemic, not fundamental.</td></tr>
+  <tr><td>NVDA</td><td class="neg">~-1.8%</td><td>Tracking the broad tape; no new CRWV-backstop news.</td></tr>
+  <tr><td>AMD</td><td class="neg">~-1.5%</td><td>Sympathy/broad-tape move; no AMD-specific news.</td></tr>
+  <tr><td>MU</td><td class="neg">~-5.6%</td><td>Swung hard from Thursday's +1.9%; Oct 19/22 earnings are the next real catalyst.</td></tr>
+  <tr><td>AMZN</td><td>—</td><td>No material change.</td></tr>
+  <tr><td>XLE</td><td>—</td><td>Oil slipped modestly in sympathy with the broad selloff rather than rallying on Hormuz risk alone.</td></tr>
+  <tr><td>APO / ARCC / OWL</td><td>—</td><td>No material change; Stack loan still unpriced (see Private Credit).</td></tr>
+</table>
+
+<h3>The structural read</h3>
+<p>160 sessions in, today's real development is scope, not just severity: this is no longer cleanly a CoreWeave-contained story. TSM falling on good news, alongside a broad Nasdaq decline driven by an unconfirmed rumor, means the AI-infra complex got caught in — and may not be fully distinguishable from — a wider market de-risking event tonight. CRWV's bonds crossing into distressed territory is the hardest, most CRWV-specific data point of the day and doesn't get explained away by the broader selloff.</p>
+
+<p><strong>Bear case:</strong> a market-wide panic landing in the same week as CoreWeave's credit stress is a worse combination than either alone — continued patience at zero positions remains clearly correct until there's a confirmed catalyst to act on. <strong>Bull case:</strong> zero positions means zero downside from today specifically, and if the hedge-fund rumor resolves as idiosyncratic and unrelated to AI-infra, today's broad-based drop should mean-revert faster than CRWV's bond distress, which is a separate and real problem that won't reverse with the broader tape.</p>
+
+<!-- ====================== POLYMARKET ====================== -->
+<h2>Polymarket Calibration</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> Fed dispersion resolved to an all-time high; Hormuz held flat through more claim-and-counterclaim; AI-bubble contract needs a fresh check given tonight's close.</div>
+
+<table>
+  <tr><th>Contract</th><th>This morning</th><th>Tonight</th><th>Delta</th></tr>
+  <tr><td>Oct FOMC: no-change / +25bp</td><td>~75-87% / ~13-25% <em>(noisy)</em></td><td class="pos">87% / 14% (ATH)</td><td>Dispersion resolved to the high end</td></tr>
+  <tr><td>Hormuz normal by Dec 31</td><td>12%</td><td>~12%</td><td>Flat — ignored CENTCOM/Iran claim-counterclaim today</td></tr>
+  <tr><td>AI-bubble burst by end-2026</td><td>~6.1%</td><td><em>not re-checked tonight</em></td><td>Open — flagging as a gap, not assuming flat</td></tr>
+</table>
+
+<p>The Fed contract's morning dispersion (70.5-87%) resolved tonight to an <strong>87% all-time high</strong> for no-change — not confirmed as driven by anything Warsh said this morning, more likely a data/positioning story consistent with this file's standing read. Hormuz held its standing ~12% through CENTCOM's direct rebuttal of Iran's "we control the strait" claim and Iran's own reiterated hardline — continuing to track physical flow data (now independently corroborated at 67.8% of normal) rather than rhetoric from either side.</p>
+
+<p><strong>Honest gap:</strong> this file has not re-checked the AI-bubble-burst contract against tonight's close. A session with CRWV's bonds turning distressed, TSM falling on good news, and a market-wide VIX spike is exactly the kind of day that should move this contract if it's tracking real AI-financing stress rather than acting as a pure negative control — recommend checking first thing in Monday's run rather than assuming it stayed flat at ~6.1%.</p>
+
+<!-- ====================== BOTTOM LINE ====================== -->
+<div class="punchline-box">
+  <h3>Bottom Line / Portfolio Implication</h3>
+  <p>Today's real lesson is a widening of the lens, not a sharpening of yesterday's thesis. This file has spent the week treating CoreWeave's financing stress as a contained, CRWV-specific story, cleanly separable from AI-infra demand (TSMC, NVDA). Today complicates that: a broad, unexplained market-wide selloff — triggered by an unconfirmed hedge-fund-distress rumor, not anything CoreWeave-specific — pulled down TSM on a day it reported genuinely good news, alongside NVDA, AMD, and MU. At the same time, CoreWeave's own problem got strictly worse and more specific: its bonds crossed into distressed territory, a harder threshold than Thursday's CDS record. The honest read is that two things are true at once and this file can't yet separate them: CoreWeave's financing stress is real and escalating on its own merits, and today's broader carnage may be a largely unrelated volatility event that happened to hit the same names. Zero positions remains clearly the right call at 160 sessions — there is no confirmed catalyst tonight to act on, and the unresolved hedge-fund rumor means Monday's open, not tonight's close, is the actual test of whether this was a one-day panic or the start of something that compounds. Watch three things into next week: whether the rumor gets a name and resolution, whether TSM/NVDA/AMD/MU recover independent of CRWV-specific news, and whether the Melbourne loan's pricing — now a more consequential signal than it was this morning — comes in wide or ugly.</p>
+</div>
+
+<!-- ====================== SOURCES ====================== -->
+<h2>Sources</h2>
+<div class="sources">
+  <p><strong>Markets:</strong></p>
+  <ul>
+    <li><a href="https://www.ktvb.com/article/syndication/associatedpress/how-major-us-stock-indexes-fared-friday-10162026/616-a0bdb55c-653b-410b-bc01-ae1f2a7523c8">AP via KTVB — How major US stock indexes fared Friday</a></li>
+    <li><a href="https://www.cnbc.com/2026/10/16/wall-streets-fear-gauge-is-ripping-traders-see-it-going-even-higher.html">CNBC — Wall Street's fear gauge is ripping on hedge-fund distress rumors</a></li>
+    <li><a href="https://www.cnbc.com/2026/10/16/oil-eases-small-weekly-gain-middle-east-supply.html">CNBC — Oil eases but heads for small weekly gain</a></li>
+  </ul>
+  <p><strong>AI Ecosystem / Portfolio:</strong></p>
+  <ul>
+    <li><a href="https://www.gurufocus.com/news/9128167/coreweave-crwv-shares-plunge-126-amid-nasdaq-100-tech-selloff">GuruFocus — CoreWeave shares plunge 12.6% amid Nasdaq 100 tech selloff</a></li>
+    <li><a href="https://www.fool.com/investing/2026/10/16/why-is-coreweave-stock-falling-today/">The Motley Fool — Why is CoreWeave stock falling today?</a></li>
+    <li><a href="https://www.vantagemarkets.com/market-analysis/tsmc-stock-price-slips-after-q3-beat-tsm-cfd-october-16-2026/">Vantage Markets — TSMC stock slips 1.8-2.2% despite 68.7% net income jump</a></li>
+  </ul>
+  <p><strong>Iran / Geopolitics:</strong></p>
+  <ul>
+    <li><a href="https://www.timesofisrael.com/liveblog-october-16-2026/">Times of Israel — Iran liveblog, October 16</a></li>
+  </ul>
+  <p><strong>Polymarket:</strong></p>
+  <ul>
+    <li><a href="https://polymarket.com/event/fed-decision-in-october-20260617190323537">Polymarket — Fed decision in October</a></li>
+    <li><a href="https://en.macromicro.me/charts/149251/iran-probability-of-hormuz-traffic-returning-to-normal-polymarket-betting-odds">MacroMicro — Hormuz traffic returning to normal (Polymarket)</a></li>
+  </ul>
+</div>
+
+<div class="footer">
+  Daily News Brief · October 16, 2026 · Friday Evening Wrap · Day 231 of the Iran war<br>
+  <em>Andres's daily analyst. Structural reads, not headline regurgitation. Deltas since this morning's run (~08:00 PT).</em>
+</div>
+
+</div>
+
+</body>
+</html>
