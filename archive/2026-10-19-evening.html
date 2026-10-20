@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily News Brief — October 19, 2026 (Evening)</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --surface: #121820;
+    --surface2: #1a2230;
+    --border: #243044;
+    --text: #c8d3e0;
+    --text-dim: #6b7d93;
+    --heading: #e8edf3;
+    --accent: #4fc3f7;
+    --accent2: #81c784;
+    --warn: #ffb74d;
+    --danger: #ef5350;
+    --gold: #ffd54f;
+    --purple: #b39ddb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a0a0a 0%, #2a0a1a 50%, #0a1a2e 100%);
+    border-bottom: 1px solid var(--danger);
+    padding: 50px 40px 40px;
+    text-align: center;
+  }
+  .header .day-tag {
+    display: inline-block;
+    background: rgba(239,83,80,0.2);
+    border: 1px solid rgba(239,83,80,0.4);
+    color: var(--danger);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--heading);
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .header .subtitle {
+    font-size: 18px;
+    color: var(--warn);
+    font-weight: 400;
+  }
+  .header .subtitle-sub {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 10px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--heading);
+    margin: 48px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 28px 0 12px;
+  }
+  p { margin-bottom: 14px; }
+  strong { color: var(--heading); }
+  em { color: var(--accent); font-style: italic; }
+  ul, ol { margin: 0 0 14px 22px; }
+  li { margin-bottom: 6px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  table tr:last-child td { border-bottom: none; }
+  table td:first-child {
+    font-weight: 700;
+    color: var(--heading);
+  }
+  .badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+  .badge-red { background: var(--danger); color: #fff; }
+  .badge-green { background: var(--accent2); color: var(--bg); }
+  .badge-blue { background: var(--accent); color: var(--bg); }
+  .badge-yellow { background: var(--warn); color: var(--bg); }
+  .badge-purple { background: var(--purple); color: var(--bg); }
+  .tldr-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.1), rgba(255,183,77,0.05));
+    border: 2px solid var(--danger);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin: 24px 0 32px;
+  }
+  .tldr-box h3 {
+    color: var(--danger);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .delta-box {
+    background: var(--surface2);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 20px;
+    margin: 0 0 18px;
+    font-size: 13.5px;
+    color: var(--text-dim);
+  }
+  .delta-box strong { color: var(--accent); }
+  .faction-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .faction-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px 26px;
+    border-left: 4px solid var(--border);
+  }
+  .faction-card.f-irgc { border-left-color: var(--danger); }
+  .faction-card.f-hawk { border-left-color: var(--warn); }
+  .faction-card.f-civ { border-left-color: var(--accent); }
+  .faction-card h4 {
+    font-size: 16px;
+    color: var(--heading);
+    margin-bottom: 4px;
+  }
+  .faction-card .lead {
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .honest-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--purple);
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin: 24px 0;
+  }
+  .honest-box h3 {
+    color: var(--purple);
+    margin-top: 0;
+    margin-bottom: 14px;
+  }
+  .punchline-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.08), rgba(79,195,247,0.05));
+    border: 2px solid rgba(239,83,80,0.3);
+    border-radius: 10px;
+    padding: 28px;
+    margin: 32px 0;
+    text-align: center;
+  }
+  .punchline-box h3 {
+    color: var(--danger);
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .punchline-box p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    max-width: 760px;
+    margin: 0 auto 10px;
+    color: var(--text);
+  }
+  .sources { font-size: 12.5px; color: var(--text-dim); }
+  .sources a { color: var(--accent); text-decoration: none; }
+  .sources a:hover { text-decoration: underline; }
+  .footer {
+    border-top: 1px solid var(--border);
+    margin-top: 50px;
+    padding-top: 20px;
+    color: var(--text-dim);
+    font-size: 12px;
+    text-align: center;
+  }
+  .pos { color: var(--accent2); }
+  .neg { color: var(--danger); }
+  .move-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  .move-table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  .move-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="day-tag">Day 234 of the Iran War · Monday Evening Wrap</div>
+  <h1>Daily News Brief — October 19, 2026</h1>
+  <div class="subtitle">The close confirmed the morning's stabilization — VIX fully retraced Friday's spike — but the single-name split signal flipped: CoreWeave's equity pop evaporated while its bonds kept improving, the opposite of the morning's framing.</div>
+  <div class="subtitle-sub">Run: 17:15 PT · Evening wrap vs. morning read · Nebius/Micron-Taichung catalyst T-3 days (Oct 22) · META earnings T-2 days (Oct 21) · ARCC earnings T-8 days · OWL earnings T-10 days · Israel election T-8 days (Oct 27) · Nov 23 Jupiter permit decision · Nov 3 US midterms</div>
+</div>
+
+<div class="container">
+
+<!-- ====================== TL;DR ====================== -->
+<div class="tldr-box">
+  <h3>TL;DR — What moved between morning and close, and why it matters</h3>
+  <ul>
+    <li><strong>The stabilization held, and held cleaner than the morning expected.</strong> S&amp;P closed +0.41% to 7,690.73, Nasdaq +1.11% to 26,430.89, and VIX fully round-tripped Friday's spike (18.07, -9.6%) rather than just partially unwinding it. But the Dow closed slightly negative — a narrow, mega-cap-tech-led bounce, not a broad one.</li>
+    <li><strong>CoreWeave's split signal flipped direction.</strong> The Goldman-upgrade equity pop (premarket +6.5-7.5%) fully evaporated by the close (CRWV -0.44% to $61.12) — but its bonds kept compressing (2031 notes to 14.80% YTW, down from ~15% this morning). Credit improved while equity didn't believe it; the reverse of the morning's framing.</li>
+    <li><strong>Oil's reversal stuck.</strong> Brent and WTI held near their post-sanctions-waiver lows through the close rather than bouncing back — the Russia-sanctions catalyst is durable intraday, not a blip, and the Hormuz risk premium stayed detached from it.</li>
+    <li><strong>Both flagged Polymarket contracts partially mean-reverted.</strong> AI-bubble-burst eased to 8% (from 9.05%); Hormuz-normal eased to 13% (from ~14%) — neither continued this morning's move, consistent with Monday being a real but overshot repricing on both.</li>
+    <li><strong>Iran: a third straight day of IRGC mine claims, still zero independent confirmation, still zero CENTCOM response.</strong> The CENTCOM-vs-transit-data contradiction flagged this morning remains fully open — now with three unaddressed claims stacked on top instead of one.</li>
+  </ul>
+</div>
+
+<!-- ====================== MORNING -> EVENING ====================== -->
+<h2>Morning → Evening: What Moved</h2>
+<table class="move-table">
+  <tr><th>Item</th><th>Morning (08:00 PT)</th><th>Evening close (17:15 PT)</th><th>Verdict</th></tr>
+  <tr><td>S&amp;P 500</td><td>Opened +0.5-0.8%</td><td>Closed +0.41% to 7,690.73</td><td class="pos">Held</td></tr>
+  <tr><td>Nasdaq</td><td>Opened +1.0-1.3%</td><td>Closed +1.11% to 26,430.89</td><td class="pos">Held</td></tr>
+  <tr><td>Dow</td><td>Roughly flat at open</td><td>Closed -0.1%, below 50-day line</td><td class="neg">New wrinkle — narrow rally, not broad</td></tr>
+  <tr><td>VIX</td><td>Eased ~7% to ~18.6-19 (partial unwind)</td><td>Closed 18.07, -9.6% (near-full retrace)</td><td class="pos">Held, fuller than expected</td></tr>
+  <tr><td>Brent / WTI</td><td>-2.1% / -1.9% on Russia sanctions waiver</td><td>Settled ~$107.6-108 / ~$99.5-100.4, held</td><td class="pos">Held through close</td></tr>
+  <tr><td>CRWV equity</td><td>+6.5-7.5% premarket on Goldman upgrade</td><td>Closed -0.44% to $61.12 — pop fully faded</td><td class="neg">Reversed</td></tr>
+  <tr><td>CRWV 2031 bond</td><td>~15% YTW (compressed ~25bp from &gt;16%)</td><td>14.80% YTW — continued compressing</td><td class="pos">Continued, didn't reverse</td></tr>
+  <tr><td>Polymarket AI-bubble-burst</td><td>9.05% Yes (direct fetch, up from 6-7%)</td><td>8% Yes — partial reversion</td><td>Partially reverted</td></tr>
+  <tr><td>Polymarket Hormuz-normal</td><td>~14% Yes (up from flat 12%, wrong direction)</td><td>13% Yes — partial reversion</td><td>Partially reverted</td></tr>
+  <tr><td>CENTCOM response</td><td>Silent since Oct 13 barrel claim</td><td>Still silent; third mine claim unaddressed</td><td class="neg">Unresolved, worse</td></tr>
+  <tr><td>Micron Taoyuan</td><td>Expected: leave-day rally, not a strike</td><td>Confirmed: rally held, no strike, no stoppage</td><td class="pos">Held exactly as expected</td></tr>
+</table>
+
+<!-- ====================== IRAN ====================== -->
+<h2>Iran / Middle East Geopolitics</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> A third straight day of IRGC mine claims, zero independent confirmation, zero CENTCOM response. Polymarket's Hormuz contract corrected about half of this morning's wrong-direction move.</div>
+
+<p>Iran's Revolutionary Guards said Monday that an oil tanker "in violation" of mandated transit lanes struck a naval mine south of Hormuz and caught fire in its engine room — no vessel identified, no casualty or damage figures given, no independent confirmation (<a href="https://www.omanobserver.om/article/1198042/world/region/oil-tanker-on-fire-after-hitting-mine-in-hormuz-irans-guards">Oman Observer</a>, <a href="https://www.anews.com.tr/middle-east/2026/10/19/irans-revolutionary-guard-says-oil-tanker-struck-mine-and-caught-fire-in-strait-of-hormuz">anews</a>). This is the third such IRGC claim in three consecutive days — a supertanker Saturday, another tanker Friday, this one Monday — a sustained claimed-escalation cadence. <strong>CENTCOM has still issued nothing</strong>: no barrel update since Oct 13, no comment on any of the three mine claims, no reconciliation with straits.live's ~2%-of-baseline transit read logged this morning. The contradiction this file opened this morning didn't resolve — it widened, with three unaddressed claims now stacked on top of one.</p>
+
+<p>Polymarket's Hormuz-normal-by-Dec-31 contract, which rose the "wrong" way this morning (12%→14%) against the week's worst transit data, eased back to <strong>13% Yes</strong> by this evening — a partial correction of roughly half the morning's move, not a full reversal. That's genuinely ambiguous: either the morning move was mostly noise now fading, or the market is slowly weighing today's third mine claim against a fading diplomatic-optics bump from Lavrov's Monday visit. Not resolving this tonight. Separately, Netanyahu visited an airbase today and told Israel's enemies "do not test us," invoking Iran directly nine days before Israel's Oct 27 election (<a href="https://www.timesofisrael.com/liveblog-october-19-2026/">Times of Israel liveblog</a>) — rhetoric consistent with, not escalatory beyond, the standing campaign framing.</p>
+
+<h3>The structural read</h3>
+<p>The most important non-development today is CENTCOM's continued silence. Three straight days of mine claims and a harder independent transit read, and the US side has offered nothing to confirm, deny, or contextualize any of it since Oct 13. <strong>Bear case:</strong> that silence may mean the US doesn't have a clean rebuttal to offer, and the "100M+ barrels, open for business" framing is quietly becoming untenable. <strong>Bull case:</strong> the rhetoric-vs-operations gap this file has tracked for months is still intact — unconfirmed state-media claims with no CENTCOM reaction may simply not be significant enough to warrant one.</p>
+
+<!-- ====================== MARKETS ====================== -->
+<h2>Markets / Macro</h2>
+<div class="delta-box"><strong>Delta since this morning's open:</strong> The stabilization closed cleaner than expected on vol, but narrower than the headline indexes suggest — the Dow didn't participate.</div>
+
+<p>Final closes: <strong>S&amp;P 500 7,690.73 (+0.41%)</strong>, <strong>Nasdaq Composite 26,430.89 (+1.11%)</strong>, <strong>Dow -0.1%, closing below its 50-day moving average</strong> (<a href="https://www.cnbc.com/2026/10/19/tech-stocks-rebound-meta-tesla-earnings.html">CNBC</a>). <strong>VIX closed 18.07 (-9.6% / -1.92pts from Friday's 19.99)</strong> — a near-complete retrace toward October's ~15-16 baseline, fuller than the morning's "partial unwind" framing expected. Oil held at its lower, sanctions-driven level through the close rather than reversing: Brent settled ~$107.6-108, WTI ~$99.5-100.4 (<a href="https://financefeeds.com/brent-crude-oil-price-108-trump-russia-sanctions-waiver-diesel-bull-113-bear-103">financefeeds</a>). BTC ~$82,700-83,000, a modest continued bounce. VARA remains exactly where the morning left it — unresolved either way.</p>
+
+<h3>The structural read</h3>
+<p>A VIX that round-trips most of Friday's spike in a single session is stronger stabilization evidence than the morning's own numbers implied. But the Dow's negative close is a real qualifier: this was a narrow, AI/tech-led rebound, not the broad-based calm that would fully retire the "fragile bounce" framing heading into this week's earnings gauntlet. <strong>Bear case:</strong> a narrow rally resting on one sector reverses fast if Wednesday's META print disappoints. <strong>Bull case:</strong> VIX's full retrace plus continued CRWV bond compression are two independent signals now pointing the same calm direction — a better composite than the morning had.</p>
+
+<!-- ====================== AI ====================== -->
+<h2>AI Ecosystem</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> CoreWeave's "split signal" resolved backwards from the obvious read — equity faded, credit kept improving.</div>
+
+<p><strong>CoreWeave closed at $61.12, down 0.44% on the day</strong> — essentially erasing the entire Goldman-upgrade pop by the close (<a href="https://stockanalysis.com/stocks/crwv/">stockanalysis.com</a>). Its 9.75% notes due 2031 priced at 80.92% of face value, <strong>14.80% yield-to-worst</strong> — continuing to compress, not reversing (<a href="https://buttondown.com/thedailyalphaai/archive/coreweave-its-2032-bonds-yield-148-and-its-2031s/">market data</a>). That inverts this morning's framing: the equity market, not the credit market, is the one that didn't believe the bull case by day's end. The AI-bubble-burst Polymarket contract eased back to <strong>8%</strong> this evening, down from the 9.05% confirmed this morning — a partial mean-reversion. VARA: no new development — still unresolved, still "doing fine" per one unnamed source.</p>
+
+<h3>The structural read</h3>
+<p>Normally you'd expect equity (forward-looking, sentiment-driven) to hold a rally longer than distressed credit, which reprices more conservatively. Here it's reversed: bondholders, who have the most to lose in a bad outcome, kept marking the name up today, while equity holders who got a sudden bull thesis from a top-tier bank didn't hold the pop. <strong>Bear case:</strong> equity fading a specific, numbers-based upgrade the same day its bonds improve may mean the market thinks Goldman's PT cut (to $106) is itself the bearish signal, regardless of the Buy rating attached. <strong>Bull case:</strong> bonds are the more information-dense instrument in a credit story, and their continued compression — on a day the broader AI-credit complex got no better — is arguably the more meaningful signal; equity flows can be noisy single-day reactions to any upgrade.</p>
+
+<!-- ====================== PORTFOLIO ====================== -->
+<h2>Portfolio Tickers</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> 165th consecutive zero-position day. Micron's rally happened exactly as described. CRWV's reversal is owned above.</div>
+
+<table>
+  <tr><th>Ticker</th><th>Status</th><th>What's new since morning</th></tr>
+  <tr><td>MU</td><td>No trading</td><td>Rally on Ketagalan Boulevard held exactly as the union framed it — leave-day protest, not a strike. No escalation, no production impact. Taichung mediation unchanged for Oct 22.</td></tr>
+  <tr><td>CRWV</td><td>No trading</td><td>See AI Ecosystem above — equity pop fully faded (-0.44% close), bonds kept compressing (14.80% YTW).</td></tr>
+  <tr><td>NBIS</td><td>No trading</td><td>No new item; Oct 22 earnings date stands, same day as Taichung mediation.</td></tr>
+  <tr><td>TSM, NVDA, AMD, AMZN, XLE, OWL, APO, ARCC</td><td>No trading</td><td>No new ticker-specific items since this morning.</td></tr>
+</table>
+
+<h3>The structural read</h3>
+<p>Nothing today changes the zero-positions call or the nearest-catalyst calendar. CRWV's news today is now a cleaner "wait and see" than the morning's split-signal framing suggested — an equity pop that didn't survive the session is weaker evidence either way than a pop that held would have been. Oct 22 (Nebius earnings + Taichung mediation) remains the nearest real multi-thread catalyst, three days out; META's Wednesday print is the nearest hyperscaler read.</p>
+
+<!-- ====================== PRIVATE CREDIT ====================== -->
+<h2>Private Credit</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> No new fact on the (already-debunked) sale rumor, but a genuinely new, modestly bullish redemption data point.</div>
+
+<p>Bloomberg's Oct 16 reporting shows Blue Owl's two non-traded credit funds saw <strong>$4.2B in Q3 2026 redemption requests, down from $4.7B in Q2 and a record $5.4B in Q1</strong> (<a href="https://www.investing.com/news/stock-market-news/private-credit-roundup-blue-owl-redemptions-ease-tech-and-refinancing-risks-persist-4932327">Bloomberg via Investing.com</a>) — two consecutive quarters of declining redemption pressure, a real counterpoint to this morning's run of negative data points. No update on the Fitch/Moody's triangulation, the Saba/Cox tender, Project Jupiter, Stack Melbourne, or Apollo's Daily Pricing rollout today.</p>
+
+<h3>The structural read</h3>
+<p>This shouldn't be read as resolving the NAV-credibility question the Saba/Cox tender opened this morning — redemption volume and market-clearing price measure different things, and both can be true at once: fewer people trying to leave, but the ones who do trade at a real discount. <strong>Bear case:</strong> easing redemptions could just mean the most eager exiters already left in Q1's $5.4B peak, not that the NAV concern resolved. <strong>Bull case:</strong> two consecutive quarters of declining redemptions is a real trend that, if it continues, eventually takes pressure off the mechanism (forced redemption-driven sales) that turns a NAV-discount question into a realized loss.</p>
+
+<!-- ====================== POLYMARKET ====================== -->
+<h2>Polymarket Calibration</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> Both flagged contracts partially, not fully, mean-reverted — a healthier calibration story than either a frozen market or a lastingly wrong one.</div>
+
+<table>
+  <tr><th>Contract</th><th>Morning (direct fetch)</th><th>Evening (direct fetch)</th><th>Delta</th></tr>
+  <tr><td>AI-bubble burst by end-2026</td><td>9.05%</td><td>8%</td><td>-1pt — partial reversion toward the pre-weekend 6-7% band, not a full round-trip</td></tr>
+  <tr><td>Hormuz normal by Dec 31</td><td>~14%</td><td>13%</td><td>-1pt — partial reversion toward the week-long 12% flatline, not a full round-trip</td></tr>
+  <tr><td>Oct FOMC: no-change</td><td>85.5%</td><td>Not re-checked</td><td>No reason to expect movement mid-blackout; morning read stands</td></tr>
+</table>
+
+<p>Neither contract round-tripped all the way back to its pre-Monday level, which is itself informative: a full reversion would suggest Monday's moves were pure noise; a partial one suggests at least part of each move is sticking. This does NOT fully resolve this morning's sharpest flag — the Hormuz contract rising on the worst transit data yet — because 13% is still above the 12% flatline this file carried for a week.</p>
+
+<h3>The structural read</h3>
+<p><strong>Bear case:</strong> on Hormuz specifically, the contract still hasn't round-tripped back to where it was before today's mine claims and transit deterioration — carry the "calibrated, not lagging" flag forward rather than retiring it. <strong>Bull case:</strong> Monday's weekday-volume-driven moves on both contracts were real (they didn't fully evaporate) but probably overshot (they didn't hold either) — a better-functioning market than one that's either frozen or lastingly wrong.</p>
+
+<!-- ====================== BOTTOM LINE ====================== -->
+<div class="punchline-box">
+  <h3>Bottom Line / Portfolio Implication</h3>
+  <p>Zero positions at 165 sessions remains correct. Today's close is a genuine stabilization — VIX fully retraced, oil held its lower level, and CoreWeave's bonds kept improving — but it's narrower and more ambiguous than a clean "risk-off reverses" headline would suggest: the Dow didn't participate, CoreWeave's own equity market didn't believe its own bull case by the close, and Iran's Hormuz claims kept accumulating with zero CENTCOM response. The one real structural surprise today is that credit, not equity, carried the information in the CoreWeave story — exactly the reverse of what the morning's "split signal" framing anticipated, and worth tracking as a live question rather than a resolved one. Private credit got one real, modestly bullish data point (easing Blue Owl redemptions) that doesn't retire the NAV-discount concern opened this morning. Nothing here is actionable yet, but Wednesday's META print, Thursday/Friday's Asia session reaction to today's mine claims, and Oct 22's Nebius-earnings/Taichung-mediation cluster are the next three points where several of these threads could resolve.</p>
+</div>
+
+<!-- ====================== SOURCES ====================== -->
+<h2>Sources</h2>
+<div class="sources">
+  <p><strong>Iran / Geopolitics:</strong></p>
+  <ul>
+    <li><a href="https://www.omanobserver.om/article/1198042/world/region/oil-tanker-on-fire-after-hitting-mine-in-hormuz-irans-guards">Oman Observer — Oil tanker on fire after hitting mine in Hormuz</a></li>
+    <li><a href="https://www.anews.com.tr/middle-east/2026/10/19/irans-revolutionary-guard-says-oil-tanker-struck-mine-and-caught-fire-in-strait-of-hormuz">anews — IRGC: tanker struck mine, caught fire</a></li>
+    <li><a href="https://www.timesofisrael.com/liveblog-october-19-2026/">Times of Israel liveblog — Netanyahu: "do not test us"</a></li>
+    <li><a href="https://straits.live/briefs/2026-10-19">straits.live — Strait of Hormuz status, October 19, 2026</a></li>
+  </ul>
+  <p><strong>Markets:</strong></p>
+  <ul>
+    <li><a href="https://www.cnbc.com/2026/10/19/tech-stocks-rebound-meta-tesla-earnings.html">CNBC — Tech stocks rebound Monday, earnings this week will determine if it's real</a></li>
+    <li><a href="https://financefeeds.com/brent-crude-oil-price-108-trump-russia-sanctions-waiver-diesel-bull-113-bear-103">financefeeds — Brent crude $108, Russia sanctions waiver cools oil</a></li>
+    <li><a href="https://hdfcsky.com/news/brent-crude-oil-price-today-october-19-2026-brent-falls-1-9percent-to-107-8-wti-drops-1percent-to-100-4-as-trump-eases-russia-sanctions">hdfcsky — Crude falls as Trump eases Russia sanctions</a></li>
+  </ul>
+  <p><strong>AI Ecosystem:</strong></p>
+  <ul>
+    <li><a href="https://stockanalysis.com/stocks/crwv/">stockanalysis.com — CoreWeave (CRWV) close, Oct 19</a></li>
+    <li><a href="https://buttondown.com/thedailyalphaai/archive/coreweave-its-2032-bonds-yield-148-and-its-2031s/">The Daily Alpha — CoreWeave bond yields, Oct 19</a></li>
+  </ul>
+  <p><strong>Portfolio Tickers:</strong></p>
+  <ul>
+    <li><a href="https://focustaiwan.tw/society/202610190023">Focus Taiwan — Workers rally in Taipei for pension reform, profit-sharing rules</a></li>
+    <li><a href="https://www.taipeitimes.com/News/taiwan/archives/2026/10/20/2003866295">Taipei Times — Workers rally in Taipei, demanding better wages</a></li>
+  </ul>
+  <p><strong>Private Credit:</strong></p>
+  <ul>
+    <li><a href="https://www.investing.com/news/stock-market-news/private-credit-roundup-blue-owl-redemptions-ease-tech-and-refinancing-risks-persist-4932327">Investing.com/Reuters — Private credit roundup: Blue Owl redemptions ease</a></li>
+  </ul>
+  <p><strong>Polymarket:</strong></p>
+  <ul>
+    <li><a href="https://polymarket.com/event/ai-bubble-burst-by/ai-industry-downturn-by-december-31-2026-857">Polymarket — AI industry downturn by December 31, 2026</a></li>
+    <li><a href="https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-december-31">Polymarket — Strait of Hormuz traffic returns to normal by Dec 31</a></li>
+  </ul>
+</div>
+
+<div class="footer">
+  Daily News Brief · October 19, 2026 · Monday Evening Wrap · Day 234 of the Iran war<br>
+  <em>Andres's daily analyst. Structural reads, not headline regurgitation. Deltas since this morning's run (~08:00 PT).</em>
+</div>
+
+</div>
+
+</body>
+</html>
