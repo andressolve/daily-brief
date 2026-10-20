@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily News Brief — October 20, 2026 (Morning)</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --surface: #121820;
+    --surface2: #1a2230;
+    --border: #243044;
+    --text: #c8d3e0;
+    --text-dim: #6b7d93;
+    --heading: #e8edf3;
+    --accent: #4fc3f7;
+    --accent2: #81c784;
+    --warn: #ffb74d;
+    --danger: #ef5350;
+    --gold: #ffd54f;
+    --purple: #b39ddb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a0a0a 0%, #2a0a1a 50%, #0a1a2e 100%);
+    border-bottom: 1px solid var(--danger);
+    padding: 50px 40px 40px;
+    text-align: center;
+  }
+  .header .day-tag {
+    display: inline-block;
+    background: rgba(239,83,80,0.2);
+    border: 1px solid rgba(239,83,80,0.4);
+    color: var(--danger);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--heading);
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .header .subtitle {
+    font-size: 18px;
+    color: var(--warn);
+    font-weight: 400;
+  }
+  .header .subtitle-sub {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 10px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--heading);
+    margin: 48px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 28px 0 12px;
+  }
+  p { margin-bottom: 14px; }
+  strong { color: var(--heading); }
+  em { color: var(--accent); font-style: italic; }
+  ul, ol { margin: 0 0 14px 22px; }
+  li { margin-bottom: 6px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  table tr:last-child td { border-bottom: none; }
+  table td:first-child {
+    font-weight: 700;
+    color: var(--heading);
+  }
+  .badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+  .badge-red { background: var(--danger); color: #fff; }
+  .badge-green { background: var(--accent2); color: var(--bg); }
+  .badge-blue { background: var(--accent); color: var(--bg); }
+  .badge-yellow { background: var(--warn); color: var(--bg); }
+  .badge-purple { background: var(--purple); color: var(--bg); }
+  .tldr-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.1), rgba(255,183,77,0.05));
+    border: 2px solid var(--danger);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin: 24px 0 32px;
+  }
+  .tldr-box h3 {
+    color: var(--danger);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .delta-box {
+    background: var(--surface2);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 20px;
+    margin: 0 0 18px;
+    font-size: 13.5px;
+    color: var(--text-dim);
+  }
+  .delta-box strong { color: var(--accent); }
+  .faction-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .faction-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px 26px;
+    border-left: 4px solid var(--border);
+  }
+  .faction-card.f-irgc { border-left-color: var(--danger); }
+  .faction-card.f-hawk { border-left-color: var(--warn); }
+  .faction-card.f-civ { border-left-color: var(--accent); }
+  .faction-card h4 {
+    font-size: 16px;
+    color: var(--heading);
+    margin-bottom: 4px;
+  }
+  .faction-card .lead {
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .honest-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--purple);
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin: 24px 0;
+  }
+  .honest-box h3 {
+    color: var(--purple);
+    margin-top: 0;
+    margin-bottom: 14px;
+  }
+  .punchline-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.08), rgba(79,195,247,0.05));
+    border: 2px solid rgba(239,83,80,0.3);
+    border-radius: 10px;
+    padding: 28px;
+    margin: 32px 0;
+    text-align: center;
+  }
+  .punchline-box h3 {
+    color: var(--danger);
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .punchline-box p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    max-width: 760px;
+    margin: 0 auto 10px;
+    color: var(--text);
+  }
+  .sources { font-size: 12.5px; color: var(--text-dim); }
+  .sources a { color: var(--accent); text-decoration: none; }
+  .sources a:hover { text-decoration: underline; }
+  .footer {
+    border-top: 1px solid var(--border);
+    margin-top: 50px;
+    padding-top: 20px;
+    color: var(--text-dim);
+    font-size: 12px;
+    text-align: center;
+  }
+  .pos { color: var(--accent2); }
+  .neg { color: var(--danger); }
+  .move-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  .move-table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  .move-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="day-tag">Day 235 of the Iran War · Tuesday Morning Brief</div>
+  <h1>Daily News Brief — October 20, 2026</h1>
+  <div class="subtitle">Micron's de-escalation reversed in 24 hours — Taoyuan now strikes Thursday. Both flagged Polymarket contracts resumed climbing instead of fading. Asia's chip complex cratered overnight while Wall Street had just stabilized.</div>
+  <div class="subtitle-sub">Run: 08:00 PT · Forward-looking: what to watch today · Micron Taichung mediation + Taoyuan strike + Nebius earnings T-2 days (Oct 22) · META earnings T-1 day (Oct 21) · ARCC earnings T-7 days (Oct 27) · OWL earnings T-9 days (Oct 29) · Israel election T-7 days (Oct 27) · Nov 23 Jupiter permit decision · Nov 3 US midterms</div>
+</div>
+
+<div class="container">
+
+<!-- ====================== TL;DR ====================== -->
+<div class="tldr-box">
+  <h3>TL;DR — What changed overnight and why it matters</h3>
+  <ul>
+    <li><strong>Micron's de-escalation reversed within 24 hours.</strong> Monday's "leave-day rally, not a strike" framing is gone — the Taoyuan union announced an actual one-day strike for Thursday Oct 22, timed in solidarity with Taichung to force a concrete profit-sharing offer at that same day's mediation. Taoyuan + Taichung are &gt;60% of Micron's output. MU fell ~2-2.5% premarket.</li>
+    <li><strong>Both flagged Polymarket contracts resumed climbing instead of reverting.</strong> AI-bubble-burst hit a fresh high (11.15%, up from 8% last night and above Monday's 9.05% peak). Hormuz-normal rose a second straight session against deteriorating transit data (14.5%, up from 13%). This file's "calibrated, not lagging" thesis on the Hormuz contract has now failed its own test twice running — treat as live, not settled.</li>
+    <li><strong>Asia's AI-hardware complex cratered overnight despite Wall Street's Monday rebound.</strong> Kospi -3.7 to -4.3% (SK Hynix -4 to -5.3%, Samsung -3.8%, SoftBank -6%); TSMC's Taiwan listing fell a comparatively contained -0.6% — the pain is concentrated in Korean memory/HBM names, not the broader foundry complex.</li>
+    <li><strong>Oil's "durable, sanctions-driven" decline lasted exactly one session.</strong> Brent is back above $110 on fresh Houthi claims of strikes on Saudi oil infrastructure — Monday's Russia-sanctions-waiver relief looks like a one-day story, not a structural repricing.</li>
+    <li><strong>Amazon open-sourced TorchNeuron today</strong> — a free tool letting existing PyTorch code run on Trainium chips with minimal porting, a genuine if slow-moving structural challenge to Nvidia's CUDA moat. AMZN closed +5% Monday on the announcement.</li>
+  </ul>
+</div>
+
+<!-- ====================== IRAN ====================== -->
+<h2>Iran / Middle East Geopolitics</h2>
+<div class="delta-box"><strong>Delta since last night:</strong> Two more IRGC mine claims overnight, still zero confirmation, CENTCOM silent a full week. Polymarket's Hormuz contract rose a second straight session against the data, not the first.</div>
+
+<p>The IRGC said early Tuesday that two more tankers hit naval mines at an "illegal crossing point" south of Hormuz, caught fire, and were halted — no vessel names, flags, or independent confirmation, continuing a now four-/five-claim cadence since Friday with zero third-party corroboration of any single incident (<a href="https://english.alarabiya.net/News/middle-east/2026/10/20/iran-s-irgc-says-mines-halted-two-tankers-crossing-strait-of-hormuz">Al Arabiya</a>, <a href="https://news.sbs.co.kr/english/article.do?news_id=N1008807014">SBS</a>). The IRGC separately claimed its 54th US MQ-9 drone shoot-down over the strait since the war began (<a href="https://www.tasnimnews.ir/en/news/2026/10/20/3727457/iran-shoots-down-54th-us-drone-over-strait-of-hormuz">Tasnim</a>) — a running tally, not a new category of escalation. <strong>CENTCOM has issued no new statement</strong> reconciling its "open for business" claim with any of this week's mine claims or independent transit data — the silence first flagged Oct 18 now runs a full week.</p>
+
+<p>The more decision-relevant fact: <strong>Polymarket's Hormuz-normal-by-Dec-31 contract read 14.5% Yes this morning</strong> (direct fetch) — up from last night's 13%, meaning the partial correction logged Monday evening did not continue into a fuller reversion. The contract has instead resumed climbing, on two more unconfirmed mine claims and no data improvement. This is the second consecutive session this file's "calibrated, not lagging" thesis on this specific contract has failed its own test.</p>
+
+<h3>The structural read</h3>
+<p>Two straight sessions of a contract this file has treated as criteria-literal, not sentiment-driven, moving the "wrong" way against hard transit data is no longer something to wave off as noise. <strong>Andres should treat the Oct 18-19 "calibrated, not lagging" framing as now actively under pressure, not settled</strong> — this file isn't ready to flip it, but two consecutive wrong-direction sessions on hard data is the strongest evidence yet for the systematic-lateness bear case this beat has logged on this specific contract. CENTCOM's week-long silence continues to cut both ways: either the claims don't rise to the level of a response (bull case for the "rhetoric-vs-operations gap" this file has carried for months), or the US has no clean rebuttal and isn't engaging (bear case).</p>
+
+<!-- ====================== MARKETS ====================== -->
+<h2>Markets / Macro</h2>
+<div class="delta-box"><strong>Delta overnight:</strong> Oil's "durable" decline reversed in one session. Asia's chip complex sold off hard while Wall Street had just stabilized Monday.</div>
+
+<p><strong>Oil reversed back up</strong>: Brent settled <strong>$110.40 (+0.78%)</strong>, near its cycle highs, WTI <strong>$98.64 (+0.42%)</strong> — attributed to fresh Houthi claims of strikes on Saudi oil infrastructure, reasserting the Mideast risk premium over the Russia-sanctions-waiver supply story that drove Monday's dip (<a href="https://financefeeds.com/brent-crude-oil-price-110-houthi-saudi-attacks-hormuz-mine-bull-113-bear-104/">financefeeds</a>). <strong>Asia closed sharply lower overnight despite Wall Street's Monday rebound</strong>: Kospi fell 3.7-4.3% (SK Hynix -4 to -5.3%, Samsung -3.8%, Kioxia -3.2%), Japan's Nikkei -1.3% (SoftBank -6%), while TSMC's Taiwan listing fell a comparatively contained -0.6% (<a href="https://invezz.com/news/2026/10/20/heres-why-kospi-and-nikkei-225-are-falling-sharply-on-october-20/">Invezz</a>, <a href="https://www.tradingkey.com/analysis/stocks/more/262225238-japan-south-korea-stocks-kospi-nikkei-softbank-sk-hynix-samsung-kioxia-tradingkey">TradingKey</a>). US premarket futures are soft and tech-specific: Nasdaq 100 -0.5%, S&amp;P 500 -0.09%, Dow +0.22% (<a href="https://beinsure.com/news/us-stock-futures-slip-nasdaq-100-faces-earnings-test/">beinsure</a>). CoreWeave's bonds held their compression (2031s ~14.5% YTW) despite the Asia rout. <strong>Meta reports Q3 after the close tomorrow (Oct 21)</strong> — the first hyperscaler test of AI-capex confidence since the selloff.</p>
+
+<h3>The structural read</h3>
+<p>Last week's AI-financing scare and the Hormuz/oil risk premium look like two separate, still-live threats that each got temporarily papered over Monday rather than resolved. Oil's reversal shows the sanctions-waiver relief was a one-day story; Asia's chip-stock rout shows Monday's US equity stabilization didn't travel overnight into the names most directly exposed to AI-infra financing stress. <strong>Bear case:</strong> a Wall Street bounce that doesn't survive contact with the next session's Asia open, paired with oil reasserting its upward bias, is a worse setup heading into Meta's print than Monday's close implied. <strong>Bull case:</strong> TSM's -0.6% is a much smaller move than its Korean peers, suggesting the sharpest pain is concentrated in HBM/memory names rather than the broader foundry/logic complex.</p>
+
+<!-- ====================== AI ====================== -->
+<h2>AI Ecosystem</h2>
+<div class="delta-box"><strong>Delta overnight:</strong> A genuinely new strategic threat to Nvidia's moat, plus a fresh high on the AI-bubble Polymarket contract.</div>
+
+<p><strong>Amazon released TorchNeuron as free, open-source software in public beta today</strong> — the tool lets developers run existing PyTorch code on AWS's own Trainium chips with minimal porting, directly targeting the CUDA lock-in that underpins Nvidia's pricing power (<a href="https://fool.com/investing/2026/10/19/amazon-torchneuron-nvidia-cuda-moat">Fool</a>); AMZN closed +5% Monday on the Monday announcement. This is a genuinely new, dateable competitive fact — a real, if early-stage, attempt to lower the switching cost away from Nvidia's software stack. <strong>CoreWeave's bonds held their compression</strong> (2031s still ~14.5% YTW) even as the broader Asia AI-hardware complex sold off sharply overnight on the same underlying financing fear. <strong>The AI-bubble-burst Polymarket contract reads 11.15% Yes this morning</strong> — up from last night's 8% and above Monday morning's 9.05% peak, a fresh high, not the partial/fading move Monday evening's entry logged. VARA remains unresolved, no new development.</p>
+
+<h3>The structural read</h3>
+<p>TorchNeuron is the more structurally important item this morning even though it moved no price today — a credible, well-resourced hyperscaler publicly investing in making Nvidia's software moat optional is a slower-moving risk that compounds over quarters, not days. The AI-bubble-burst contract's continued rise — a fresh high, not a retracement — is the sharper near-term signal. <strong>Bear case:</strong> a real software-moat threat landing the same week Asia's memory/HBM complex is cratering and Polymarket's own bubble-risk gauge is hitting fresh highs is a worse combination for the AI-infra thesis than any single thread alone. <strong>Bull case:</strong> CRWV's bonds — the single most stress-tested instrument this file tracks — didn't reprice wider overnight despite the Asia rout, suggesting the market still discriminates between CoreWeave's idiosyncratic story and a sector-wide repricing.</p>
+
+<!-- ====================== PORTFOLIO ====================== -->
+<h2>Portfolio Tickers</h2>
+<div class="delta-box"><strong>Delta overnight:</strong> 166th consecutive zero-position day. Micron is the headline reversal — a real strike now, not a rally.</div>
+
+<table>
+  <tr><th>Ticker</th><th>Status</th><th>What's new overnight</th></tr>
+  <tr><td>MU</td><td class="neg">-2.1 to -2.5% premarket</td><td>Taoyuan union announced an actual strike for Thursday Oct 22, in solidarity with Taichung, to force a concrete profit-sharing offer at that day's mediation — a reversal of Sunday/Monday's "not a strike" framing. Taoyuan + Taichung are &gt;60% of Micron's output. Layered on Asia memory-complex weakness (SK Hynix, Samsung).</td></tr>
+  <tr><td>AMZN</td><td class="pos">+5% Monday close</td><td>TorchNeuron open-sourced today — see AI Ecosystem above. Direct NVDA cross-ticker relevance.</td></tr>
+  <tr><td>TSM</td><td class="neg">-0.6% overnight (Asia)</td><td>Materially more contained than SK Hynix (-4 to -5.3%)/Samsung (-3.8%) — memory/HBM, not foundry, absorbing the sharpest pain.</td></tr>
+  <tr><td>NVDA</td><td>+1.38% Monday close ($217.09)</td><td>Broad AI-chip rebound, no new company-specific item this morning.</td></tr>
+  <tr><td>NBIS, TSM earnings, AMD, XLE, OWL, APO, ARCC</td><td>No trading / no new item</td><td>Nebius reports Thursday (Oct 22), same day as the Taichung mediation and Taoyuan strike. No other new ticker-specific items.</td></tr>
+</table>
+
+<h3>The structural read</h3>
+<p>Today is the clearest reversal this file has logged on any standing thesis in the Micron thread — Sunday/Monday treated the leave-day rally as de-escalation, and within 24 hours the same union announced an actual strike timed to maximize pressure on the day of mediation. <strong>Bear case:</strong> a union escalating from a disclaimed rally to a solidarity strike within 48 hours is behaving like a side that believes pressure is working — Thursday's outcome is now a real, near-dated risk to &gt;60%-of-output facilities, not a calendar formality. <strong>Bull case:</strong> a one-day solidarity strike timed to influence a mediation session is still a negotiating tactic, not evidence the authorization will be used indefinitely, and TSM's comparatively contained Asia session suggests the broader demand thesis still holds outside Micron specifically. Zero positions stands at 166 sessions; Oct 22 is now a sharper test than it was 24 hours ago.</p>
+
+<!-- ====================== PRIVATE CREDIT ====================== -->
+<h2>Private Credit</h2>
+<div class="delta-box"><strong>Delta overnight:</strong> No material change since last night.</div>
+
+<p>No material change on this beat's core threads (Project Jupiter, the Leon Black/DOJ referral, the Saba/Cox OCIC tender, Stack Melbourne) since last night. One tangential, lower-weight item: Nscale — reportedly negotiating a ~$45B infrastructure deal with Anthropic — counts Apollo Global Management among its recent $3.36B pre-IPO funding-round investors (<a href="https://newsable.asianetnews.com/markets/this-nvidia-backed-cloud-computing-firm-is-reportedly-in-talks-to-sign-a-45b-compute-deal-with-anthropic-articleshow-5knxypg">Asianet Newsable</a>) — an incremental data point on Apollo's breadth of AI-infra exposure, not a Blue Owl/ARCC-specific fact.</p>
+
+<h3>The structural read</h3>
+<p>A quiet morning on this beat's own core threads is the expected outcome. The standing ARCC Oct 27 / OWL Oct 29 two-print test remains the real resolution point, now one week out.</p>
+
+<!-- ====================== POLYMARKET ====================== -->
+<h2>Polymarket Calibration</h2>
+<div class="delta-box"><strong>Delta overnight:</strong> Monday evening's "partial mean-reversion, probably noise" read on both flagged contracts did not hold — both resumed climbing instead.</div>
+
+<table>
+  <tr><th>Contract</th><th>Last night</th><th>This morning (direct fetch)</th><th>Delta</th></tr>
+  <tr><td>AI-bubble burst by end-2026</td><td>8%</td><td>11.15%</td><td class="neg">+3.15pt — fresh high, not a retracement</td></tr>
+  <tr><td>Hormuz normal by Dec 31</td><td>13%</td><td>14.5%</td><td class="neg">+1.5pt — second straight wrong-direction session</td></tr>
+  <tr><td>Oct FOMC: no-change</td><td>85.5%</td><td>87.5%</td><td>+2pt — modest further drift toward no-change</td></tr>
+</table>
+
+<h3>The structural read</h3>
+<p>Monday evening's "real but overshot, found a more stable level" framing needs to be retired this morning — neither contract found a stable level; both resumed climbing, and the AI-bubble contract is now at a clean, confirmed high for its entire tracked history. <strong>This file is flagging the Hormuz contract's two-session losing streak against its own "calibrated, not lagging" thesis as now live, not settled</strong>, per house rules on Polymarket calibration — and will not keep defaulting to the "noise" reading without further evidence. The AI-bubble contract's fresh high, landing the same morning Asia's AI-hardware complex sold off sharply, is at least internally consistent — a genuine, not noise-driven, repricing of AI-sector downside risk. The Fed contract's continued, boring drift toward no-change remains the one clean, low-stakes read this morning.</p>
+
+<!-- ====================== BOTTOM LINE ====================== -->
+<div class="punchline-box">
+  <h3>Bottom Line / Portfolio Implication</h3>
+  <p>Zero positions at 166 sessions remains correct, and today sharpens rather than resolves the nearest catalyst cluster. Micron's reversal — from a disclaimed leave-day rally to an actual strike announced within 24 hours — is the single most concrete, near-dated risk this file has logged on any portfolio name all month, landing on the exact day (Oct 22) Nebius also reports earnings. Both Polymarket contracts this file was prepared to call "probably noise" last night instead hit fresh or near-fresh extremes this morning, which argues for taking the AI-bubble and Hormuz downside readings more seriously, not less, heading into Wednesday's Meta print. The one quietly structural item — Amazon's TorchNeuron — won't move anything today, but it's a real data point that Nvidia's software moat is no longer unchallenged, and it's worth tracking over the coming weeks regardless of how this week's volatility resolves. Nothing here is actionable yet; Wednesday's Meta earnings, Thursday's Micron strike/Taichung mediation/Nebius-earnings cluster, and whether the Hormuz Polymarket contract breaks its two-session pattern are the next concrete tests.</p>
+</div>
+
+<!-- ====================== SOURCES ====================== -->
+<h2>Sources</h2>
+<div class="sources">
+  <p><strong>Iran / Geopolitics:</strong></p>
+  <ul>
+    <li><a href="https://english.alarabiya.net/News/middle-east/2026/10/20/iran-s-irgc-says-mines-halted-two-tankers-crossing-strait-of-hormuz">Al Arabiya — IRGC says mines halted two tankers crossing Strait of Hormuz</a></li>
+    <li><a href="https://news.sbs.co.kr/english/article.do?news_id=N1008807014">SBS — Iran's Revolutionary Guard claims two oil tankers hitting mines</a></li>
+    <li><a href="https://www.tasnimnews.ir/en/news/2026/10/20/3727457/iran-shoots-down-54th-us-drone-over-strait-of-hormuz">Tasnim News — Iran shoots down 54th US drone over Strait of Hormuz</a></li>
+  </ul>
+  <p><strong>Markets:</strong></p>
+  <ul>
+    <li><a href="https://financefeeds.com/brent-crude-oil-price-110-houthi-saudi-attacks-hormuz-mine-bull-113-bear-104/">financefeeds — Brent back near $110 as Houthis claim Saudi oil strikes</a></li>
+    <li><a href="https://invezz.com/news/2026/10/20/heres-why-kospi-and-nikkei-225-are-falling-sharply-on-october-20/">Invezz — Why Kospi and Nikkei 225 are falling sharply on October 20</a></li>
+    <li><a href="https://www.tradingkey.com/analysis/stocks/more/262225238-japan-south-korea-stocks-kospi-nikkei-softbank-sk-hynix-samsung-kioxia-tradingkey">TradingKey — Japan, South Korea stocks close lower; Kospi tumbles 3.73%</a></li>
+    <li><a href="https://beinsure.com/news/us-stock-futures-slip-nasdaq-100-faces-earnings-test/">beinsure — US stock futures slip as Nasdaq 100 futures fall</a></li>
+  </ul>
+  <p><strong>AI Ecosystem:</strong></p>
+  <ul>
+    <li><a href="https://fool.com/investing/2026/10/19/amazon-torchneuron-nvidia-cuda-moat">The Motley Fool — Amazon's TorchNeuron and the Nvidia CUDA moat question</a></li>
+  </ul>
+  <p><strong>Portfolio Tickers:</strong></p>
+  <ul>
+    <li><a href="https://focustaiwan.tw/business/202610200021">Focus Taiwan — Micron Taoyuan union announces Oct. 22 solidarity strike</a></li>
+    <li><a href="https://www.tradingkey.com/analysis/stocks/us-stocks/262224903-micron-taiwan-employees-strike-oct-22-15-percent-profit-sharing-dispute-tradingkey">TradingKey — Micron Taiwan employees to strike Oct. 22 over profit-sharing dispute</a></li>
+    <li><a href="https://www.tradingkey.com/analysis/stocks/us-stocks/262225780-us-premarket-nvidia-china-orders-35b-micron-strike-memory-stocks-spcx-earnings-tradingkey">TradingKey — US premarket: Micron strike weighs on memory stocks</a></li>
+  </ul>
+  <p><strong>Private Credit:</strong></p>
+  <ul>
+    <li><a href="https://newsable.asianetnews.com/markets/this-nvidia-backed-cloud-computing-firm-is-reportedly-in-talks-to-sign-a-45b-compute-deal-with-anthropic-articleshow-5knxypg">Asianet Newsable — Nscale reportedly in talks on $45B Anthropic compute deal</a></li>
+  </ul>
+  <p><strong>Polymarket:</strong></p>
+  <ul>
+    <li><a href="https://polymarket.com/event/ai-bubble-burst-by/ai-industry-downturn-by-december-31-2026-857">Polymarket — AI industry downturn by December 31, 2026</a></li>
+    <li><a href="https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-december-31">Polymarket — Strait of Hormuz traffic returns to normal by Dec 31</a></li>
+    <li><a href="https://polymarket.com/event/fed-decision-in-october-20260617190323537">Polymarket — Fed decision in October 2026</a></li>
+  </ul>
+</div>
+
+<div class="footer">
+  Daily News Brief · October 20, 2026 · Tuesday Morning Brief · Day 235 of the Iran war<br>
+  <em>Andres's daily analyst. Structural reads, not headline regurgitation. Forward-looking: what to watch today.</em>
+</div>
+
+</div>
+
+</body>
+</html>
