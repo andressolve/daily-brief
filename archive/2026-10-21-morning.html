@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily News Brief — October 21, 2026 (Morning)</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --surface: #121820;
+    --surface2: #1a2230;
+    --border: #243044;
+    --text: #c8d3e0;
+    --text-dim: #6b7d93;
+    --heading: #e8edf3;
+    --accent: #4fc3f7;
+    --accent2: #81c784;
+    --warn: #ffb74d;
+    --danger: #ef5350;
+    --gold: #ffd54f;
+    --purple: #b39ddb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a0a0a 0%, #2a0a1a 50%, #0a1a2e 100%);
+    border-bottom: 1px solid var(--danger);
+    padding: 50px 40px 40px;
+    text-align: center;
+  }
+  .header .day-tag {
+    display: inline-block;
+    background: rgba(239,83,80,0.2);
+    border: 1px solid rgba(239,83,80,0.4);
+    color: var(--danger);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--heading);
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .header .subtitle {
+    font-size: 18px;
+    color: var(--warn);
+    font-weight: 400;
+  }
+  .header .subtitle-sub {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 10px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--heading);
+    margin: 48px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 28px 0 12px;
+  }
+  p { margin-bottom: 14px; }
+  strong { color: var(--heading); }
+  em { color: var(--accent); font-style: italic; }
+  ul, ol { margin: 0 0 14px 22px; }
+  li { margin-bottom: 6px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  table tr:last-child td { border-bottom: none; }
+  table td:first-child {
+    font-weight: 700;
+    color: var(--heading);
+  }
+  .badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+  .badge-red { background: var(--danger); color: #fff; }
+  .badge-green { background: var(--accent2); color: var(--bg); }
+  .badge-blue { background: var(--accent); color: var(--bg); }
+  .badge-yellow { background: var(--warn); color: var(--bg); }
+  .badge-purple { background: var(--purple); color: var(--bg); }
+  .tldr-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.1), rgba(255,183,77,0.05));
+    border: 2px solid var(--danger);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin: 24px 0 32px;
+  }
+  .tldr-box h3 {
+    color: var(--danger);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .delta-box {
+    background: var(--surface2);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 20px;
+    margin: 0 0 18px;
+    font-size: 13.5px;
+    color: var(--text-dim);
+  }
+  .delta-box strong { color: var(--accent); }
+  .faction-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .faction-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px 26px;
+    border-left: 4px solid var(--border);
+  }
+  .faction-card.f-irgc { border-left-color: var(--danger); }
+  .faction-card.f-hawk { border-left-color: var(--warn); }
+  .faction-card.f-civ { border-left-color: var(--accent); }
+  .faction-card h4 {
+    font-size: 16px;
+    color: var(--heading);
+    margin-bottom: 4px;
+  }
+  .faction-card .lead {
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .honest-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--purple);
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin: 24px 0;
+  }
+  .honest-box h3 {
+    color: var(--purple);
+    margin-top: 0;
+    margin-bottom: 14px;
+  }
+  .punchline-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.08), rgba(79,195,247,0.05));
+    border: 2px solid rgba(239,83,80,0.3);
+    border-radius: 10px;
+    padding: 28px;
+    margin: 32px 0;
+    text-align: center;
+  }
+  .punchline-box h3 {
+    color: var(--danger);
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .punchline-box p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    max-width: 760px;
+    margin: 0 auto 10px;
+    color: var(--text);
+  }
+  .sources { font-size: 12.5px; color: var(--text-dim); }
+  .sources a { color: var(--accent); text-decoration: none; }
+  .sources a:hover { text-decoration: underline; }
+  .footer {
+    border-top: 1px solid var(--border);
+    margin-top: 50px;
+    padding-top: 20px;
+    color: var(--text-dim);
+    font-size: 12px;
+    text-align: center;
+  }
+  .pos { color: var(--accent2); }
+  .neg { color: var(--danger); }
+  .move-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  .move-table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  .move-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="day-tag">Day 236 of the Iran War · Wednesday Morning Brief</div>
+  <h1>Daily News Brief — October 21, 2026</h1>
+  <div class="subtitle">A Super Micro beat and SpaceX's results flipped Tuesday's Asia chip rout into a rally overnight — and took the AI-bubble Polymarket contract down with it. Google joined Amazon attacking Nvidia's CUDA moat. Micron's labor risk narrowed, didn't resolve.</div>
+  <div class="subtitle-sub">Run: 08:00 PT · Morning brief: what to watch today · Meta Q3 earnings after close tonight (Oct 21) · Micron Taoyuan strike tomorrow (Oct 22) · ARCC earnings T-6 days (Oct 27) · OWL earnings T-8 days (Oct 29) · Israel election T-6 days (Oct 27) · Nov 23 Jupiter permit decision · Nov 3 US midterms</div>
+</div>
+
+<div class="container">
+
+<!-- ====================== TL;DR ====================== -->
+<div class="tldr-box">
+  <h3>TL;DR — What changed overnight, and why it matters</h3>
+  <ul>
+    <li><strong>AI sentiment reversed sharply on hard data, not on anything Iran- or credit-related resolving.</strong> Super Micro's ~25%-above-guide beat and SpaceX's results (Starlink/Starshield revenue +830% YoY) flipped Tuesday's Asia chip rout into a rally — Kospi +3.29%, Samsung/SK Hynix +5.6-8%. The AI-bubble-burst Polymarket contract, which held its fresh high last night as "sticky, not noise," dropped from 11% to 9.8% within 24 hours — exactly the mirror-image move this file's own framework predicted it should make on an equally hard, opposite-direction data event.</li>
+    <li><strong>Google released TorchTPU one day after Amazon's TorchNeuron</strong> — two hyperscalers attacking Nvidia's CUDA lock-in with the identical zero-rewrite mechanism within 48 hours, at the same conference, with Google's backed by Meta/Hugging Face/vLLM/SGLang integration partners. Nvidia has responded to neither.</li>
+    <li><strong>Micron's labor risk narrowed, not resolved.</strong> Taichung — the larger of Micron's two Taiwan union fronts — signed a deal and canceled mediation. Taoyuan still plans Thursday's strike as solidarity action; MU rose ~2.2% premarket on the net de-escalation read.</li>
+    <li><strong>The first real diplomatic movement on Hormuz in weeks.</strong> Araghchi says Iran proposed a seven-day reopening initiative (full reopen on day six); the US has reportedly accepted it in principle, pending further guarantees. Hormuz's Polymarket contract eased again (12%→11.5%) — for once tracking an actual negotiation, not fading unconfirmed claims.</li>
+    <li><strong>New escalation vector, not previously logged:</strong> an IRGC official reportedly threatened to target undersea internet cables in Hormuz if Iran's own infrastructure is attacked — a different threat category than anything this file has tracked.</li>
+  </ul>
+</div>
+
+<!-- ====================== IRAN ====================== -->
+<h2>Iran / Middle East Geopolitics</h2>
+<div class="delta-box"><strong>Delta since last night:</strong> First concrete reopening proposal either side has floated — Iran's seven-day initiative, reportedly accepted by the US in principle. New IRGC cable-cutting threat. Hormuz Polymarket continues easing.</div>
+
+<p>Iranian FM Abbas Araghchi told Iraqi broadcaster Al Ekhbariya that Tehran presented a <strong>seven-day initiative</strong> under which Hormuz would be fully reopened on the sixth day; Iran says Washington has accepted the plan in principle but is seeking additional guarantees before signing on (<a href="https://gulfnews.com/world/mena/hormuz-stays-shut-until-us-accepts-irans-7-day-deal-araghchi-1.500717768">Gulf News</a>, <a href="https://uk.lapresse.it/world-en/2026/10/21/iran-araghchi-us-approved-seven-day-plan-but-is-asking-for-further-guarantees/">LaPresse</a>). Secretary of State Rubio, speaking the same day, held the standing US red line — no deal that leaves Iran a path to a nuclear weapon — while explicitly welcoming Qatari and Pakistani mediation (<a href="https://www.washingtontimes.com/news/2026/oct/21/marco-rubio-praises-mediation-efforts-iran-maintains-hard-line/">Washington Times</a>). This is the first time this file has logged a concrete, dated reopening mechanism that the US side hasn't simply dismissed.</p>
+
+<p><strong>New escalation vector:</strong> an unnamed IRGC official reportedly threatened to target undersea internet cables running through Hormuz if Iran's own infrastructure is attacked — a materially different threat category (civilian data infrastructure, not shipping) than anything tracked before (<a href="https://www.cbsnews.com/live-updates/iran-war-us-houthi-saudi-arabia-trump/">CBS News</a>). Iran's IRGC also says a third tanker hit a mine transiting Hormuz since Oct 20 — the mine-strike cadence continues uninterrupted; IMF PortWatch transit data remains unrefreshed since Oct 18. <strong>Hormuz-normal-by-Dec-31 reads 11.5% Yes this morning</strong> (direct Gamma-API fetch, $15.39M volume) — down from last night's 12%, continuing the reversion, and for the first time in over a week moving in a direction consistent with an actual diplomatic development rather than just fading claims. Brent $110.13 (+1.2%), WTI $99.58 (+1.8%) — a modest uptick, not an extension of Monday/Tuesday's sharper Houthi-driven bounce.</p>
+
+<h3>The structural read</h3>
+<p>Today's real news is that a concrete Iranian reopening proposal and a US response that isn't flat rejection are both on the record on the same day — "accepted in principle, wants more guarantees" is meaningfully different from the stalemate this file has carried since the war's 39th day. <strong>Bear case:</strong> a "seven-day initiative" with the US still negotiating guarantees is not a deal, and a cable-cutting threat landing the same week as a reopening offer reads as Tehran negotiating from a position of leverage it intends to keep, not good-faith de-escalation. <strong>Bull case:</strong> this is the most concrete, dated reopening framework either side has put on the table since this file started tracking the blockade, and Polymarket's continued gentle easing is at least directionally consistent with a real, if fragile, opening.</p>
+
+<!-- ====================== MARKETS ====================== -->
+<h2>Markets / Macro</h2>
+<div class="delta-box"><strong>Delta since last night:</strong> The Asia chip rout this file tracked all week reversed hard overnight — on a Super Micro earnings beat, not on Iran or credit news resolving.</div>
+
+<p>Super Micro's preliminary Q1 FY2027 update (released after Tuesday's US close) raised revenue guidance to $18.5-19.5B from $14.5-15.5B and gross margin to 12.0-12.5% from 10.4-10.8% — beating its own prior guide by roughly 25% on AI-server demand (<a href="https://www.marketscreener.com/news/super-micro-sharply-raises-guidance-on-demand-for-ai-servers-ce785cd8df80f126">MarketScreener</a>). SpaceX separately reported Starlink/Starshield revenue up 830% YoY to $7.6B, prompting Elon Musk to call AI-overcapacity concerns "ridiculous." The combination flipped the overnight Asia tape: <strong>Kospi closed +3.29% to 5,735.67 (Samsung +5.67-7.3%, SK Hynix +5.81-8%)</strong> — a full reversal of Tuesday's -3.73% close — reinforced by South Korea reporting record semiconductor exports (+222.5% YoY in the first 20 days of October) (<a href="https://www.koreajoongangdaily.com/business/kospi-rebounds-over-3-on-eased-ai-spending-woes/12932490">Korea JoongAng Daily</a>). <strong>US futures followed higher but less violently</strong>: Nasdaq 100 +0.6%, S&amp;P 500 +0.24%, Dow flat; Super Micro itself +12-12.7% premarket (<a href="https://www.investing.com/news/economy-news/nasdaq-futures-lead-gains-as-spacex-super-micro-results-lift-ai-trade-4962357">Investing.com/Reuters</a>). Brent $110.13 (+1.23%), WTI $99.58 (+1.80%) — holding the ~$110 band. 10Y 5.12% (flat), VIX 17.45 (+0.8%). <strong>Meta reports Q3 after today's close</strong> — now landing the same day as this sharp AI-sentiment reversal, raising the stakes on its capex guide.</p>
+
+<h3>The structural read</h3>
+<p>This is the cleanest reversal this file has logged on the "Asia chip rout, US stabilization" divergence it's tracked all week — and it came from company-specific hard data (SMCI beating its own guide by ~25%), not from the Iran, credit, or financing threads this file has carried as the rout's cause. If the Asia selloff was genuinely about AI-infra financing stress, a single hardware-demand beat shouldn't fully reverse it — the fact that it did argues demand fear was doing more of the work in the prior selloff than financing fear was, or the two are more loosely coupled than recent framing assumed. <strong>Bear case:</strong> a single name's earnings surprise reversing a multi-day regional selloff in one session is the kind of overshoot that can partially unwind if tonight's Meta print disappoints. <strong>Bull case:</strong> this is the second time in two weeks (after TSM's Oct 15 record print) that hard demand data has landed in this complex — if Meta confirms tonight, that's two independent, large data points in the same direction within a week.</p>
+
+<!-- ====================== AI ====================== -->
+<h2>AI Ecosystem</h2>
+<div class="delta-box"><strong>Delta since last night:</strong> Google released TorchTPU, a second hyperscaler attacking the CUDA moat within 48 hours of Amazon. The AI-bubble-burst contract reversed hard.</div>
+
+<p><strong>Google open-sourced TorchTPU</strong> at the PyTorch Conference in San Jose, presented by Google engineering VP Bill Jia — a native PyTorch backend for Cloud TPUs requiring no code rewrite, just a <code>torch.device("tpu")</code> call, explicitly positioned alongside Amazon's TorchNeuron (released one day earlier) as a second hyperscaler attacking Nvidia's CUDA lock-in with the identical mechanism (<a href="https://techcrunch.com/2026/10/20/google-has-joined-amazon-in-attacking-nvidias-stronghold-with-ai-app-developers/">TechCrunch</a>, <a href="https://siliconangle.com/2026/10/20/google-unveils-torchtpu-in-a-push-to-break-nvidias-stranglehold-on-ai-compute/">SiliconANGLE</a>). Google says it's working directly with Meta, Hugging Face, and the vLLM/SGLang inference-serving projects to integrate TorchTPU — a materially broader coalition than Amazon assembled. <strong>Nvidia has still made no public response to either tool.</strong></p>
+
+<p><strong>The AI-bubble-burst Polymarket contract reversed hard: 9.8% Yes this morning</strong> (direct fetch, $2.49M volume) — down from last night's "held the high" 11%, the first real reversal since the contract's Tuesday climb to its all-time high, landing the same morning Super Micro's and SpaceX's results reversed the Asia chip rout that had been cited as this contract's underlying driver (markets.md section above). Mid-2027 variant: 21.5% Yes, up from 19.5% — moving opposite the near-dated leg. <strong>CRWV and NBIS both +3% today</strong> as Musk called AI-overcapacity concerns "ridiculous" — sentiment, not company-specific news (<a href="https://247wallst.com/investing/2026/10/21/ai-cloud-stocks-rise-as-musk-calls-overcapacity-talk-ridiculous-nebius-and-coreweave-gain-3-oracle-edges-higher/">24/7 Wall St.</a>).</p>
+
+<h3>The structural read</h3>
+<p>TorchTPU is the more structurally important fact this morning. Amazon alone attacking the CUDA moat could be read as one hyperscaler's self-interested platform play; Google doing the identical thing 48 hours later, with Meta/Hugging Face/vLLM/SGLang partners already lined up, is much harder to dismiss as a single company's opportunism. The CUDA moat has always rested on switching costs being too high to bother — two zero-rewrite escape hatches landing in the same week is the sharpest test of that moat this file has tracked, even though Nvidia's stock hasn't reacted to either. The AI-bubble contract's reversal is the cleaner, faster-resolving story: last night's framing credited the contract's stickiness specifically because it was tied to a real hardware-selloff event — and the test of that claim was always whether it would move the other way on an equally real, opposite-direction event. It did, within 24 hours. <strong>Bear case:</strong> TorchNeuron and TorchTPU are both brand-new and unproven at production scale — CUDA has survived "this time it's different" threats before (ROCm, prior TPU pushes) without losing meaningful share. <strong>Bull case:</strong> the AI-bubble contract's clean, mirror-image reversal on a hard-data event is exactly the discriminating behavior that raises confidence in reading Polymarket levels as signal, not noise.</p>
+
+<!-- ====================== PORTFOLIO ====================== -->
+<h2>Portfolio Tickers</h2>
+<div class="delta-box"><strong>Delta since last night:</strong> 168th consecutive zero-position day. Micron's Taichung front resolved; Taoyuan strike still on for tomorrow. Rest of the complex riding this morning's sentiment wave.</div>
+
+<table>
+  <tr><th>Ticker</th><th>Status</th><th>What's new this morning</th></tr>
+  <tr><td>MU</td><td class="pos">+2.17-2.22% premarket (~$916)</td><td>Taichung union signed a deal with Micron, canceling Thursday's mediation — resolves the larger of two Taiwan labor fronts (~11,000 of ~12,300 union members), terms undisclosed. Taoyuan (~2,400 workers) still plans Thursday's strike as solidarity action — real but now single-site risk, smaller than the &gt;60%-of-output combined risk carried through Tuesday.</td></tr>
+  <tr><td>NVDA / AMD / TSM</td><td class="pos">Riding sentiment wave</td><td>No company-specific news; all three lifted by this morning's SMCI-driven AI-sentiment reversal — a tailwind, not a fundamentals update on any one name.</td></tr>
+  <tr><td>AMZN</td><td>No new item</td><td>TorchNeuron's CUDA-moat thesis gained a second, more heavyweight co-signer — Google's TorchTPU, one day later (see AI Ecosystem above).</td></tr>
+  <tr><td>CRWV / NBIS</td><td class="pos">Both +3%</td><td>Musk's "overcapacity talk is ridiculous" comment following SpaceX's 830%-YoY Starlink/Starshield growth — sentiment, not company-specific news.</td></tr>
+  <tr><td>OWL / ARCC / APO</td><td>No new item</td><td>No ticker-specific news this morning; Oct 27/29 two-print test now six/eight days out.</td></tr>
+</table>
+
+<h3>The structural read</h3>
+<p>This morning is a genuine, if partial, test of this file's standing "demand remains real, labor/financing frictions are localized" thesis — a labor dispute affecting the larger of Micron's two Taiwan sites resolved via negotiation rather than strike, the cleanest de-escalation this thread has produced since it opened. But the dominant driver of today's complex-wide tape isn't Micron at all — it's Super Micro's beat and SpaceX's results reversing Tuesday's Asia rout, a sentiment wave lifting NVDA/AMD/TSM/MU together regardless of any single name's own news. <strong>Bear case:</strong> Taoyuan's strike is still scheduled for tomorrow, and a single-site, solidarity-framed walkout that still goes ahead despite its larger counterpart settling is arguably a <em>more</em> committed union, not a less committed one. <strong>Bull case:</strong> two independent hard-demand data points (TSM's Oct 15 record print, SMCI's Oct 20 beat-and-raise) in the same complex within a week is a genuinely strengthening demand signal. Zero positions stands at 168 sessions; Micron's Taoyuan strike (tomorrow) and Meta's earnings (tonight) are the near-dated catalysts.</p>
+
+<!-- ====================== PRIVATE CREDIT ====================== -->
+<h2>Private Credit</h2>
+<div class="delta-box"><strong>Delta since last night:</strong> No material change.</div>
+
+<p>No material change on this beat's core threads (Project Jupiter, Leon Black/DOJ, the Saba/Cox tender, Stack Melbourne, ARCC/OWL) since last night. No ARCC- or OWL-specific item found this morning. This morning's dominant cross-beat input — the sharp SMCI/SpaceX-driven AI-sentiment reversal — touches this beat only indirectly, through the standing "is the AI buildout financed on sound footing" question; a demand-side sentiment rally doesn't resolve the financing-side redemption/NAV questions this file has tracked all month, and shouldn't be read as doing so.</p>
+
+<h3>The structural read</h3>
+<p>A quiet morning on this beat's own threads is the expected outcome, worth reporting as such rather than padding. The two-print test (ARCC Oct 27, OWL Oct 29) remains the real resolution point.</p>
+
+<!-- ====================== POLYMARKET ====================== -->
+<h2>Polymarket Calibration</h2>
+<div class="delta-box"><strong>Delta since last night:</strong> AI-bubble contract reversed sharply; Hormuz continued its ease, now tracking real diplomacy.</div>
+
+<table>
+  <tr><th>Contract</th><th>Last night</th><th>This morning (direct fetch)</th><th>Delta</th></tr>
+  <tr><td>AI-bubble burst by end-2026</td><td>11%</td><td>9.8%</td><td class="pos">-1.2pt — first real reversal since Tuesday's climb</td></tr>
+  <tr><td>Hormuz normal by Dec 31</td><td>12%</td><td>11.5%</td><td>-0.5pt — continued ease, now tied to real diplomacy</td></tr>
+  <tr><td>Oct FOMC: no-change</td><td>87%</td><td>86.5%</td><td>Essentially flat, boring as usual</td></tr>
+</table>
+
+<h3>The structural read</h3>
+<p>This morning is the cleanest test yet of the framework this file has been building around the AI-bubble contract: last night's entry argued the contract's new high was "sticky" specifically because it was tied to a real hardware-selloff event, and the clean test of that claim was whether it would move the other way on an equally real event pointing the opposite direction. It did, within 24 hours, and by roughly the same magnitude as its climb. The Hormuz contract's continued ease, now landing on an actual diplomatic development instead of just a fade from unconfirmed claims, is the first time in weeks this file can point to a plausible causal story for one of its moves. <strong>Bear case:</strong> both contracts are now moving in directions that happen to validate this file's preferred framework in the same 24-hour window — worth being suspicious of a reading that confirms the house view this cleanly. <strong>Bull case:</strong> two independent contracts, tracking two unrelated stories, both moving in the direction their own fundamentals would predict on the same morning, is a meaningfully stronger signal than either alone.</p>
+
+<!-- ====================== BOTTOM LINE ====================== -->
+<div class="punchline-box">
+  <h3>Bottom Line / Portfolio Implication</h3>
+  <p>Zero positions at 168 sessions remains correct, and today reinforces rather than undermines the "demand is real, frictions are localized" thesis this file has carried — but the mechanism matters: today's lift comes entirely from Super Micro's and SpaceX's hard numbers, not from Iran or private-credit risk actually resolving, so it shouldn't be read as validating the credit side of the AI-buildout question (private-credit.md still shows no material change there). Micron's Taichung resolution is real de-escalation, but Taoyuan's strike is still live tomorrow, and a solidarity walkout that proceeds despite its larger counterpart settling is not obviously a smaller-conviction action. The two hyperscaler CUDA-escape tools landing 48 hours apart (TorchNeuron, TorchTPU) are the more durable structural story underneath today's sentiment swing — worth tracking over quarters, not treating as resolved by Nvidia's continued stock-price silence. Tonight's Meta print is the next real catalyst: it lands against a bullish backdrop for the first time in weeks, which raises the bar for what counts as a good number.</p>
+</div>
+
+<!-- ====================== SOURCES ====================== -->
+<h2>Sources</h2>
+<div class="sources">
+  <p><strong>Iran / Geopolitics:</strong></p>
+  <ul>
+    <li><a href="https://gulfnews.com/world/mena/hormuz-stays-shut-until-us-accepts-irans-7-day-deal-araghchi-1.500717768">Gulf News — Hormuz stays shut until US accepts Iran's seven-day deal, Araghchi says</a></li>
+    <li><a href="https://uk.lapresse.it/world-en/2026/10/21/iran-araghchi-us-approved-seven-day-plan-but-is-asking-for-further-guarantees/">LaPresse — Iran: US approved seven-day plan but is asking for further guarantees</a></li>
+    <li><a href="https://www.washingtontimes.com/news/2026/oct/21/marco-rubio-praises-mediation-efforts-iran-maintains-hard-line/">Washington Times — Rubio praises mediation efforts on Iran, maintains hard line</a></li>
+    <li><a href="https://www.cbsnews.com/live-updates/iran-war-us-houthi-saudi-arabia-trump/">CBS News — Iran war live updates</a></li>
+  </ul>
+  <p><strong>Markets:</strong></p>
+  <ul>
+    <li><a href="https://www.marketscreener.com/news/super-micro-sharply-raises-guidance-on-demand-for-ai-servers-ce785cd8df80f126">MarketScreener — Super Micro sharply raises guidance on demand for AI servers</a></li>
+    <li><a href="https://www.koreajoongangdaily.com/business/kospi-rebounds-over-3-on-eased-ai-spending-woes/12932490">Korea JoongAng Daily — Kospi rebounds over 3% on eased AI spending woes</a></li>
+    <li><a href="https://www.investing.com/news/economy-news/nasdaq-futures-lead-gains-as-spacex-super-micro-results-lift-ai-trade-4962357">Investing.com/Reuters — Nasdaq futures lead gains as SpaceX, Super Micro results lift AI trade</a></li>
+  </ul>
+  <p><strong>AI Ecosystem / Portfolio:</strong></p>
+  <ul>
+    <li><a href="https://techcrunch.com/2026/10/20/google-has-joined-amazon-in-attacking-nvidias-stronghold-with-ai-app-developers/">TechCrunch — Google has joined Amazon in attacking Nvidia's stronghold with AI app developers</a></li>
+    <li><a href="https://siliconangle.com/2026/10/20/google-unveils-torchtpu-in-a-push-to-break-nvidias-stranglehold-on-ai-compute/">SiliconANGLE — Google unveils TorchTPU in a push to break Nvidia's stranglehold on AI compute</a></li>
+    <li><a href="https://247wallst.com/investing/2026/10/21/ai-cloud-stocks-rise-as-musk-calls-overcapacity-talk-ridiculous-nebius-and-coreweave-gain-3-oracle-edges-higher/">24/7 Wall St. — AI cloud stocks rise as Musk calls overcapacity talk "ridiculous"</a></li>
+    <li><a href="https://focustaiwan.tw/business/202610210014">Focus Taiwan — Micron, Taichung union reach deal in labor talks</a></li>
+    <li><a href="https://www.digitimes.com/news/a20261021PD250/micron-taiwan-strike-dram-management.html">Digitimes — Micron's Taichung union deal eases Taiwan DRAM strike risk; Taoyuan dispute remains unresolved</a></li>
+    <li><a href="https://www.tipranks.com/news/micron-stock-mu-rises-on-agreement-with-taiwans-taichung-union">TipRanks — Micron stock rises on agreement with Taiwan's Taichung union</a></li>
+  </ul>
+  <p><strong>Polymarket:</strong></p>
+  <ul>
+    <li><a href="https://polymarket.com/event/ai-bubble-burst-by/ai-industry-downturn-by-december-31-2026-857">Polymarket — AI industry downturn by December 31, 2026</a></li>
+    <li><a href="https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-december-31">Polymarket — Strait of Hormuz traffic returns to normal by Dec 31</a></li>
+    <li><a href="https://polymarket.com/event/fed-decision-in-october-20260617190323537">Polymarket — Fed decision in October 2026</a></li>
+  </ul>
+</div>
+
+<div class="footer">
+  Daily News Brief · October 21, 2026 · Wednesday Morning Brief · Day 236 of the Iran war<br>
+  <em>Andres's daily analyst. Structural reads, not headline regurgitation. Morning brief: what to watch today.</em>
+</div>
+
+</div>
+
+</body>
+</html>
