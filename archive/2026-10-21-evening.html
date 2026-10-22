@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily News Brief — October 21, 2026 (Evening)</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --surface: #121820;
+    --surface2: #1a2230;
+    --border: #243044;
+    --text: #c8d3e0;
+    --text-dim: #6b7d93;
+    --heading: #e8edf3;
+    --accent: #4fc3f7;
+    --accent2: #81c784;
+    --warn: #ffb74d;
+    --danger: #ef5350;
+    --gold: #ffd54f;
+    --purple: #b39ddb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a0a0a 0%, #2a0a1a 50%, #0a1a2e 100%);
+    border-bottom: 1px solid var(--danger);
+    padding: 50px 40px 40px;
+    text-align: center;
+  }
+  .header .day-tag {
+    display: inline-block;
+    background: rgba(239,83,80,0.2);
+    border: 1px solid rgba(239,83,80,0.4);
+    color: var(--danger);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--heading);
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .header .subtitle {
+    font-size: 18px;
+    color: var(--warn);
+    font-weight: 400;
+  }
+  .header .subtitle-sub {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 10px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--heading);
+    margin: 48px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 28px 0 12px;
+  }
+  p { margin-bottom: 14px; }
+  strong { color: var(--heading); }
+  em { color: var(--accent); font-style: italic; }
+  ul, ol { margin: 0 0 14px 22px; }
+  li { margin-bottom: 6px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  table tr:last-child td { border-bottom: none; }
+  table td:first-child {
+    font-weight: 700;
+    color: var(--heading);
+  }
+  .badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+  .badge-red { background: var(--danger); color: #fff; }
+  .badge-green { background: var(--accent2); color: var(--bg); }
+  .badge-blue { background: var(--accent); color: var(--bg); }
+  .badge-yellow { background: var(--warn); color: var(--bg); }
+  .badge-purple { background: var(--purple); color: var(--bg); }
+  .tldr-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.1), rgba(255,183,77,0.05));
+    border: 2px solid var(--danger);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin: 24px 0 32px;
+  }
+  .tldr-box h3 {
+    color: var(--danger);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .delta-box {
+    background: var(--surface2);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 20px;
+    margin: 0 0 18px;
+    font-size: 13.5px;
+    color: var(--text-dim);
+  }
+  .delta-box strong { color: var(--accent); }
+  .faction-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .faction-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px 26px;
+    border-left: 4px solid var(--border);
+  }
+  .faction-card.f-irgc { border-left-color: var(--danger); }
+  .faction-card.f-hawk { border-left-color: var(--warn); }
+  .faction-card.f-civ { border-left-color: var(--accent); }
+  .faction-card h4 {
+    font-size: 16px;
+    color: var(--heading);
+    margin-bottom: 4px;
+  }
+  .faction-card .lead {
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .honest-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--purple);
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin: 24px 0;
+  }
+  .honest-box h3 {
+    color: var(--purple);
+    margin-top: 0;
+    margin-bottom: 14px;
+  }
+  .punchline-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.08), rgba(79,195,247,0.05));
+    border: 2px solid rgba(239,83,80,0.3);
+    border-radius: 10px;
+    padding: 28px;
+    margin: 32px 0;
+    text-align: center;
+  }
+  .punchline-box h3 {
+    color: var(--danger);
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .punchline-box p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    max-width: 760px;
+    margin: 0 auto 10px;
+    color: var(--text);
+  }
+  .sources { font-size: 12.5px; color: var(--text-dim); }
+  .sources a { color: var(--accent); text-decoration: none; }
+  .sources a:hover { text-decoration: underline; }
+  .footer {
+    border-top: 1px solid var(--border);
+    margin-top: 50px;
+    padding-top: 20px;
+    color: var(--text-dim);
+    font-size: 12px;
+    text-align: center;
+  }
+  .pos { color: var(--accent2); }
+  .neg { color: var(--danger); }
+  .move-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  .move-table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  .move-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="day-tag">Day 236 of the Iran War · Wednesday Evening Wrap</div>
+  <h1>Daily News Brief — October 21, 2026</h1>
+  <div class="subtitle">Meta's Q3 print passed the first hyperscaler AI-capex confidence test since the selloff. The US close extended the morning's rally rather than fading it. Hormuz diplomacy got messier, not cleaner — but Polymarket didn't move.</div>
+  <div class="subtitle-sub">Run: 17:15 PT · Evening wrap: what actually happened vs. what was expected · Micron Taoyuan strike tomorrow (Oct 22) · ARCC earnings T-6 days (Oct 27) · OWL earnings T-8 days (Oct 29) · Israel election T-6 days (Oct 27) · Microsoft/Alphabet earnings Oct 28 · Amazon earnings Oct 29 · Nov 23 Jupiter permit decision · Nov 3 US midterms</div>
+</div>
+
+<div class="container">
+
+<!-- ====================== TL;DR ====================== -->
+<div class="tldr-box">
+  <h3>TL;DR — What changed since this morning, and why it matters</h3>
+  <ul>
+    <li><strong>Meta's Q3 print passed the first hyperscaler AI-capex confidence test since the selloff.</strong> Revenue $64.6B (+26% YoY, beat $63.38B consensus), absorbed a $9.89B legal charge landing almost exactly where flagged (~$10B), raised 2026 capex guidance anyway, and the stock rose 3%+ after hours. A company eating a surprise charge, raising spending, and still getting rewarded is about as clean a "demand is real" signal as this cycle has produced.</li>
+    <li><strong>The US close extended, not just held, this morning's AI-sentiment rally.</strong> S&P 500 +0.58% to 7,757.17, Nasdaq +1.05% to 26,702.86 — both running ahead of this morning's premarket futures reads. SMCI closed up roughly 9-12%, confirming the premarket pop held all session.</li>
+    <li><strong>Hormuz diplomacy got messier tonight, not cleaner.</strong> Araghchi now says the US, after accepting Iran's seven-day plan "in principle," came back wanting to add new clauses — a harder complication than this morning's "wants guarantees" framing — and separately warned of "further escalation" risk. One-sided Iranian characterization, no independent US confirmation found.</li>
+    <li><strong>Polymarket's Hormuz contract didn't move on any of it</strong> — 11.5% this morning, 11.5% tonight, flat through genuinely harder rhetoric. Either the market is correctly ignoring claims/words until a new physical fact appears, or it's lagging — tomorrow is the test.</li>
+    <li><strong>Nvidia's silence on TorchNeuron/TorchTPU held a second full day.</strong> The AI-bubble-burst Polymarket contract eased further, 9.8%→9.5%, a third straight move tracking this week's bullish hardware/capex news.</li>
+  </ul>
+</div>
+
+<!-- ====================== WHAT MOVED ====================== -->
+<h2>Morning → Evening: What Moved</h2>
+<table class="move-table">
+  <tr><th>Item</th><th>This morning</th><th>Tonight</th><th>Resolution</th></tr>
+  <tr><td>Meta Q3 earnings</td><td>Flagged as T-0 catalyst, unguided $10B legal charge risk</td><td>Beat revenue, charge landed at $9.89B, capex raised, stock +3%+ after hours</td><td class="pos">Resolved clean positive</td></tr>
+  <tr><td>S&P / Nasdaq</td><td>Premarket: Nasdaq 100 +0.6%, S&P +0.24%</td><td>Close: S&P +0.58% to 7,757.17, Nasdaq +1.05% to 26,702.86</td><td class="pos">Rally extended, not faded</td></tr>
+  <tr><td>Hormuz seven-day plan</td><td>"Accepted in principle, wants guarantees"</td><td>Araghchi: US wants to add new clauses; warns of escalation</td><td class="neg">More complicated, one-sided claim</td></tr>
+  <tr><td>Hormuz Polymarket</td><td>11.5% Yes</td><td>11.5% Yes</td><td>Zero movement despite harder rhetoric</td></tr>
+  <tr><td>AI-bubble-burst Polymarket</td><td>9.8% Yes</td><td>9.5% Yes</td><td class="pos">Third straight move, same direction</td></tr>
+  <tr><td>Nvidia response to TorchNeuron/TorchTPU</td><td>None</td><td>Still none, 48+ hours</td><td>Unchanged — passive posture</td></tr>
+  <tr><td>Micron Taoyuan strike</td><td>Scheduled for Oct 22</td><td>Confirmed proceeding; union frames it as a "warning strike," willing to settle</td><td>Unresolved — strike is tomorrow</td></tr>
+</table>
+
+<!-- ====================== MARKETS ====================== -->
+<h2>Markets / Macro</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> The rally extended through the close, and Meta's after-hours print gave it a second, independent leg.</div>
+
+<p>Meta's Q3 print is tonight's central fact: revenue $64.6B (+26% YoY, beat the $63.38B consensus), a $9.89B legal charge (almost exactly the ~$10B this file flagged as the risk this morning) pulling GAAP EPS to $3.83 against $7.40 ex-charge, a raised 2026 AI capex guide, a 2-for-1 stock split, and a new non-voting Class C share class — the stock rose more than 3% after hours. This is the first hyperscaler AI-capex confidence test since the broader AI-infra selloff, and it passed clean: absorbing a surprise charge and raising spending while still getting rewarded is a stronger signal than a beat alone. At the cash close, <strong>S&P 500 +0.58% to 7,757.17, Nasdaq Composite +1.05% to 26,702.86</strong> — both running ahead of this morning's premarket futures reads, not just holding them. SMCI itself closed up roughly 9-12% (reports vary), confirming the premarket pop held the full session. Oil was essentially unchanged: Brent ~$110.13-110.32, WTI ~$98-99 depending on source, still holding the ~$110 Brent band on "Middle East worries" per CNBC, not extending this morning's modest uptick. CRWV had a wide, volatile session — down as much as -6.4% intraday to a fresh 52-week low before recovering to close +2.5% on a fresh Goldman note.</p>
+
+<h3>The structural read</h3>
+<p>Tonight is the cleanest two-data-point confirmation this file has logged in a week: SMCI's hardware beat this morning and Meta's capex-confidence beat tonight point the same bullish direction, on two independent, large, dateable prints rather than one. <strong>Bear case:</strong> one bullish week doesn't resolve the structural CUDA-moat question or the private-credit NAV questions this file has carried for weeks — Meta's capex confidence says nothing about whether the lenders financing the buildout are themselves sound. <strong>Bull case:</strong> Microsoft and Alphabet report next Wednesday (Oct 28), Amazon Thursday (Oct 29) — if either confirms, this week will have delivered three to four independent hyperscaler-tier data points in the same direction.</p>
+
+<!-- ====================== IRAN ====================== -->
+<h2>Iran / Middle East Geopolitics</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> The optimistic "accepted in principle" framing got messier, not cleaner — but Polymarket didn't react.</div>
+
+<p>Araghchi said tonight that "the Americans informed us that they agreed to these conditions, but they wanted to add a few more clauses" to Iran's seven-day Hormuz reopening plan — a real complication on top of this morning's "accepted in principle, wants guarantees" read, since reopening an already-agreed plan with new clauses is a different degree of friction than simply asking for guarantees (<a href="https://www.intellinews.com/iran-says-us-has-added-clauses-to-its-seven-day-hormuz-plan-477695">bne IntelliNews</a>). He separately warned that "any further escalation around the Strait of Hormuz or elsewhere in the Middle East could seriously endanger civilian lives, regional security and...the global economy," while saying Iran "will never bow to threats" (<a href="https://www.thenationalnews.com/news/gulf/2026/10/21/araghchi-says-strait-of-hormuz-will-stay-closed-until-us-agrees-to-irans-terms/">The National</a>). <strong>Important caveat: this is Iran's own characterization</strong>, carried by regional outlets tonight — no independent US confirmation of the "added clauses" claim has surfaced. <strong>Hormuz-normal-by-Dec-31 reads 11.5% Yes tonight</strong> (direct Gamma-API fetch) — identical to this morning, zero movement despite the harder rhetoric.</p>
+
+<h3>The structural read</h3>
+<p>This morning's "accepted in principle" framing didn't survive one full news cycle intact — the US reportedly reopening the negotiation with new clauses is meaningfully different from just wanting guarantees, and this file should downgrade this morning's optimism accordingly, with the caveat that it's a one-sided account. The more interesting fact may be Polymarket's total non-reaction: 11.5% both readings, through a day with real rhetorical movement and zero new physical facts. <strong>Bear case:</strong> a contract this flat through genuinely harder language could be complacent, not calibrated — worth checking tomorrow for confirmation or correction. <strong>Bull case:</strong> this is exactly the kind of claims-and-warnings-without-new-facts noise this file's framework says the contract should correctly ignore, and it did.</p>
+
+<!-- ====================== AI ====================== -->
+<h2>AI Ecosystem</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> Meta's print is the cleanest bullish AI-capex data point this file has logged in weeks. Nvidia's silence continues.</div>
+
+<p>Meta's Q3 result (full detail in Markets above) is the standing AI-capex-financing-fragility question's cleanest bullish data point to date — a hyperscaler absorbing a large surprise charge, raising capex guidance anyway, and getting rewarded with a 3%+ after-hours pop. <strong>Nvidia has now gone two full days without any public response to TorchNeuron or TorchTPU</strong> — reporting characterizes its posture as leaning on existing ecosystem breadth and developer lock-in rather than a direct rebuttal: a passive defense, not a counter-claim. <strong>The AI-bubble-burst Polymarket contract eased further tonight: 9.5% Yes</strong> (direct fetch), down from this morning's 9.8% — a third straight move in the same direction (11%→9.8%→9.5%), tracking this week's SMCI-then-Meta bullish news rather than reversing. Mid-2027 variant also eased, 21.5%→20%. CRWV's volatile session (down -6.4% intraday to a 52-week low, closing +2.5%) is detailed in Markets above.</p>
+
+<h3>The structural read</h3>
+<p>Meta's print matters more than TorchTPU did this morning, because it's the first real test of whether hyperscaler capex confidence survives contact with an actual surprise negative — and it did, with capex guidance going up, not down. Nvidia's continued silence, now two days in, is becoming a data point itself: a company with a clean rebuttal to a real threat usually makes it quickly. <strong>Bear case:</strong> Meta's capex confidence is about balance-sheet capacity to spend, not about whether that spending is a good investment, or whether the AI-infra debt complex financing the buildout (CRWV, private-credit.md) is itself sound. <strong>Bull case:</strong> Microsoft, Alphabet, and Amazon now face a higher bar after Meta cleared it — if even one confirms, this week delivers multiple independent hyperscaler-tier demand signals in a row.</p>
+
+<!-- ====================== PORTFOLIO ====================== -->
+<h2>Portfolio Tickers</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> 169th consecutive zero-position day. Taoyuan strike confirmed proceeding tomorrow; Meta's print is the dominant cross-beat tailwind.</div>
+
+<table>
+  <tr><th>Ticker</th><th>Status</th><th>What's new tonight</th></tr>
+  <tr><td>MU</td><td>Unresolved — strike tomorrow</td><td>Taoyuan union confirmed Thursday's strike proceeds, explicitly framed by the union as a one-day "warning strike," willing to settle if Micron offers acceptable terms. The stoppage itself still goes ahead as planned.</td></tr>
+  <tr><td>NVDA / AMD / TSM / MU</td><td class="pos">Rally extended</td><td>All riding the extended SMCI/Meta-driven sentiment wave — the close ran ahead of, not just in line with, this morning's premarket reads.</td></tr>
+  <tr><td>AMZN</td><td>No new item</td><td>TorchNeuron thesis unchanged; Nvidia still silent on both CUDA-escape tools, a second full day.</td></tr>
+  <tr><td>CRWV</td><td>Volatile, net positive</td><td>Down as much as -6.4% intraday to a fresh 52-week low, recovered to close +2.5% on a fresh Goldman note.</td></tr>
+  <tr><td>NBIS</td><td>No new item</td><td>No change beyond this morning's Musk-driven sentiment pop.</td></tr>
+  <tr><td>OWL / ARCC / APO</td><td>No new item</td><td>No ticker-specific news tonight; Oct 27/29 two-print test unchanged.</td></tr>
+</table>
+
+<h3>The structural read</h3>
+<p>Tonight's dominant fact for this file isn't a portfolio-ticker-specific item at all — it's Meta's print, which directly tests the same "is AI capex confidence real" question underneath NVDA/AMD/TSM/MU's sentiment-driven gains this week, and it passed. <strong>Bear case:</strong> Taoyuan's strike proceeding exactly as scheduled, even with the union's own "willing to settle" framing, is still a real production-risk event tomorrow that hasn't happened yet. <strong>Bull case:</strong> a hyperscaler clearing a high bar the same week a hardware name beat is a genuinely strengthening, multi-data-point demand signal. Zero positions stands at 169 sessions; Micron's Taoyuan strike (tomorrow) is the next near-dated catalyst.</p>
+
+<!-- ====================== PRIVATE CREDIT ====================== -->
+<h2>Private Credit</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> No material change.</div>
+
+<p>No material change on this beat's core threads (Project Jupiter, Leon Black/DOJ, the Saba/Cox tender, Stack Melbourne, ARCC/OWL) since this morning. No ARCC- or OWL-specific item found tonight. Tonight's dominant cross-beat input — Meta's strong Q3 print — is a real demand-side AI-capex confidence signal, but it doesn't touch this beat's own financing-side question (are the lenders/BDCs funding the buildout themselves sound) any more directly than this morning's SMCI rally did.</p>
+
+<h3>The structural read</h3>
+<p>A quiet evening on this beat's own threads is the expected outcome. The two-print test (ARCC Oct 27, OWL Oct 29) remains the real resolution point, and nothing this week — not SMCI, not Meta — has touched it directly.</p>
+
+<!-- ====================== POLYMARKET ====================== -->
+<h2>Polymarket Calibration</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> Hormuz held dead flat through harder rhetoric; AI-bubble contract continued its ease.</div>
+
+<table>
+  <tr><th>Contract</th><th>This morning</th><th>Tonight (direct fetch)</th><th>Delta</th></tr>
+  <tr><td>AI-bubble burst by end-2026</td><td>9.8%</td><td>9.5%</td><td class="pos">-0.3pt — third straight move same direction</td></tr>
+  <tr><td>Hormuz normal by Dec 31</td><td>11.5%</td><td>11.5%</td><td>Flat — no reaction to harder rhetoric</td></tr>
+  <tr><td>Oct FOMC: no-change</td><td>86.5%</td><td>87.5%</td><td>Essentially flat, boring as usual</td></tr>
+</table>
+
+<h3>The structural read</h3>
+<p>Tonight's Hormuz non-reaction is the more interesting of the two reads, because it's the hardest test yet of this file's "claim-driven moves get ignored, hard data moves get priced" framework — today had real rhetorical movement and zero price movement. The AI-bubble contract's third consecutive move in the same direction, now clearly tracking a real week of hardware/capex news rather than a single data point, is the cleaner read. <strong>Bear case:</strong> a flat Hormuz print through objectively harder language looks complacent if tomorrow brings a concrete deterioration — this file shouldn't treat tonight's flatness as proof of calibration without a forward test. <strong>Bull case:</strong> three independent data points (SMCI, Meta, and the AI-bubble contract's consistent response to both) in the same week is about as clean a confirmation of this file's framework as it's had.</p>
+
+<!-- ====================== BOTTOM LINE ====================== -->
+<div class="punchline-box">
+  <h3>Bottom Line / Portfolio Implication</h3>
+  <p>Zero positions at 169 sessions remains correct. Tonight strengthens, not just reinforces, the "demand is real" side of the standing thesis — Meta's print is the cleanest hyperscaler AI-capex confidence signal this file has logged all month, and it landed the same week SMCI's hardware beat reversed the Asia rout, giving the bull case two independent legs rather than one. But the financing-side question (is the AI buildout's debt complex sound — CRWV, private-credit.md) remains untouched by either print, and shouldn't be conflated with it. Hormuz is the one thread that got worse, not better, tonight: Araghchi's "added clauses" and escalation-warning language is a real complication on this morning's optimism, even if Polymarket isn't yet pricing it. Tomorrow's Micron Taoyuan strike is the next live catalyst — a "warning strike" that still halts production is a real, if small, test of whether this week's bullish tape survives an actual disruption rather than just a threatened one.</p>
+</div>
+
+<!-- ====================== SOURCES ====================== -->
+<h2>Sources</h2>
+<div class="sources">
+  <p><strong>Markets / Meta:</strong></p>
+  <ul>
+    <li><a href="https://finance.yahoo.com/markets/stocks/live/meta-earnings-live-meta-q3-earnings-to-test-wall-streets-stomach-for-ai-spending-173000302.html">Yahoo Finance — Meta Q3 2026 earnings live</a></li>
+    <li><a href="https://www.cnbc.com/2026/10/21/meta-earnings-q3-2026-live-updates.html">CNBC — Meta Q3 2026 earnings report live updates</a></li>
+    <li><a href="https://www.unite.ai/meta-q3-revenue-rises-26-as-board-approves-non-voting-class-c-stock/">Unite.AI — Meta Q3 revenue rises 26% as board approves non-voting Class C stock</a></li>
+    <li><a href="https://www.gurufocus.com/news/9134620/super-micro-computer-smci-surges-912-amid-market-rally-on-october-21-2026">GuruFocus — Super Micro surges amid market rally, October 21, 2026</a></li>
+  </ul>
+  <p><strong>Iran / Geopolitics:</strong></p>
+  <ul>
+    <li><a href="https://www.intellinews.com/iran-says-us-has-added-clauses-to-its-seven-day-hormuz-plan-477695">bne IntelliNews — Iran says US has added clauses to its seven-day Hormuz plan</a></li>
+    <li><a href="https://www.thenationalnews.com/news/gulf/2026/10/21/araghchi-says-strait-of-hormuz-will-stay-closed-until-us-agrees-to-irans-terms/">The National — Araghchi says Strait of Hormuz will stay closed until US agrees to Iran's terms</a></li>
+  </ul>
+  <p><strong>AI Ecosystem / Portfolio:</strong></p>
+  <ul>
+    <li><a href="https://www.technology.org/2026/10/20/amazon-torchneuron-pytorch-trainium-nvidia-cuda/">Technology.org — Amazon TorchNeuron runs PyTorch on Trainium</a></li>
+    <li><a href="https://www.newsquawk.com/headlines/micron-technology-mu-taoyuan-union-in-taiwan-said-it-will-proceed-with-a-planned-strike-on-oct-22-despite-the-co-reaching-a-separate-agreement-with-the-taichung-union">Newsquawk — Micron's Taoyuan union to proceed with Oct 22 strike</a></li>
+    <li><a href="https://www.tokenpost.com/news/business/35605">TokenPost — Micron's Taoyuan union plans Oct 22 solidarity strike</a></li>
+  </ul>
+  <p><strong>Polymarket:</strong></p>
+  <ul>
+    <li><a href="https://polymarket.com/event/ai-bubble-burst-by/ai-industry-downturn-by-december-31-2026-857">Polymarket — AI industry downturn by December 31, 2026</a></li>
+    <li><a href="https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-december-31">Polymarket — Strait of Hormuz traffic returns to normal by Dec 31</a></li>
+    <li><a href="https://polymarket.com/event/fed-decision-in-october-20260617190323537">Polymarket — Fed decision in October 2026</a></li>
+  </ul>
+</div>
+
+<div class="footer">
+  Daily News Brief · October 21, 2026 · Wednesday Evening Wrap · Day 236 of the Iran war<br>
+  <em>Andres's daily analyst. Structural reads, not headline regurgitation. Evening wrap: what actually happened vs. what was expected.</em>
+</div>
+
+</div>
+
+</body>
+</html>
