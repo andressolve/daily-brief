@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily News Brief — October 23, 2026 (Morning)</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --surface: #121820;
+    --surface2: #1a2230;
+    --border: #243044;
+    --text: #c8d3e0;
+    --text-dim: #6b7d93;
+    --heading: #e8edf3;
+    --accent: #4fc3f7;
+    --accent2: #81c784;
+    --warn: #ffb74d;
+    --danger: #ef5350;
+    --gold: #ffd54f;
+    --purple: #b39ddb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a0a0a 0%, #2a0a1a 50%, #0a1a2e 100%);
+    border-bottom: 1px solid var(--danger);
+    padding: 50px 40px 40px;
+    text-align: center;
+  }
+  .header .day-tag {
+    display: inline-block;
+    background: rgba(239,83,80,0.2);
+    border: 1px solid rgba(239,83,80,0.4);
+    color: var(--danger);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--heading);
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .header .subtitle {
+    font-size: 18px;
+    color: var(--warn);
+    font-weight: 400;
+  }
+  .header .subtitle-sub {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 10px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--heading);
+    margin: 48px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 28px 0 12px;
+  }
+  p { margin-bottom: 14px; }
+  strong { color: var(--heading); }
+  em { color: var(--accent); font-style: italic; }
+  ul, ol { margin: 0 0 14px 22px; }
+  li { margin-bottom: 6px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  table tr:last-child td { border-bottom: none; }
+  table td:first-child {
+    font-weight: 700;
+    color: var(--heading);
+  }
+  .badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+  .badge-red { background: var(--danger); color: #fff; }
+  .badge-green { background: var(--accent2); color: var(--bg); }
+  .badge-blue { background: var(--accent); color: var(--bg); }
+  .badge-yellow { background: var(--warn); color: var(--bg); }
+  .badge-purple { background: var(--purple); color: var(--bg); }
+  .tldr-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.1), rgba(255,183,77,0.05));
+    border: 2px solid var(--danger);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin: 24px 0 32px;
+  }
+  .tldr-box h3 {
+    color: var(--danger);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .delta-box {
+    background: var(--surface2);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 20px;
+    margin: 0 0 18px;
+    font-size: 13.5px;
+    color: var(--text-dim);
+  }
+  .delta-box strong { color: var(--accent); }
+  .faction-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .faction-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px 26px;
+    border-left: 4px solid var(--border);
+  }
+  .faction-card.f-irgc { border-left-color: var(--danger); }
+  .faction-card.f-hawk { border-left-color: var(--warn); }
+  .faction-card.f-civ { border-left-color: var(--accent); }
+  .faction-card h4 {
+    font-size: 16px;
+    color: var(--heading);
+    margin-bottom: 4px;
+  }
+  .faction-card .lead {
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .honest-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--purple);
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin: 24px 0;
+  }
+  .honest-box h3 {
+    color: var(--purple);
+    margin-top: 0;
+    margin-bottom: 14px;
+  }
+  .punchline-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.08), rgba(79,195,247,0.05));
+    border: 2px solid rgba(239,83,80,0.3);
+    border-radius: 10px;
+    padding: 28px;
+    margin: 32px 0;
+    text-align: center;
+  }
+  .punchline-box h3 {
+    color: var(--danger);
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .punchline-box p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    max-width: 760px;
+    margin: 0 auto 10px;
+    color: var(--text);
+  }
+  .sources { font-size: 12.5px; color: var(--text-dim); }
+  .sources a { color: var(--accent); text-decoration: none; }
+  .sources a:hover { text-decoration: underline; }
+  .footer {
+    border-top: 1px solid var(--border);
+    margin-top: 50px;
+    padding-top: 20px;
+    color: var(--text-dim);
+    font-size: 12px;
+    text-align: center;
+  }
+  .pos { color: var(--accent2); }
+  .neg { color: var(--danger); }
+  .move-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  .move-table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  .move-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="day-tag">Day 238 of the Iran War · Friday Morning Brief</div>
+  <h1>Daily News Brief — October 23, 2026</h1>
+  <div class="subtitle">Thursday's "Black Thursday" found a floor overnight, not a reversal — Asia stabilized, CoreWeave's bond distress held rather than widened, oil partially retraced. Nothing that caused Thursday's rout actually resolved. Hormuz Polymarket just logged a fifth straight flat read.</div>
+  <div class="subtitle-sub">Run: 08:00 PT · Morning brief: what to watch today · 171st consecutive zero-position day · ARCC earnings T-4 days (Oct 27) · Israel election T-4 days (Oct 27) · Microsoft/Alphabet earnings Oct 28 · Amazon earnings Oct 29 · OWL earnings Nov 4/5 · Nov 23 Jupiter permit decision · Nov 3 US midterms</div>
+</div>
+
+<div class="container">
+
+<!-- ====================== TL;DR ====================== -->
+<div class="tldr-box">
+  <h3>TL;DR — What changed overnight, and why it matters</h3>
+  <ul>
+    <li><strong>Thursday's selloff found a floor, not a reversal.</strong> Asia stabilized (Nikkei/Kospi both modestly positive), US futures indicated modestly higher premarket — but none of the three things that drove Thursday's rout (the Iran strike-planning report, AI-capex/dilution skepticism, CoreWeave's credit distress) actually resolved. Treat this as a pause.</li>
+    <li><strong>CoreWeave's bond distress held at Thursday's record levels (~15.7-15.8% yield, ~1,082bp CDS) rather than widening further overnight</strong> — no rating-agency action found. Distress holding steady is not the same as distress healing.</li>
+    <li><strong>Hormuz's Polymarket contract logged a fifth consecutive flat read at 11.5% Yes</strong> — spanning a credibility arc from a single NYT source to two-outlet (NYT+ABC) corroboration with a non-denying White House. This is now the strongest version of the instrument-mismatch read this file can state without an actual resolution event.</li>
+    <li><strong>Nvidia's silence on TorchNeuron/TorchTPU enters a fourth full day</strong> — crossing from "notable" to itself being the most informative data point on the CUDA-moat thread. A company with a clean rebuttal usually delivers it faster than this.</li>
+    <li><strong>Private credit had a genuinely quiet morning</strong> — no confirmation or denial of Wednesday-Thursday's Blue Owl sale-speculation report, no new Project Jupiter development. ARCC's Oct 27 print and OWL's Nov 4/5 print remain the two real tests, unchanged.</li>
+  </ul>
+</div>
+
+<!-- ====================== WHAT TO WATCH TODAY ====================== -->
+<h2>Overnight → This Morning: What Moved</h2>
+<table class="move-table">
+  <tr><th>Item</th><th>Thursday close</th><th>Friday morning</th><th>Read</th></tr>
+  <tr><td>Asia (Nikkei/Kospi)</td><td>Nikkei -2.65%, Kospi -3.52%</td><td>Nikkei +0.4-0.8%, Kospi flat-to-+0.3%</td><td class="pos">Stabilized, not an extension of Thursday's rout</td></tr>
+  <tr><td>Oil (Brent)</td><td>$111.97 close, +2.9%</td><td>~$110-111</td><td>Partial retrace, not a reversal</td></tr>
+  <tr><td>CoreWeave bonds/CDS</td><td>Record 15.76% yield, ~1,082bp CDS</td><td>Held near same levels</td><td class="neg">Distress held, didn't deepen or heal</td></tr>
+  <tr><td>Hormuz Polymarket</td><td>11.5% Yes</td><td>11.5% Yes</td><td>5th consecutive flat read</td></tr>
+  <tr><td>AI-bubble-burst Polymarket</td><td>10% Yes (mid-2027: 21%)</td><td>9.7% Yes (mid-2027: ~20.5%)</td><td>Eased with CoreWeave's stabilization</td></tr>
+  <tr><td>Oct FOMC Polymarket</td><td>92.5%/7.5% (unverified)</td><td>91.5%/8.5% (clean re-fetch)</td><td>Confirms, doesn't resolve, last night's unexplained move</td></tr>
+  <tr><td>Nvidia silence (TorchNeuron/TPU)</td><td>Day 3</td><td>Day 4</td><td class="neg">Aging into its own bear-case data point</td></tr>
+</table>
+
+<!-- ====================== MARKETS ====================== -->
+<h2>Markets / Macro</h2>
+<div class="delta-box"><strong>Delta since last night:</strong> A stabilization, not a resolution — Asia steadied and CoreWeave's distress held rather than widened, but nothing that caused Thursday's rout actually reversed.</div>
+
+<p>Asia stabilized overnight: <strong>Nikkei +0.4-0.8%, Kospi roughly flat to +0.3%</strong> (SK Hynix/Samsung steadying after Thursday's rout, no fresh deterioration), Hang Seng flat to modestly positive. US equity futures indicated modestly positive premarket — S&amp;P +0.2-0.3%, Nasdaq +0.3-0.5% — consistent with a bounce off an oversold session rather than a "nothing happened" V-shaped recovery. <strong>CoreWeave's 2031 notes and CDS spread held near Thursday's record-distressed prints (~15.7-15.8% yield, ~1,082bp)</strong> rather than widening further; no rating-agency action has been found this morning. <strong>Oct FOMC Polymarket odds got the clean re-fetch this file flagged as unverified last night: 91.5% no-change / 8.5% hike</strong> — essentially flat versus Thursday evening's 92.5%/7.5%, meaning Wednesday night's unexplained +5pp move toward no-change held into Friday rather than reversing, still with no identified catalyst. BTC recovered modestly to ~$82.5-83k, tracking the broader risk stabilization rather than a standalone catalyst.</p>
+
+<h3>The structural read</h3>
+<p>The real test flagged last night — does Thursday's selloff extend or reverse — landed inconclusive, and this file is treating it that way rather than reading a bounce as an all-clear. <strong>Bear case:</strong> a bounce with no new positive catalyst behind it — no denial of the Iran strike-planning story, no CoreWeave ratings upgrade, no reversal of Meta's dilution read — is fragile heading into next week's Microsoft/Alphabet (Oct 28), Amazon (Oct 29), and ARCC (Oct 27) prints, none of which this morning's calm actually de-risks. <strong>Bull case:</strong> "found a floor" after a -2.6% Nasdaq day without a second leg down overnight is itself informative — a genuine structural repricing would more plausibly have shown continued follow-through into Friday's Asia session than it did.</p>
+
+<!-- ====================== IRAN ====================== -->
+<h2>Iran / Middle East Geopolitics</h2>
+<div class="delta-box"><strong>Delta since last night:</strong> No new US/Israeli statement; Hormuz Polymarket logs a fifth consecutive flat read — now the hardest version yet of the instrument-mismatch conclusion.</div>
+
+<p>The strike-planning story rests exactly where Thursday evening left it — no further confirmation, denial, or detail from the White House, Pentagon, or Israeli officials overnight. IRGC state media claimed one more mine strike on a tanker transiting Hormuz — no vessel name, flag, or independent confirmation, continuing the familiar unconfirmed-claim cadence. No movement on the Araghchi "added clauses" dispute. Oil eased off Thursday's intraday spike high but held most of its gain: <strong>Brent trading ~$110-111 this morning</strong>, a partial, not full, retrace of the $112-113 print — consistent with no fresh escalation input rather than a de-escalation signal. <strong>Hormuz-normal-by-Dec-31 held flat at 11.5% Yes for a fifth consecutive read</strong> (direct Gamma-API fetch) — now spanning a credibility arc from a single NYT source to two-outlet (NYT+ABC) corroboration with a non-denying White House.</p>
+
+<h3>The structural read</h3>
+<p>Five consecutive flat reads through a story that went from one unconfirmed report to two-outlet corroboration with a White House that structurally conceded the post-midterm timing is a pattern that's difficult to explain as "the market is still digesting" — at some point it has to be read as "the market doesn't price this." <strong>Bear case:</strong> quiet doesn't mean resolved — a two-outlet-corroborated plan for a post-midterm multi-day assault is still live, and a calm Friday morning is also exactly what the lull before any such action would look like. <strong>Bull case:</strong> five flat reads through an escalating credibility curve, with oil (a market this file trusts to react) moving cleanly on the same news this contract ignored, is about as clean a demonstration of criteria-literal pricing as this file is likely to get.</p>
+
+<!-- ====================== AI ====================== -->
+<h2>AI Ecosystem</h2>
+<div class="delta-box"><strong>Delta since last night:</strong> Nvidia's silence hits a fourth day; CoreWeave's distress held rather than deepened; the AI-bubble Polymarket contract eased in step with it.</div>
+
+<p><strong>Nvidia has now gone a fourth full day without any public response to TorchNeuron or Google's TorchTPU</strong> — reporting continues to characterize its posture as leaning on ecosystem breadth rather than a direct rebuttal. No new frontier-model release was found this morning. The ai-ecosystem-analyst pipeline (<code>/Users/andresrodriguez/Documents/ai-ecosystem-analyst/output/</code>) remains dormant — now 44 days since its last output (Sept 9) — flagged again per standing practice, not duplicated. No new circular-financing data points surfaced. The chip complex (NVDA/AMD/MU) is indicated modestly higher premarket, tracking the broader market stabilization rather than any AI-specific news. <strong>AI-bubble-burst Polymarket eased to 9.7% Yes (Dec 31 variant, down from Thursday's 10%), mid-2027 variant ~20.5%</strong> — tracking CoreWeave's distress holding rather than deepening overnight.</p>
+
+<h3>The structural read</h3>
+<p>Nvidia's silence is becoming the story in its own right — four days is long enough that "leaning on ecosystem breadth" reads less like calm confidence and more like the absence of a quick rebuttal; this file is escalating it from a watch item toward an active bear-case input on the CUDA moat if it extends into a second week. <strong>Bear case:</strong> CoreWeave's distress holding rather than healing means the AI-infra credit story is still fully live heading into next week's hyperscaler earnings — a stabilization is not a resolution. <strong>Bull case:</strong> the AI-bubble contract's easing, landing exactly the morning CoreWeave's distress stopped widening, is the cleanest continued evidence this file has for its "Polymarket discriminates between hard data and sentiment" framework.</p>
+
+<!-- ====================== PORTFOLIO ====================== -->
+<h2>Portfolio Tickers</h2>
+<div class="delta-box"><strong>Delta since last night:</strong> 171st consecutive zero-position day. No new material fact on any tracked ticker — the complex is simply tracking the broader stabilization.</div>
+
+<table>
+  <tr><th>Ticker</th><th>Overnight / Premarket</th><th>Note</th></tr>
+  <tr><td>NVDA / AMD / MU</td><td>+0.5-1.5% premarket</td><td>Partial retrace of Thursday's rout; no company-specific news</td></tr>
+  <tr><td>CRWV</td><td>Stabilizing near $56.50 close</td><td>No further deterioration overnight; no rating-agency action found</td></tr>
+  <tr><td>NBIS</td><td>Steady</td><td>No new item</td></tr>
+  <tr><td>TSM</td><td>Holding this week's relative outperformance</td><td>No new news this morning</td></tr>
+  <tr><td>XLE</td><td>Roughly flat</td><td>Brent partially retraces; still not a clean hedge in either direction</td></tr>
+  <tr><td>OWL</td><td>Flat to modestly lower premarket</td><td>No overnight follow-through on Wed/Thu sale speculation</td></tr>
+  <tr><td>APO / ARCC</td><td>No new item</td><td>ARCC Oct 27 print now T-4</td></tr>
+</table>
+
+<h3>The structural read</h3>
+<p>A quiet morning after a very loud Thursday is the expected outcome, and this file is resisting the temptation to read today's modest bounce as a resolution of yesterday's open questions — whether the chip-sector selloff was a one-day repricing, whether XLE works as a hedge, whether Blue Owl's credit book is sound. None of them actually resolved overnight; they just paused. 171 sessions at zero positions remains clearly the right call; ARCC's Oct 27 print is now the nearest real catalyst, four trading days out.</p>
+
+<!-- ====================== PRIVATE CREDIT ====================== -->
+<h2>Private Credit</h2>
+<div class="delta-box"><strong>Delta since last night:</strong> No material change — a quiet morning after the most eventful private-credit session in weeks.</div>
+
+<p>No follow-up confirmation, denial, or additional color has surfaced on Wednesday-Thursday's WSJ report that bankers are exploring a sale of Blue Owl (T. Rowe Price, Carlyle named as possible buyers). No further development on the Oracle/Project Jupiter force-majeure dispute. No new OTIC/OCIC redemption or NAV data. ARCC's Oct 27 print (T-4) and OWL's Nov 4 (after close)/Nov 5 (call) print remain the two real tests this beat is waiting on.</p>
+
+<h3>The structural read</h3>
+<p>Worth naming precisely what didn't happen rather than padding: no sell-side firm has added color or confirmation to the sale-speculation story a day later, and nothing moved the Jupiter dispute forward or backward — both threads sit exactly where Thursday's close left them. <strong>Bear case:</strong> continued silence on confirming a single WSJ report this long afterward is mildly bearish for that story's durability as a catalyst. <strong>Bull case:</strong> a credit dispute that isn't getting worse, a second session running, is itself a small positive — the real resolution points remain ARCC Oct 27 and OWL Nov 4/5, unchanged.</p>
+
+<!-- ====================== POLYMARKET ====================== -->
+<h2>Polymarket Calibration</h2>
+<div class="delta-box"><strong>Delta since last night:</strong> Hormuz's longest flatline yet; the AI-bubble contract eased with CoreWeave's stabilization; FOMC confirmed rather than resolved.</div>
+
+<table>
+  <tr><th>Contract</th><th>Thursday close</th><th>Friday AM (direct fetch)</th><th>Delta</th></tr>
+  <tr><td>Hormuz normal by Dec 31</td><td>11.5%</td><td>11.5%</td><td>5th consecutive flat read — the longest, hardest-tested flatline on this contract</td></tr>
+  <tr><td>AI-bubble burst by end-2026</td><td>10%</td><td>9.7%</td><td class="pos">Eased with CoreWeave's distress holding steady</td></tr>
+  <tr><td>AI-bubble burst by mid-2027</td><td>21%</td><td>~20.5%</td><td>Tracking the Dec-31 variant down</td></tr>
+  <tr><td>Oct FOMC: no-change</td><td>92.5% (unverified)</td><td>91.5% (clean fetch)</td><td>Confirms last night's move held, still unexplained</td></tr>
+</table>
+
+<h3>The structural read</h3>
+<p>Five flat Hormuz reads spanning a real credibility escalation is about as strong a version of the instrument-mismatch conclusion as this file is likely to get without an actual resolution event — a US statement, a strike itself, or a transit-data break. The AI-bubble contract's small ease, landing exactly the morning CoreWeave's distress stopped widening, is the cleanest continuation yet of this file's "hard data, not sentiment" framework. <strong>Bear case:</strong> a contract this flat for five straight reads could still be lagging rather than calibrated if the post-midterm plan actually executes — this file won't know which reading was right until there's an actual resolution event. <strong>Bull case:</strong> five independent flat reads through an escalating credibility curve, paired with oil moving cleanly on the same news, is the strongest version of the calibration argument this file has built on this specific contract.</p>
+
+<!-- ====================== BOTTOM LINE ====================== -->
+<div class="punchline-box">
+  <h3>Bottom Line / Portfolio Implication</h3>
+  <p>Zero positions at 171 sessions remains correct, and this morning is a pause, not a reason to lean in. Asia stabilizing and CoreWeave's distress holding rather than widening are both genuinely calmer facts than Thursday's close, but neither resolves what actually drove Thursday's rout — the Iran strike-planning report is still live and corroborated, AI-capex skepticism hasn't been rebutted, and CoreWeave's credit book is still formally distressed, just not getting worse for one session. Nvidia's silence on the CUDA-moat tools is now four days old and aging into a real data point rather than a curiosity. The two genuine near-dated tests for this portfolio — ARCC's Oct 27 print and OWL's Nov 4/5 print — are unchanged and now the cleanest things to actually watch, rather than today's quiet tape. On Iran, five consecutive flat Hormuz reads through an escalating credibility curve is the strongest version yet of this file's instrument-mismatch conclusion — but it's still a conclusion about an instrument, not a judgment that the underlying risk has gone anywhere.</p>
+</div>
+
+<!-- ====================== SOURCES ====================== -->
+<h2>Sources</h2>
+<div class="sources">
+  <p><strong>Markets:</strong></p>
+  <ul>
+    <li><a href="https://tradingeconomics.com/commodity/brent-crude-oil">Trading Economics — Brent crude oil price</a></li>
+    <li><a href="https://www.benzinga.com/markets/bonds/26/10/62541064/coreweave-debt-stress-mounts-bond-yield-hits-record-as-stock-suffers-44-billion-wipeout">Benzinga — CoreWeave debt stress mounts: bond yield hits record (Thursday baseline)</a></li>
+  </ul>
+  <p><strong>Iran / Geopolitics:</strong></p>
+  <ul>
+    <li><a href="https://abcnews.com/Politics/us-israel-drawing-plans-resume-attacks-iran-post/story?id=137479897">ABC News — US and Israel drawing up plans to resume attacks on Iran post-election</a></li>
+    <li><a href="https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-december-31">Polymarket — Strait of Hormuz traffic returns to normal by Dec 31 (direct fetch)</a></li>
+  </ul>
+  <p><strong>AI Ecosystem / Portfolio:</strong></p>
+  <ul>
+    <li><a href="https://invezz.com/news/2026/10/22/nvidia-amd-and-micron-plunge-sharply-why-wall-street-is-punishing-ai-spending-either-way/">Invezz — Nvidia, AMD, and Micron plunge: why Wall Street is punishing AI spending either way (Thursday baseline)</a></li>
+  </ul>
+  <p><strong>Private Credit:</strong></p>
+  <ul>
+    <li><a href="https://stockstotrade.com/news/blue-owl-capital-inc-owl-news-2026_10_22/">StocksToTrade — Blue Owl Capital stock pops as sale talk fuels rebound (Thursday baseline)</a></li>
+    <li><a href="https://www.marketscreener.com/news/ares-capital-corporation-schedules-earnings-release-for-the-third-quarter-ended-september-30-2026-ce785ddade8cf426">MarketScreener — Ares Capital schedules Q3 earnings release, Oct 27</a></li>
+  </ul>
+  <p><strong>Polymarket:</strong></p>
+  <ul>
+    <li><a href="https://polymarket.com/event/ai-bubble-burst-by">Polymarket — AI bubble burst by...? (direct fetch)</a></li>
+    <li><a href="https://polymarket.com/event/fed-decision-in-october-20260617190323537">Polymarket — Fed decision in October (direct fetch)</a></li>
+  </ul>
+</div>
+
+<div class="footer">
+  Daily News Brief · October 23, 2026 · Friday Morning Brief · Day 238 of the Iran war<br>
+  <em>Andres's daily analyst. Structural reads, not headline regurgitation. Morning brief: what to watch today.</em>
+</div>
+
+</div>
+
+</body>
+</html>
