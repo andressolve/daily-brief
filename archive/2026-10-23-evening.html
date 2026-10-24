@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily News Brief — October 23, 2026 (Evening)</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --surface: #121820;
+    --surface2: #1a2230;
+    --border: #243044;
+    --text: #c8d3e0;
+    --text-dim: #6b7d93;
+    --heading: #e8edf3;
+    --accent: #4fc3f7;
+    --accent2: #81c784;
+    --warn: #ffb74d;
+    --danger: #ef5350;
+    --gold: #ffd54f;
+    --purple: #b39ddb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a0a0a 0%, #2a0a1a 50%, #0a1a2e 100%);
+    border-bottom: 1px solid var(--danger);
+    padding: 50px 40px 40px;
+    text-align: center;
+  }
+  .header .day-tag {
+    display: inline-block;
+    background: rgba(239,83,80,0.2);
+    border: 1px solid rgba(239,83,80,0.4);
+    color: var(--danger);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--heading);
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .header .subtitle {
+    font-size: 18px;
+    color: var(--warn);
+    font-weight: 400;
+  }
+  .header .subtitle-sub {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 10px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--heading);
+    margin: 48px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 28px 0 12px;
+  }
+  p { margin-bottom: 14px; }
+  strong { color: var(--heading); }
+  em { color: var(--accent); font-style: italic; }
+  ul, ol { margin: 0 0 14px 22px; }
+  li { margin-bottom: 6px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  table tr:last-child td { border-bottom: none; }
+  table td:first-child {
+    font-weight: 700;
+    color: var(--heading);
+  }
+  .badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+  .badge-red { background: var(--danger); color: #fff; }
+  .badge-green { background: var(--accent2); color: var(--bg); }
+  .badge-blue { background: var(--accent); color: var(--bg); }
+  .badge-yellow { background: var(--warn); color: var(--bg); }
+  .badge-purple { background: var(--purple); color: var(--bg); }
+  .tldr-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.1), rgba(255,183,77,0.05));
+    border: 2px solid var(--danger);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin: 24px 0 32px;
+  }
+  .tldr-box h3 {
+    color: var(--danger);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .delta-box {
+    background: var(--surface2);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 20px;
+    margin: 0 0 18px;
+    font-size: 13.5px;
+    color: var(--text-dim);
+  }
+  .delta-box strong { color: var(--accent); }
+  .faction-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .faction-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px 26px;
+    border-left: 4px solid var(--border);
+  }
+  .faction-card.f-irgc { border-left-color: var(--danger); }
+  .faction-card.f-hawk { border-left-color: var(--warn); }
+  .faction-card.f-civ { border-left-color: var(--accent); }
+  .faction-card h4 {
+    font-size: 16px;
+    color: var(--heading);
+    margin-bottom: 4px;
+  }
+  .faction-card .lead {
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .honest-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--purple);
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin: 24px 0;
+  }
+  .honest-box h3 {
+    color: var(--purple);
+    margin-top: 0;
+    margin-bottom: 14px;
+  }
+  .punchline-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.08), rgba(79,195,247,0.05));
+    border: 2px solid rgba(239,83,80,0.3);
+    border-radius: 10px;
+    padding: 28px;
+    margin: 32px 0;
+    text-align: center;
+  }
+  .punchline-box h3 {
+    color: var(--danger);
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .punchline-box p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    max-width: 760px;
+    margin: 0 auto 10px;
+    color: var(--text);
+  }
+  .sources { font-size: 12.5px; color: var(--text-dim); }
+  .sources a { color: var(--accent); text-decoration: none; }
+  .sources a:hover { text-decoration: underline; }
+  .footer {
+    border-top: 1px solid var(--border);
+    margin-top: 50px;
+    padding-top: 20px;
+    color: var(--text-dim);
+    font-size: 12px;
+    text-align: center;
+  }
+  .pos { color: var(--accent2); }
+  .neg { color: var(--danger); }
+  .move-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  .move-table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  .move-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="day-tag">Day 238 of the Iran War · Friday Evening Wrap</div>
+  <h1>Daily News Brief — October 23, 2026</h1>
+  <div class="subtitle">The session sold off hard (Dow -1.23%) on Iran, not AI — the army went to highest alert, a record tanker-attack count pushed oil through $100, and selling broadened into defensive sectors. The chip complex itself actually stabilized almost exactly as the morning expected. Hormuz Polymarket's sixth flat read is now the hardest test this file has run on its own framework.</div>
+  <div class="subtitle-sub">Run: 17:15 PT · Evening wrap: what actually happened · 172nd consecutive zero-position day · ARCC earnings T-2 trading days (Oct 27) · Israel election Oct 27 · Microsoft/Alphabet earnings Oct 28 · Amazon earnings Oct 29 · OWL earnings Nov 4/5 · Nov 23 Jupiter permit decision · Nov 3 US midterms</div>
+</div>
+
+<div class="container">
+
+<!-- ====================== TL;DR ====================== -->
+<div class="tldr-box">
+  <h3>TL;DR — What changed today, and why it matters</h3>
+  <ul>
+    <li><strong>The morning's "quiet pause" read didn't hold — but the cause wasn't the one this file was watching.</strong> Dow -652.82 (-1.23%) to 52,215.16, S&P -0.52% to 7,623.68, VIX +6% to 20.24. The driver was Iran, not AI-capex continuation: the army went to highest alert bracing for renewed US strikes, and the IRGC claimed seven tanker attacks/mine strikes overnight — the highest Hormuz attack count since March. Oil pushed through $100.</li>
+    <li><strong>The AI-chip complex itself actually stabilized close to script: AMD +1.74%, MU +2.46%, NVDA roughly flat (-0.59%).</strong> Thursday's chip-specific rout found its floor; it's the broader index that cracked today, on a different beat. This file was watching the right tape for the wrong day's dominant risk.</li>
+    <li><strong>Hormuz's Polymarket contract logged a sixth consecutive flat read at 11.5%</strong> — this time through the single hardest escalation of the cycle (a literal military highest-alert order, a record tanker-attack count). This is the point where this file should stop treating every flat read as further confirmation of its own framework and hold the less comfortable alternative open too.</li>
+    <li><strong>CoreWeave extended its decline (-1.44% to $54.80), a fresh 52-week low ($53.50) set Thursday</strong> — distress continuing, not healing, not deepening sharply either.</li>
+    <li><strong>Blue Owl gave back most of Thursday's M&A-speculation pop (-3.50% to $9.37)</strong> with no confirmation or denial of the sale story surfacing today — the market needed more than a single WSJ report, exactly as flagged this morning.</li>
+  </ul>
+</div>
+
+<!-- ====================== MORNING -> EVENING ====================== -->
+<h2>Morning &rarr; Evening: What Moved</h2>
+<table class="move-table">
+  <tr><th>Item</th><th>This morning's expectation</th><th>What actually happened</th><th>Read</th></tr>
+  <tr><td>Overall tape</td><td>Quiet pause, modestly positive premarket</td><td class="neg">Dow -1.23%, S&P -0.52%, VIX +6% to 20.24</td><td class="neg">Sold off hard — on Iran, not AI-capex</td></tr>
+  <tr><td>Chip complex (NVDA/AMD/MU)</td><td>Partial retrace of Thursday, +0.5-1.5%</td><td class="pos">AMD +1.74%, MU +2.46%, NVDA -0.59%</td><td class="pos">Stabilized almost exactly as expected</td></tr>
+  <tr><td>Oil</td><td>Brent ~$110-111, partial retrace</td><td class="neg">WTI through $100, Brent $110-114</td><td class="neg">Extended higher on fresh Iran escalation</td></tr>
+  <tr><td>Iran/Hormuz</td><td>No new statement, one more unconfirmed claim</td><td class="neg">Army to highest alert; 7 tankers hit — highest since March</td><td class="neg">The day's real, concrete escalation</td></tr>
+  <tr><td>CoreWeave</td><td>Distress holding, not healing</td><td class="neg">-1.44%, extended Thursday's 52-wk low</td><td class="neg">Continuing, not deepening sharply</td></tr>
+  <tr><td>Blue Owl (OWL)</td><td>Flat to lower, no confirmation expected</td><td class="neg">-3.50%, giving back most of Thursday's pop</td><td>As expected — no follow-through on the story</td></tr>
+  <tr><td>Hormuz Polymarket</td><td>11.5% (5th flat read)</td><td>11.5% (6th flat read)</td><td>Flat through the hardest test yet</td></tr>
+  <tr><td>AI-bubble Polymarket</td><td>9.7%</td><td class="pos">9.3%</td><td>Eased further despite the broad selloff</td></tr>
+  <tr><td>Oct FOMC Polymarket</td><td>91.5%/8.5%</td><td>92.5%/6.5%</td><td>Further drift toward no-change</td></tr>
+</table>
+
+<!-- ====================== MARKETS ====================== -->
+<h2>Markets / Macro</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> A hard sell-off, but driven by Iran escalation and a broadening into defensive sectors — not a continuation of Thursday's AI-capex story.</div>
+
+<p><strong>Dow -652.82 points (-1.23%) to 52,215.16; S&P 500 -0.52% to 7,623.68; Nasdaq -0.21% to 25,955.34.</strong> Week-to-date: S&P -0.5%, Nasdaq -0.7%, Dow +0.4%. VIX climbed a second straight session, +6% to 20.24 (Thursday +14% to 19.03). Selling broadened beyond the AI/chip trade into defensive sectors — consumer staples, utilities, and healthcare all fell — a genuine risk-off rotation, not a sector-specific repricing. <strong>Oil pushed through $100: WTI past the $100/bbl threshold intraday, Brent in the $110-114 range</strong> depending on source, on the day's Iran escalation (see below). <strong>The chip complex itself partially stabilized almost exactly as this morning's premarket script predicted: AMD +1.74%, MU +2.46%, NVDA roughly flat at -0.59%</strong> — Thursday's AI-capex-driven rout found its floor; it's the broader index that cracked today, on a different beat entirely. Oct FOMC Polymarket drifted further toward no-change: 92.5%/6.5%, up from this morning's 91.5%/8.5%, continuing the week's slow, still-unexplained drift.</p>
+
+<h3>The structural read</h3>
+<p>Today is a useful correction to this file's own framing, and it's worth naming directly rather than smoothing over: the risk this file was most worried about continuing — AI-capex/CoreWeave-driven selling — actually eased for the chip complex specifically, while a risk logged as quiet overnight (Iran) turned out to be the session's dominant driver by the close. This file was watching the right tape for the wrong day's main risk. <strong>Bear case:</strong> a broadening into defensive-sector selling on a hard military-escalation input is a worse setup heading into the weekend than a contained AI-sector pullback would have been — defensive-sector selling usually signals broad de-risking, not a single-story rotation. <strong>Bull case:</strong> the chip complex's partial bounce holding through a hard broad-market down day is real evidence the AI-capex-skepticism thread may already be stabilizing on its own, separate from today's Iran-driven risk-off, heading into next week's Microsoft/Alphabet (Oct 28) and Amazon (Oct 29) prints.</p>
+
+<!-- ====================== IRAN ====================== -->
+<h2>Iran / Middle East Geopolitics</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> The sharpest concrete escalation of the cycle — a highest-alert order and a record tanker-attack count — and the Hormuz Polymarket contract still didn't move.</div>
+
+<p>Iran's Army Ground Forces commander, Brig. Gen. Ali Jahanshahi, ordered units onto their highest readiness level today, explicitly bracing for renewed US strikes, during a surprise inspection of the 258th Mobile Assault Brigade — citing the need to meet "the enemy's combined threats." The IRGC claims it set afire four vessels in the northern Persian Gulf and that three more struck mines west of the Strait of Hormuz overnight — <strong>seven tanker attacks in total, the highest weekly count since March and the war's opening weeks</strong> — and says it has halted all "violating" tanker traffic through Hormuz entirely. WSJ separately reported Iran is threatening regional economic targets if US strikes resume. Oil responded cleanly to all of this (see Markets). <strong>The Hormuz-normal-by-Dec-31 Polymarket contract logged its sixth consecutive flat read at 11.5% Yes</strong> — unmoved by the hardest, most concrete escalation this file has tracked on this contract to date.</p>
+
+<h3>The structural read</h3>
+<p>Six flat reads is no longer a comfortable confirmation of this file's instrument-mismatch framework, and it's time to say so plainly rather than repeat the bull case on reflex. Today wasn't rhetoric or an unconfirmed claim — it was a named general ordering a highest-alert status and a record tanker-attack count, and oil moved on it cleanly while this contract didn't move at all. Both readings are now genuinely live: either the contract is criteria-literal (it tracks an IMF PortWatch transit-count threshold specifically, and an alert order without an actual strike doesn't mechanically move that number yet), or six flat reads through an escalating real-world threat is exactly what a complacent, lagging market looks like in the moment before it's proven wrong. <strong>Bear case on this file's own framework:</strong> defining each new flat read as further confirmation rather than as a chance to disconfirm is a bias worth naming in itself. <strong>Bull case:</strong> an alert order alone, without an actual strike, genuinely may not have reduced any tanker's willingness to transit yet — which is the specific thing this contract tracks.</p>
+
+<!-- ====================== AI ====================== -->
+<h2>AI Ecosystem</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> Nvidia's silence hits a fifth day; the chip complex stabilized as expected even as the broader tape sold off on Iran; the AI-bubble contract kept discriminating correctly.</div>
+
+<p><strong>Nvidia's silence on TorchNeuron/TorchTPU extends to a fifth full day.</strong> No new frontier-model release found today. CoreWeave extended its decline (-1.44% to $54.80, a fresh 52-week low of $53.50 set Thursday) — no rating-agency action found; distress continuing, not deepening sharply, not healing. <strong>The AI-bubble-burst Polymarket contract eased further to 9.3% Yes</strong> (from this morning's 9.7%) — continuing to ease even on a day the Dow fell 1.23%, because the specific hard data it tracks (CoreWeave's distress) didn't deepen sharply today. The ai-ecosystem-analyst pipeline remains dormant, now 45 days since its last output.</p>
+
+<h3>The structural read</h3>
+<p>Today is a genuinely clean test of this file's "Polymarket discriminates between hard data and sentiment" framework, and it held: the AI-bubble contract eased further even as the broader market fell hard, correctly reading the AI-financing-specific risk as distinct from today's Iran-driven macro selloff. The chip complex's partial bounce (AMD/MU) holding through a broad down day is the more important fact for this beat specifically — it suggests Thursday's rout may have been closer to a one-day repricing than a sustained trend. <strong>Bear case:</strong> CoreWeave's fresh 52-week low, even without deepening sharply, is still a name making new lows, and Nvidia's silence is now long enough to be a genuine data point on the CUDA-moat question heading into a second week. <strong>Bull case:</strong> NVDA/AMD/MU surviving a hard macro-driven selloff day without participating in it is real evidence the chip-specific demand story and the broader Iran/macro risk-off are trading as separate stories now, a healthier setup heading into next week's hyperscaler earnings.</p>
+
+<!-- ====================== PORTFOLIO ====================== -->
+<h2>Portfolio Tickers</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> 172nd consecutive zero-position day. CRWV and OWL both extended their own name-specific declines, independent of the broader tape's direction.</div>
+
+<table>
+  <tr><th>Ticker</th><th>Close</th><th>Note</th></tr>
+  <tr><td>NVDA</td><td class="neg">-0.59%</td><td>Essentially flat, chip-specific stabilization held</td></tr>
+  <tr><td>AMD</td><td class="pos">+1.74%</td><td>Real bounce, as this morning's script expected</td></tr>
+  <tr><td>MU</td><td class="pos">+2.46%</td><td>Real bounce, as this morning's script expected</td></tr>
+  <tr><td>CRWV</td><td class="neg">-1.44% to $54.80</td><td>Fresh 52-week low ($53.50) set Thursday; no rating-agency action</td></tr>
+  <tr><td>NBIS</td><td>Not independently re-checked</td><td>&mdash;</td></tr>
+  <tr><td>TSM</td><td>Not independently re-checked</td><td>&mdash;</td></tr>
+  <tr><td>XLE</td><td>Not independently confirmed this cycle</td><td>Oil's Iran-driven rise gives a cleaner hedge test than Thursday</td></tr>
+  <tr><td>OWL</td><td class="neg">-3.50% to $9.37</td><td>Gave back most of Thursday's +5.67% sale-speculation pop; no confirmation today</td></tr>
+  <tr><td>ARCC</td><td class="neg">-0.80% to $18.64</td><td>No new item; Oct 27 print now T-2 trading days</td></tr>
+</table>
+
+<h3>The structural read</h3>
+<p>Today usefully separates two stories this file had been tracking together: the AI-capex-skepticism/chip-sector thread, which stabilized roughly as expected, and the Iran-driven macro risk-off, which wasn't flagged this morning as the day's dominant risk and did the actual damage to the index-level numbers. CRWV and OWL both falling on their own name-specific threads — credit distress continuing; sale speculation not being confirmed — regardless of the broader tape's direction is the cleaner signal for this portfolio group: neither is tracking the index, both are tracking their own facts. 172 sessions at zero positions remains clearly the right call; ARCC's Oct 27 print is now the nearest real catalyst, two trading days out.</p>
+
+<!-- ====================== PRIVATE CREDIT ====================== -->
+<h2>Private Credit</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> The OWL sale-speculation story didn't get confirmation today, and the stock gave back most of its pop as a result.</div>
+
+<p>OWL closed -3.50% to $9.37, against Thursday's +5.67% — consistent with a market that needed more than a single WSJ report to sustain the sale-speculation move, exactly as this morning's file flagged. No new development on the Oracle/Project Jupiter force-majeure dispute; no new OTIC/OCIC redemption or NAV data. ARCC's Oct 27 print is now T-2 trading days; OWL's Nov 4/5 print unchanged.</p>
+
+<h3>The structural read</h3>
+<p>Today is a clean, if modest, data point on the sale-speculation story's durability: a single-source report that isn't followed by confirmation within 48 hours gives back most of its equity pop — the market correctly discounting an unconfirmed story over time. <strong>Bear case:</strong> two full sessions without follow-up reporting on a story that moved the stock nearly 6% is a story that should be treated as having been priced out if it doesn't resurface with real sourcing soon. <strong>Bull case:</strong> nothing today adds a new negative fact either — the Jupiter dispute and Loparex marks are unchanged, and ARCC's Oct 27 print remains the nearest real resolution point.</p>
+
+<!-- ====================== POLYMARKET ====================== -->
+<h2>Polymarket Calibration</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> Hormuz's sixth flat read is now the hardest test yet of this file's own framework; the AI-bubble contract kept discriminating correctly; FOMC drifted further toward no-change.</div>
+
+<table>
+  <tr><th>Contract</th><th>This morning</th><th>Tonight (direct fetch)</th><th>Delta</th></tr>
+  <tr><td>Hormuz normal by Dec 31</td><td>11.5%</td><td>11.5%</td><td>6th consecutive flat read — through the hardest escalation yet</td></tr>
+  <tr><td>AI-bubble burst by end-2026</td><td>9.7%</td><td class="pos">9.3%</td><td>Eased further despite today's broad selloff</td></tr>
+  <tr><td>Oct FOMC: no-change</td><td>91.5%</td><td>92.5%</td><td>Further drift toward no-change, still unexplained</td></tr>
+  <tr><td>Oct FOMC: +25bp hike</td><td>8.5%</td><td>6.5%</td><td>Continuing the same drift</td></tr>
+</table>
+
+<h3>The structural read</h3>
+<p>Six flat Hormuz reads, the latest through a literal military highest-alert order, is the point at which this file should stop treating every new flat read as further confirmation and start weighing the less comfortable alternative explicitly: either the contract's criteria-literal resolution condition genuinely hasn't been triggered by an alert order without an actual strike, or six sessions of flatness through a real, escalating physical threat is what a complacent market looks like before it's proven wrong. Being right five times running is not the same as being structurally correct, and this file won't know which reading was right without an actual resolution event. The AI-bubble contract's continued ease through a hard macro-driven down day is the cleaner result tonight — it's discriminating specifically between its own tracked risk and the broader Iran-driven selloff, exactly as the framework predicts. <strong>Bear case:</strong> if Monday brings an actual strike or a transit-data break following today's alert order, a six-session flatline will look like exactly the kind of lag this file has been too quick to wave off. <strong>Bull case:</strong> the AI-bubble contract's clean discrimination tonight, on a day with plenty of reason to move on sentiment alone, is a genuinely strong same-day confirmation worth weighting more than Hormuz's now-overextended streak.</p>
+
+<!-- ====================== BOTTOM LINE ====================== -->
+<div class="punchline-box">
+  <h3>Bottom Line / Portfolio Implication</h3>
+  <p>Zero positions at 172 sessions remains correct. Today's real lesson is a calibration correction, not a thesis change: this file was watching the AI-capex/CoreWeave story as the week's dominant risk, and that story actually eased today (the chip complex stabilized almost exactly as this morning expected), while Iran — logged as quiet overnight — turned out to be the session's real driver by the close, pushing oil through $100 and broadening equity selling into defensive sectors. CRWV and OWL both continued on their own name-specific tracks regardless of the index. The honest flag of the night is Hormuz: six consecutive flat Polymarket reads, the latest spanning a literal highest-alert military order and a record tanker-attack count, is no longer a clean confirmation of this file's instrument-mismatch framework — it's reached the point where the less comfortable explanation (the market is lagging, not calibrated) deserves equal weight, not dismissal. Over the weekend, watch whether Iran's alert status produces an actual US/Israeli response, whether oil holds above $100 into Monday's Asia session, and whether Nvidia's now five-day silence breaks before next week's hyperscaler earnings. ARCC's Oct 27 print is now two trading days out — the nearest real catalyst that could move this portfolio off zero.</p>
+</div>
+
+<!-- ====================== SOURCES ====================== -->
+<h2>Sources</h2>
+<div class="sources">
+  <p><strong>Markets:</strong></p>
+  <ul>
+    <li><a href="https://finance.yahoo.com/markets/live/stock-market-today-friday-october-23-dow-sp-500-nasdaq-tesla-meta-093000521.html">Yahoo Finance — Dow sinks 600 points, S&P 500/Nasdaq drop to cap volatile week, oil prices rise</a></li>
+    <li><a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-oct-23-2026">TheStreet — Stock Market Today (Oct. 23, 2026)</a></li>
+  </ul>
+  <p><strong>Iran / Geopolitics:</strong></p>
+  <ul>
+    <li><a href="https://www.intellinews.com/iran-puts-army-on-highest-alert-as-hormuz-tanker-strikes-mount-478478">bne IntelliNews — Iran puts army on highest alert as Hormuz tanker strikes mount</a></li>
+    <li><a href="https://www.etvbharat.com/en/international/iran-says-seven-oil-tankers-attacked-in-the-strait-of-hormuz-as-fears-grow-of-a-return-to-war-enn26102300430">ETV Bharat — Iran says 7 oil tankers attacked in Strait of Hormuz</a></li>
+    <li><a href="https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-december-31">Polymarket — Strait of Hormuz traffic returns to normal by Dec 31 (direct fetch)</a></li>
+  </ul>
+  <p><strong>AI Ecosystem / Portfolio:</strong></p>
+  <ul>
+    <li><a href="https://www.benzinga.com/markets/tech/26/10/62470728/coreweave-bond-yields-15-5-percent-shares-17-month-lows">Benzinga — CoreWeave bond yields hit 15.5%, shares at 17-month lows</a></li>
+  </ul>
+  <p><strong>Private Credit:</strong></p>
+  <ul>
+    <li><a href="https://www.gurufocus.com/news/9128916/blue-owl-capital-owl-explores-sale-amid-67-stock-price-drop-since-january-2025">GuruFocus — Blue Owl Capital (OWL) explores sale amid 67% stock price drop</a></li>
+  </ul>
+  <p><strong>Polymarket:</strong></p>
+  <ul>
+    <li><a href="https://polymarket.com/event/ai-bubble-burst-by">Polymarket — AI bubble burst by...? (direct fetch)</a></li>
+    <li><a href="https://polymarket.com/event/fed-decision-in-october-20260617190323537">Polymarket — Fed decision in October (direct fetch)</a></li>
+  </ul>
+</div>
+
+<div class="footer">
+  Daily News Brief · October 23, 2026 · Friday Evening Wrap · Day 238 of the Iran war<br>
+  <em>Andres's daily analyst. Structural reads, not headline regurgitation. Evening wrap: what actually happened.</em>
+</div>
+
+</div>
+
+</body>
+</html>
