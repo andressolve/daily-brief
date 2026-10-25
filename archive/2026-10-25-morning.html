@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily News Brief — October 25, 2026 (Morning)</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --surface: #121820;
+    --surface2: #1a2230;
+    --border: #243044;
+    --text: #c8d3e0;
+    --text-dim: #6b7d93;
+    --heading: #e8edf3;
+    --accent: #4fc3f7;
+    --accent2: #81c784;
+    --warn: #ffb74d;
+    --danger: #ef5350;
+    --gold: #ffd54f;
+    --purple: #b39ddb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a0a0a 0%, #2a0a1a 50%, #0a1a2e 100%);
+    border-bottom: 1px solid var(--danger);
+    padding: 50px 40px 40px;
+    text-align: center;
+  }
+  .header .day-tag {
+    display: inline-block;
+    background: rgba(239,83,80,0.2);
+    border: 1px solid rgba(239,83,80,0.4);
+    color: var(--danger);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--heading);
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .header .subtitle {
+    font-size: 18px;
+    color: var(--warn);
+    font-weight: 400;
+  }
+  .header .subtitle-sub {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 10px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--heading);
+    margin: 48px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 28px 0 12px;
+  }
+  p { margin-bottom: 14px; }
+  strong { color: var(--heading); }
+  em { color: var(--accent); font-style: italic; }
+  ul, ol { margin: 0 0 14px 22px; }
+  li { margin-bottom: 6px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  table tr:last-child td { border-bottom: none; }
+  table td:first-child {
+    font-weight: 700;
+    color: var(--heading);
+  }
+  .badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+  .badge-red { background: var(--danger); color: #fff; }
+  .badge-green { background: var(--accent2); color: var(--bg); }
+  .badge-blue { background: var(--accent); color: var(--bg); }
+  .badge-yellow { background: var(--warn); color: var(--bg); }
+  .badge-purple { background: var(--purple); color: var(--bg); }
+  .tldr-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.1), rgba(255,183,77,0.05));
+    border: 2px solid var(--danger);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin: 24px 0 32px;
+  }
+  .tldr-box h3 {
+    color: var(--danger);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .delta-box {
+    background: var(--surface2);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 20px;
+    margin: 0 0 18px;
+    font-size: 13.5px;
+    color: var(--text-dim);
+  }
+  .delta-box strong { color: var(--accent); }
+  .faction-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .faction-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px 26px;
+    border-left: 4px solid var(--border);
+  }
+  .faction-card.f-irgc { border-left-color: var(--danger); }
+  .faction-card.f-hawk { border-left-color: var(--warn); }
+  .faction-card.f-civ { border-left-color: var(--accent); }
+  .faction-card h4 {
+    font-size: 16px;
+    color: var(--heading);
+    margin-bottom: 4px;
+  }
+  .faction-card .lead {
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .honest-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--purple);
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin: 24px 0;
+  }
+  .honest-box h3 {
+    color: var(--purple);
+    margin-top: 0;
+    margin-bottom: 14px;
+  }
+  .punchline-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.08), rgba(79,195,247,0.05));
+    border: 2px solid rgba(239,83,80,0.3);
+    border-radius: 10px;
+    padding: 28px;
+    margin: 32px 0;
+    text-align: center;
+  }
+  .punchline-box h3 {
+    color: var(--danger);
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .punchline-box p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    max-width: 760px;
+    margin: 0 auto 10px;
+    color: var(--text);
+  }
+  .sources { font-size: 12.5px; color: var(--text-dim); }
+  .sources a { color: var(--accent); text-decoration: none; }
+  .sources a:hover { text-decoration: underline; }
+  .footer {
+    border-top: 1px solid var(--border);
+    margin-top: 50px;
+    padding-top: 20px;
+    color: var(--text-dim);
+    font-size: 12px;
+    text-align: center;
+  }
+  .pos { color: var(--accent2); }
+  .neg { color: var(--danger); }
+  .move-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  .move-table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  .move-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="day-tag">Day 240 of the Iran War · Sunday Morning · Weekend Brief</div>
+  <h1>Daily News Brief — October 25, 2026</h1>
+  <div class="subtitle">The Hormuz Polymarket contract finally moved — 12%, up from 11.5%, breaking an eight-session flatline — right as a new Iran-side faction split surfaced over a Pakistan-mediated reopening offer. Meanwhile Trump's own administration got less coherent, not more: he hardened his own strike language while publicly disavowing his envoy's dated weekend-strike threat. No strike has happened as of this writing.</div>
+  <div class="subtitle-sub">Run: 08:00 PT · Weekend brief: geopolitics is the priority beat · 174th consecutive zero-position day · ARCC earnings Tue Oct 27 (T-1 trading day) · Israel election Oct 27 (T-2 calendar days) · Microsoft/Alphabet earnings Oct 28 · Amazon earnings Oct 29 · OWL earnings Nov 4/5 · Nov 23 Jupiter permit decision · Nov 3 US midterms</div>
+</div>
+
+<div class="container">
+
+<!-- ====================== TL;DR ====================== -->
+<div class="tldr-box">
+  <h3>TL;DR — What changed overnight, and why it matters</h3>
+  <ul>
+    <li><strong>The Hormuz Polymarket contract broke its eight-session flatline — 12% Yes, up from 11.5%.</strong> Small in magnitude, but it's the first move this file has logged on this contract in over a week, and it landed in the same 24 hours Iran's ambassador to Pakistan said Tehran would reopen the strait if the US lifts its blockade.</li>
+    <li><strong>That reopening claim was immediately denied by IRGC-aligned media as "a lie and fabrication"</strong> — a clean, new instance of this file's standing "which Iran said it, and do they have authority to say it" split, structurally identical to the Araghchi "added clauses" episode from Oct 21.</li>
+    <li><strong>Trump's own signal got messier, not clearer, on the strike question.</strong> He publicly disavowed his own envoy Tom Barrack's "this weekend" strike comment ("Was this my ambassador?... I don't know anything about him") — while separately telling reporters Saturday "we're thinking about doing it, and maybe tomorrow," arguably harder language than Friday's. No strike has occurred as of Sunday morning.</li>
+    <li><strong>Oil extended further into the weekend</strong> — Brent ~$117.38, WTI ~$103.44, both above Friday's already-record settle — while BTC dipped below $80K in a weekend selloff before recovering to ~$80,600-850, a thin-liquidity risk-off wobble, not an independent crypto catalyst.</li>
+    <li><strong>Everything else: no material change.</strong> Nvidia's TorchNeuron/TorchTPU silence extends to a seventh day; no new CoreWeave rating action; NBIS got an operational fuel-cell milestone set against a bearish Gartner forecast on neocloud attrition. ARCC's Tuesday premarket print is now one trading day out.</li>
+  </ul>
+</div>
+
+<!-- ====================== OVERNIGHT CHANGE TABLE ====================== -->
+<h2>Saturday Morning &rarr; Sunday Morning: What Changed</h2>
+<table class="move-table">
+  <tr><th>Item</th><th>Saturday morning</th><th>Sunday morning</th><th>Read</th></tr>
+  <tr><td>Hormuz Polymarket</td><td>11.5% (7th flat read)</td><td class="warn">12% (first move in 8 sessions)</td><td>Small, but breaks the streak — plausibly tied to the reopening story, not confirmed</td></tr>
+  <tr><td>Iran reopening offer</td><td>Not previously logged</td><td class="warn">Pakistan-mediated ambassador offer vs. IRGC-media denial</td><td>New faction split, diplomatic channel vs. IRGC media</td></tr>
+  <tr><td>US strike signal</td><td>Barrack: "this weekend"; Trump: "may do"</td><td class="neg">Trump disavows Barrack; separately says "maybe tomorrow"</td><td>More incoherent, not more resolved — and arguably harder</td></tr>
+  <tr><td>Oil</td><td>Brent $116.72-116.91, WTI $103.27-103.44 (confirmed settle)</td><td class="neg">Brent ~$117.38, WTI ~$103.44</td><td>Extending above Friday's record, not retracing</td></tr>
+  <tr><td>BTC</td><td>~$80,567 (thin weekend read)</td><td>Dipped &lt;$80K, recovered to ~$80,600-850</td><td>Weekend risk-off wobble, not a new catalyst</td></tr>
+  <tr><td>NBIS</td><td>-26% trailing 30 days, debt anxiety</td><td>Bloom Energy fuel-cell milestone vs. Gartner 80%-attrition forecast</td><td>Operational positive, structural bear case still louder</td></tr>
+  <tr><td>CoreWeave (CRWV)</td><td>MS/UBS price-target cuts</td><td>No new action</td><td>No change</td></tr>
+  <tr><td>Oct FOMC Polymarket</td><td>94.5%/5.5%</td><td>~95%/~6%</td><td>Flat within noise</td></tr>
+</table>
+
+<!-- ====================== IRAN ====================== -->
+<h2>Iran / Middle East Geopolitics</h2>
+<div class="delta-box"><strong>Delta since Saturday morning:</strong> A new Iran-side faction split over Hormuz reopening, a US-side incoherence signal (Trump disavowing his own envoy), and the Hormuz Polymarket contract's first move in eight sessions.</div>
+
+<p>No US strike on Iran has occurred as of Sunday morning writing time. But the signal around one got messier rather than clearer: Trump publicly dismissed his own envoy Tom Barrack's "this weekend" strike comment to reporters in Florida ("Was this my ambassador? ... If that's the case, I don't know anything about him"), even as he separately told reporters Saturday "we're thinking about doing it, and maybe tomorrow" — arguably more immediate language than Friday's conditional "may do another little Epic Fury." That's two contradictory signals from the same administration inside 24 hours, not a walk-back of the underlying threat. Separately, a new diplomatic thread opened: Iran's ambassador to Pakistan, Reza Amiri Moghadam, said Tehran told Pakistani mediators it would reopen the strait if the US lifts its blockade — and IRGC-aligned outlet Tasnim immediately denied it, calling reports (sourced to a Saudi outlet) "a lie and fabrication." That's structurally the same pattern this file logged Oct 21, when Araghchi said the US had come back wanting to add new clauses to Iran's own seven-day reopening plan: Iran's diplomatic channel and its IRGC-aligned media channel are not speaking with one voice on the terms of any deal. Separately, Iran's armed forces struck Komala (Iranian-Kurdish opposition) bases in Iraqi Kurdistan with drones — a parallel front widening, not an escalation directed at the US. Oil extended further into the weekend (see Markets).</p>
+
+<h3>The structural read</h3>
+<p>Today is the messiest version yet of this file's "which actor, what authority" framework — and for the first time, it's visibly a US-side problem, not just an Iranian one. Barrack named a dated weekend-strike timeline, Trump publicly denied knowing his own ambassador, and then Trump himself used looser, more immediate language than Friday's framing — three signals from the same administration that don't resolve into one coherent timeline. The Pakistan-channel reopening story is the cleanest Iran-side faction split logged in weeks, and it arrived in the same 24 hours the Hormuz Polymarket contract finally moved after eight flat reads — plausibly related, not confirmed causal. <strong>Bear case:</strong> Trump's dismissal of Barrack may simply be denying that a subordinate leaked the timeline, not denying the timeline itself — "maybe tomorrow" is, if anything, more immediate than Friday's conditional framing, and this file should not read the Barrack walk-back as de-escalatory. <strong>Bull case:</strong> a president publicly undercutting his own envoy's dated threat less than 24 hours after it was made is a weaker signal than Friday's framing credited it as, and the Hormuz contract's move is a small 0.5-point tick, not a repricing — it may be tracking the diplomatic-offer story more than any actual strike-odds update.</p>
+
+<!-- ====================== MARKETS ====================== -->
+<h2>Markets / Macro</h2>
+<div class="delta-box"><strong>Delta since Saturday morning:</strong> Still no cash session (Sunday). Oil extended further; BTC had a thin-liquidity weekend dip-and-recover.</div>
+
+<p><strong>No equity trading to report — still the weekend.</strong> Oil extended further into Sunday: Brent trading around $117.38, WTI around $103.44, both above Friday's already-record confirmed settle. BTC dipped below $80,000 in a weekend selloff before recovering to roughly $80,600-850 — a thin-liquidity wobble consistent with continued Iran-driven risk-off, not an independent crypto catalyst. Oct FOMC Polymarket sits around 95% no-change / 6% hike (direct fetch), essentially flat versus Saturday's 94.5%/5.5%, now two calendar days before the Oct 27-28 meeting with still no identified single catalyst for the week's slow drift. No new rating-agency or sell-side action on CoreWeave has surfaced since Friday's Morgan Stanley/UBS cuts.</p>
+
+<h3>The structural read</h3>
+<p>Sunday adds incrementally to Saturday's picture without resolving it: oil extending higher and BTC's weekend dip-and-recover are both consistent with a market still pricing elevated Iran risk, not reacting to a new catalyst. <strong>Bear case:</strong> oil holding above Friday's record settle through a second straight weekend session, with Trump's own rhetoric arguably hardening rather than softening, argues Monday's open inherits the same stacked-risk setup Saturday's file described, not a de-escalation. <strong>Bull case:</strong> BTC's recovery off its weekend lows and the FOMC contract's continued flatness both suggest markets aren't yet pricing an imminent strike as the base case — if Sunday passes without one, consistent with this file's prior pattern of Iran-rhetoric spikes not extending into the next session, Monday could open calmer than the headline oil print implies.</p>
+
+<!-- ====================== AI ====================== -->
+<h2>AI Ecosystem</h2>
+<div class="delta-box"><strong>Delta since Saturday morning:</strong> No material change. Nvidia's silence extends a day; no new CoreWeave action; the AI-bubble Polymarket contract holds flat.</div>
+
+<p><strong>No material change on this beat today.</strong> Nvidia's silence on TorchNeuron/TorchTPU extends to a seventh day — still no public rebuttal found. No new frontier-model release. No new CoreWeave rating or price-target action has surfaced since Friday's Morgan Stanley/UBS cuts; CDS still prices more than 60% five-year default odds per the standing Bloomberg read, but no formal Moody's/S&P downgrade has followed. The ai-ecosystem-analyst pipeline remains dormant, now 47 days since its last output (Sept 9) — unchanged, re-flagged per standing practice. <strong>AI-bubble-burst Polymarket (2026 variant) held essentially flat around 9%</strong> (from Saturday's 9.35%), continuing to hold through a second straight weekend of Iran-driven macro noise.</p>
+
+<h3>The structural read</h3>
+<p>A seventh silent day from Nvidia on TorchNeuron/TorchTPU is now long enough that "no rebuttal" is itself a data point, not an absence of one — a company with a clean technical response to the CUDA-moat threat has had more than a week to make it. <strong>Bear case:</strong> the longer Nvidia stays silent while CoreWeave's CDS keeps pricing elevated default odds without any actual rating action, the more this looks like a market that has already concluded the credit story is bad and is simply waiting for agencies to catch up — a lag, not a reassurance. <strong>Bull case:</strong> the AI-bubble Polymarket contract's continued flatness through a second straight weekend of Iran-driven macro noise, holding near 9% rather than drifting up, is the cleaner read: this beat's own hard data hasn't deteriorated further since Friday, so the contract isn't moving — exactly the discriminating behavior this file's framework predicts.</p>
+
+<!-- ====================== PORTFOLIO ====================== -->
+<h2>Portfolio Tickers</h2>
+<div class="delta-box"><strong>Delta since Saturday morning:</strong> 174th consecutive zero-position day. Only new item: an NBIS operational milestone set against a bearish structural forecast on the sector.</div>
+
+<table>
+  <tr><th>Ticker</th><th>Status</th><th>Note</th></tr>
+  <tr><td>NBIS</td><td class="warn">Mixed</td><td>First Bloom Energy fuel-cell power block activated at NJ 300MW site (Oct 25) — operational positive — set against a Gartner forecast that 80%+ of neocloud providers won't survive independently by 2030, circulating as the structural bear case behind the stock's trailing-month decline</td></tr>
+  <tr><td>CRWV</td><td>No new item</td><td>No new sell-side or rating-agency action since Friday's MS/UBS cuts; CDS still pricing elevated default odds, no formal downgrade</td></tr>
+  <tr><td>TSM</td><td>No new item</td><td>Oct 15 Q3 beat stands as background context</td></tr>
+  <tr><td>XLE</td><td>No new item</td><td>Oil extended further into the weekend (markets.md); Friday's record close stands</td></tr>
+  <tr><td>OWL</td><td>No new item</td><td>No confirmation or denial of the sale story</td></tr>
+  <tr><td>ARCC</td><td class="warn">T-1 trading day</td><td>Reports Tue Oct 27 premarket; Monday is now the only trading day before the print</td></tr>
+</table>
+
+<h3>The structural read</h3>
+<p>The Gartner forecast is worth taking at face value as an industry-analyst view, not dismissing as noise, but it's a 2030 structural call, not a near-term catalyst — it explains the market's mood toward debt-financed neocloud buildouts better than it predicts anything about Tuesday's ARCC print or Monday's open. <strong>Bear case:</strong> NBIS doing the right things operationally — fuel cells, GPU spot pricing, the Citi facility — and still being read through an "80% of this sector won't survive independently" lens is exactly the kind of sentiment override that doesn't resolve on good company-specific news; this file should keep separating the hardware-demand names (AMD, MU, NVDA, TSM) from the debt-financed-buildout names (CRWV, NBIS), which remain on divergent trajectories. <strong>Bull case:</strong> a single industry forecast isn't a credit event, and no formal rating-agency action has followed CRWV's or NBIS's actual financing moves — the stocks may be pricing a worse near-term outcome than the hard facts currently support. 174 sessions at zero positions remains the right call; ARCC's Tuesday print, now one trading day out, is the nearest real catalyst.</p>
+
+<!-- ====================== PRIVATE CREDIT ====================== -->
+<h2>Private Credit</h2>
+<div class="delta-box"><strong>Delta since Saturday morning:</strong> No material change.</div>
+
+<p>No new confirmation or denial of the OWL sale story. No new development on Project Jupiter beyond Saturday's pipeline-delay specificity (Energy Transfer's line to the site delayed to Feb 1, 2027, against the standing Nov 23 air-quality permit deadline). No new OTIC/OCIC redemption or NAV data. ARCC reports Tuesday before market open — Monday is now the only trading day before the print, the nearest real catalyst on this beat. OWL's Nov 4 (after close)/Nov 5 (call) print is unchanged, 10-11 days out.</p>
+
+<h3>The structural read</h3>
+<p>No new facts means no new read is warranted — this file's standing bear/bull framing on Jupiter's permitting delay and the OWL sale speculation holds unchanged into Tuesday's ARCC print, which remains the cleanest near-term test of this beat's core question: is private-credit stress in AI-infrastructure financing spreading, or contained to names already flagged.</p>
+
+<!-- ====================== POLYMARKET ====================== -->
+<h2>Polymarket Calibration</h2>
+<div class="delta-box"><strong>Delta since Saturday morning:</strong> Hormuz breaks its eight-session flatline — the headline move on this beat today.</div>
+
+<table>
+  <tr><th>Contract</th><th>Saturday morning</th><th>Sunday morning (direct fetch)</th><th>Delta</th></tr>
+  <tr><td>Hormuz normal by Dec 31</td><td>11.5%</td><td class="warn">12%</td><td>First move in 8 sessions — lands alongside the Pakistan-reopening story</td></tr>
+  <tr><td>AI-bubble burst by end-2026</td><td>9.35%</td><td>~9%</td><td>Essentially flat, continuing to ignore the weekend's Iran noise</td></tr>
+  <tr><td>AI-bubble burst by mid-2027</td><td>22.5%</td><td>&mdash;</td><td>Not re-fetched this cycle</td></tr>
+  <tr><td>Oct FOMC: no-change</td><td>94.5%</td><td>~95%</td><td>Flat within noise</td></tr>
+  <tr><td>Oct FOMC: +25bp hike</td><td>5.5%</td><td>~6%</td><td>Flat within noise</td></tr>
+</table>
+
+<h3>The structural read</h3>
+<p>The Hormuz contract's first move in eight sessions is the news here, even though half a point is a small number — it matters more for breaking the streak than for the magnitude, and this file should resist over-reading a single small tick in either direction until a second data point confirms it's not noise. <strong>Bear case:</strong> if this move is actually tracking the Pakistan-mediated reopening story rather than strike odds, it says nothing about whether Monday brings an actual US strike — the contract could still be badly lagging a weekend that produces one, and this file's prior "eight flat reads is approaching motivated reasoning" critique still applies going into Monday. <strong>Bull case:</strong> a contract that held dead flat through a presidential on-camera threat and a named-official dated timeline, then moved on a diplomatic reopening offer instead, is arguably behaving exactly as this file's instrument-mismatch framework predicts: it prices transit-data-relevant news, not rhetoric about strikes. The AI-bubble contract's continued flatness remains the cleaner, less ambiguous read of the two tonight.</p>
+
+<!-- ====================== BOTTOM LINE ====================== -->
+<div class="punchline-box">
+  <h3>Bottom Line / Portfolio Implication</h3>
+  <p>Zero positions at 174 sessions remains correct. The weekend's real news isn't that a strike happened — it hasn't — it's that both sides of this conflict got less coherent, not more, in the same 24 hours: Trump disavowed his own envoy's dated strike threat while using harder language himself, and Iran's diplomatic and IRGC-media channels contradicted each other on whether a reopening offer was even made. The Hormuz Polymarket contract's first move in eight sessions is a genuinely interesting data point, but a 0.5-point tick shouldn't be over-read as a strike-odds repricing when it arrived alongside a reopening story, not a strike story. On the portfolio side, nothing moved the thesis: the hardware-demand names and the debt-financed-buildout names remain on separate, diverging tracks, and NBIS's operational good news is still losing to the sector-wide structural bear case. The single most important thing to watch is whether Sunday passes without a strike and what that does to both the Hormuz contract and oil's weekend strength heading into Monday's open — and whether Tuesday's ARCC print, now one trading day out, gives this portfolio its first real catalyst in weeks.</p>
+</div>
+
+<!-- ====================== SOURCES ====================== -->
+<h2>Sources</h2>
+<div class="sources">
+  <p><strong>Iran / Geopolitics:</strong></p>
+  <ul>
+    <li><a href="https://www.theweek.in/news/middle-east/2026/10/25/us-warns-of-imminent-air-strikes-on-iran-as-middle-east-tensions-reach-boiling-point.html">The Week — US warns of imminent air strikes on Iran as Middle East tensions reach boiling point</a></li>
+    <li><a href="https://timeskuwait.com/trump-warns-of-possible-iran-strike-as-soon-as-sunday/">Times Kuwait — Trump warns of possible Iran strike as soon as Sunday</a></li>
+    <li><a href="https://www.aninews.in/news/world/middle-east/after-us-envoy-to-turkiye-warns-of-possible-iran-strike-on-weekend-trump-first-feigns-ignorance-then-warns-of-another-epic-fury20261024090855/">ANI — After US envoy warns of possible Iran strike, Trump first feigns ignorance then warns of another "Epic Fury"</a></li>
+    <li><a href="https://aninews.in/news/world/middle-east/no-offer-made-to-us-no-proposal-sent-to-pakistan-mediator-on-strait-of-hormuz-reopening-iranian-media-rejects-reports16020261025041430/">ANI — No offer made to US, no proposal sent to Pakistan mediator on Strait of Hormuz reopening: Iranian media rejects reports</a></li>
+    <li><a href="https://www.cbsnews.com/live-updates/iran-war-trump-us-oil-gas-prices-strait-of-hormuz-midterms/">CBS News — Live updates: Iran says potential new US strikes won't change Tehran's position</a></li>
+    <li><a href="https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-december-31">Polymarket — Strait of Hormuz traffic returns to normal by Dec 31 (direct fetch)</a></li>
+  </ul>
+  <p><strong>Markets / AI / Portfolio:</strong></p>
+  <ul>
+    <li><a href="https://www.onevalor.com/oil-gas-prices/">OneValor — Oil &amp; gas prices today</a></li>
+    <li><a href="https://financefeeds.com/brent-crude-oil-price-116-72-sunday-futures-open-houthi-yanbu-rabigh-claims-riyadh-intercepts-fed-week-bull-120-bear-108/">FinanceFeeds — Brent crude oil price into Sunday open</a></li>
+    <li><a href="https://en.cryptonomist.ch/2026/10/25/bitcoin-value-faces-bearish-hourly-pressure-daily-october-25-2026">Cryptonomist — Bitcoin value shows neutral daily bias, Oct 25 2026</a></li>
+    <li><a href="https://finance.yahoo.com/technology/ai/articles/nebius-group-nbis-starts-power-041836973.html">Yahoo Finance — Nebius Group (NBIS) starts on-site power at its 300MW New Jersey data center</a></li>
+    <li><a href="https://247wallst.com/investing/2026/10/23/nebius-has-cratered-over-the-last-3-months-this-wall-street-ratings-firm-says-2-5x-returns-will-materialize-soon/">24/7 Wall St. — Nebius has cratered over the last 3 months</a></li>
+    <li><a href="https://www.gurufocus.com/news/9139567/crwv-maintained-by-morgan-stanley-price-target-lowered-to-70">GuruFocus — CRWV maintained by Morgan Stanley, price target lowered to $70</a></li>
+  </ul>
+  <p><strong>Polymarket:</strong></p>
+  <ul>
+    <li><a href="https://polymarket.com/event/ai-bubble-burst-by">Polymarket — AI bubble burst by...? (direct fetch)</a></li>
+    <li><a href="https://polymarket.com/event/fed-decision-in-october-20260617190323537">Polymarket — Fed decision in October (direct fetch)</a></li>
+  </ul>
+</div>
+
+<div class="footer">
+  Daily News Brief · October 25, 2026 · Sunday Morning · Day 240 of the Iran war<br>
+  <em>Andres's daily analyst. Structural reads, not headline regurgitation. Weekend brief: geopolitics is the priority beat.</em>
+</div>
+
+</div>
+
+</body>
+</html>
