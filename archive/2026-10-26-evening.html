@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily News Brief — October 26, 2026 (Evening)</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --surface: #121820;
+    --surface2: #1a2230;
+    --border: #243044;
+    --text: #c8d3e0;
+    --text-dim: #6b7d93;
+    --heading: #e8edf3;
+    --accent: #4fc3f7;
+    --accent2: #81c784;
+    --warn: #ffb74d;
+    --danger: #ef5350;
+    --gold: #ffd54f;
+    --purple: #b39ddb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a0a0a 0%, #2a0a1a 50%, #0a1a2e 100%);
+    border-bottom: 1px solid var(--danger);
+    padding: 50px 40px 40px;
+    text-align: center;
+  }
+  .header .day-tag {
+    display: inline-block;
+    background: rgba(239,83,80,0.2);
+    border: 1px solid rgba(239,83,80,0.4);
+    color: var(--danger);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--heading);
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .header .subtitle {
+    font-size: 18px;
+    color: var(--warn);
+    font-weight: 400;
+  }
+  .header .subtitle-sub {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 10px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--heading);
+    margin: 48px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 28px 0 12px;
+  }
+  p { margin-bottom: 14px; }
+  strong { color: var(--heading); }
+  em { color: var(--accent); font-style: italic; }
+  ul, ol { margin: 0 0 14px 22px; }
+  li { margin-bottom: 6px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  table tr:last-child td { border-bottom: none; }
+  table td:first-child {
+    font-weight: 700;
+    color: var(--heading);
+  }
+  .badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+  .badge-red { background: var(--danger); color: #fff; }
+  .badge-green { background: var(--accent2); color: var(--bg); }
+  .badge-blue { background: var(--accent); color: var(--bg); }
+  .badge-yellow { background: var(--warn); color: var(--bg); }
+  .badge-purple { background: var(--purple); color: var(--bg); }
+  .tldr-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.1), rgba(255,183,77,0.05));
+    border: 2px solid var(--danger);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin: 24px 0 32px;
+  }
+  .tldr-box h3 {
+    color: var(--danger);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .delta-box {
+    background: var(--surface2);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 20px;
+    margin: 0 0 18px;
+    font-size: 13.5px;
+    color: var(--text-dim);
+  }
+  .delta-box strong { color: var(--accent); }
+  .honest-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--purple);
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin: 24px 0;
+  }
+  .honest-box h3 {
+    color: var(--purple);
+    margin-top: 0;
+    margin-bottom: 14px;
+  }
+  .punchline-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.08), rgba(79,195,247,0.05));
+    border: 2px solid rgba(239,83,80,0.3);
+    border-radius: 10px;
+    padding: 28px;
+    margin: 32px 0;
+    text-align: center;
+  }
+  .punchline-box h3 {
+    color: var(--danger);
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .punchline-box p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    max-width: 760px;
+    margin: 0 auto 10px;
+    color: var(--text);
+  }
+  .sources { font-size: 12.5px; color: var(--text-dim); }
+  .sources a { color: var(--accent); text-decoration: none; }
+  .sources a:hover { text-decoration: underline; }
+  .footer {
+    border-top: 1px solid var(--border);
+    margin-top: 50px;
+    padding-top: 20px;
+    color: var(--text-dim);
+    font-size: 12px;
+    text-align: center;
+  }
+  .pos { color: var(--accent2); }
+  .neg { color: var(--danger); }
+  .move-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  .move-table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  .move-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .correction-box {
+    background: rgba(179,157,219,0.08);
+    border: 2px solid var(--purple);
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 24px 0 32px;
+  }
+  .correction-box h3 {
+    color: var(--purple);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="day-tag">Day 241 of the Iran War · Monday Evening Wrap</div>
+  <h1>Daily News Brief — October 26, 2026</h1>
+  <div class="subtitle">The morning's cleanest read — hardware-demand names up, debt-financed-buildout names down — broke by the close: CRWV and NBIS both reversed to green even as Musk sharpened his neocloud warning to "200+" companies facing "guppy-level death." Oil's retreat deepened, not faded, as the Saudi mediation story grew into a four-country Tehran meeting.</div>
+  <div class="subtitle-sub">Run: 17:15 PT · 176th consecutive zero-position day · ARCC earnings Tue Oct 27 premarket (T-0) · Israel election Oct 27 (T-0) · FOMC decision + Microsoft/Alphabet earnings Oct 28 · Amazon earnings Oct 29 · OWL earnings Nov 4/5 · Nov 23 Jupiter permit decision · Nov 3 US midterms</div>
+</div>
+
+<div class="container">
+
+<!-- ====================== TL;DR ====================== -->
+<div class="tldr-box">
+  <h3>TL;DR — What changed since this morning, and why it matters</h3>
+  <ul>
+    <li><strong>The morning's clean portfolio split broke by the close.</strong> CRWV (~+4%) and NBIS (~+2%) both reversed from premarket losses to green, the same session Elon Musk sharpened his neocloud warning to "200+" companies facing "guppy-level death" — the equity tape didn't treat the escalating rhetoric as new information.</li>
+    <li><strong>Oil's retreat extended through the full session, not just premarket.</strong> Brent closed $109.92 (-1.87%), ~$7 below Friday's record, as the Saudi-mediation story broadened into a four-country Tehran meeting (Saudi Arabia, Pakistan, Turkey, Iran) that agreed to "continue security discussions."</li>
+    <li><strong>Indices closed higher on the Anthropic-S-1 rebound:</strong> S&P +0.70% to 7,676.80, Nasdaq +0.82% to 26,169.38, Dow +0.28% to 52,361.52, VIX eased to 18.39. NVDA accelerated through the session to +2.4%.</li>
+    <li><strong>Polymarket's data-quality gap from this morning resolved clean.</strong> Hormuz flat at 11.5% (Sunday's 12% tick fully reverted), AI-bubble flat at 9.55%, FOMC firmed to 93.05% no-change — the firmest no-change read logged all week, one day before Wednesday's decision.</li>
+    <li><strong>No strike occurred.</strong> US forces remain at 96-hour readiness; Israel's election (tomorrow, Oct 27) heads in with final polls showing both blocs short of a majority (opposition 54 vs. Netanyahu 49.5 avg).</li>
+  </ul>
+</div>
+
+<!-- ====================== MORNING -> EVENING TABLE ====================== -->
+<h2>Morning &rarr; Evening: What Moved</h2>
+<table class="move-table">
+  <tr><th>Item</th><th>This morning</th><th>This evening (close)</th><th>Read</th></tr>
+  <tr><td>S&P / Nasdaq / Dow</td><td>Futures +0.42% / +0.73% / +0.46%</td><td class="pos">+0.70% / +0.82% / +0.28%</td><td>Rally extended into the cash session, led by Nasdaq</td></tr>
+  <tr><td>Brent crude</td><td>~$114.85-115.86 premarket</td><td class="pos">$109.92 close (-1.87%)</td><td>Retreat deepened through the day, didn't fade by midday</td></tr>
+  <tr><td>CRWV</td><td>-3.46% premarket</td><td class="warn">~+4% close</td><td>Full reversal despite Musk's sharpest warning yet</td></tr>
+  <tr><td>NBIS</td><td>-0.86% premarket</td><td class="warn">~+2% close</td><td>Same reversal pattern as CRWV</td></tr>
+  <tr><td>NVDA</td><td>+0.99% premarket</td><td class="pos">+2.4% close</td><td>Anthropic S-1 story built through the session, not just a premarket pop</td></tr>
+  <tr><td>AMZN</td><td>+0.94% premarket</td><td class="pos">+0.44% close</td><td>Smaller gain than premarket implied</td></tr>
+  <tr><td>Iran mediation</td><td>Saudi defense minister visits Tehran</td><td class="warn">Expanded to 4-country meeting (Saudi, Pakistan, Turkey, Iran)</td><td>Broader coalition, but only "agreed to continue discussions" — no breakthrough</td></tr>
+  <tr><td>Hormuz Polymarket</td><td>No clean fetch (noisy 7-28.5%)</td><td class="pos">Clean fetch: 11.5%</td><td>Data gap resolved; unchanged from Saturday's level</td></tr>
+  <tr><td>Oct FOMC Polymarket</td><td>Noisy 85-95% no-change</td><td class="pos">Clean fetch: 93.05% no-change</td><td>Firmest no-change conviction logged all week</td></tr>
+</table>
+
+<!-- ====================== IRAN ====================== -->
+<h2>Iran / Middle East Geopolitics</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> The Saudi defense-minister visit became a four-country Tehran meeting (Saudi, Pakistan, Turkey, Iran). Oil's retreat deepened through the full session rather than fading.</div>
+
+<p>The Saudi defense-minister visit flagged this morning expanded into a full multilateral meeting in Tehran — Saudi Arabia (Prince Khalid), Pakistan, and Turkey (the Mecca Joint Defense Agreement countries) met Iranian President Pezeshkian and agreed to "continue security discussions," a broader, more structured diplomatic track than a single bilateral visit, but still no breakthrough, just an agreement to keep talking. CNN's own framing of the day is pointedly two-track: the same dispatch reporting the Tehran meeting is headlined around "fears grow of return to war," and CNBC reports Trump is still explicitly weighing "a deal or renewed strikes" post-midterms, with US forces still at 96-hour readiness. No strike occurred Monday. Oil's reaction is the hardest evidence yet that this diplomatic track is being priced as real: Brent closed $109.92, -1.87% on the day — not just a premarket dip but a decline that extended through the full session, now roughly $7 below Friday's record settle. Israel's election is tomorrow, Oct 27: final pre-vote polling averages have the opposition bloc at 54 seats vs. Netanyahu's bloc at 49.5, both still short of the 61-seat majority — a stalemate confirmed by the last polls before the vote, not a last-minute swing either way.</p>
+
+<h3>The structural read</h3>
+<p>Today's real test was whether the Saudi channel flagged this morning was a one-country gesture or something with more structural weight — a four-country meeting agreeing to continue talks is the latter, and oil's full-session decline is the market's own vote that this is more credible than prior mediation claims. <strong>Bear case:</strong> "agreed to continue security discussions" is a process outcome, not a resolution — it commits nobody to anything, and CNN's own "fears grow of return to war" framing the same day is a reminder the multilateral meeting and the live 96-hour strike-readiness track are running in parallel, not in sequence. <strong>Bull case:</strong> this is the broadest diplomatic coalition this file has logged meeting Iran in person on this question, and oil's clean, sustained reaction is a more falsifiable signal than any single rhetorical claim tracked this cycle.</p>
+
+<!-- ====================== MARKETS ====================== -->
+<h2>Markets / Macro</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> The session closed higher on an Anthropic-S-1-driven AI rebound even as oil's retreat deepened. CRWV/NBIS flipped from red to green despite Musk's sharpest-yet neocloud warning.</div>
+
+<p>The session closed higher despite oil's retreat deepening through the day — S&P 500 +0.70% to 7,676.80, Nasdaq +0.82% to 26,169.38, Dow +0.28% to 52,361.52, VIX eased to 18.39 from a ~19.66 open — on a rebound in AI-related shares following Anthropic's S-1 filing. Brent closed $109.92, -1.87% on the day — the premarket retreat extended rather than faded, now roughly $7 below Friday's record settle; WTI held ~$101.00, essentially flat to this morning. NVDA closed +2.4% to $216.36 (from premarket +0.99%) — the Anthropic-S-1 compute-commitment story kept building through the session. AMZN closed +0.44% to ~$249.09 — moderated from premarket's +0.94%, a smaller but still positive reaction. The day's more surprising reversal: CRWV and NBIS both flipped from premarket losses to green closes (CRWV ~+4%, NBIS ~+2%) even as Elon Musk sharpened his neocloud warning mid-session, naming "200+" neoclouds facing "guppy-level death" — buyers stepped in intraday rather than extending the premarket selloff. Oct FOMC Polymarket cleanly resolved tonight's data-quality gap: 93.05% no-change / 6.5% hike (direct Gamma-API fetch) — a firmer no-change conviction than this morning's noisy 85-95% aggregator range, now one trading day before Wednesday's decision.</p>
+
+<h3>The structural read</h3>
+<p>Today's most decision-relevant surprise is that the hardware-demand/debt-financed-buildout split this file called "the cleanest split yet" this morning did NOT hold through the full session — CRWV and NBIS absorbing Musk's starkest warning of the cycle and still closing green is a real data point that the equity tape isn't yet pricing the neocloud-financing-freeze story as urgent, even as the rhetoric keeps escalating. That's structurally the same pattern logged for weeks on the Hormuz Polymarket contract: escalating claims, flat-to-improving price action. <strong>Bear case:</strong> a reversal off premarket lows on heavier-than-usual volume could just as easily be dip-buying that gets punished if Musk's warning is validated by an actual rating action or a worse-than-expected ARCC print tomorrow — one green session doesn't resolve the financing-freeze question Volozh himself confirmed this morning. <strong>Bull case:</strong> oil's full-session decline and CRWV/NBIS's recovery both argue today's tape is discriminating between real, falsifiable facts (a four-country Tehran meeting, Anthropic's S-1 compute data) and unfalsifiable rhetoric (Musk's "200+ neoclouds" framing, which cites no names or data).</p>
+
+<!-- ====================== PORTFOLIO ====================== -->
+<h2>Portfolio Tickers</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> 176th consecutive zero-position day. The clean premarket split did not survive the close — CRWV and NBIS both reversed to green.</div>
+
+<table>
+  <tr><th>Ticker</th><th>Status (close)</th><th>Note</th></tr>
+  <tr><td>NVDA</td><td class="pos">+2.4% close</td><td>Built on, not just held, premarket's +0.99% gain as the Anthropic-S-1 story kept driving buying</td></tr>
+  <tr><td>AMZN</td><td class="pos">+0.44% close</td><td>Smaller gain than premarket's +0.94% but still positive</td></tr>
+  <tr><td>CRWV</td><td class="warn">~+4% close</td><td>Full reversal from premarket's -3.46%, despite Musk's warning landing mid-session</td></tr>
+  <tr><td>NBIS</td><td class="warn">~+2% close</td><td>Same reversal pattern, from premarket's -0.86%</td></tr>
+  <tr><td>MU</td><td>No clean close confirmed</td><td>Taoyuan union's formal negotiations with Micron resume tomorrow, Tuesday Oct 27</td></tr>
+  <tr><td>ARCC</td><td class="warn">Reports tomorrow premarket</td><td>New detail: $0.48/share dividend carries a 142.22% payout ratio against trailing earnings — dividend currently not covered</td></tr>
+  <tr><td>XLE</td><td class="neg">Pressured further</td><td>Oil's retreat deepened through the session — second straight session the hedge loses ground</td></tr>
+  <tr><td>OWL</td><td>No new item</td><td>No confirmation or denial of the sale story</td></tr>
+</table>
+
+<h3>The structural read</h3>
+<p>Tonight's real lesson is that the equity tape shrugged off Musk's sharpest neocloud warning yet — CRWV and NBIS closing green the same day he named "200+" neoclouds at risk is a genuine test this morning's framing didn't anticipate, and it resolved in the bearish-case's favor (i.e., the bear case did not extend into the cash session). <strong>Bear case:</strong> a reversal on an escalating warning, with no company-specific rebuttal or new financing news behind it, could be complacent dip-buying — if ARCC's print tomorrow shows the non-accrual deterioration this file has been tracking, or Musk's framing is validated by an actual rating-agency action this week, today's green closes will look premature. <strong>Bull case:</strong> NVDA's acceleration through the session and CRWV/NBIS's recovery both argue the market is increasingly able to separate real, dated facts from unfalsifiable rhetoric. 176 sessions at zero positions remains the right call; ARCC's premarket print tomorrow is now the nearest live catalyst, followed by the Israel election results and Wednesday's FOMC/Microsoft/Alphabet.</p>
+
+<!-- ====================== PRIVATE CREDIT ====================== -->
+<h2>Private Credit</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> ARCC's dividend-coverage question sharpened to a single number — a 142.22% payout ratio.</div>
+
+<p>ARCC reports tomorrow premarket (Tuesday Oct 27) — the one new data point tonight sharpens the dividend-coverage question to a single number: ARCC's $0.48/share quarterly dividend carries a 142.22% payout ratio against trailing earnings. That's the clearest statement yet of why non-accrual trends and funding costs matter in tomorrow's print — a payout ratio meaningfully above 100% confirms the dividend has been running ahead of earnings, consistent with this file's standing "two quarters of coverage pressure" framing. No new confirmation or denial of the OWL sale story; no new Project Jupiter development.</p>
+
+<h3>The structural read</h3>
+<p>Tonight doesn't change the read, it sharpens it — a 142% payout ratio removes ambiguity about whether ARCC's dividend is currently covered by earnings (it isn't), which raises the bar for tomorrow's print to show stabilizing, not worsening, non-accruals. Cross-beat note: CRWV and NBIS both closed green today despite Musk's sharpened neocloud-distress warning — equity's shrug doesn't resolve whether ARCC's own book has exposure to the same financing-fragility axis; tomorrow's print is still the cleaner test.</p>
+
+<!-- ====================== POLYMARKET ====================== -->
+<h2>Polymarket Calibration</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> This morning's data-quality gap resolved clean. All three tracked contracts barely moved despite real news on two of the three underlying stories.</div>
+
+<table>
+  <tr><th>Contract</th><th>This morning (noisy)</th><th>This evening (clean direct fetch)</th><th>Delta</th></tr>
+  <tr><td>Hormuz normal by Dec 31</td><td>7-28.5% (aggregator noise)</td><td>11.5%</td><td>Back to Saturday's level; Sunday's 12% tick fully reverted</td></tr>
+  <tr><td>AI-bubble burst by Dec 31</td><td>6-11% (aggregator noise)</td><td>9.55%</td><td>Essentially flat despite today's sharpest neocloud-distress rhetoric</td></tr>
+  <tr><td>Oct FOMC: no-change</td><td>85-95% (aggregator noise)</td><td>93.05%</td><td>Firmest no-change conviction logged all week, T-1 before the decision</td></tr>
+</table>
+
+<h3>The structural read</h3>
+<p>Tonight is a clean resolution of this morning's data-gap flag, and the direct fetches tell a consistent story: none of the three contracts moved much today, even though today had real, falsifiable developments on two of the three underlying stories (the Tehran meeting, the neocloud selloff-then-recovery). That's the expected behavior if these contracts track their literal resolution criteria rather than daily sentiment. <strong>Bear case:</strong> the Hormuz contract's non-reaction to the broadest mediation coalition logged this cycle, while oil itself moved cleanly on the same news, is worth flagging as a widening gap between what this contract prices and what the physical/price markets are pricing. <strong>Bull case:</strong> the AI-bubble contract holding flat the same day CRWV/NBIS round-tripped from premarket losses to green closes is about as clean a same-day confirmation as this file has had that the contract and the equity tape are reading the same underlying reality.</p>
+
+<!-- ====================== BOTTOM LINE ====================== -->
+<div class="punchline-box">
+  <h3>Bottom Line / Portfolio Implication</h3>
+  <p>Zero positions at 176 sessions remains correct. Today's real calibration lesson is that this morning's cleanest-looking cross-ticker pattern — hardware-demand names up, debt-financed names down — inverted by the close, a reminder to hold intraday patterns loosely until the full session confirms them. The underlying macro picture firmed: oil's retreat deepened on a broadening (if still inconclusive) Iran diplomatic track, and Polymarket's three tracked contracts all came back into clean focus tonight, each one essentially unmoved by today's news — consistent with hard criteria, not daily sentiment, driving these prices. Tomorrow brings two real catalysts in quick succession: Israel's election results and ARCC's premarket print, the latter now explicitly a dividend-coverage test (142% payout ratio) landing the same week neocloud financing stress keeps generating rhetoric the equity tape isn't yet pricing as urgent.</p>
+</div>
+
+<!-- ====================== SOURCES ====================== -->
+<h2>Sources</h2>
+<div class="sources">
+  <p><strong>Iran / Geopolitics:</strong></p>
+  <ul>
+    <li><a href="https://edition.cnn.com/2026/10/26/middleeast/iran-meeting-regional-powers-intl">CNN — Iran hosts Saudi Arabia and regional powers as fears grow of return to war</a></li>
+    <li><a href="https://kuwaittimes.com/article/52438/top-stories/makkah-pact-countries-in-iran-in-bid-to-stop-war-restarting/">Kuwait Times — Makkah pact countries in Iran in bid to stop war restarting</a></li>
+    <li><a href="https://www.cnbc.com/2026/10/26/us-iran-war-hormuz.html">CNBC — Trump weighs Iran deal or renewed strikes as tensions rise</a></li>
+    <li><a href="https://www.cnn.com/2026/10/26/politics/us-iran-strike-plans-trump">CNN — US has plans for major Iran strikes if Trump chooses</a></li>
+    <li><a href="https://www.newarab.com/news/israel-election-polls-forecast-stalemate-far-right-gains">The New Arab — Israel election: polls forecast stalemate, far-right gains</a></li>
+    <li><a href="https://www.jpost.com/israel-election-2026/article-912743">Jerusalem Post — Eisenkot leads Netanyahu but Knesset deadlock looms</a></li>
+  </ul>
+  <p><strong>Markets / Oil:</strong></p>
+  <ul>
+    <li><a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-oct-26-2026">TheStreet — Nasdaq, S&P 500 jump after Anthropic IPO announcement</a></li>
+    <li><a href="https://247wallst.com/cards/tech-did-the-heavy-lifting-again-the-nasdaq-s-0-82-gain-wa-gspc-market-bell-01m5wwzh2mpdve63ekajqw4y73">247wallst — S&P 500 closes up 0.70% as Nasdaq leads</a></li>
+    <li><a href="https://fortune.com/article/price-of-oil-10-26-2026/">Fortune — Current price of oil as of October 26, 2026</a></li>
+  </ul>
+  <p><strong>AI Ecosystem / Neoclouds:</strong></p>
+  <ul>
+    <li><a href="https://www.cnbc.com/2026/10/26/neocloud-stocks-today-coreweave-nebius-iren-elon-musk.html">CNBC — Elon Musk: more than 200 neoclouds face "guppy-level death"</a></li>
+    <li><a href="https://www.bloomberg.com/news/articles/2026-10-26/coreweave-rout-sends-warning-sign-to-rest-of-the-stock-market">Bloomberg — CoreWeave rout sends warning sign to rest of stock market</a></li>
+    <li><a href="https://finance.yahoo.com/markets/stocks/articles/elon-musk-stark-warning-sends-124258004.html">Yahoo Finance — Musk's warning sends CoreWeave and Nebius tumbling (then recovering)</a></li>
+  </ul>
+  <p><strong>Portfolio / Private Credit:</strong></p>
+  <ul>
+    <li><a href="https://www.investing.com/news/earnings/ares-capital-earnings-up-next-as-credit-quality-takes-focus-93CH-4973001">Investing.com — Ares Capital earnings up next as credit quality takes focus</a></li>
+    <li><a href="https://www.ad-hoc-news.de/boerse/news/nebenwerte/ares-capital-paid-usd-0-48-per-share-ares-capital-stock-yields-10-30-percent/70377529">ad-hoc-news — Ares Capital dividend and payout ratio detail</a></li>
+  </ul>
+  <p><strong>Polymarket:</strong></p>
+  <ul>
+    <li><a href="https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-december-31">Polymarket — Strait of Hormuz traffic returns to normal by Dec 31</a></li>
+    <li><a href="https://polymarket.com/event/ai-bubble-burst-by">Polymarket — AI bubble burst by...?</a></li>
+    <li><a href="https://polymarket.com/event/fed-decision-in-october-20260617190323537">Polymarket — Fed decision in October</a></li>
+  </ul>
+</div>
+
+<div class="footer">
+  Daily News Brief · October 26, 2026 · Monday Evening Wrap · Day 241 of the Iran war<br>
+  <em>Andres's daily analyst. Structural reads, not headline regurgitation.</em>
+</div>
+
+</div>
+
+</body>
+</html>
