@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily News Brief — October 28, 2026 (Evening Wrap)</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --surface: #121820;
+    --surface2: #1a2230;
+    --border: #243044;
+    --text: #c8d3e0;
+    --text-dim: #6b7d93;
+    --heading: #e8edf3;
+    --accent: #4fc3f7;
+    --accent2: #81c784;
+    --warn: #ffb74d;
+    --danger: #ef5350;
+    --gold: #ffd54f;
+    --purple: #b39ddb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a0a0a 0%, #2a0a1a 50%, #0a1a2e 100%);
+    border-bottom: 1px solid var(--danger);
+    padding: 50px 40px 40px;
+    text-align: center;
+  }
+  .header .day-tag {
+    display: inline-block;
+    background: rgba(239,83,80,0.2);
+    border: 1px solid rgba(239,83,80,0.4);
+    color: var(--danger);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--heading);
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .header .subtitle {
+    font-size: 18px;
+    color: var(--warn);
+    font-weight: 400;
+  }
+  .header .subtitle-sub {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 10px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--heading);
+    margin: 48px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 28px 0 12px;
+  }
+  p { margin-bottom: 14px; }
+  strong { color: var(--heading); }
+  em { color: var(--accent); font-style: italic; }
+  ul, ol { margin: 0 0 14px 22px; }
+  li { margin-bottom: 6px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  table tr:last-child td { border-bottom: none; }
+  table td:first-child {
+    font-weight: 700;
+    color: var(--heading);
+  }
+  .badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+  .badge-red { background: var(--danger); color: #fff; }
+  .badge-green { background: var(--accent2); color: var(--bg); }
+  .badge-blue { background: var(--accent); color: var(--bg); }
+  .badge-yellow { background: var(--warn); color: var(--bg); }
+  .badge-purple { background: var(--purple); color: var(--bg); }
+  .tldr-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.1), rgba(255,183,77,0.05));
+    border: 2px solid var(--danger);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin: 24px 0 32px;
+  }
+  .tldr-box h3 {
+    color: var(--danger);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .delta-box {
+    background: var(--surface2);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 20px;
+    margin: 0 0 18px;
+    font-size: 13.5px;
+    color: var(--text-dim);
+  }
+  .delta-box strong { color: var(--accent); }
+  .honest-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--purple);
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin: 24px 0;
+  }
+  .honest-box h3 {
+    color: var(--purple);
+    margin-top: 0;
+    margin-bottom: 14px;
+  }
+  .punchline-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.08), rgba(79,195,247,0.05));
+    border: 2px solid rgba(239,83,80,0.3);
+    border-radius: 10px;
+    padding: 28px;
+    margin: 32px 0;
+    text-align: center;
+  }
+  .punchline-box h3 {
+    color: var(--danger);
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .punchline-box p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    max-width: 760px;
+    margin: 0 auto 10px;
+    color: var(--text);
+  }
+  .sources { font-size: 12.5px; color: var(--text-dim); }
+  .sources a { color: var(--accent); text-decoration: none; }
+  .sources a:hover { text-decoration: underline; }
+  .footer {
+    border-top: 1px solid var(--border);
+    margin-top: 50px;
+    padding-top: 20px;
+    color: var(--text-dim);
+    font-size: 12px;
+    text-align: center;
+  }
+  .pos { color: var(--accent2); }
+  .neg { color: var(--danger); }
+  .move-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  .move-table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  .move-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .correction-box {
+    background: rgba(179,157,219,0.08);
+    border: 2px solid var(--purple);
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 24px 0 32px;
+  }
+  .correction-box h3 {
+    color: var(--purple);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="day-tag">Day 243 of the Iran War · Wednesday Evening Wrap · FOMC Held, Hawkish Dissent</div>
+  <h1>Daily News Brief — October 28, 2026</h1>
+  <div class="subtitle">Oil held its war-risk gain through the close and survived two fresh stress tests — a hawkish-split Fed and a scary-looking Alphabet earnings miss — without equities or the VIX budging. Microsoft beat decisively; Alphabet's EPS miss was a one-time SpaceX mark-to-market charge, not an operating problem. Israel's count firmed toward Netanyahu but produced a hung parliament. Iran's response to the Qatar deal remains unresolved.</div>
+  <div class="subtitle-sub">Run: 16:30 PT · 180th consecutive zero-position day · FOMC held 3.75-4.00% (10-2, two hawkish dissents) · MSFT +4.2% / GOOGL -7 to -10% after hours · Amazon + OWL earnings tomorrow (Oct 29) · Nov 3 US midterms · Nov 23 Jupiter permit decision</div>
+</div>
+
+<div class="container">
+
+<!-- ====================== TL;DR ====================== -->
+<div class="tldr-box">
+  <h3>TL;DR — What changed today, and why it matters</h3>
+  <ul>
+    <li><strong>The oil/equity divergence didn't just hold — it survived two fresh stress tests.</strong> Brent closed +1.3% at ~$115.32, holding the morning's war-risk premium through the full session, while a hawkish-split Fed vote and a 30%-EPS-miss headline from Alphabet both failed to move the VIX, which fell further to 16.91. That's now a pattern across a full session, not a single data point.</li>
+    <li><strong>FOMC held as expected, but the texture was more hawkish than priced:</strong> a 10-2 vote with two dissents (Cook, Hammack) favoring a hike, no December guidance from Warsh, and language upgraded from "solid" to "strong" activity.</li>
+    <li><strong>Microsoft beat decisively and cut capex guidance to ~$175B — but part of that cut is an accounting reclassification</strong> (extending data-center depreciation from 15 to 25 years), not pure spending discipline. Shares +4.2% after hours.</li>
+    <li><strong>Alphabet's ~30% EPS miss was driven almost entirely by an $8.7B unrealized mark-to-market loss on its SpaceX stake</strong> — Google Cloud itself grew 103%, the strongest cloud number of the night at either company. Shares fell 7-10% after hours anyway; the market priced the headline, not the composition.</li>
+    <li><strong>Israel's count firmed to Netanyahu 53 - Eisenkot 48 (93% counted)</strong> but neither bloc has the 61-seat majority. Arab parties nearly doubled to 19 seats and are now the likely coalition kingmakers — a new structural variable, not a horse-race footnote.</li>
+  </ul>
+</div>
+
+<!-- ====================== MORNING -> EVENING ====================== -->
+<h2>Morning → Evening: What Moved</h2>
+<table class="move-table">
+  <tr><th>Item</th><th>This morning</th><th>At the close</th><th>Read</th></tr>
+  <tr><td>Brent crude</td><td>~$115.41-116.25, +1.3%</td><td class="neg">$115.32, held +1.3% for the session</td><td>War-risk premium survived the full day, not just the open</td></tr>
+  <tr><td>S&amp;P / Nasdaq / Dow</td><td>Futures +0.2% / +0.4% / -0.2%</td><td class="pos">+0.28% / +0.27% / +0.19% (third straight up day)</td><td>Unmoved by a hawkish Fed or Alphabet's headline miss</td></tr>
+  <tr><td>VIX</td><td>~17.4</td><td class="pos">16.91, -3.5%</td><td>Fell further into two real risk events — complacency, not resolution</td></tr>
+  <tr><td>FOMC</td><td>Polymarket 94.8% hold</td><td>Held 3.75-4.00%, 10-2 vote, 2 hawkish dissents</td><td>Direction correct; texture (dissents, no Dec guidance) more hawkish than priced</td></tr>
+  <tr><td>Microsoft</td><td>Reports after close</td><td class="pos">Beat EPS/revenue, Azure +48%, capex guided to ~$175B</td><td>+4.2% AH; capex cut partly an accounting reclass, not pure discipline</td></tr>
+  <tr><td>Alphabet</td><td>Reports after close</td><td class="neg">EPS $2.12 vs $3.01 est.; Cloud +103%</td><td>-7 to -10% AH; miss driven by SpaceX mark-to-market, not operations</td></tr>
+  <tr><td>Israel vote count</td><td>~85% counted, Netanyahu 53-48</td><td>~93% counted, Netanyahu 53-48 confirmed; Arab parties 19</td><td>Firmed toward Netanyahu but hung parliament — Arab parties now kingmakers</td></tr>
+  <tr><td>Iran / Qatar deal</td><td>Split messaging ("welcomes" vs. "unacceptable")</td><td>Unresolved; Tehran's formal response still pending, possibly Thursday</td><td>No change — the key open question carries to tomorrow</td></tr>
+</table>
+
+<!-- ====================== IRAN ====================== -->
+<h2>Iran / Middle East Geopolitics</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> neither track resolved. Israel's count firmed in the direction already flagged, but produced a hung parliament with a new kingmaker. Iran's formal response to Qatar is still pending.</div>
+
+<p>With ~93% of Israel's vote counted, Netanyahu's bloc holds 53 seats to Eisenkot's 48 — up from the 85%-counted reading this morning, confirming the reversal of last night's exit-poll "Eisenkot leads" narrative. But neither bloc clears the 61-seat threshold: the two Arab parties nearly doubled their projected seats to 19 and are now the likely kingmakers in any coalition negotiation (<a href="https://www.bloomberg.com/news/articles/2026-10-28/israeli-vote-too-close-to-call-between-netanyahu-and-eisenkot">Bloomberg</a>, <a href="https://www.npr.org/2026/10/28/nx-s1-6019423/israel-election-results">NPR</a>). That's a structural fact worth tracking on its own, not folding back into the "who won" framing — a Netanyahu-led coalition that needs Arab-party cooperation is a materially different government than one that doesn't.</p>
+
+<p>On the war: no Pentagon or White House corroboration or denial of this morning's WSJ report (Gulf states told to prepare for a post-midterm campaign) surfaced today. On diplomacy: Qatar is still awaiting Tehran's formal response to its draft deal, with some reporting suggesting it could land as late as Thursday (<a href="https://jpost.com/middle-east/iran-news/article-913159">Jerusalem Post</a>). This morning's split messaging — one official's "welcomes negotiations," a senior official's "unacceptable ideas, not an offer" — is unchanged: neither side has hardened or softened its position since this morning.</p>
+
+<h3>The structural read</h3>
+<p>Nothing resolved today, which itself is informative: a story with this much reported military movement (carrier groups, Marine units, a Patriot battery) generated zero official US confirmation or denial over a full news cycle, and Iran let a deadline-sensitive deal (Qatar's seven-day clock) sit without a formal answer. <strong>Bear case:</strong> silence from Washington on a leaked war-preparation story, instead of a clarifying statement either way, is consistent with the story being substantially true and simply not ready for public confirmation. <strong>Bull case:</strong> Tehran not rejecting the deal outright today, despite a senior official's harsh initial characterization, leaves the door open for Thursday's response to land softer than this morning's "unacceptable ideas" framing suggested — silence can cut either way, and a hard rejection would likely have been stated plainly by now.</p>
+
+<!-- ====================== MARKETS ====================== -->
+<h2>Markets / Macro</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> the oil/equity divergence got two real stress tests today — a hawkish-split Fed and a messy Alphabet earnings headline — and survived both.</div>
+
+<p>The FOMC held the funds rate at 3.75-4.00% as expected, but the vote was 10-2, with Governor Lisa Cook and Cleveland Fed President Beth Hammack dissenting in favor of an immediate 25bp hike — not the dovish-dissent pattern markets might have expected. Chair Warsh declined to give forward guidance for December, said politics played "no role" in the decision, and the statement's description of economic activity was upgraded from "solid" to "strong" (<a href="https://www.cnbc.com/2026/10/28/fed-rate-decision-warsh-takeaways.html">CNBC</a>).</p>
+
+<table class="move-table">
+  <tr><th>Item</th><th>This morning</th><th>Close</th><th>Read</th></tr>
+  <tr><td>S&amp;P 500</td><td>Futures +0.2%</td><td class="pos">7,743.98, +0.28%</td><td>Third straight up session</td></tr>
+  <tr><td>Nasdaq</td><td>Futures +0.4%</td><td class="pos">26,549.85, +0.27%</td><td>Third straight up session</td></tr>
+  <tr><td>Dow</td><td>Futures -0.2%</td><td class="pos">52,475.10, +0.19%</td><td>Third straight up session</td></tr>
+  <tr><td>VIX</td><td>~17.4</td><td class="pos">16.91, -3.5%</td><td>Fell further despite two real risk events</td></tr>
+  <tr><td>Gold</td><td>~$4,060</td><td class="neg">~$4,051.60, -0.5%</td><td>Modest pullback</td></tr>
+  <tr><td>Bitcoin</td><td>~$81,300</td><td class="pos">~$81,255, +0.8% on the day</td><td>Steady</td></tr>
+  <tr><td>Brent crude</td><td>~$115.41-116.25</td><td class="neg">$115.32, +1.3%</td><td>Held the full war-risk premium</td></tr>
+</table>
+
+<p>Microsoft and Alphabet reported after the close and diverged sharply. <strong>Microsoft</strong> beat on EPS ($4.89 vs. $4.72 est.) and revenue ($92.28B vs. $90.74B), with Azure growth accelerating to 48% (vs. ~45% expected) and capex guidance cut to ~$175B from ~$190B — shares rose 4.2% after hours (<a href="https://invezz.com/news/2026/10/28/microsoft-stock-jumps-4-after-earnings-heres-what-pleased-investors/">Invezz</a>). <strong>Alphabet</strong> missed EPS badly ($2.12 vs. $3.01 consensus) on revenue roughly in line ($127.6B) — but the miss was driven almost entirely by a non-operating $8.7B unrealized mark-to-market loss on its SpaceX equity stake, cutting EPS by $0.55 after tax. Google Cloud actually grew 103% to $30.7B. Shares still fell 7-10% after hours (<a href="https://www.investing.com/news/stock-market-news/alphabet-shares-tumble-65-as-earnings-miss-overshadows-cloud-boom-4980569">Investing.com</a>).</p>
+
+<h3>The structural read</h3>
+<p>Tonight sharpens this morning's divergence rather than resolving it. <strong>Bear case:</strong> a market that shrugs off a hawkish-split Fed vote with no December guidance, and a headline EPS miss from a mega-cap, while Brent sits above $115 on war-preparation reporting, has now done that twice in one session — the gap between what oil is pricing and what equities are pricing has widened into the close, not narrowed, and that gap has to resolve somehow. <strong>Bull case:</strong> both real tests tonight landed fine on the metric that actually matters — no new restrictive signal from Warsh, and cloud growth (Azure 48%, GCP 103%) came in strong at both companies — so the rally's underlying AI-infrastructure-demand thesis got reinforced, not undermined, even if the geopolitical backdrop is still deteriorating in parallel.</p>
+
+<!-- ====================== AI ECOSYSTEM ====================== -->
+<h2>AI Ecosystem</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> tonight was the real test of whether the AI-capex rally survives contact with hyperscaler numbers — it came back bullish on demand, noisy on the headlines.</div>
+
+<p>Microsoft's beat was decisive on every AI-relevant metric: Azure growth accelerated to 48% (vs. ~45% expected), and capex guidance was cut to ~$175B from ~$190B. One caveat worth flagging rather than taking at face value: part of that capex guide-down is an accounting change — extending the estimated useful life of data centers and buildings from 15 to 25 years, which shifts future spend from finance leases to operating leases and lowers <em>reported</em> capex without lowering <em>actual</em> investment. Jim Cramer's read was that this isn't the spending discipline it looks like on a headline (<a href="https://www.gurufocus.com/news/9149147/microsoft-msft-shares-slip-after-earnings-cfo-signals-funding-plans-and-capex-cut">GuruFocus</a>).</p>
+
+<p>Alphabet's headline EPS miss looked damning but was driven almost entirely by a non-operating $8.7B unrealized mark-to-market loss on its SpaceX equity stake. Google Cloud itself grew 103% to $30.7B — the single best cloud-growth number of the night at either company. Shares still fell 7-10% after hours, suggesting the market priced the headline over the composition (<a href="https://www.investing.com/news/stock-market-news/alphabet-shares-tumble-65-as-earnings-miss-overshadows-cloud-boom-4980569">Investing.com</a>). CRWV/NBIS's October drawdown context (still down ~35%/~31% for the month) is unchanged; no new data on either name today. AI-bubble-burst Polymarket is carried forward at 8%/23% from this morning's fetch — no evening update obtained.</p>
+
+<h3>The structural read</h3>
+<p>Azure 48% and GCP 103% are demand-side numbers, not spending-side ones, and demand is the harder thing to fake — if hyperscaler customers are consuming that much more cloud/AI capacity, the capex behind it is being validated by usage, not just promised. That cuts against the "Anthropic S-1 is a grift" framing this file has been tracking, even though it doesn't directly address it. <strong>Bear case:</strong> an accounting change that flatters Microsoft's capex optics is itself a tell — companies don't restate depreciation schedules when the real number is comfortable to report as-is. <strong>Bull case:</strong> both companies' cloud growth came in at the high end of a demand signal that's much harder to manufacture than guidance language, and that's the number that should matter most to the underlying thesis. Thursday's Amazon earnings is the last leg of this test.</p>
+
+<!-- ====================== PORTFOLIO ====================== -->
+<h2>Portfolio Tickers</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> 180th consecutive zero-position day. No direct news on named tickers tonight, but MSFT/GOOGL's cloud numbers are the strongest AI-infrastructure-demand read-through logged so far.</div>
+
+<table>
+  <tr><th>Ticker</th><th>Status</th><th>Note</th></tr>
+  <tr><td>XLE</td><td class="pos">Hedge thesis strengthens further</td><td>Brent closed +1.3% at ~$115.32, holding the full session — not just a morning spike.</td></tr>
+  <tr><td>NVDA / AMD / MU</td><td>Indirect positive read-through</td><td>Azure +48%, GCP +103% cloud growth is the strongest AI-infrastructure-demand signal logged this week, though no company-specific news tonight.</td></tr>
+  <tr><td>MU</td><td>No new update</td><td>Taoyuan standoff still escalating per this morning's entry; third round of talks still set for Nov 6.</td></tr>
+  <tr><td>CRWV / NBIS</td><td>No new data</td><td>Still down ~35%/~31% for October; unchanged since this morning (ai.md).</td></tr>
+  <tr><td>TSMC</td><td>No new item</td><td>Unchanged.</td></tr>
+  <tr><td>ARCC</td><td>No new item</td><td>Unchanged.</td></tr>
+  <tr><td>OWL</td><td>Standing watch</td><td>Earnings tomorrow, Oct 29, before market open; call 10am ET.</td></tr>
+  <tr><td>AMZN</td><td>Standing watch</td><td>Reports tomorrow, Oct 29.</td></tr>
+</table>
+
+<h3>The structural read</h3>
+<p>Nothing ticker-specific moved tonight, but the oil close reinforcing the XLE hedge and the cloud-growth numbers reinforcing the bull case on the chip complex both point the same direction: today's research argues for more conviction in the hedge, not the exposure. 180 sessions at zero positions remains the right call heading into tomorrow's Amazon and OWL prints — the last two legs of this week's AI-capex and private-credit tests.</p>
+
+<!-- ====================== PRIVATE CREDIT ====================== -->
+<h2>Private Credit</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> no material change.</div>
+
+<p>No new Project Jupiter, OTIC/OCIC, ARCC, or Apollo/SpaceX-financing-specific development today. One loosely related data point, flagged for context rather than as news: Alphabet's EPS miss tonight was driven by an $8.7B unrealized mark-to-market loss on its SpaceX equity stake — a reminder that SpaceX's private valuation now shows up on a public company's income statement, relevant background for this file's standing Apollo/SpaceX-financing watch item, not a Blue Owl-specific development. Blue Owl's Q3 print remains confirmed for tomorrow, Oct 29, before market open, call at 10am ET, "Moderate Buy" consensus.</p>
+
+<h3>The structural read</h3>
+<p>Unchanged from this morning: tomorrow's OWL print is still the clean test of whether the Blue Owl-specific stress thread (Project Jupiter's regulatory delay, the Loparex wipeout, OTIC/OCIC's capped redemptions) shows up in the numbers the way it conspicuously didn't in ARCC's.</p>
+
+<!-- ====================== POLYMARKET ====================== -->
+<h2>Polymarket Calibration</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> the FOMC contract resolved correctly. Other contracts weren't re-fetched tonight — flagged for tomorrow morning.</div>
+
+<table>
+  <tr><th>Contract</th><th>This morning</th><th>Tonight</th><th>Delta</th></tr>
+  <tr><td>Oct FOMC: no-change</td><td>94.8% ($91.96M vol.)</td><td class="pos">Resolved YES — Fed held</td><td>Calibration win for this file's "Polymarket over pundits" rule</td></tr>
+  <tr><td>Hormuz normal by Dec 31</td><td>12% ($15.70M)</td><td>Not re-fetched</td><td>Carried forward, not confirmed — check tomorrow against today's Brent close</td></tr>
+  <tr><td>AI-bubble burst by Dec 31</td><td>8% ($3.14M combined w/ mid-2027)</td><td>Not re-fetched</td><td>Carried forward</td></tr>
+  <tr><td>US invades Iran before 2027</td><td>20% ($75.6M)</td><td>Not re-fetched</td><td>Carried forward</td></tr>
+</table>
+
+<h3>The structural read</h3>
+<p>The one clean data point tonight is a calibration win: the ~95% hold pricing from last night and this morning paid off exactly as the FOMC voted. The more interesting open question — whether Hormuz (still flat at 12% as of this morning) ever reacts to today's Brent close or to Israel's count firming — wasn't re-checked tonight and should be the first thing verified in tomorrow's direct fetch, since this file has now flagged that potential mismatch twice without resolving it.</p>
+
+<!-- ====================== BOTTOM LINE ====================== -->
+<div class="punchline-box">
+  <h3>Bottom Line / Portfolio Implication</h3>
+  <p>Zero positions at 180 sessions remains correct. The single most important fact of the day isn't any one headline — it's that the oil/equity divergence flagged this morning got two real stress tests today, a hawkish-split Fed and a scary-looking Alphabet miss, and survived both without the VIX so much as flinching. That's no longer a one-day anomaly; it's a pattern, and patterns like this resolve eventually, either by oil coming back down or by equities catching down. Underneath the noisy headlines, tonight's actual AI-capex test came back constructive — Azure and Google Cloud both grew faster than expected, the demand signal this file has been waiting for since the Anthropic S-1 debate began. But Israel's hung parliament with Arab parties as kingmakers, and Iran's still-unanswered response to the Qatar deal, mean the geopolitical side of the ledger didn't get any less complicated today. Tomorrow's Amazon and OWL earnings are the last two tests of this week's thesis.</p>
+</div>
+
+<!-- ====================== SOURCES ====================== -->
+<h2>Sources</h2>
+<div class="sources">
+  <p><strong>FOMC / Markets:</strong></p>
+  <ul>
+    <li><a href="https://www.cnbc.com/2026/10/28/fed-rate-decision-warsh-takeaways.html">CNBC — Five key takeaways from the Fed rate decision and Warsh news conference</a></li>
+    <li><a href="https://finance.yahoo.com/markets/live/stock-market-today-wednesday-october-28-dow-sp-500-nasdaq-fed-meeting-decision-big-tech-earnings-130508769.html">Yahoo Finance — Stock market today: Fed holds rates, Big Tech earnings</a></li>
+    <li><a href="https://www.fool.com/coverage/stock-market-today/2026/10/28/stock-market-today-oct-28-markets-edge-higher-as-fed-holds-rates-steady/">The Motley Fool — Markets edge higher as Fed holds rates steady</a></li>
+  </ul>
+  <p><strong>Oil:</strong></p>
+  <ul>
+    <li><a href="https://www.cnbc.com/2026/10/28/oil-price-today-wti-brent-hormuz.html">CNBC — Oil prices rise as US reportedly tells Gulf countries to prepare for Iran strikes</a></li>
+  </ul>
+  <p><strong>Microsoft / Alphabet earnings:</strong></p>
+  <ul>
+    <li><a href="https://invezz.com/news/2026/10/28/microsoft-stock-jumps-4-after-earnings-heres-what-pleased-investors/">Invezz — Microsoft stock jumps 4% after earnings</a></li>
+    <li><a href="https://www.gurufocus.com/news/9149147/microsoft-msft-shares-slip-after-earnings-cfo-signals-funding-plans-and-capex-cut">GuruFocus — Microsoft CFO signals funding plans and capex cut</a></li>
+    <li><a href="https://www.investing.com/news/stock-market-news/alphabet-shares-tumble-65-as-earnings-miss-overshadows-cloud-boom-4980569">Investing.com — Alphabet shares tumble as earnings miss overshadows cloud boom</a></li>
+    <li><a href="https://www.gurufocus.com/news/9148712/alphabet-inc-reports-q3-earnings-miss-stock-dips">GuruFocus — Alphabet reports Q3 earnings miss, stock dips</a></li>
+  </ul>
+  <p><strong>Israel election:</strong></p>
+  <ul>
+    <li><a href="https://www.bloomberg.com/news/articles/2026-10-28/israeli-vote-too-close-to-call-between-netanyahu-and-eisenkot">Bloomberg — Israeli vote too close to call between Netanyahu and Eisenkot</a></li>
+    <li><a href="https://www.npr.org/2026/10/28/nx-s1-6019423/israel-election-results">NPR — Partial results from Israel's contentious election show no clear winner</a></li>
+  </ul>
+  <p><strong>Iran / Qatar:</strong></p>
+  <ul>
+    <li><a href="https://jpost.com/middle-east/iran-news/article-913159">Jerusalem Post — Qatar awaits Iran's response to new nuclear proposal</a></li>
+  </ul>
+</div>
+
+<div class="footer">
+  Daily News Brief · October 28, 2026 · Wednesday Evening Wrap · Day 243 of the Iran war<br>
+  <em>Andres's daily analyst. Structural reads, not headline regurgitation.</em>
+</div>
+
+</div>
+
+</body>
+</html>
