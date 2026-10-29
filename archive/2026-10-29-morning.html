@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily News Brief — October 29, 2026 (Morning Brief)</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --surface: #121820;
+    --surface2: #1a2230;
+    --border: #243044;
+    --text: #c8d3e0;
+    --text-dim: #6b7d93;
+    --heading: #e8edf3;
+    --accent: #4fc3f7;
+    --accent2: #81c784;
+    --warn: #ffb74d;
+    --danger: #ef5350;
+    --gold: #ffd54f;
+    --purple: #b39ddb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a0a0a 0%, #2a0a1a 50%, #0a1a2e 100%);
+    border-bottom: 1px solid var(--danger);
+    padding: 50px 40px 40px;
+    text-align: center;
+  }
+  .header .day-tag {
+    display: inline-block;
+    background: rgba(239,83,80,0.2);
+    border: 1px solid rgba(239,83,80,0.4);
+    color: var(--danger);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--heading);
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .header .subtitle {
+    font-size: 18px;
+    color: var(--warn);
+    font-weight: 400;
+  }
+  .header .subtitle-sub {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 10px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--heading);
+    margin: 48px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 28px 0 12px;
+  }
+  p { margin-bottom: 14px; }
+  strong { color: var(--heading); }
+  em { color: var(--accent); font-style: italic; }
+  ul, ol { margin: 0 0 14px 22px; }
+  li { margin-bottom: 6px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  table tr:last-child td { border-bottom: none; }
+  table td:first-child {
+    font-weight: 700;
+    color: var(--heading);
+  }
+  .badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+  .badge-red { background: var(--danger); color: #fff; }
+  .badge-green { background: var(--accent2); color: var(--bg); }
+  .badge-blue { background: var(--accent); color: var(--bg); }
+  .badge-yellow { background: var(--warn); color: var(--bg); }
+  .badge-purple { background: var(--purple); color: var(--bg); }
+  .tldr-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.1), rgba(255,183,77,0.05));
+    border: 2px solid var(--danger);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin: 24px 0 32px;
+  }
+  .tldr-box h3 {
+    color: var(--danger);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .delta-box {
+    background: var(--surface2);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 20px;
+    margin: 0 0 18px;
+    font-size: 13.5px;
+    color: var(--text-dim);
+  }
+  .delta-box strong { color: var(--accent); }
+  .honest-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--purple);
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin: 24px 0;
+  }
+  .honest-box h3 {
+    color: var(--purple);
+    margin-top: 0;
+    margin-bottom: 14px;
+  }
+  .punchline-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.08), rgba(79,195,247,0.05));
+    border: 2px solid rgba(239,83,80,0.3);
+    border-radius: 10px;
+    padding: 28px;
+    margin: 32px 0;
+    text-align: center;
+  }
+  .punchline-box h3 {
+    color: var(--danger);
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .punchline-box p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    max-width: 760px;
+    margin: 0 auto 10px;
+    color: var(--text);
+  }
+  .sources { font-size: 12.5px; color: var(--text-dim); }
+  .sources a { color: var(--accent); text-decoration: none; }
+  .sources a:hover { text-decoration: underline; }
+  .footer {
+    border-top: 1px solid var(--border);
+    margin-top: 50px;
+    padding-top: 20px;
+    color: var(--text-dim);
+    font-size: 12px;
+    text-align: center;
+  }
+  .pos { color: var(--accent2); }
+  .neg { color: var(--danger); }
+  .move-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  .move-table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  .move-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .correction-box {
+    background: rgba(179,157,219,0.08);
+    border: 2px solid var(--purple);
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 24px 0 32px;
+  }
+  .correction-box h3 {
+    color: var(--purple);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="day-tag">Day 244 of the Iran War · Thursday Morning Brief · Hormuz Escalates, AI Jitters Return</div>
+  <h1>Daily News Brief — October 29, 2026</h1>
+  <div class="subtitle">Overnight, Iran's Hormuz rhetoric turned into incidents — drone shootdowns, mined tankers, a declared closure "until conditions are met" — and Hormuz Polymarket still hasn't moved. On markets, the AI-capex bear case this file said "didn't get support" Wednesday night is getting real support this morning: Alphabet's miss includes a genuine search deceleration, Microsoft's capex is accelerating next quarter (not the "discipline" reported last night), and two software names cratered on bookings guidance — yet the VIX is barely reacting. Blue Owl beat decisively, making two-for-two clean private-credit prints.</div>
+  <div class="subtitle-sub">Run: 08:00 PT · 181st consecutive zero-position day · Amazon reports after today's close (5pm ET call) · Nov 3 US midterms (explicit trigger date in US war-planning reporting) · Nov 6 Micron-Taoyuan third round · Nov 23 Jupiter permit decision</div>
+</div>
+
+<div class="container">
+
+<!-- ====================== TL;DR ====================== -->
+<div class="tldr-box">
+  <h3>TL;DR — What changed overnight, and why it matters</h3>
+  <ul>
+    <li><strong>Hormuz went from rhetoric to incidents, and Polymarket still isn't reacting.</strong> Iran claims it shot down a 14th US drone and captured a second, says three tankers struck mines, and its military declared the strait closed "until conditions are fully met." Hormuz Polymarket is still flat at ~11-12% — the starkest version yet of a gap this file has flagged for a week.</li>
+    <li><strong>The AI-capex bear case got real support this morning, reversing last night's read.</strong> Alphabet's miss included a genuine ~$1.6B search-revenue deceleration, not just the SpaceX mark-to-market hit this file emphasized Wednesday night; shares extended to roughly -13%.</li>
+    <li><strong>Correction: Microsoft's capex is accelerating, not being cut, as this file framed it last night.</strong> Q3 capex was $45.2B; next quarter is guided to top $50B because GPU-supplier delays are pushing spend into H1 2027. Only the full-year figure trimmed modestly.</li>
+    <li><strong>ServiceNow (-17.9%) and Fortinet (-26.1%) cratered on weak bookings guidance despite beating revenue</strong> — a software-specific "AI eating growth" scare, distinct from the hyperscaler capex story, worth tracking on its own.</li>
+    <li><strong>Blue Owl beat decisively before the open</strong> — revenue and distributable EPS both ~5% above consensus, non-accruals at its tech-focused BDC a very low 0.1% of fair value, shares +5.4-5.6% premarket. Two-for-two with ARCC against the sector-stress thesis.</li>
+  </ul>
+</div>
+
+<!-- ====================== OVERNIGHT MOVES ====================== -->
+<h2>Overnight: What Moved</h2>
+<table class="move-table">
+  <tr><th>Item</th><th>Last night (Wed close)</th><th>This morning</th><th>Read</th></tr>
+  <tr><td>Hormuz incidents</td><td>Reporting/rhetoric only</td><td class="neg">14th drone shot down, 1 captured, 3 tankers mined, strait declared "closed"</td><td>Rhetoric became incidents overnight — Polymarket still flat</td></tr>
+  <tr><td>Hormuz Polymarket</td><td>12% ($15.70M)</td><td>~11-12%, not reconfirmed</td><td>Not reacting even to literal mine/drone incidents</td></tr>
+  <tr><td>Alphabet (GOOGL)</td><td>-7 to -10% after hours</td><td class="neg">~-13% by Thursday's session</td><td>Real search deceleration layered on the SpaceX hit</td></tr>
+  <tr><td>Microsoft capex</td><td>Framed as "~$175B, cut from ~$190B"</td><td class="neg">Q3 actual $45.2B; next quarter guided to top $50B</td><td>Correction: accelerating near-term, not disciplined</td></tr>
+  <tr><td>ServiceNow / Fortinet</td><td>N/A</td><td class="neg">-17.9% / -26.1%</td><td>Weak bookings guidance despite revenue beats — new thread</td></tr>
+  <tr><td>CRWV / NBIS</td><td>No new data</td><td class="neg">-5% / -6% premarket</td><td>Reacting to MSFT capex headline, not the (rising) substance</td></tr>
+  <tr><td>Blue Owl (OWL)</td><td>Standing watch, reports today</td><td class="pos">Beat ~5% on rev/EPS; non-accruals 0.1% FV; +5.4-5.6% premarket</td><td>Clean print — two-for-two with ARCC vs. stress thesis</td></tr>
+  <tr><td>VIX</td><td>16.91, -3.5%</td><td>16.77, -0.83%</td><td>Barely moved despite a real tech-sector repricing</td></tr>
+</table>
+
+<!-- ====================== IRAN ====================== -->
+<h2>Iran / Middle East Geopolitics</h2>
+<div class="delta-box"><strong>Delta since last night:</strong> the military track moved from reporting to incidents. The diplomatic and Israel-coalition tracks are essentially unchanged.</div>
+
+<p>Iran's military spokesman declared the Strait of Hormuz under Iran's "strategic control," staying shut "until conditions are fully met." The IRGC's aerospace force claimed it shot down a 14th US MQ-1 drone near Sirik, Hormozgan province, and the IRGC Navy separately announced capturing a US MQM-170 drone in the western strait. Iran said three oil tankers struck mines and caught fire attempting to exit via an unauthorized route (<a href="https://houseofsaud.com/iran-mq1-drone-14th-hormuz-oct29/">House of Saud</a>, <a href="https://wanaen.com/irans-irgc-navy-captures-us-mqm-170-drone-in-strait-of-hormuz/">WANA</a>, <a href="https://www.click2houston.com/news/world/2026/10/29/iran-says-3-oil-tankers-struck-mines-and-other-mideast-news/">AP via Click2Houston</a>). The US Navy issued an advisory Oct 28 telling vessels without an essential need to avoid transiting the Gulf of Oman and the Strait of Hormuz. Washington reportedly set three conditions for Iran to avoid a strike: ship its highly enriched uranium to the US, halt regional attacks, and open the waterway (<a href="https://www.jfeed.com/news-world/iran-military-hormuz-closed-until-conditions-met">jfeed</a>). Axios reports US-Israeli planning now centers on a week of "massive strikes" after the Nov 3 midterms if talks fail — more specific than, not a departure from, Wednesday's WSJ Gulf-states report. The UK is separately calling for Hormuz to reopen; Russia says it's ready to mediate if asked.</p>
+
+<p>On diplomacy: Iran's rejection of Qatar's draft deal as "unacceptable ideas" held overnight, with no further hardening and no softening. Trump continues to leave the door open to new strikes. On Israel: with 85.6% counted, Netanyahu's bloc holds 53 seats to Eisenkot's 48, Arab parties 19 — unchanged in substance, but with new color: Eisenkot has left conditional room for Arab-party cooperation if those parties denounce "Hamas as a terrorist organization that must be destroyed," while Netanyahu has called an Arab-inclusive coalition "a shame and a disgrace" (<a href="https://www.npr.org/2026/10/28/nx-s1-6019423/israel-election-results">NPR</a>, <a href="https://gulfnews.com/business/arab-parties-hold-key-to-israel-vote-as-oil-nears-115-1.500728171">Gulf News</a>).</p>
+
+<h3>The structural read</h3>
+<p>Last night's framing — that the military and diplomatic tracks may be diverging rather than running in parallel — got its first hard, incident-level evidence overnight. <strong>Bear case, sharpened further:</strong> Washington's three stated conditions and Iran's stated nuclear-flexibility red line remain flatly incompatible, and real incidents are now accumulating inside the window before the stated Nov-3-midterms trigger — if either side treats last night's drone/mine incidents as justification to act early, that timeline could compress. <strong>Bull case:</strong> Eisenkot's conditional opening toward Arab-party cooperation is a genuine, if narrow, coalition off-ramp that didn't exist in yesterday's framing, and the UK's reopening push plus Russia's mediation offer are concurrent diplomatic tracks the pure-escalation narrative can undervalue. <strong>The sharpest open tension is calibration, not narrative:</strong> Hormuz Polymarket is still flat at ~12% even after literal drone shootdowns and mined tankers overnight — either the contract is the wrong instrument for this story, or the market is reading these incidents as consistent with an already-priced-in closed-strait baseline rather than new escalation.</p>
+
+<!-- ====================== MARKETS ====================== -->
+<h2>Markets / Macro</h2>
+<div class="delta-box"><strong>Delta since last night:</strong> the AI-capex bear case this file said "didn't get support" is getting support this morning — but the VIX still isn't reacting, so the selloff is sector-specific, not systemic, so far.</div>
+
+<table class="move-table">
+  <tr><th>Item</th><th>Wed close</th><th>This morning</th><th>Read</th></tr>
+  <tr><td>VIX</td><td>16.91, -3.5%</td><td>16.77, -0.83%</td><td>Barely moved despite a real tech-sector repricing</td></tr>
+  <tr><td>Gold</td><td>~$4,051.60, -0.5%</td><td class="neg">~$4,030, -0.9%</td><td>Fell despite oil/inflation risk — likely dollar strength post-hold</td></tr>
+  <tr><td>Bitcoin</td><td>~$81,255</td><td class="neg">~$79,850-80,200</td><td>Softer, tracking the broader risk-off tone</td></tr>
+  <tr><td>Brent crude</td><td>$115.32, +1.3%</td><td>~$115.02, +1%</td><td>Holding, not extending, Wednesday's war-risk gain</td></tr>
+  <tr><td>WTI crude</td><td>~$100 area</td><td>~$101.61, +1.7%</td><td>Consistent with Brent — no new spike</td></tr>
+  <tr><td>Alphabet (GOOGL)</td><td>-7 to -10% AH</td><td class="neg">~-13% by session</td><td>Genuine search deceleration, not just the SpaceX mark</td></tr>
+  <tr><td>Microsoft (MSFT)</td><td>+4.2% AH</td><td class="pos">+3% today</td><td>Market pricing Azure strength over the capex-timing nuance</td></tr>
+</table>
+
+<p>Alphabet's miss reads worse this morning than last night's "almost entirely SpaceX" framing suggested: it was the company's first top-and-bottom-line miss in nearly four years, with search revenue growing only 12% to $63.35B against a $64.96B estimate — a real, if modest, ~$1.6B deceleration layered on top of the SpaceX mark-to-market hit — even as Google Cloud blew past expectations again ($30.7B vs. $28.7B est., +103%, backlog $561B) (<a href="https://www.cnbc.com/2026/10/29/alphabet-google-microsoft-msft-shares-today-earnings.html">CNBC</a>).</p>
+
+<div class="correction-box">
+  <h3>Correction, per protocol</h3>
+  <p>Last night's entry framed Microsoft's capex guidance as "discipline" — that was wrong. Q3 actual capex was $45.2B (including $7.4B finance lease), and Microsoft guided <em>next</em> quarter's capex to top $50B, an acceleration, because GPU-supplier delivery delays are pushing usable capacity — and the spending behind it — into H1 2027. Only the full calendar-year 2026 figure trimmed modestly (~$175B toward ~$170B), and that's against an accelerating near-term run-rate, not a real pullback (<a href="https://fourweekmba.com/ai-microsoft-lowers-2026-capex-view-to-170b-eyes-new-funding/">FourWeekMBA</a>). This is filed here rather than silently fixed, per this file's own standing protocol.</p>
+</div>
+
+<p>Separately, a software-specific selloff: ServiceNow fell 17.9% and Fortinet fell 26.1% after both beat revenue estimates, dragged down by weak cRPO/bookings guidance — a distinct "AI eating software growth" thread, mechanically different from the hyperscaler-capex story (<a href="https://247wallst.com/investing/2026/10/29/software-stocks-are-getting-crushed-again-after-hours/">24/7 Wall St.</a>). Blue Owl (OWL) reported a clean beat before the open — revenue $752.6M vs. $717.6M est., Distributable EPS $0.24 vs. ~$0.2288 est., non-accruals at its tech-focused BDC a very low 0.1% of fair value — shares +5.4-5.6% premarket (private-credit detail below). Amazon reports after today's close, call 5pm ET.</p>
+
+<h3>The structural read</h3>
+<p>Today is the clearer test this file has been waiting for since Wednesday night — real news in both directions, and this time the reaction is lopsided toward the bear case on AI-infrastructure spending specifically, even as the index-level complacency this file flagged twice this week continues unbroken. <strong>Bear case:</strong> a genuine search-revenue deceleration, a software-bookings scare at two unrelated companies, and a capex number that's actually accelerating near-term all point the same direction — and the VIX's continued silence through all of it means none of this is being priced as systemic risk yet, exactly the setup this file's "complacency" bear case describes. <strong>Bull case:</strong> Azure and GCP demand numbers are unchanged and still exceptional; Alphabet's miss, in dollar terms, was small (~$390M on revenue); and OWL's clean beat this morning is a genuine, unrelated-to-AI-capex positive data point for the portfolio-adjacent complex.</p>
+
+<!-- ====================== AI ECOSYSTEM ====================== -->
+<h2>AI Ecosystem</h2>
+<div class="delta-box"><strong>Delta since last night:</strong> "AI jitters return" is this morning's actual headline, and unlike Wednesday night, the capex bear case is getting real support from three mostly-independent data points.</div>
+
+<p>Three threads converged this morning, each independently negative for the AI-capex-is-sound thesis: Alphabet's genuine (if modest) search deceleration, described above; Microsoft's capex trajectory, which is accelerating near-term rather than showing the "discipline" this file reported last night; and ServiceNow (-17.9%) / Fortinet (-26.1%) cratering on weak bookings guidance despite beating revenue — a software-specific scare this file hasn't tracked directly before and should start watching as a distinct "AI eating enterprise-software growth" signal, separate from hyperscaler capex spend.</p>
+
+<p>CRWV fell 5%, NBIS fell 6% premarket on the Microsoft capex headline specifically — notable because the underlying capex number is actually rising near-term, suggesting the market reacted to the full-year-trim optics rather than the quarterly reality. Chip majors split: NVDA/AMD/INTC fell premarket (roughly -1% to -3.6%) on the same Alphabet-driven capex anxiety, before memory names reversed sharply higher intraday — Micron +5.3% — on unrelated strength from SK Hynix's blowout profit and $25B+ dividend/buyback announcement. Two minor Anthropic items since last night: Claude Enterprise gained three GA features Oct 28 (Smart Reports, in-app Surveys, Pooled Group Budgets), and Anthropic's Frontier Red Team disclosed an unreleased Claude research model chaining a zero-click remote-root Linux exploit across five platforms — neither moves the capex/bubble debate directly. AI-bubble-burst Polymarket readings are unusually noisy across secondary sources this morning (roughly 6%-26% depending on snapshot and which contract is quoted) — flagged as a data-quality problem, not reported as a clean number, pending tonight's direct fetch.</p>
+
+<h3>The structural read</h3>
+<p>This morning sharpens the split this file has tracked all week rather than resolving it, but — unlike Wednesday night — today's weight of evidence tilts toward the bear case. <strong>Bear case, strengthened:</strong> three mostly-independent data points (Alphabet's real search miss, ServiceNow/Fortinet's bookings guidance, CRWV/NBIS's capex-headline reaction) converging the same morning is a meaningfully different pattern than one noisy earnings night. <strong>Bull case:</strong> cloud/infrastructure demand itself — the hardest-to-fake number — hasn't moved; software-bookings weakness at two companies is two data points, not yet a trend; and markets reacting to a capex headline that doesn't match the underlying (accelerating) number is a pricing error that should self-correct once parsed, not new fundamental information. Amazon's print tonight is the decisive fourth data point in this week's hyperscaler-capex test.</p>
+
+<!-- ====================== PORTFOLIO ====================== -->
+<h2>Portfolio Tickers</h2>
+<div class="delta-box"><strong>Delta since last night:</strong> 181st consecutive zero-position day. The complex split cleanly — AI-infra pure-plays caught a capex-headline scare, while the private-credit name (OWL) beat decisively.</div>
+
+<table>
+  <tr><th>Ticker</th><th>Status</th><th>Note</th></tr>
+  <tr><td>CRWV</td><td class="neg">-5% premarket</td><td>Reacting to MSFT capex headline, not the (accelerating) substance.</td></tr>
+  <tr><td>NBIS</td><td class="neg">-6% premarket</td><td>Same read-through as CRWV.</td></tr>
+  <tr><td>NVDA / AMD / INTC</td><td class="neg">-1% to -3.6% premarket, then partial reversal</td><td>Fell on Alphabet-driven capex anxiety; chip complex mixed by midday.</td></tr>
+  <tr><td>MU</td><td class="pos">+5.3% intraday</td><td>SK Hynix-driven memory strength, unrelated to AI-capex story. Taoyuan bonus dispute unchanged — third round still Nov 6; a separate Taichung-union mediation item resolved Oct 21-23, don't conflate the two.</td></tr>
+  <tr><td>TSMC</td><td>No new item</td><td>Background only: raised 2026 revenue outlook, $60-64B capex plan, already known.</td></tr>
+  <tr><td>XLE</td><td>Unchanged</td><td>Oil holding ~$115 Brent/~$101.6 WTI; hedge thesis unchanged, no new catalyst today.</td></tr>
+  <tr><td>ARCC</td><td>Flat, +0.11%</td><td>No new news; MidCap Financial deal ($10.88/share, ~$1.21 cash + ~$9.67 stock) and Tuesday's earnings already logged.</td></tr>
+  <tr><td>OWL</td><td class="pos">+5.4-5.6% premarket</td><td>Beat decisively — rev/EPS both ~5% above consensus, non-accruals 0.1% FV. See private-credit section.</td></tr>
+  <tr><td>AMZN</td><td>Standing watch</td><td>Reports after today's close, call 5pm ET; consensus ~$2.01 EPS / ~$202B revenue, AWS the focus.</td></tr>
+</table>
+
+<h3>The structural read</h3>
+<p>Today splits the complex cleanly along a line this file hasn't drawn before: AI-infrastructure pure-plays (CRWV, NBIS, briefly the chip majors) caught a capex-headline scare the underlying data only partly supports, while the private-credit-adjacent names (OWL, and before it ARCC) are now two-for-two on clean prints. <strong>Bear case:</strong> CRWV/NBIS -5%/-6% is a real print landing on top of October's -35%/-31% drawdown regardless of whether the market's read on Microsoft's capex is technically correct. <strong>Bull case:</strong> OWL's beat and very low tech-BDC non-accruals, arriving the same week ARCC also printed clean, meaningfully weakens this file's standing worry about AI-infra credit stress spreading through the portfolio's private-credit exposure. 181 sessions at zero positions remains the right call; tonight's Amazon print is the decisive next test.</p>
+
+<!-- ====================== PRIVATE CREDIT ====================== -->
+<h2>Private Credit</h2>
+<div class="delta-box"><strong>Delta since last night:</strong> OWL reported and beat decisively — the clean test this file has been waiting on since the Oct 22 sale-speculation story resolves toward the bull case.</div>
+
+<p>Blue Owl reported before the open: revenue $752.6M vs. $717.6M consensus (+4.9%); Distributable Earnings $385.5M, or $0.24 per Adjusted Share, vs. ~$0.2288 est. (+4.9% beat); Fee-Related Earnings $427.5M/$0.27 per Adjusted Share; AUM $329.9B, up 12% year-over-year; new capital commitments of $12.6B in the quarter. GAAP net income was $20.0M/$0.03 per Class A share — a normal gap against the adjusted metrics for this entity's structure, not itself a red flag. The dividend held at $0.23/share quarterly, payable Nov 23. <strong>Non-accruals at Blue Owl Technology Finance Corp — the entity most exposed to the AI-infra/software credit theme this file has tracked all month — came in at just 0.1% of fair value / 0.6% of cost</strong>, a strong credit-quality read. Shares jumped roughly 5.4-5.6% premarket. No new Project Jupiter, OTIC/OCIC redemption, or Apollo/SpaceX-financing item found this morning beyond what's already logged.</p>
+
+<h3>The structural read</h3>
+<p>This file is explicitly walking back the level of concern it carried into this print. Two consecutive BDC/alt-manager reports — ARCC on Oct 27, OWL this morning — have both landed with low, stable non-accruals against a backdrop of genuinely negative, specifically-named standing threads (Jupiter's permitting delay, the Loparex near-total wipeout, the OTIC/OCIC redemption caps, the OWL sale speculation). <strong>Bear case:</strong> non-accrual rates are lagging, backward-looking metrics; Jupiter and Loparex are both real, named, and unresolved, and a low aggregate number doesn't retire single-name tail risk. <strong>Bull case:</strong> two clean prints in a row, from two different corners of the private-credit complex, is real and mounting evidence against the sector-wide "AI-financing stress" framing that drove this file bearish in mid-October — worth updating the prior toward bull, not just logging the data point.</p>
+
+<!-- ====================== POLYMARKET ====================== -->
+<h2>Polymarket Calibration</h2>
+<div class="delta-box"><strong>Delta since last night:</strong> the Hormuz/ground-truth gap this file has flagged since Oct 22 is now at its starkest — real incidents overnight, and the contract still isn't moving.</div>
+
+<table>
+  <tr><th>Contract</th><th>Last night</th><th>This morning</th><th>Delta</th></tr>
+  <tr><td>Hormuz normal by Dec 31</td><td>12% ($15.70M)</td><td>~11-12%, not reconfirmed</td><td>Flat despite overnight drone shootdowns and mined tankers — starkest gap yet</td></tr>
+  <tr><td>Oct FOMC: no-change</td><td>94.8% ($91.96M)</td><td class="pos">Resolved YES — Fed held</td><td>Calibration win, contract no longer live</td></tr>
+  <tr><td>AI-bubble burst by Dec 31</td><td>8% ($3.14M combined w/ mid-2027)</td><td>Noisy, 6%-26% across sources</td><td>Data-quality problem — unresolved pending tonight's direct fetch</td></tr>
+  <tr><td>US invades Iran before 2027</td><td>20% ($75.6M)</td><td>Not re-fetched</td><td>Carried forward</td></tr>
+  <tr><td>Any US strike, Oct 28-Jan 31 (4-leg)</td><td>~70% combined</td><td>Not re-fetched</td><td>Carried forward — more apt Iran-risk gauge than Hormuz</td></tr>
+</table>
+
+<h3>The structural read</h3>
+<p>The Hormuz gap is now this file's single most actionable standing observation on the Iran beat. If a contract about shipping-traffic normalization isn't moving on literal reports of mined tankers and shot-down drones overnight, one of two things is true: either the contract is mis-specified for what's actually happening (this file's working theory since Oct 22-23), or the market already expects today's incidents to resolve within the existing closed-strait baseline rather than extend it — itself an underappreciated signal rather than evidence of a broken instrument. This file will keep leaning on the four-leg strike-odds market (~70% combined) as the more apt Iran-risk gauge. On AI-bubble: this morning's noise across secondary sources is a data-quality problem, not a sentiment finding — no single scraped number is being reported as this file's calibration view without a direct fetch to back it.</p>
+
+<!-- ====================== BOTTOM LINE ====================== -->
+<div class="punchline-box">
+  <h3>Bottom Line / Portfolio Implication</h3>
+  <p>Zero positions at 181 sessions remains correct. Today is the clearest divergence this file has logged all week between a real, accumulating geopolitical risk and a market that still won't price it: Iran's Hormuz rhetoric turned into literal drone shootdowns and mined tankers overnight, and the one contract built to track exactly that (Hormuz-normalization Polymarket) hasn't moved. On the other axis, the AI-capex bear case this file dismissed too quickly Wednesday night is getting real support this morning — a genuine search deceleration at Alphabet, an accelerating (not disciplined) Microsoft capex number, and a software-bookings scare at two unrelated companies — while the VIX stays quiet, meaning the repricing is still contained to AI-infra names (CRWV, NBIS) rather than the broader tape. The one clean positive today is private credit: Blue Owl's beat and very low non-accruals make it two-for-two with ARCC against this file's own sector-stress thesis, meaningfully de-risking that corner of the portfolio-adjacent complex. Tonight's Amazon print is the decisive fourth leg of this week's hyperscaler-capex test.</p>
+</div>
+
+<!-- ====================== SOURCES ====================== -->
+<h2>Sources</h2>
+<div class="sources">
+  <p><strong>Iran / Hormuz:</strong></p>
+  <ul>
+    <li><a href="https://houseofsaud.com/iran-mq1-drone-14th-hormuz-oct29/">House of Saud — Iran claims 14th US MQ-1 drone shot down near Strait of Hormuz</a></li>
+    <li><a href="https://wanaen.com/irans-irgc-navy-captures-us-mqm-170-drone-in-strait-of-hormuz/">WANA — Iran's IRGC Navy captures US MQM-170 drone in Strait of Hormuz</a></li>
+    <li><a href="https://www.click2houston.com/news/world/2026/10/29/iran-says-3-oil-tankers-struck-mines-and-other-mideast-news/">AP via Click2Houston — Iran says 3 oil tankers struck mines, and other Mideast news</a></li>
+    <li><a href="https://www.jfeed.com/news-world/iran-military-hormuz-closed-until-conditions-met">jfeed — Iran military: Hormuz stays closed until conditions met</a></li>
+  </ul>
+  <p><strong>Israel election:</strong></p>
+  <ul>
+    <li><a href="https://www.npr.org/2026/10/28/nx-s1-6019423/israel-election-results">NPR — Israel's election reaches a stalemate</a></li>
+    <li><a href="https://gulfnews.com/business/arab-parties-hold-key-to-israel-vote-as-oil-nears-115-1.500728171">Gulf News — Arab parties hold key to Israel vote as oil nears $115</a></li>
+  </ul>
+  <p><strong>Markets / earnings:</strong></p>
+  <ul>
+    <li><a href="https://www.cnbc.com/2026/10/29/alphabet-google-microsoft-msft-shares-today-earnings.html">CNBC — Alphabet stock drops while Microsoft rises after earnings</a></li>
+    <li><a href="https://fourweekmba.com/ai-microsoft-lowers-2026-capex-view-to-170b-eyes-new-funding/">FourWeekMBA — Microsoft lowers 2026 capex view to $170B, eyes new funding</a></li>
+    <li><a href="https://247wallst.com/investing/2026/10/29/software-stocks-are-getting-crushed-again-after-hours/">24/7 Wall St. — Software stocks are getting crushed again after hours</a></li>
+    <li><a href="https://www.tipranks.com/news/why-are-coreweave-nebius-and-iren-stocks-tumbling-in-pre-market-today-oct-29">TipRanks — Why CoreWeave, Nebius, and IREN stocks are tumbling premarket</a></li>
+  </ul>
+  <p><strong>Private credit:</strong></p>
+  <ul>
+    <li><a href="https://seekingalpha.com/news/4660116-blue-owl-capital-stock-up-on-q3-earnings-beat-aum-rises-on-capital-raise-appreciation">Seeking Alpha — Blue Owl Capital stock up on Q3 earnings beat</a></li>
+    <li><a href="https://www.chartmill.com/news/OWL/Chartmill-57229-Blue-Owl-Capital-NYSEOWL-Posts-Q3-Revenue-and-EPS-Beat">Chartmill — Blue Owl Capital posts Q3 revenue and EPS beat</a></li>
+  </ul>
+</div>
+
+<div class="footer">
+  Daily News Brief · October 29, 2026 · Thursday Morning Brief · Day 244 of the Iran war<br>
+  <em>Andres's daily analyst. Structural reads, not headline regurgitation.</em>
+</div>
+
+</div>
+
+</body>
+</html>
