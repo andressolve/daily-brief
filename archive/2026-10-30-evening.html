@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily News Brief — October 30, 2026 (Evening Wrap)</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --surface: #121820;
+    --surface2: #1a2230;
+    --border: #243044;
+    --text: #c8d3e0;
+    --text-dim: #6b7d93;
+    --heading: #e8edf3;
+    --accent: #4fc3f7;
+    --accent2: #81c784;
+    --warn: #ffb74d;
+    --danger: #ef5350;
+    --gold: #ffd54f;
+    --purple: #b39ddb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a0a0a 0%, #2a0a1a 50%, #0a1a2e 100%);
+    border-bottom: 1px solid var(--danger);
+    padding: 50px 40px 40px;
+    text-align: center;
+  }
+  .header .day-tag {
+    display: inline-block;
+    background: rgba(239,83,80,0.2);
+    border: 1px solid rgba(239,83,80,0.4);
+    color: var(--danger);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--heading);
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .header .subtitle {
+    font-size: 18px;
+    color: var(--warn);
+    font-weight: 400;
+  }
+  .header .subtitle-sub {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 10px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--heading);
+    margin: 48px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 28px 0 12px;
+  }
+  p { margin-bottom: 14px; }
+  strong { color: var(--heading); }
+  em { color: var(--accent); font-style: italic; }
+  ul, ol { margin: 0 0 14px 22px; }
+  li { margin-bottom: 6px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  table tr:last-child td { border-bottom: none; }
+  table td:first-child {
+    font-weight: 700;
+    color: var(--heading);
+  }
+  .badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+  .badge-red { background: var(--danger); color: #fff; }
+  .badge-green { background: var(--accent2); color: var(--bg); }
+  .badge-blue { background: var(--accent); color: var(--bg); }
+  .badge-yellow { background: var(--warn); color: var(--bg); }
+  .badge-purple { background: var(--purple); color: var(--bg); }
+  .tldr-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.1), rgba(255,183,77,0.05));
+    border: 2px solid var(--danger);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin: 24px 0 32px;
+  }
+  .tldr-box h3 {
+    color: var(--danger);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .delta-box {
+    background: var(--surface2);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 20px;
+    margin: 0 0 18px;
+    font-size: 13.5px;
+    color: var(--text-dim);
+  }
+  .delta-box strong { color: var(--accent); }
+  .honest-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--purple);
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin: 24px 0;
+  }
+  .honest-box h3 {
+    color: var(--purple);
+    margin-top: 0;
+    margin-bottom: 14px;
+  }
+  .punchline-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.08), rgba(79,195,247,0.05));
+    border: 2px solid rgba(239,83,80,0.3);
+    border-radius: 10px;
+    padding: 28px;
+    margin: 32px 0;
+    text-align: center;
+  }
+  .punchline-box h3 {
+    color: var(--danger);
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .punchline-box p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    max-width: 760px;
+    margin: 0 auto 10px;
+    color: var(--text);
+  }
+  .sources { font-size: 12.5px; color: var(--text-dim); }
+  .sources a { color: var(--accent); text-decoration: none; }
+  .sources a:hover { text-decoration: underline; }
+  .footer {
+    border-top: 1px solid var(--border);
+    margin-top: 50px;
+    padding-top: 20px;
+    color: var(--text-dim);
+    font-size: 12px;
+    text-align: center;
+  }
+  .pos { color: var(--accent2); }
+  .neg { color: var(--danger); }
+  .move-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  .move-table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  .move-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .correction-box {
+    background: rgba(179,157,219,0.08);
+    border: 2px solid var(--purple);
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 24px 0 32px;
+  }
+  .correction-box h3 {
+    color: var(--purple);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="day-tag">Day 245 of the Iran War · Friday Evening Wrap · Close-of-Day State</div>
+  <h1>Daily News Brief — October 30, 2026</h1>
+  <div class="subtitle">The morning's read held and got worse on every axis it named. The selloff deepened into the close rather than stabilizing — S&amp;P, Nasdaq, and the VIX all moved further in the same direction between the morning's mid-session read and Friday's actual close. On Iran, the Hormuz incidents escalated to claimed mine strikes disabling a tanker, the Houthi/Red Sea front widened toward the Mecca region, and Tehran still has not formally answered Vance's letter heading into the weekend.</div>
+  <div class="subtitle-sub">Run: ~17:00 PT · 183rd zero-position day complete, 184th at tomorrow's open · Nov 3 US midterms (4 days out) · Nov 6 Micron-Taoyuan third round · Nov 23 Jupiter permit decision / OWL dividend payable</div>
+</div>
+
+<div class="container">
+
+<!-- ====================== TL;DR ====================== -->
+<div class="tldr-box">
+  <h3>TL;DR — What changed between morning and close, and why it matters</h3>
+  <ul>
+    <li><strong>The selloff deepened into the close, it didn't stabilize.</strong> S&amp;P 500 finished 7,580 (-1.82%), Nasdaq 25,437 (-2.86%), VIX 19.42 (+12.91%) — all past the morning's mid-session reads (-1.22%, -2.21%, +10.29%). This directly answers the morning's open flag: the Intel/AMD-driven break held and grew, not faded.</li>
+    <li><strong>CRWV was the day's sharpest incremental mover: -9.66% into the close</strong>, nearly double the morning's -5.0% read, on a name already pricing above-50% five-year default odds on CDS — the credit-distress signal hardened rather than stabilized.</li>
+    <li><strong>Hormuz escalated past "incidents" to claimed mine strikes.</strong> Iran now says four tankers struck mines, including the first successful limpet-mine attack of the war, disabling a tanker via engine-room fire. US CENTCOM disputes this, claiming it cleared the main shipping lanes — a direct, unresolved factual dispute between the two sides.</li>
+    <li><strong>Iran still has not formally responded to Vance's letter as of Friday evening.</strong> Qatari mediators remain in Tehran with no reported breakthrough or collapse — this carries into the weekend as the top geopolitical watch item.</li>
+    <li><strong>The Houthi/Red Sea front widened, not contained:</strong> a claimed drone intercept near the Mecca region (Houthis deny targeting Mecca), continued Saudi strikes on Yemen, and Houthi claims of hits on Saudi oil infrastructure and airports.</li>
+  </ul>
+</div>
+
+<!-- ====================== MORNING -> EVENING ====================== -->
+<h2>Morning → Evening: What Moved</h2>
+<table class="move-table">
+  <tr><th>Item</th><th>This morning (~08:00 PT)</th><th>Close / this evening (~17:00 PT)</th><th>Read</th></tr>
+  <tr><td>S&amp;P 500</td><td>7,626.38 (-1.22%)</td><td class="neg">7,580 (-1.82%)</td><td>Deepened into the close</td></tr>
+  <tr><td>Nasdaq</td><td>25,606.33 (-2.21%)</td><td class="neg">25,437 (-2.86%)</td><td>Deepened; near-three-month low held</td></tr>
+  <tr><td>Dow</td><td>~-0.7%</td><td class="neg">~51,770 (-1.09%)</td><td>Deepened, broadening confirmed</td></tr>
+  <tr><td>VIX</td><td>18.97 (+10.29%)</td><td class="neg">19.42 (+12.91%)</td><td>Break held and grew, didn't fade</td></tr>
+  <tr><td>Brent crude</td><td>~$116 intraday</td><td class="pos">~$112-113 close</td><td>Faded off intraday highs; still +2% on day</td></tr>
+  <tr><td>WTI crude</td><td>~$103-104 intraday</td><td class="pos">~$102-103 close</td><td>Same fade; smaller reaction than Hormuz claims implied</td></tr>
+  <tr><td>CRWV</td><td>-5.0%</td><td class="neg">-9.66%</td><td>Sharpest incremental mover of the day</td></tr>
+  <tr><td>NVDA</td><td>-3.5%</td><td class="neg">-5.35%</td><td>Deepened</td></tr>
+  <tr><td>AMD</td><td>-10.2%</td><td class="neg">~-11% to -13%</td><td>Roughly in line, slightly past</td></tr>
+  <tr><td>AMZN</td><td>~-2% further</td><td class="neg">-1.41% further</td><td>Smaller increment, still negative</td></tr>
+  <tr><td>Hormuz normal-by-Dec-31 (Polymarket)</td><td>19%</td><td>~19%</td><td>Held, didn't reverse</td></tr>
+  <tr><td>Hormuz normal-by-Nov-30 (Polymarket)</td><td>10%</td><td>~13%</td><td>First short-dated move with the headline contract</td></tr>
+  <tr><td>Hormuz incidents</td><td>Two tankers "halted"</td><td class="neg">Iran claims four tankers struck mines; CENTCOM disputes</td><td>Escalated to a direct factual dispute</td></tr>
+  <tr><td>Iran response to Vance letter</td><td>Received, not answered</td><td>Still not answered</td><td>Unresolved into the weekend</td></tr>
+</table>
+
+<!-- ====================== IRAN ====================== -->
+<h2>Iran / Middle East Geopolitics</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> both fronts flagged this morning escalated further by the close, and the diplomatic track still has no resolution.</div>
+
+<p>Iran now claims <strong>four tankers struck mines</strong> in the Strait of Hormuz — not the two "halted" reported this morning — including the first confirmed successful limpet-mine attack of the war: a small boat attached mines to a tanker's hull, disabling it via an engine-room fire (<a href="https://www.cbsnews.com/live-updates/iran-war-donald-trump-qatar-mediators-new-proposal-end-war/">CBS News</a>). US Central Command, under Admiral Brad Cooper, disputes the severity, saying it has cleared the main shipping lanes of IRGC-laid mines; Iran disputes that claim in turn (<a href="https://gulfnews.com/world/americas/strait-of-hormuz-update-us-makes-major-claim-about-irans-forces-1.500729768">Gulf News</a>, <a href="https://www.cnbc.com/2026/10/30/iran-trump-hormuz-oil-middle-east-.html">CNBC</a>). This is now a direct, unresolved factual dispute between the two sides rather than differing framing of the same facts — and it's a harder data point than this morning's "incidents" language.</p>
+
+<p><strong>Iran still has not formally responded to Vance's letter as of Friday evening.</strong> Qatari mediators remain in Tehran, with no reported breakthrough or collapse since this morning's "indications of progress" framing. This is the single most decision-relevant item outstanding heading into the weekend — both this morning's and tonight's reads agree on that.</p>
+
+<p>The Houthi/Red Sea front widened rather than staying contained, which this morning's brief flagged as the thing to watch. Houthi-affiliated media claim a drone was intercepted near the Mecca region (Houthi forces deny targeting Mecca specifically); Saudi coalition forces struck al-Jawf, Marib, and Taiz governorates in Yemen; and Houthi forces claim further strikes on Saudi oil infrastructure and airports (<a href="https://www.jpost.com/middle-east/article-913351">Jerusalem Post</a>).</p>
+
+<h3>The structural read</h3>
+<p>Oil's reaction to tonight's mine-strike claims was notably smaller than the claims' severity alone would suggest — Brent and WTI faded off their intraday highs into the close even as the Hormuz story got worse on paper (markets.md). <strong>Bear case:</strong> that muted reaction may just reflect the competing CENTCOM claim giving traders a reason to discount Iran's number, not genuine de-escalation — worth distinguishing a calmer tape from a calmer reality. <strong>Bull case:</strong> a market that shrugged off a claimed four-tanker mine attack is itself informative — if CENTCOM's "lanes cleared" claim is closer to the operational truth, today's muted oil reaction may be the more accurate read than Iran's own claim. Either way, the still-unanswered Vance letter means this file has no fresh diplomatic signal to weigh against the operational dispute — only the operational dispute itself.</p>
+
+<!-- ====================== MARKETS ====================== -->
+<h2>Markets / Macro</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> every index and the VIX moved further in the same direction into the close — the selloff deepened, it didn't stabilize.</div>
+
+<p>Final Friday closes: <strong>S&amp;P 500 7,580 (-1.82%), Nasdaq Composite 25,437 (-2.86%), Dow ~51,770 (-1.09%), VIX 19.42 (+12.91%)</strong> — all deeper than this morning's mid-session reads. The VIX's break, which this morning's brief flagged as "finally real," held and grew through the session rather than fading, directly resolving the morning's open question. Oil settled below its intraday highs: Brent ~$112-113, WTI ~$102-103 (vs. ~$116/$103-104 intraday) — still +2% on the day and on pace for a fourth straight monthly gain, but a smaller reaction to the Hormuz escalation (iran.md) than this morning's intraday spike implied.</p>
+
+<p>No new company-specific catalyst emerged beyond the Intel/AMD-driven complex-wide selloff already logged this morning. CRWV's further -9.66% decline (portfolio-context.md) is the one move worth separating from pure index drift — a name already pricing distress-level CDS odds falling further into the close is a harder signal than a broad-market down day.</p>
+
+<h3>The structural read</h3>
+<p>This morning named a live tension — sentiment punishing capex-heavy names while primary-source demand evidence (the Anthropic S-1 deep-dive) got stronger. Today's close sharpens the sentiment side without resolving it: a leaked, unaudited report tonight puts Anthropic's Q3 revenue around $16.8B (+45% q/q from Q2's $11.6B) (ai.md) — directionally supportive of the demand case, but not a filed number, so it doesn't settle the debate either way. The honest state heading into the weekend: two real, hardening signals pointing in opposite directions, not one winning.</p>
+
+<!-- ====================== AI ECOSYSTEM ====================== -->
+<h2>AI Ecosystem</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> a leaked Q3 revenue figure surfaced tonight, directionally supporting this morning's S-1 bull case — but it's not a filed number.</div>
+
+<p>CNBC reported tonight, citing people familiar with an investor briefing, that Anthropic's Q3 2026 revenue came in around <strong>$16.8B, up roughly 45% from Q2's $11.6B</strong>. The S-1 itself still has the Q3 revenue line and the October 31 run-rate figure blank — this is a leak, not an amendment, and should be treated as unaudited until the actual filing lands. If it holds up, it's consistent with (not proof of) the $855B-commitments/14x-revenue-growth demand case this morning's S-1 deep-dive made. The actual amendment, not further leaks, is still the thing to watch for.</p>
+
+<h3>The structural read</h3>
+<p>Nothing tonight resolves the tension this morning named between hardening sentiment (markets.md) and strengthening primary-source demand evidence. A leaked, people-familiar-with figure is directionally useful but carries less weight than an audited filing — this file is treating it as a data point in favor of the bull case, not confirmation of it.</p>
+
+<!-- ====================== PORTFOLIO ====================== -->
+<h2>Portfolio Tickers</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> 183rd zero-position day complete; every move deepened into the close, with CRWV's incremental decline the sharpest of the day.</div>
+
+<table>
+  <tr><th>Ticker</th><th>Morning read</th><th>Close</th><th>Note</th></tr>
+  <tr><td>CRWV</td><td class="neg">-5.0%</td><td class="neg">-9.66%</td><td>Nearly double the morning move; CDS already &gt;50% five-year default odds — distress hardened, not stabilized.</td></tr>
+  <tr><td>NVDA</td><td class="neg">-3.5%</td><td class="neg">-5.35%</td><td>Deepened with the broader complex.</td></tr>
+  <tr><td>AMD</td><td class="neg">-10.2%</td><td class="neg">~-11% to -13%</td><td>Roughly in line with the morning read, sources vary slightly.</td></tr>
+  <tr><td>AMZN</td><td class="neg">~-2% further</td><td class="neg">-1.41% further</td><td>Smaller increment, still negative, on top of the week's prior declines.</td></tr>
+  <tr><td>NBIS, MU, OWL, ARCC, XLE, TSMC</td><td>—</td><td>No new company-specific item</td><td>Index/sentiment-driven complex selloff; no fresh catalyst beyond markets.md.</td></tr>
+</table>
+
+<h3>The structural read</h3>
+<p>Nothing tonight argues against 183 (184 at tomorrow's open) sessions at zero positions. CRWV's incremental move is the one worth tracking into next week specifically, since it's the clearest case of a credit-distress signal hardening rather than a sentiment-driven index move — the other names mostly tracked the broader tape.</p>
+
+<!-- ====================== PRIVATE CREDIT ====================== -->
+<h2>Private Credit</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> no material change.</div>
+<p>No new Blue Owl, ARCC, or Congressional-scrutiny item surfaced this evening. The redemption-easing read and the regulatory-scrutiny watch item from this morning both stand unchanged.</p>
+
+<!-- ====================== POLYMARKET ====================== -->
+<h2>Polymarket Calibration</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> the Hormuz move held through the close rather than reversing, and a short-dated variant moved with it for the first time this week. AI-bubble-burst remains an unfixed data-quality problem.</div>
+
+<table>
+  <tr><th>Contract</th><th>This morning</th><th>This evening</th><th>Delta</th></tr>
+  <tr><td>Hormuz normal by Dec 31</td><td>19%</td><td>~19%</td><td>Held, didn't reverse</td></tr>
+  <tr><td>Hormuz normal by Nov 30</td><td>10%</td><td class="neg">~13%</td><td>First short-dated move in the same direction as the headline contract</td></tr>
+  <tr><td>AI-bubble burst by Dec 31</td><td>Unresolved — geofencing block</td><td>Unresolved — scattered 7%-26% across sources</td><td>Fourth straight cycle unresolved; needs a direct gamma-API fetch, not a browser search</td></tr>
+</table>
+
+<h3>The structural read</h3>
+<p>The Hormuz contract holding its new level through a full session, with a shorter-dated variant now moving alongside it, is better evidence this was a genuine repricing than a one-print reaction — consistent with this morning's read. The AI-bubble-burst contract's continued unresolved state is an operational gap this file is carrying forward rather than papering over with a guessed number; it genuinely needs the gamma-API route next cycle.</p>
+
+<!-- ====================== BOTTOM LINE ====================== -->
+<div class="punchline-box">
+  <h3>Bottom Line / Portfolio Implication</h3>
+  <p>The morning's thesis held and sharpened rather than reversed. Every market signal the morning flagged — the selloff, the VIX break, CRWV's distress pricing — deepened into the close rather than stabilizing, which is itself the answer to the morning's open question. On Iran, the operational track kept outrunning the diplomatic one: Hormuz escalated to claimed mine strikes (disputed by CENTCOM), the Houthi/Red Sea front widened toward the Mecca region, and Tehran still hasn't answered Vance's letter. The one genuinely new data point tonight — a leaked, unaudited $16.8B Q3 revenue figure for Anthropic — is directionally supportive of this morning's demand case but isn't strong enough on its own to resolve the sentiment-versus-fundamentals tension this file has been naming all week. Zero positions remains correct heading into the weekend: nothing tonight argues for urgency, and the real tests (Iran's formal response, the Anthropic S-1 amendment, Monday's open) are still ahead, not behind.</p>
+</div>
+
+<!-- ====================== SOURCES ====================== -->
+<h2>Sources</h2>
+<div class="sources">
+  <p><strong>Iran / Hormuz:</strong></p>
+  <ul>
+    <li><a href="https://www.cbsnews.com/live-updates/iran-war-donald-trump-qatar-mediators-new-proposal-end-war/">CBS News — Tankers strike mines in Strait of Hormuz, Iran says</a></li>
+    <li><a href="https://gulfnews.com/world/americas/strait-of-hormuz-update-us-makes-major-claim-about-irans-forces-1.500729768">Gulf News — US forces clear Strait of Hormuz of Iranian mines (CENTCOM claim)</a></li>
+    <li><a href="https://www.cnbc.com/2026/10/30/iran-trump-hormuz-oil-middle-east-.html">CNBC — Iran claims four tankers struck mines in Hormuz</a></li>
+    <li><a href="https://www.jpost.com/middle-east/article-913351">Jerusalem Post — Houthis continue fierce battles; Saudi/Yemen strikes</a></li>
+    <li><a href="https://www.washingtontimes.com/news/2026/oct/30/qatari-diplomats-return-tehran-talks-iran-considers-vance-letter/">Washington Times — Qatari diplomats return to Tehran as Iran considers Vance letter</a></li>
+  </ul>
+  <p><strong>Markets / earnings:</strong></p>
+  <ul>
+    <li><a href="https://finance.yahoo.com/markets/live/stock-market-today-friday-october-30-dow-sp-500-nasdaq-amazon-intel-ai-sell-off-191429143.html">Yahoo Finance — Nasdaq, Dow, S&amp;P 500 clobbered as October closes with sell-off</a></li>
+    <li><a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-oct-30-2026">TheStreet — Intel, Reddit latest tech-earnings casualties as Nasdaq sinks</a></li>
+  </ul>
+  <p><strong>AI ecosystem:</strong></p>
+  <ul>
+    <li><a href="https://finance.yahoo.com/technology/article/anthropic-q3-revenue-climbs-to-168-billion-report-221619202.html">Yahoo Finance / CNBC — Anthropic Q3 revenue climbs to $16.8 billion: report</a></li>
+  </ul>
+</div>
+
+<div class="footer">
+  Daily News Brief · October 30, 2026 · Friday Evening Wrap · Day 245 of the Iran war<br>
+  <em>Andres's daily analyst. Structural reads, not headline regurgitation.</em>
+</div>
+
+</div>
+
+</body>
+</html>
