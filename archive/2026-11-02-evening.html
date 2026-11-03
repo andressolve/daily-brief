@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily News Brief — November 2, 2026 (Evening Wrap)</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --surface: #121820;
+    --surface2: #1a2230;
+    --border: #243044;
+    --text: #c8d3e0;
+    --text-dim: #6b7d93;
+    --heading: #e8edf3;
+    --accent: #4fc3f7;
+    --accent2: #81c784;
+    --warn: #ffb74d;
+    --danger: #ef5350;
+    --gold: #ffd54f;
+    --purple: #b39ddb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a0a0a 0%, #2a0a1a 50%, #0a1a2e 100%);
+    border-bottom: 1px solid var(--danger);
+    padding: 50px 40px 40px;
+    text-align: center;
+  }
+  .header .day-tag {
+    display: inline-block;
+    background: rgba(239,83,80,0.2);
+    border: 1px solid rgba(239,83,80,0.4);
+    color: var(--danger);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--heading);
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .header .subtitle {
+    font-size: 18px;
+    color: var(--warn);
+    font-weight: 400;
+  }
+  .header .subtitle-sub {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 10px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--heading);
+    margin: 48px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 28px 0 12px;
+  }
+  p { margin-bottom: 14px; }
+  strong { color: var(--heading); }
+  em { color: var(--accent); font-style: italic; }
+  ul, ol { margin: 0 0 14px 22px; }
+  li { margin-bottom: 6px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  table tr:last-child td { border-bottom: none; }
+  table td:first-child {
+    font-weight: 700;
+    color: var(--heading);
+  }
+  .badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+  .badge-red { background: var(--danger); color: #fff; }
+  .badge-green { background: var(--accent2); color: var(--bg); }
+  .badge-blue { background: var(--accent); color: var(--bg); }
+  .badge-yellow { background: var(--warn); color: var(--bg); }
+  .badge-purple { background: var(--purple); color: var(--bg); }
+  .tldr-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.1), rgba(255,183,77,0.05));
+    border: 2px solid var(--danger);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin: 24px 0 32px;
+  }
+  .tldr-box h3 {
+    color: var(--danger);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .delta-box {
+    background: var(--surface2);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 20px;
+    margin: 0 0 18px;
+    font-size: 13.5px;
+    color: var(--text-dim);
+  }
+  .delta-box strong { color: var(--accent); }
+  .honest-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--purple);
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin: 24px 0;
+  }
+  .honest-box h3 {
+    color: var(--purple);
+    margin-top: 0;
+    margin-bottom: 14px;
+  }
+  .punchline-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.08), rgba(79,195,247,0.05));
+    border: 2px solid rgba(239,83,80,0.3);
+    border-radius: 10px;
+    padding: 28px;
+    margin: 32px 0;
+    text-align: center;
+  }
+  .punchline-box h3 {
+    color: var(--danger);
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .punchline-box p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    max-width: 760px;
+    margin: 0 auto 10px;
+    color: var(--text);
+  }
+  .sources { font-size: 12.5px; color: var(--text-dim); }
+  .sources a { color: var(--accent); text-decoration: none; }
+  .sources a:hover { text-decoration: underline; }
+  .footer {
+    border-top: 1px solid var(--border);
+    margin-top: 50px;
+    padding-top: 20px;
+    color: var(--text-dim);
+    font-size: 12px;
+    text-align: center;
+  }
+  .pos { color: var(--accent2); }
+  .neg { color: var(--danger); }
+  .move-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  .move-table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  .move-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .correction-box {
+    background: rgba(179,157,219,0.08);
+    border: 2px solid var(--purple);
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 24px 0 32px;
+  }
+  .correction-box h3 {
+    color: var(--purple);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="day-tag">Day 248 of the Iran War · Monday Evening Wrap · Midterms Tomorrow</div>
+  <h1>Daily News Brief — November 2, 2026</h1>
+  <div class="subtitle">The morning's oil-driven relief rally fully reversed by the close (Nasdaq -1.07%), while oil itself kept falling on an unaccepted Iranian offer. Apple beat on revenue and EPS but sold off on weak guidance — a pattern that raises the bar for AMD tomorrow. The Netanyahu-Trump split got broader corroboration, and Polymarket's own instrument finally priced it.</div>
+  <div class="subtitle-sub">Run: ~17:00 PT · 188th consecutive zero-position day · Tomorrow (Nov 3): Apollo Q3 before open, US midterms, AMD after close — triple-convergence day · Nov 6 Micron-Taoyuan third round · Nov 10 CoreWeave Q3 · Nov 12 Nebius Q3 · Nov 17 NVDA Q3 · Week of Nov 16 Anthropic IPO target</div>
+</div>
+
+<div class="container">
+
+<!-- ====================== TL;DR ====================== -->
+<div class="tldr-box">
+  <h3>TL;DR — What changed since this morning, and why it matters</h3>
+  <ul>
+    <li><strong>The morning's relief rally fully reversed by the close.</strong> S&amp;P 500 closed 7,541.40 (-0.51%), Nasdaq 25,164.32 (-1.07%) — both erasing the morning's oil-driven bounce (S&amp;P +0.48%, Nasdaq +0.60% intraday). Only the Dow held a gain (51,983.98, +0.41%). Tech led the reversal for a second straight session.</li>
+    <li><strong>Oil didn't reverse — it kept falling.</strong> Brent closed $104.19 (-4.36%), WTI $96.23 (-4.54%), well below the morning's ~$108-109/~$99.71-100 levels, on an Iranian offer (Araghchi's two-day Hormuz-reopening plan) that Washington still hasn't formally accepted. The market is pricing diplomatic follow-through more confidently than the headline record supports.</li>
+    <li><strong>Apple beat the number, missed the guide, and the stock sold off ~4.3%</strong> including after-hours — revenue and EPS both beat consensus, but a weak margin forecast and a Mac/iPad miss drove the drop. Directly relevant to AMD's own print tomorrow after close, already priced for a ±8.9% move.</li>
+    <li><strong>The Netanyahu-Trump split got broader (AP, not just Axios) corroboration</strong>, and Polymarket's own midterm-window ceasefire contract moved for the first time to price it — implied pre-Nov-4 strike odds roughly doubled, from ~4.5% to ~8.9%, still a low absolute number.</li>
+    <li><strong>Anthropic's S-1/A disclosed a number not in this morning's brief:</strong> $895.4B in total compute commitments through 2045. The same day, CoreWeave signed Anthropic as its fourth top-lab customer (backlog now $66.8B) even as its own stock fell to -45.3% over 19 sessions and Oracle/SpaceX CDS hit record highs — the AI-credit story widened past one neocloud into the investment-grade hyperscaler tier.</li>
+  </ul>
+</div>
+
+<!-- ====================== MORNING -> EVENING ====================== -->
+<div class="correction-box">
+  <h3>Morning → Evening: what moved</h3>
+  <table class="move-table">
+    <tr><th>Item</th><th>This morning</th><th>Tonight</th><th>Delta</th></tr>
+    <tr><td>S&amp;P 500</td><td>+0.48% intraday (~7,616)</td><td class="neg">-0.51% close (7,541.40)</td><td>Full round-trip reversal</td></tr>
+    <tr><td>Nasdaq</td><td>+0.60% intraday (~25,589)</td><td class="neg">-1.07% close (25,164.32)</td><td>Reversal, tech led</td></tr>
+    <tr><td>Dow</td><td>+0.81% intraday (~52,190)</td><td class="pos">+0.41% close (51,983.98)</td><td>Held a gain, smaller</td></tr>
+    <tr><td>Brent crude</td><td>~$108-109</td><td class="neg">$104.19 (-4.36%)</td><td>Fell further, didn't reverse</td></tr>
+    <tr><td>WTI crude</td><td>~$99.71-100</td><td class="neg">$96.23 (-4.54%)</td><td>Fell further, broke below $97</td></tr>
+    <tr><td>Ceasefire-through-midterms (Polymarket)</td><td>95.5% Yes</td><td class="neg">91.1% Yes (-3.4pp)</td><td>Implied strike odds ~4.5% → ~8.9%</td></tr>
+    <tr><td>AI-bubble-burst (Polymarket)</td><td>6.35% Yes</td><td class="pos">8.75% Yes (+2.4pp)</td><td>Partial reversal of yesterday's -3.2pp drop</td></tr>
+    <tr><td>Senate control (Polymarket)</td><td>Dem 73.5%</td><td class="pos">Dem 75.5% (+2pp)</td><td>First real midterm-eve tightening this week</td></tr>
+    <tr><td>Apple (AAPL)</td><td>Flagged: 4-for-4 beat streak on the line</td><td class="neg">Beat both lines, stock -4.3% incl. after-hours</td><td>Beat the number, missed the guide</td></tr>
+  </table>
+</div>
+
+<!-- ====================== IRAN ====================== -->
+<h2>Iran / Middle East Geopolitics</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> the Netanyahu-Trump split got independent AP corroboration (not just Axios/Iran International), and Polymarket's own midterm-window contract moved for the first time to price it.</div>
+
+<p>AP-sourced reporting now confirms Netanyahu is pressing Trump to strike Iran immediately after Tuesday's midterms, with Trump preferring to let negotiations play out — the same split this morning's brief had only from Axios/Iran International, now carried by a third, independent wire. Secretary Rubio's "Trump has not decided" line stands unchanged. Separately, Trump said today "Iran wants a settlement" after Tehran called on the US to make the next move — a mildly softer public register than Saturday's framing, consistent with (not a reversal of) this morning's read that Trump sounds like the side cooling on the Nov 4 window. Araghchi's two-day Hormuz-reopening plan (US sanctions relief day one, Iran reopens day two) remains the active, unanswered proposal — no Washington response found tonight.</p>
+
+<p>Polymarket's "ceasefire continues through the midterms" contract, which this morning read 95.5% Yes (implying ~4.5% strike odds before Nov 4), moved to <strong>91.1% Yes on a direct fetch tonight, -3.4pp on the day</strong> — implying strike odds before Nov 4 nearly doubled to ~8.9%. The broader Hormuz-normal-by-Dec-31 contract held flat at 11.5% for a second straight day. No new confirmation or denial of this morning's IRGC claim of two additional mined tankers; CENTCOM remains silent.</p>
+
+<h3>The structural read</h3>
+<p>Tonight's real update is that the market's own instrument moved in the direction broader-sourced reporting would predict — more credible reporting on a real Trump-Netanyahu split translated into a real, if still small, repricing of strike risk, rather than sitting inert the way the Hormuz contract has on less-corroborated claims. <strong>Bear case:</strong> doubling from ~4.5% to ~8.9% is still a low absolute probability and reads like the market catching up to information already in Monday's headlines, not a fresh escalation. <strong>Bull case:</strong> Trump's own public language moved softer, not harder, the same day — if his decision-making tracks his rhetoric, the diplomatic track still looks like the one he's leaning toward. Watch: does Washington respond to Araghchi's plan before Herzog's Wednesday coalition consultations begin.</p>
+
+<!-- ====================== MARKETS ====================== -->
+<h2>Markets / Macro</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> the oil-driven relief rally fully reversed by the close, confirming the Russell 2000 divergence flagged this morning as a "narrow rally" tell.</div>
+
+<p>Final closes: S&amp;P 500 <strong>7,541.40 (-0.51%</strong> from Friday's 7,580), Dow <strong>51,983.98 (+0.41%)</strong>, Nasdaq <strong>25,164.32 (-1.07%)</strong>. The session round-tripped: this morning's intraday read had S&amp;P +0.48% and Nasdaq +0.60% on the oil catalyst; both gave it all back and more into the close, while the Dow alone held a smaller gain — tech underperformed for a second straight session. Oil kept falling rather than reversing: Brent closed <strong>$104.19 (-4.36%)</strong>, WTI <strong>$96.23 (-4.54%)</strong>, both well below the morning's levels, as Araghchi's two-day plan held through the day without being walked back by either side.</p>
+
+<p>Apple reported Q4 results after the close — revenue $114.48B and EPS $2.10 both beat consensus ($113.47B/$2.00), extending the beat streak on paper — but a disappointing margin forecast plus a Mac/iPad miss drove the stock down roughly 4.3% including after-hours, a clean "beat the headline, miss the guide" pattern worth holding onto ahead of AMD's own print tomorrow. Credit stress widened past CoreWeave specifically: Oracle's 5-year CDS hit a record ~263bp and SpaceX's ~203bp today, with CDS on Amazon/Alphabet/Meta/Nvidia also at record (if narrower) levels — a broadening of the AI-credit story from one distressed neocloud to the investment-grade hyperscaler tier.</p>
+
+<h3>The structural read</h3>
+<p>Tonight is a clean, same-day confirmation of this morning's own flagged tell — a relief rally built on a narrow, oil-only catalyst, with the Russell already diverging at the open, didn't broaden; it reversed, and tech led the reversal. That matters heading into tomorrow's genuine triple-convergence day: if Apple's "beat the number, miss the guide, sell the stock" pattern repeats with AMD, that's a second data point in two days that the market is pricing cost/margin trajectory over top-line beats across the AI-capex complex. Oil's continued decline despite zero confirmed deal is the more surprising half of tonight — worth flagging as a possible overshoot if Washington doesn't respond to Araghchi's plan tomorrow.</p>
+
+<!-- ====================== AI ECOSYSTEM ====================== -->
+<h2>AI Ecosystem</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> the further-amended S-1/A disclosed a headline commitment number not in this morning's brief, the same day CoreWeave landed Anthropic as its fourth top-lab customer even as its own stock keeps falling and big-tech credit stress widened.</div>
+
+<p>Anthropic's S-1/A quantifies Q3 revenue at $17.0B (consistent with this morning's $16.956B, now rounded in secondary coverage), up 1,127% YoY, and separately discloses <strong>$895.4B in total compute commitments through 2045</strong>, including $121.3B with Google and $120.5B with SpaceX — the first time this file has seen the full multi-decade commitment ladder quantified in one place. Separately, CoreWeave signed a multi-year compute agreement to run Claude workloads at production scale, meaning CoreWeave now counts all four of the largest AI labs (Anthropic, OpenAI, Google, Meta) as customers, with contracted backlog reaching <strong>$66.8B</strong> — a genuine demand-side win landing the same week CoreWeave's own equity fell <strong>45.3% over its trailing 19 sessions</strong>, with options trading in the name hitting a record. Credit stress generalized beyond CoreWeave: Oracle's 5-year CDS hit a record ~263bp, SpaceX's ~203bp, and CDS on Amazon/Alphabet/Meta/Nvidia also reached record (if narrower) levels; Jump Trading reportedly opened a desk specifically to hedge "collapsing GPU rents." The AI-bubble-burst Polymarket contract partially reversed yesterday's confirmed -3.2pp drop, direct-fetched tonight at <strong>8.75% Yes</strong> (up from this morning's 6.35% low), still with no single confirmed causal headline.</p>
+
+<h3>The structural read</h3>
+<p>Tonight is the clearest example yet of this file's standing bifurcation — real, growing, multi-decade-scale demand (Anthropic's own $895.4B commitment ladder, CoreWeave's backlog crossing $66.8B on the strength of signing all four top labs) sitting directly alongside record-wide credit protection costs on the same counterparties funding that demand. <strong>Bear case:</strong> a backlog number and a commitment ladder are forward promises, not delivered cash flow, and CDS markets pricing Oracle and SpaceX at record spreads the same day those promises got bigger says the market thinks delivery risk, not demand, is the live question. <strong>Bull case:</strong> CoreWeave landing the fourth and final top-tier lab as a customer is real, not speculative, revenue visibility — a company with an expanding backlog is a different credit case than one with shrinking demand. AMD's print tomorrow after close is the next hard data point on whether the AI-capex complex's own numbers support current spending plans.</p>
+
+<!-- ====================== PORTFOLIO ====================== -->
+<h2>Portfolio Tickers</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> 188th consecutive zero-position day; no new ticker-specific catalyst, but Apple's print is a directly relevant cross-market signal ahead of tomorrow's AMD report.</div>
+
+<table>
+  <tr><th>Ticker</th><th>What's new tonight</th><th>Read</th></tr>
+  <tr><td>AAPL (context)</td><td>Beat revenue ($114.48B vs. $113.47B) and EPS ($2.10 vs. $2.00) but sold off ~4.3% incl. after-hours on weak margin guidance and a Mac/iPad miss</td><td>Raises the bar for AMD's print tomorrow, already priced for a ±8.9% move</td></tr>
+  <tr><td>CRWV</td><td>No new funding-gap estimate, but credit stress generalized — Oracle/SpaceX CDS at record highs; CRWV equity now -45.3% over 19 sessions</td><td>Worse than this morning's framing captured; see AI section</td></tr>
+  <tr><td>APO</td><td>Reports tomorrow before the open, 8:30am ET — still correctly dated to Nov 3</td><td>No new item tonight beyond the calendar</td></tr>
+  <tr><td>AMD</td><td>Reports tomorrow after close</td><td>Apple's "beat but sold off" pattern is the relevant comp</td></tr>
+  <tr><td>NVDA, NBIS, MU, TSMC, AMZN, XLE, OWL, ARCC</td><td>No genuinely new item found tonight</td><td>Explicitly checked and ruled out, not silently skipped</td></tr>
+</table>
+
+<h3>The structural read</h3>
+<p>Tomorrow's triple-convergence (Apollo/midterms/AMD) just got a sharper lens from tonight's Apple print — the market is punishing guidance and margin trajectory even when headline numbers beat. Nothing tonight changes the standing zero-position posture on any of the 11 tracked tickers.</p>
+
+<!-- ====================== PRIVATE CREDIT ====================== -->
+<h2>Private Credit</h2>
+<div class="delta-box"><strong>No material change since this morning</strong> — expected, given Apollo's own Q3 print, the real test on this beat, lands tomorrow before the open.</div>
+
+<p>No new litigation, redemption, or mark-divergence item found tonight beyond this morning's Mayer Brown/Bloomberg items. Standing watch, unchanged: Apollo Q3 tomorrow, Nov 3, 8:30am ET — the next real test of whether the Bloomberg mark-divergence data or Piper Sandler's fundamentals-upgrade framing holds up against the print.</p>
+
+<!-- ====================== POLYMARKET ====================== -->
+<h2>Polymarket Calibration</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> the midterm-window ceasefire contract moved for the first time in days — implied pre-midterm strike odds nearly doubled — while Hormuz held flat and the AI-bubble contract partially reversed last night's drop. All figures below are direct Gamma-API fetches tonight.</div>
+
+<table>
+  <tr><th>Contract</th><th>This morning</th><th>Tonight</th><th>Delta</th></tr>
+  <tr><td>Ceasefire continues through midterms (resolves Nov 4)</td><td>95.5% Yes</td><td class="neg">91.1% Yes</td><td>-3.4pp — implied strike odds ~4.5% → ~8.9%</td></tr>
+  <tr><td>Hormuz normal by Dec 31</td><td>11.5% Yes</td><td>11.5% Yes</td><td>Flat for a second straight day</td></tr>
+  <tr><td>AI bubble burst by Dec 31</td><td class="neg">6.35% Yes</td><td class="pos">8.75% Yes</td><td>+2.4pp, partial reversal of yesterday's -3.2pp drop, no confirmed cause</td></tr>
+  <tr><td>House control</td><td>Dem 94.5% / Rep 5.5%</td><td>Dem 94.5% / Rep 5.5%</td><td>Unchanged to the decimal</td></tr>
+  <tr><td>Senate control</td><td>Dem 73.5% / Rep 27.5%</td><td class="pos">Dem 75.5% / Rep 24.5%</td><td>+2pp Dem — clearest midterm-eve tightening logged this cycle</td></tr>
+</table>
+
+<h3>The structural read</h3>
+<p>Tonight's most actionable finding is that the midterm-window ceasefire contract — the single most relevant instrument for the Nov 4 strike question — finally moved, and moved in the direction today's broader-sourced reporting would predict, a point in favor of trusting this contract's signal. Senate's +2pp eve-of-election tightening toward Democrats is small but directionally the first real midterm-eve movement either chamber has shown this week. The AI-bubble contract's partial reversal still has no single confirmed cause — worth flagging that gap rather than retrofitting a clean narrative onto it.</p>
+
+<!-- ====================== BOTTOM LINE ====================== -->
+<div class="punchline-box">
+  <h3>Bottom Line / Portfolio Implication</h3>
+  <p>Nothing tonight reverses any thesis the morning brief carried — every thread deepened rather than resolved. The genuine surprise is magnitude: oil fell further than the morning's framing implied was likely on an unaccepted offer, and Apple's stock drop despite a clean beat is a sharper "guidance over headline" signal than expected, directly relevant to tomorrow's AMD print — if AMD beats and still sells off, that's a second data point in two days that the market is pricing cost trajectory over top-line growth across the AI-capex complex, an argument for continued patience rather than reading this week's AI-infra selloff as a buyable dip. On Iran, the Netanyahu-Trump split moving from single/double-sourced to AP-corroborated, with Polymarket's own instrument finally pricing it (implied strike odds nearly doubling to ~8.9%, still low in absolute terms), is this file's cleanest same-day example yet of a market-calibration read confirming improved-quality reporting. Tomorrow is the sharpest near-term catalyst window this file has flagged in weeks: the midterm vote, Apollo's Q3, and AMD's after-close report all land on the same day — watch whether any of the three breaks a thesis this file is currently holding, especially the "demand real, financing strained" AI framing and the private-credit fundamentals-vs-litigation tension.</p>
+</div>
+
+<!-- ====================== SOURCES ====================== -->
+<h2>Sources</h2>
+<div class="sources">
+  <p><strong>Iran / Hormuz / Israel:</strong></p>
+  <ul>
+    <li><a href="https://spectrumlocalnews.com/nc/triad/international/2026/11/02/netanyahu-pressing-trump-to-attack-iran-after-midterms-officials-say">AP via Spectrum News — Netanyahu pressing Trump to attack Iran after midterms</a></li>
+    <li><a href="https://www.cbsnews.com/live-updates/iran-war-us-trump-negotiations-midterms/">CBS News — Live updates: Trump says "Iran wants a settlement"</a></li>
+    <li><a href="https://www.euronews.com/2026/11/02/iran-says-ready-to-reopen-hormuz-in-two-days-if-us-agrees-to-demands">Euronews — Iran says it can reopen Hormuz in two days if US meets conditions</a></li>
+    <li><a href="https://straits.live/briefs/2026-11-02">Straits Daily Brief — Strait of Hormuz News, November 2, 2026</a></li>
+  </ul>
+  <p><strong>Markets:</strong></p>
+  <ul>
+    <li><a href="https://finance.yahoo.com/markets/world-indices/articles/major-us-stock-indexes-fared-212103580.html">Yahoo Finance — How major US stock indexes fared Monday 11/2/2026</a></li>
+    <li><a href="https://energynow.com/2026/11/oil-prices-plunge-more-than-4-as-u-s-iran-peace-talks-raise-hopes-of-easing-middle-east-supply-disruptions/">EnergyNow — Oil prices plunge more than 4% as US-Iran peace talks raise hopes</a></li>
+    <li><a href="https://fortune.com/article/price-of-oil-11-02-2026/">Fortune — Current price of oil as of November 2, 2026</a></li>
+    <li><a href="https://appleinsider.com/articles/26/11/02/nevermind-aapl-is-down-after-earnings">AppleInsider — Nevermind, AAPL is down after earnings</a></li>
+    <li><a href="https://www.cnbc.com/2026/11/02/apple-aapl-q4-2026-earnings-live-updates.html">CNBC — Apple's stock drops on weak margin forecast</a></li>
+    <li><a href="https://x.com/GlobalMktObserv/status/2110363371631468871">Global Markets Investor via X — Oracle, SpaceX, CoreWeave CDS at record highs</a></li>
+  </ul>
+  <p><strong>AI ecosystem:</strong></p>
+  <ul>
+    <li><a href="https://fourweekmba.com/ai-daily-roundup-2-nov-2026-anthropic-17b-quarter-895b">FourWeekMBA — AI Daily: Anthropic's $17B Quarter and $895B of Commitments</a></li>
+    <li><a href="https://thenextweb.com/news/coreweave-has-agreed-a-multi-year-gpu-cloud-deal-with-anthropic-to-power-claude-at-production-scale-its-second-major-ai-infrastructure-announcement-in-48-hours">TheNextWeb — CoreWeave signs multi-year Anthropic deal</a></li>
+    <li><a href="https://fourweekmba.com/ai-nasdaq-100-is-10-4-off-its-record-coreweave-is-down-45">FourWeekMBA — Nasdaq 100 10.4% off record; CoreWeave down 45%</a></li>
+  </ul>
+  <p><strong>Polymarket:</strong></p>
+  <ul>
+    <li><a href="https://polymarket.com/event/us-iran-ceasefire-continues-through-the-midterms">Polymarket — US-Iran ceasefire continues through the midterms</a></li>
+    <li><a href="https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-december-31">Polymarket — Strait of Hormuz traffic returns to normal by Dec 31</a></li>
+    <li><a href="https://polymarket.com/event/ai-bubble-burst-by">Polymarket — AI bubble burst by Dec 31, 2026</a></li>
+    <li><a href="https://polymarket.com/event/which-party-will-win-the-house-in-2026">Polymarket — Which party will win the House in 2026</a></li>
+    <li><a href="https://polymarket.com/event/which-party-will-win-the-senate-in-2026">Polymarket — Which party will win the Senate in 2026</a></li>
+  </ul>
+</div>
+
+<div class="footer">
+  Daily News Brief · November 2, 2026 · Monday Evening Wrap · Day 248 of the Iran war<br>
+  <em>Andres's daily analyst. Structural reads, not headline regurgitation.</em>
+</div>
+
+</div>
+
+</body>
+</html>
