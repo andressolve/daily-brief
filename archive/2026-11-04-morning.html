@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily News Brief — November 4, 2026 (Morning Brief)</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --surface: #121820;
+    --surface2: #1a2230;
+    --border: #243044;
+    --text: #c8d3e0;
+    --text-dim: #6b7d93;
+    --heading: #e8edf3;
+    --accent: #4fc3f7;
+    --accent2: #81c784;
+    --warn: #ffb74d;
+    --danger: #ef5350;
+    --gold: #ffd54f;
+    --purple: #b39ddb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a0a0a 0%, #2a0a1a 50%, #0a1a2e 100%);
+    border-bottom: 1px solid var(--danger);
+    padding: 50px 40px 40px;
+    text-align: center;
+  }
+  .header .day-tag {
+    display: inline-block;
+    background: rgba(239,83,80,0.2);
+    border: 1px solid rgba(239,83,80,0.4);
+    color: var(--danger);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--heading);
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .header .subtitle {
+    font-size: 18px;
+    color: var(--warn);
+    font-weight: 400;
+  }
+  .header .subtitle-sub {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 10px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--heading);
+    margin: 48px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 28px 0 12px;
+  }
+  p { margin-bottom: 14px; }
+  strong { color: var(--heading); }
+  em { color: var(--accent); font-style: italic; }
+  ul, ol { margin: 0 0 14px 22px; }
+  li { margin-bottom: 6px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  table tr:last-child td { border-bottom: none; }
+  table td:first-child {
+    font-weight: 700;
+    color: var(--heading);
+  }
+  .badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+  .badge-red { background: var(--danger); color: #fff; }
+  .badge-green { background: var(--accent2); color: var(--bg); }
+  .badge-blue { background: var(--accent); color: var(--bg); }
+  .badge-yellow { background: var(--warn); color: var(--bg); }
+  .badge-purple { background: var(--purple); color: var(--bg); }
+  .tldr-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.1), rgba(255,183,77,0.05));
+    border: 2px solid var(--danger);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin: 24px 0 32px;
+  }
+  .tldr-box h3 {
+    color: var(--danger);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .delta-box {
+    background: var(--surface2);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 20px;
+    margin: 0 0 18px;
+    font-size: 13.5px;
+    color: var(--text-dim);
+  }
+  .delta-box strong { color: var(--accent); }
+  .honest-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--purple);
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin: 24px 0;
+  }
+  .honest-box h3 {
+    color: var(--purple);
+    margin-top: 0;
+    margin-bottom: 14px;
+  }
+  .punchline-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.08), rgba(79,195,247,0.05));
+    border: 2px solid rgba(239,83,80,0.3);
+    border-radius: 10px;
+    padding: 28px;
+    margin: 32px 0;
+    text-align: center;
+  }
+  .punchline-box h3 {
+    color: var(--danger);
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .punchline-box p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    max-width: 760px;
+    margin: 0 auto 10px;
+    color: var(--text);
+  }
+  .sources { font-size: 12.5px; color: var(--text-dim); }
+  .sources a { color: var(--accent); text-decoration: none; }
+  .sources a:hover { text-decoration: underline; }
+  .footer {
+    border-top: 1px solid var(--border);
+    margin-top: 50px;
+    padding-top: 20px;
+    color: var(--text-dim);
+    font-size: 12px;
+    text-align: center;
+  }
+  .pos { color: var(--accent2); }
+  .neg { color: var(--danger); }
+  .move-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  .move-table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  .move-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .correction-box {
+    background: rgba(179,157,219,0.08);
+    border: 2px solid var(--purple);
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 24px 0 32px;
+  }
+  .correction-box h3 {
+    color: var(--purple);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="day-tag">Day 250 of the Iran War · Day After US Midterms · Morning Brief</div>
+  <h1>Daily News Brief — November 4, 2026</h1>
+  <div class="subtitle">Democrats swept the Senate and House decisively; Trump accepted the results and markets round-tripped from an overnight sell-off into a relief rally. The sweep produced one genuinely new risk: an AI-data-center-policy scare that hit CoreWeave and Nebius. Iran's Hormuz claims escalated to the highest tempo yet while Israel's non-recognition threat collapsed at certification.</div>
+  <div class="subtitle-sub">Run: ~08:00 PT · 191st consecutive zero-position day · Nov 6 Micron-Taoyuan third round · Nov 10 CoreWeave Q3 / OWL dividend record date · Nov 12 Nebius Q3 · Nov 17 NVDA Q3 · Week of Nov 9 Anthropic roadshow · Nov 23 OWL dividend payable / Jupiter permit decision</div>
+</div>
+
+<div class="container">
+
+<!-- ====================== TL;DR ====================== -->
+<div class="tldr-box">
+  <h3>TL;DR — What changed overnight, and why it matters</h3>
+  <ul>
+    <li><strong>Democrats swept the Senate and House, and Trump accepted it cleanly.</strong> Democrats are projected to hold at least 54 Senate seats (flipping Maine, Michigan, Iowa, Texas) and the House. Trump called in to Fox News, said he was "a little bit surprised," congratulated Democrats, and emphasized his veto power rather than contesting anything.</li>
+    <li><strong>Markets round-tripped: an overnight sell-off on uncertainty, then a relief rally once the transition looked orderly.</strong> S&amp;P futures fell as much as -0.8% overnight; VIX then fell -12% to 18.25 and futures rose ~1% once Trump's acceptance removed contested-outcome risk. Gold jumped 2.9% to ~$4,046, BTC recovered to ~$77,900.</li>
+    <li><strong>A new, genuinely separate risk hit the neoclouds: AI-data-center policy.</strong> Altimeter's Brad Gerstner warned a Democratic Congress could delay 10-15GW of AI data-center capacity on regulatory grounds (a construction pause, shifting electricity costs onto tech firms). CoreWeave fell as much as -9.6% premarket, Nebius -6.4% — distinct from CRWV's existing debt/CDS overhang.</li>
+    <li><strong>Hormuz escalated to its highest claimed tempo yet, while Israel's legitimacy threat collapsed at certification.</strong> The IRGC claimed four more tankers destroyed by mines overnight (11 claimed in nine days); CENTCOM moved from silence to active denial. Meanwhile Israel's election commission certified the results and rejected Likud's fraud claims outright — the non-recognition threat flagged last night did not survive the actual process.</li>
+    <li><strong>AMD's beat carried through the broader semis complex.</strong> NVDA, Intel (+4%), and Marvell (+2%) all traded higher Wednesday on the read-through, reinforcing that the Apple "beat-miss-guide-sell" pattern was name-specific, not sector-wide.</li>
+  </ul>
+</div>
+
+<!-- ====================== EVENING -> MORNING ====================== -->
+<div class="correction-box">
+  <h3>Evening → Morning: what moved</h3>
+  <table class="move-table">
+    <tr><th>Item</th><th>Last night (~17:30 PT)</th><th>This morning (~08:00 PT)</th><th>Delta</th></tr>
+    <tr><td>Senate/House control</td><td>Polymarket 83% / 98.1% Yes Dem, not yet called</td><td class="pos">Called decisively Dem by CBS/CNBC (≥54 Senate seats, House flipped)</td><td>Resolved; clean Polymarket re-fetch still pending</td></tr>
+    <tr><td>Trump's response</td><td>Unknown, polls still closing</td><td class="pos">Accepted results, congratulated Democrats, posted "VETO" hat image</td><td>No contested-outcome scenario materialized</td></tr>
+    <tr><td>VIX</td><td>20.51 (Tue close)</td><td class="pos">Overnight high ~20.9, then -12% to 18.25</td><td>Round-tripped on acceptance, not on the result itself</td></tr>
+    <tr><td>Gold</td><td>Not flagged</td><td class="neg">+2.92% to ~$4,046</td><td>New — political/hedge move, didn't round-trip like oil</td></tr>
+    <tr><td>CRWV / NBIS</td><td>No new item beyond debt/CDS overhang</td><td class="neg">CRWV -9.6% premarket, NBIS -6.4% on data-center-policy fears</td><td>New, independent catalyst — Gerstner's 10-15GW warning</td></tr>
+    <tr><td>Hormuz tanker claims</td><td>IRGC claims 2 drones + 1 drone downed near Qeshm</td><td class="neg">IRGC claims 4 more tankers mined + 2 detained (11 in 9 days)</td><td>Highest claimed tempo logged; CENTCOM now actively denies</td></tr>
+    <tr><td>Israel/Likud</td><td>Non-recognition "mooted," citing Arab-vote claims</td><td class="pos">Commission certified results, rejected fraud claims; Likud abstained rather than blocking</td><td>Threat collapsed at the actual process, not just rhetorically</td></tr>
+    <tr><td>Oil (Brent/WTI)</td><td>$104.38 / $96.58 (round-tripped from overnight spike)</td><td>~$104.1-104.4 / ~$96.3-96.7, flat to slightly lower</td><td>Still not reacting to escalating Iran claims</td></tr>
+    <tr><td>Anthropic IPO valuation</td><td>$1.4-1.6T range reported</td><td class="neg">Range specified further: $1.4-1.75T, centering $1.5-1.6T; Damodaran trims his own view</td><td>More granular, still trending down from ~$2T</td></tr>
+  </table>
+</div>
+
+<!-- ====================== IRAN ====================== -->
+<h2>Iran / Middle East Geopolitics</h2>
+<div class="delta-box"><strong>Delta since last night:</strong> Hormuz escalated to the highest claimed tempo yet with a firmer CENTCOM denial, while Israel's non-recognition threat collapsed outright at certification.</div>
+
+<p>The IRGC claimed four more tankers destroyed by naval mines and two vessels detained south of the Strait of Hormuz overnight, on top of three tanker fires it claimed the day before — by its own count, 11 tankers set afire in nine days, the highest claimed tempo this file has logged. CENTCOM moved from silence to active denial this time, calling the mine claims "inaccurate" — a firmer US posture than the no-comment stance on last night's drone-kill claims. Mohsen Rezaei, the Supreme National Security Council secretary (not Araghchi), said Washington's response to Iran's Hormuz-reopening plan was "not convincing" and that the US must fully address Iran's seven conditions. Trump separately confirmed on Fox News that Tuesday's Qeshm strike hit an "anti-aircraft facility" — the first on-record US statement of what was actually targeted, beyond this week's "defensive" framing.</p>
+
+<p><strong>On Israel, the opposite happened: the certification process killed the non-recognition threat outright.</strong> The election commission certified the results and rejected Likud's fraud claims, finding "no evidence of irregularities that compromised the integrity of the election or affected its results." In the five-member certification presidium, Yesh Atid and Blue and White voted to ratify, while Likud and Shas abstained rather than voting against. Herzog accepted the certified count and began two days of coalition consultations with bloc leaders.</p>
+
+<h3>The structural read</h3>
+<p>Last night's framing that Likud's "mooted" non-recognition was firming into something more serious did not survive contact with the actual certification process — Likud abstained rather than blocking, and the commission's finding was unambiguous. That's real evidence for institutional resilience in Israel, not just a reprieve. Iran moved the opposite direction: the claimed tanker-mine tempo hit a new high and CENTCOM hardened from silence to explicit denial, which argues the Hormuz track is not cooling even as diplomatic language (Araghchi's plan, Rezaei's complaint) stays active. <strong>Bear case:</strong> Rezaei displacing Araghchi/Ghalibaf as the voice responding to Washington, combined with an escalating tanker-mine claim tempo, suggests the negotiating track may be losing internal authority faster than this file has credited. <strong>Bull case:</strong> CENTCOM's explicit denial is itself a sign Washington is pushing back on the information war rather than treating the claims as credible enough to warrant a kinetic response — and Israel's clean certification removes one of two compounding instability vectors flagged last night. Standing watch: whether CENTCOM ever addresses the Qeshm strike or tanker claims with specifics beyond "inaccurate," and what emerges from Herzog's consultations.</p>
+
+<!-- ====================== MARKETS ====================== -->
+<h2>Markets / Macro</h2>
+<div class="delta-box"><strong>Delta since last night:</strong> Democrats won the Senate and House decisively; markets round-tripped from an overnight sell-off into a relief rally once Trump accepted the results.</div>
+
+<p>Democrats are projected to hold at least 54 Senate seats (flipping Maine/Collins, Michigan, Iowa, Texas) and flipped the House. Trump told Fox News he was "a little bit surprised," called in to congratulate Democrats, and posted a "VETO" hat image rather than contesting anything. Markets moved in two stages: S&amp;P futures fell as much as -0.8% overnight on uncertainty, then fully reversed once the transition looked orderly — VIX fell <strong>-12% to 18.25</strong> from an overnight high near 20.9, Dow/Nasdaq/S&amp;P futures rose roughly 1%. Gold jumped <strong>2.92% to ~$4,046</strong> (silver +4.5%, platinum +2.5%), BTC recovered to <strong>~$77,900</strong> after an earlier -2.8% dip. Oil stayed essentially flat to slightly lower — Brent <strong>~$104.1-104.4</strong>, WTI <strong>~$96.3-96.7</strong>, one source calling it the lowest Brent close since Oct 7 — despite fresh IRGC tanker-mine claims overnight, continuing this week's pattern of oil discounting Iran claims CENTCOM disputes. AMD's beat (logged last night) carried through the broader semis complex Wednesday: NVDA, Intel (+4%), and Marvell (+2%) all traded higher on the read-through.</p>
+
+<h3>The structural read</h3>
+<p>Today's genuinely new lesson is that the overnight sell-off was about contested-outcome risk, not about which party controls Congress — it unwound in full the moment Trump's acceptance removed that specific tail risk, worth remembering the next time an election-night move gets read as a verdict on policy rather than on process. <strong>Bear case:</strong> gold's durable 2.9% jump — unlike oil, which has round-tripped twice this week — suggests at least part of the move is a genuine hedge against fiscal/political uncertainty under divided government, not pure relief. <strong>Bull case:</strong> VIX's -12% move and the equity-futures recovery both point to a market more worried about a contested count than about Democratic control itself — a benign read if it holds. Standing watch: Friday Nov 6 jobs report, whether gold's move fades or holds, AMD's semis read-through surviving the next full session.</p>
+
+<!-- ====================== AI ECOSYSTEM ====================== -->
+<h2>AI Ecosystem</h2>
+<div class="delta-box"><strong>Delta since last night:</strong> a new, independent risk axis appeared — AI-data-center policy risk from the Democratic sweep — distinct from both the financing-stress and valuation threads already tracked.</div>
+
+<p>Altimeter's Brad Gerstner warned the Democratic sweep could delay or pause 10-15GW of planned AI data-center capacity, citing specific proposals — a temporary construction pause pending federal rules, and shifting electricity costs onto tech companies — and CoreWeave and Nebius sold off specifically on this story (portfolio section below). Separately, the Anthropic IPO valuation story firmed with more granularity: some large investors say $1.4-1.5T is fair, others say up to $1.75T is still possible, with sentiment centering on $1.5-1.6T, down from ~$2T; NYU's Aswath Damodaran trimmed his own valuation view and flagged "fragility" in the $1T-revenue assumption underlying the bull case. The roadshow is now reported starting as early as next week (week of Nov 9) with a target to complete the listing the week before Thanksgiving (Nov 26) — more specific than the prior "as early as Nov 16" framing. AMD's demand-side strength stands as this week's one unambiguous bull data point, and is now visibly a different risk category from both the new policy axis and the existing financing-stress thread (CoreWeave/Oracle/Nscale).</p>
+
+<h3>The structural read</h3>
+<p>This file now has three independent, non-overlapping risk axes on the AI-capex complex: hardware demand (currently strong, per AMD), financing/credit (currently stressed, per CoreWeave/Oracle/Nscale), and now policy (newly at risk, per Gerstner's data-center-pause warning). None of the three resolves or offsets the others. <strong>Bear case:</strong> a policy-side risk landing the same week Anthropic's own numbers drew IPO-valuation skepticism means the AI-capex bull case now has to clear hardware demand, financing soundness, <em>and</em> a friendlier-than-expected regulatory environment — three independent conditions, not one. <strong>Bull case:</strong> Gerstner's warning is one investor's framing of still-hypothetical legislation, not passed policy, and AMD's print is real, booked backlog — the demand side of the thesis doesn't need the policy question resolved favorably to stay intact for the next few quarters. Standing watch: whether the data-center-pause idea gains any actual legislative traction, Anthropic's roadshow launch, NVDA's Nov 17 print.</p>
+
+<!-- ====================== PORTFOLIO ====================== -->
+<h2>Portfolio Tickers</h2>
+<div class="delta-box"><strong>Delta since last night:</strong> 191st consecutive zero-position day. A new catalyst hit CRWV and NBIS specifically — AI-data-center policy risk from the Democratic sweep.</div>
+
+<table>
+  <tr><th>Ticker</th><th>What's new this morning</th><th>Read</th></tr>
+  <tr><td>CRWV</td><td>Fell as much as -9.6% premarket on Gerstner's data-center-policy warning</td><td>New catalyst, layered on top of (not a repeat of) the existing debt/CDS overhang</td></tr>
+  <tr><td>NBIS</td><td>Fell -6.4% on the same catalyst</td><td>Same new risk axis as CRWV</td></tr>
+  <tr><td>NVDA</td><td>Traded higher alongside the rest of semis on AMD's read-through</td><td>Hardware-demand strength, unrelated to the CRWV/NBIS policy story</td></tr>
+  <tr><td>TSMC / MU</td><td>Samsung, SK Hynix, Micron, and TSMC each generated more Q3 free cash flow than any other listed US company, including Nvidia</td><td>Balance-sheet strength signal, not a new catalyst</td></tr>
+  <tr><td>OWL</td><td>Raymond James cut target to $15 from $20 (kept Strong Buy); Goldman raised target to $10.50 from $9.50 (kept Neutral)</td><td>Net modestly negative sell-side day; dividend record date Nov 10 / pay Nov 23 unchanged</td></tr>
+  <tr><td>APO</td><td>Still no call-transcript color on mark divergence or litigation after a second dedicated search</td><td>Downgrading from "open item" to "most likely nothing was said"</td></tr>
+  <tr><td>AMZN, ARCC</td><td>No material change</td><td>Explicitly checked and ruled out, not silently skipped</td></tr>
+</table>
+
+<h3>The structural read</h3>
+<p>Today splits the AI-capex-adjacent names on this list along a genuinely new fault line — policy risk (CRWV, NBIS) versus hardware-demand strength (NVDA, via AMD's read-through) — that didn't exist in this file's framing before today. <strong>Bear case:</strong> CRWV now has two independent negative catalysts (financing stress and policy risk) stacking rather than offsetting. <strong>Bull case:</strong> NVDA's own Nov 17 print is a hardware-demand question, not a data-center-policy one, so today's CRWV/NBIS weakness doesn't mechanically transfer to NVDA's own setup. 191 sessions at zero positions remains the right call.</p>
+
+<!-- ====================== PRIVATE CREDIT ====================== -->
+<h2>Private Credit</h2>
+<div class="delta-box"><strong>Delta since last night:</strong> a thin day — one analyst action on OWL, and the Apollo mark-divergence question is being downgraded from "open item" to "likely resolved by silence."</div>
+
+<p>Raymond James cut its Blue Owl (OWL) price target to $15 from $20 (kept Strong Buy) citing a slower-than-expected wealth-channel recovery; Goldman Sachs raised its OWL target slightly to $10.50 from $9.50 but kept Neutral. On the standing question — does Rowan or Apollo's CFO address cross-manager mark divergence or the Mayer Brown litigation thread on the Q3 call — a second dedicated search this morning still found nothing. This file is downgrading that from "genuine open item" to "most likely nothing was said," while leaving it open to revision if a full primary-transcript read ever surfaces commentary. No other redemption-stack, NAV-mark, or BDC news found today.</p>
+
+<h3>The structural read</h3>
+<p>Two searches across two runs finding nothing on the Apollo mark-divergence Q&amp;A is itself informative — if a sell-side analyst had pressed Rowan on it, that exchange would likely have been covered by now. Standing watch unchanged: Nov 6 Micron-Taoyuan third round, Nov 10 CoreWeave Q3/OWL dividend record date, Nov 12 Nebius Q3, Nov 23 Jupiter permit decision/OWL dividend payable.</p>
+
+<!-- ====================== POLYMARKET ====================== -->
+<h2>Polymarket Calibration</h2>
+<div class="delta-box"><strong>Delta since last night:</strong> Senate and House control resolved decisively Democratic per mainstream calls; this file could not pull a clean current Polymarket price for either contract this run — flagged as a data gap, not guessed at.</div>
+
+<table>
+  <tr><th>Contract</th><th>Last clean read (last night)</th><th>This morning</th><th>Delta</th></tr>
+  <tr><td>Senate control</td><td>Dem 83% / Rep 18%</td><td class="pos">Resolving/resolved Dem (≥54 seats called by CBS/CNBC)</td><td>Confirmed outcome; exact contract price not independently re-fetched tonight</td></tr>
+  <tr><td>House control</td><td>Dem 98.1% / Rep 1.9%</td><td class="pos">Resolving/resolved Dem (flipped, called by CBS/CNBC)</td><td>Confirmed outcome; exact contract price not independently re-fetched tonight</td></tr>
+  <tr><td>Hormuz normal by Dec 31</td><td>11% Yes</td><td>~11% Yes (unchanged band)</td><td>Still not reacting to escalating tanker-mine claims</td></tr>
+  <tr><td>AI bubble burst by Dec 31</td><td>8.2% Yes</td><td>No clean re-fetch; last confirmed 9.4% Nov 3 AM</td><td>No update this run</td></tr>
+</table>
+
+<h3>The structural read</h3>
+<p>Tonight's honest finding is a data-quality gap, not a market signal — this file's standing discipline is a direct Gamma-API fetch for the midterm contracts, and that didn't happen this run because the contracts are mid-resolution and cached web results returned inconsistent numbers (a 76%-98% range across sources of varying freshness). <strong>Bear case:</strong> reporting a specific number pulled from inconsistent cached sources would have risked carrying a stale or wrong figure into tomorrow's state. <strong>Bull case:</strong> the underlying fact — Democrats won both chambers decisively — is not in question regardless of the exact contract price, so nothing about today's portfolio or geopolitical read depends on the precise number. Standing watch: a direct API fetch on the midterm contracts once both have formally settled; continued monitoring of whether Hormuz ever reacts to this week's escalating tanker claims.</p>
+
+<!-- ====================== BOTTOM LINE ====================== -->
+<div class="punchline-box">
+  <h3>Bottom Line / Portfolio Implication</h3>
+  <p>Today is best read as two corrections and one new risk. First, last night's framing that Likud's non-recognition threat was firming into something serious was wrong — it collapsed at the actual certification process, with Likud abstaining rather than fighting it, which is real evidence of institutional resilience in Israel rather than just a reprieve. Second, the overnight market sell-off was about contested-election risk, not about Democratic control itself — it fully unwound once Trump's clean acceptance removed that specific tail risk, a useful distinction for reading any future election-night move. The genuinely new item is Gerstner's AI-data-center-policy warning: it is a real, independent risk to the AI-capex complex that sits alongside (not inside) the existing hardware-demand strength and financing-stress threads, and it specifically hit CRWV and NBIS rather than the complex broadly. None of this changes the zero-position stance — if anything, a complex with three independent, unresolved risk axes (demand, financing, now policy) argues for continued patience over urgency. Today's watch: whether Gerstner's thesis gains any real legislative traction, a clean Polymarket re-fetch on the midterm contracts, and Hormuz's claimed tanker-mine tempo either getting a specific CENTCOM rebuttal or staying in the "inaccurate, no detail" zone.</p>
+</div>
+
+<!-- ====================== SOURCES ====================== -->
+<h2>Sources</h2>
+<div class="sources">
+  <p><strong>Midterms / markets:</strong></p>
+  <ul>
+    <li><a href="https://www.cbsnews.com/live-updates/election-day-2026-midterms/">CBS News — 2026 midterm election results as Democrats decisively win control of House and Senate</a></li>
+    <li><a href="https://www.forbes.com/sites/antoniopequenoiv/2026/11/04/trump-congratulates-democrats-says-he-accepts-election-results/">Forbes — Trump congratulates Democrats, says he accepts election results</a></li>
+    <li><a href="https://www.cnbc.com/2026/11/04/amd-earnings-analysts-ai-growth.html">CNBC — AMD earnings beat the Street; here's what analysts are saying</a></li>
+    <li><a href="https://benzinga.com/markets/equities/26/11/62856685/crwv-apld-iren-stocks-slip-as-brad-gerstner-warns-democratic-midterm-gains-could-put-10-15-gw-of-ai-data-center-capacity-at-risk">Benzinga — CRWV, APLD, IREN slip as Gerstner warns Democratic gains could put 10-15GW of AI data-center capacity at risk</a></li>
+  </ul>
+  <p><strong>Iran / Hormuz / Israel:</strong></p>
+  <ul>
+    <li><a href="https://iranwire.com/en/news/159779-irgc-claims-four-tankers-destroyed-by-mines-in-strait-of-hormuz/">IranWire — IRGC claims four tankers destroyed by mines in Strait of Hormuz</a></li>
+    <li><a href="https://www.aljazeera.com/news/2026/11/4/iran-says-us-reply-to-hormuz-plan-unconvincing-trump-confirms-strikes">Al Jazeera — Iran says US reply to Hormuz plan "unconvincing"; Trump confirms strikes</a></li>
+    <li><a href="https://www.aljazeera.com/news/2026/11/4/israel-vote-results-confirmed-as-election-commission-rejects-fraud-claims">Al Jazeera — Israel vote results confirmed as election commission rejects fraud claims</a></li>
+    <li><a href="https://www.washingtonpost.com/national/2026/11/04/israel-election-netanyahu/3aec50a8-d819-11f1-930a-e08f8086f5ac_story.html">Washington Post — Israel's president accepts certified election results in a blow to Netanyahu's claim of vote fraud</a></li>
+  </ul>
+  <p><strong>AI ecosystem:</strong></p>
+  <ul>
+    <li><a href="https://dataconomy.com/2026/11/03/investors-cut-anthropic-ipo-valuation-target-to-15-trillion/">Dataconomy — Investors cut Anthropic IPO valuation target to $1.5 trillion</a></li>
+    <li><a href="https://stocktwits.com/news-articles/markets/equity/dean-of-valuation-aswath-damodaran-trims-his-anthropic-ipo-view-flags-fragility-of-1-trillion-revenue-target/cNGL3SVR93R">Stocktwits — "Dean of Valuation" Damodaran trims his Anthropic IPO view, flags "fragility"</a></li>
+  </ul>
+  <p><strong>Portfolio / private credit:</strong></p>
+  <ul>
+    <li><a href="https://www.defenseworld.net/2026/11/04/analyzing-blue-owl-capital-nyseowl-and-fidus-investment-nasdaqfdus.html">Defense World — Analyzing Blue Owl Capital (OWL) and Fidus Investment (FDUS)</a></li>
+    <li><a href="https://247wallst.com/investing/2026/11/04/coreweave-more-than-halved-over-the-past-6-months-this-pro-analyst-expects-360-returns-to-come/">24/7 Wall St. — CoreWeave more than halved over the past 6 months</a></li>
+  </ul>
+</div>
+
+<div class="footer">
+  Daily News Brief · November 4, 2026 · Morning Brief · Day 250 of the Iran war<br>
+  <em>Andres's daily analyst. Structural reads, not headline regurgitation.</em>
+</div>
+
+</div>
+
+</body>
+</html>
