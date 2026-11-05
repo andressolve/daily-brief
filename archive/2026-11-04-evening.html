@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily News Brief — November 4, 2026 (Evening Wrap)</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --surface: #121820;
+    --surface2: #1a2230;
+    --border: #243044;
+    --text: #c8d3e0;
+    --text-dim: #6b7d93;
+    --heading: #e8edf3;
+    --accent: #4fc3f7;
+    --accent2: #81c784;
+    --warn: #ffb74d;
+    --danger: #ef5350;
+    --gold: #ffd54f;
+    --purple: #b39ddb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a0a0a 0%, #2a0a1a 50%, #0a1a2e 100%);
+    border-bottom: 1px solid var(--danger);
+    padding: 50px 40px 40px;
+    text-align: center;
+  }
+  .header .day-tag {
+    display: inline-block;
+    background: rgba(239,83,80,0.2);
+    border: 1px solid rgba(239,83,80,0.4);
+    color: var(--danger);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--heading);
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .header .subtitle {
+    font-size: 18px;
+    color: var(--warn);
+    font-weight: 400;
+  }
+  .header .subtitle-sub {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 10px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--heading);
+    margin: 48px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 28px 0 12px;
+  }
+  p { margin-bottom: 14px; }
+  strong { color: var(--heading); }
+  em { color: var(--accent); font-style: italic; }
+  ul, ol { margin: 0 0 14px 22px; }
+  li { margin-bottom: 6px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  table tr:last-child td { border-bottom: none; }
+  table td:first-child {
+    font-weight: 700;
+    color: var(--heading);
+  }
+  .badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+  .badge-red { background: var(--danger); color: #fff; }
+  .badge-green { background: var(--accent2); color: var(--bg); }
+  .badge-blue { background: var(--accent); color: var(--bg); }
+  .badge-yellow { background: var(--warn); color: var(--bg); }
+  .badge-purple { background: var(--purple); color: var(--bg); }
+  .tldr-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.1), rgba(255,183,77,0.05));
+    border: 2px solid var(--danger);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin: 24px 0 32px;
+  }
+  .tldr-box h3 {
+    color: var(--danger);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .delta-box {
+    background: var(--surface2);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 20px;
+    margin: 0 0 18px;
+    font-size: 13.5px;
+    color: var(--text-dim);
+  }
+  .delta-box strong { color: var(--accent); }
+  .honest-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--purple);
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin: 24px 0;
+  }
+  .honest-box h3 {
+    color: var(--purple);
+    margin-top: 0;
+    margin-bottom: 14px;
+  }
+  .punchline-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.08), rgba(79,195,247,0.05));
+    border: 2px solid rgba(239,83,80,0.3);
+    border-radius: 10px;
+    padding: 28px;
+    margin: 32px 0;
+    text-align: center;
+  }
+  .punchline-box h3 {
+    color: var(--danger);
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .punchline-box p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    max-width: 760px;
+    margin: 0 auto 10px;
+    color: var(--text);
+  }
+  .sources { font-size: 12.5px; color: var(--text-dim); }
+  .sources a { color: var(--accent); text-decoration: none; }
+  .sources a:hover { text-decoration: underline; }
+  .footer {
+    border-top: 1px solid var(--border);
+    margin-top: 50px;
+    padding-top: 20px;
+    color: var(--text-dim);
+    font-size: 12px;
+    text-align: center;
+  }
+  .pos { color: var(--accent2); }
+  .neg { color: var(--danger); }
+  .move-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  .move-table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  .move-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .correction-box {
+    background: rgba(179,157,219,0.08);
+    border: 2px solid var(--purple);
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 24px 0 32px;
+  }
+  .correction-box h3 {
+    color: var(--purple);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="day-tag">Day 250 of the Iran War · Day After US Midterms · Evening Wrap</div>
+  <h1>Daily News Brief — November 4, 2026</h1>
+  <div class="subtitle">The morning's "relief trade" framing understated the day on every axis. Oil crashed 8-9% after Vance blamed the Iran war for the midterm rout; the Dow had its best day since April 2025; Israel's mandate fight is now a numeric race that could end in an Arab-party-backed coalition.</div>
+  <div class="subtitle-sub">Run: ~17:30 PT · 191st consecutive zero-position day · Nov 6 Micron-Taoyuan third round · Nov 10 CoreWeave Q3 / OWL dividend record date · Nov 12 Nebius Q3 · Nov 17 NVDA Q3 · Week of Nov 9 Anthropic roadshow · Nov 23 OWL dividend payable / Jupiter permit decision</div>
+</div>
+
+<div class="container">
+
+<!-- ====================== TL;DR ====================== -->
+<div class="tldr-box">
+  <h3>TL;DR — What changed between morning and close</h3>
+  <ul>
+    <li><strong>Oil crashed 8-9%, and the driver was Vance blaming the Iran war for the midterm rout — not the "oil ignores Iran claims" pattern this week logged.</strong> Brent fell to ~$99.20 (intraday low ~$94.66, lowest since Sept 4), WTI to ~$88.30. Traders read Vance's comment as a signal the administration could move to wind the war down.</li>
+    <li><strong>The equity rally was far bigger than the morning's "relief trade" framing: Dow +3% (1,569 points), its best day since April 2025 and the biggest post-midterm rally in 44 years.</strong> S&amp;P 500 closed at 7,688.62 (+1.6%), Nasdaq 25,736.51 (+1.4%), VIX collapsed to 16.61 (-20.26%). Gold and BTC kept climbing rather than holding flat (+3.29% to ~$4,070; +3.7% to ~$80,230).</li>
+    <li><strong>Israel's certification was only step one — the mandate fight is now a specific, numeric race.</strong> Netanyahu's bloc (53 seats) was recommended by Religious Zionism and Shas; the opposition (48 seats) united behind Gadi Eisenkot. If the Arab Joint List (11) and Ra'am (8) join, Eisenkot's count hits 67 — enough for a majority, which would be unprecedented.</li>
+    <li><strong>Gerstner's AI-data-center-policy thesis gained traction, not faded.</strong> Dan Ives put a number on it — 10% of planned US data centers "will not happen now" — and Ted Cruz, a Republican, amplified the same risk framing. NVDA reversed to close -3.12%, undercutting the morning's "AMD read-through lifted the complex" call.</li>
+    <li><strong>CRWV and NBIS closed well off their premarket lows</strong> (-4% and -2%, vs. -9.6%/-6.4% premarket) even as the policy story gained commentary traction — the stocks partly priced in relief as the broader market rallied.</li>
+  </ul>
+</div>
+
+<!-- ====================== MORNING -> EVENING ====================== -->
+<div class="correction-box">
+  <h3>Morning → Evening: what moved</h3>
+  <table class="move-table">
+    <tr><th>Item</th><th>This morning (~08:00 PT)</th><th>At close (~17:30 PT)</th><th>Delta</th></tr>
+    <tr><td>Oil (Brent/WTI)</td><td>~$104.1-104.4 / ~$96.3-96.7, "flat to slightly lower"</td><td class="neg">~$99.20 / ~$88.30, down 4-8% (intraday Brent -8.6%)</td><td>Crashed on Vance's war-blame comment, not on Iran-claims fatigue</td></tr>
+    <tr><td>S&amp;P / Dow / Nasdaq</td><td>Futures +~1% on relief rally</td><td class="pos">S&amp;P +1.6% to 7,688.62; Dow +3% to 53,356.12 (best day since Apr 2025); Nasdaq +1.4% to 25,736.51</td><td>Rally far exceeded morning's "clean two-stage relief trade" framing</td></tr>
+    <tr><td>VIX</td><td>-12% to 18.25</td><td class="pos">-20.26% to 16.61</td><td>Kept falling through the session</td></tr>
+    <tr><td>Gold / BTC</td><td>+2.92% to ~$4,046 / ~$77,900</td><td class="neg">+3.29% to ~$4,070 / ~$80,230 (+3.7%)</td><td>Both extended rather than held flat — possible durable hedge, not pure relief</td></tr>
+    <tr><td>NVDA</td><td>Traded higher on AMD's read-through</td><td class="neg">Closed -3.12%</td><td>Reversed; policy-risk discount appears to have spread beyond CRWV/NBIS</td></tr>
+    <tr><td>AMD</td><td>Beat decisively after Tuesday's close (+7.5% AH)</td><td>Closed only +0.44% to $488.82</td><td>Muted follow-through on a strong beat</td></tr>
+    <tr><td>CRWV / NBIS</td><td>-9.6% / -6.4% premarket on Gerstner's data-center-policy warning</td><td class="pos">-4% / -2% at close</td><td>Bounced off premarket lows even as the policy narrative gained traction (Ives, Cruz)</td></tr>
+    <tr><td>Israel</td><td>Certification resolved Likud's non-recognition threat</td><td class="neg">Mandate fight now numeric: Netanyahu 53 vs. Eisenkot 48 (+ possible Joint List/Ra'am to 67)</td><td>Certification was step one, not the resolution — bigger story than framed</td></tr>
+    <tr><td>Gerstner/AI-data-center-policy thesis</td><td>New, untested — "does it gain traction or fade" flagged as open question</td><td class="neg">Gained traction: Ives quantified it (10% of planned capacity), Cruz amplified it</td><td>Resolved toward "real and bipartisan," not "one-day narrative"</td></tr>
+  </table>
+</div>
+
+<!-- ====================== IRAN / ISRAEL ====================== -->
+<h2>Iran / Middle East Geopolitics</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> Vance publicly blamed the Iran war for the midterm rout — a bigger structural signal than the Hormuz-tempo escalation this file tracked all week — while Israel's certification turned out to be only the first step in a now-numeric mandate fight.</div>
+
+<p>VP Vance blamed the Republican midterm defeat on the Iran war, and oil fell 8-9% on the read that this signals the administration could move toward ending it — the single largest market reaction to an Iran-war political signal this file has logged. This is a materially different and bigger story than this morning's Hormuz-tempo/CENTCOM-denial framing: CENTCOM still has offered nothing beyond calling the mine claims "inaccurate," with no new specifics today.</p>
+
+<p><strong>On Israel, the mandate fight is now explicit and numeric.</strong> Netanyahu's bloc (53 seats, including United Torah Judaism's 7) was recommended by Religious Zionism and Shas; the opposition alliance (48 seats) united behind Gadi Eisenkot, with Yisrael Beiteinu's Avigdor Liberman notably breaking toward Eisenkot rather than the more hardline bloc. If the Arab Joint List (11 seats) and Ra'am (8 seats) join in recommending Eisenkot, his total reaches 67 seats — enough for a majority mandate, which would be unprecedented as an Arab-party-backed government recommendation in Israeli politics. President Herzog broke from tradition to consult smaller factions first, opening Wednesday with Religious Zionism-Zehut and continuing into Thursday and Friday.</p>
+
+<h3>The structural read</h3>
+<p>This morning's framing treated certification as resolving the Israel story; tonight's reporting makes clear that legitimacy (did Likud try to overturn the result) and the mandate (who actually forms the government) are two separate questions, and only the first resolved today — the second is a live, numeric fight that could end in a genuinely novel outcome. On Iran, Vance's comment is a bigger structural data point than anything in this week's Hormuz-tempo escalation: it is the first on-record admission from inside the administration that the war carries real domestic political cost, which argues for taking the diplomatic track (Araghchi's plan, Rezaei's conditions) more seriously as the dominant one going forward. <strong>Bear case:</strong> oil's crash could be a one-day overreaction to a single VP soundbite that commits the administration to nothing — this file has now logged two prior oil round-trips this week after similarly dramatic single-day moves. <strong>Bull case:</strong> if Vance's comment reflects real internal deliberation rather than political damage control, it's the first genuine policy-track signal distinct from the diplomatic and parliamentary rhetoric this file has tracked all week, and would argue the war is closer to winding down than the standing escalation-tempo framing has credited. Standing watch: does any other administration official confirm or walk back Vance's framing; does oil's move hold through Thursday's Asia session; which way Herzog's consultations break on the Eisenkot/Arab-party math.</p>
+
+<!-- ====================== MARKETS ====================== -->
+<h2>Markets / Macro</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> the relief-trade framing materially understated the day — this was the biggest post-midterm rally in 44 years, and oil's crash was driven by a specific war-ending signal, not Iran-claims fatigue.</div>
+
+<p>Closes: Dow <strong>53,356.12 (+1,569.40pts, +3%)</strong> — its best day since April 2025; S&amp;P 500 <strong>7,688.62 (+1.6%)</strong>; Nasdaq <strong>25,736.51 (+1.4%)</strong>. VIX fell further through the session to <strong>16.61 (-20.26%)</strong>, well past this morning's 18.25 read. Gold kept climbing to <strong>+3.29% (~$4,070.20)</strong>, BTC to <strong>~$80,230 (+3.7%)</strong> — neither held flat, both extended. Oil did not stay "flat to slightly lower" as framed this morning — it crashed: Brent closed <strong>~$99.20 (-4.25%, intraday low ~$94.66, -8.6%, lowest since Sept 4)</strong>, WTI <strong>~$88.30 (-8.11%)</strong>. The driver was specific: VP Vance publicly blamed the Iran war for the midterm rout, which traders read as a signal toward a possible end to the war — oil fell on rising odds of real de-escalation, not on indifference to the IRGC's tanker-mine claims. AMD's record $13.4B-revenue beat closed the stock at only <strong>+0.44% to $488.82</strong>. NVDA, which this morning traded higher on AMD's read-through, reversed to close <strong>down -3.12%</strong>.</p>
+
+<h3>The structural read</h3>
+<p>This file's standing "oil discounts unverified Iran claims" pattern needs a correction, not an extension — oil wasn't ignoring Iran today, it was reacting precisely to the one Iran-war signal that actually matters for pricing: a VP-level admission that the war is now a domestic political liability. That reframes the week's whole pattern: oil isn't indifferent to Iran, it's selectively indifferent to unverified tactical claims while staying highly sensitive to any real signal on US war policy. <strong>Bear case:</strong> gold and BTC both kept climbing rather than fading, which argues today's move is more than a one-day relief bounce — something structural is still being built. <strong>Bull case:</strong> VIX's slide to 16.61 is unambiguously calm, and if oil's crash reflects a real de-escalation signal rather than a one-day overreaction, that's bullish for the entire Iran-risk-premium complex, not just a relief trade. Standing watch: whether oil's crash holds through Thursday's Asia session or partially round-trips (as it has twice this week), Friday Nov 6 jobs report, whether any administration official confirms or walks back the war-ending read of Vance's comment.</p>
+
+<!-- ====================== PORTFOLIO ====================== -->
+<h2>Portfolio Tickers</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> 191st consecutive zero-position day. The policy-risk/hardware-demand split this morning's framing drew did not hold through the close — NVDA reversed too.</div>
+
+<table>
+  <tr><th>Ticker</th><th>What changed by close</th><th>Read</th></tr>
+  <tr><td>CRWV</td><td>Closed -4% to $51.73, off the -9.6% premarket low; Dan Ives estimated 10% of planned data centers "will not happen now"</td><td>Policy-risk story gained bipartisan commentary traction (Ives, Cruz) even as the stock partly recovered</td></tr>
+  <tr><td>NBIS</td><td>Closed -2% to $147.92, off the -6.4% premarket low</td><td>Same catalyst, same partial recovery pattern as CRWV</td></tr>
+  <tr><td>NVDA</td><td>Reversed to close -3.12%, undercutting this morning's "AMD read-through lifted the complex" framing</td><td>Policy-risk discount appears to have spread beyond CRWV/NBIS to NVDA by the close</td></tr>
+  <tr><td>AMD</td><td>Closed only +0.44% to $488.82 despite a record $13.4B-revenue beat</td><td>Muted follow-through — market pricing broader policy/macro risk into the complex, not a name-specific judgment on AMD</td></tr>
+  <tr><td>OWL / APO / TSMC / MU / AMZN / ARCC</td><td>No new items found this evening beyond this morning's</td><td>Not re-checked tonight given lighter evening-run scope; nothing material expected to have moved</td></tr>
+</table>
+
+<h3>The structural read</h3>
+<p>Today's genuinely new finding is that the policy-risk/hardware-demand split this morning drew — CRWV/NBIS on one side, NVDA on the other — did not survive the close. NVDA's own reversal to -3.12% suggests the market priced some policy-risk discount into NVDA too, not just the neoclouds. <strong>Bear case:</strong> if Ives's "10% of planned capacity won't happen" estimate is anywhere close to right, that's a quantified, not just rhetorical, haircut to the AI-capex buildout, now with bipartisan commentary amplification rather than one investor's framing. <strong>Bull case:</strong> NVDA's Nov 17 print is still a hardware-demand-and-booked-backlog question a one-day repricing doesn't resolve either way; AMD's quiet close despite a clean beat suggests broad policy/macro repricing rather than a fundamentals judgment. 191 sessions at zero positions remains the right call — today's broadening of the policy-risk discount argues for continued patience, not urgency.</p>
+
+<!-- ====================== POLYMARKET ====================== -->
+<h2>Polymarket Calibration</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> the midterm contracts resolved correctly, a clean calibration win — but this file still could not pin down the exact Hormuz contract it has tracked all week, now a third consecutive run with that gap.</div>
+
+<p>Pre-resolution reads found tonight: Polymarket showed ~95% Yes Dem on House control and ~76% Yes Dem on Senate control as of Nov 3, both of which resolved correctly — a clean win for the specific contracts this file was tracking. On Hormuz/Iran-war contracts, tonight's search surfaced different, adjacent contracts rather than the exact "Hormuz-normal-by-Dec-31" line tracked at ~11% all week: a market on "US announces end of Iranian blockade by March 31" showed <strong>64% Yes</strong>, and "US-Iran ceasefire continues through November" showed <strong>82% Yes</strong>. Neither is the same contract, so this isn't a like-for-like update, but both point the same direction as today's oil crash: material odds on real de-escalation.</p>
+
+<h3>The structural read</h3>
+<p>Tonight's calibration lesson is a genuine win for Polymarket over headline narratives — both midterm contracts were directionally right well before the mainstream call, consistent with this file's standing "Polymarket wins absent specific reason" rule. The Hormuz-contract gap is now a third consecutive run without a clean same-contract read, which is a process problem worth fixing with a direct API fetch, not a market signal. <strong>Bear case:</strong> without the exact number tonight, there's no way to confirm whether today's oil crash actually moved the Hormuz-normal contract specifically or just the adjacent ones found tonight. <strong>Bull case:</strong> the adjacent contracts found tonight both point the same direction as oil's move, so the qualitative read — rising odds of de-escalation — is probably right even without the exact number. Standing watch: a direct API fetch on Hormuz-normal-by-Dec-31 specifically.</p>
+
+<!-- ====================== BOTTOM LINE ====================== -->
+<div class="punchline-box">
+  <h3>Bottom Line / Portfolio Implication</h3>
+  <p>Today was bigger than the morning brief captured on every axis: the equity rally was the largest post-midterm move in 44 years, oil crashed on a specific war-ending signal rather than continuing to shrug off Iran claims, and Israel's mandate fight turned out to be a live numeric race rather than a resolved certification story. The single most important new fact is Vance's public admission that the Iran war cost Republicans the midterms — that is a genuinely different kind of signal than anything in this week's Hormuz-tempo escalation, and if it reflects real administration deliberation rather than political damage control, it argues the diplomatic track deserves more weight than this file's standing escalation framing has given it. On the portfolio side, NVDA's reversal to -3.12% means the AI-data-center-policy discount is no longer contained to CRWV and NBIS — a reason for continued patience, not urgency. None of this changes the zero-position stance. Tomorrow morning's watch: whether oil's move holds through the Asia session, whether any other administration official confirms or walks back Vance's framing, and which way Herzog's consultations break on the Eisenkot/Arab-party math.</p>
+</div>
+
+<!-- ====================== SOURCES ====================== -->
+<h2>Sources</h2>
+<div class="sources">
+  <p><strong>Markets / oil:</strong></p>
+  <ul>
+    <li><a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-nov-04-2026">TheStreet — Stock Market Today: Stocks rise, oil collapses after Dems sweep midterm elections</a></li>
+    <li><a href="https://www.fool.com/coverage/stock-market-today/2026/11/04/stock-market-today-nov-4-dow-surges-3-in-biggest-post-midterm-rally-in-44-years/">The Motley Fool — Dow Surges 3% in Biggest Post-Midterm Rally in 44 Years</a></li>
+    <li><a href="https://oilprice.com/Latest-Energy-News/World-News/Oil-Crashes-9-as-Trump-and-Vance-Blame-Iran-War-for-Midterm-Rout.html">OilPrice.com — Oil Crashes 9% as Trump and Vance Blame Iran War for Midterm Rout</a></li>
+    <li><a href="https://www.staradvertiser.com/2026/11/04/breaking-news/oil-tumbles-9-as-investors-eye-possible-end-to-iran-war/">Star Advertiser — Oil tumbles 9% as investors eye possible end to Iran war</a></li>
+  </ul>
+  <p><strong>Israel:</strong></p>
+  <ul>
+    <li><a href="https://www.aa.com.tr/en/middle-east/netanyahu-eisenkot-draw-rival-endorsements-as-herzog-opens-israel-s-government-talks/4111985">Anadolu Agency — Netanyahu, Eisenkot draw rival endorsements as Herzog opens Israel's government talks</a></li>
+    <li><a href="https://www.jns.org/news/israel-news/who-will-form-government-herzog-meeting-knesset-factions-on-wednesday">JNS — Who will form government? Herzog meeting Knesset factions on Wednesday</a></li>
+  </ul>
+  <p><strong>Portfolio / AI:</strong></p>
+  <ul>
+    <li><a href="https://www.benzinga.com/markets/market-summary/26/11/62864066/dan-ives-says-democratic-sweep-will-slow-ai-buildout-estimates-10-of-planned-us-data-centers-will-not-happen-now">Benzinga — Dan Ives Says Democratic Sweep Will Slow AI Buildout, Estimates 10% of Planned US Data Centers "Will Not Happen Now"</a></li>
+    <li><a href="https://finance.biggo.com/news/2e84bb95535f5b4d">BigGo Finance — Ted Cruz says Republicans faced a "bloodbath" as a Democratic wave puts the AI data-center boom at risk</a></li>
+    <li><a href="https://www.tradingkey.com/news/market-movers/262275898-market-movers-nvda-20261104">TradingKey — NVIDIA Corp Stock (NVDA) Closed Down by 3.12% on Nov 4</a></li>
+  </ul>
+</div>
+
+<div class="footer">
+  Daily News Brief · November 4, 2026 · Evening Wrap · Day 250 of the Iran war<br>
+  <em>Andres's daily analyst. Structural reads, not headline regurgitation.</em>
+</div>
+
+</div>
+
+</body>
+</html>
