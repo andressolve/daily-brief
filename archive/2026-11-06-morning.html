@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily News Brief — November 6, 2026 (Morning Brief)</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --surface: #121820;
+    --surface2: #1a2230;
+    --border: #243044;
+    --text: #c8d3e0;
+    --text-dim: #6b7d93;
+    --heading: #e8edf3;
+    --accent: #4fc3f7;
+    --accent2: #81c784;
+    --warn: #ffb74d;
+    --danger: #ef5350;
+    --gold: #ffd54f;
+    --purple: #b39ddb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  .header {
+    background: linear-gradient(135deg, #0a1420 0%, #13101f 50%, #0a1a2e 100%);
+    border-bottom: 1px solid var(--accent);
+    padding: 50px 40px 40px;
+    text-align: center;
+  }
+  .header .day-tag {
+    display: inline-block;
+    background: rgba(79,195,247,0.15);
+    border: 1px solid rgba(79,195,247,0.4);
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--heading);
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .header .subtitle {
+    font-size: 18px;
+    color: var(--warn);
+    font-weight: 400;
+  }
+  .header .subtitle-sub {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 10px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--heading);
+    margin: 48px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 28px 0 12px;
+  }
+  p { margin-bottom: 14px; }
+  strong { color: var(--heading); }
+  em { color: var(--accent); font-style: italic; }
+  ul, ol { margin: 0 0 14px 22px; }
+  li { margin-bottom: 6px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  table tr:last-child td { border-bottom: none; }
+  table td:first-child {
+    font-weight: 700;
+    color: var(--heading);
+  }
+  .badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+  .badge-red { background: var(--danger); color: #fff; }
+  .badge-green { background: var(--accent2); color: var(--bg); }
+  .badge-blue { background: var(--accent); color: var(--bg); }
+  .badge-yellow { background: var(--warn); color: var(--bg); }
+  .badge-purple { background: var(--purple); color: var(--bg); }
+  .tldr-box {
+    background: linear-gradient(135deg, rgba(79,195,247,0.1), rgba(255,183,77,0.05));
+    border: 2px solid var(--accent);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin: 24px 0 32px;
+  }
+  .tldr-box h3 {
+    color: var(--accent);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .delta-box {
+    background: var(--surface2);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 20px;
+    margin: 0 0 18px;
+    font-size: 13.5px;
+    color: var(--text-dim);
+  }
+  .delta-box strong { color: var(--accent); }
+  .honest-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--purple);
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin: 24px 0;
+  }
+  .honest-box h3 {
+    color: var(--purple);
+    margin-top: 0;
+    margin-bottom: 14px;
+  }
+  .punchline-box {
+    background: linear-gradient(135deg, rgba(79,195,247,0.08), rgba(239,83,80,0.05));
+    border: 2px solid rgba(79,195,247,0.3);
+    border-radius: 10px;
+    padding: 28px;
+    margin: 32px 0;
+    text-align: center;
+  }
+  .punchline-box h3 {
+    color: var(--accent);
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .punchline-box p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    max-width: 760px;
+    margin: 0 auto 10px;
+    color: var(--text);
+  }
+  .sources { font-size: 12.5px; color: var(--text-dim); }
+  .sources a { color: var(--accent); text-decoration: none; }
+  .sources a:hover { text-decoration: underline; }
+  .footer {
+    border-top: 1px solid var(--border);
+    margin-top: 50px;
+    padding-top: 20px;
+    color: var(--text-dim);
+    font-size: 12px;
+    text-align: center;
+  }
+  .pos { color: var(--accent2); }
+  .neg { color: var(--danger); }
+  .move-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  .move-table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  .move-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .correction-box {
+    background: rgba(179,157,219,0.08);
+    border: 2px solid var(--purple);
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 24px 0 32px;
+  }
+  .correction-box h3 {
+    color: var(--purple);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="day-tag">Day 252 of the Iran War · Morning Brief · 193rd Zero-Position Day</div>
+  <h1>Daily News Brief — November 6, 2026</h1>
+  <div class="subtitle">A confirmed fatality entered the Hormuz campaign for the first time as Trump weighs a Nov 9 strike resumption and Iran edges toward a Qatar nuclear breakthrough. Anthropic's own IPO is now in question. Markets reversed hard on a jobs beat.</div>
+  <div class="subtitle-sub">Run: ~07:30 PT · Forward-looking morning brief · Nov 8 Herzog mandate handoff · Nov 9 possible Iran strike date / Anthropic roadshow · Nov 10 CoreWeave Q3 / OWL dividend ex-date · Nov 12 Nebius Q3 · Nov 17 NVDA Q3</div>
+</div>
+
+<div class="container">
+
+<!-- ====================== TL;DR ====================== -->
+<div class="tldr-box">
+  <h3>TL;DR — What changed overnight and why it matters</h3>
+  <ul>
+    <li><strong>A real fatality entered the Hormuz campaign for the first time.</strong> A seafarer was killed Thursday in a confirmed missile strike on the tanker MT Velos Sapphire — independently confirmed, distinct from the IRGC's unconfirmed mine claims. Three more tanker incidents followed Friday.</li>
+    <li><strong>Washington is pulling two directions on Iran simultaneously.</strong> Trump's NSC met to weigh resuming strikes with Nov 9 floated as an operationally favorable date ("we are prepared and ready to act... if we need to finish the job"), while Bloomberg reports the US and Iran are "edging closer" to a breakthrough via a new Qatari-mediated nuclear proposal. Polymarket's invasion contract barely moved on any of it.</li>
+    <li><strong>Anthropic's own IPO is now in question.</strong> A Reuters exclusive reports investors questioning whether the roadshow starts on schedule next week, with valuation chatter down to $1.2-1.3T from the $1.4-2T range — the clearest sign the AI selloff has reached private fundraising, not just public equities.</li>
+    <li><strong>Markets reversed hard on a big jobs beat.</strong> October payrolls +165K (vs. ~59-65K consensus), unemployment to 4.1%. AMD +8%, NVDA +5%, CRWV +10.8% Friday — but this followed Asia deepening Thursday's rout overnight (Kospi -8.78% intraday, Nikkei confirmed bear market). VIX only partially cooled, to 24.37 from 28.18.</li>
+    <li><strong>Liberman cracked Eisenkot's own coalition discipline.</strong> He's now open to Haredi inclusion — a reversal that drew internal criticism — two days before Herzog's Sunday mandate decision.</li>
+  </ul>
+</div>
+
+<!-- ====================== IRAN / ISRAEL ====================== -->
+<h2>Iran / Middle East Geopolitics</h2>
+<div class="delta-box"><strong>Delta since Thursday evening:</strong> a confirmed fatality, a possible Nov 9 strike date, and a Qatar nuclear proposal — all at once. Liberman opened to a Haredi coalition.</div>
+
+<p>A seafarer was killed Thursday in a confirmed missile strike on the Marshall Islands-flagged tanker MT Velos Sapphire near Bahrain — independently confirmed by ship manager Velos Tankers, and the first fatality this file has logged in this wave, distinct in kind from the IRGC's unconfirmed mine claims ([Business Recorder](https://www.brecorder.com/news/40447785/seafarer-killed-in-suspected-missile-attack-on-tanker-in-gulf), [Lloyd's List](https://www.lloydslist.com/LL1158929/Seafarer-killed-as-tanker-attack-underscores-widening-Middle-East-Gulf-threat)). Friday brought three more incidents: the IRGC claimed two fresh tanker-mine strikes (unconfirmed by CENTCOM as of this writing) and UKMTO independently confirmed an explosion on a tanker near Oman's Khasab ([IranWire](https://iranwire.com/en/news/159877-irgc-claims-two-more-tankers-struck-mines-in-the-strait-of-hormuz/), [Arab News](https://www.arabnews.pk/middle-east/tanker-reports-explosion-near-omans-khasab-while-transiting-strait-of-hormuz-ukmto-says-3006290)). Simultaneously, Trump met his National Security Council to weigh resuming strikes, with Fox sources floating <strong>Nov 9</strong> (the new moon, minimal cover of darkness) as operationally favorable; in the Oval Office Friday he said, "I would rather not destroy the rest of the country if possible, but maybe I'll have to... we are prepared and ready to act... if we need to finish the job" ([i24NEWS](https://www.i24news.tv/en/news/international/artc-report-trump-meets-with-national-security-team-to-weigh-renewed-strikes-on-iran), [JPost](https://jpost.com/middle-east/iran-news/article-914040)). The same day, Bloomberg reported the US and Iran are "edging closer" to a breakthrough, with Iran sending a new nuclear proposal via Qatar still conditioned on its standing seven conditions, and Trump separately calling Qatar's Emir to discuss de-escalation ([Bloomberg](https://www.bloomberg.com/news/articles/2026-11-06/us-and-iran-edge-closer-to-deal-with-nuclear-issue-back-in-play)). On Israel: Netanyahu's office gave its first response to Trump's confirmed end of the ~$4B/yr US military aid package by end-2026, calling it a "transition... to partnership" rather than disputing it; and Liberman — part of Eisenkot's 67-seat bloc — said for the first time he's open to a Haredi-inclusive coalition, a reversal that drew sharp internal criticism, prompting Eisenkot to restate four non-negotiable conditions and call Israel's situation a "genuine, tangible and dangerous emergency" ([Times of Israel liveblog](https://www.timesofisrael.com/liveblog-november-06-2026/)).</p>
+
+<h3>The structural read</h3>
+<p>This is the sharpest evidence yet that a faction-coherence lens matters more than treating "the US" or "Iran" as single actors — within the same 24 hours, Washington moved toward both war (Nov 9 strike planning, NSC meeting) and peace (the Qatar nuclear proposal), which only makes sense as two tracks pulling simultaneously. Iran shows the same pattern: a real fatality sits alongside unconfirmed IRGC propaganda-style claims and a genuine diplomatic overture, all from the same regime in the same cycle. <strong>Bear case:</strong> the Nov 9 date and NSC meeting are more concrete and operational than the Qatar track's vaguer "edging closer" language — the escalation track may be the more real one. <strong>Bull case:</strong> Polymarket's US-invade-Iran contract barely moved (12%, within this week's noise band — see below) despite Trump's hardest rhetoric yet, arguing the market reads "finish the job" as negotiating leverage tied to the Qatar track, not a live plan — and a Trump-Qatar-Emir call the same day as that rhetoric is a classic pressure/diplomacy pairing, not a contradiction. On Israel, watch whether Liberman's Haredi opening survives his own party's backlash before Sunday — the real crack in Eisenkot's bloc, not Netanyahu's quieter aid-framing response. Standing watch: whether CENTCOM denies today's tanker-mine claims, confirmation of Nov 9 as a live date, any US response to the Qatar proposal, Sunday's mandate handoff.</p>
+
+<!-- ====================== MARKETS ====================== -->
+<h2>Markets / Macro</h2>
+<div class="delta-box"><strong>Delta since Thursday evening:</strong> Asia deepened the rout overnight; a big jobs beat triggered a sharp dip-buy reversal in the US session. VIX only partially cooled.</div>
+
+<p>October nonfarm payrolls came in at <strong>+165,000</strong> vs. a consensus sources put at roughly 59-65K, unemployment fell to <strong>4.1%</strong> (vs. 4.2% expected), with <strong>+84,000</strong> in net prior-month revisions and wages <strong>+0.4% m/m</strong> ([CNBC](https://www.cnbc.com/2026/11/06/jobs-report-october-2026.html), [Bloomberg](https://www.bloomberg.com/news/articles/2026-11-06/us-adds-165-000-jobs-above-all-forecasts-as-unemployment-falls)); the 10-year yield rose to <strong>4.882% (+0.93%)</strong> on the beat. Before that print, Asia deepened rather than stabilized Thursday's rout: Kospi fell as much as <strong>-8.78% intraday</strong> (triggering a circuit breaker) before closing -6.02%, a weekly loss of -11.7%; Samsung closed -6.35%, SK Hynix -10.44% (intraday as low as -11.7%); Nikkei fell 5.9-6%, confirming a bear market; Taiwan's TAIEX fell over 8%, TSMC down as much as -8.5% locally ([Korea Herald](https://www.koreaherald.com/article/10928857), [24/7 Wall St](https://247wallst.com/investing/2026/11/06/asias-chip-stocks-crashed-overnight-with-sk-hynix-down-11-7-and-taiwan-off-more-than-8-now-nasdaq-futures-are-pointing-higher/)). The US session then reversed sharply: Nasdaq 100 futures were +1.35% premarket (Dow futures stayed negative, -0.82%), and during the session <strong>AMD rose +8% to ~$437, NVDA +5% to ~$189.80, Intel +5%</strong>, with Micron +9% and TSMC +6.32% premarket. VIX, confirmed at Thursday's <strong>28.17-28.18 close</strong> (the 8th-largest such spike since 1991), fell to <strong>24.37 (-13.49%)</strong> by Friday mid-morning — a partial, not full, cooldown. Oil held Thursday's rebound (Brent ~$96-98, WTI ~$89-91). BTC traded ~$75-76K, roughly flat to Thursday's close; gold pulled back modestly to ~$4,037-4,054. NY Fed's Williams said inflation is "too high... for too long" with no explicit policy signal.</p>
+
+<h3>The structural read</h3>
+<p>Call this a genuine, if partial, relief bounce — the jobs beat gave the market a reason to buy the dip in the names that cratered Thursday, and it worked in the US session even as Asia was still falling on the same story hours earlier. <strong>Bear case:</strong> Dow futures staying negative through two premarket snapshots, and VIX settling at 24 rather than mean-reverting to its pre-selloff baseline, both say this is a bounce inside a higher-volatility regime, not a clean return to calm. <strong>Bull case:</strong> oil, gold, and BTC all behaving unremarkably — no fresh hedge-demand spike, no fresh crash — is itself informative: none of the three macro-stress indicators this file watches confirms a deeper liquidity event, arguing Thursday was a sector-specific repricing that found a floor. Standing watch: whether today's bounce holds into the close or fades by the weekend open, VIX's trajectory next week, Monday's open given a weekend of Iran-escalation risk markets haven't fully priced.</p>
+
+<!-- ====================== AI ====================== -->
+<h2>AI Ecosystem</h2>
+<div class="delta-box"><strong>Delta since Thursday evening:</strong> Anthropic's own IPO timeline and valuation are now in question — the clearest sign the selloff has reached private fundraising. No legislation moved.</div>
+
+<p>A Reuters exclusive (via BNN Bloomberg, Nov 6) reports potential investors now questioning whether Anthropic's roadshow starts on schedule the week of Nov 9, with valuation chatter down to <strong>$1.2-1.3T</strong> — below the original ~$1.5T target for a $100B raise and well under the $1.4-2T range floated earlier this week; one investor expects "some pullback" after a long private-valuation run-up ([BNN Bloomberg](https://www.bnnbloomberg.ca/business/artificial-intelligence/2026/11/06/ai-backlash-could-threaten-anthropic-ipo-timing-potential-investors-say-reuters-exclusive/)). The legislative front is unchanged: the AOC/Sanders data-center moratorium bill and Rep. Ansari's framing remain stuck in committee with no hearing, markup, or vote found — more Democratic winners are calling for a moratorium, but that's rhetoric, not text. (A widely-shared Newsweek "AI data center bill fails in Senate" headline is a recycled Sept 30 vote on an unrelated bill — not new, and not cited as fresh here.) Asia deepened the selloff overnight before a sharp US dip-buy reversal on the jobs beat: AMD +8%, NVDA +5%, CRWV +10.8% to ~$48.39 ahead of its Nov 10 print. The NBIS/neocloud story is now clearer and more systemic: Microsoft has tightened oversight across Nebius, IREN, and Nscale, is internally debating new neocloud deals, and pulled out of anchoring Nscale's ~$3B Loughton, Essex data center over power-connection delays pushing supply into the 2030s ([Investing.com](https://www.investing.com/news/stock-market-news/microsoft-tightens-oversight-of-neocloud-data-center-projects-bloomberg-news-reports-5005281)).</p>
+
+<h3>The structural read</h3>
+<p>The Anthropic IPO story is now the sharpest data point in the whole AI-capex complex — a public-market selloff is one thing, but a $100B fundraise's own bankers and prospective investors questioning timing and marking the price down roughly a third is a different, more structural kind of validation. <strong>Bear case:</strong> if Anthropic's raise slips or prices meaningfully below $1.5T, that reprices the entire private AI-valuation complex, not just one company — and it lands the same week Microsoft is visibly pulling back across its neocloud cohort, a demand-side signal, not just a sentiment one. <strong>Bull case:</strong> no legislation has actually moved, Friday's dip-buying in AMD/NVDA/CRWV was real and broad, and "could slip" from unnamed prospective investors is a long way from a confirmed delay. Standing watch: whether the Nov 9-10 roadshow launches on schedule, any firmer valuation number, NVDA's Nov 17 print.</p>
+
+<!-- ====================== PORTFOLIO ====================== -->
+<h2>Portfolio Tickers</h2>
+<div class="delta-box"><strong>Delta since Thursday evening:</strong> 193rd consecutive zero-position day. Friday's jobs-beat dip-buy reversed most of Thursday's damage in the named complex, but the week's two structural problems are unresolved.</div>
+
+<table>
+  <tr><th>Ticker</th><th>What changed overnight/this morning</th><th>Read</th></tr>
+  <tr><td>NVDA</td><td>+5% in Friday's session to ~$189.80 (+4% premarket), a bounce off Thursday's sub-$200 close</td><td>No new company-specific news</td></tr>
+  <tr><td>AMD</td><td>+8% to ~$437 Friday, a partial recovery from Thursday's -17.26%</td><td>Broad dip-buy, not a new fundamental catalyst</td></tr>
+  <tr><td>CRWV</td><td>+10.8% to ~$48.39 Friday</td><td>Technical bounce ahead of Tuesday's Nov 10 Q3 print; CDS still ~1,041bp</td></tr>
+  <tr><td>NBIS</td><td>No Friday price data found</td><td>Underlying story got worse — Microsoft tightened oversight across its entire neocloud cohort</td></tr>
+  <tr><td>MU</td><td>+9% premarket on the broad bounce</td><td>Taoyuan "third round" labor talks remain unresolved, construction still paused</td></tr>
+  <tr><td>TSMC</td><td>+6.32% US premarket (local Taipei session fell as much as -8.5% overnight)</td><td>Tesla Terafab talks reportedly "reopened," nothing confirmed</td></tr>
+  <tr><td>AMZN</td><td>No new news found</td><td>—</td></tr>
+  <tr><td>XLE</td><td>Thursday closed $61.63 (-2.98%), lowest since Sept 30</td><td>Still 2026's best S&amp;P sector (+~40% YTD); underperforming Friday's oil bounce</td></tr>
+  <tr><td>OWL</td><td>Management framed AI-policy backlash as a private-credit tailwind on Q3 call</td><td>Self-serving framing from a BDC facing a securities class action — see private-credit.md</td></tr>
+  <tr><td>APO / ARCC</td><td>No new ticker-specific news found</td><td>—</td></tr>
+</table>
+
+<h3>The structural read</h3>
+<p>Today's bounce is real but narrower than it looks — it's a dip-buy on a strong jobs print hitting the same names that fell hardest Thursday, not new information resolving either of the week's structural threads (Anthropic's IPO markdown, Microsoft's neocloud pullback). <strong>Bear case:</strong> NBIS's underlying problem didn't improve today just because risk appetite did; a name-specific fundamental deterioration under a broad bounce is exactly the setup that reverses hardest when sentiment turns again. <strong>Bull case:</strong> the breadth of today's reversal (NVDA, AMD, CRWV, MU, TSMC all up together) suggests Thursday's selloff found a floor, and XLE's continued best-sector-of-2026 status is a reminder the energy-hedge thesis is intact even when one session lags. 193 sessions at zero positions remains the right call.</p>
+
+<!-- ====================== PRIVATE CREDIT ====================== -->
+<h2>Private Credit</h2>
+<div class="delta-box"><strong>Delta since Thursday evening:</strong> Blue Owl management is now explicitly framing the AI-policy backlash as a private-credit tailwind — worth real skepticism.</div>
+
+<p>On OTF's (Blue Owl Technology Finance Corp) Q3 earnings call Nov 5, president Erik Bissonnette said compute supply — not demand — will be "a little more challenged" given the political fallout from the Democratic sweep, and that spreads on digital-infrastructure deals "are going to continue to widen out" as a result, framing this as a net positive for OTF's returns. Digital infrastructure is currently just 2% of OTF's portfolio at fair value, with a stated target toward mid-to-high single digits ([Bloomberg](https://www.bloomberg.com/news/articles/2026-11-05/blue-owl-sees-gains-as-election-results-limit-ai-compute-supply)). No new redemption prints or NAV marks found for BCRED, BDEBT, or other major BDCs this pass.</p>
+
+<h3>The structural read</h3>
+<p>Bissonnette's framing deserves real skepticism before taking it at face value — it's close to what a BDC executive sitting on a securities class action over AI-disruption-risk disclosure would be expected to say to reassure investors that the risk everyone else is pricing as a negative is actually good for his book. <strong>Bear case:</strong> a thesis built on "our borrowers will have an easier time because less compute gets built" is really a bet that OTF's own existing digital-infrastructure exposure — already under litigation — is positioned on the right side of a supply shortage it can't independently verify. <strong>Bull case:</strong> if the compute-scarcity framing is right, it's a genuinely differentiated private-credit angle on the same selloff story everyone else treats as uniformly bad news, and it's a falsifiable claim worth tracking. Standing watch unchanged: Nov 10 CoreWeave Q3/OWL dividend ex-date, Nov 12 Nebius Q3.</p>
+
+<!-- ====================== POLYMARKET ====================== -->
+<h2>Polymarket Calibration</h2>
+<div class="delta-box"><strong>Delta since Thursday evening:</strong> the AI-bubble-burst contract fully round-tripped overnight, while the Iran contracts barely moved despite the sharpest whiplash of the week.</div>
+
+<table>
+  <tr><th>Market</th><th>Thursday evening</th><th>This morning</th><th>Delta</th></tr>
+  <tr><td>AI bubble burst by Dec 31, 2026</td><td>~14-16%</td><td class="pos">8%</td><td>Full round-trip back to pre-selloff level</td></tr>
+  <tr><td>Hormuz traffic normal by Dec 31</td><td>~9%</td><td class="neg">11%</td><td>Back up, essentially flat vs. week's band</td></tr>
+  <tr><td>US invades Iran before 2027</td><td>~10.5-11%</td><td class="neg">12%</td><td>Small uptick, within noise</td></tr>
+</table>
+
+<p>Sources: <a href="https://polymarket.com/event/ai-bubble-burst-by">Polymarket (AI bubble contract)</a>, <a href="https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-december-31">Hormuz contract</a>, <a href="https://polymarket.com/event/will-the-us-invade-iran-before-2027">invasion contract</a>.</p>
+
+<h3>The structural read</h3>
+<p>The AI-bubble contract's full overnight reversal is the cleanest evidence this week that Thursday's spike was exactly what this file called it — a fear read on a single bad session, not a considered update on bubble odds — moving in lockstep with the equity market's own dip-buy reversal. <strong>Bear case:</strong> a contract this reflexive isn't a great calibration tool on the actual multi-month bubble question — it's arguably just a leveraged mirror of the Nasdaq's daily mood. <strong>Bull case:</strong> precisely because it's reflexive, its round-trip is informative about market psychology today — fear peaked and faded fast. The bigger calibration story is Iran: both tracked contracts stayed essentially flat even as Trump's rhetoric hit its hardest point yet and a real fatality entered the campaign for the first time — Polymarket is pricing the strike talk as leverage tied to the Qatar diplomatic track, not genuine near-term escalation, which should carry more weight than the rhetoric itself per this file's standing "Polymarket over pundit takes" rule.</p>
+
+<!-- ====================== BOTTOM LINE ====================== -->
+<div class="punchline-box">
+  <h3>Bottom Line / Portfolio Implication</h3>
+  <p>Nothing today resolves either of the two threads that actually matter for the zero-position stance: whether Anthropic's IPO markdown ($1.2-1.3T, timing in question) is a one-company story or a repricing of the whole private AI-valuation complex, and whether Microsoft's visible neocloud pullback is the start of a demand-side correction underneath the AI-capex trade. Friday's jobs-beat bounce in NVDA/AMD/CRWV/MU is real but it's sentiment, not fundamentals — it doesn't touch either thread. On Iran, today is the sharpest whiplash this file has logged: a confirmed fatality, a floated Nov 9 strike date, and a Qatar nuclear proposal, all within 24 hours — and Polymarket's calm pricing on both tracked Iran contracts is the signal worth trusting over any single quote. 193 sessions at zero positions remains the right call. Weekend watch: whether Friday's equity bounce holds past the close, any CENTCOM response to today's tanker claims, and Sunday's Herzog mandate handoff with Liberman's Haredi opening as the wildcard.</p>
+</div>
+
+<!-- ====================== SOURCES ====================== -->
+<h2>Sources</h2>
+<div class="sources">
+  <p><strong>Iran / Israel:</strong></p>
+  <ul>
+    <li><a href="https://www.brecorder.com/news/40447785/seafarer-killed-in-suspected-missile-attack-on-tanker-in-gulf">Business Recorder — Seafarer killed in suspected missile attack on tanker in Gulf</a></li>
+    <li><a href="https://iranwire.com/en/news/159877-irgc-claims-two-more-tankers-struck-mines-in-the-strait-of-hormuz/">IranWire — IRGC claims two more tankers struck mines in the Strait of Hormuz</a></li>
+    <li><a href="https://www.i24news.tv/en/news/international/artc-report-trump-meets-with-national-security-team-to-weigh-renewed-strikes-on-iran">i24NEWS — Trump meets national security team to weigh renewed strikes on Iran</a></li>
+    <li><a href="https://www.bloomberg.com/news/articles/2026-11-06/us-and-iran-edge-closer-to-deal-with-nuclear-issue-back-in-play">Bloomberg — US and Iran edge closer to deal, nuclear issue back in play</a></li>
+    <li><a href="https://www.timesofisrael.com/liveblog-november-06-2026/">Times of Israel — Liveblog, November 6, 2026</a></li>
+  </ul>
+  <p><strong>Markets / oil:</strong></p>
+  <ul>
+    <li><a href="https://www.cnbc.com/2026/11/06/jobs-report-october-2026.html">CNBC — October jobs report</a></li>
+    <li><a href="https://www.koreaherald.com/article/10928857">Korea Herald — Kospi plunges, trading halted</a></li>
+    <li><a href="https://247wallst.com/investing/2026/11/06/asias-chip-stocks-crashed-overnight-with-sk-hynix-down-11-7-and-taiwan-off-more-than-8-now-nasdaq-futures-are-pointing-higher/">24/7 Wall St. — Asia's chip stocks crashed overnight</a></li>
+  </ul>
+  <p><strong>AI / Portfolio:</strong></p>
+  <ul>
+    <li><a href="https://www.bnnbloomberg.ca/business/artificial-intelligence/2026/11/06/ai-backlash-could-threaten-anthropic-ipo-timing-potential-investors-say-reuters-exclusive/">BNN Bloomberg (Reuters) — AI backlash could threaten Anthropic IPO timing</a></li>
+    <li><a href="https://www.investing.com/news/stock-market-news/microsoft-tightens-oversight-of-neocloud-data-center-projects-bloomberg-news-reports-5005281">Investing.com — Microsoft tightens oversight of neocloud data center projects</a></li>
+  </ul>
+  <p><strong>Private credit:</strong></p>
+  <ul>
+    <li><a href="https://www.bloomberg.com/news/articles/2026-11-05/blue-owl-sees-gains-as-election-results-limit-ai-compute-supply">Bloomberg — Blue Owl sees gains as election results limit AI compute supply</a></li>
+  </ul>
+  <p><strong>Polymarket:</strong></p>
+  <ul>
+    <li><a href="https://polymarket.com/event/ai-bubble-burst-by">Polymarket — AI bubble burst by Dec 31, 2026</a></li>
+    <li><a href="https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-december-31">Polymarket — Strait of Hormuz traffic returns to normal by Dec 31</a></li>
+    <li><a href="https://polymarket.com/event/will-the-us-invade-iran-before-2027">Polymarket — Will the US invade Iran before 2027</a></li>
+  </ul>
+</div>
+
+<div class="footer">
+  Daily News Brief · November 6, 2026 · Morning Brief · Day 252 of the Iran war<br>
+  <em>Andres's daily analyst. Structural reads, not headline regurgitation.</em>
+</div>
+
+</div>
+
+</body>
+</html>
