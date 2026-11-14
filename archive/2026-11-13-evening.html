@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily News Brief — November 13, 2026 (Evening Wrap)</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --surface: #121820;
+    --surface2: #1a2230;
+    --border: #243044;
+    --text: #c8d3e0;
+    --text-dim: #6b7d93;
+    --heading: #e8edf3;
+    --accent: #4fc3f7;
+    --accent2: #81c784;
+    --warn: #ffb74d;
+    --danger: #ef5350;
+    --gold: #ffd54f;
+    --purple: #b39ddb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  .header {
+    background: linear-gradient(135deg, #0a1420 0%, #13101f 50%, #0a1a2e 100%);
+    border-bottom: 1px solid var(--accent);
+    padding: 50px 40px 40px;
+    text-align: center;
+  }
+  .header .day-tag {
+    display: inline-block;
+    background: rgba(79,195,247,0.15);
+    border: 1px solid rgba(79,195,247,0.4);
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--heading);
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .header .subtitle {
+    font-size: 18px;
+    color: var(--warn);
+    font-weight: 400;
+  }
+  .header .subtitle-sub {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 10px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--heading);
+    margin: 48px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 28px 0 12px;
+  }
+  p { margin-bottom: 14px; }
+  strong { color: var(--heading); }
+  em { color: var(--accent); font-style: italic; }
+  ul, ol { margin: 0 0 14px 22px; }
+  li { margin-bottom: 6px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  table tr:last-child td { border-bottom: none; }
+  table td:first-child {
+    font-weight: 700;
+    color: var(--heading);
+  }
+  .badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+  .badge-red { background: var(--danger); color: #fff; }
+  .badge-green { background: var(--accent2); color: var(--bg); }
+  .badge-blue { background: var(--accent); color: var(--bg); }
+  .badge-yellow { background: var(--warn); color: var(--bg); }
+  .badge-purple { background: var(--purple); color: var(--bg); }
+  .tldr-box {
+    background: linear-gradient(135deg, rgba(79,195,247,0.1), rgba(255,183,77,0.05));
+    border: 2px solid var(--accent);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin: 24px 0 32px;
+  }
+  .tldr-box h3 {
+    color: var(--accent);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .delta-box {
+    background: var(--surface2);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 20px;
+    margin: 0 0 18px;
+    font-size: 13.5px;
+    color: var(--text-dim);
+  }
+  .delta-box strong { color: var(--accent); }
+  .honest-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--purple);
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin: 24px 0;
+  }
+  .honest-box h3 {
+    color: var(--purple);
+    margin-top: 0;
+    margin-bottom: 14px;
+  }
+  .punchline-box {
+    background: linear-gradient(135deg, rgba(79,195,247,0.08), rgba(239,83,80,0.05));
+    border: 2px solid rgba(79,195,247,0.3);
+    border-radius: 10px;
+    padding: 28px;
+    margin: 32px 0;
+    text-align: center;
+  }
+  .punchline-box h3 {
+    color: var(--accent);
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .punchline-box p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    max-width: 760px;
+    margin: 0 auto 10px;
+    color: var(--text);
+  }
+  .sources { font-size: 12.5px; color: var(--text-dim); }
+  .sources a { color: var(--accent); text-decoration: none; }
+  .sources a:hover { text-decoration: underline; }
+  .footer {
+    border-top: 1px solid var(--border);
+    margin-top: 50px;
+    padding-top: 20px;
+    color: var(--text-dim);
+    font-size: 12px;
+    text-align: center;
+  }
+  .pos { color: var(--accent2); }
+  .neg { color: var(--danger); }
+  .move-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  .move-table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  .move-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .correction-box {
+    background: rgba(179,157,219,0.08);
+    border: 2px solid var(--purple);
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 24px 0 32px;
+  }
+  .correction-box h3 {
+    color: var(--purple);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="day-tag">Day 259 of the Iran War · Evening Wrap · 199th Zero-Position Day</div>
+  <h1>Daily News Brief — November 13, 2026</h1>
+  <div class="subtitle">NVDA closed below $4T for the first time since July 2025, its longest weekly losing streak since 2012, and the morning's "single-name, not broad risk-off" call needs a partial correction.</div>
+  <div class="subtitle-sub">Run: ~16:30 PT · Evening Wrap · Nov 17 NVDA Q3 (5 days out) · Nov 18 Huang closed-door briefing / Anthropic pricing · Nov 19 ANT debut · Dec 8-9 FOMC</div>
+</div>
+
+<div class="container">
+
+<!-- ====================== TL;DR ====================== -->
+<div class="tldr-box">
+  <h3>TL;DR — What changed today and why it matters</h3>
+  <ul>
+    <li><strong>NVDA closed $162.85 (-2.01%), market cap below $4T</strong> for the first time since July 2025 — the sixth straight weekly decline, its longest losing streak since 2012. HSBC downgraded it to Hold and cut its price target from $375 to $170.</li>
+    <li><strong>The broader tape turned red too.</strong> S&amp;P -0.51%, Nasdaq -0.93%, Dow roughly flat. The 10-year yield spiked to an intraday high of 5.17% (highest since October) and bitcoin broke below $70K for the first time in nearly three months.</li>
+    <li><strong>Correcting last night/this morning's framing:</strong> the House Republicans' request is a closed-door briefing on Nov 18, not public testimony. Huang reportedly offered to send Nvidia's general counsel instead; lawmakers were unimpressed, and a subpoena threat is still live past the Nov 11 deadline.</li>
+    <li><strong>First real signal the CEO search is moving:</strong> reporting says headhunters are now actively searching for a permanent successor — still no shortlist or timeline.</li>
+    <li><strong>Iran, Israel, and private credit stayed quiet.</strong> One clean Polymarket fetch tonight: Hormuz-normal-by-Dec-31 ticked down to 6% (from 7%); the AI-bubble and Iran-invasion contracts didn't load and carry forward unchanged.</li>
+  </ul>
+</div>
+
+<!-- ====================== MORNING -> EVENING ====================== -->
+<div class="correction-box">
+  <h3>Morning → Evening: what moved</h3>
+  <p>This morning's brief called Friday's NVDA slide "a single-name overhang extending into a second session, not a broadening risk-off move," with S&amp;P/Dow/Nasdaq/VIX levels unconfirmed pending the close. The close came in worse on NVDA specifically than the morning's "~-2% further" estimate suggested in context — HSBC's price-target cut from $375 to $170 is a structural repricing, not a trim — and the broader market did not stay clean: S&amp;P and Nasdaq both closed red, the 10-year yield hit its highest intraday level since October, and bitcoin broke a three-month low. The Dow staying roughly flat is the one holdout still supporting "contained," so this is a partial correction to the morning thesis, not a full reversal: still mostly an NVDA story, but today it stopped being <em>only</em> an NVDA story. Separately, the morning's "House Republicans want Huang to testify" framing was imprecise — it's a closed-door briefing, not a public hearing — and tonight's reporting fills in the gap on where the CEO search actually stands (headhunters now active).</p>
+</div>
+
+<!-- ====================== MARKETS ====================== -->
+<h2>Markets / Macro</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> Friday's close confirmed; NVDA below $4T market cap; broader tape turned red alongside it.</div>
+
+<p>Confirmed Friday close: S&amp;P 500 <strong>7,553.53 (-0.51%)</strong>; Nasdaq Composite <strong>25,129.60 (-0.93%)</strong>; Dow <strong>52,291.73 (roughly flat, +0.1%)</strong> (<a href="https://finance.yahoo.com/markets/live/stock-market-today-friday-november-13-dow-sp-500-nasdaq-nvidia-ppi-141451558.html">Yahoo Finance</a>). NVDA closed <strong>$162.85 (-2.01%)</strong>, its market cap falling below $4T for the first time since July 2025, capping a sixth straight weekly decline (-12.75% on the week) — its longest losing streak since 2012 (<a href="https://www.cnbc.com/2026/11/13/nvidia-stock-jensen-affair-ai.html">CNBC</a>). HSBC downgraded NVDA to Hold and cut its price target from $375 to $170. Away from NVDA: the 10-year yield hit an intraday high of <strong>5.17%</strong>, its highest since October; October PPI rose 0.3% m/m (below the 0.4% consensus) but +6.5% y/y; bitcoin fell below <strong>$70K</strong> for the first time in nearly three months; Brent rose toward $96 earlier in the week and was "relatively stable" Friday, though no exact settlement was confirmed (<a href="https://www.alainguillot.com/stock-market-recap-november-13-2026/">market recap</a>). Gold's Friday level is unconfirmed tonight — Thursday's ~$3,866-3,891 is the last clean read.</p>
+
+<h3>The structural read</h3>
+<p>Two straight down sessions of NVDA-specific selling, this morning's read argued, hadn't yet become index-wide contagion. Tonight's close complicates that: a red S&amp;P and Nasdaq, a yield spike to a multi-week high, and BTC breaking a three-month low on the same day as an NVDA price-target slash together look like the beginning of a mild broadening, even if the Dow staying flat and the magnitude remaining modest argue against calling this a repeat of the Nov 5 -4.36% broad selloff. <strong>Bear case:</strong> HSBC's cut from $375 to $170 is a signal that at least one major desk now treats the governance crisis as a multi-quarter overhang, not a one-week scare — and that kind of repricing can pull sentiment on adjacent names with it. <strong>Bull case:</strong> retail kept buying the dip (see portfolio section), the Dow held, and one bad week doesn't yet show up anywhere else in the AI-capex complex. Standing watch: Monday's open — follow-through or bounce — and NVDA's Nov 17 print.</p>
+
+<!-- ====================== AI ====================== -->
+<h2>AI Ecosystem</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> NVDA closed below $4T; HSBC slashed its price target; the "testify before Congress" framing gets corrected; headhunters reportedly now active on the CEO search.</div>
+
+<p>Nvidia closed Friday at $162.85 (-2.01%), market cap below $4T for the first time since July 2025 — sixth straight weekly decline, longest losing streak since 2012. HSBC downgraded NVDA to Hold and cut its price target from $375 to $170, a cut driven by the governance crisis rather than a fundamentals call, with the Nov 17 earnings call now five days out. Correction to this morning's framing: the House Republicans' request is a <strong>closed-door briefing</strong> with three committee chairs on Nov 18 (the day after earnings), not public testimony; Huang reportedly offered to send Nvidia's general counsel in his place, which lawmakers were unimpressed by, and the subpoena threat from Reps. Moolenaar and Mast remains live past the Nov 11 response deadline with no confirmed resolution found tonight (<a href="https://implicator.ai/gop-leaders-three-house-committees-ask-jensen-huang-closed">implicator.ai</a>, <a href="https://www.zerohedge.com/markets/trump-reveals-what-jensen-huang-told-him-when-asked-if-he-knew-she-was-spy">ZeroHedge</a>). Separately, reporting via The Information says headhunters are now actively searching for a permanent CEO — the first concrete sign the board's search is actually underway, though still no shortlist, timeline, or signal of internal-vs-external leaning (<a href="https://www.thestandard.com.hk/finance/article/348055/Headhunters-may-be-hunting-for-Nvidias-next-successor-The-Information-reports">The Standard</a>). No update found tonight on Micron's tentative Nov 17 fourth Taoyuan session.</p>
+
+<h3>The structural read</h3>
+<p>The gap between "House Republicans want Huang to testify before Congress" (this morning's framing) and "three committee chairs want a closed-door briefing, and Huang tried to send his lawyer instead" (tonight's correction) matters: the latter reads as a company trying to manage exposure quietly, the former reads as a public reckoning. Lawmakers' visible irritation at the counsel offer suggests the quiet-management approach isn't working. <strong>Bear case:</strong> an active headhunter search confirms the board itself doesn't expect Huang's situation to resolve quickly enough to avoid a real succession process — that's a multi-month overhang, not a multi-week one. <strong>Bull case:</strong> a board moving decisively on both governance (independent chair) and succession (active search) within a week of the resignation is competent crisis management, and the market's dip-buying suggests some investors see it that way too.</p>
+
+<!-- ====================== IRAN / ISRAEL ====================== -->
+<h2>Iran / Middle East Geopolitics</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> none confirmed. Genuinely quiet on both the war track and the peace track.</div>
+
+<p>A targeted search this evening for any CENTCOM statement, firmer Qatar-track development, or Eisenkot/Liberman coalition movement since this morning turned up nothing newer than Monday Nov 9's "productive meeting, confident in a stable government" framing and the new Knesset's Nov 10 swearing-in. Both the war track and the peace track remain paused in the same ambiguous middle flagged Thursday night and again this morning.</p>
+
+<h3>The structural read</h3>
+<p>Two consecutive quiet windows (this morning and tonight) without any new tanker incident, CENTCOM statement, or coalition movement is itself worth noting rather than assuming it will persist through the weekend. Standing watch unchanged: any CENTCOM statement on the tanker-incident pattern, any firmer Qatar-track signal, and whether Eisenkot's 28-day clock (running to Dec 6) produces visible progress against Liberman's leverage calculus.</p>
+
+<!-- ====================== PORTFOLIO ====================== -->
+<h2>Portfolio Tickers</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> 199th consecutive zero-position day. NVDA closed below $4T; retail kept buying the dip; no confirmed update on any other tracked ticker.</div>
+
+<table>
+  <tr><th>Ticker</th><th>What changed</th><th>Read</th></tr>
+  <tr><td>NVDA</td><td class="neg">-2.01% Fri close, $162.85; market cap below $4T first time since Jul 2025; -12.75% on the week</td><td>HSBC cuts PT $375→$170, downgrades to Hold; retail bought a record $111M in first 30 min (Vanda Research)</td></tr>
+  <tr><td>AMD</td><td>No new catalyst found</td><td>Carrying forward this morning's read — no confirmed sympathy move</td></tr>
+  <tr><td>CRWV</td><td>No new catalyst found</td><td>Carrying forward Thursday's post-earnings levels</td></tr>
+  <tr><td>NBIS</td><td>No new catalyst found</td><td>Carrying forward Thursday's Q3 beat</td></tr>
+  <tr><td>MU</td><td>No new catalyst found</td><td>Taoyuan Nov 17 session status still unconfirmed</td></tr>
+  <tr><td>TSMC</td><td>No new catalyst found</td><td>Not reported falling in sympathy with NVDA</td></tr>
+  <tr><td>AMZN</td><td>No new catalyst found</td><td>No company-specific news found</td></tr>
+  <tr><td>XLE</td><td>No new catalyst found</td><td>Carrying forward this morning's levels</td></tr>
+  <tr><td>OWL / ARCC / APO</td><td>No new catalyst found</td><td>See private-credit.md — no change</td></tr>
+</table>
+
+<h3>The structural read</h3>
+<p>Vanda Research's flagged $111M of retail NVDA buying in the first 30 minutes of trading — its biggest opening retail buy on record for the stock — is a genuine data point, not noise: retail kept buying the dip even as the stock fell further and a major desk slashed its target. <strong>Bear case:</strong> that's retail catching a falling knife while institutional sentiment (HSBC) turns more bearish — a classic divergence that has not historically favored the retail side. <strong>Bull case:</strong> retail has been broadly right on NVDA dips through this cycle, and a record opening buy suggests conviction that the governance story doesn't change the underlying AI-demand picture. 199 sessions at zero positions remains the right call — nothing today changes that calculus.</p>
+
+<!-- ====================== PRIVATE CREDIT ====================== -->
+<h2>Private Credit</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> none confirmed.</div>
+
+<p>A targeted search this evening found no new redemption prints, NAV marks, or litigation developments on OWL, APO, ARCC, or KKR since this morning.</p>
+
+<h3>The structural read</h3>
+<p>No news is simply no news. Standing watch unchanged: next-quarter spread data from peers testing Bissonnette's thesis, any KKR/FSK update (currently stale), and whether the OTF class action produces a substantive ruling now that it's in federal court.</p>
+
+<!-- ====================== POLYMARKET ====================== -->
+<h2>Polymarket Calibration</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> one clean direct fetch — Hormuz contract down to 6%. Two contracts did not return usable data.</div>
+
+<table>
+  <tr><th>Market</th><th>Thu evening (confirmed)</th><th>Tonight</th><th>Delta</th></tr>
+  <tr><td>Hormuz traffic normal by Dec 31</td><td>7%</td><td><strong>6%</strong> (direct fetch, $17.8M volume)</td><td>Continued small drift toward pessimism, no corresponding new escalation found today</td></tr>
+  <tr><td>AI bubble burst by Dec 31, 2026</td><td>~7%</td><td>~7% (carried forward, no fetch)</td><td>Direct fetch returned no usable data tonight</td></tr>
+  <tr><td>US invades Iran before 2027</td><td>8%</td><td>~8% (carried forward, no fetch)</td><td>Direct fetch returned no usable data tonight</td></tr>
+</table>
+
+<p>Sources: <a href="https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-december-31">Hormuz contract</a>, <a href="https://polymarket.com/event/will-the-ai-bubble-burst-by-december-31">AI bubble contract</a>, <a href="https://polymarket.com/event/us-invades-iran-before-2027">invasion contract</a>.</p>
+
+<h3>The structural read</h3>
+<p>The Hormuz contract's continued grind down to 6% — with no new escalation found today to explain it — reads as the market pricing in a longer, lower-grade status quo (near-daily small tanker incidents, no fatalities since Nov 6, no resolution) rather than reacting to any single event. The two contracts that didn't load tonight are a genuine data gap, not a signal — worth a clean fetch tomorrow rather than guessing whether Nvidia's close below $4T moved the AI-bubble contract.</p>
+
+<!-- ====================== BOTTOM LINE ====================== -->
+<div class="punchline-box">
+  <h3>Bottom Line / Portfolio Implication</h3>
+  <p>The morning's framing held on direction and undersold the magnitude: NVDA didn't just extend its slide, it closed below a $4T market cap for the first time since July 2025 and took an HSBC price-target cut from $375 to $170 on the way down, while the broader tape — S&amp;P, Nasdaq, the 10-year yield, bitcoin — all moved in the same risk-off direction on the same day. That's a real, if still modest, broadening beyond the single-name story this file was confidently calling it as recently as this morning, and it's worth holding that correction honestly rather than re-asserting the old framing. Separately, two things got clearer tonight: the "testify before Congress" story is actually a closed-door briefing that Huang is trying to avoid attending personally, and the CEO search has its first real sign of life via headhunters. Iran, Israel, and private credit stay genuinely quiet. 199 sessions at zero positions remains the right call heading into a weekend with Nvidia's Nov 17 print now five days out and the market's verdict on today's close still unsettled. Tomorrow's morning brief should open with Asia's reaction to the sub-$4T close and any weekend movement on Huang's response to the Nov 18 briefing request.</p>
+</div>
+
+<!-- ====================== SOURCES ====================== -->
+<h2>Sources</h2>
+<div class="sources">
+  <p><strong>Markets / AI / Portfolio:</strong></p>
+  <ul>
+    <li><a href="https://finance.yahoo.com/markets/live/stock-market-today-friday-november-13-dow-sp-500-nasdaq-nvidia-ppi-141451558.html">Yahoo Finance — Stock market today, Friday Nov 13</a></li>
+    <li><a href="https://www.cnbc.com/2026/11/13/nvidia-stock-jensen-affair-ai.html">CNBC — Nvidia stock suffers longest weekly losing streak since 2012</a></li>
+    <li><a href="https://www.alainguillot.com/stock-market-recap-november-13-2026/">Alain Guillot — Stock market recap, Nov 13, 2026</a></li>
+    <li><a href="https://implicator.ai/gop-leaders-three-house-committees-ask-jensen-huang-closed">implicator.ai — GOP leaders ask Jensen Huang for closed-door briefing</a></li>
+    <li><a href="https://www.zerohedge.com/markets/trump-reveals-what-jensen-huang-told-him-when-asked-if-he-knew-she-was-spy">ZeroHedge — House GOP threatens Huang with subpoena</a></li>
+    <li><a href="https://www.thestandard.com.hk/finance/article/348055/Headhunters-may-be-hunting-for-Nvidias-next-successor-The-Information-reports">The Standard — Headhunters hunting for Nvidia's next successor</a></li>
+  </ul>
+  <p><strong>Polymarket:</strong></p>
+  <ul>
+    <li><a href="https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-december-31">Polymarket — Strait of Hormuz traffic returns to normal by Dec 31</a></li>
+    <li><a href="https://polymarket.com/event/will-the-ai-bubble-burst-by-december-31">Polymarket — AI bubble burst by Dec 31, 2026</a></li>
+    <li><a href="https://polymarket.com/event/us-invades-iran-before-2027">Polymarket — US invades Iran before 2027</a></li>
+  </ul>
+</div>
+
+<div class="footer">
+  Daily News Brief · November 13, 2026 · Evening Wrap · Day 259 of the Iran war<br>
+  <em>Andres's daily analyst. Structural reads, not headline regurgitation.</em>
+</div>
+
+</div>
+
+</body>
+</html>
