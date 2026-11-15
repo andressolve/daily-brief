@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily News Brief — November 15, 2026 (Weekend Morning Brief)</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --surface: #121820;
+    --surface2: #1a2230;
+    --border: #243044;
+    --text: #c8d3e0;
+    --text-dim: #6b7d93;
+    --heading: #e8edf3;
+    --accent: #4fc3f7;
+    --accent2: #81c784;
+    --warn: #ffb74d;
+    --danger: #ef5350;
+    --gold: #ffd54f;
+    --purple: #b39ddb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  .header {
+    background: linear-gradient(135deg, #0a1420 0%, #13101f 50%, #0a1a2e 100%);
+    border-bottom: 1px solid var(--accent);
+    padding: 50px 40px 40px;
+    text-align: center;
+  }
+  .header .day-tag {
+    display: inline-block;
+    background: rgba(79,195,247,0.15);
+    border: 1px solid rgba(79,195,247,0.4);
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--heading);
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .header .subtitle {
+    font-size: 18px;
+    color: var(--warn);
+    font-weight: 400;
+  }
+  .header .subtitle-sub {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 10px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--heading);
+    margin: 48px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 28px 0 12px;
+  }
+  p { margin-bottom: 14px; }
+  strong { color: var(--heading); }
+  em { color: var(--accent); font-style: italic; }
+  ul, ol { margin: 0 0 14px 22px; }
+  li { margin-bottom: 6px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  table tr:last-child td { border-bottom: none; }
+  table td:first-child {
+    font-weight: 700;
+    color: var(--heading);
+  }
+  .badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+  .badge-red { background: var(--danger); color: #fff; }
+  .badge-green { background: var(--accent2); color: var(--bg); }
+  .badge-blue { background: var(--accent); color: var(--bg); }
+  .badge-yellow { background: var(--warn); color: var(--bg); }
+  .badge-purple { background: var(--purple); color: var(--bg); }
+  .tldr-box {
+    background: linear-gradient(135deg, rgba(79,195,247,0.1), rgba(255,183,77,0.05));
+    border: 2px solid var(--accent);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin: 24px 0 32px;
+  }
+  .tldr-box h3 {
+    color: var(--accent);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .delta-box {
+    background: var(--surface2);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 20px;
+    margin: 0 0 18px;
+    font-size: 13.5px;
+    color: var(--text-dim);
+  }
+  .delta-box strong { color: var(--accent); }
+  .honest-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--purple);
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin: 24px 0;
+  }
+  .honest-box h3 {
+    color: var(--purple);
+    margin-top: 0;
+    margin-bottom: 14px;
+  }
+  .punchline-box {
+    background: linear-gradient(135deg, rgba(79,195,247,0.08), rgba(239,83,80,0.05));
+    border: 2px solid rgba(79,195,247,0.3);
+    border-radius: 10px;
+    padding: 28px;
+    margin: 32px 0;
+    text-align: center;
+  }
+  .punchline-box h3 {
+    color: var(--accent);
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .punchline-box p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    max-width: 760px;
+    margin: 0 auto 10px;
+    color: var(--text);
+  }
+  .sources { font-size: 12.5px; color: var(--text-dim); }
+  .sources a { color: var(--accent); text-decoration: none; }
+  .sources a:hover { text-decoration: underline; }
+  .footer {
+    border-top: 1px solid var(--border);
+    margin-top: 50px;
+    padding-top: 20px;
+    color: var(--text-dim);
+    font-size: 12px;
+    text-align: center;
+  }
+  .pos { color: var(--accent2); }
+  .neg { color: var(--danger); }
+  .move-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  .move-table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  .move-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .correction-box {
+    background: rgba(179,157,219,0.08);
+    border: 2px solid var(--purple);
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 24px 0 32px;
+  }
+  .correction-box h3 {
+    color: var(--purple);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="day-tag">Day 261 of the Iran War · Weekend Morning Brief · 201st Zero-Position Day</div>
+  <h1>Daily News Brief — November 15, 2026</h1>
+  <div class="subtitle">A second quiet morning on the news side — but bitcoin's slide decelerated sharply, and Polymarket's thin-volume AI-bubble divergence held rather than reverting.</div>
+  <div class="subtitle-sub">Run: ~08:00 PT · Weekend Morning Brief (lighter) · Nov 17 NVDA Q3 (2 trading days out) · Nov 18 Huang closed-door briefing / Anthropic pricing · Nov 19 ANT debut · Dec 8-9 FOMC</div>
+</div>
+
+<div class="container">
+
+<!-- ====================== TL;DR ====================== -->
+<div class="tldr-box">
+  <h3>TL;DR — What changed since Saturday morning and why it matters</h3>
+  <ul>
+    <li><strong>Genuine "no material change" for a second straight morning across Iran, AI/NVDA, portfolio tickers, and private credit.</strong> Nothing newer found than Saturday's record on any of those beats.</li>
+    <li><strong>Bitcoin's slide decelerated sharply: ~$64,700-64,900, down only ~1.4-1.7% in 24 hours</strong> — roughly a third of Saturday's -4.47% pace. First sign in three sessions the drop may be losing momentum, not confirmation of a bottom.</li>
+    <li><strong>The more interesting result: Polymarket's "AI bubble burst by June 2027" contract held its sharp Saturday drop (26%→19%) rather than reverting</strong> — now 18%, essentially flat overnight despite BTC still falling. A move surviving a second quiet day looks less like noise.</li>
+    <li><strong>The Nov 11 deadline for Huang to respond to the House committees' closed-door-briefing request remains unresolved</strong> — now three business days before the Nov 18 session, with no confirmed response or subpoena found.</li>
+    <li><strong>201st consecutive zero-position day</strong>, heading into a week stacking NVDA's Nov 17 earnings call, the Nov 18 Huang briefing, and Anthropic's Nov 18-19 IPO debut inside four trading days.</li>
+  </ul>
+</div>
+
+<!-- ====================== IRAN / ISRAEL ====================== -->
+<h2>Iran / Middle East Geopolitics</h2>
+<div class="delta-box"><strong>Delta since Saturday morning:</strong> none confirmed. Second straight quiet morning on both the war track and the peace track — this is the weekend's priority beat per house rules, and it still has nothing new to report.</div>
+
+<p>A search this morning for any CENTCOM statement on the tanker-incident pattern, a firmer Qatar-track development, or Eisenkot/Liberman coalition movement since Saturday turned up nothing newer than what's already on record. The most recent confirmed items on the coalition track remain the Nov 9-10 "agreed on a Knesset Speaker candidate, confident in a stable government" framing, with Liberman's refusal to rely on Arab parties still the standing obstacle. On the Qatar track, Doha is still reported (as of ~Nov 9-11 coverage) as pursuing an interim "bridge deal" rather than a breakthrough — Washington wants nuclear concessions first, Tehran wants sanctions relief and frozen-asset access first.</p>
+
+<h3>The structural read</h3>
+<p>Eisenkot's 28-day clock (running to Dec 6) now has 21 days left, and the Liberman leverage calculus hasn't moved in either direction for three straight days now. <strong>Bear case:</strong> two consecutive quiet mornings on both tracks could mean both sides are genuinely waiting out the weekend before making a move — which means whatever happens Monday is likely to happen fast and without much warning. <strong>Bull case:</strong> no new tanker incident and no fresh escalatory rhetoric from either Tehran or Washington for three days running is itself a continuation of the calmer pattern that's held since Trump's "no need"/"highly unlikely" comments on Nov 9 — the longer this holds, the more it looks like a real de-escalation plateau rather than a pause before the next flare-up. Standing watch unchanged: any CENTCOM statement, any firmer Qatar-track signal, and whether Eisenkot's clock produces visible progress this week.</p>
+
+<!-- ====================== MARKETS ====================== -->
+<h2>Markets / Macro</h2>
+<div class="delta-box"><strong>Delta since Saturday morning:</strong> no cash-equity session (Sunday). Bitcoin's slide continued but decelerated sharply — the first change in direction-of-travel in three days.</div>
+
+<p>Direct fetch this morning: BTC <strong>~$64,733-64,917, down roughly 1.4-1.7% in the trailing 24 hours</strong> depending on the page's exact snapshot (<a href="https://coinmarketcap.com/currencies/bitcoin/">CoinMarketCap</a>) — still falling, but at about a third of Saturday's -4.47% pace. No equity, oil, or gold print to confirm today since markets are closed for the weekend; Friday's closes (S&amp;P 7,553.53, Nasdaq 25,129.60, Dow 52,291.73, NVDA $162.85) remain the last confirmed read, now two sessions old.</p>
+
+<h3>The structural read</h3>
+<p>A sharply slower rate of decline is the first sign in three days that BTC's slide may be running out of room on thin weekend liquidity, rather than signaling fresh stress. <strong>Bear case:</strong> BTC is still down for a third straight day — after Friday's break below $70K and Saturday's -4.47% drop — and the risk-off read stays alive regardless of the slower pace until Monday's open proves otherwise. <strong>Bull case:</strong> deceleration is consistent with this file's standing read that weekend thin-volume moves overstate directional conviction; if Monday's cash-equity liquidity brings stabilization or a bounce, this weekend's slide looks more like deleveraging working itself out than a standalone shock. Standing watch: Monday's open, whether BTC stabilizes or resumes its slide, and NVDA's Nov 17 earnings call now two trading days out.</p>
+
+<!-- ====================== AI ====================== -->
+<h2>AI Ecosystem</h2>
+<div class="delta-box"><strong>Delta since Saturday morning:</strong> none confirmed. No new ai-ecosystem-analyst output; the Huang subpoena standoff remains unresolved three business days out from the Nov 18 briefing.</div>
+
+<p>No new file in <code>/ai-ecosystem-analyst/output/</code> newer than Nov 2's S-1/A deep-dive. A search this morning found nothing newer than Saturday's record on the Huang subpoena threat — the Nov 11 response deadline remains passed with no confirmed reply from Huang or Nvidia and no confirmed subpoena issued — nor on the CEO search (still unconfirmed headhunter reporting via The Information, no shortlist) or Micron's tentative Nov 17 fourth Taoyuan labor session. Anthropic's IPO timeline is unchanged: pricing still targeted Nov 18, trading Nov 19 under ticker ANT, $70-78/share band.</p>
+
+<h3>The structural read</h3>
+<p>A second straight quiet day on the subpoena standoff reinforces, rather than changes, Saturday's read: the situation is being managed out of public view rather than resolved, consistent with Nvidia's pattern this month of handling the crisis through structural moves (new board chair, interim CEO) rather than public statements. <strong>Bear case:</strong> three days of silence immediately before NVDA's earnings call and the rescheduled Nov 18 briefing date raises the odds the leadership-vacuum story resurfaces with a harder edge right as the market tries to read Q3 guidance. <strong>Bull case:</strong> continued quiet from both sides could equally mean compliance is proceeding privately — Congress doesn't always escalate publicly when a target is cooperating behind closed doors. Standing watch: any resolution of the subpoena threat, a permanent-CEO announcement, and whether Micron's Nov 17 session happens given the union's "defeat" framing.</p>
+
+<!-- ====================== PORTFOLIO ====================== -->
+<h2>Portfolio Tickers</h2>
+<div class="delta-box"><strong>Delta since Saturday morning:</strong> 201st consecutive zero-position day. No equity trading, no ticker-specific news on any of the eleven names.</div>
+
+<table>
+  <tr><th>Ticker</th><th>What changed</th><th>Read</th></tr>
+  <tr><td>NVDA</td><td>No weekend trading; Friday's close stands ($162.85, -2.01%, below $4T market cap)</td><td>Nov 17 earnings call now the dominant catalyst, 2 trading days out</td></tr>
+  <tr><td>AMD / TSMC / CRWV / NBIS / MU / AMZN / XLE</td><td>No new catalyst found</td><td>Carrying forward Friday's levels — nothing to re-check over a weekend with no trading</td></tr>
+  <tr><td>OWL / ARCC / APO</td><td>No new catalyst found</td><td>See Private Credit — no change</td></tr>
+</table>
+
+<h3>The structural read</h3>
+<p>201 consecutive sessions at zero positions keeps compounding the same opportunity-cost question flagged Saturday at the 200th-day milestone. <strong>Bear case:</strong> if the standing re-entry bar (a resolved NVDA leadership situation, or clear evidence the AI-capex financing/policy risks have stopped compounding) never actually gets satisfied, the stance risks becoming default inertia rather than an active judgment — worth Andres's own periodic gut-check independent of any single week's news. <strong>Bull case:</strong> the week ahead still stacks three genuine catalysts — NVDA's Nov 17 print, the Nov 18 Huang briefing/subpoena fallout, and Anthropic's Nov 18-19 debut — inside four trading days, exactly the kind of concentrated information event the zero-position stance has been designed to wait for. Neither the streak nor the weekend's quiet is itself a reason to change course; the week's catalysts might be.</p>
+
+<!-- ====================== PRIVATE CREDIT ====================== -->
+<h2>Private Credit</h2>
+<div class="delta-box"><strong>Delta since Saturday morning:</strong> none confirmed.</div>
+
+<p>A search this morning found no new redemption prints, NAV marks, or litigation developments on OWL, APO, ARCC, or KKR since Saturday morning — expected, since no BDC reporting calendar falls on a weekend.</p>
+
+<h3>The structural read</h3>
+<p>No news is simply no news here. Standing watch unchanged: next-quarter spread data from peers testing Bissonnette's digital-infrastructure-spread thesis, any KKR/FSK update (currently stale from the Q2 cycle), and the OTF class action's status now that it's in federal court.</p>
+
+<!-- ====================== POLYMARKET ====================== -->
+<h2>Polymarket Calibration</h2>
+<div class="delta-box"><strong>Delta since Saturday morning:</strong> clean direct fetches on all three tracked markets. All moved 1 percentage point or less — the notable result is what didn't move.</div>
+
+<table>
+  <tr><th>Market</th><th>Sat morning</th><th>This morning</th><th>Delta</th></tr>
+  <tr><td>Hormuz traffic normal by Dec 31</td><td>6%</td><td><strong>5%</strong> (~$17.9M volume)</td><td>Down 1pp</td></tr>
+  <tr><td>AI bubble burst by Dec 31, 2026</td><td>6.9%</td><td><strong>8.0%</strong> (~$3.13M volume)</td><td>Up ~1pp, within noise</td></tr>
+  <tr><td>AI bubble burst by June 30, 2027</td><td>19%</td><td><strong>18%</strong> (~$172K volume)</td><td class="pos">Flat — held Saturday's sharp drop, did not revert toward 26%</td></tr>
+  <tr><td>US invades Iran before 2027</td><td>9%</td><td><strong>8%</strong> (~$80.3M volume)</td><td>Down 1pp</td></tr>
+</table>
+
+<p>Sources: <a href="https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-december-31">Hormuz contract</a>, <a href="https://polymarket.com/event/ai-bubble-burst-by">AI bubble contract</a>, <a href="https://polymarket.com/event/will-the-us-invade-iran-before-2027">invasion contract</a>.</p>
+
+<h3>The structural read</h3>
+<p>Saturday's standing watch item was whether the June-2027 AI-bubble bucket's sharp 26%→19% drop would hold or reverse once another day passed — it held, ticking only 1pp to 18% overnight despite bitcoin continuing to fall and no NVDA-specific good news arriving. That's more informative than the raw number: a thin-volume (~$172K) move that survives a full additional quiet day without reverting looks less like noise and more like a real repricing, even though the original move happened on light trading. <strong>Bear case:</strong> $172K is still thin enough that "held" could just mean nobody traded it rather than the market re-affirming the new level — the real test needs volume, which should show up once NVDA's Nov 17 print and Anthropic's Nov 18-19 debut land. <strong>Bull case:</strong> zero reversion over a second straight day, including a day BTC kept sliding, is a modestly stronger signal than Saturday's single data point that sophisticated money reads NVDA's crisis as company-specific rather than systemic to the AI-capex thesis. The other contracts are all within 1pp of Saturday — genuinely flat, nothing to read into.</p>
+
+<!-- ====================== BOTTOM LINE ====================== -->
+<div class="punchline-box">
+  <h3>Bottom Line / Portfolio Implication</h3>
+  <p>Two straight quiet mornings on Iran, NVDA/AI, the named portfolio tickers, and private credit means there is genuinely nothing new to report on the headline risks — worth saying plainly rather than padding around it. The two live signals both offered small but real information: bitcoin's slide decelerated to about a third of Saturday's pace, the first hint in three sessions that the move may be losing momentum rather than accelerating into Monday; and Polymarket's AI-bubble-by-June-2027 contract held its sharp Saturday drop rather than reverting, which strengthens — modestly, on thin volume — the case that sophisticated money still reads NVDA's governance crisis as contained rather than systemic. Neither is actionable on its own, and neither resolves the other. What matters is still what's coming: from Monday's open to Wednesday, the week holds NVDA's Nov 17 earnings call, the Nov 18 Huang briefing with its unresolved subpoena threat, and Anthropic's Nov 18-19 IPO pricing and debut — three genuinely independent catalysts landing in the same four trading days, on top of 201 consecutive zero-position days. Two quiet weekend mornings are not a reason to expect a quiet week.</p>
+</div>
+
+<!-- ====================== SOURCES ====================== -->
+<h2>Sources</h2>
+<div class="sources">
+  <p><strong>Iran / Israel:</strong></p>
+  <ul>
+    <li>No new sourced items found since Saturday's record — see prior briefs for the standing citation list (Washington Post, Axios, Al Jazeera, Haaretz, Times of Israel, JPost).</li>
+  </ul>
+  <p><strong>Markets / AI / Portfolio:</strong></p>
+  <ul>
+    <li><a href="https://coinmarketcap.com/currencies/bitcoin/">CoinMarketCap — Bitcoin price</a></li>
+  </ul>
+  <p><strong>Polymarket:</strong></p>
+  <ul>
+    <li><a href="https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-december-31">Polymarket — Strait of Hormuz traffic returns to normal by Dec 31</a></li>
+    <li><a href="https://polymarket.com/event/ai-bubble-burst-by">Polymarket — AI bubble burst by...</a></li>
+    <li><a href="https://polymarket.com/event/will-the-us-invade-iran-before-2027">Polymarket — Will the US invade Iran before 2027</a></li>
+  </ul>
+</div>
+
+<div class="footer">
+  Daily News Brief · November 15, 2026 · Weekend Morning Brief · Day 261 of the Iran war<br>
+  <em>Andres's daily analyst. Structural reads, not headline regurgitation.</em>
+</div>
+
+</div>
+
+</body>
+</html>
