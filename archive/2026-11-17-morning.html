@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily News Brief — November 17, 2026 (Morning Brief)</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --surface: #121820;
+    --surface2: #1a2230;
+    --border: #243044;
+    --text: #c8d3e0;
+    --text-dim: #6b7d93;
+    --heading: #e8edf3;
+    --accent: #4fc3f7;
+    --accent2: #81c784;
+    --warn: #ffb74d;
+    --danger: #ef5350;
+    --gold: #ffd54f;
+    --purple: #b39ddb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  .header {
+    background: linear-gradient(135deg, #0a1420 0%, #13101f 50%, #0a1a2e 100%);
+    border-bottom: 1px solid var(--accent);
+    padding: 50px 40px 40px;
+    text-align: center;
+  }
+  .header .day-tag {
+    display: inline-block;
+    background: rgba(79,195,247,0.15);
+    border: 1px solid rgba(79,195,247,0.4);
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--heading);
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .header .subtitle {
+    font-size: 18px;
+    color: var(--warn);
+    font-weight: 400;
+  }
+  .header .subtitle-sub {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 10px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--heading);
+    margin: 48px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 28px 0 12px;
+  }
+  p { margin-bottom: 14px; }
+  strong { color: var(--heading); }
+  em { color: var(--accent); font-style: italic; }
+  ul, ol { margin: 0 0 14px 22px; }
+  li { margin-bottom: 6px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  table tr:last-child td { border-bottom: none; }
+  table td:first-child {
+    font-weight: 700;
+    color: var(--heading);
+  }
+  .badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+  .badge-red { background: var(--danger); color: #fff; }
+  .badge-green { background: var(--accent2); color: var(--bg); }
+  .badge-blue { background: var(--accent); color: var(--bg); }
+  .badge-yellow { background: var(--warn); color: var(--bg); }
+  .badge-purple { background: var(--purple); color: var(--bg); }
+  .tldr-box {
+    background: linear-gradient(135deg, rgba(79,195,247,0.1), rgba(255,183,77,0.05));
+    border: 2px solid var(--accent);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin: 24px 0 32px;
+  }
+  .tldr-box h3 {
+    color: var(--accent);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .delta-box {
+    background: var(--surface2);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 20px;
+    margin: 0 0 18px;
+    font-size: 13.5px;
+    color: var(--text-dim);
+  }
+  .delta-box strong { color: var(--accent); }
+  .honest-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--purple);
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin: 24px 0;
+  }
+  .honest-box h3 {
+    color: var(--purple);
+    margin-top: 0;
+    margin-bottom: 14px;
+  }
+  .punchline-box {
+    background: linear-gradient(135deg, rgba(79,195,247,0.08), rgba(239,83,80,0.05));
+    border: 2px solid rgba(79,195,247,0.3);
+    border-radius: 10px;
+    padding: 28px;
+    margin: 32px 0;
+    text-align: center;
+  }
+  .punchline-box h3 {
+    color: var(--accent);
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .punchline-box p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    max-width: 760px;
+    margin: 0 auto 10px;
+    color: var(--text);
+  }
+  .sources { font-size: 12.5px; color: var(--text-dim); }
+  .sources a { color: var(--accent); text-decoration: none; }
+  .sources a:hover { text-decoration: underline; }
+  .footer {
+    border-top: 1px solid var(--border);
+    margin-top: 50px;
+    padding-top: 20px;
+    color: var(--text-dim);
+    font-size: 12px;
+    text-align: center;
+  }
+  .pos { color: var(--accent2); }
+  .neg { color: var(--danger); }
+  .move-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  .move-table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  .move-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .correction-box {
+    background: rgba(179,157,219,0.08);
+    border: 2px solid var(--purple);
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 24px 0 32px;
+  }
+  .correction-box h3 {
+    color: var(--purple);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="day-tag">Day 263 of the Iran War · Tuesday Morning Brief · 204th Zero-Position Day</div>
+  <h1>Daily News Brief — November 17, 2026</h1>
+  <div class="subtitle">The AI complex bounced off Monday's rout hours before NVIDIA's make-or-break Q3 print — and a chip-export story flagged as possibly stale last night just got meaningfully better-sourced.</div>
+  <div class="subtitle-sub">Run: ~08:00 PT · Tuesday Morning Brief · NVDA Q3 FY27 earnings TONIGHT after close (Kress's first call as interim CEO) · Huang House briefing Nov 18 · Anthropic IPO pricing est. Nov 18–24 · Dec 8–9 FOMC</div>
+</div>
+
+<div class="container">
+
+<!-- ====================== TL;DR ====================== -->
+<div class="tldr-box">
+  <h3>TL;DR — What changed since last night and why it matters</h3>
+  <ul>
+    <li><strong>The AI complex bounced this morning instead of extending Monday's rout.</strong> NVDA +1.06% premarket to $157.80, with Broadcom, Micron, Arista, CoreWeave, and Nebius all up alongside it — the same names that sold off together Monday are rallying together today, hours ahead of NVIDIA's earnings call tonight.</li>
+    <li><strong>The chip-export story this file flagged last night as possibly stale news just got meaningfully more credible.</strong> The Bureau of Industry and Security issued a confirmed interim final rule, effective 11/16, closing the loophole that let China-linked firms access advanced chips through overseas data centers — corroborated by a law firm and two trade-press outlets, not just one aggregator's undated blame-line. This file's own search today still couldn't pull the primary Federal Register text, so it's confirmed-by-secondary-sources, not yet primary-verified.</li>
+    <li><strong>NVIDIA's own reported response — a new board export-control committee and a China-leasing sales bar — remains unverified</strong> against any primary NVIDIA source. Treat it as a lead, not a fact, until the company confirms it.</li>
+    <li><strong>Polymarket's AI-bubble contracts didn't move at all through Monday's worst close of this entire selloff.</strong> A clean fetch today shows all four core tracked contracts exactly flat — Hormuz 5%, AI-bubble-Dec-31 8%, AI-bubble-June-2027 18%, invade-Iran 8%. Sophisticated money still isn't pricing this as systemic.</li>
+    <li><strong>Iran extended its quiet streak to a fifth straight period.</strong> Nothing on either the war/peace track or the Israel coalition track — the silence itself is now the story on this beat.</li>
+  </ul>
+</div>
+
+<!-- ====================== IRAN / ISRAEL ====================== -->
+<h2>Iran / Middle East Geopolitics</h2>
+<div class="delta-box"><strong>Delta since last night:</strong> none. Fifth consecutive quiet period on both tracks.</div>
+
+<p>A search this morning for any CENTCOM statement, Qatar-track development, Eisenkot coalition movement, or new tanker incident since last night found nothing newer than what's already on record. Trump's "highly unlikely" framing on renewed strikes, the naval blockade, Qatar's stuck mediation, and Iran's Rezaei refusing to move "a single atom" of enriched uranium all stand exactly where they stood five checkpoints ago. Eisenkot's 28-day coalition clock is now roughly 18-19 days out with no visible progress reported.</p>
+
+<h3>The structural read</h3>
+<p>Five consecutive quiet periods — three mornings, one evening, now a fourth morning — is an unusually long stretch of silence after months of near-daily tanker incidents and diplomatic back-and-forth. <strong>Bear case:</strong> quiet doesn't mean resolved, and this file should not keep treating "nothing found" as a non-event indefinitely — if a sixth consecutive quiet period arrives tonight or tomorrow, that becomes the lead item for this beat, not a footnote. <strong>Bull case:</strong> a pause this long and this consistent, with no new tanker incident and no coalition breakdown, is at least consistent with a genuine stalemate-level de-escalation holding rather than a reporting gap.</p>
+
+<!-- ====================== MARKETS ====================== -->
+<h2>Markets / Macro</h2>
+<div class="delta-box"><strong>Delta since last night:</strong> the AI complex bounced this morning rather than extending Monday's close, and the chip-export story got a real sourcing upgrade.</div>
+
+<p>Premarket moves this morning: NVDA <strong>$157.80, +1.06%</strong>; Broadcom +1.00%; Micron +1.81%; Arista +2.34%; CoreWeave +1.54%; Nebius +2.96% — a clean reversal of Monday's close, where the same names fell together (NVDA -4.12% to $156.14, Nasdaq -2.49% to ~24,509.76, putting the Nasdaq-100 back in correction territory ~11% below its October 6 high).</p>
+
+<p><strong>The chip-export story is now better-sourced than last night's version.</strong> The Bureau of Industry and Security issued an interim final rule, effective 11/16, closing the loophole that let overseas data centers serve China/Macau-headquartered firms without a US export license — extending case-by-case licensing to Singapore, Malaysia, Thailand, Indonesia, and Brazil, and formally rescinding the Biden-era AI Diffusion Rule. This is corroborated tonight by a Nixon Peabody client alert and two trade-press outlets (Converge Digest, TheNextWeb), not just one aggregator's undated blame-line — a meaningfully stronger evidentiary basis than last night's flag that the underlying story might trace to stale May 2026 reporting. <strong>Sourcing caveat, stated plainly:</strong> this file's own direct search today could not pull the primary Federal Register text or confirm the specific RIN cited by secondary sources — a search surfaced a similarly-themed but differently-numbered rule dated January 2026, plausibly an earlier layer of the same policy being tightened further, not independently reconciled by this run. Treat the rule's substance as confirmed-by-multiple-independent-secondary-sources, not yet primary-verified. Same-day Asia reaction: Baidu fell to a record low (-5.8%), Alibaba -5%, domestic Chinese chip substitutes (SMIC +6.8%, Hua Hong +8%) rallying.</p>
+
+<h3>The structural read</h3>
+<p>This morning's bounce reads as a pause ahead of tonight's NVDA print, not a resolution of anything. <strong>Bear case:</strong> a relief rally the morning of the single most important earnings call of the quarter is exactly the kind of move that can reverse hard on any disappointment tonight — nothing has actually resolved on succession, and the BIS rule's real materiality to NVDA's revenue is still unquantified. <strong>Bull case:</strong> a broad-based bounce across the entire sympathy-sold complex, not just NVDA, is at least consistent with Monday's close being a washout rather than the start of a deeper repricing.</p>
+
+<!-- ====================== AI ====================== -->
+<h2>AI Ecosystem</h2>
+<div class="delta-box"><strong>Delta since last night:</strong> the chip-export story firmed up with better sourcing; NVIDIA's own reported response to it remains unverified. <em>AI analyst source reviewed: <code>research/2026/2026-11-17-update.md</code> (report date 2026-11-17).</em></div>
+
+<p><strong>Confirmed: BIS closed the China AI-chip remote-access loophole, effective 11/16.</strong> Multiple trade-compliance outlets report the rule's own text states it was "written by and at the direction of" Treasury and the NSC — an unusual departure from Commerce authoring its own export rules — after Politico reported Treasury Secretary Bessent forced it through Commerce Secretary Lutnick's department, tied to the Megaspeed/Huang espionage allegations. This file's own independent check today could not reach the primary BIS/Federal Register text, so treat the rule as real and multiply-sourced, but not yet primary-verified by this run.</p>
+
+<p><strong>Still unverified: NVIDIA's own reported response.</strong> Reporting relayed through an aggregator (citing CNBC sources, not independently fetched) claims NVIDIA created a new board "National Security and Export Control Oversight Committee" and will bar sales to any buyer leasing more than 50% of its GPUs to Chinese firms, allegedly triggered by a 10-day ultimatum from Bessent. A targeted search today found nothing on nvidianews.nvidia.com, investor.nvidia.com, or any SEC filing confirming either claim. Treat this as a lead, not a fact, pending a primary NVIDIA announcement.</p>
+
+<p><strong>Tonight's earnings (after close)</strong> are now a quadruple referendum: the standing ~70% FY2028 growth-guide test, any succession-fight commentary from interim CEO Colette Kress (her first call in the role), any direct response to the BIS rule, and confirmation or denial of the reported board committee. Consensus is roughly $108.8B revenue and $2.47 adjusted EPS; options reportedly price a ~$335B swing on the print.</p>
+
+<h3>The structural read</h3>
+<p>Today sharpens, rather than resolves, the split this file has carried all week: a real, better-sourced regulatory action narrowing China-adjacent demand, sitting alongside an unresolved governance crisis, with the market's own premarket tape (a broad bounce, a flat Polymarket) reading as calm rather than alarmed. <strong>Bear case:</strong> calm before a known catalyst is not the same as confidence — if tonight's call delivers a weaker growth guide or any direct succession-fight escalation, today's bounce evaporates fast. <strong>Bull case:</strong> the fact that a confirmed, real export-control tightening didn't spook the broader complex this morning suggests the market judges it narrow — relevant to NVIDIA's China-adjacent revenue specifically, not to the US hyperscaler demand that drives the bulk of this thesis.</p>
+
+<!-- ====================== PORTFOLIO ====================== -->
+<h2>Portfolio Tickers</h2>
+<div class="delta-box"><strong>Delta since last night:</strong> 204th consecutive zero-position day. The named complex bounced in step with the broader AI-complex reversal.</div>
+
+<table>
+  <tr><th>Ticker</th><th>What changed</th><th>Read</th></tr>
+  <tr><td>NVDA</td><td>Premarket $157.80, +1.06% — reversing yesterday's -4.12% close; earnings tonight after close, Kress's first call as interim CEO</td><td>Quadruple referendum: growth guide, succession, BIS rule response, board-committee confirmation</td></tr>
+  <tr><td>CRWV (CoreWeave)</td><td>+1.54% premarket; $4B investment-grade loan still unpriced</td><td>Sympathetic bounce only — no new company-specific catalyst</td></tr>
+  <tr><td>NBIS (Nebius)</td><td>+2.96% premarket; Citi reiterated Buy, cut PT to $215</td><td>Same sympathetic bounce pattern as the rest of the complex</td></tr>
+  <tr><td>Broadcom / Micron / Arista</td><td>+1.00% / +1.81% / +2.34% premarket</td><td>Broad-based reversal of Monday's sympathy selloff</td></tr>
+  <tr><td>TSMC</td><td>Taiwan session closed -2.03% to 2,170 TWD (lagging Monday's US close); ADR roughly flat (+0.07%) premarket</td><td>Asia lagged the US bounce by a session</td></tr>
+  <tr><td>AMZN / AMD / MU / XLE / OWL / APO / ARCC</td><td>No new ticker-specific catalysts found this morning beyond the sympathetic bounce</td><td>Carrying forward — nothing new to re-check</td></tr>
+</table>
+
+<h3>The structural read</h3>
+<p>204 sessions at zero positions, now hours from the single highest-stakes catalyst this file has tracked in months — a setup arguably more complicated than a normal earnings call, given the succession fight and the new export-control action are both still live. <strong>Bear case:</strong> a premarket bounce means little if tonight's call disappoints on the growth guide or if Kress faces direct, unanswerable succession questions on a live call. <strong>Bull case:</strong> a broad-based reversal across the entire sympathy-sold complex, not just NVDA specifically, is at least consistent with Monday's close being a washout rather than the start of a deeper repricing — tonight's print settles which read is right.</p>
+
+<!-- ====================== PRIVATE CREDIT ====================== -->
+<h2>Private Credit</h2>
+<div class="delta-box"><strong>Delta since last night:</strong> none. CoreWeave's $4B loan remains unpriced.</div>
+
+<p>No new redemption prints, NAV marks, or litigation developments were found on OWL, APO, ARCC, or KKR this morning. CoreWeave's reported $4B investment-grade loan (Morgan Stanley/MUFG, Meta-contract-backed, 7.0-7.5% indicated yield) remains unpriced — no confirmation of pricing or closing found.</p>
+
+<h3>The structural read</h3>
+<p>Standing watches unchanged: next-quarter spread data testing the digital-infrastructure-spread thesis, stale KKR/FSK data, the OTF class action now in federal court, and whether the CoreWeave loan prices this week as originally indicated.</p>
+
+<!-- ====================== POLYMARKET ====================== -->
+<h2>Polymarket Calibration</h2>
+<div class="delta-box"><strong>Delta since last night:</strong> clean direct fetches on all four core contracts today, ending the two-run data-quality gap. All four held exactly flat — including through Monday's worst close of this entire selloff.</div>
+
+<table>
+  <tr><th>Market</th><th>Last night</th><th>This morning</th><th>Delta</th></tr>
+  <tr><td>Hormuz traffic normal by Dec 31</td><td>5% (carried forward, no fetch)</td><td><strong>5%</strong> (clean fetch)</td><td>Flat</td></tr>
+  <tr><td>AI bubble burst by Dec 31, 2026</td><td>8.0% (carried forward, no fetch)</td><td><strong>8.0%</strong> (clean fetch)</td><td>Flat — didn't move on Monday's worst close</td></tr>
+  <tr><td>AI bubble burst by June 30, 2027</td><td>18% (carried forward, no fetch)</td><td><strong>18%</strong> (clean fetch)</td><td>Flat — didn't move on Monday's worst close</td></tr>
+  <tr><td>US invades Iran before 2027</td><td>8% (carried forward, no fetch)</td><td><strong>8%</strong> (clean fetch)</td><td>Flat</td></tr>
+</table>
+
+<p class="sources">Sources: <a href="https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-december-31">Hormuz contract</a>, <a href="https://polymarket.com/event/ai-bubble-burst-by">AI bubble contract</a>, <a href="https://polymarket.com/event/will-the-us-invade-iran-before-2027">invasion contract</a>.</p>
+
+<h3>The structural read</h3>
+<p>The AI-bubble contracts not moving at all through Monday's close — the worst single day of this entire AI-selloff stretch — is itself a meaningful data point, not a gap: consistent with this file's standing finding that Polymarket treats NVIDIA's governance/succession crisis as company-specific, not systemic to the AI-capex thesis, even on a genuinely bad day. <strong>Bear case:</strong> a contract that didn't move on Monday's close may simply not move much on tonight's NVDA print either, leaving this file without a forward-looking calibration signal for the week's biggest catalyst. <strong>Bull case:</strong> zero movement through a real down day is a cleaner, higher-confidence "contained, not systemic" read than any single-day wiggle this week has produced. Still no dedicated Huang-reinstatement or permanent-CEO contract could be located.</p>
+
+<!-- ====================== BOTTOM LINE ====================== -->
+<div class="punchline-box">
+  <h3>Bottom Line / Portfolio Implication</h3>
+  <p>Nothing that happened overnight resolves the question this file has been circling all week — it just raises the stakes on tonight's answer. The AI complex's premarket bounce and Polymarket's refusal to move through Monday's worst close both read as "contained, not systemic," but that calm is sitting directly on top of two unresolved live threads: a succession fight NVIDIA still hasn't addressed, and a chip-export rule that's now real and multiply-sourced but whose actual revenue impact is still unquantified. At 204 consecutive zero-position days, nothing here is actionable regardless of direction, but tonight's print — Colette Kress's first call as interim CEO — is now a quadruple referendum on the FY2028 growth guide, succession credibility, the export-control response, and whether the reported board committee is even real. Watch for all four at once; a clean beat on the numbers won't fully settle the setup if the call ducks the other three.</p>
+</div>
+
+<!-- ====================== SOURCES ====================== -->
+<h2>Sources</h2>
+<div class="sources">
+  <p><strong>Markets / AI / Portfolio:</strong></p>
+  <ul>
+    <li><a href="https://www.nixonpeabody.com/insights/alerts/2026/11/16/bis-targets-remote-access-to-advanced-chips-through-overseas-data-centers">Nixon Peabody — BIS targets remote access to advanced chips through overseas data centers</a></li>
+    <li><a href="https://convergedigest.com/bis-remote-access-ai-chip-export-controls/">Converge Digest — BIS remote-access AI chip export controls</a></li>
+    <li><a href="https://thenextweb.com/news/us-remote-access-ai-chips-rule-china-singapore-malaysia">TheNextWeb — US remote-access AI chips rule: China, Singapore, Malaysia</a></li>
+    <li><a href="https://mlq.ai/news/commerce-issues-a-rule-to-stop-chinese-companies-reaching-advanced-ai-chips-through-overseas-data-centers/">mlq.ai — Commerce issues rule to stop Chinese companies reaching advanced AI chips through overseas data centers</a></li>
+    <li><a href="https://www.unite.ai/?p=518035">Unite.AI (via Reuters) — Bessent ultimatum to NVIDIA board</a></li>
+  </ul>
+  <p><strong>Polymarket (clean fetch this morning):</strong></p>
+  <ul>
+    <li><a href="https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-december-31">Polymarket — Strait of Hormuz traffic returns to normal by Dec 31</a></li>
+    <li><a href="https://polymarket.com/event/ai-bubble-burst-by">Polymarket — AI bubble burst by...</a></li>
+    <li><a href="https://polymarket.com/event/will-the-us-invade-iran-before-2027">Polymarket — Will the US invade Iran before 2027</a></li>
+  </ul>
+</div>
+
+<div class="footer">
+  Daily News Brief · November 17, 2026 · Tuesday Morning Brief · Day 263 of the Iran war<br>
+  <em>Andres's daily analyst. Structural reads, not headline regurgitation.</em>
+</div>
+
+</div>
+
+</body>
+</html>
