@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily News Brief — November 16, 2026 (Evening Wrap)</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --surface: #121820;
+    --surface2: #1a2230;
+    --border: #243044;
+    --text: #c8d3e0;
+    --text-dim: #6b7d93;
+    --heading: #e8edf3;
+    --accent: #4fc3f7;
+    --accent2: #81c784;
+    --warn: #ffb74d;
+    --danger: #ef5350;
+    --gold: #ffd54f;
+    --purple: #b39ddb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  .header {
+    background: linear-gradient(135deg, #0a1420 0%, #13101f 50%, #0a1a2e 100%);
+    border-bottom: 1px solid var(--accent);
+    padding: 50px 40px 40px;
+    text-align: center;
+  }
+  .header .day-tag {
+    display: inline-block;
+    background: rgba(79,195,247,0.15);
+    border: 1px solid rgba(79,195,247,0.4);
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--heading);
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .header .subtitle {
+    font-size: 18px;
+    color: var(--warn);
+    font-weight: 400;
+  }
+  .header .subtitle-sub {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 10px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--heading);
+    margin: 48px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 28px 0 12px;
+  }
+  p { margin-bottom: 14px; }
+  strong { color: var(--heading); }
+  em { color: var(--accent); font-style: italic; }
+  ul, ol { margin: 0 0 14px 22px; }
+  li { margin-bottom: 6px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  table tr:last-child td { border-bottom: none; }
+  table td:first-child {
+    font-weight: 700;
+    color: var(--heading);
+  }
+  .badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+  .badge-red { background: var(--danger); color: #fff; }
+  .badge-green { background: var(--accent2); color: var(--bg); }
+  .badge-blue { background: var(--accent); color: var(--bg); }
+  .badge-yellow { background: var(--warn); color: var(--bg); }
+  .badge-purple { background: var(--purple); color: var(--bg); }
+  .tldr-box {
+    background: linear-gradient(135deg, rgba(79,195,247,0.1), rgba(255,183,77,0.05));
+    border: 2px solid var(--accent);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin: 24px 0 32px;
+  }
+  .tldr-box h3 {
+    color: var(--accent);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .delta-box {
+    background: var(--surface2);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 20px;
+    margin: 0 0 18px;
+    font-size: 13.5px;
+    color: var(--text-dim);
+  }
+  .delta-box strong { color: var(--accent); }
+  .honest-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--purple);
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin: 24px 0;
+  }
+  .honest-box h3 {
+    color: var(--purple);
+    margin-top: 0;
+    margin-bottom: 14px;
+  }
+  .punchline-box {
+    background: linear-gradient(135deg, rgba(79,195,247,0.08), rgba(239,83,80,0.05));
+    border: 2px solid rgba(79,195,247,0.3);
+    border-radius: 10px;
+    padding: 28px;
+    margin: 32px 0;
+    text-align: center;
+  }
+  .punchline-box h3 {
+    color: var(--accent);
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .punchline-box p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    max-width: 760px;
+    margin: 0 auto 10px;
+    color: var(--text);
+  }
+  .sources { font-size: 12.5px; color: var(--text-dim); }
+  .sources a { color: var(--accent); text-decoration: none; }
+  .sources a:hover { text-decoration: underline; }
+  .footer {
+    border-top: 1px solid var(--border);
+    margin-top: 50px;
+    padding-top: 20px;
+    color: var(--text-dim);
+    font-size: 12px;
+    text-align: center;
+  }
+  .pos { color: var(--accent2); }
+  .neg { color: var(--danger); }
+  .move-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  .move-table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  .move-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .correction-box {
+    background: rgba(179,157,219,0.08);
+    border: 2px solid var(--purple);
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 24px 0 32px;
+  }
+  .correction-box h3 {
+    color: var(--purple);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="day-tag">Day 262 of the Iran War · Monday Evening Wrap · 203rd Zero-Position Day</div>
+  <h1>Daily News Brief — November 16, 2026</h1>
+  <div class="subtitle">The selloff deepened through the day — Nasdaq -2.49%, NVDA -4.12% — and a second, distinct bearish thread (AI chip export restrictions) surfaced alongside the Huang succession fight.</div>
+  <div class="subtitle-sub">Run: ~17:30 PT · Monday Evening Wrap · NVDA Q3 FY27 earnings tomorrow (Nov 17, after close) · Huang House briefing Nov 18 · Anthropic IPO pricing est. Nov 18–24 · Dec 8–9 FOMC</div>
+</div>
+
+<div class="container">
+
+<!-- ====================== TL;DR ====================== -->
+<div class="tldr-box">
+  <h3>TL;DR — What changed since this morning and why it matters</h3>
+  <ul>
+    <li><strong>The close was worse than the premarket move this morning flagged.</strong> Nasdaq Composite closed -2.49% to ~24,509.76 (vs. futures -0.9% to -1.5%), S&amp;P 500 -1.92% to ~7,416.59, Dow -1.41% to ~51,608, NVDA -4.12% to $156.14 on roughly 2x normal volume. The Nasdaq-100 is back in correction territory, ~11% below its October 6 high.</li>
+    <li><strong>A second, distinct bearish thread surfaced:</strong> close-of-day coverage ties part of today's selloff to the U.S. tightening AI chip export restrictions — Amazon reportedly fell on a specific "new AI chip export rule," not just sympathy selling. This is flagged, not confirmed: the detailed sourcing found tonight on the underlying action dates to May 31, 2026, so it's unclear whether this is genuinely fresh or re-surfaced old news. A primary-source check is needed tomorrow morning.</li>
+    <li><strong>No resolution on the NVIDIA succession fight.</strong> No board statement, no comeback decision, nothing new since this morning's FT/Forbes/CNBC record — the Huang-comeback-vs-outside-CEO fight sits exactly where it was at 8am, now resting entirely on tomorrow's earnings call.</li>
+    <li><strong>Polymarket went a second straight run with no clean fetch</strong> on the four core tracked contracts, and still no dedicated "Huang reinstatement" market was found — a real process gap heading into the week's biggest catalyst.</li>
+    <li><strong>Iran extended its quiet streak to a fourth period</strong> (three mornings plus tonight) with nothing found on either the war/peace or Israel-coalition track — increasingly a story in itself.</li>
+  </ul>
+</div>
+
+<!-- ====================== MORNING -> EVENING ====================== -->
+<div class="correction-box">
+  <h3>Morning → Evening: What Moved</h3>
+  <table class="move-table">
+    <tr><th>Metric</th><th>This Morning (premarket)</th><th>Tonight (close)</th><th>Read</th></tr>
+    <tr><td>S&amp;P 500 futures/close</td><td>-0.3% to -0.7%</td><td><span class="neg">-1.92% to ~7,416.59</span></td><td>Roughly 3x worse than premarket implied</td></tr>
+    <tr><td>Nasdaq futures/close</td><td>-0.9% to -1.5%</td><td><span class="neg">-2.49% to ~24,509.76</span></td><td>Nasdaq-100 back in correction territory (~11% off Oct 6 high)</td></tr>
+    <tr><td>Dow futures/close</td><td>~flat</td><td><span class="neg">-1.41% to ~51,608</span></td><td>The "contained to tech" read weakened — Dow joined the decline by the close</td></tr>
+    <tr><td>NVDA</td><td>-2.7% to -4% premarket</td><td><span class="neg">-4.12% to $156.14</span></td><td>~2x normal volume; sits at the bad end of this morning's range</td></tr>
+    <tr><td>AMZN</td><td>No ticker-specific news found</td><td><span class="neg">Fell on reported new AI chip export rule</span></td><td>First ticker-specific hit on this name in weeks of "nothing found" reads</td></tr>
+    <tr><td>NVDA succession fight</td><td>Live 3-way fight (Huang/Musk vs. Bessent)</td><td>Unchanged — no board statement found</td><td>Entirely deferred to tomorrow's earnings call</td></tr>
+    <tr><td>Polymarket 4 core contracts</td><td>No clean fetch (carried forward)</td><td>No clean fetch (carried forward) — 2nd straight run</td><td>Standing process gap, not a reported flat move</td></tr>
+  </table>
+</div>
+
+<!-- ====================== IRAN / ISRAEL ====================== -->
+<h2>Iran / Middle East Geopolitics</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> none. A targeted evening search found nothing newer on either track — the quiet streak now extends to a fourth consecutive period.</div>
+
+<p>No CENTCOM statement, no Qatar-track update, no Eisenkot coalition development, and no new tanker incident were found tonight beyond this morning's record. Trump's "highly unlikely" framing on renewed strikes, the naval blockade, Qatar's stuck mediation, and Iran's Rezaei refusing to move "a single atom" of enriched uranium all stand exactly where they stood at 8am. Eisenkot's 28-day coalition clock is now at roughly 19-20 days remaining with no visible progress reported.</p>
+
+<h3>The structural read</h3>
+<p>A pause this long — three quiet mornings plus a quiet evening — after months of active escalation is becoming a signal worth naming explicitly rather than a gap to fill with restated old facts. <strong>Bear case:</strong> quiet doesn't mean resolved — Iran's rhetoric has hardened even as the pace of reported incidents has slowed, and a fifth consecutive quiet period tomorrow would make the silence itself the most interesting fact in this beat. <strong>Bull case:</strong> no new tanker incident, no CENTCOM statement, and no coalition breakdown is consistent with a genuine stalemate-level de-escalation holding through a full news cycle, not just a reporting lull.</p>
+
+<!-- ====================== MARKETS ====================== -->
+<h2>Markets / Macro</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> the selloff deepened through the session rather than fading. Nasdaq -2.49%, S&amp;P -1.92%, Dow -1.41%, NVDA -4.12% on ~2x normal volume — all worse than the premarket snapshot.</div>
+
+<p>Closes: S&amp;P 500 <strong>~7,416.59 (-1.92%)</strong>; Nasdaq Composite <strong>~24,509.76 (-2.49%)</strong>, putting the Nasdaq-100 back in correction territory (~11% below its October 6 high); Dow <strong>~51,608 (-1.41%)</strong>; NVDA <strong>$156.14 (-4.12%)</strong> on roughly 2x its 3-month-average volume (<a href="https://www.fool.com/coverage/stock-market-today/2026/11/16/stock-market-today-nov-16-tech-selloff-deepens-as-ai-leadership-crisis-rattles-nasdaq/">Fool.com</a>, <a href="https://www.cnn.com/2026/11/16/business/stocks-nvidia-ai-anthropic">CNN</a>, <a href="https://eurasiabusinessnews.com/2026/11/17/stock-market-today-nasdaq-slides-2-5-as-nvidia-turmoil-and-chip-restrictions-hit-tech/">eurasiabusinessnews</a>). This morning's futures read (Nasdaq -0.9% to -1.5%, Dow roughly flat) significantly understated where the day would land — the Dow's own -1.41% close weakens this morning's "contained to tech, not broad risk-off" framing, though the magnitude gap between the Dow and Nasdaq still points to a tech-concentrated move, just a deeper one than premarket suggested.</p>
+
+<p><strong>New wrinkle, flagged with an explicit sourcing caveat:</strong> several close-of-day outlets attribute part of today's selloff to the U.S. tightening AI chip export restrictions, not solely the Huang succession fight — one headline reads "Nvidia Sinks as U.S. Tightens AI Chip Restrictions," and Amazon is separately reported to have fallen on a "new AI chip export rule." The detailed sourcing located tonight on the underlying action — closing a loophole that let Chinese-headquartered firms buy Nvidia Blackwell/Rubin and reportedly AMD MI350X chips through overseas subsidiaries without a license — is dated to Sunday, <strong>May 31, 2026</strong>, not this weekend. It's unconfirmed whether tonight's commentary describes a genuinely fresh escalation, renewed attention to the May action around NVDA's earnings week, or aggregator date-conflation. This needs a primary BIS/Commerce source check tomorrow morning before being treated as new information — flagging honestly rather than either dismissing it or reporting it as confirmed fact.</p>
+
+<p><strong>Bitcoin:</strong> described in tonight's close coverage as falling to its lowest level since July, consistent with — and an extension of — Sunday's last-confirmed $64,700-64,900 read; no exact tonight figure could be confirmed. <strong>Oil:</strong> no reliable Brent/WTI settlement for today could be independently confirmed tonight — a genuine data gap, not an estimate; Nov 10's confirmed settlements (WTI $86.04, Brent $91.49) remain the last solid read.</p>
+
+<h3>The structural read</h3>
+<p><strong>Bear case:</strong> if the export-restriction thread is confirmed fresh tomorrow, today combined two independent negative catalysts — succession-fight governance risk and an actual narrowing of addressable China-adjacent demand — rather than one, a materially worse setup heading into Tuesday's NVDA print than this morning's framing implied. <strong>Bull case:</strong> no confirmed VIX spike tonight, and the move is still contained to the AI/semi complex rather than broadening into a systemic, cross-asset event — consistent with a sharp, catalyst-driven move ahead of a known event (NVDA earnings) rather than a regime shift.</p>
+
+<!-- ====================== AI ====================== -->
+<h2>AI Ecosystem</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> the close was worse than the premarket read, and a second, distinct bearish thread surfaced alongside the Huang succession fight. <em>AI analyst source reviewed tonight: same as this morning, <code>research/2026/2026-11-16-update.md</code> — no newer upstream report expected before tomorrow's 06:00 weekday run.</em></div>
+
+<p>NVDA closed $156.14, -4.12% (vs. this morning's -2.7% premarket), on roughly 2x normal volume. No NVIDIA board statement, comeback resolution, or new succession-fight reporting was found since this morning's FT/Forbes/CNBC record — the Huang-comeback-vs-outside-CEO fight remains exactly where it stood at 8am, now resting entirely on tomorrow's (11/17, after close) Q3 FY27 earnings call.</p>
+
+<p>Amazon reportedly fell specifically on a "new AI chip export rule" (plus an unrelated satellite-launch failure) — the first ticker-specific negative catalyst found on AMZN in weeks of this file's consistent "no ticker-specific news" reads. As noted above, the underlying export-restriction story carries a real sourcing caveat: the detailed account found tonight of the loophole-closure action (Nvidia Blackwell/Rubin, reportedly AMD MI350X, sold to Chinese-headquartered firms via overseas subsidiaries) is dated to May 31, 2026, not this weekend. Treat as flagged, not confirmed, pending a primary-source check.</p>
+
+<h3>The structural read</h3>
+<p>If the export-restriction thread turns out to be genuinely fresh, this morning's framing — "governance noise, not new information about chip demand or supply" — needs a partial walk-back: today would have carried a real fundamentals-side development, not just scandal/succession drama. <strong>Bear case:</strong> two independent negative threads (the succession crisis and a possible real narrowing of addressable demand) landing in the same pre-earnings window, on top of last week's still-unverified SemiAnalysis capex cut, is a more compounded setup than this morning allowed for. <strong>Bull case:</strong> the underlying export action may simply be old (May 2026) news getting re-surfaced by aggregators around NVDA's earnings week, in which case today's only genuinely new information remains the succession fight and the SemiAnalysis cut — both already priced into this morning's framing, and tomorrow's primary-source check should resolve which read is correct.</p>
+
+<!-- ====================== PORTFOLIO ====================== -->
+<h2>Portfolio Tickers</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> 203rd consecutive zero-position day. The close was worse across nearly every named ticker than the premarket snapshot, and AMZN took its first ticker-specific hit in weeks.</div>
+
+<table>
+  <tr><th>Ticker</th><th>What changed</th><th>Read</th></tr>
+  <tr><td>NVDA</td><td>Closed $156.14, -4.12% on ~2x normal volume (vs. -2.7% premarket); no succession-fight resolution found</td><td>Q3 FY27 earnings tomorrow (11/17, after close) — now a potential triple referendum: growth guide, leadership, China-exposure</td></tr>
+  <tr><td>AMZN</td><td>Fell specifically on a reported new AI chip export rule, plus an unrelated satellite-launch failure</td><td>First ticker-specific negative catalyst found on this name in weeks — worth confirming the export-rule sourcing tomorrow</td></tr>
+  <tr><td>CRWV (CoreWeave)</td><td>No confirmation the $4B investment-grade loan has priced</td><td>Still an open, unconfirmed negotiation — watch for pricing news alongside NVDA's print</td></tr>
+  <tr><td>NBIS / TSMC / MU / AMD / XLE / OWL / ARCC / APO</td><td>No new ticker-specific catalysts found tonight beyond continued sympathy-selling</td><td>Carrying forward — nothing beyond the sector-wide move to re-check</td></tr>
+</table>
+
+<h3>The structural read</h3>
+<p>The depth of tonight's close — worse than the premarket snapshot across nearly every tracked name — argues the market used the full session to price in more than this morning's governance-noise framing allowed. <strong>Bear case:</strong> 203 sessions at zero positions, now heading into the most catalyst-dense 48 hours this file has tracked, with today's move trending worse rather than better through the session, raises the stakes on tomorrow's print without changing the standing re-entry bar. <strong>Bull case:</strong> AMZN's specific, legible catalyst (versus pure sympathy selling) is at least a named reason rather than contagion — if the export-restriction story turns out to be stale news re-surfacing, tonight's framing should be revised down in materiality tomorrow morning.</p>
+
+<!-- ====================== PRIVATE CREDIT ====================== -->
+<h2>Private Credit</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> none on OWL/APO/ARCC/KKR. CoreWeave's $4B loan remains unpriced.</div>
+
+<p>No new redemption prints, NAV marks, or litigation developments were found on OWL, APO, ARCC, or KKR tonight, despite today's materially worse-than-expected equity close across the broader AI complex — worth noting private-credit-specific names have not shown any fresh stress signal distinct from the broader sympathy selloff. CoreWeave's reported $4B investment-grade loan (Morgan Stanley/MUFG, Meta-contract-backed, 7.0-7.5% indicated yield) remains unpriced as of tonight.</p>
+
+<h3>The structural read</h3>
+<p>The absence of credit-specific stress on a day the broader AI-equity complex sold off hard is itself informative — it keeps alive the standing question of whether contract-backed AI-infrastructure financing can keep clearing at improving terms even as equity sentiment wobbles. Standing watches unchanged: next-quarter spread data testing the digital-infrastructure-spread thesis, stale KKR/FSK data, and the OTF class action now in federal court.</p>
+
+<!-- ====================== POLYMARKET ====================== -->
+<h2>Polymarket Calibration</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> a second consecutive run without a clean direct fetch on the four core tracked contracts — a standing process gap, not a reported flat move.</div>
+
+<table>
+  <tr><th>Market</th><th>This morning</th><th>Tonight</th><th>Delta</th></tr>
+  <tr><td>Hormuz traffic normal by Dec 31</td><td>5%</td><td><strong>5%</strong> (carried forward, no fetch)</td><td>No new data point — 2nd straight run</td></tr>
+  <tr><td>AI bubble burst by Dec 31, 2026</td><td>8.0%</td><td><strong>8.0%</strong> (carried forward, no fetch)</td><td>No new data point — 2nd straight run</td></tr>
+  <tr><td>AI bubble burst by June 30, 2027</td><td>18%</td><td><strong>18%</strong> (carried forward, no fetch)</td><td>No new data point — the one most worth a clean read given today's close</td></tr>
+  <tr><td>US invades Iran before 2027</td><td>8%</td><td><strong>8%</strong> (carried forward, no fetch)</td><td>No new data point — 2nd straight run</td></tr>
+</table>
+
+<p class="sources">Sources: <a href="https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-december-31">Hormuz contract</a>, <a href="https://polymarket.com/event/ai-bubble-burst-by">AI bubble contract</a>, <a href="https://polymarket.com/event/will-the-us-invade-iran-before-2027">invasion contract</a>.</p>
+
+<h3>The structural read</h3>
+<p>Two straight runs without a clean fetch on the core four contracts means there is no fresh calibration signal to weigh against today's materially worse-than-expected equity close, at exactly the moment (heading into NVDA's Tuesday print) this file most wants one. Still no dedicated "Huang reinstatement" contract was found despite a specific search tonight. The stale "Huang departure by Dec 31, 2026" contract (~15.5-16% as of Nov 11, pre-resignation) remains an unresolved bookkeeping loose end — it should have triggered Yes on Huang's actual Nov 11 resignation, and its resolution status is still unconfirmed two runs running. This is now a standing item to fix tomorrow rather than carry forward a third time.</p>
+
+<!-- ====================== BOTTOM LINE ====================== -->
+<div class="punchline-box">
+  <h3>Bottom Line / Portfolio Implication</h3>
+  <p>The morning's directional call — a tech/AI-complex-specific selloff, not a macro one — held through the close, but the magnitude call did not: today was a materially worse day than the premarket snapshot implied, with the selling intensifying rather than fading, and the Dow joining the decline enough to soften the "contained to tech" framing. The genuinely new piece of information tonight is a flagged-but-unconfirmed one: close-of-day coverage ties part of today's move to U.S. chip export restrictions rather than purely the Huang succession fight, which — if confirmed fresh tomorrow — would mean today carried a real fundamentals-side development on top of the governance crisis, not governance noise alone. Nothing here is actionable at 203 consecutive zero-position days regardless, but the stakes on tomorrow's NVDA print just went up: it is now a potential triple referendum on the FY2028 growth guide, interim-leadership credibility, and — if the export story holds up — actual China-exposure risk. Tomorrow morning's priorities: verify the export-restriction story against a primary BIS/Commerce source, get a clean Polymarket fetch after two straight misses, and watch whether Iran's now four-period-long silence extends into a fifth.</p>
+</div>
+
+<!-- ====================== SOURCES ====================== -->
+<h2>Sources</h2>
+<div class="sources">
+  <p><strong>Markets / AI / Portfolio:</strong></p>
+  <ul>
+    <li><a href="https://www.fool.com/coverage/stock-market-today/2026/11/16/stock-market-today-nov-16-tech-selloff-deepens-as-ai-leadership-crisis-rattles-nasdaq/">Fool.com — Tech selloff deepens as AI leadership crisis rattles Nasdaq (Nov 16)</a></li>
+    <li><a href="https://www.cnn.com/2026/11/16/business/stocks-nvidia-ai-anthropic">CNN — Stocks slide to kick off major week for Wall Street (Nov 16)</a></li>
+    <li><a href="https://eurasiabusinessnews.com/2026/11/17/stock-market-today-nasdaq-slides-2-5-as-nvidia-turmoil-and-chip-restrictions-hit-tech/">eurasiabusinessnews — Nasdaq slides 2.5% as NVIDIA turmoil and chip restrictions hit tech</a></li>
+    <li><a href="https://www.fool.com/coverage/stock-market-today/2026/11/16/stock-market-today-nov-16-nvidia-sinks-as-u-s-tightens-ai-chip-restrictions-and-analysts-slash-price-targets/">Fool.com — Nvidia sinks as U.S. tightens AI chip restrictions (Nov 16)</a></li>
+    <li><a href="https://www.fool.com/coverage/stock-market-today/2026/11/16/stock-market-today-nov-16-amazon-falls-on-new-ai-chip-export-rule-and-leo-satellite-launch-failure/">Fool.com — Amazon falls on new AI chip export rule and Leo satellite launch failure (Nov 16)</a></li>
+    <li><a href="https://www.kucoin.com/news/flash/us-closes-china-ai-chip-loophole-affecting-nvidia-sales">KuCoin — US closes China AI chip loophole affecting Nvidia sales (dated May 31, 2026 — sourcing caveat noted above)</a></li>
+    <li><a href="https://www.khaleejtimes.com/tech/us-takes-step-to-halt-nvidia-ai-chip-shipments-to-chinese-firms-outside-china-2">Khaleej Times — US takes step to halt Nvidia AI chip shipments to Chinese firms outside China</a></li>
+  </ul>
+  <p><strong>Polymarket (carried forward, no clean fetch tonight):</strong></p>
+  <ul>
+    <li><a href="https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-december-31">Polymarket — Strait of Hormuz traffic returns to normal by Dec 31</a></li>
+    <li><a href="https://polymarket.com/event/ai-bubble-burst-by">Polymarket — AI bubble burst by...</a></li>
+    <li><a href="https://polymarket.com/event/will-the-us-invade-iran-before-2027">Polymarket — Will the US invade Iran before 2027</a></li>
+  </ul>
+</div>
+
+<div class="footer">
+  Daily News Brief · November 16, 2026 · Monday Evening Wrap · Day 262 of the Iran war<br>
+  <em>Andres's daily analyst. Structural reads, not headline regurgitation.</em>
+</div>
+
+</div>
+
+</body>
+</html>
