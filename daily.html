@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daily News Brief — November 17, 2026 (Evening Wrap)</title>
+<title>Daily Brief — November 18, 2026 (Morning)</title>
 <style>
   :root {
     --bg: #0b0e14;
@@ -29,16 +29,16 @@
     font-size: 15px;
   }
   .header {
-    background: linear-gradient(135deg, #0a1420 0%, #13101f 50%, #0a1a2e 100%);
-    border-bottom: 1px solid var(--accent);
+    background: linear-gradient(135deg, #1a0a0a 0%, #2a0a1a 50%, #0a1a2e 100%);
+    border-bottom: 1px solid var(--danger);
     padding: 50px 40px 40px;
     text-align: center;
   }
   .header .day-tag {
     display: inline-block;
-    background: rgba(79,195,247,0.15);
-    border: 1px solid rgba(79,195,247,0.4);
-    color: var(--accent);
+    background: rgba(239,83,80,0.2);
+    border: 1px solid rgba(239,83,80,0.4);
+    color: var(--danger);
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 2px;
@@ -136,29 +136,46 @@
   .badge-yellow { background: var(--warn); color: var(--bg); }
   .badge-purple { background: var(--purple); color: var(--bg); }
   .tldr-box {
-    background: linear-gradient(135deg, rgba(79,195,247,0.1), rgba(255,183,77,0.05));
-    border: 2px solid var(--accent);
+    background: linear-gradient(135deg, rgba(239,83,80,0.1), rgba(255,183,77,0.05));
+    border: 2px solid var(--danger);
     border-radius: 10px;
     padding: 24px 28px;
     margin: 24px 0 32px;
   }
   .tldr-box h3 {
-    color: var(--accent);
+    color: var(--danger);
     margin-top: 0;
     font-size: 15px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
   }
   .delta-box {
-    background: var(--surface2);
+    background: var(--surface);
+    border: 1px solid var(--border);
     border-left: 3px solid var(--accent);
     border-radius: 0 8px 8px 0;
-    padding: 14px 20px;
-    margin: 0 0 18px;
+    padding: 16px 22px;
+    margin: 0 0 20px;
     font-size: 13.5px;
     color: var(--text-dim);
   }
   .delta-box strong { color: var(--accent); }
+  .quote-box {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 16px 22px;
+    margin: 16px 0;
+    font-style: italic;
+    color: var(--text);
+    border-radius: 0 6px 6px 0;
+  }
+  .quote-box .src {
+    display: block;
+    margin-top: 8px;
+    font-style: normal;
+    font-size: 12px;
+    color: var(--text-dim);
+  }
   .honest-box {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -172,16 +189,18 @@
     margin-top: 0;
     margin-bottom: 14px;
   }
+  .honest-box ol { margin-left: 20px; }
+  .honest-box ol li { margin-bottom: 12px; }
   .punchline-box {
-    background: linear-gradient(135deg, rgba(79,195,247,0.08), rgba(239,83,80,0.05));
-    border: 2px solid rgba(79,195,247,0.3);
+    background: linear-gradient(135deg, rgba(239,83,80,0.08), rgba(79,195,247,0.05));
+    border: 2px solid rgba(239,83,80,0.3);
     border-radius: 10px;
     padding: 28px;
     margin: 32px 0;
     text-align: center;
   }
   .punchline-box h3 {
-    color: var(--accent);
+    color: var(--danger);
     font-size: 18px;
     margin-top: 0;
     margin-bottom: 14px;
@@ -195,6 +214,15 @@
     margin: 0 auto 10px;
     color: var(--text);
   }
+  .watchlist {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 24px;
+    margin: 20px 0;
+  }
+  .watchlist ul { margin-left: 20px; }
+  .watchlist ul li { margin-bottom: 8px; font-size: 14px; }
   .sources { font-size: 12.5px; color: var(--text-dim); }
   .sources a { color: var(--accent); text-decoration: none; }
   .sources a:hover { text-decoration: underline; }
@@ -206,181 +234,181 @@
     font-size: 12px;
     text-align: center;
   }
-  .pos { color: var(--accent2); }
-  .neg { color: var(--danger); }
-  .move-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 14px;
-    margin: 16px 0;
-  }
-  .move-table th {
-    text-align: left;
-    padding: 10px 14px;
-    background: var(--surface2);
-    color: var(--text-dim);
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 600;
-    border-bottom: 1px solid var(--border);
-  }
-  .move-table td {
-    padding: 10px 14px;
-    border-bottom: 1px solid var(--border);
-    vertical-align: top;
-  }
-  .correction-box {
-    background: rgba(179,157,219,0.08);
-    border: 2px solid var(--purple);
-    border-radius: 10px;
-    padding: 22px 26px;
-    margin: 24px 0 32px;
-  }
-  .correction-box h3 {
-    color: var(--purple);
-    margin-top: 0;
-    font-size: 15px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
+  .gap-note {
+    color: var(--warn);
+    font-size: 12.5px;
+    font-style: italic;
   }
 </style>
 </head>
 <body>
 
 <div class="header">
-  <div class="day-tag">Day 263 of the Iran War · Tuesday Evening Wrap · 205th Zero-Position Day</div>
-  <h1>Daily News Brief — November 17, 2026</h1>
-  <div class="subtitle">NVIDIA beat and raised, and the board ruled out a Jensen Huang comeback in the plainest language yet — hours after the cash session closed at its worst level of this entire stretch.</div>
-  <div class="subtitle-sub">Run: ~17:30 PT · Tuesday Evening Wrap · NVDA Q3 FY27 reported after close (beat-and-raise) · Huang House briefing tomorrow (Nov 18) · Anthropic IPO prices Nov 18, trades Nov 19 · Dec 8–9 FOMC</div>
+  <div class="day-tag">Daily Brief · Morning · Day 264</div>
+  <h1>NVDA's Pop Is Holding, Governance Risk Is Multiplying</h1>
+  <div class="subtitle">A broad premarket rally meets three unverified NVIDIA risk threads and a seventh quiet day in Iran</div>
+  <div class="subtitle-sub">November 18, 2026 — ~08:00 PT · 206th consecutive zero-position day · Anthropic prices today, trades tomorrow as ANT</div>
 </div>
 
 <div class="container">
 
 <!-- ====================== TL;DR ====================== -->
 <div class="tldr-box">
-  <h3>TL;DR — What changed since this morning and why it matters</h3>
+  <h3>TL;DR — What changed since last night</h3>
   <ul>
-    <li><strong>NVIDIA beat on every headline number and raised its FY2028 growth guide from ~70% to 75%, instead of merely reaffirming it.</strong> Revenue $115.84B vs. $109.10B consensus; adjusted EPS $2.68 vs. $2.48 expected. This is a stronger resolution than the test this file set up this morning.</li>
-    <li><strong>The board gave the plainest statement yet ruling out a Huang comeback.</strong> Chair Harvey Jones: "The Nvidia board unanimously accepted his resignation and does not intend to reinstate Jensen as CEO." The board hired Heidrick & Struggles to run the permanent-CEO search.</li>
-    <li><strong>Nvidia defused the China/export-control question before it was asked</strong> — the company said it is "not assuming any Data Center compute revenue from China" in its outlook, so this morning's confirmed BIS rule has no incremental bite on tonight's guidance.</li>
-    <li><strong>But the cash session closed ugly, hours before the print.</strong> S&P 500 to a five-month low (7,340.53, -1.03%), below its 200-day moving average for the first time in seven months. NVDA itself closed -0.44% before rising 3%+ after hours on the beat. Tomorrow's full cash session is the real test of whether the good news holds.</li>
-    <li><strong>Iran extended its quiet streak to a sixth straight period</strong> — now the longest stretch of silence this file has tracked on either the war or peace track.</li>
+    <li><strong>NVDA's beat-and-raise is holding, not fading.</strong> Premarket +2.84% to $159.88, and the gain is broad — Broadcom, TSMC, Micron, CoreWeave, Nebius, SK Hynix, Samsung, and ASML are all up alongside it, not just NVIDIA itself.</li>
+    <li><strong>Anthropic's IPO is now guided to price above its $70-78 range</strong> on roughly 7x demand — a price above $80 would imply a $1.5-1.6T valuation, well above the ~$1.33T top of the original range.</li>
+    <li><strong>NVIDIA's governance and legal risk escalated on three fronts overnight — but only one is independently corroborated.</strong> The board reportedly ruling out Huang's reinstatement (anonymously sourced, dated Nov 16) and a WSJ-reported SEC civil probe into disclosures (this run found zero corroboration) sit alongside a real but non-breaking item: a Senate Banking Committee summons of Huang and Lutnick dated to Nov 13, not overnight.</li>
+    <li><strong>Iran extended its quiet streak to a seventh consecutive period</strong> — the longest stretch of silence this file has tracked on either the war track or the Qatar diplomatic track since it began monitoring the ceasefire era.</li>
+    <li><strong>Polymarket's calibration instrument went dark at the worst possible moment.</strong> No clean fetch this run means there's still no read on whether the AI-bubble contracts reacted to last night's unambiguously good NVDA print.</li>
   </ul>
 </div>
 
-<!-- ====================== MORNING -> EVENING ====================== -->
-<div class="correction-box">
-  <h3>Morning → Evening: what moved</h3>
-  <p>This morning's brief flagged a "quadruple referendum" for tonight's NVDA call: the FY2028 growth guide, succession-fight commentary, a direct response to the BIS export-control rule, and confirmation of a reported board export-control committee. <strong>Three of four resolved tonight, all bullishly</strong> — the growth guide was raised, not just reaffirmed; the board explicitly ruled out Huang's return rather than staying ambiguous; and Nvidia's "zero China revenue assumed" framing mooted the export-control question entirely. <strong>The fourth — the reported "National Security and Export Control Oversight Committee" and the 50%-China-leasing sales bar — stayed unverified</strong>; tonight's earnings coverage made no mention of either. Separately, this morning's premarket bounce did not survive the full cash session: all three indices closed lower, with the S&P posting its worst close of the entire AI-selloff stretch, landing hours before the print flipped the after-hours tape.</p>
-</div>
+<!-- ====================== IRAN ====================== -->
+<h2>Iran / Middle East Geopolitics</h2>
+<div class="delta-box"><strong>Delta since last run:</strong> Nothing new found on any track — CENTCOM, Qatar, Eisenkot's coalition effort, or tanker incidents. Seventh consecutive quiet period.</div>
 
-<!-- ====================== AI / NVDA ====================== -->
-<h2>AI Ecosystem — NVIDIA Q3 FY27</h2>
-<div class="delta-box"><strong>Delta since this morning:</strong> the print landed, and it resolved three of the week's four open questions decisively bullish. <em>AI analyst source reviewed: <code>research/2026/2026-11-17-update.md</code> (report date 2026-11-17) — unchanged from this morning; no newer upstream report expected until tomorrow.</em></div>
+<p>A dedicated search this morning for any CENTCOM statement on the tanker-incident pattern, a firmer Qatar-track development, or Eisenkot/Liberman coalition movement since last night turned up nothing newer than what this file already carries. The most recent confirmed items remain unchanged: Eisenkot holds a 67-seat mandate but has not formed a government, Liberman's refusal to govern on Arab-party support remains the standing obstacle, and the Qatar-mediated nuclear track remains stalled rather than closed.</p>
 
-<p><strong>The beat:</strong> revenue <strong>$115.84B</strong> vs. $109.10B consensus (+6%); adjusted EPS <strong>$2.68</strong> vs. $2.48 expected; data center revenue $107.6B vs. $101.87B estimate; non-GAAP gross margin 74.9% vs. 74% estimate. Buybacks of $28.1B this quarter, against the $150B plan announced in September.</p>
-
-<p><strong>The guide, raised not just reaffirmed:</strong> interim CEO Colette Kress raised FY2028 growth guidance to <strong>75% year-over-year</strong>, from the ~70% this file's standing P035 test was pre-set against — a stronger resolution than the test anticipated. Q4 revenue guidance of ~$130B (~90% YoY) also beat the $125.1B estimate. Kress: "We felt very confident, therefore, that we could establish that we will grow 75% year over year in terms of fiscal year 28," citing "data center readiness, the strength and durability of end customer demand, and our customers['] access to capital."</p>
-
-<p><strong>Succession, closed in the plainest language yet:</strong> board chair Harvey Jones: <em>"The Nvidia board unanimously accepted his resignation and does not intend to reinstate Jensen as CEO."</em> Huang's own statement left the door rhetorically open — "If the Board of Directors decides that my return is in the best interest... I would be honored to answer these calls" — but the board's language was unambiguous. The board has hired <strong>Heidrick & Struggles</strong> to run the permanent-CEO search, a primary confirmation this file didn't have this morning.</p>
-
-<p><strong>China/BIS rule, mooted:</strong> Nvidia said explicitly it is "not assuming any Data Center compute revenue from China" in its outlook — this morning's confirmed BIS export-control rule has no incremental bite on guidance that was already priced at zero.</p>
-
-<p><strong>Still unverified:</strong> tonight's coverage found no mention of the separately-reported board "National Security and Export Control Oversight Committee" or the 50%-China-leasing sales bar. Both remain unverified leads, not facts.</p>
+<p>Eisenkot's 28-day clock, which began Nov 8, now runs to around Dec 6 — roughly 18 days out.</p>
 
 <h3>The structural read</h3>
-<p>This is the single most decisively bullish data point this file has logged in the NVDA saga since Huang's Nov 11 resignation — a real beat-and-raise, not a "relief that nothing got worse" print, landing the same night the board gave its most direct answer yet on reinstatement. <strong>Bear case:</strong> one good quarter and one clean board quote don't retire governance risk — there is still no permanent CEO, the search just started (a search firm, not a shortlist), and a market that sold off hard on succession fears could still find new things to worry about once the relief rally fades. <strong>Bull case:</strong> a 6% revenue beat, a guidance raise, and an unambiguous board statement ruling out the week's biggest tail risk is about as clean a resolution as this file could have hoped for — if tomorrow's cash session holds the after-hours gain, Monday's close increasingly looks like the washout bulls were hoping it was.</p>
+<p>Per this file's own standing instruction from last night, a seventh consecutive quiet period is no longer plausibly a search-coverage gap on its own — it is either a genuine, holding stalemate on both tracks, or a blind spot in how this file searches for Iran/Israel news that would need a different query strategy if an eighth period arrives with nothing. This is the longest stretch of silence this file has tracked since it began monitoring the ceasefire era.</p>
+
+<p><strong>Bear case:</strong> this file cannot rule out that tanker incidents are continuing below the threshold that triggers wire coverage, especially with the news cycle this week entirely consumed by NVDA's earnings, the BIS export rule, and Anthropic's IPO. "No coverage" is not the same evidentiary class as "no incidents."</p>
+
+<p><strong>Bull case:</strong> Eisenkot's clock is now inside three weeks of its deadline with no reported crisis on either the coalition or the Qatar track, and seven consecutive quiet checkpoints is the longest and cleanest de-escalation signal this file has logged in the entire stretch.</p>
+
+<div class="watchlist">
+  <strong>Standing watch:</strong>
+  <ul>
+    <li>Any CENTCOM statement directly addressing the tanker-incident pattern</li>
+    <li>Any firmer signal on the Qatar nuclear track</li>
+    <li>Whether Eisenkot's clock produces visible coalition progress before Liberman's committee-chair leverage hardens further</li>
+  </ul>
+</div>
 
 <!-- ====================== MARKETS ====================== -->
 <h2>Markets / Macro</h2>
-<div class="delta-box"><strong>Delta since this morning:</strong> the cash session closed at the worst level of this entire stretch — hours before NVDA's beat-and-raise flipped the after-hours tape hard.</div>
+<div class="delta-box"><strong>Delta since last run:</strong> Premarket rally holding broadly across the AI complex; Anthropic guided to price above range; oil and Bitcoin prints are stale.</div>
 
-<p>Confirmed close: <strong>S&P 500 7,340.53, -1.03%</strong> — a five-month low, closing below its 200-day moving average for the first time in seven months. <strong>Nasdaq Composite 24,328.38, -0.74%</strong> — a fourth straight losing session. <strong>Dow 50,759.42, -1.64%</strong> (~850 points). Breadth was poor: all 11 S&P sectors finished lower, with software names hit hardest — Salesforce reportedly fell 9%. October retail sales rose 0.2% month-over-month, above consensus, but did nothing to offset the tech-led selling. NVDA itself closed the regular session at <strong>$155.46, -0.44%</strong>, then rose <strong>3%+ in extended trading</strong> once the print landed.</p>
+<table>
+  <tr><th>Instrument</th><th>Level</th><th>Move</th><th>Note</th></tr>
+  <tr><td>NVDA</td><td>$159.88</td><td style="color:var(--accent2)">+2.84% premarket</td><td>Continuing, not fading, last night's after-hours pop</td></tr>
+  <tr><td>Broadcom (AVGO)</td><td>—</td><td style="color:var(--accent2)">+1.99% premarket</td><td>Sympathetic move</td></tr>
+  <tr><td>TSMC (ADR)</td><td>—</td><td style="color:var(--accent2)">+2.69% premarket</td><td>Taiwan's own session closed flat (+0.23%) — lagging</td></tr>
+  <tr><td>Micron (MU)</td><td>—</td><td style="color:var(--accent2)">+1.51% premarket</td><td>Sympathetic move</td></tr>
+  <tr><td>S&amp;P 500 (last confirmed close)</td><td>7,340.53</td><td style="color:var(--danger)">-1.03% (Nov 17)</td><td>Five-month low, below 200-day MA — landed hours before NVDA's print</td></tr>
+  <tr><td>Oil (Brent/WTI)</td><td>Stale</td><td class="gap-note">No confirmed Nov 17/18 settlement found</td><td>Data gap — flagged, not estimated</td></tr>
+  <tr><td>Bitcoin</td><td>~$64,012 (Nov 16)</td><td class="gap-note">Two days stale</td><td>No fresher print found this run</td></tr>
+</table>
 
-<p><strong>Oil:</strong> no clean settlement could be confirmed tonight; an unconfirmed live-ticker snapshot showed crude near $85.93, directionally consistent with — but not a verified continuation of — the multi-week grind lower this file has tracked since November 13's confirmed $88.56 WTI settlement.</p>
+<h3>Anthropic's IPO is the other live story</h3>
+<p>Anthropic prices its IPO today, with trading set to begin tomorrow (11/19) under ticker ANT. Multiple outlets — Bloomberg, the Wall Street Journal, and CNBC's David Faber — report banks are now guiding the deal to price above its $70-78 range. Bloomberg cites orders near 7x the shares on offer; the WSJ's reported price above $80/share would imply a $1.5-1.6T valuation, against roughly $1.33T at the top of the original range. This is a firmer, numbers-attached version of last night's "may price above range" framing <a href="https://www.bloomberg.com/news/articles/2026-11-17/anthropic-is-said-to-guide-ipo-price-to-top-of-range-or-above">(Bloomberg)</a>.</p>
 
-<h3>The structural read</h3>
-<p>Today is a clean natural experiment in real time: the cash session priced in pre-earnings anxiety and continued tech-sector pressure, and the after-hours tape priced in the actual news, and the two readings point in opposite directions. <strong>Bear case:</strong> a close this weak, with breadth this poor, suggests the market's nervousness about AI-adjacent valuations is broader than just the NVDA succession story — one good print doesn't repair a Salesforce-level software selloff or an index closing below its 200-day average. <strong>Bull case:</strong> the after-hours reaction is the more information-rich read because it followed real, unambiguous good news rather than sentiment — if it holds into tomorrow's open, today's low could mark the bottom of this leg down.</p>
+<h3>The read</h3>
+<p>Premarket is unambiguously pricing last night's NVDA print as durable rather than a one-session pop, and the breadth of the move — not just NVDA but the entire sympathetic complex — plus Anthropic's demand signal is a stronger "washout, not trend" read than Tuesday morning's narrower bounce. But none of this is a confirmed cash-session result yet.</p>
+
+<p><strong>Bear case:</strong> a premarket rally the morning after one good print, landing the same week as a major IPO debut, is exactly the setup that can fail to hold through a full session if any governance story (below) resurfaces anxiety.</p>
+
+<p><strong>Bull case:</strong> the breadth of today's move, plus Anthropic's oversubscription, is a stronger signal than Tuesday's narrower bounce that Monday's close was a washout, not a trend change.</p>
+
+<!-- ====================== AI ECOSYSTEM ====================== -->
+<h2>AI Ecosystem</h2>
+<div class="delta-box"><strong>Delta since last run:</strong> Three NVIDIA governance/legal threads surfaced overnight — one anonymously-sourced-but-real, one unverified by this run's independent search, one a dated catch-up item, not breaking news.</div>
+
+<p><strong>AI analyst source reviewed:</strong> <code>research/2026/2026-11-18-update.md</code> (report date 2026-11-18, filed 08:05 ET). This fully catches up on the 2026-11-17 report already reviewed last night.</p>
+
+<h3>Three threads, three different confidence levels</h3>
+<ol>
+  <li><strong>Board reportedly rules out Huang's reinstatement.</strong> CNBC and Business Insider (citing anonymous sources, dated Nov 16) report the board is not considering bringing Huang back. This run's own search corroborates that this reporting exists, but it remains anonymously sourced — distinct from board chair Harvey Jones's on-record quote from last night's earnings call ("does not intend to reinstate Jensen as CEO") <a href="https://www.techloy.com/brief/nvidia-board-rules-out-jensen-huang-ceo-comeback-fg9pva/">(Techloy)</a>.</li>
+  <li><strong>A WSJ-reported SEC civil probe into NVIDIA's disclosures — unverified by this run.</strong> The upstream analyst's report cites a WSJ story tying an SEC civil investigation to NVIDIA's Singapore revenue-reporting change and a claim that NVIDIA sales staff introduced Alibaba to Alice Huang in 2022. This run's own independent search found no WSJ story and no corroboration of an SEC probe from any source. What it did find, consistent with background: NVIDIA quietly dropped Singapore from its geographic revenue disclosure as of its most recent quarter <a href="https://fortune.com/2026/11/12/nvidia-changed-earnings-report-format-singapore-revenue-megaspeed-probe-colette-kress/">(Fortune, Nov 12)</a>. Treat the SEC-probe claim as an unverified lead, not a confirmed fact, pending a primary-source check.</li>
+  <li><strong>Senate Banking Committee summons of Huang and Lutnick — real, but not new.</strong> Chairman Tim Scott has asked Huang to testify Dec 3 and Commerce Secretary Lutnick Dec 10, with subpoena threats if they don't appear voluntarily; a Commerce spokesperson confirmed Lutnick will appear <a href="https://www.aljazeera.com/news/2026/11/13/nvidias-huang-lutnick-summoned-to-testify-to-us-senate">(Al Jazeera)</a>. This run's search confirms the story but dates it to <strong>Nov 13</strong> — not an overnight development. It's a genuine catch-up item: this file had only tracked the separate House Foreign Affairs/Select China/Intelligence Committees' closed-door briefing request, not the distinct, more concrete Senate Banking public-hearing track.</li>
+</ol>
+
+<p>None of this names a permanent CEO. The board has hired Heidrick &amp; Struggles to run that search (confirmed last night). P042 (NVIDIA names a permanent CEO by 2027-06-30) holds at 65%.</p>
+
+<h3>The read</h3>
+<p>The market, so far, is treating last night's print as the dominant signal and the governance/legal-risk stories as background noise — premarket is not pricing in the SEC-probe lead or the Senate summons as a fresh negative catalyst.</p>
+
+<p><strong>Bear case:</strong> an unverified SEC probe, if confirmed by a primary source in the coming days, is a materially different and more serious risk than the succession fight alone — disclosure-related SEC scrutiny touches the company's own numbers, not just who runs it. A market currently ignoring the lead could reprice hard if it's confirmed.</p>
+
+<p><strong>Bull case:</strong> three separate, mostly anonymously-sourced governance stories landing the same week as a clean beat-and-raise and a stack-wide rally is consistent with this file's standing read that the market treats company-specific governance drama as distinct from the demand fundamentals it actually prices.</p>
 
 <!-- ====================== PORTFOLIO ====================== -->
 <h2>Portfolio Tickers</h2>
-<div class="delta-box"><strong>Delta since this morning:</strong> 205th consecutive zero-position day. Tonight's print is close to the clearest version of this file's own re-entry bar this stretch has produced.</div>
+<div class="delta-box"><strong>Delta since last run:</strong> 206th consecutive zero-position day. Broad premarket rally across the named complex; no new ticker-specific catalysts beyond the sympathetic bounce.</div>
 
 <table>
-  <tr><th>Ticker</th><th>What changed</th><th>Read</th></tr>
-  <tr><td>NVDA</td><td>Closed $155.46 (-0.44%), then +3%+ in extended trading on a beat-and-raise plus an explicit board statement ruling out Huang's return</td><td>Three of four referendum questions resolved bullish; the board-committee question stays unverified</td></tr>
-  <tr><td>CRWV / NBIS / Broadcom / Micron / Arista / TSMC</td><td>No confirmed post-earnings quote yet tonight</td><td>All candidates to gap up tomorrow on NVDA's read-through — watch the open</td></tr>
-  <tr><td>CRWV's $4B loan</td><td>Still unpriced</td><td>No update tonight; carrying forward</td></tr>
-  <tr><td>AMZN / AMD / MU / XLE / OWL / APO / ARCC</td><td>No new ticker-specific catalysts beyond the broader cash-session selloff that preceded the print</td><td>Carrying forward — nothing new to re-check</td></tr>
+  <tr><th>Ticker</th><th>Move</th><th>Note</th></tr>
+  <tr><td>NVDA</td><td style="color:var(--accent2)">+2.84% premarket</td><td>Beat-and-raise holding into the session</td></tr>
+  <tr><td>TSMC</td><td style="color:var(--accent2)">+2.69% (ADR, premarket)</td><td>Taiwan session closed flat — lagging reaction</td></tr>
+  <tr><td>MU</td><td style="color:var(--accent2)">+1.51% premarket</td><td>Sympathetic move, no company-specific news</td></tr>
+  <tr><td>CRWV</td><td style="color:var(--accent2)">+3.73% premarket</td><td>$4B investment-grade loan still unpriced</td></tr>
+  <tr><td>NBIS</td><td style="color:var(--accent2)">+4.64% premarket</td><td>Largest percentage mover in the named complex</td></tr>
+  <tr><td>AMZN, AMD, XLE, OWL, APO, ARCC</td><td>—</td><td>No new ticker-specific catalysts found beyond the broad sympathetic bounce</td></tr>
 </table>
 
-<h3>The structural read</h3>
-<p>205 sessions at zero positions now includes the single most decisive bullish catalyst this file has logged since Huang's resignation — a real growth-guide raise and an unambiguous board statement closing the succession overhang. <strong>Bear case:</strong> one good print doesn't retire 205 days of standing aside, and chasing an after-hours pop before a full cash session confirms it would be a discipline break, not a vindication. <strong>Bull case:</strong> if the standing re-entry bar was "a resolved NVDA leadership situation," tonight arguably clears it — worth an explicit gut-check against that bar now rather than waiting for one more confirmation after another.</p>
+<p>Last night's print is the second consecutive session where the market has moved to price in a resolving NVDA leadership/growth-guide overhang. That the gain is holding into premarket — rather than fading the way some single-session relief rallies do — is a modestly stronger signal than Tuesday morning's narrower bounce.</p>
 
-<!-- ====================== IRAN / ISRAEL ====================== -->
-<h2>Iran / Middle East Geopolitics</h2>
-<div class="delta-box"><strong>Delta since this morning:</strong> none. Sixth consecutive quiet period — now the lead item for this beat, per this morning's own standing flag.</div>
+<p><strong>Bear case:</strong> premarket strength is not a confirmed cash-session result, and the three governance/legal-risk threads above are still live and could resurface once today's Anthropic-driven news cycle settles.</p>
 
-<p>A targeted search tonight found no CENTCOM statement, no Qatar-track update, no Eisenkot coalition movement, and no new tanker incident since this morning — the sixth consecutive quiet checkpoint after months of near-daily tanker incidents and diplomatic back-and-forth. Tonight's NVDA coverage made zero mention of Iran or the Middle East, consistent with a news cycle entirely consumed by the earnings print rather than any editorial judgment about the region.</p>
-
-<h3>The structural read</h3>
-<p>Six consecutive quiet periods is no longer plausibly a coverage gap — this reads as a genuine, holding stalemate on both the war track and the peace track, consistent with the Nov 9 "highly unlikely" strike framing holding for more than a week. <strong>Bear case:</strong> six days without a CENTCOM pattern-statement, against a standing near-daily tanker-incident baseline from earlier this fall, could mean incidents are happening and simply not being covered amid the NVDA news cycle — this file should not assume "no coverage" equals "no incidents" without a dedicated check once the cycle clears. <strong>Bull case:</strong> Eisenkot's clock is now roughly 17-18 days from its Dec 6 deadline with no reported crisis, and a quiet stretch this long and this consistent across both tracks is the cleanest de-escalation signal this file has logged all stretch.</p>
+<p><strong>Bull case:</strong> if the standing re-entry bar was "a resolved NVDA leadership situation, confirmed by more than one session," today is the first chance to test whether last night's resolution actually holds.</p>
 
 <!-- ====================== PRIVATE CREDIT ====================== -->
 <h2>Private Credit</h2>
-<div class="delta-box"><strong>Delta since this morning:</strong> none on the named tickers. Tonight's NVDA print is a positive read-through for AI-infrastructure credit generally.</div>
-
-<p>No new redemption prints, NAV marks, or litigation developments were found on OWL, APO, ARCC, or KKR tonight. CoreWeave's reported $4B investment-grade loan remains unpriced. A durable, raised demand guide from the sector's largest chip supplier supports this file's standing bull case on AI-infrastructure credit, but no private-credit-specific instrument moved on it tonight.</p>
+<div class="delta-box"><strong>Delta since last run:</strong> No material change.</div>
+<p>No new redemption prints, NAV marks, or litigation developments on OWL/APO/ARCC/KKR since last night. CoreWeave's reported $4B investment-grade loan (Morgan Stanley/MUFG, Meta-contract-backed) remains unpriced — no confirmation found this morning that it has priced or closed. Last night's NVDA beat-and-raise and this morning's stack-wide premarket rally remain a positive read-through for AI-infrastructure credit generally, but no private-credit-specific instrument has moved on it yet.</p>
 
 <!-- ====================== POLYMARKET ====================== -->
 <h2>Polymarket Calibration</h2>
-<div class="delta-box"><strong>Delta since this morning:</strong> clean direct fetches on all four core contracts, but the snapshot lands right at/before NVDA's after-close release — it does not yet reflect tonight's print.</div>
+<div class="delta-box"><strong>Delta since last run:</strong> No clean fetch achieved — a genuine data-quality gap at the worst possible moment.</div>
 
 <table>
-  <tr><th>Market</th><th>This morning</th><th>Tonight (~19:12 ET)</th><th>Delta</th></tr>
-  <tr><td>Hormuz traffic normal by Dec 31</td><td>5%</td><td><strong>4.5%</strong></td><td>-0.5pp, within noise</td></tr>
-  <tr><td>AI bubble burst by Dec 31, 2026</td><td>8%</td><td><strong>8.25%</strong></td><td>+0.25pp, within noise</td></tr>
-  <tr><td>AI bubble burst by June 30, 2027</td><td>18%</td><td><strong>18%</strong></td><td>Flat</td></tr>
-  <tr><td>US invades Iran before 2027</td><td>8%</td><td><strong>7.5%</strong></td><td>-0.5pp, within noise</td></tr>
+  <tr><th>Contract</th><th>Last confirmed</th><th>Snapshot time</th><th>Note</th></tr>
+  <tr><td>Strait of Hormuz traffic normal by Dec 31</td><td>4.5% Yes</td><td>Nov 17, ~19:12 ET</td><td>Carried forward — predates tonight's NVDA print</td></tr>
+  <tr><td>AI bubble burst by Dec 31, 2026</td><td>8.25% Yes</td><td>Nov 17, ~19:12 ET</td><td>Carried forward</td></tr>
+  <tr><td>AI bubble burst by June 30, 2027</td><td>18% Yes</td><td>Nov 17, ~19:12 ET</td><td>Carried forward</td></tr>
+  <tr><td>US invades Iran before 2027</td><td>7.5% Yes</td><td>Nov 17, ~19:12 ET</td><td>Carried forward</td></tr>
 </table>
 
-<p class="sources">Sources: <a href="https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-december-31">Hormuz contract</a>, <a href="https://polymarket.com/event/ai-bubble-burst-by">AI bubble contract</a>, <a href="https://polymarket.com/event/will-the-us-invade-iran-before-2027">invasion contract</a>.</p>
-
-<h3>The structural read</h3>
-<p>All four contracts were essentially flat through today's worst cash-session close of the stretch, continuing this morning's pattern — but because this snapshot lands right around NVDA's after-close release, it cannot yet say whether the market reacts to tonight's unambiguously bullish print. <strong>Bear case:</strong> if these contracts still don't move even after a clean positive catalyst, that's a stronger version of this file's "contained, not systemic" read, but it also means the calibration instrument has gone through both a terrible day and a great one without reacting to either — which starts to look like thin-volume inertia as much as a considered view. <strong>Bull case:</strong> a contract that didn't panic on the way down has no reason to panic on the way up either. A re-fetch tomorrow morning, once the market has had a full session to react, is the real test.</p>
+<p>Standard web search this morning could not pull a live same-contract read on any of the four core tracked contracts. The carried-forward snapshot above was taken right at/before NVDA's after-close print last night — it does not reflect any reaction to the beat-and-raise or this morning's stack-wide rally. This is now the single most important gap in this file's coverage: the exact catalyst this file has been waiting to test the AI-bubble contracts against (an unambiguously positive NVDA print) has now happened, and there is still no clean read on how the market priced it.</p>
 
 <!-- ====================== BOTTOM LINE ====================== -->
 <div class="punchline-box">
   <h3>Bottom Line / Portfolio Implication</h3>
-  <p>Three of this week's four open questions resolved tonight, and all three resolved bullish: NVIDIA beat and raised its growth guide rather than merely defending it, the board ruled out a Huang comeback in the plainest language this file has logged, and the China/export-control overhang turned out to already be priced at zero in guidance. The one unresolved thread — the reported board export-control committee — stays a lead, not a fact. None of this is actionable at 205 consecutive zero-position days, but if Andres's own standing re-entry bar was "a resolved NVDA leadership situation," tonight arguably clears it, which makes an explicit gut-check worth having regardless of what tomorrow's open does. The more important test is not tonight's after-hours pop — it's whether a full cash session tomorrow actually holds the gain against a tape that just closed at its worst level of the entire stretch.</p>
+  <p>The market is, for the second morning in a row, pricing NVDA's leadership saga as resolving rather than resolved — a broad premarket rally across the entire sympathetic complex, plus an oversubscribed Anthropic IPO guided well above range, is real demand-side evidence that Monday's close was a washout, not a trend change. But this file cannot independently verify the most serious of the three new NVIDIA risk threads (an SEC civil probe into disclosures), and the one it can verify (the Senate Banking Committee summons) turns out to be five days old, not new. Andres remains at 206 consecutive zero-position days; if his own standing re-entry bar is "a resolved NVDA leadership situation, confirmed by more than one session," today's cash-session close — not this morning's premarket tape — is the actual test. Iran's seventh consecutive quiet period is the cleanest de-escalation signal this file has logged all stretch, but it rests entirely on an absence of coverage this file cannot fully rule out as a search gap rather than a genuine calm.</p>
+</div>
+
+<!-- ====================== HONEST GAPS ====================== -->
+<div class="honest-box">
+  <h3>What this run could not confirm</h3>
+  <ol>
+    <li>No confirmed cash-equity close for today — this entire brief is built on premarket data and last night's confirmed Nov 17 close.</li>
+    <li>No corroboration found for the WSJ-reported SEC civil probe into NVIDIA's disclosures — treated as an unverified lead, not fact.</li>
+    <li>No confirmed oil settlement since before Nov 17's close, and no Bitcoin print fresher than Nov 16 (~$64,012) — both flagged as stale, not estimated.</li>
+    <li>No clean Polymarket fetch this run — the four core contracts are carried forward from a snapshot that predates NVDA's print entirely.</li>
+  </ol>
 </div>
 
 <!-- ====================== SOURCES ====================== -->
 <h2>Sources</h2>
 <div class="sources">
-  <p><strong>NVIDIA earnings / markets:</strong></p>
   <ul>
-    <li><a href="https://www.cnbc.com/2026/11/17/nvidia-nvda-earnings-report-q3-2027.html">CNBC — Nvidia interim CEO Kress says it's 'business as usual,' Q3 FY27 live coverage</a></li>
-    <li><a href="https://www.nbcnews.com/business/business-news/live-blog/nvidia-stock-earnings-report-jensen-huang-rcna609804">NBC News — Nvidia earnings live updates: board has no plans to reinstate Huang</a></li>
-    <li><a href="https://www.cbsnews.com/news/nvidia-earnings-jensen-huang-colette-kress/">CBS News — Nvidia records strong growth in first earnings report without Huang</a></li>
-    <li><a href="https://finance.yahoo.com/markets/live/stock-market-today-tuesday-november-17-dow-sp-500-nasdaq-nvidia-earnings-retail-sales-143848454.html">Yahoo Finance — Stock market today, Tuesday November 17</a></li>
-    <li><a href="https://www.fool.com/coverage/stock-market-today/2026/11/17/stock-market-today-nov-17-stocks-slide-on-ai-chip-and-tech-pressures-salesforce-plummets-9/">The Motley Fool — Stocks slide on AI chip and tech pressures, Salesforce plummets 9%</a></li>
-  </ul>
-  <p><strong>Polymarket (clean fetch tonight, ~19:12 ET):</strong></p>
-  <ul>
-    <li><a href="https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-december-31">Polymarket — Strait of Hormuz traffic returns to normal by Dec 31</a></li>
-    <li><a href="https://polymarket.com/event/ai-bubble-burst-by">Polymarket — AI bubble burst by...</a></li>
-    <li><a href="https://polymarket.com/event/will-the-us-invade-iran-before-2027">Polymarket — Will the US invade Iran before 2027</a></li>
+    <li><a href="https://www.bloomberg.com/news/articles/2026-11-17/anthropic-is-said-to-guide-ipo-price-to-top-of-range-or-above">Bloomberg — Anthropic guided to price IPO at top of range or above (Nov 17)</a></li>
+    <li><a href="https://www.cnbc.com/2026/11/17/anthropic-ipo-price.html">CNBC — Anthropic likely to price above $70-78 range (Nov 17)</a></li>
+    <li><a href="https://www.techloy.com/brief/nvidia-board-rules-out-jensen-huang-ceo-comeback-fg9pva/">Techloy — Nvidia board reportedly rules out Jensen Huang CEO comeback (Nov 16)</a></li>
+    <li><a href="https://www.aljazeera.com/news/2026/11/13/nvidias-huang-lutnick-summoned-to-testify-to-us-senate">Al Jazeera — US Senate summons Nvidia's Huang, Lutnick to testify (Nov 13)</a></li>
+    <li><a href="https://fortune.com/2026/11/12/nvidia-changed-earnings-report-format-singapore-revenue-megaspeed-probe-colette-kress/">Fortune — Nvidia changed earnings report format, dropped Singapore revenue disclosure (Nov 12)</a></li>
+    <li><a href="https://www.cnbc.com/2026/11/17/nvidia-nvda-earnings-report-q3-2027.html">CNBC — Nvidia Q3 FY27 earnings report, beat-and-raise (Nov 17)</a></li>
+    <li>AI Ecosystem Analyst — <code>research/2026/2026-11-18-update.md</code> (internal source, report date 2026-11-18)</li>
   </ul>
 </div>
 
 <div class="footer">
-  Daily News Brief · November 17, 2026 · Tuesday Evening Wrap · Day 263 of the Iran war<br>
-  <em>Andres's daily analyst. Structural reads, not headline regurgitation.</em>
+  Andres's Daily News Brief — Structural reads, not headlines. Pacific time. Generated 2026-11-18, morning run.
 </div>
 
 </div>
-
 </body>
 </html>
