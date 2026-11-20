@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daily Brief — November 19, 2026 (Evening Wrap)</title>
+<title>Daily News Brief — November 20, 2026</title>
 <style>
   :root {
     --bg: #0b0e14;
@@ -149,17 +149,59 @@
     letter-spacing: 1.5px;
     text-transform: uppercase;
   }
-  .delta-box {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-left: 3px solid var(--accent);
-    border-radius: 0 8px 8px 0;
-    padding: 16px 22px;
-    margin: 0 0 20px;
+  .delta-callout {
+    background: var(--surface2);
+    border-left: 3px solid var(--warn);
+    border-radius: 0 6px 6px 0;
+    padding: 12px 18px;
+    margin: 0 0 18px;
     font-size: 13.5px;
     color: var(--text-dim);
   }
-  .delta-box strong { color: var(--accent); }
+  .delta-callout strong { color: var(--warn); }
+  .faction-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .faction-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px 26px;
+    border-left: 4px solid var(--border);
+  }
+  .faction-card.f-irgc { border-left-color: var(--danger); }
+  .faction-card.f-hawk { border-left-color: var(--warn); }
+  .faction-card.f-civ { border-left-color: var(--accent); }
+  .scenario-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+    margin: 20px 0;
+  }
+  .scenario-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 20px;
+  }
+  .scenario-card .pct {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+  .scenario-card h4 {
+    font-size: 14px;
+    color: var(--heading);
+    margin: 4px 0 10px;
+  }
+  .scenario-card p { font-size: 13px; color: var(--text); margin: 0; }
+  .scenario-card.red .pct { color: var(--danger); }
+  .scenario-card.yellow .pct { color: var(--warn); }
+  .scenario-card.green .pct { color: var(--accent2); }
   .quote-box {
     background: var(--surface);
     border-left: 3px solid var(--accent);
@@ -184,13 +226,7 @@
     padding: 22px 26px;
     margin: 24px 0;
   }
-  .honest-box h3 {
-    color: var(--purple);
-    margin-top: 0;
-    margin-bottom: 14px;
-  }
-  .honest-box ol { margin-left: 20px; }
-  .honest-box ol li { margin-bottom: 12px; }
+  .honest-box h3 { color: var(--purple); margin-top: 0; margin-bottom: 14px; }
   .punchline-box {
     background: linear-gradient(135deg, rgba(239,83,80,0.08), rgba(79,195,247,0.05));
     border: 2px solid rgba(239,83,80,0.3);
@@ -234,196 +270,184 @@
     font-size: 12px;
     text-align: center;
   }
-  .gap-note {
-    color: var(--warn);
-    font-size: 12.5px;
-    font-style: italic;
+  .flag-box {
+    background: rgba(255,183,77,0.08);
+    border: 1px solid rgba(255,183,77,0.35);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 16px 0;
+    font-size: 13.5px;
   }
-  .correction-box {
-    background: linear-gradient(135deg, rgba(255,183,77,0.1), rgba(239,83,80,0.05));
-    border: 2px solid var(--warn);
-    border-radius: 10px;
-    padding: 22px 26px;
-    margin: 0 0 32px;
-  }
-  .correction-box h3 {
-    color: var(--warn);
-    margin-top: 0;
-    font-size: 14px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-  }
+  .flag-box strong { color: var(--warn); }
 </style>
 </head>
 <body>
 
 <div class="header">
-  <div class="day-tag">Daily Brief · Evening Wrap · Day 265</div>
-  <h1>NVDA's Sixth Straight Losing Day, On the Day Anthropic Became the Biggest IPO Ever</h1>
-  <div class="subtitle">The governance overhang didn't blink even on the best possible news backdrop — and Iran's "paused" exchange widened to a new actor and a new target</div>
-  <div class="subtitle-sub">November 19, 2026 — ~17:30 PT · 209th consecutive zero-position day · S&amp;P's sixth straight loss, longest losing streak since 2024</div>
+  <div class="day-tag">Daily News Brief · Morning</div>
+  <h1>November 20, 2026 — Morning Brief</h1>
+  <div class="subtitle">The selloff is now a correction, and it just picked up a third investigating body</div>
+  <div class="subtitle-sub">Run: ~08:00 PT · Day 266 · 210th consecutive zero-position day · Eisenkot coalition deadline Dec 6 (~2 weeks) · Fed FOMC Dec 9</div>
 </div>
 
 <div class="container">
 
 <!-- ====================== TL;DR ====================== -->
 <div class="tldr-box">
-  <h3>TL;DR — What changed since this morning</h3>
+  <h3>TL;DR — what changed and why it matters</h3>
   <ul>
-    <li><strong>NVDA closed down 3.30% to $145.98 — a sixth straight losing session</strong> — after erasing an early intraday gain as large as +4.7%, on the same day Anthropic's IPO (NVIDIA itself a ~$10B investor) became the largest in history. Coverage attributes the reversal to investors still weighing the CEO-transition fallout, not fresh bad news.</li>
-    <li><strong>Anthropic's debut was the real story of the day</strong>: first trade $111.50 (+34% vs. the $83 offering, ~$2T diluted market cap), fading to close roughly +17% (~$97) — the largest IPO in history, bigger than SpaceX's.</li>
-    <li><strong>The broader market fell hard</strong>: Dow -1,101pts (-2.19%), S&amp;P -2.02% (sixth straight loss, longest losing streak since 2024), Nasdaq -2.25% — a mix of NVDA-specific weakness and renewed Fed rate-hike talk.</li>
-    <li><strong>Iran's Gulf exchange, read this morning as "paused," continued and widened</strong>: Bahrain hit a fourth time in six days, Kuwait struck again, a tanker hit again near the strait, and — new — an Iran-aligned Houthi missile damaged Riyadh's tallest skyscraper, the Saudi sovereign wealth fund's headquarters.</li>
-    <li><strong>Polymarket's AI-bubble-by-June-2027 contract moved a real +3pp</strong> (18.5%→21.5%) — the first time it has moved materially on what looks like NVDA-specific governance weakness rather than a broad shock. The invade-Iran contract stayed flat at 6.5% despite today's escalation.</li>
+    <li><strong>The AI-stack selloff is confirmed correction-territory, not just a bad week:</strong> Nasdaq 100 -15.1% off its October high, NVDA -39% off its October high at a fresh 52-week low, SOX -35.6% off its June high.</li>
+    <li><strong>California's DOJ served NVIDIA an investigative subpoena Nov 19</strong> — a third body now examining the company (alongside the SEC and DOJ), on top of a new congressional letter to Commerce from two House Democrats.</li>
+    <li><strong>Bitcoin finally broke its three-day data gap — down hard, not up:</strong> $61,322 (-3.8% in 24h), now falling with equities rather than acting as a hedge; gold isn't catching a safety bid either.</li>
+    <li><strong>Real credit stress has a hard number for the first time:</strong> CoreWeave's own 2031 bonds yield ~15.7%, net interest at 4.1x operating income — even as Taiwan's export orders and TSMC's revenue both post record/strong growth. The selloff is testing who pays for the buildout, not whether it's happening.</li>
+    <li><strong>This file is flagging its own sourcing error-in-progress on Iran:</strong> last night's lead claim (a Houthi strike on Riyadh's PIF tower) could not be re-confirmed this morning — treat it as unconfirmed pending a primary-wire check, not as fact.</li>
   </ul>
 </div>
-
-<!-- ====================== CORRECTION ====================== -->
-<div class="correction-box">
-  <h3>A process note, not a research gap</h3>
-  <p>This morning's run updated every state file this brief draws on, but the markdown delta file for this morning was never saved — a write-step failure, not a missed research day. This evening's run recovered this morning's findings directly from the state files; nothing here is backfilled or guessed. Separately: this morning's Iran entry read a 12-14 hour pause as "no further escalation found overnight." That read didn't survive the day — see below.</p>
-</div>
-
-<!-- ====================== MARKETS ====================== -->
-<h2>Markets / Macro</h2>
-<div class="delta-box"><strong>Delta since this morning:</strong> The rally this morning's brief described reversed hard. NVDA fell a sixth straight session; the broader market posted its worst close of the week even as Anthropic delivered the largest IPO in history.</div>
-
-<table>
-  <tr><th>Instrument</th><th>Level</th><th>Move</th><th>Note</th></tr>
-  <tr><td>NVDA</td><td>$145.98</td><td style="color:var(--danger)">-3.30% close</td><td>Erased an early intraday gain as large as +4.7%; sixth straight losing day</td></tr>
-  <tr><td>Dow Jones</td><td>49,097.06</td><td style="color:var(--danger)">-1,101.11pts / -2.19%</td><td>Partly Fed rate-hike talk, partly NVDA-driven</td></tr>
-  <tr><td>S&amp;P 500</td><td>~7,175.83</td><td style="color:var(--danger)">-2.02%</td><td>Sixth straight loss — longest losing streak since 2024</td></tr>
-  <tr><td>Nasdaq Composite</td><td>23,879.20</td><td style="color:var(--danger)">-2.25%</td><td></td></tr>
-  <tr><td>Anthropic (ANT)</td><td>opened $111.50, closed ~$97</td><td style="color:var(--accent2)">+34% open, +17% close</td><td>Largest IPO in history; ~$2T diluted market cap at open; NVDA/Google each put in ~$10B</td></tr>
-  <tr><td>Oil (WTI)</td><td>$83.21 settle</td><td style="color:var(--danger)">-5¢ (lowest since Aug 26)</td><td>Essentially flat despite fresh reported tanker incidents in the strait</td></tr>
-  <tr><td>Oil (Brent)</td><td>$91.98 settle</td><td style="color:var(--accent2)">+3¢</td><td>Also essentially flat — oil pricing incidents as background noise</td></tr>
-  <tr><td>Bitcoin</td><td>~$65,017 (Nov 17)</td><td class="gap-note">Still stale</td><td>No clean same-day print found tonight — now a 3-day-plus gap</td></tr>
-</table>
-
-<h3>Why NVDA couldn't hold its best backdrop in weeks</h3>
-<p>NVIDIA is itself a roughly $10 billion investor in Anthropic's IPO, so today was supposed to be the clean test of whether a historic, sentiment-positive event in its own ecosystem could lift the stock. It didn't — NVDA gave back an early 4.7% intraday gain to close down 3.3%, with coverage pointing to investors "weighing CEO transition fallout despite strong Q3 results." That is now a sixth consecutive losing session, spanning a beat-and-raise, an on-record board statement ruling out Jensen Huang's return, and today's historic IPO.</p>
-
-<p><strong>Bear case:</strong> if a historic IPO in NVIDIA's own backyard can't move the stock positively even for an hour, the standing "contained, company-specific, not systemic" framing needs to be held more loosely — something structural, not just succession noise, may be getting priced.</p>
-
-<p><strong>Bull case:</strong> Anthropic itself closed up 17% on debut — AI-sector demand is real and durable. Today's damage is concentrated in NVDA specifically and in the broader indices (partly Fed-rate-driven), not a repeat of a systemic AI-capex re-rating across the whole sector.</p>
 
 <!-- ====================== IRAN ====================== -->
 <h2>Iran / Middle East Geopolitics</h2>
-<div class="delta-box"><strong>Delta since this morning:</strong> The "paused" read lasted under a day. The exchange continued and widened to a new actor (Houthis) and a new target (Saudi Arabia's financial capital).</div>
+<div class="delta-callout"><strong>Delta since last run:</strong> a sourcing correction attempt, not a new escalation — this morning's re-check could not corroborate last night's lead item.</div>
 
-<p>Kuwait's Ali Al Salem air base was targeted again today — intercepted, no reported damage. Bahrain faced its <strong>fourth Iranian attack in six days</strong> — also intercepted. A tanker was reportedly struck again in or near the Strait of Hormuz; Iran claimed two tanker explosions per oil-market coverage, though this wasn't independently confirmed by a primary maritime-security source this run.</p>
-
-<p><strong>New and more significant: an Iran-aligned Houthi missile — not a direct IRGC strike — damaged Riyadh's tallest skyscraper</strong>, the headquarters of Saudi Arabia's Public Investment Fund. Saudi civil defense reported blown-out windows and bent facade panels across up to eight floors; no injuries reported. This is a different axis entirely — Yemen-based Houthi action against Saudi Arabia — from the Bahrain/Qeshm/Kuwait pattern this file has tracked all week, and it broadens the set of actors and targets in play.</p>
-
-<p>Qatar's foreign ministry called today's round "a dangerous escalation" risking diplomatic efforts. Saudi Arabia, Kuwait, and the UAE all condemned the attacks. Trump said Thursday he is "not rushing into any decision" on further US action against Iran — a restraint signal, though notably not the same as ruling anything out.</p>
-
-<h3>The structural read</h3>
-<p>This file corrected a real miss just last night — the "seven quiet periods" read that turned out to mask a genuine five-day escalation. This morning's "paused" framing repeated a version of the same error within 12-24 hours, treating a short quiet window as the start of a trend. The lesson ("no coverage is not the same evidentiary class as no incidents") needed relearning twice in one day.</p>
-
-<p><strong>Bear case:</strong> a new actor and a new target — Saudi Arabia's financial capital, not just Gulf military installations — is a genuine widening of the conflict's geography and cast, not more of the same contained tit-for-tat.</p>
-
-<p><strong>Bull case:</strong> every incident across six days — Bahrain x4, Kuwait x2, the Riyadh tower, multiple tanker hits — has produced zero reported deaths or serious injuries, and Polymarket's invade-Iran contract hasn't moved at all (6.5%, flat since this morning) despite all of it. Sophisticated money still reads this as contained.</p>
-
-<div class="watchlist">
-  <strong>Standing watch, revised again:</strong>
-  <ul>
-    <li>Do not treat any quiet window under 24 hours as a trend</li>
-    <li>Check primary Gulf-state sources by date every run — now explicitly including Saudi Arabia and the Houthi/Yemen angle, not just Bahrain/Kuwait/Qatar/CENTCOM</li>
-    <li>Whether the Houthi strike on Riyadh draws a US or Saudi response distinct from the Bahrain/Kuwait pattern</li>
-  </ul>
+<div class="flag-box">
+  <strong>Sourcing flag:</strong> last night's entry described an Iran-aligned Houthi missile damaging the Public Investment Fund's Riyadh headquarters — eight floors, blown-out windows, named explicitly. This morning's independent re-check found no primary source (Reuters, AP, SPA, CENTCOM) dated Nov 19 or 20 confirming that specific claim. Two separate searches instead both surfaced a Houthi strike on an <strong>Aramco-branded tower</strong> in Riyadh's King Abdullah Financial District — a different building — dated to <strong>November 8</strong>, not Nov 19. This file cannot resolve with confidence whether last night described a real, not-yet-indexed second strike, or conflated and misdated the Nov 8 incident. Held as <strong>unconfirmed, not retracted</strong>, pending a direct wire check. A secondary count discrepancy also surfaced: last night logged "Bahrain's fourth attack in six days"; the most recent primary-sourced reporting this morning's search could confirm (Nov 17-18, Al Jazeera/The National) describes a third attack in five days.
 </div>
+
+<p>Beyond those two specific claims, no new Bahrain, Kuwait, or Qeshm incident was confirmed since last night, and no CENTCOM statement, Qatar-track update, or Trump administration statement was found dated Nov 19 evening or Nov 20. On Israel: no update found on Eisenkot's coalition talks since Nov 9 reporting (Liberman still pushing a 61-seat, Ra'am-excluded coalition via Haredi inclusion); the Dec 6 mandate deadline is now roughly two weeks out.</p>
+
+<p><strong>Polymarket, independently fetched this morning:</strong> the Hormuz-normal-by-Dec-31 contract ticked down again to <strong>2.9% Yes</strong> (from 3.15% last night) — continued pessimism on near-term normalization — while the heavily-traded <strong>US-invades-Iran-before-2027 contract held exactly flat at 6.5% Yes on ~$99K of 24h volume</strong>, the heaviest volume of any contract this file tracks, meaning the flatness is a considered view, not thin-market noise.</p>
+
+<div class="quote-box">
+  Regardless of how the PIF/Aramco sourcing question resolves, the standing picture is unchanged: a real, multi-front, low-casualty exchange across Bahrain, Kuwait, Qeshm, and at least one Gulf tanker lane that has run for roughly a week, with Polymarket's most liquid relevant contract still refusing to price it as invasion-tilting.
+  <span class="src">— state/iran.md, this run</span>
+</div>
+
+<p><strong>Bear case:</strong> this file has now made a real sourcing error (or at minimum cannot rule one out) two nights running on this exact story — first missing a real five-day escalation entirely, then possibly misdating/misattributing a strike by eleven days and the wrong building. <strong>Bull case:</strong> even taking last night's claim at face value, every incident across the full week-plus has produced zero confirmed deaths, and Polymarket's heaviest-volume relevant contract has not moved on any of it.</p>
+
+<!-- ====================== MARKETS ====================== -->
+<h2>Markets / Macro</h2>
+<div class="delta-callout"><strong>Delta since last run:</strong> correction confirmed on the AI-heavy indexes; BTC's data gap closed with a sharp down print; Fed hike odds firmed further.</div>
+
+<table>
+  <tr><th>Indicator</th><th>Level</th><th>Move</th><th>Read</th></tr>
+  <tr><td>Nasdaq 100</td><td>—</td><td>-15.1% off Oct 6 high</td><td>Confirmed correction territory</td></tr>
+  <tr><td>SOX (semis)</td><td>—</td><td>-35.6% off June high</td><td>Deeper drawdown than the broad index</td></tr>
+  <tr><td>NVDA</td><td>$141.18 premarket</td><td>-39.0% off Oct 6 high; -3.29% premarket</td><td>Fresh 52-week low</td></tr>
+  <tr><td>Bitcoin</td><td>$61,321.59</td><td>-3.80% in 24h, -~25% on the month</td><td>Falling with equities, not hedging</td></tr>
+  <tr><td>Gold</td><td>$3,786/oz (Nov 18, last confirmed)</td><td>-1.92% d/d, -9.08% on the month</td><td>No safe-haven bid; data gap for Nov 19-20</td></tr>
+  <tr><td>Brent crude</td><td>~$92.83</td><td>-0.62% d/d, -15-16% on the month</td><td>Still ignoring Gulf escalation headlines</td></tr>
+  <tr><td>VIX</td><td>24.52 (Nov 18, last confirmed)</td><td>-3.69% that day</td><td>Elevated vs. 16-20 October range; gap for Nov 19</td></tr>
+  <tr><td>Fed Dec 9 FOMC (Kalshi)</td><td>~91% 25bp hike</td><td>Up from 86% (Nov 12)</td><td>Hawkish path firming, not easing</td></tr>
+</table>
+
+<p><strong>Read:</strong> correction-level index drawdowns, a sharply weaker BTC, a gold that isn't catching a safety bid, and firming rate-hike odds all point the same direction — a genuine, broadening risk-off episode, not a single-name NVDA story anymore, even though NVDA's own governance/legal overhang remains the most-cited proximate trigger. <strong>Bear case:</strong> equities, bitcoin, and gold all falling together while hike odds rise is a classic liquidity-tightening signature, a materially worse setup than the "contained to AI/semis" framing used as recently as two weeks ago. <strong>Bull case:</strong> oil's continued refusal to price in Gulf escalation, and strong physical AI-hardware demand data (below), both argue this is a financing/sentiment story layered on top of still-strong demand, not a demand collapse.</p>
 
 <!-- ====================== AI ECOSYSTEM ====================== -->
 <h2>AI Ecosystem</h2>
-<div class="delta-box"><strong>Delta since this morning:</strong> No new primary legal development — but NVDA's price action today is itself the clearest evidence yet of what's actually driving the stock.</div>
+<div class="delta-callout"><strong>Delta since last run:</strong> a third (California) and fourth (Congress) body now examining NVIDIA; the source analyst's supplemental note draws the sharpest line yet between financing stress and demand strength; Anthropic's ANT round-tripped hard.</div>
 
-<p><strong>AI analyst source reviewed:</strong> still <code>research/2026/2026-11-19-update.md</code> (report date 2026-11-19). No newer upstream report exists tonight — the analyst files one premarket brief per weekday, not a second one in the evening.</p>
+<p><strong>California's DOJ confirmed it served NVIDIA an investigative subpoena on Nov 19</strong>, seeking evidence on possible transfers of advanced chips or confidential information to China and on what NVIDIA told investors about that risk — a formal investigative step, no charge or finding, no new timetable on succession. This adds a third institution (alongside the SEC's reported civil probe and the DOJ's Megaspeed criminal probe) actively examining NVIDIA. <strong>New today:</strong> Reuters reports Democratic Representatives Gregory Meeks and Sydney Kamlager-Dove wrote Commerce Secretary Lutnick on Nov 19 seeking records of NVIDIA's interactions with Commerce officials investigating Megaspeed — a fourth, congressional-oversight angle focused on how Commerce itself handled enforcement.</p>
 
-<p>No primary SEC or NVIDIA statement confirming or denying the civil-probe reporting was found tonight. No new primary-source development on the Megaspeed DOJ criminal probe beyond this morning's catch-up. No corroboration found of the reported lawmaker interest in a Microsoft-ByteDance AI briefing.</p>
+<p>The AI-ecosystem research desk's supplemental note draws a genuine split by evidence type, not a single verdict. <strong>Financing stress is real and now quantified:</strong> CoreWeave's 9.75% senior notes due 2031 yielded <strong>~15.7%</strong> on Nov 19, and its Q3 net interest expense (<strong>$846M</strong>) ran <strong>4.1x</strong> its operating income (<strong>$207M</strong>) even with revenue up 168% to $3.66B. <strong>Hardware demand is also real and strong:</strong> Taiwan's October export orders hit a record <strong>$123.8B, +78.3% y/y</strong>, and TSMC's October revenue was <strong>+59.7% y/y</strong>. The framing that matters: the selloff is testing <em>who pays for the buildout</em>, not whether the buildout is happening.</p>
 
-<h3>The real delta is behavioral, not legal</h3>
-<p>Six consecutive losing sessions spanning a beat-and-raise, an on-record board statement ruling out Huang's return, and the single most bullish AI-sector demand signal of the year (Anthropic's debut) is hard to explain as anything other than the market concluding NVIDIA's governance risk is structural and ongoing — not a fading news cycle that resolves with the next good headline.</p>
+<p><strong>Anthropic's IPO formally closed</strong> — underwriters exercised their full greenshoe (147M additional shares), bringing the gross offering to <strong>$93.5B</strong> (~$91.6B net to Anthropic) plus a separate $26.0B strategic placement, both now closed. But <strong>ANT itself has round-tripped hard</strong>: from a $111.50 open and a $97.17 first-day close (+17.1%) down to <strong>$87.89 in Friday premarket (-9.6%)</strong> — a real give-back, now barely above its $83 offer.</p>
 
-<p><strong>Bear case:</strong> if a historic IPO in NVIDIA's own ecosystem can't move the stock positively, the market may be pricing something this file hasn't fully named yet, not just succession uncertainty.</p>
+<p><strong>Valuation reset:</strong> at Friday's $141.28 premarket price, NVDA trades at 9.4x the source analyst's modeled forward EPS ($15.05); the bear-case scenario (25% weight) implies a value near $99, the bull case (40% weight) implies $144 — Friday's actual price sits almost exactly at the bear-case fair value, not below it, which argues for an orderly repricing rather than a panic. A new subjective prediction, P054, assigns 35% probability that NVDA trades at or below $130 through Nov 30.</p>
 
-<p><strong>Bull case:</strong> Polymarket's AI-bubble-by-June-2027 contract moved up a real 3pp tonight while the Dec-2026 bucket and the new-CEO contract both stayed flat — sophisticated money is marking up medium-term risk modestly, not panicking about a near-term bubble pop or fresh news.</p>
+<div class="quote-box">
+  The strongest evidence of stress is in financing, while the latest evidence on hardware shipments and orders still points to strong near-term demand.
+  <span class="src">— AI-ecosystem research desk, supplemental note, Nov 20</span>
+</div>
 
 <!-- ====================== PORTFOLIO ====================== -->
 <h2>Portfolio Tickers</h2>
-<div class="delta-box"><strong>Delta since this morning:</strong> 209th consecutive zero-position day. Second straight session where NVDA moved against the "resolving overhang" thesis on objectively good or neutral news.</div>
+<div class="delta-callout"><strong>Delta since last run:</strong> every named ticker red in premarket; AMD's outsized move still has no identified catalyst; CoreWeave's loan delay now sits beside its own distressed-adjacent bond yield.</div>
 
 <table>
-  <tr><th>Ticker</th><th>Move</th><th>Note</th></tr>
-  <tr><td>NVDA</td><td style="color:var(--danger)">-3.30% close</td><td>Erased an early +4.7% intraday gain; sixth straight down day</td></tr>
-  <tr><td>TSM / CRWV / NBIS / MU / AVGO</td><td class="gap-note">Unconfirmed tonight</td><td>No individual closes found — check tomorrow whether they followed NVDA down or decoupled</td></tr>
-  <tr><td>CoreWeave's $4B loan</td><td class="gap-note">Still unpriced</td><td>Now nine days past Bloomberg's "could price next week" framing (Nov 11)</td></tr>
-  <tr><td>AMZN, AMD, XLE, OWL, APO, ARCC</td><td>—</td><td>No ticker-specific catalysts tonight</td></tr>
+  <tr><th>Ticker</th><th>Move</th><th>News</th></tr>
+  <tr><td>NVDA</td><td>-3.29% premarket, fresh 52-wk low</td><td>California DOJ investigative subpoena (Nov 19)</td></tr>
+  <tr><td>AMD</td><td>-7.7% Thursday cash session</td><td>No company-specific catalyst found — flagged as a real gap, not confirmed sympathy</td></tr>
+  <tr><td>TSM</td><td>Taiwan -4.76% close</td><td>Broadening foundry/OSAT export-compliance news</td></tr>
+  <tr><td>MU</td><td>-5.07% premarket</td><td>No MU-specific catalyst — sympathetic selloff</td></tr>
+  <tr><td>CRWV</td><td>-5.59% premarket</td><td>$4B investment-grade loan still unpriced, 9+ days past timeline</td></tr>
+  <tr><td>NBIS</td><td>-6.09% premarket</td><td>No NBIS-specific catalyst</td></tr>
+  <tr><td>AMZN</td><td>-2.30% Thursday</td><td>No company-specific catalyst</td></tr>
+  <tr><td>XLE</td><td>Stale (no Nov 19 close confirmed)</td><td>No energy-sector-specific news</td></tr>
+  <tr><td>OWL</td><td>No new price catalyst</td><td>Two known lawsuits unchanged; no new redemption/NAV news since Oct 29 Q3</td></tr>
+  <tr><td>APO</td><td>Unconfirmed rumor only</td><td>Unverified ~4.3% drop claim, not corroborated — not treated as fact</td></tr>
+  <tr><td>ARCC</td><td>No update</td><td>Ares-MFIC acquisition pending, no news since Oct 27 announcement</td></tr>
 </table>
 
-<p>Last night NVDA gave back a clean beat-and-raise; tonight it gave back a gain on the largest IPO in history, one NVIDIA itself helped fund. Two consecutive disconfirming sessions against the "resolving overhang" thesis is real evidence, not noise, if the standing re-entry bar is a resolved leadership situation confirmed by more than one session.</p>
-
-<p><strong>Bear case:</strong> a stock that can't hold a gain on its best possible news day in weeks may be pricing something more structural than a fading governance news cycle.</p>
-
-<p><strong>Bull case:</strong> Anthropic's own +17% close shows AI-sector demand is real; today's damage is concentrated in NVDA and the broader Fed-rate-driven indices, not a systemic re-rating of the whole named complex.</p>
+<p><strong>210th consecutive zero-position day.</strong> <strong>Read:</strong> AMD's unexplained -7.7% day is this morning's most interesting gap — either the search simply hasn't caught the catalyst, or the market is pricing AI-governance/financing risk into names with no direct exposure to NVIDIA's own legal problems, a genuine broadening if true. XLE, OWL, APO, and ARCC remaining conspicuously catalyst-free amid the tech-specific rout is the same structural argument this file has made since early November for staying at zero.</p>
 
 <!-- ====================== PRIVATE CREDIT ====================== -->
 <h2>Private Credit</h2>
-<div class="delta-box"><strong>Delta since this morning:</strong> No material change.</div>
-<p>No new redemption prints, NAV marks, or litigation developments on OWL/APO/ARCC/KKR tonight beyond this morning's FS KKR Capital (FSK) catch-up entry. CoreWeave's $4B investment-grade loan remains unpriced. Today's sharp equity selloff is a modestly more cautious read-through for AI-infrastructure credit generally, but no private-credit-specific instrument moved on it.</p>
+<div class="delta-callout"><strong>Delta since last run:</strong> the first hard, quantified credit-stress number on the AI-infrastructure financing story — and it's CoreWeave's own existing debt, not a new deal.</div>
+
+<p>CoreWeave's 9.75% senior unsecured notes due 2031 yielded <strong>~15.7%</strong> on Nov 19 — a distressed-adjacent level — with Q3 net interest expense running <strong>4.1x</strong> operating income despite 168% revenue growth. This is a secondary-market quote on <em>existing</em> unsecured debt, distinct from the separately-reported <strong>$4B investment-grade loan</strong> (Morgan Stanley/MUFG, Meta-contract-backed) CoreWeave has been negotiating since Nov 11 — that loan remains <strong>unpriced, now 9+ days past its original timeline</strong>. The gap between a 15.7%-yielding unsecured bond and a still-unclosed investment-grade-targeted, contract-backed facility is exactly the two-tier financing structure this file's framework anticipated, now showing up as real market pricing.</p>
+
+<p>FS KKR Capital's incentive-fee waiver extension (past its fourth consecutive quarter) has not been announced — an open question. No new redemption prints, NAV marks, or litigation developments on OWL, APO, or ARCC since yesterday.</p>
 
 <!-- ====================== POLYMARKET ====================== -->
 <h2>Polymarket Calibration</h2>
-<div class="delta-box"><strong>Delta since this morning:</strong> Clean direct fetch again tonight. The AI-bubble-by-June-2027 contract made a real move; everything else held.</div>
+<div class="delta-callout"><strong>Delta since last run:</strong> the June-2027 AI-bubble contract has now risen three consecutive readings in a row; both Iran contracts remain unmoved by this week's Gulf escalation.</div>
 
 <table>
-  <tr><th>Contract</th><th>Tonight</th><th>This morning</th><th>Move</th></tr>
-  <tr><td>Hormuz traffic normal by Dec 31</td><td>3.15% Yes</td><td>3.85%</td><td style="color:var(--danger)">-0.7pp</td></tr>
-  <tr><td>AI bubble burst by Dec 31, 2026</td><td>7.95% Yes</td><td>7.85%</td><td>flat</td></tr>
-  <tr><td>AI bubble burst by June 30, 2027</td><td>21.5% Yes</td><td>18.5%</td><td style="color:var(--warn)">+3.0pp</td></tr>
-  <tr><td>US invades Iran before 2027</td><td>6.5% Yes</td><td>6.5%</td><td>flat</td></tr>
-  <tr><td>New NVIDIA CEO named by Dec 31, 2026</td><td>14.5% Yes</td><td>14.5%</td><td>flat</td></tr>
+  <tr><th>Contract</th><th>This morning</th><th>Last night</th><th>Move</th></tr>
+  <tr><td>Hormuz traffic normal by Dec 31</td><td>2.9%</td><td>3.15%</td><td>-0.25pp</td></tr>
+  <tr><td>AI bubble burst by Dec 31, 2026</td><td>9.25%</td><td>7.95%</td><td>+1.3pp</td></tr>
+  <tr><td>AI bubble burst by June 30, 2027</td><td>24%</td><td>21.5%</td><td>+2.5pp (3rd straight rise)</td></tr>
+  <tr><td>US invades Iran before 2027</td><td>6.5%</td><td>6.5%</td><td>flat</td></tr>
+  <tr><td>New NVIDIA CEO named by Dec 31, 2026</td><td>14.5%</td><td>14.5%</td><td>flat</td></tr>
 </table>
 
-<p>The June-2027 AI-bubble contract's move is the most interesting number tonight — it's the first time this contract has moved materially on what looks like NVDA-specific governance weakness (a sixth straight down day on no new negative information) rather than a broad macro shock. The invade-Iran contract staying flat at 6.5% despite today's widening Gulf escalation reinforces this file's standing "contained, not systemic" read on Iran — sophisticated money still isn't treating the Gulf exchange as invasion-tilting, even as this file's own narrative read grows more concerned run over run.</p>
+<p><strong>Read:</strong> sophisticated money is marking up medium-term AI-sector risk specifically (the June-2027 bubble contract, now three straight increases) while treating the Iran/Gulf story and the NVIDIA-CEO question as unmoved by this week's respective headlines, on contracts liquid enough that the non-moves are considered views. The Dec-2026 AI-bubble bucket, while also up, remains under 10% — sophisticated money still assigns low odds to a <em>near-term</em> bubble pop even as it marks up the medium-term number.</p>
 
-<!-- ====================== BOTTOM LINE ====================== -->
+<!-- ====================== PUNCHLINE ====================== -->
 <div class="punchline-box">
-  <h3>Bottom Line / Portfolio Implication</h3>
-  <p>Today was the cleanest test yet of whether NVDA's governance overhang is fading or structural, and it came back structural: the stock couldn't hold a gain on the day of the largest IPO in history, one it helped fund. That's a second straight session disconfirming the "resolving overhang" re-entry thesis, not just one bad day. Separately, Iran's Gulf exchange — read as paused this morning — widened today to a new actor (Houthis) and a new target (Riyadh's financial capital), the second time in 24 hours this file's "quiet" read proved wrong. Andres remains at 209 consecutive zero-position days; nothing tonight argues for changing that. Tomorrow's priorities: whether NVDA finds a floor, whether the Houthi/Saudi axis draws a distinct response, and a fresh BTC print, which is now a multi-day gap.</p>
-</div>
-
-<!-- ====================== HONEST GAPS ====================== -->
-<div class="honest-box">
-  <h3>What this run could not confirm</h3>
-  <ol>
-    <li>No confirmed same-day Bitcoin print — the last reliable read remains ~$65,017 as of Nov 17 morning, now a three-day-plus gap.</li>
-    <li>No individual confirmed closes tonight for TSM, CRWV, NBIS, MU, or AVGO — only NVDA and the index levels are confirmed.</li>
-    <li>No primary SEC or NVIDIA confirmation of the civil-probe reporting, still multiply-corroborated by named outlets but not officially admitted.</li>
-    <li>No independent confirmation of Iran's claimed tanker explosions in the strait today — reported via oil-market coverage, not a primary maritime-security source.</li>
-    <li>This morning's daily markdown file was never written — a write-step failure recovered from the state files directly for this brief; flagged, not hidden.</li>
-  </ol>
+  <h3>Bottom Line</h3>
+  <p>This is no longer a single-name story. A confirmed correction in the Nasdaq 100 and semis, bitcoin finally breaking down instead of hedging, gold not catching a bid, and firming Fed hike odds together describe a real, broadening risk-off episode — even though NVIDIA's own compounding legal overhang (now four distinct investigating/oversight bodies) remains the most-cited trigger. The genuinely new and useful data point is CoreWeave's own bond yield: 15.7% on existing debt is the first market-clearing price this file has had for "AI-infrastructure financing stress," sitting directly next to Taiwan's record export orders and TSMC's strong revenue growth — physical demand is not the problem; who pays for the capacity, at what financing cost, is.</p>
+  <p><strong>Portfolio implication:</strong> 210 sessions at zero positions remains the right call. NVDA's price has now fallen to sit almost exactly at the source analyst's own bear-case fair value ($99-144 range) rather than overshooting it — a more orderly repricing than headline "panic" framing suggests, and worth Andres's own gut-check on whether that changes the re-entry bar. The invest/CLAUDE.md framing (frozen at the May 25 Barakah-era picture, with NVDA's "target zone" still set at $155-165 and BTC's entry zone at $74-76k) is now obsolete on every axis that matters: NVDA at $141 is already below that stale target zone, BTC at $61K is well below its stale entry zone, oil is nowhere near the $105 war-premium assumed, and the private-credit story is no longer "disconnected from the war" — it's a live, quantified AI-financing-stress story with its own hard number today. Watch the $130 level on NVDA (P054, 35% through Nov 30) as the next concrete marker.</p>
 </div>
 
 <!-- ====================== SOURCES ====================== -->
 <h2>Sources</h2>
 <div class="sources">
+  <p><strong>AI / NVIDIA:</strong></p>
   <ul>
-    <li><a href="https://finance.yahoo.com/markets/live/stock-market-today-thursday-november-19-dow-sp-500-nasdaq-anthropic-ipo-live-141306032.html">Yahoo Finance — Stock market today: Dow sinks 1,100 points, S&amp;P 500 and Nasdaq tank 2% as Anthropic IPO grabs spotlight (Nov 19)</a></li>
-    <li><a href="https://www.fool.com/coverage/stock-market-today/2026/11/19/stock-market-today-nov-19-nvidia-slides-as-investors-weigh-ceo-transition-fallout-despite-strong-q3-results/">Motley Fool — Nvidia slides as investors weigh CEO transition fallout despite strong Q3 results (Nov 19)</a></li>
-    <li><a href="https://www.nasdaq.com/newsroom/anthropic-marks-ipo-at-nasdaq">Nasdaq — Anthropic marks its IPO at Nasdaq, opens at $111.50 (Nov 19)</a></li>
-    <li><a href="https://finance.yahoo.com/markets/stocks/articles/nvidia-amd-micron-sink-anthropic-211206180.html">Yahoo Finance — Nvidia, AMD, Micron sink as Anthropic closes 17% above IPO price (Nov 19)</a></li>
-    <li><a href="https://gulfnews.com/world/mena/middle-east-war-houthi-missile-intercepted-over-saudi-arabia-tanker-hit-in-hormuz-iran-strikes-kuwait-and-bahrain-as-trump-demands-lasting-deal-1.500752996">Gulf News — Riyadh skyscraper damaged, tanker hit near Oman as Trump weighs Iran policy (Nov 19)</a></li>
-    <li><a href="https://www.nbcnews.com/world/iran/iran-widens-gulf-attacks-targeting-us-air-base-kuwait-sites-bahrain-rcna610128">NBC News — Iran widens Gulf attacks, targeting US air base in Kuwait and sites in Bahrain (Nov 19)</a></li>
-    <li><a href="https://www.france24.com/en/middle-east/20261119-skyscraper-in-riyadh-damaged-as-saudi-arabia-reports-surge-in-new-houthi-attacks">France 24 — Skyscraper in Riyadh damaged as Saudi Arabia reports surge in new Houthi attacks (Nov 19)</a></li>
-    <li><a href="https://gamma-api.polymarket.com/">Polymarket Gamma API — direct fetch, all five tracked contracts (Nov 19, ~22:00 ET)</a></li>
-    <li>AI Ecosystem Analyst — <code>research/2026/2026-11-19-update.md</code> (internal source, report date 2026-11-19)</li>
+    <li><a href="https://oag.ca.gov/node/633133">California DOJ — NVIDIA investigative subpoena</a></li>
+    <li><a href="https://www.reuters.com/business/finance/democrats-open-probe-into-nvidia-influence-us-megaspeed-investigation-2026-11-20/">Reuters — Democrats open probe into NVIDIA/Megaspeed influence (Nov 20)</a></li>
+    <li><a href="https://www.anthropic.com/news/ipo-close">Anthropic — IPO closing announcement</a></li>
+    <li><a href="https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/default.aspx">NVIDIA — Q3 FY2027 results and CFO commentary</a></li>
+    <li><a href="https://focustaiwan.tw/business/202611200021">Focus Taiwan — October export orders record</a></li>
+    <li><a href="https://pr.tsmc.com/english/news/3349">TSMC — October revenue</a></li>
+  </ul>
+  <p><strong>Markets:</strong></p>
+  <ul>
+    <li><a href="https://fortune.com/article/price-of-bitcoin-11-20-2026/">Fortune — Bitcoin price, Nov 20</a></li>
+    <li><a href="https://fortune.com/article/price-of-oil-11-20-2026/">Fortune — Oil price, Nov 20</a></li>
+    <li><a href="https://fortune.com/article/current-price-of-gold-11-18-2026/">Fortune — Gold price, Nov 18</a></li>
+    <li><a href="https://kalshi.com/markets/kxfed/fed-funds-rate/kxfed-26dec">Kalshi — December FOMC rate-decision market</a></li>
+  </ul>
+  <p><strong>Iran / Middle East:</strong></p>
+  <ul>
+    <li><a href="https://www.aljazeera.com/news/2026/11/18/kuwait-bahrain-face-new-iran-attacks-after-us-strike-on-qeshm-island">Al Jazeera — Kuwait, Bahrain face new Iran attacks after US strike on Qeshm (Nov 18)</a></li>
+    <li><a href="https://thenationalnews.com/news/gulf/2026/11/18/iran-attacks-kuwait-in-widening-escalation">The National — Iran attacks Kuwait in widening escalation (Nov 18)</a></li>
+    <li><a href="https://aljazeera.com/news/2026/11/8/saudi-arabia-intercepts-houthi-missiles-targeting-riyadh-eastern-province">Al Jazeera — Saudi Arabia intercepts Houthi missiles targeting Riyadh (Nov 8)</a></li>
+  </ul>
+  <p><strong>Polymarket:</strong></p>
+  <ul>
+    <li><a href="https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-december-31">Strait of Hormuz traffic normal by Dec 31</a></li>
+    <li><a href="https://polymarket.com/event/ai-bubble-burst-by">AI bubble burst by (Dec 2026 / June 2027)</a></li>
+    <li><a href="https://polymarket.com/event/will-the-us-invade-iran-before-2027">US invades Iran before 2027</a></li>
   </ul>
 </div>
 
 <div class="footer">
-  Andres's Daily News Brief — Structural reads, not headlines. Pacific time. Generated 2026-11-19, evening run.
+  Daily News Brief compiled November 20, 2026 · Morning run · Day 266 · Pacific time throughout<br>
+  <em>This brief diverges explicitly from invest/CLAUDE.md's May 25 framing — see Bottom Line.</em>
 </div>
 
 </div>
+
 </body>
 </html>
