@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Brief — November 19, 2026 (Evening Wrap)</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --surface: #121820;
+    --surface2: #1a2230;
+    --border: #243044;
+    --text: #c8d3e0;
+    --text-dim: #6b7d93;
+    --heading: #e8edf3;
+    --accent: #4fc3f7;
+    --accent2: #81c784;
+    --warn: #ffb74d;
+    --danger: #ef5350;
+    --gold: #ffd54f;
+    --purple: #b39ddb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a0a0a 0%, #2a0a1a 50%, #0a1a2e 100%);
+    border-bottom: 1px solid var(--danger);
+    padding: 50px 40px 40px;
+    text-align: center;
+  }
+  .header .day-tag {
+    display: inline-block;
+    background: rgba(239,83,80,0.2);
+    border: 1px solid rgba(239,83,80,0.4);
+    color: var(--danger);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--heading);
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .header .subtitle {
+    font-size: 18px;
+    color: var(--warn);
+    font-weight: 400;
+  }
+  .header .subtitle-sub {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 10px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--heading);
+    margin: 48px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 28px 0 12px;
+  }
+  p { margin-bottom: 14px; }
+  strong { color: var(--heading); }
+  em { color: var(--accent); font-style: italic; }
+  ul, ol { margin: 0 0 14px 22px; }
+  li { margin-bottom: 6px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  table tr:last-child td { border-bottom: none; }
+  table td:first-child {
+    font-weight: 700;
+    color: var(--heading);
+  }
+  .badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+  .badge-red { background: var(--danger); color: #fff; }
+  .badge-green { background: var(--accent2); color: var(--bg); }
+  .badge-blue { background: var(--accent); color: var(--bg); }
+  .badge-yellow { background: var(--warn); color: var(--bg); }
+  .badge-purple { background: var(--purple); color: var(--bg); }
+  .tldr-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.1), rgba(255,183,77,0.05));
+    border: 2px solid var(--danger);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin: 24px 0 32px;
+  }
+  .tldr-box h3 {
+    color: var(--danger);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .delta-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 16px 22px;
+    margin: 0 0 20px;
+    font-size: 13.5px;
+    color: var(--text-dim);
+  }
+  .delta-box strong { color: var(--accent); }
+  .quote-box {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 16px 22px;
+    margin: 16px 0;
+    font-style: italic;
+    color: var(--text);
+    border-radius: 0 6px 6px 0;
+  }
+  .quote-box .src {
+    display: block;
+    margin-top: 8px;
+    font-style: normal;
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+  .honest-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--purple);
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin: 24px 0;
+  }
+  .honest-box h3 {
+    color: var(--purple);
+    margin-top: 0;
+    margin-bottom: 14px;
+  }
+  .honest-box ol { margin-left: 20px; }
+  .honest-box ol li { margin-bottom: 12px; }
+  .punchline-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.08), rgba(79,195,247,0.05));
+    border: 2px solid rgba(239,83,80,0.3);
+    border-radius: 10px;
+    padding: 28px;
+    margin: 32px 0;
+    text-align: center;
+  }
+  .punchline-box h3 {
+    color: var(--danger);
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .punchline-box p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    max-width: 760px;
+    margin: 0 auto 10px;
+    color: var(--text);
+  }
+  .watchlist {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 24px;
+    margin: 20px 0;
+  }
+  .watchlist ul { margin-left: 20px; }
+  .watchlist ul li { margin-bottom: 8px; font-size: 14px; }
+  .sources { font-size: 12.5px; color: var(--text-dim); }
+  .sources a { color: var(--accent); text-decoration: none; }
+  .sources a:hover { text-decoration: underline; }
+  .footer {
+    border-top: 1px solid var(--border);
+    margin-top: 50px;
+    padding-top: 20px;
+    color: var(--text-dim);
+    font-size: 12px;
+    text-align: center;
+  }
+  .gap-note {
+    color: var(--warn);
+    font-size: 12.5px;
+    font-style: italic;
+  }
+  .correction-box {
+    background: linear-gradient(135deg, rgba(255,183,77,0.1), rgba(239,83,80,0.05));
+    border: 2px solid var(--warn);
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin: 0 0 32px;
+  }
+  .correction-box h3 {
+    color: var(--warn);
+    margin-top: 0;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="day-tag">Daily Brief · Evening Wrap · Day 265</div>
+  <h1>NVDA's Sixth Straight Losing Day, On the Day Anthropic Became the Biggest IPO Ever</h1>
+  <div class="subtitle">The governance overhang didn't blink even on the best possible news backdrop — and Iran's "paused" exchange widened to a new actor and a new target</div>
+  <div class="subtitle-sub">November 19, 2026 — ~17:30 PT · 209th consecutive zero-position day · S&amp;P's sixth straight loss, longest losing streak since 2024</div>
+</div>
+
+<div class="container">
+
+<!-- ====================== TL;DR ====================== -->
+<div class="tldr-box">
+  <h3>TL;DR — What changed since this morning</h3>
+  <ul>
+    <li><strong>NVDA closed down 3.30% to $145.98 — a sixth straight losing session</strong> — after erasing an early intraday gain as large as +4.7%, on the same day Anthropic's IPO (NVIDIA itself a ~$10B investor) became the largest in history. Coverage attributes the reversal to investors still weighing the CEO-transition fallout, not fresh bad news.</li>
+    <li><strong>Anthropic's debut was the real story of the day</strong>: first trade $111.50 (+34% vs. the $83 offering, ~$2T diluted market cap), fading to close roughly +17% (~$97) — the largest IPO in history, bigger than SpaceX's.</li>
+    <li><strong>The broader market fell hard</strong>: Dow -1,101pts (-2.19%), S&amp;P -2.02% (sixth straight loss, longest losing streak since 2024), Nasdaq -2.25% — a mix of NVDA-specific weakness and renewed Fed rate-hike talk.</li>
+    <li><strong>Iran's Gulf exchange, read this morning as "paused," continued and widened</strong>: Bahrain hit a fourth time in six days, Kuwait struck again, a tanker hit again near the strait, and — new — an Iran-aligned Houthi missile damaged Riyadh's tallest skyscraper, the Saudi sovereign wealth fund's headquarters.</li>
+    <li><strong>Polymarket's AI-bubble-by-June-2027 contract moved a real +3pp</strong> (18.5%→21.5%) — the first time it has moved materially on what looks like NVDA-specific governance weakness rather than a broad shock. The invade-Iran contract stayed flat at 6.5% despite today's escalation.</li>
+  </ul>
+</div>
+
+<!-- ====================== CORRECTION ====================== -->
+<div class="correction-box">
+  <h3>A process note, not a research gap</h3>
+  <p>This morning's run updated every state file this brief draws on, but the markdown delta file for this morning was never saved — a write-step failure, not a missed research day. This evening's run recovered this morning's findings directly from the state files; nothing here is backfilled or guessed. Separately: this morning's Iran entry read a 12-14 hour pause as "no further escalation found overnight." That read didn't survive the day — see below.</p>
+</div>
+
+<!-- ====================== MARKETS ====================== -->
+<h2>Markets / Macro</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> The rally this morning's brief described reversed hard. NVDA fell a sixth straight session; the broader market posted its worst close of the week even as Anthropic delivered the largest IPO in history.</div>
+
+<table>
+  <tr><th>Instrument</th><th>Level</th><th>Move</th><th>Note</th></tr>
+  <tr><td>NVDA</td><td>$145.98</td><td style="color:var(--danger)">-3.30% close</td><td>Erased an early intraday gain as large as +4.7%; sixth straight losing day</td></tr>
+  <tr><td>Dow Jones</td><td>49,097.06</td><td style="color:var(--danger)">-1,101.11pts / -2.19%</td><td>Partly Fed rate-hike talk, partly NVDA-driven</td></tr>
+  <tr><td>S&amp;P 500</td><td>~7,175.83</td><td style="color:var(--danger)">-2.02%</td><td>Sixth straight loss — longest losing streak since 2024</td></tr>
+  <tr><td>Nasdaq Composite</td><td>23,879.20</td><td style="color:var(--danger)">-2.25%</td><td></td></tr>
+  <tr><td>Anthropic (ANT)</td><td>opened $111.50, closed ~$97</td><td style="color:var(--accent2)">+34% open, +17% close</td><td>Largest IPO in history; ~$2T diluted market cap at open; NVDA/Google each put in ~$10B</td></tr>
+  <tr><td>Oil (WTI)</td><td>$83.21 settle</td><td style="color:var(--danger)">-5¢ (lowest since Aug 26)</td><td>Essentially flat despite fresh reported tanker incidents in the strait</td></tr>
+  <tr><td>Oil (Brent)</td><td>$91.98 settle</td><td style="color:var(--accent2)">+3¢</td><td>Also essentially flat — oil pricing incidents as background noise</td></tr>
+  <tr><td>Bitcoin</td><td>~$65,017 (Nov 17)</td><td class="gap-note">Still stale</td><td>No clean same-day print found tonight — now a 3-day-plus gap</td></tr>
+</table>
+
+<h3>Why NVDA couldn't hold its best backdrop in weeks</h3>
+<p>NVIDIA is itself a roughly $10 billion investor in Anthropic's IPO, so today was supposed to be the clean test of whether a historic, sentiment-positive event in its own ecosystem could lift the stock. It didn't — NVDA gave back an early 4.7% intraday gain to close down 3.3%, with coverage pointing to investors "weighing CEO transition fallout despite strong Q3 results." That is now a sixth consecutive losing session, spanning a beat-and-raise, an on-record board statement ruling out Jensen Huang's return, and today's historic IPO.</p>
+
+<p><strong>Bear case:</strong> if a historic IPO in NVIDIA's own backyard can't move the stock positively even for an hour, the standing "contained, company-specific, not systemic" framing needs to be held more loosely — something structural, not just succession noise, may be getting priced.</p>
+
+<p><strong>Bull case:</strong> Anthropic itself closed up 17% on debut — AI-sector demand is real and durable. Today's damage is concentrated in NVDA specifically and in the broader indices (partly Fed-rate-driven), not a repeat of a systemic AI-capex re-rating across the whole sector.</p>
+
+<!-- ====================== IRAN ====================== -->
+<h2>Iran / Middle East Geopolitics</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> The "paused" read lasted under a day. The exchange continued and widened to a new actor (Houthis) and a new target (Saudi Arabia's financial capital).</div>
+
+<p>Kuwait's Ali Al Salem air base was targeted again today — intercepted, no reported damage. Bahrain faced its <strong>fourth Iranian attack in six days</strong> — also intercepted. A tanker was reportedly struck again in or near the Strait of Hormuz; Iran claimed two tanker explosions per oil-market coverage, though this wasn't independently confirmed by a primary maritime-security source this run.</p>
+
+<p><strong>New and more significant: an Iran-aligned Houthi missile — not a direct IRGC strike — damaged Riyadh's tallest skyscraper</strong>, the headquarters of Saudi Arabia's Public Investment Fund. Saudi civil defense reported blown-out windows and bent facade panels across up to eight floors; no injuries reported. This is a different axis entirely — Yemen-based Houthi action against Saudi Arabia — from the Bahrain/Qeshm/Kuwait pattern this file has tracked all week, and it broadens the set of actors and targets in play.</p>
+
+<p>Qatar's foreign ministry called today's round "a dangerous escalation" risking diplomatic efforts. Saudi Arabia, Kuwait, and the UAE all condemned the attacks. Trump said Thursday he is "not rushing into any decision" on further US action against Iran — a restraint signal, though notably not the same as ruling anything out.</p>
+
+<h3>The structural read</h3>
+<p>This file corrected a real miss just last night — the "seven quiet periods" read that turned out to mask a genuine five-day escalation. This morning's "paused" framing repeated a version of the same error within 12-24 hours, treating a short quiet window as the start of a trend. The lesson ("no coverage is not the same evidentiary class as no incidents") needed relearning twice in one day.</p>
+
+<p><strong>Bear case:</strong> a new actor and a new target — Saudi Arabia's financial capital, not just Gulf military installations — is a genuine widening of the conflict's geography and cast, not more of the same contained tit-for-tat.</p>
+
+<p><strong>Bull case:</strong> every incident across six days — Bahrain x4, Kuwait x2, the Riyadh tower, multiple tanker hits — has produced zero reported deaths or serious injuries, and Polymarket's invade-Iran contract hasn't moved at all (6.5%, flat since this morning) despite all of it. Sophisticated money still reads this as contained.</p>
+
+<div class="watchlist">
+  <strong>Standing watch, revised again:</strong>
+  <ul>
+    <li>Do not treat any quiet window under 24 hours as a trend</li>
+    <li>Check primary Gulf-state sources by date every run — now explicitly including Saudi Arabia and the Houthi/Yemen angle, not just Bahrain/Kuwait/Qatar/CENTCOM</li>
+    <li>Whether the Houthi strike on Riyadh draws a US or Saudi response distinct from the Bahrain/Kuwait pattern</li>
+  </ul>
+</div>
+
+<!-- ====================== AI ECOSYSTEM ====================== -->
+<h2>AI Ecosystem</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> No new primary legal development — but NVDA's price action today is itself the clearest evidence yet of what's actually driving the stock.</div>
+
+<p><strong>AI analyst source reviewed:</strong> still <code>research/2026/2026-11-19-update.md</code> (report date 2026-11-19). No newer upstream report exists tonight — the analyst files one premarket brief per weekday, not a second one in the evening.</p>
+
+<p>No primary SEC or NVIDIA statement confirming or denying the civil-probe reporting was found tonight. No new primary-source development on the Megaspeed DOJ criminal probe beyond this morning's catch-up. No corroboration found of the reported lawmaker interest in a Microsoft-ByteDance AI briefing.</p>
+
+<h3>The real delta is behavioral, not legal</h3>
+<p>Six consecutive losing sessions spanning a beat-and-raise, an on-record board statement ruling out Huang's return, and the single most bullish AI-sector demand signal of the year (Anthropic's debut) is hard to explain as anything other than the market concluding NVIDIA's governance risk is structural and ongoing — not a fading news cycle that resolves with the next good headline.</p>
+
+<p><strong>Bear case:</strong> if a historic IPO in NVIDIA's own ecosystem can't move the stock positively, the market may be pricing something this file hasn't fully named yet, not just succession uncertainty.</p>
+
+<p><strong>Bull case:</strong> Polymarket's AI-bubble-by-June-2027 contract moved up a real 3pp tonight while the Dec-2026 bucket and the new-CEO contract both stayed flat — sophisticated money is marking up medium-term risk modestly, not panicking about a near-term bubble pop or fresh news.</p>
+
+<!-- ====================== PORTFOLIO ====================== -->
+<h2>Portfolio Tickers</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> 209th consecutive zero-position day. Second straight session where NVDA moved against the "resolving overhang" thesis on objectively good or neutral news.</div>
+
+<table>
+  <tr><th>Ticker</th><th>Move</th><th>Note</th></tr>
+  <tr><td>NVDA</td><td style="color:var(--danger)">-3.30% close</td><td>Erased an early +4.7% intraday gain; sixth straight down day</td></tr>
+  <tr><td>TSM / CRWV / NBIS / MU / AVGO</td><td class="gap-note">Unconfirmed tonight</td><td>No individual closes found — check tomorrow whether they followed NVDA down or decoupled</td></tr>
+  <tr><td>CoreWeave's $4B loan</td><td class="gap-note">Still unpriced</td><td>Now nine days past Bloomberg's "could price next week" framing (Nov 11)</td></tr>
+  <tr><td>AMZN, AMD, XLE, OWL, APO, ARCC</td><td>—</td><td>No ticker-specific catalysts tonight</td></tr>
+</table>
+
+<p>Last night NVDA gave back a clean beat-and-raise; tonight it gave back a gain on the largest IPO in history, one NVIDIA itself helped fund. Two consecutive disconfirming sessions against the "resolving overhang" thesis is real evidence, not noise, if the standing re-entry bar is a resolved leadership situation confirmed by more than one session.</p>
+
+<p><strong>Bear case:</strong> a stock that can't hold a gain on its best possible news day in weeks may be pricing something more structural than a fading governance news cycle.</p>
+
+<p><strong>Bull case:</strong> Anthropic's own +17% close shows AI-sector demand is real; today's damage is concentrated in NVDA and the broader Fed-rate-driven indices, not a systemic re-rating of the whole named complex.</p>
+
+<!-- ====================== PRIVATE CREDIT ====================== -->
+<h2>Private Credit</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> No material change.</div>
+<p>No new redemption prints, NAV marks, or litigation developments on OWL/APO/ARCC/KKR tonight beyond this morning's FS KKR Capital (FSK) catch-up entry. CoreWeave's $4B investment-grade loan remains unpriced. Today's sharp equity selloff is a modestly more cautious read-through for AI-infrastructure credit generally, but no private-credit-specific instrument moved on it.</p>
+
+<!-- ====================== POLYMARKET ====================== -->
+<h2>Polymarket Calibration</h2>
+<div class="delta-box"><strong>Delta since this morning:</strong> Clean direct fetch again tonight. The AI-bubble-by-June-2027 contract made a real move; everything else held.</div>
+
+<table>
+  <tr><th>Contract</th><th>Tonight</th><th>This morning</th><th>Move</th></tr>
+  <tr><td>Hormuz traffic normal by Dec 31</td><td>3.15% Yes</td><td>3.85%</td><td style="color:var(--danger)">-0.7pp</td></tr>
+  <tr><td>AI bubble burst by Dec 31, 2026</td><td>7.95% Yes</td><td>7.85%</td><td>flat</td></tr>
+  <tr><td>AI bubble burst by June 30, 2027</td><td>21.5% Yes</td><td>18.5%</td><td style="color:var(--warn)">+3.0pp</td></tr>
+  <tr><td>US invades Iran before 2027</td><td>6.5% Yes</td><td>6.5%</td><td>flat</td></tr>
+  <tr><td>New NVIDIA CEO named by Dec 31, 2026</td><td>14.5% Yes</td><td>14.5%</td><td>flat</td></tr>
+</table>
+
+<p>The June-2027 AI-bubble contract's move is the most interesting number tonight — it's the first time this contract has moved materially on what looks like NVDA-specific governance weakness (a sixth straight down day on no new negative information) rather than a broad macro shock. The invade-Iran contract staying flat at 6.5% despite today's widening Gulf escalation reinforces this file's standing "contained, not systemic" read on Iran — sophisticated money still isn't treating the Gulf exchange as invasion-tilting, even as this file's own narrative read grows more concerned run over run.</p>
+
+<!-- ====================== BOTTOM LINE ====================== -->
+<div class="punchline-box">
+  <h3>Bottom Line / Portfolio Implication</h3>
+  <p>Today was the cleanest test yet of whether NVDA's governance overhang is fading or structural, and it came back structural: the stock couldn't hold a gain on the day of the largest IPO in history, one it helped fund. That's a second straight session disconfirming the "resolving overhang" re-entry thesis, not just one bad day. Separately, Iran's Gulf exchange — read as paused this morning — widened today to a new actor (Houthis) and a new target (Riyadh's financial capital), the second time in 24 hours this file's "quiet" read proved wrong. Andres remains at 209 consecutive zero-position days; nothing tonight argues for changing that. Tomorrow's priorities: whether NVDA finds a floor, whether the Houthi/Saudi axis draws a distinct response, and a fresh BTC print, which is now a multi-day gap.</p>
+</div>
+
+<!-- ====================== HONEST GAPS ====================== -->
+<div class="honest-box">
+  <h3>What this run could not confirm</h3>
+  <ol>
+    <li>No confirmed same-day Bitcoin print — the last reliable read remains ~$65,017 as of Nov 17 morning, now a three-day-plus gap.</li>
+    <li>No individual confirmed closes tonight for TSM, CRWV, NBIS, MU, or AVGO — only NVDA and the index levels are confirmed.</li>
+    <li>No primary SEC or NVIDIA confirmation of the civil-probe reporting, still multiply-corroborated by named outlets but not officially admitted.</li>
+    <li>No independent confirmation of Iran's claimed tanker explosions in the strait today — reported via oil-market coverage, not a primary maritime-security source.</li>
+    <li>This morning's daily markdown file was never written — a write-step failure recovered from the state files directly for this brief; flagged, not hidden.</li>
+  </ol>
+</div>
+
+<!-- ====================== SOURCES ====================== -->
+<h2>Sources</h2>
+<div class="sources">
+  <ul>
+    <li><a href="https://finance.yahoo.com/markets/live/stock-market-today-thursday-november-19-dow-sp-500-nasdaq-anthropic-ipo-live-141306032.html">Yahoo Finance — Stock market today: Dow sinks 1,100 points, S&amp;P 500 and Nasdaq tank 2% as Anthropic IPO grabs spotlight (Nov 19)</a></li>
+    <li><a href="https://www.fool.com/coverage/stock-market-today/2026/11/19/stock-market-today-nov-19-nvidia-slides-as-investors-weigh-ceo-transition-fallout-despite-strong-q3-results/">Motley Fool — Nvidia slides as investors weigh CEO transition fallout despite strong Q3 results (Nov 19)</a></li>
+    <li><a href="https://www.nasdaq.com/newsroom/anthropic-marks-ipo-at-nasdaq">Nasdaq — Anthropic marks its IPO at Nasdaq, opens at $111.50 (Nov 19)</a></li>
+    <li><a href="https://finance.yahoo.com/markets/stocks/articles/nvidia-amd-micron-sink-anthropic-211206180.html">Yahoo Finance — Nvidia, AMD, Micron sink as Anthropic closes 17% above IPO price (Nov 19)</a></li>
+    <li><a href="https://gulfnews.com/world/mena/middle-east-war-houthi-missile-intercepted-over-saudi-arabia-tanker-hit-in-hormuz-iran-strikes-kuwait-and-bahrain-as-trump-demands-lasting-deal-1.500752996">Gulf News — Riyadh skyscraper damaged, tanker hit near Oman as Trump weighs Iran policy (Nov 19)</a></li>
+    <li><a href="https://www.nbcnews.com/world/iran/iran-widens-gulf-attacks-targeting-us-air-base-kuwait-sites-bahrain-rcna610128">NBC News — Iran widens Gulf attacks, targeting US air base in Kuwait and sites in Bahrain (Nov 19)</a></li>
+    <li><a href="https://www.france24.com/en/middle-east/20261119-skyscraper-in-riyadh-damaged-as-saudi-arabia-reports-surge-in-new-houthi-attacks">France 24 — Skyscraper in Riyadh damaged as Saudi Arabia reports surge in new Houthi attacks (Nov 19)</a></li>
+    <li><a href="https://gamma-api.polymarket.com/">Polymarket Gamma API — direct fetch, all five tracked contracts (Nov 19, ~22:00 ET)</a></li>
+    <li>AI Ecosystem Analyst — <code>research/2026/2026-11-19-update.md</code> (internal source, report date 2026-11-19)</li>
+  </ul>
+</div>
+
+<div class="footer">
+  Andres's Daily News Brief — Structural reads, not headlines. Pacific time. Generated 2026-11-19, evening run.
+</div>
+
+</div>
+</body>
+</html>
