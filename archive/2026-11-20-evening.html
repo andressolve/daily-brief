@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily News Brief — November 20, 2026 Evening</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --surface: #121820;
+    --surface2: #1a2230;
+    --border: #243044;
+    --text: #c8d3e0;
+    --text-dim: #6b7d93;
+    --heading: #e8edf3;
+    --accent: #4fc3f7;
+    --accent2: #81c784;
+    --warn: #ffb74d;
+    --danger: #ef5350;
+    --gold: #ffd54f;
+    --purple: #b39ddb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a0a0a 0%, #2a0a1a 50%, #0a1a2e 100%);
+    border-bottom: 1px solid var(--danger);
+    padding: 50px 40px 40px;
+    text-align: center;
+  }
+  .header .day-tag {
+    display: inline-block;
+    background: rgba(239,83,80,0.2);
+    border: 1px solid rgba(239,83,80,0.4);
+    color: var(--danger);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--heading);
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .header .subtitle {
+    font-size: 18px;
+    color: var(--warn);
+    font-weight: 400;
+  }
+  .header .subtitle-sub {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 10px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--heading);
+    margin: 48px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 28px 0 12px;
+  }
+  p { margin-bottom: 14px; }
+  strong { color: var(--heading); }
+  em { color: var(--accent); font-style: italic; }
+  ul, ol { margin: 0 0 14px 22px; }
+  li { margin-bottom: 6px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  table tr:last-child td { border-bottom: none; }
+  table td:first-child {
+    font-weight: 700;
+    color: var(--heading);
+  }
+  .badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+  .badge-red { background: var(--danger); color: #fff; }
+  .badge-green { background: var(--accent2); color: var(--bg); }
+  .badge-blue { background: var(--accent); color: var(--bg); }
+  .badge-yellow { background: var(--warn); color: var(--bg); }
+  .badge-purple { background: var(--purple); color: var(--bg); }
+  .tldr-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.1), rgba(255,183,77,0.05));
+    border: 2px solid var(--danger);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin: 24px 0 32px;
+  }
+  .tldr-box h3 {
+    color: var(--danger);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .delta-callout {
+    background: var(--surface2);
+    border-left: 3px solid var(--warn);
+    border-radius: 0 6px 6px 0;
+    padding: 12px 18px;
+    margin: 0 0 18px;
+    font-size: 13.5px;
+    color: var(--text-dim);
+  }
+  .delta-callout strong { color: var(--warn); }
+  .faction-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .faction-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px 26px;
+    border-left: 4px solid var(--border);
+  }
+  .faction-card.f-irgc { border-left-color: var(--danger); }
+  .faction-card.f-hawk { border-left-color: var(--warn); }
+  .faction-card.f-civ { border-left-color: var(--accent); }
+  .scenario-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+    margin: 20px 0;
+  }
+  .scenario-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 20px;
+  }
+  .scenario-card .pct {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+  .scenario-card h4 {
+    font-size: 14px;
+    color: var(--heading);
+    margin: 4px 0 10px;
+  }
+  .scenario-card p { font-size: 13px; color: var(--text); margin: 0; }
+  .scenario-card.red .pct { color: var(--danger); }
+  .scenario-card.yellow .pct { color: var(--warn); }
+  .scenario-card.green .pct { color: var(--accent2); }
+  .quote-box {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 16px 22px;
+    margin: 16px 0;
+    font-style: italic;
+    color: var(--text);
+    border-radius: 0 6px 6px 0;
+  }
+  .quote-box .src {
+    display: block;
+    margin-top: 8px;
+    font-style: normal;
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+  .honest-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--purple);
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin: 24px 0;
+  }
+  .honest-box h3 { color: var(--purple); margin-top: 0; margin-bottom: 14px; }
+  .punchline-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.08), rgba(79,195,247,0.05));
+    border: 2px solid rgba(239,83,80,0.3);
+    border-radius: 10px;
+    padding: 28px;
+    margin: 32px 0;
+    text-align: center;
+  }
+  .punchline-box h3 {
+    color: var(--danger);
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .punchline-box p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    max-width: 760px;
+    margin: 0 auto 10px;
+    color: var(--text);
+  }
+  .watchlist {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 24px;
+    margin: 20px 0;
+  }
+  .watchlist ul { margin-left: 20px; }
+  .watchlist ul li { margin-bottom: 8px; font-size: 14px; }
+  .sources { font-size: 12.5px; color: var(--text-dim); }
+  .sources a { color: var(--accent); text-decoration: none; }
+  .sources a:hover { text-decoration: underline; }
+  .footer {
+    border-top: 1px solid var(--border);
+    margin-top: 50px;
+    padding-top: 20px;
+    color: var(--text-dim);
+    font-size: 12px;
+    text-align: center;
+  }
+  .flag-box {
+    background: rgba(255,183,77,0.08);
+    border: 1px solid rgba(255,183,77,0.35);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 16px 0;
+    font-size: 13.5px;
+  }
+  .flag-box strong { color: var(--warn); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="day-tag">Daily News Brief · Evening Wrap</div>
+  <h1>November 20, 2026 — Evening Wrap</h1>
+  <div class="subtitle">NVDA didn't test $130 — it closed through it, down 14% on a sharpened SEC accounting-probe report</div>
+  <div class="subtitle-sub">Run: ~17:30 PT · Day 266 · 211th consecutive zero-position day · Eisenkot coalition deadline Dec 6 (~2 weeks) · Fed FOMC Dec 9</div>
+</div>
+
+<div class="container">
+
+<!-- ====================== TL;DR ====================== -->
+<div class="tldr-box">
+  <h3>TL;DR — what changed and why it matters</h3>
+  <ul>
+    <li><strong>The worst single session this file has logged this cycle:</strong> S&P -3.70%, Dow -1.93%, Nasdaq Composite -5.28%, VIX spiking to 35.89 (+26.2%) — the first mid-30s VIX print logged all cycle.</li>
+    <li><strong>NVDA closed $125.53, -14.0%, erasing ~$491B in a session</strong> — Reuters reported SEC enforcement staff are examining "potential accounting issues" at NVIDIA, a sharper, more specific claim than Tuesday's WSJ disclosures-probe report. A fifth investigative/oversight thread also emerged: DOJ is reviewing NVIDIA's $12.9B Hugging Face acquisition.</li>
+    <li><strong>P054 already resolved YES</strong> — the source analyst's own 35% subjective odds that NVDA trades ≤$130 through Nov 30 played out on day one of that ten-day window, a real calibration miss worth naming.</li>
+    <li><strong>Polymarket's AI-bubble contracts didn't drift tonight, they repriced by an order of magnitude:</strong> the 2026 contract jumped 9.25%→54.3%, the June-2027 contract 24%→66% — both the largest single-day moves this file has ever logged on any tracked contract.</li>
+    <li><strong>Oil and energy kept ignoring everything:</strong> USO +0.66%, XLE -0.31%, both flat on the worst broad-tape day of the cycle — the cleanest evidence yet that today's damage is concentrated in AI-exposed names, not systemic.</li>
+  </ul>
+</div>
+
+<!-- ====================== MORNING -> EVENING ====================== -->
+<h2>Morning → Evening: What Moved</h2>
+<div class="delta-callout"><strong>Did the morning read hold?</strong> Directionally yes, in magnitude no — this morning flagged "watch NVDA for a test of $130" as a live question through Nov 30. NVDA didn't test it; it closed through it on day one.</div>
+
+<table>
+  <tr><th>Item</th><th>This morning's framing</th><th>What actually happened</th></tr>
+  <tr><td>NVDA</td><td>$141.18 premarket, -3.29%, fresh 52-wk low; "watch for a test of $130" (P054, 35% through Nov 30)</td><td>Closed <strong>$125.53, -14.0%</strong> — P054 resolved YES on day one of its window</td></tr>
+  <tr><td>Proximate trigger</td><td>California DOJ subpoena (Nov 19) — third investigating body</td><td>Superseded by a sharper claim: Reuters reports SEC examining "potential accounting issues," not just disclosures — plus a new fifth thread, DOJ reviewing the Hugging Face deal</td></tr>
+  <tr><td>AMD</td><td>-7.7% Thursday, "no identified catalyst — a real gap"</td><td>Closed -13.25% today on the same accounting-probe story — Thursday's move resolved as the leading edge, not an isolated gap</td></tr>
+  <tr><td>Broad market</td><td>Nasdaq 100 -15.1% off Oct high (correction, confirmed Thursday)</td><td>S&P -3.70%, Dow -1.93%, Nasdaq Composite -5.28% — worst single session logged this cycle; VIX spiked to 35.89</td></tr>
+  <tr><td>Polymarket AI-bubble (2026)</td><td>9.25% Yes</td><td><strong>54.3% Yes</strong> — largest single-day move this file has tracked</td></tr>
+  <tr><td>Polymarket AI-bubble (Jun 2027)</td><td>24% Yes, 3rd straight rise</td><td><strong>66% Yes</strong> — a 4th straight rise, dwarfing the prior three combined</td></tr>
+  <tr><td>Oil / energy</td><td>Brent ~$92.83, ignoring Gulf escalation</td><td>USO +0.66%, XLE -0.31% — still ignoring both the Gulf story and today's equity rout</td></tr>
+  <tr><td>Houthi/Riyadh PIF-tower claim</td><td>Unconfirmed — flagged as a possible sourcing error</td><td>Still unconfirmed tonight; re-check again found only the independently-dated Nov 8 Aramco-tower incident</td></tr>
+</table>
+
+<!-- ====================== AI / MARKETS ====================== -->
+<h2>AI / NVIDIA / Markets</h2>
+<div class="delta-callout"><strong>Delta since this morning:</strong> the catalyst sharpened from "disclosures probe" to "accounting issues," and the market's reaction was the largest of the cycle.</div>
+
+<p><strong>NVDA closed $125.53, down 14.0% on the day</strong>, after Reuters reported — citing two people briefed on the matter — that SEC enforcement staff are examining "potential accounting issues" at NVIDIA. This is a materially sharper claim than Tuesday's Wall Street Journal report of a civil probe into disclosures generally; Reuters could not determine when the inquiry began or which accounting practices are under review, and neither the SEC nor NVIDIA confirmed it on record. The session erased roughly <strong>$491B</strong> of NVIDIA's market value (~$3.52T to ~$3.03T), leaving it down <strong>~48%</strong> from its Oct 6 high and ~$2.7T off that peak in six weeks. <strong>A fifth investigative/oversight thread also emerged today:</strong> Reuters separately reported the DOJ is reviewing NVIDIA's pending $12.9B Hugging Face acquisition — alongside the SEC disclosures probe, this new SEC accounting probe, the DOJ Megaspeed criminal probe, California's DOJ subpoena, and the Meeks/Kamlager-Dove Congressional letter.</p>
+
+<p><strong>AMD closed $424.39, down 13.25%</strong> — resolving this morning's open question about Thursday's "unexplained" -7.7% AMD move: in hindsight it was the leading edge of today's broader accounting-probe sympathy selloff, not an isolated gap.</p>
+
+<table>
+  <tr><th>Indicator</th><th>Level</th><th>Move</th><th>Read</th></tr>
+  <tr><td>S&amp;P 500</td><td>~6,910</td><td>-3.70%</td><td>Worst session logged this cycle</td></tr>
+  <tr><td>Dow</td><td>~48,147</td><td>-1.93%</td><td>Smallest decline of the three major indexes</td></tr>
+  <tr><td>Nasdaq Composite</td><td>~22,618</td><td>-5.28%</td><td>Largest decline of the three</td></tr>
+  <tr><td>NVDA</td><td>$125.53</td><td>-14.0%</td><td>~$491B erased in one session; ~48% off Oct 6 high</td></tr>
+  <tr><td>AMD</td><td>$424.39</td><td>-13.25%</td><td>Thursday's "unexplained" drop now resolved as early sympathy</td></tr>
+  <tr><td>VIX</td><td>35.89 intraday</td><td>+26.2%</td><td>First mid-30s print logged this cycle — genuine panic signature</td></tr>
+  <tr><td>Gold (GLD proxy)</td><td>$324.22</td><td>-3.27%</td><td>Still no safe-haven bid, falling with equities again</td></tr>
+  <tr><td>Bitcoin</td><td>~$58,860</td><td>Down further from this morning's $61,321.59</td><td>Continuing to fall with risk assets, not hedge them</td></tr>
+  <tr><td>Oil (USO)</td><td>—</td><td>+0.66%</td><td>Completely decoupled from both the equity rout and Gulf story</td></tr>
+  <tr><td>Energy (XLE)</td><td>—</td><td>-0.31%</td><td>Flat — energy stayed catalyst-free all day</td></tr>
+</table>
+
+<div class="quote-box">
+  An "accounting issues" allegation sits closer to restated-financials risk than a "disclosures might have misled investors" framing does — and P054 resolving on day one of a ten-day window, rather than drifting toward it, is itself evidence the bear case was still too optimistic as of this morning.
+  <span class="src">— state/ai.md, this run</span>
+</div>
+
+<p><strong>Bear case:</strong> a named, accounting-specific SEC inquiry, landing on top of four other open investigative threads, is a materially worse setup than "governance overhang from a leadership vacuum" — if accurate, this is no longer purely a succession story. <strong>Bull case:</strong> no restatement, charge, or specific accounting practice has actually been named — Reuters itself says it couldn't determine what's under review — and the hardware-demand side of the standing bull case (Taiwan's export-order record, TSMC's revenue growth) hasn't been touched by any of today's news; oil and energy's total indifference today is the cleanest evidence this is still a narrow, AI-financing-specific event, not a systemic one.</p>
+
+<!-- ====================== PORTFOLIO ====================== -->
+<h2>Portfolio Tickers</h2>
+<div class="delta-callout"><strong>Delta since this morning:</strong> AMD's gap resolved (badly); XLE closed a stale-data gap flat, reinforcing the zero-position call.</div>
+
+<p><strong>211th consecutive zero-position day</strong> — and today specifically argues for the call, not against it. NVDA and AMD fell within a point of each other (-14.0% and -13.25%) on the same accounting-probe story, while XLE, the one named ticker with no AI exposure, closed essentially flat (-0.31%) on the worst broad-tape day of the cycle. No new ticker-specific catalyst found tonight for TSM, MU, CRWV, NBIS, or AMZN beyond the broad sympathy move; CoreWeave's $4B loan remains unpriced, ten days past its original timeline. No new redemption/NAV/litigation developments found on OWL, APO, or ARCC; the Ares-MFIC acquisition remains pending with no update since Oct 27.</p>
+
+<!-- ====================== PRIVATE CREDIT ====================== -->
+<h2>Private Credit</h2>
+<div class="delta-callout"><strong>Delta since this morning:</strong> no new instrument-specific news, but today's crash is the most hostile backdrop yet for the still-unpriced CoreWeave loan.</div>
+
+<p>No new redemption prints, NAV marks, litigation developments, or CoreWeave-loan pricing confirmation found tonight. The $4B investment-grade loan remains unpriced, now ten days past its original "could price next week" framing. Today's NVDA accounting-probe-driven crash and Polymarket's AI-bubble repricing are the most adverse single-day backdrop this file has logged for AI-infrastructure financing generally — a lender pricing CoreWeave's contract-backed debt this week would be doing so against a market that just repriced AI-bubble-burst odds to a coin flip. No private-credit-specific instrument has itself moved on it yet; this is context, not a new data point.</p>
+
+<!-- ====================== IRAN ====================== -->
+<h2>Iran / Middle East Geopolitics</h2>
+<div class="delta-callout"><strong>Delta since this morning:</strong> no material change — the quietest beat of the night, by contrast with everything else.</div>
+
+<p>A fresh search tonight for primary confirmation of the Nov 19 PIF-tower claim again found no Reuters/AP/SPA/CENTCOM source for that specific claim, and again surfaced only the independently-dated Nov 8 Houthi strike on the Aramco tower in Riyadh's financial district. This file is not escalating or retracting the standing flag — treat the PIF-tower claim as unconfirmed, most likely a misdated or conflated reference to Nov 8, until a primary wire says otherwise. No new Bahrain, Kuwait, or Qeshm incident found tonight; no CENTCOM statement or Eisenkot coalition news since Nov 9.</p>
+
+<p>Polymarket's Iran-related contracts moved only modestly tonight despite the day's broad market turmoil: Hormuz-normal-by-Dec-31 at <strong>3.15%</strong> (flat vs. 2.9% this morning) and invade-Iran-before-2027 at <strong>7.5%</strong> (a small uptick from 6.5% flat all week) — both far smaller moves than the AI-bubble contracts, confirming today's market action read as an AI-financing/governance event, not a Gulf-escalation one.</p>
+
+<!-- ====================== POLYMARKET ====================== -->
+<h2>Polymarket Calibration</h2>
+<div class="delta-callout"><strong>Delta since this morning:</strong> the AI-bubble contracts didn't drift, they repriced by an order of magnitude — the largest moves this file has ever logged.</div>
+
+<table>
+  <tr><th>Contract</th><th>This morning</th><th>Tonight</th><th>Move</th></tr>
+  <tr><td>Hormuz traffic normal by Dec 31</td><td>2.9%</td><td>3.15%</td><td>+0.25pp</td></tr>
+  <tr><td>AI bubble burst in 2026</td><td>9.25%</td><td>54.3%</td><td><strong>+45pp</strong></td></tr>
+  <tr><td>AI bubble burst by June 30, 2027</td><td>24%</td><td>66%</td><td><strong>+42pp</strong></td></tr>
+  <tr><td>US invades Iran before 2027</td><td>6.5%</td><td>7.5%</td><td>+1.0pp</td></tr>
+  <tr><td>New NVIDIA CEO named by Dec 31, 2026</td><td>14.5%</td><td>14.5%</td><td>flat</td></tr>
+</table>
+
+<p><strong>Read:</strong> this is the clearest, largest confirmation yet of this file's standing pattern — sophisticated money treats the AI-bubble question as the one genuinely live risk in today's news, moving it by tens of points, while both Iran-related contracts and the NVIDIA-succession contract barely twitched. <strong>Bear case:</strong> a move this size, on a day with a specific, named new allegation, is not noise — Polymarket is now pricing better-than-coin-flip odds of an AI bubble bursting within six weeks. <strong>Bull case:</strong> the invade-Iran and Hormuz-normal contracts' near-total flatness is the cleanest evidence that sophisticated money is treating today as a narrow AI-financing/governance event with no geopolitical read-through — and today's AI-bubble move is large enough that some weekend reversion wouldn't be surprising.</p>
+
+<!-- ====================== OVERNIGHT WATCH ====================== -->
+<div class="watchlist">
+  <h3 style="color: var(--accent); margin-top:0;">Overnight / Monday-morning watch</h3>
+  <ul>
+    <li>Does Reuters' "potential accounting issues" story get more specific overnight — a subpoena number, an NVDA statement, or a named practice (candidates floated in secondary coverage: revenue reported by customer headquarters rather than billing location, given Singapore-billed sales reportedly approaching half of total; or the $118B customer-financing guarantee disclosure).</li>
+    <li>Monday's Asia/Europe open reaction to a -14% NVDA day and Polymarket's AI-bubble contracts sitting at 54-66%.</li>
+    <li>Whether the Polymarket AI-bubble contracts hold this level over the weekend or partially revert once Monday's volume arrives.</li>
+    <li>Any primary-wire resolution of the Houthi/Riyadh-tower sourcing question.</li>
+    <li>Whether the CoreWeave loan prices next week, and at what spread, now that it would clear against a market pricing AI-bubble-burst odds near a coin flip.</li>
+  </ul>
+</div>
+
+<!-- ====================== PUNCHLINE ====================== -->
+<div class="punchline-box">
+  <h3>Bottom Line</h3>
+  <p>Today wasn't a continuation of the week's grind — it was a regime-confirming event. A named, specific SEC accounting allegation (not just "disclosures might have misled investors") drove NVDA through the $130 level this morning's brief was watching for through Nov 30, on day one of that window, and the market's reaction — the largest single-session index move, the first mid-30s VIX print, and an unprecedented Polymarket AI-bubble repricing (both tracked contracts moving 40+ points in a day) — treated it as categorically more serious than the week's prior news. The fact that oil and energy stayed completely flat through all of it is the one piece of evidence keeping this file from calling it systemic.</p>
+  <p><strong>Portfolio implication:</strong> 211 sessions at zero positions remains the right call, and today reinforces rather than weakens it — NVDA and AMD falling in lockstep on an accounting-specific story, while the only non-AI-exposed named ticker (XLE) closed flat, is exactly the "concentrated, not systemic" pattern this file has used since early November, now showing up on the worst day of the cycle. The invest/CLAUDE.md framing (NVDA's stale $155-165 target zone, BTC's stale $74-76k entry zone) is further obsolete tonight than it was this morning: NVDA at $125.53 and BTC at ~$58,860 are both well below those zones. Watch whether the accounting-probe story gets specific over the weekend — that, not the index levels, is the next real catalyst.</p>
+</div>
+
+<!-- ====================== SOURCES ====================== -->
+<h2>Sources</h2>
+<div class="sources">
+  <p><strong>AI / NVIDIA / Markets:</strong></p>
+  <ul>
+    <li><a href="https://finance.yahoo.com/markets/stocks/articles/nvidia-stock-plunge-wipes-nearly-212722915.html">Yahoo Finance / Motley Fool — NVIDIA plunge wipes out ~$491B on SEC accounting-probe report (Nov 20)</a></li>
+    <li><a href="https://oag.ca.gov/node/633133">California DOJ — NVIDIA investigative subpoena</a></li>
+    <li><a href="https://www.anthropic.com/news/ipo-close">Anthropic — IPO closing announcement</a></li>
+  </ul>
+  <p><strong>Polymarket (direct gamma-api fetch, ~16:11-16:17 PT):</strong></p>
+  <ul>
+    <li><a href="https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-december-31">Strait of Hormuz traffic normal by Dec 31</a></li>
+    <li><a href="https://polymarket.com/event/ai-bubble-burst-by">AI bubble burst (2026 / June 2027)</a></li>
+    <li><a href="https://polymarket.com/event/will-the-us-invade-iran-before-2027">US invades Iran before 2027</a></li>
+    <li><a href="https://polymarket.com/event/new-nvidia-ceo-named-by-december-31-2026">New NVIDIA CEO named by Dec 31, 2026</a></li>
+  </ul>
+  <p><strong>Iran / Middle East:</strong></p>
+  <ul>
+    <li><a href="https://www.al-monitor.com/originals/2026/11/houthis-claim-attack-riyadh-financial-district-aramco-tower-damaged">Al-Monitor — Houthis claim Riyadh financial-district attack, Aramco tower damaged (Nov 8)</a></li>
+    <li><a href="https://www.scmp.com/news/world/middle-east/article/3373700/saudi-aramco-building-riyadh-damaged-attempted-attack">SCMP — Houthi attack damages Aramco building in Riyadh's financial district</a></li>
+  </ul>
+  <p><strong>Live market data:</strong> IBKR price snapshots and daily OHLCV bars, fetched live this run for NVDA, AMD, SPY, QQQ, VIX, GLD, BTC, USO, and XLE.</p>
+</div>
+
+<div class="footer">
+  Daily News Brief compiled November 20, 2026 · Evening wrap · Day 266 · Pacific time throughout<br>
+  <em>This brief diverges explicitly from invest/CLAUDE.md's May 25 framing — see Bottom Line.</em>
+</div>
+
+</div>
+
+</body>
+</html>
