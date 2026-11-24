@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily News Brief — November 24, 2026 Morning</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --surface: #121820;
+    --surface2: #1a2230;
+    --border: #243044;
+    --text: #c8d3e0;
+    --text-dim: #6b7d93;
+    --heading: #e8edf3;
+    --accent: #4fc3f7;
+    --accent2: #81c784;
+    --warn: #ffb74d;
+    --danger: #ef5350;
+    --gold: #ffd54f;
+    --purple: #b39ddb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  .header {
+    background: linear-gradient(135deg, #0a1a0a 0%, #1a2a0a 50%, #0a1a2e 100%);
+    border-bottom: 1px solid var(--accent2);
+    padding: 50px 40px 40px;
+    text-align: center;
+  }
+  .header .day-tag {
+    display: inline-block;
+    background: rgba(129,199,132,0.2);
+    border: 1px solid rgba(129,199,132,0.4);
+    color: var(--accent2);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--heading);
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .header .subtitle {
+    font-size: 18px;
+    color: var(--warn);
+    font-weight: 400;
+  }
+  .header .subtitle-sub {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 10px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--heading);
+    margin: 48px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 28px 0 12px;
+  }
+  p { margin-bottom: 14px; }
+  strong { color: var(--heading); }
+  em { color: var(--accent); font-style: italic; }
+  ul, ol { margin: 0 0 14px 22px; }
+  li { margin-bottom: 6px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  table tr:last-child td { border-bottom: none; }
+  table td:first-child {
+    font-weight: 700;
+    color: var(--heading);
+  }
+  .badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+  .badge-red { background: var(--danger); color: #fff; }
+  .badge-green { background: var(--accent2); color: var(--bg); }
+  .badge-blue { background: var(--accent); color: var(--bg); }
+  .badge-yellow { background: var(--warn); color: var(--bg); }
+  .badge-purple { background: var(--purple); color: var(--bg); }
+  .tldr-box {
+    background: linear-gradient(135deg, rgba(129,199,132,0.1), rgba(255,183,77,0.05));
+    border: 2px solid var(--accent2);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin: 24px 0 32px;
+  }
+  .tldr-box h3 {
+    color: var(--accent2);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .delta-callout {
+    background: var(--surface2);
+    border-left: 3px solid var(--warn);
+    border-radius: 0 6px 6px 0;
+    padding: 12px 18px;
+    margin: 0 0 18px;
+    font-size: 13.5px;
+    color: var(--text-dim);
+  }
+  .delta-callout strong { color: var(--warn); }
+  .faction-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .faction-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px 26px;
+    border-left: 4px solid var(--border);
+  }
+  .faction-card.f-irgc { border-left-color: var(--danger); }
+  .faction-card.f-hawk { border-left-color: var(--warn); }
+  .faction-card.f-civ { border-left-color: var(--accent); }
+  .scenario-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+    margin: 20px 0;
+  }
+  .scenario-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 20px;
+  }
+  .scenario-card .pct {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+  .scenario-card h4 {
+    font-size: 14px;
+    color: var(--heading);
+    margin: 4px 0 10px;
+  }
+  .scenario-card p { font-size: 13px; color: var(--text); margin: 0; }
+  .scenario-card.red .pct { color: var(--danger); }
+  .scenario-card.yellow .pct { color: var(--warn); }
+  .scenario-card.green .pct { color: var(--accent2); }
+  .quote-box {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 16px 22px;
+    margin: 16px 0;
+    font-style: italic;
+    color: var(--text);
+    border-radius: 0 6px 6px 0;
+  }
+  .quote-box .src {
+    display: block;
+    margin-top: 8px;
+    font-style: normal;
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+  .honest-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--purple);
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin: 24px 0;
+  }
+  .honest-box h3 { color: var(--purple); margin-top: 0; margin-bottom: 14px; }
+  .punchline-box {
+    background: linear-gradient(135deg, rgba(129,199,132,0.08), rgba(79,195,247,0.05));
+    border: 2px solid rgba(129,199,132,0.3);
+    border-radius: 10px;
+    padding: 28px;
+    margin: 32px 0;
+    text-align: center;
+  }
+  .punchline-box h3 {
+    color: var(--accent2);
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .punchline-box p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    max-width: 760px;
+    margin: 0 auto 10px;
+    color: var(--text);
+  }
+  .watchlist {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 24px;
+    margin: 20px 0;
+  }
+  .watchlist ul { margin-left: 20px; }
+  .watchlist ul li { margin-bottom: 8px; font-size: 14px; }
+  .sources { font-size: 12.5px; color: var(--text-dim); }
+  .sources a { color: var(--accent); text-decoration: none; }
+  .sources a:hover { text-decoration: underline; }
+  .footer {
+    border-top: 1px solid var(--border);
+    margin-top: 50px;
+    padding-top: 20px;
+    color: var(--text-dim);
+    font-size: 12px;
+    text-align: center;
+  }
+  .flag-box {
+    background: rgba(255,183,77,0.08);
+    border: 1px solid rgba(255,183,77,0.35);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 16px 0;
+    font-size: 13.5px;
+  }
+  .flag-box strong { color: var(--warn); }
+  .moved-table td.up { color: var(--accent2); font-weight: 700; }
+  .moved-table td.down { color: var(--danger); font-weight: 700; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="day-tag">Daily News Brief · Tuesday Morning Brief · Day after the reinstatement rally</div>
+  <h1>November 24, 2026 — Morning Brief</h1>
+  <div class="subtitle">Monday's record rally is partially reversing today — no new catalyst, but Polymarket agrees it's real</div>
+  <div class="subtitle-sub">Run: ~09:45 PT (mid-session read) · Day 270 · 216th consecutive zero-position day · Dell Q3 FY2027 earnings today (AMC) · Bessent export-control deadline ~Nov 25 · Eisenkot coalition deadline Dec 6</div>
+</div>
+
+<div class="container">
+
+<!-- ====================== TL;DR ====================== -->
+<div class="tldr-box">
+  <h3>TL;DR — what changed and why it matters</h3>
+  <ul>
+    <li><strong>Monday's record relief rally is giving back a real chunk today, broadly, with no new catalyst behind it.</strong> NVDA -7.11% to $153.32 (mid-session) — still up ~22% from Friday's pre-reinstatement close, but down from Monday's $165.37. The rest of the named complex moved the same way: MU -10.51%, CRWV -11.91%, NBIS -11.33%, TSM -4.49%, AVGO -3.37%.</li>
+    <li><strong>Polymarket corroborated the equity move in real time.</strong> The near-term AI-bubble contract (Dec 2026) roughly doubled, 11.2% &rarr; 22%; the medium-term contract (June 2027) rose 28% &rarr; 44%. Both buckets moved <em>together</em> today — the opposite of Monday evening's divergence — meaning the market isn't just pricing up medium-term risk anymore, it's reconsidering some of the near-term relief too.</li>
+    <li><strong>A real calibration miss, worth naming.</strong> This file's own Nov 19 forecast weighted "Huang returns" at only 5% — a board's on-record refusal turned out to be weak evidence once direct presidential pressure reversed it four days later.</li>
+    <li><strong>Anthropic's shares fell below their $83 IPO price for the first time</strong>, to roughly $77 — a two-sided data point on post-IPO demand for AI-lab equity, not a thesis change.</li>
+    <li><strong>No material change on Iran/Israel</strong> — sixth straight quiet run, but the Eisenkot coalition silence is now over a week old with his Dec 6 deadline inside two weeks, and this file's search keeps missing a dedicated check on it.</li>
+  </ul>
+</div>
+
+<!-- ====================== IRAN ====================== -->
+<h2>Iran / Middle East Geopolitics</h2>
+<div class="delta-callout"><strong>Delta since Monday evening:</strong> none found. Sixth consecutive quiet run.</div>
+
+<p>A dedicated search this morning for any Gulf incident, CENTCOM statement, Qatar-track update, or Eisenkot coalition movement since last night found nothing dated later than the Nov 16 account of Eisenkot working toward a 48-seat minority government. Polymarket held both tracked Iran contracts exactly flat overnight: Hormuz-normal-by-Dec-31 at <strong>3%</strong> and invade-Iran-before-2027 at <strong>6%</strong>.</p>
+
+<p><strong>Read:</strong> sixth consecutive run without a corroborated new development on either track. The Eisenkot silence is now the sharpest standing flag on this beat — his Dec 6 mandate deadline is less than two weeks out, and more than a week of no public reporting on his coalition math deserves a dedicated, Eisenkot-specific primary-source search rather than the general query that keeps returning the same stale Nov 16 account.</p>
+
+<!-- ====================== MARKETS ====================== -->
+<h2>Markets</h2>
+<div class="delta-callout"><strong>Delta since Monday evening:</strong> a broad, same-direction give-back across the named AI complex, with no single identified catalyst — this is a mid-session read (~09:40 PT), not a confirmed close.</div>
+
+<table class="moved-table">
+  <tr><th>Indicator</th><th>Monday close</th><th>Today (mid-session)</th><th>Read</th></tr>
+  <tr><td>NVDA</td><td>$165.37, +31.74%</td><td class="down">$153.32, -7.11%</td><td>Still ~22% above Friday's pre-reinstatement close</td></tr>
+  <tr><td>AVGO</td><td>$311.95, +2.48%</td><td class="down">$302.99, -3.37%</td><td>TPU order-cut overhang still unconfirmed by either company</td></tr>
+  <tr><td>TSM (ADR)</td><td>$367.00, +15.15%</td><td class="down">$347.26, -4.49%</td><td>Partial give-back</td></tr>
+  <tr><td>MU</td><td>$703.00, +18.25%</td><td class="down">$633.33, -10.51%</td><td>Partial give-back</td></tr>
+  <tr><td>CRWV</td><td>$48.54, +22.85%</td><td class="down">$42.57, -11.91%</td><td>HPE financing-risk comments cited as a contributing factor</td></tr>
+  <tr><td>NBIS</td><td>$99.41, +22.26%</td><td class="down">$86.72, -11.33%</td><td>HPE financing-risk comments cited as a contributing factor</td></tr>
+  <tr><td>ANET</td><td>n/a</td><td class="down">$167.56, -6.03%</td><td>Moved with the complex</td></tr>
+  <tr><td>ASML</td><td>n/a</td><td class="down">&euro;1,201, -5.58%</td><td>Amsterdam close — broad, not US-specific</td></tr>
+  <tr><td>PLTR</td><td>n/a</td><td class="up">$162.15, +1.75%</td><td>Bucked the trend</td></tr>
+  <tr><td>AI bubble burst 2026 (Polymarket)</td><td>11.2%</td><td class="up">22%</td><td>Roughly doubled</td></tr>
+  <tr><td>AI bubble burst June 2027 (Polymarket)</td><td>28%</td><td class="up">44%</td><td>Both buckets rising together today</td></tr>
+</table>
+
+<p>Coverage attributes part of CoreWeave's and Nebius's sharper declines to an HPE executive publicly flagging AI-sector financing risk, but the move is broad enough across names with no shared financing exposure (Micron, ASML, Arista) that this file reads it as a sector-wide reversion of Monday's governance-relief spike, not a new, distinct catalyst. No fresh confirmed VIX, oil, or BTC print was found this morning — a genuine data gap, not a no-change finding; Monday's confirmed closes (VIX 26.62, USO -4.1%, BTC flat) are the last reads on file.</p>
+
+<p><strong>Read:</strong> today's equity retracement and Polymarket's repricing are corroborating each other in real time — a genuine, if partial, re-widening of AI-sector risk after Monday's relief, not noise in one data series alone. <strong>Bear case:</strong> a session that gives back nearly a quarter of the biggest one-day gain this file has ever logged, with both Polymarket AI-bubble buckets jumping in tandem, is a more serious signal than a single bad print — if Monday's rally was reinstatement relief and today is the market re-discovering the open SEC/DOJ/California-AG threads, Monday evening's "clean washout" bull case looks premature. <strong>Bull case:</strong> NVDA is still up ~22% from Friday even after today's pullback, and a single reversion day after the largest one-day rally on file is a normal, not alarming, pattern.</p>
+
+<!-- ====================== AI / NVIDIA ====================== -->
+<h2>AI Ecosystem</h2>
+<div class="delta-callout"><strong>Delta since Monday evening:</strong> a calibration miss worth naming, a new two-sided Anthropic data point, and no further movement on the open legal threads.</div>
+
+<p><strong>AI analyst source reviewed:</strong> <code>research/2026/2026-11-24-update.md</code> (report date 2026-11-24, as of ~12:40 ET/09:40 PT — mid-session, not premarket). The upstream analyst's scheduled 06:00 run failed with an "OAuth session expired" error; this was the first successful run of the day, several hours into the session rather than premarket — a genuine source-side gap, not a missed-feed judgment call.</p>
+
+<p><strong>A real calibration note on this file's own forecasting:</strong> the companion identity-distribution forecast logged on Nov 19 weighted "Huang returns" at only 5% — a board's public, on-the-record refusal (Harvey Jones, Nov 15-18) turned out to be weak evidence once the person denying it came under direct presidential pressure to reverse it four days later. Worth remembering the next time this file treats an on-record corporate denial as a hard constraint.</p>
+
+<p><strong>Anthropic's shares (ANT) fell below their $83 IPO price for the first time since the Nov 19 debut, to roughly $77</strong> — a two-sided data point on post-IPO demand for AI-lab equity at these valuations, not a thesis change; this is the first real test of where the market settles once the debut-week pop fades.</p>
+
+<p>No further development was found today on the independent-director investigation, the SEC disclosures/accounting probes, the DOJ Megaspeed criminal probe, or California's AG subpoena — all four threads remain exactly where Monday left them, open and unresolved by the reinstatement. <strong>Read:</strong> today's pullback, paired with Polymarket's AI-bubble buckets both jumping back up in tandem, reads as the market partially re-discovering the open legal-exposure question Monday's rally priced past — not a new negative catalyst, but a correction of how far Monday's relief ran.</p>
+
+<!-- ====================== PORTFOLIO ====================== -->
+<h2>Portfolio Tickers</h2>
+<div class="delta-callout"><strong>Delta since Monday evening:</strong> a broad give-back across the named complex; CoreWeave's loan and Broadcom's TPU story remain unresolved either way.</div>
+
+<table>
+  <tr><th>Ticker</th><th>Today (mid-session)</th><th>News</th></tr>
+  <tr><td>NVDA</td><td>-7.11%</td><td>Partial give-back of Monday's reinstatement rally; still ~22% above Friday's pre-reinstatement close.</td></tr>
+  <tr><td>TSM</td><td>-4.49%</td><td>Moved with the complex; no company-specific news today.</td></tr>
+  <tr><td>MU</td><td>-10.51%</td><td>Moved with the complex; no company-specific news today.</td></tr>
+  <tr><td>CRWV</td><td>-11.91%</td><td>HPE financing-risk comments cited as a factor; its own $4B loan still unpriced (see Private Credit).</td></tr>
+  <tr><td>NBIS</td><td>-11.33%</td><td>HPE financing-risk comments cited as a factor.</td></tr>
+  <tr><td>AVGO</td><td>-3.37%</td><td>Google/TPU order-cut overhang still unconfirmed by either company.</td></tr>
+  <tr><td>AMD, XLE</td><td>n/a</td><td>No company-specific news found; assumed to have moved with the complex, not individually confirmed.</td></tr>
+  <tr><td>OWL, APO, ARCC</td><td>n/a</td><td>No new material news — see Private Credit below.</td></tr>
+</table>
+
+<p><strong>216th consecutive zero-position day.</strong> CoreWeave's $4B investment-grade loan still hasn't priced — the same Nov 11 Bloomberg framing (7-7.5% yield guide), now roughly seventeen days past its original "could price next week" window; today's -11.91% equity move doesn't resolve the loan question either way. Dell reports Q3 FY2027 earnings today after the close — the next scheduled AI-infrastructure demand/backlog data point.</p>
+
+<!-- ====================== PRIVATE CREDIT ====================== -->
+<h2>Private Credit</h2>
+<div class="delta-callout"><strong>Delta since Monday evening:</strong> no material change on OWL/APO/ARCC/KKR; CoreWeave's equity partially reversed, restoring some of the "hostile tape" excuse for the loan's delay.</div>
+
+<p>No new redemption prints, NAV marks, or litigation developments found on OWL, APO, ARCC, or KKR this morning, and no pricing update on the CoreWeave loan. <strong>Read:</strong> Monday evening this file flagged that a rallying CoreWeave equity removed one excuse for the loan's continued delay (a hostile tape); today's partial equity reversal restores some of that excuse, but the underlying question — whether this is a rate/structure negotiation rather than a market-timing issue — remains exactly as open as it was Monday.</p>
+
+<!-- ====================== POLYMARKET ====================== -->
+<h2>Polymarket Calibration</h2>
+<div class="delta-callout"><strong>Delta since Monday evening:</strong> both AI-bubble buckets jumped together — the opposite of Monday's divergence, and in lockstep with today's equity pullback.</div>
+
+<table>
+  <tr><th>Contract</th><th>Monday evening</th><th>Today</th><th>Move</th></tr>
+  <tr><td>AI bubble burst in 2026 (by Dec 31)</td><td>11.2%</td><td>22%</td><td><strong>+10.8pp</strong></td></tr>
+  <tr><td>AI bubble burst by June 30, 2027</td><td>28%</td><td>44%</td><td><strong>+16pp</strong></td></tr>
+  <tr><td>Hormuz traffic normal by Dec 31</td><td>3%</td><td>3%</td><td>flat</td></tr>
+  <tr><td>US invades Iran before 2027</td><td>6%</td><td>6%</td><td>flat</td></tr>
+</table>
+
+<p><strong>Read:</strong> Monday evening this file flagged a genuine divergence — the near-term bucket falling while the medium-term bucket rose, read as the market distinguishing "leadership crisis resolved" from "legal/valuation risk open." Today both buckets rose together, which is a materially different signal: the market isn't just marking up medium-term residual risk anymore, it's reconsidering some of the near-term relief too, in the same session the underlying equity complex gave back part of Monday's gain. <strong>Bear case:</strong> a near-doubling of the near-term bubble-burst print in under 24 hours, moving together with a 7-12% equity pullback, is a coherent, corroborated signal that Monday's rally over-ran the facts. <strong>Bull case:</strong> even at 22%, the near-term print remains far below the 54%+ level this contract hit during Friday's actual crash — a partial re-widening of risk, not a return to crisis-level pricing.</p>
+
+<!-- ====================== OVERNIGHT WATCH ====================== -->
+<div class="watchlist">
+  <h3 style="color: var(--accent); margin-top:0;">Flags for tonight's evening run</h3>
+  <ul>
+    <li>Whether today's pullback across the AI complex holds, extends, or reverses by the close — this brief is a mid-session read, not a confirmed close.</li>
+    <li>Tuesday's Dell Q3 FY2027 earnings (after market close) — the next scheduled AI-infrastructure demand/backlog data point, landing the same day as this partial reversal.</li>
+    <li>Whether Broadcom or Google confirm or deny the Ming-Chi Kuo TPU order-cut report — still open.</li>
+    <li>A dedicated, Eisenkot-specific primary-source search on Israel's coalition math — overdue after a week-plus of silence with a Dec 6 deadline approaching.</li>
+    <li>The Bessent ~Nov 25 export-control deadline — one day out.</li>
+    <li>Confirmed end-of-day VIX, oil, and BTC prints, and whether today's Polymarket AI-bubble jump holds into the close or proves to be another single-session whipsaw.</li>
+  </ul>
+</div>
+
+<!-- ====================== PUNCHLINE ====================== -->
+<div class="punchline-box">
+  <h3>Bottom Line</h3>
+  <p>Monday's rally and today's pullback are two halves of the same story, not a contradiction. The market priced a real catalyst (Huang's reinstatement) on Monday, extended it through a full session, and is now partially re-pricing how far that relief should have run — with Polymarket's AI-bubble contracts corroborating the equity move in real time rather than lagging it. Nothing today is a new negative catalyst; it reads as a correction of magnitude, not a reversal of direction. The open legal threads (SEC, DOJ, California AG, the independent-director investigation) are exactly where they were Monday — unresolved by the reinstatement either way.</p>
+  <p><strong>Portfolio implication:</strong> 216 sessions at zero positions remains the standing call. Monday's rally was the cleanest instance this file has logged of its own re-entry bar being met; today's give-back is a reminder that the bar was about the leadership-vacuum crisis specifically, not the broader legal exposure — and a single reversion day after the largest rally on file doesn't retire either the bull or bear case on its own. Dell's earnings tonight is the next real demand-side data point, not a governance one.</p>
+</div>
+
+<!-- ====================== SOURCES ====================== -->
+<h2>Sources</h2>
+<div class="sources">
+  <p><strong>Markets (mid-session read via the AI-ecosystem research desk, ~09:40 PT):</strong> NVDA, AVGO, TSM, MU, CRWV, NBIS, ANET, ASML, PLTR.</p>
+  <p><strong>Polymarket (direct page fetches, ~09:50 PT):</strong></p>
+  <ul>
+    <li><a href="https://polymarket.com/event/ai-bubble-burst-by">AI bubble burst (2026 / June 2027)</a></li>
+    <li><a href="https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-december-31">Strait of Hormuz traffic normal by Dec 31</a></li>
+    <li><a href="https://polymarket.com/event/will-the-us-invade-iran-before-2027">US invades Iran before 2027</a></li>
+  </ul>
+  <p><strong>AI / NVIDIA:</strong> Upstream AI source: <code>/Users/andresrodriguez/Documents/ai-ecosystem-analyst/research/2026/2026-11-24-update.md</code> (report date 2026-11-24).</p>
+  <p><strong>Iran / Middle East:</strong> no new primary reporting found this morning — full citations and standing flags in <code>state/iran.md</code>.</p>
+  <p><strong>Private credit / portfolio:</strong> no new dated reporting found beyond what is already logged in <code>state/private-credit.md</code> and <code>state/portfolio-context.md</code>.</p>
+</div>
+
+<div class="footer">
+  Daily News Brief compiled November 24, 2026 · Morning Brief · Day 270 · Pacific time throughout<br>
+  <em>Mid-session read, not a confirmed close — tonight's evening run will carry the confirmed close and Dell's earnings.</em>
+</div>
+
+</div>
+
+</body>
+</html>
