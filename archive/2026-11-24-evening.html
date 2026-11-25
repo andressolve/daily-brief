@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily News Brief — November 24, 2026 Evening</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --surface: #121820;
+    --surface2: #1a2230;
+    --border: #243044;
+    --text: #c8d3e0;
+    --text-dim: #6b7d93;
+    --heading: #e8edf3;
+    --accent: #4fc3f7;
+    --accent2: #81c784;
+    --warn: #ffb74d;
+    --danger: #ef5350;
+    --gold: #ffd54f;
+    --purple: #b39ddb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  .header {
+    background: linear-gradient(135deg, #0a1a0a 0%, #1a2a0a 50%, #0a1a2e 100%);
+    border-bottom: 1px solid var(--accent2);
+    padding: 50px 40px 40px;
+    text-align: center;
+  }
+  .header .day-tag {
+    display: inline-block;
+    background: rgba(129,199,132,0.2);
+    border: 1px solid rgba(129,199,132,0.4);
+    color: var(--accent2);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--heading);
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .header .subtitle {
+    font-size: 18px;
+    color: var(--warn);
+    font-weight: 400;
+  }
+  .header .subtitle-sub {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 10px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--heading);
+    margin: 48px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 28px 0 12px;
+  }
+  p { margin-bottom: 14px; }
+  strong { color: var(--heading); }
+  em { color: var(--accent); font-style: italic; }
+  ul, ol { margin: 0 0 14px 22px; }
+  li { margin-bottom: 6px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  table tr:last-child td { border-bottom: none; }
+  table td:first-child {
+    font-weight: 700;
+    color: var(--heading);
+  }
+  .badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+  .badge-red { background: var(--danger); color: #fff; }
+  .badge-green { background: var(--accent2); color: var(--bg); }
+  .badge-blue { background: var(--accent); color: var(--bg); }
+  .badge-yellow { background: var(--warn); color: var(--bg); }
+  .badge-purple { background: var(--purple); color: var(--bg); }
+  .tldr-box {
+    background: linear-gradient(135deg, rgba(129,199,132,0.1), rgba(255,183,77,0.05));
+    border: 2px solid var(--accent2);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin: 24px 0 32px;
+  }
+  .tldr-box h3 {
+    color: var(--accent2);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .delta-callout {
+    background: var(--surface2);
+    border-left: 3px solid var(--warn);
+    border-radius: 0 6px 6px 0;
+    padding: 12px 18px;
+    margin: 0 0 18px;
+    font-size: 13.5px;
+    color: var(--text-dim);
+  }
+  .delta-callout strong { color: var(--warn); }
+  .faction-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .faction-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px 26px;
+    border-left: 4px solid var(--border);
+  }
+  .faction-card.f-irgc { border-left-color: var(--danger); }
+  .faction-card.f-hawk { border-left-color: var(--warn); }
+  .faction-card.f-civ { border-left-color: var(--accent); }
+  .scenario-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+    margin: 20px 0;
+  }
+  .scenario-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 20px;
+  }
+  .scenario-card .pct {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+  .scenario-card h4 {
+    font-size: 14px;
+    color: var(--heading);
+    margin: 4px 0 10px;
+  }
+  .scenario-card p { font-size: 13px; color: var(--text); margin: 0; }
+  .scenario-card.red .pct { color: var(--danger); }
+  .scenario-card.yellow .pct { color: var(--warn); }
+  .scenario-card.green .pct { color: var(--accent2); }
+  .quote-box {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 16px 22px;
+    margin: 16px 0;
+    font-style: italic;
+    color: var(--text);
+    border-radius: 0 6px 6px 0;
+  }
+  .quote-box .src {
+    display: block;
+    margin-top: 8px;
+    font-style: normal;
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+  .honest-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--purple);
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin: 24px 0;
+  }
+  .honest-box h3 { color: var(--purple); margin-top: 0; margin-bottom: 14px; }
+  .punchline-box {
+    background: linear-gradient(135deg, rgba(129,199,132,0.08), rgba(79,195,247,0.05));
+    border: 2px solid rgba(129,199,132,0.3);
+    border-radius: 10px;
+    padding: 28px;
+    margin: 32px 0;
+    text-align: center;
+  }
+  .punchline-box h3 {
+    color: var(--accent2);
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .punchline-box p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    max-width: 760px;
+    margin: 0 auto 10px;
+    color: var(--text);
+  }
+  .watchlist {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 24px;
+    margin: 20px 0;
+  }
+  .watchlist ul { margin-left: 20px; }
+  .watchlist ul li { margin-bottom: 8px; font-size: 14px; }
+  .sources { font-size: 12.5px; color: var(--text-dim); }
+  .sources a { color: var(--accent); text-decoration: none; }
+  .sources a:hover { text-decoration: underline; }
+  .footer {
+    border-top: 1px solid var(--border);
+    margin-top: 50px;
+    padding-top: 20px;
+    color: var(--text-dim);
+    font-size: 12px;
+    text-align: center;
+  }
+  .flag-box {
+    background: rgba(255,183,77,0.08);
+    border: 1px solid rgba(255,183,77,0.35);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 16px 0;
+    font-size: 13.5px;
+  }
+  .flag-box strong { color: var(--warn); }
+  .moved-table td.up { color: var(--accent2); font-weight: 700; }
+  .moved-table td.down { color: var(--danger); font-weight: 700; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="day-tag">Daily News Brief · Tuesday Evening Wrap · Confirmed close</div>
+  <h1>November 24, 2026 — Evening Wrap</h1>
+  <div class="subtitle">Dow breaks 50,000 while chips give back more ground — but Dell's print tonight is the demand confirmation that matters</div>
+  <div class="subtitle-sub">Run: ~17:30 PT (confirmed close) · Day 270 · 217th consecutive zero-position day · Bessent export-control deadline ~Nov 25 · Eisenkot coalition deadline Dec 6</div>
+</div>
+
+<div class="container">
+
+<!-- ====================== TL;DR ====================== -->
+<div class="tldr-box">
+  <h3>TL;DR — what changed and why it matters</h3>
+  <ul>
+    <li><strong>Morning's read held but didn't deepen.</strong> NVDA closed around -5.86% (sources range to -7.8%), a partial clawback from the mid-session -7.11% read — still well above Friday's pre-reinstatement close. The Dow closed above 50,000 for the first time (+0.85%) on a rotation into industrials/healthcare, while the Nasdaq Composite fell 1.48% and the S&P 500 fell 0.50% — its eighth loss in nine sessions.</li>
+    <li><strong>VIX barely moved</strong> — 26.36 versus Monday's 26.62 — despite the chip-sector drop. That's the cleanest evidence tonight that this is a sector rotation, not a risk-off event.</li>
+    <li><strong>Dell delivered the AI-demand cross-check the morning brief was waiting on.</strong> Revenue $54.9B (+103% YoY), EPS $9.45 (vs. $6.59 est.), a record $132.3B AI backlog (up from $95B), FY27 guidance raised to $202B. DELL itself fell -13.3% to $290.50 during the regular session in pure sympathy with the broader chip selloff — before the print landed — then bounced to roughly $295-308 after hours once it did.</li>
+    <li><strong>Both Polymarket AI-bubble buckets gave back part of this morning's spike</strong> — Dec-2026 bucket 22%&rarr;17.4%, June-2027 bucket 44%&rarr;42.5% — moving the same direction as equities clawing back part of the mid-session low.</li>
+    <li><strong>A new, unverified flag worth watching:</strong> reporting surfaced tonight that a December Fed rate hike — not a cut — is being discussed as a live possibility. This cuts against the easing-cycle assumption this file has carried all year and needs a primary-source check before being treated as more than a lead.</li>
+  </ul>
+</div>
+
+<!-- ====================== MORNING TO EVENING ====================== -->
+<h2>Morning &rarr; Evening: What Moved</h2>
+<div class="delta-callout"><strong>Did the morning read hold?</strong> Mostly yes, with a real nuance — the pullback bottomed mid-morning and partially recovered into the close.</div>
+
+<table class="moved-table">
+  <tr><th>Indicator</th><th>This morning (mid-session)</th><th>Tonight (confirmed close)</th><th>Read</th></tr>
+  <tr><td>NVDA</td><td class="down">$153.32, -7.11%</td><td class="down">~-5.86% (range to -7.8%)</td><td>Partial recovery from the morning low</td></tr>
+  <tr><td>Dow</td><td>n/a</td><td class="up">50,018.70, +0.85%</td><td>First-ever close above 50,000</td></tr>
+  <tr><td>S&amp;P 500</td><td>n/a</td><td class="down">7,201.09, -0.50%</td><td>8th loss in 9 sessions</td></tr>
+  <tr><td>Nasdaq Composite</td><td>n/a</td><td class="down">23,733.54, -1.48%</td><td>Chip-sector drag</td></tr>
+  <tr><td>Nasdaq-100</td><td>n/a</td><td class="down">26,214.17, -1.99%</td><td>Chip-sector drag</td></tr>
+  <tr><td>MU</td><td class="down">-10.51%</td><td class="down">&gt;-10%</td><td>Dragged SK Hynix, SanDisk, Seagate, WDC with it</td></tr>
+  <tr><td>VIX</td><td>n/a</td><td>26.36, -0.98%</td><td>Essentially flat vs. Monday's 26.62 — rotation, not panic</td></tr>
+  <tr><td>BTC</td><td>n/a</td><td class="down">$59,396, -3.01%</td><td>Reverses Monday's "flat" read</td></tr>
+  <tr><td>DELL</td><td>n/a</td><td class="down">-13.3% to $290.50 (regular session)</td><td>Pure sympathy selling, before tonight's earnings beat</td></tr>
+  <tr><td>AI bubble burst 2026 (Polymarket)</td><td>22%</td><td class="down">17.4%</td><td>Gave back ~4.6pp of the morning spike</td></tr>
+  <tr><td>AI bubble burst June 2027 (Polymarket)</td><td>44%</td><td class="down">42.5%</td><td>Gave back ~1.5pp</td></tr>
+</table>
+
+<p>The morning called a broad, no-new-catalyst give-back of Monday's reinstatement rally — that held directionally all day. What the morning couldn't have known: the pullback bottomed mid-morning and recovered part of the way into the close, and Polymarket's afternoon numbers moved the same direction. The morning also correctly flagged Dell's earnings as the key scheduled catalyst — it delivered.</p>
+
+<!-- ====================== AI / DELL ====================== -->
+<h2>AI Ecosystem — Dell Delivered the Demand Confirmation</h2>
+<div class="delta-callout"><strong>Delta since this morning:</strong> a clean, independent hardware-demand data point, landing the same day the broader complex's equity story stayed choppy.</div>
+
+<p><strong>Dell Technologies reported Q3 FY2027 after today's close:</strong> revenue $54.9B (+103% YoY, vs. $49.3B est.), non-GAAP EPS $9.45 (vs. $6.59 est.), AI-optimized server revenue $22.0B (+291% YoY), and a record $132.3B AI backlog (up from $95B at end of July, after booking $60.2B of new orders this quarter). Dell raised FY27 revenue guidance to $202B (from $192B) and its AI-server forecast to $78B (from $74B), and authorized a new $25B buyback.</p>
+
+<p>This is a second independent confirmation — after NVDA's own Q3 — that the dollar-capex side of the AI-infrastructure buildout is still accelerating. <strong>One nuance worth carrying forward:</strong> Dell's order-to-ship ratio fell to 2.73x this quarter from 3.71x in Q2 — backlog growth is decelerating in rate even as the absolute number hits a record, a second-derivative signal worth tracking alongside SemiAnalysis's Nov 13 capex-forecast cut.</p>
+
+<p><strong>The market reaction is worth separating from the fundamentals.</strong> DELL fell -13.3% during the regular session (closing $290.50) purely in sympathy with the broader chip-sector selloff — well before the print even landed — then bounced in after-hours trading to roughly $295-308 once the beat-and-raise was public. No confirmation yet that the print read through to the rest of the named AI complex (NVDA, MU, AVGO, CRWV, NBIS) premarket.</p>
+
+<p><strong>Read:</strong> tonight's demand-side evidence (Dell) and the partial equity/Polymarket stabilization both argue this morning's panic was somewhat overdone, not that the underlying legal/governance risk picture changed. No further development found tonight on the independent-director investigation, the SEC/DOJ/California-AG threads, or the Bessent ~Nov 25 export-control deadline, now essentially today/tomorrow with no public board response found.</p>
+
+<!-- ====================== MARKETS DETAIL ====================== -->
+<h2>Markets</h2>
+<div class="delta-callout"><strong>Delta since this morning:</strong> confirmed close, a flat VIX, and a new unverified Fed-hawkish flag.</div>
+
+<p>Oil: sources conflict tonight (one ticker showed WTI -0.51% to $81.63; article text separately claimed crude "rallied about 1%") — a genuine data-quality gap, no confirmed clean print, and no Iran/Hormuz catalyst identified either way. <strong>Flagged, not yet verified:</strong> reporting surfaced tonight that the Fed held rates steady at its October meeting (two dissents favoring a hike) and that a December hike — not a cut — is being discussed as a live possibility into the Dec 9-10 FOMC meeting. This would cut against the easing-cycle assumption this file has carried most of the year; it needs a primary-source check (FOMC statement/minutes, CME FedWatch) before being treated as more than a lead.</p>
+
+<!-- ====================== POLYMARKET ====================== -->
+<h2>Polymarket Calibration</h2>
+<div class="delta-callout"><strong>Delta since this morning:</strong> both AI-bubble buckets partially reverted, in the same direction as equities.</div>
+
+<table>
+  <tr><th>Contract</th><th>This morning</th><th>Tonight</th><th>Move</th></tr>
+  <tr><td>AI bubble burst in 2026 (by Dec 31)</td><td>22%</td><td>17.4%</td><td><strong>-4.6pp</strong></td></tr>
+  <tr><td>AI bubble burst by June 30, 2027</td><td>44%</td><td>42.5%</td><td><strong>-1.5pp</strong></td></tr>
+  <tr><td>Hormuz traffic normal by Dec 31</td><td>3%</td><td>2.95%</td><td>flat</td></tr>
+  <tr><td>US invades Iran before 2027</td><td>6%</td><td>5.5%</td><td>flat-ish</td></tr>
+</table>
+
+<p><strong>Read:</strong> both AI-bubble buckets giving back part of this morning's spike, landing in the same session NVDA clawed back part of its own mid-session loss, suggests this morning's panic was itself part real repricing, part overshoot — both markets correcting together, not contradicting each other. Even after tonight's partial reversal, the Dec-2026 bucket remains well above its pre-Monday-selloff baseline.</p>
+
+<!-- ====================== IRAN ====================== -->
+<h2>Iran / Middle East Geopolitics</h2>
+<div class="delta-callout"><strong>Delta since this morning:</strong> no confirmed today-dated news, but a dedicated Eisenkot-specific search surfaced real, previously-unlogged substantive detail.</div>
+
+<p>The opposition bloc's internal coalition split is sharper than previously logged: Liberman is seeking flexibility on the ultra-Orthodox draft-exemption law specifically, while Eisenkot and Golan are insisting on equal military service as a condition. Separately, Eisenkot's Yashar party reportedly has a fallback plan to force a minority-government vote before the Dec 6 deadline if full coalition talks fail. <strong>Caveat:</strong> this detail's exact dating could not be confirmed as today's news versus catch-up on reporting from earlier in November — treat as a genuine informational upgrade on the standing story, not tonight's headline.</p>
+
+<!-- ====================== PORTFOLIO / PRIVATE CREDIT ====================== -->
+<h2>Portfolio Tickers &amp; Private Credit</h2>
+<div class="delta-callout"><strong>217th consecutive zero-position day.</strong> No material change on CoreWeave's loan, OWL/APO/ARCC/KKR.</div>
+
+<p>Dell's print is a genuine positive data point for the broader thesis, landing on a day the named AI complex round-tripped part of its own Monday gain for the second straight session without any new negative catalyst. CoreWeave's $4B investment-grade loan remains unpriced, now roughly eighteen days past its original window; Dell's demand news is encouraging context for AI-infrastructure credit generally, but nothing confirms the loan moved closer to pricing tonight.</p>
+
+<!-- ====================== OVERNIGHT WATCH ====================== -->
+<div class="watchlist">
+  <h3 style="color: var(--accent); margin-top:0;">Overnight / tomorrow-morning watch</h3>
+  <ul>
+    <li>Whether Dell's beat-and-raise gets any premarket read-through tomorrow for NVDA/MU/AVGO/CRWV/NBIS — tonight's after-hours bounce was DELL-specific.</li>
+    <li>The Bessent ~Nov 25 export-control deadline — essentially today/tomorrow, no public board response found yet.</li>
+    <li>Whether Broadcom or Google confirm or deny the Ming-Chi Kuo TPU order-cut report — still open.</li>
+    <li>A primary-source check on the Fed's actual rate path — the hawkish/hike-discussion lead found tonight needs verification.</li>
+    <li>A dated, primary-sourced confirmation of tonight's Eisenkot coalition detail (the draft-law split, the minority-government fallback plan).</li>
+    <li>BTC's -3% move tonight — worth a same-session confirmation tomorrow rather than treating as noise.</li>
+  </ul>
+</div>
+
+<!-- ====================== PUNCHLINE ====================== -->
+<div class="punchline-box">
+  <h3>Bottom Line</h3>
+  <p>Today split cleanly into two stories that don't contradict each other: a broad market rotation (Dow to a record high, chips giving back more ground, VIX flat) and a hard demand-side confirmation (Dell's record backlog and raised guidance) that the physical AI buildout keeps accelerating even as sentiment on the governance-exposed names stays choppy. Both Polymarket AI-bubble buckets partially reverted along with equities, suggesting this morning's panic was part real, part overshoot. Nothing today changed the open legal/governance threads on NVIDIA — they remain exactly where Monday's reinstatement left them.</p>
+  <p><strong>Portfolio implication:</strong> 217 sessions at zero positions remains the standing call. Dell's print strengthens the bull case on the demand side specifically — the thing this file has said all month it's waiting to see resolve is the governance/legal exposure, not the hardware cycle, and tonight's evidence on that second question got stronger, not weaker. Tomorrow's premarket read-through on Dell, and the Bessent deadline, are the two things that could move this call.</p>
+</div>
+
+<!-- ====================== SOURCES ====================== -->
+<h2>Sources</h2>
+<div class="sources">
+  <p><strong>Markets:</strong> <a href="https://finance.yahoo.com/markets/live/stock-market-today-tuesday-november-24-dow-sp-500-nasdaq-chip-stocks-nvidia-140629923.html">Yahoo Finance live blog</a>, index close levels corroborated across multiple outlets.</p>
+  <p><strong>Dell earnings:</strong> <a href="https://www.cnbc.com/2026/11/24/dell-earnings-report-q3-2027.html">CNBC</a>, <a href="https://www.investing.com/news/company-news/dell-q3-fy27-slides-revenue-doubles-ai-backlog-hits-132b-93CH-5049313">Investing.com</a>, <a href="https://investors.delltechnologies.com/news-events/press-releases/detail/1665/dell-technologies-delivers-third-quarter-fiscal-2027-financial-results">Dell investor relations</a>.</p>
+  <p><strong>Polymarket (Gamma API, ~16:15 PT):</strong></p>
+  <ul>
+    <li><a href="https://polymarket.com/event/ai-bubble-burst-by">AI bubble burst (2026 / June 2027)</a></li>
+    <li><a href="https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-december-31">Strait of Hormuz traffic normal by Dec 31</a></li>
+    <li><a href="https://polymarket.com/event/will-the-us-invade-iran-before-2027">US invades Iran before 2027</a></li>
+  </ul>
+  <p><strong>Iran / Israel:</strong> Al Jazeera, Israel Hayom, JNS, Jerusalem Post — see <code>state/iran.md</code> for full citations and dating caveats.</p>
+  <p><strong>AI / NVIDIA / portfolio / private credit:</strong> full detail and standing flags in <code>state/ai.md</code>, <code>state/portfolio-context.md</code>, <code>state/private-credit.md</code>.</p>
+</div>
+
+<div class="footer">
+  Daily News Brief compiled November 24, 2026 · Evening Wrap · Day 270 · Pacific time throughout<br>
+  <em>Confirmed close. Tomorrow's morning run will carry premarket read-through on Dell and the Bessent deadline.</em>
+</div>
+
+</div>
+
+</body>
+</html>
