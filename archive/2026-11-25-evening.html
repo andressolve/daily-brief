@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily News Brief — November 25, 2026 Evening</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --surface: #121820;
+    --surface2: #1a2230;
+    --border: #243044;
+    --text: #c8d3e0;
+    --text-dim: #6b7d93;
+    --heading: #e8edf3;
+    --accent: #4fc3f7;
+    --accent2: #81c784;
+    --warn: #ffb74d;
+    --danger: #ef5350;
+    --gold: #ffd54f;
+    --purple: #b39ddb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a0a0a 0%, #2a0a1a 50%, #0a1a2e 100%);
+    border-bottom: 1px solid var(--danger);
+    padding: 50px 40px 40px;
+    text-align: center;
+  }
+  .header .day-tag {
+    display: inline-block;
+    background: rgba(239,83,80,0.2);
+    border: 1px solid rgba(239,83,80,0.4);
+    color: var(--danger);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--heading);
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .header .subtitle {
+    font-size: 18px;
+    color: var(--warn);
+    font-weight: 400;
+  }
+  .header .subtitle-sub {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 10px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--heading);
+    margin: 48px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 28px 0 12px;
+  }
+  p { margin-bottom: 14px; }
+  strong { color: var(--heading); }
+  em { color: var(--accent); font-style: italic; }
+  ul, ol { margin: 0 0 14px 22px; }
+  li { margin-bottom: 6px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  table tr:last-child td { border-bottom: none; }
+  table td:first-child {
+    font-weight: 700;
+    color: var(--heading);
+  }
+  .badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+  .badge-red { background: var(--danger); color: #fff; }
+  .badge-green { background: var(--accent2); color: var(--bg); }
+  .badge-blue { background: var(--accent); color: var(--bg); }
+  .badge-yellow { background: var(--warn); color: var(--bg); }
+  .badge-purple { background: var(--purple); color: var(--bg); }
+  .tldr-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.1), rgba(255,183,77,0.05));
+    border: 2px solid var(--danger);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin: 24px 0 32px;
+  }
+  .tldr-box h3 {
+    color: var(--danger);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .delta-callout {
+    background: var(--surface2);
+    border-left: 3px solid var(--warn);
+    border-radius: 0 6px 6px 0;
+    padding: 12px 18px;
+    margin: 0 0 18px;
+    font-size: 13.5px;
+    color: var(--text-dim);
+  }
+  .delta-callout strong { color: var(--warn); }
+  .quote-box {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 16px 22px;
+    margin: 16px 0;
+    font-style: italic;
+    color: var(--text);
+    border-radius: 0 6px 6px 0;
+  }
+  .quote-box .src {
+    display: block;
+    margin-top: 8px;
+    font-style: normal;
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+  .punchline-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.08), rgba(79,195,247,0.05));
+    border: 2px solid rgba(239,83,80,0.3);
+    border-radius: 10px;
+    padding: 28px;
+    margin: 32px 0;
+    text-align: center;
+  }
+  .punchline-box h3 {
+    color: var(--danger);
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .punchline-box p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    max-width: 760px;
+    margin: 0 auto 10px;
+    color: var(--text);
+  }
+  .watchlist {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 24px;
+    margin: 20px 0;
+  }
+  .watchlist ul { margin-left: 20px; }
+  .watchlist ul li { margin-bottom: 8px; font-size: 14px; }
+  .sources { font-size: 12.5px; color: var(--text-dim); }
+  .sources a { color: var(--accent); text-decoration: none; }
+  .sources a:hover { text-decoration: underline; }
+  .footer {
+    border-top: 1px solid var(--border);
+    margin-top: 50px;
+    padding-top: 20px;
+    color: var(--text-dim);
+    font-size: 12px;
+    text-align: center;
+  }
+  .moved-table td.up { color: var(--accent2); font-weight: 700; }
+  .moved-table td.down { color: var(--danger); font-weight: 700; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="day-tag">Daily News Brief · Wednesday Evening · PM close</div>
+  <h1>November 25, 2026 — Evening Wrap</h1>
+  <div class="subtitle">The morning's panic reversed sharply into the close — a V-shaped recovery across the AI complex, even as SMH's brief floor breach resolves a tracked prediction NO</div>
+  <div class="subtitle-sub">Run: ~17:00 PT (PM close) · Day 271 · 219th consecutive zero-position day · Bessent deadline unanswered · Markets closed Thu 11/26 for Thanksgiving, shortened session Fri 11/27</div>
+</div>
+
+<div class="container">
+
+<!-- ====================== TL;DR ====================== -->
+<div class="tldr-box">
+  <h3>TL;DR — what changed and why it matters</h3>
+  <ul>
+    <li><strong>This morning's panic sell-off reversed sharply into the close.</strong> NVDA fell as much as -6.57% intraday but closed -3.91% ($149.30); CRWV fell as much as -12% intraday but closed essentially flat (-0.08%); the S&P 500 fell to 6970.11 intraday (a ~3.2% hole) before closing -0.25% at 7182.78.</li>
+    <li><strong>SMH briefly breached its tracked Nov 20 floor</strong> ($393.88 vs. $396.85) before closing -1.01% at $422.46 — this resolves the AI-ecosystem desk's own P055 prediction <strong>NO</strong>, even though the close looked unremarkable. A later recovery doesn't undo a pre-specified resolution rule.</li>
+    <li><strong>Polymarket's AI-bubble contracts told the same V-shaped story as equities.</strong> The Dec-2026 bucket fell from this morning's 36.25% to 19.95% by the close; the June-2027 bucket fell from 53.5% back below the coin-flip line to 46.5%.</li>
+    <li><strong>What didn't resolve:</strong> Bessent's export-control deadline for NVIDIA's board landed today with no public response found. The Trump-NVDA shareholding conflict-of-interest story sits exactly where this morning left it.</li>
+    <li><strong>Iran/Middle East remains the quietest beat on file</strong> — a ninth-plus consecutive quiet run, even on an otherwise volatile day everywhere else.</li>
+  </ul>
+</div>
+
+<!-- ====================== MORNING TO EVENING ====================== -->
+<h2>Morning &rarr; Evening: What Moved</h2>
+<table class="moved-table">
+  <tr><th>Name</th><th>Premarket / AM</th><th>Midday low (intraday)</th><th>Close</th><th>Read</th></tr>
+  <tr><td>S&amp;P 500</td><td>&mdash;</td><td class="down">6970.11 (open 7060.33)</td><td class="down">7182.78 (-0.25%)</td><td>V-shaped recovery</td></tr>
+  <tr><td>Nasdaq</td><td>&mdash;</td><td class="down">22,632.40</td><td class="down">23,585.80 (-0.62%)</td><td>Same pattern</td></tr>
+  <tr><td>NVDA</td><td class="down">-5.76%</td><td class="down">~-6.57% (~$145.17)</td><td class="down">$149.30 (-3.91%)</td><td>Real, partial recovery</td></tr>
+  <tr><td>SMH</td><td>&mdash;</td><td class="down">$393.88 &mdash; breached P055 floor</td><td class="down">$422.46 (-1.01%)</td><td>P055 resolved <strong>NO</strong> on the breach</td></tr>
+  <tr><td>CRWV</td><td class="down">-6.82%</td><td class="down">~-12% ($37.40)</td><td>$42.57 (-0.08%)</td><td>Sharpest reversal of the day</td></tr>
+  <tr><td>NBIS</td><td class="down">-6.37%</td><td class="down">~-13% ($75.60)</td><td class="down">$84.99 (-2.64%)</td><td>Partial recovery</td></tr>
+  <tr><td>MU</td><td class="down">-6.73%</td><td class="down">~-13% ($548.13)</td><td class="down">$601.25 (-4.57%)</td><td>Still the hardest-hit name</td></tr>
+  <tr><td>VIX</td><td>&mdash;</td><td class="down">~31.92 (+21%)</td><td class="down">28.29 (+7.32%)</td><td>Elevated, well off the spike</td></tr>
+  <tr><td>AI bubble burst by 2026</td><td>36.25%</td><td>&mdash;</td><td>19.95%</td><td>Gave back ~16pp</td></tr>
+  <tr><td>AI bubble burst by June 2027</td><td>53.5%</td><td>&mdash;</td><td>46.5%</td><td>Fell back below 50%</td></tr>
+</table>
+<p style="font-size:13px; color:var(--text-dim);">WTI crude last printed ~$83.99 (+0.37%, a late, not-yet-final read) &mdash; roughly flat, no oil-specific catalyst either way.</p>
+
+<!-- ====================== IRAN ====================== -->
+<h2>Iran / Middle East Geopolitics</h2>
+<div class="delta-callout"><strong>Delta since this morning:</strong> none. A ninth-plus consecutive quiet run; a fresh search tonight found nothing dated later than this morning.</div>
+
+<p>A search tonight found no new Gulf incident, CENTCOM statement, Qatar-track update, or Eisenkot coalition development since this morning. Both tracked Polymarket contracts continue to sit flat near their multi-week lows: Hormuz-normal-by-Dec-31 at <strong>2.75%</strong> (flat vs. 2.7% this morning) and invade-Iran-before-2027 at <strong>5.5%</strong> (flat, a fourth consecutive unmoved read) — both untouched by today's otherwise volatile session in equities and AI-sector prediction markets. Eisenkot's Dec 6 mandate deadline is now 11 days out.</p>
+
+<p><strong>Read:</strong> unchanged from this morning — the quietest, most stable beat on file, even on a day markets.md/ai.md/polymarket.md all logged real volatility elsewhere.</p>
+
+<!-- ====================== MARKETS ====================== -->
+<h2>Markets</h2>
+<div class="delta-callout"><strong>Delta since this morning:</strong> a sharp intraday-to-close reversal across every index and named ticker, confirmed via direct close-of-day quotes.</div>
+
+<p>Confirmed PM closes: S&amp;P 500 7182.78 (-0.25%, after an intraday low of 6970.11); Nasdaq 23,585.80 (-0.62%, intraday low 22,632.40); NVDA $149.30 (-3.91%, vs. -5.76% premarket and an intraday low near -6.57%); VIX 28.29 (+7.32%, vs. an intraday spike near 31.92). WTI crude last printed roughly flat (~$83.99, +0.37%, a late, not-yet-final read).</p>
+
+<p><strong>The full morning-to-evening table is above.</strong> The gap between intraday lows and closing prints — SMH -7.4% intraday vs. -1.01% close, CRWV -12% intraday vs. essentially flat close, MU -13% intraday vs. -4.57% close — is tonight's real story: a capitulation-and-rebound session, not a deepening of the selloff this morning's premarket read flagged.</p>
+
+<!-- ====================== AI / NVIDIA ====================== -->
+<h2>AI Ecosystem</h2>
+<div class="delta-callout"><strong>Delta since this morning:</strong> P055 resolved NO on SMH's intraday floor breach; the Bessent deadline and Trump-NVDA conflict-of-interest story remain unresolved.</div>
+
+<p><strong>AI analyst source reviewed tonight:</strong> still <code>research/2026/2026-11-25-update.md</code> (report date 2026-11-25) — the same premarket report reviewed this morning, now supplemented by that source's own intraday follow-up (observed ~9:20am PT), logged here for the first time tonight.</p>
+
+<p><strong>P055 — the source analyst's own subjective prediction that SMH holds its Nov 20 close-floor of $396.85 through Dec 21 — resolved NO today.</strong> SMH's regular-session low was $393.88, a confirmed breach, even though the index recovered to close -1.01% at $422.46. A later recovery cannot reverse the pre-specified outcome; the source analyst scores this a 0.1225 Brier loss against the 35% probability it had assigned the floor-hold event.</p>
+
+<p>The source's intraday addendum also flagged, but could not confirm as a trend reversal: reported CoreWeave October 2031 bond yields at <strong>17.91%</strong> (Tradeweb data via Reuters) — unsecured-market stress, not proof of a secured-project default — and a separate note on softer comparable GPU-rental pricing as a real, if separate, challenge to capital-return economics even if total AI usage keeps expanding.</p>
+
+<p><strong>No update found tonight on the Bessent export-control deadline</strong> (which landed today per this morning's flag) — no public statement from NVIDIA's board or outside counsel has surfaced in a dedicated search. No further development found on the Trump-NVDA shareholding conflict-of-interest story, Schumer's demanded accounting, or the House Select Committee on China's widened inquiry — both remain exactly where this morning left them.</p>
+
+<p><strong>Read:</strong> today's intraday-low-to-close gap, corroborated by Polymarket's own sharp reversal on both AI-bubble buckets, argues this morning's panic was a flush that found real buyers, not the start of a deepening repricing — but P055's NO resolution is a genuine, scored data point that the memory/AI-bubble-peak debate has real teeth, even on a day the broader tape recovered.</p>
+
+<!-- ====================== PORTFOLIO ====================== -->
+<h2>Portfolio Tickers</h2>
+<div class="delta-callout"><strong>219th consecutive zero-position day.</strong> Today's midday panic across the named complex reversed sharply into the close.</div>
+
+<p>Confirmed closes: NVDA $149.30 (-3.91%, intraday low near -6.57%); CRWV $42.57 (essentially flat, -0.08%, intraday low near -12%); NBIS $84.99 (-2.64%, intraday low near -13%); MU $601.25 (-4.57%, intraday low near -13%); SMH $422.46 (-1.01%, intraday low $393.88 — the confirmed P055 floor breach). CoreWeave's $4B investment-grade loan still hasn't priced. AVGO's Google/TPU order-cut overhang remains unconfirmed. AMD and XLE: no company-specific news found; both should be assumed to have moved with the broader complex's recovery pattern. OWL/APO/ARCC: no new developments.</p>
+
+<p><strong>Read:</strong> 219 sessions at zero positions now includes a session that would have tested real-money discipline hardest — a drawdown steep enough to breach a tracked technical floor, followed by a same-day round-trip back to a modest loss. This file's framework exists precisely to avoid reacting to either the panic or the relief on a single session's swing.</p>
+
+<!-- ====================== PRIVATE CREDIT ====================== -->
+<h2>Private Credit</h2>
+<div class="delta-callout"><strong>Delta since this morning:</strong> CoreWeave's existing unsecured bond yield widened further; the $4B investment-grade loan still hasn't priced.</div>
+
+<p>CoreWeave's October 2031 unsecured bond reportedly yielded <strong>17.91%</strong> today (Tradeweb data via Reuters, per the AI-ecosystem source), up from the ~15.7% level this file logged Nov 19-20. This is the existing unsecured note, not the separately-negotiated, Meta-contract-backed $4B investment-grade facility, which remains unpriced tonight, now roughly two-and-a-half weeks past its original window. No new redemption prints, NAV marks, or litigation developments found on OWL, APO, ARCC, or KKR today.</p>
+
+<p><strong>Read:</strong> a widening unsecured-bond yield, landing the same day the broader AI-equity complex had a sharp intraday selloff before recovering into the close, is consistent with this file's standing framing — reported unsecured-market stress, not a verified marginal rate for every secured AI-infrastructure project, and not by itself new evidence on whether the investment-grade loan will clear.</p>
+
+<!-- ====================== POLYMARKET ====================== -->
+<h2>Polymarket Calibration</h2>
+<div class="delta-callout"><strong>Delta since this morning:</strong> both AI-bubble buckets gave back most of their morning spike, tracking the equity complex's own recovery.</div>
+
+<table>
+  <tr><th>Contract</th><th>Wednesday morning</th><th>Wednesday evening (close)</th><th>Move</th></tr>
+  <tr><td>Hormuz traffic normal by Dec 31</td><td>2.7%</td><td>2.75%</td><td>flat</td></tr>
+  <tr><td>AI bubble burst in 2026 (by Dec 31)</td><td>36.25%</td><td><strong>19.95%</strong></td><td><strong>-16.3pp</strong></td></tr>
+  <tr><td>AI bubble burst by June 30, 2027</td><td>53.5%</td><td><strong>46.5%</strong></td><td><strong>-7pp</strong></td></tr>
+  <tr><td>US invades Iran before 2027</td><td>5.5%</td><td>5.5%</td><td>flat</td></tr>
+</table>
+
+<p><strong>Read:</strong> tonight's reversal on both AI-bubble buckets lines up closely with the equity complex's own intraday-low-to-close recovery — NVDA, CRWV, SMH and the rest of the named AI stack all closed well off their midday lows, and Polymarket's two AI-risk gauges did the same thing in parallel, the cleanest corroboration this file has logged of equities and prediction markets reading a single day's events the same way. Even after tonight's reversal, both buckets remain above where they sat Tuesday evening, before this morning's spike ever happened. Both Iran-related contracts continue to sit flat near multi-week lows, untouched by any of today's volatility.</p>
+
+<!-- ====================== WATCHLIST ====================== -->
+<div class="watchlist">
+  <h3 style="color: var(--accent); margin-top:0;">Flags for tomorrow morning's run (Friday, shortened session — Thursday 11/26 is Thanksgiving, markets closed)</h3>
+  <ul>
+    <li>Whether Friday's shortened, low-volume session extends today's recovery or gives it back on thin liquidity.</li>
+    <li>Any Bessent-deadline response from NVIDIA's board or outside counsel — unanswered as of tonight.</li>
+    <li>Whether CoreWeave's unsecured 2031 bond yield (17.91% today, up from ~15.7% Nov 19-20) keeps widening, separate from the still-unpriced $4B investment-grade loan.</li>
+    <li>Whether SMH re-tests or holds above today's $393.88 low once Friday's session gets real volume.</li>
+    <li>Whether the Trump-NVDA shareholding conflict-of-interest story develops further (Schumer's demanded accounting, the House China Committee's widened inquiry) — no update tonight.</li>
+    <li>Iran/Middle East: no material change for a ninth-plus consecutive run; watch for any CENTCOM or Eisenkot-coalition development.</li>
+  </ul>
+</div>
+
+<!-- ====================== PUNCHLINE ====================== -->
+<div class="punchline-box">
+  <h3>Bottom Line</h3>
+  <p>Today was a flush, not a trend change — the morning's panic (a real, confirmed selloff that briefly breached a tracked technical floor on SMH) found real buyers by the close, and Polymarket's AI-bubble contracts reversed in lockstep with equities. That's informative in both directions: it argues against reading this morning's spike as the start of a deeper AI-bubble repricing, but P055's scored NO resolution is a genuine data point that the memory/AI-bubble-peak debate has real teeth, not just noise, even on a day the broader tape recovered. Nothing resolved on the governance/political side — the Bessent deadline came and went today with no public response, and the Trump-NVDA conflict-of-interest story sits exactly where this morning left it.</p>
+  <p><strong>Portfolio implication:</strong> 219 sessions at zero positions remains the standing call. A day this volatile — a steep intraday drawdown followed by a same-day round-trip — is exactly the kind of environment where the standing re-entry bar (a resolved, multi-session-confirmed setup) should stay high, not get relaxed because the close looked better than the low. Friday's shortened, thin-volume session is a weak read either way; Monday's real volume is the next test that matters.</p>
+</div>
+
+<!-- ====================== SOURCES ====================== -->
+<h2>Sources</h2>
+<div class="sources">
+  <p><strong>AI ecosystem / markets:</strong> AI-ecosystem analyst premarket brief and intraday addendum, <code>research/2026/2026-11-25-update.md</code>; direct Yahoo Finance chart-API closes for ^GSPC, ^IXIC, NVDA, ^VIX, CL=F, SMH, CRWV, NBIS, MU; <a href="https://investors.delltechnologies.com/news-events/press-releases/detail/1665/dell-technologies-delivers-third-quarter-fiscal-2027-financial-results">Dell investor relations</a>.</p>
+  <p><strong>NVIDIA governance / Bessent deadline:</strong> dedicated search tonight found no new primary statement; CBS News and WSJ opinion coverage of the Trump-NVDA shareholding story remain as reported this morning.</p>
+  <p><strong>Private credit:</strong> Reuters/Tradeweb-sourced CoreWeave bond yield, per the AI-ecosystem source's intraday addendum.</p>
+  <p><strong>Polymarket (Gamma API, ~17:00 PT close):</strong></p>
+  <ul>
+    <li><a href="https://polymarket.com/event/ai-bubble-burst-by">AI bubble burst (2026 / June 2027)</a></li>
+    <li><a href="https://polymarket.com/event/strait-of-hormuz-traffic-returns-to-normal-by-december-31">Strait of Hormuz traffic normal by Dec 31</a></li>
+    <li><a href="https://polymarket.com/event/will-the-us-invade-iran-before-2027">US invades Iran before 2027</a></li>
+  </ul>
+  <p><strong>Iran / Israel:</strong> Al Jazeera, Israel Hayom, JNS, Jerusalem Post — see <code>state/iran.md</code> for full citations and dating caveats.</p>
+  <p><strong>Full detail and standing flags:</strong> <code>state/markets.md</code>, <code>state/ai.md</code>, <code>state/portfolio-context.md</code>, <code>state/private-credit.md</code>, <code>state/polymarket.md</code>.</p>
+</div>
+
+<div class="footer">
+  Daily News Brief compiled November 25, 2026 · Evening Wrap · Day 271 · Pacific time throughout<br>
+  <em>Confirmed PM close. Markets closed Thursday 11/26 for Thanksgiving; shortened session Friday 11/27.</em>
+</div>
+
+</div>
+
+</body>
+</html>
