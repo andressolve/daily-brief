@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily News Brief — November 27, 2026 Morning</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --surface: #121820;
+    --surface2: #1a2230;
+    --border: #243044;
+    --text: #c8d3e0;
+    --text-dim: #6b7d93;
+    --heading: #e8edf3;
+    --accent: #4fc3f7;
+    --accent2: #81c784;
+    --warn: #ffb74d;
+    --danger: #ef5350;
+    --gold: #ffd54f;
+    --purple: #b39ddb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a0a0a 0%, #2a0a1a 50%, #0a1a2e 100%);
+    border-bottom: 1px solid var(--danger);
+    padding: 50px 40px 40px;
+    text-align: center;
+  }
+  .header .day-tag {
+    display: inline-block;
+    background: rgba(239,83,80,0.2);
+    border: 1px solid rgba(239,83,80,0.4);
+    color: var(--danger);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--heading);
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .header .subtitle {
+    font-size: 18px;
+    color: var(--warn);
+    font-weight: 400;
+  }
+  .header .subtitle-sub {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 10px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--heading);
+    margin: 48px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 28px 0 12px;
+  }
+  p { margin-bottom: 14px; }
+  strong { color: var(--heading); }
+  em { color: var(--accent); font-style: italic; }
+  ul, ol { margin: 0 0 14px 22px; }
+  li { margin-bottom: 6px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  table tr:last-child td { border-bottom: none; }
+  table td:first-child {
+    font-weight: 700;
+    color: var(--heading);
+  }
+  .badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+  .badge-red { background: var(--danger); color: #fff; }
+  .badge-green { background: var(--accent2); color: var(--bg); }
+  .badge-blue { background: var(--accent); color: var(--bg); }
+  .badge-yellow { background: var(--warn); color: var(--bg); }
+  .badge-purple { background: var(--purple); color: var(--bg); }
+  .tldr-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.1), rgba(255,183,77,0.05));
+    border: 2px solid var(--danger);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin: 24px 0 32px;
+  }
+  .tldr-box h3 {
+    color: var(--danger);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .delta-callout {
+    background: var(--surface2);
+    border-left: 3px solid var(--warn);
+    border-radius: 0 6px 6px 0;
+    padding: 12px 18px;
+    margin: 0 0 18px;
+    font-size: 13.5px;
+    color: var(--text-dim);
+  }
+  .delta-callout strong { color: var(--warn); }
+  .quote-box {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 16px 22px;
+    margin: 16px 0;
+    font-style: italic;
+    color: var(--text);
+    border-radius: 0 6px 6px 0;
+  }
+  .quote-box .src {
+    display: block;
+    margin-top: 8px;
+    font-style: normal;
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+  .punchline-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.08), rgba(79,195,247,0.05));
+    border: 2px solid rgba(239,83,80,0.3);
+    border-radius: 10px;
+    padding: 28px;
+    margin: 32px 0;
+    text-align: center;
+  }
+  .punchline-box h3 {
+    color: var(--danger);
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .punchline-box p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    max-width: 760px;
+    margin: 0 auto 10px;
+    color: var(--text);
+  }
+  .watchlist {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 24px;
+    margin: 20px 0;
+  }
+  .watchlist ul { margin-left: 20px; }
+  .watchlist ul li { margin-bottom: 8px; font-size: 14px; }
+  .sources { font-size: 12.5px; color: var(--text-dim); }
+  .sources a { color: var(--accent); text-decoration: none; }
+  .sources a:hover { text-decoration: underline; }
+  .footer {
+    border-top: 1px solid var(--border);
+    margin-top: 50px;
+    padding-top: 20px;
+    color: var(--text-dim);
+    font-size: 12px;
+    text-align: center;
+  }
+  .moved-table td.up { color: var(--accent2); font-weight: 700; }
+  .moved-table td.down { color: var(--danger); font-weight: 700; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="day-tag">Daily News Brief · Friday Morning · Post-Thanksgiving</div>
+  <h1>November 27, 2026 — Morning Brief</h1>
+  <div class="subtitle">A broad, unexplained AI-stack rally runs into a silently lapsed Treasury deadline and tighter NVIDIA export enforcement — the tape and the governance story are telling different stories today</div>
+  <div class="subtitle-sub">Run: ~08:00 PT · Day 273 · 221st consecutive zero-position day · Shortened US session today, closes 1:00pm ET · Dec 1 House interview and Dec 3 Senate hearing (Huang) still on the calendar</div>
+</div>
+
+<div class="container">
+
+<!-- ====================== TL;DR ====================== -->
+<div class="tldr-box">
+  <h3>TL;DR — what changed and why it matters</h3>
+  <ul>
+    <li><strong>A broad AI-stack rally is running with no identified catalyst.</strong> Seoul (SK Hynix +5.4%, Samsung +4.6%), Taipei (TSMC +1.6%), Amsterdam (ASML +4.3%) all traded up sharply, and US premarket shows NVDA +2.9%, MU +6.0%, CRWV +5.4%, NBIS +7.3%. Proportionally large and broad for a thin, holiday-week session.</li>
+    <li><strong>Treasury Secretary Bessent's export-control deadline for NVIDIA's board lapsed silently.</strong> He gave the board roughly ten days (from ~Nov 15) to answer whether shell companies were used to evade China export controls. No NVIDIA, board, or Treasury response has surfaced — a live, overdue overhang, not a resolved one.</li>
+    <li><strong>NVIDIA sharply tightened Southeast Asia export compliance</strong> — cutting its authorized chip-customer list across Singapore, Malaysia, and Japan by more than half and requiring cloud partners on new contracts to keep at least 51% non-Chinese business. Reuters separately reports smuggled B300 servers reselling in China near 2x US list price — enforcement is raising the gray-market premium, not eliminating Chinese demand.</li>
+    <li><strong>No resolution on the governance crisis itself.</strong> No NVIDIA statement addresses the second Huang affair report, the board-reconvening story, or S&amp;P's CreditWatch Negative placement from earlier this week.</li>
+    <li><strong>Polymarket's AI-bubble contracts ticked up, diverging from the rally.</strong> Both buckets rose this morning (16.1%, up from 14.5%; 39%, up from 35%) even as equities rally hard — a real disagreement between the prediction market and the tape worth watching.</li>
+  </ul>
+</div>
+
+<!-- ====================== IRAN ====================== -->
+<h2>Iran / Middle East Geopolitics</h2>
+<div class="delta-callout"><strong>Delta since last run:</strong> none — a twelfth-plus consecutive quiet run.</div>
+
+<p>A fresh search this morning for any Gulf incident, CENTCOM statement, Qatar-track update, or Eisenkot coalition movement returned nothing dated this week — the only results were CENTCOM releases and Hormuz coverage from July through September, confirming there is simply no new primary-source activity, not that the search came up empty by chance. Eisenkot's mandate deadline is now 9 days out (December 6, with a possible Herzog extension to December 20). Neither tracked Polymarket Iran contract could be independently re-confirmed live this morning — carrying forward Wednesday evening's last confirmed reads (Hormuz-normal-by-Dec-31 at 2.75%, invade-Iran-before-2027 at 5.5-6.0%) rather than treating them as a fresh flat reading.</p>
+
+<p><strong>Read:</strong> still the quietest, most stable beat on file, now spanning twelve-plus consecutive runs without a corroborated new development. The standing caution still applies — this file's own history of missed Gulf incidents argues a long quiet stretch has looked wrong before, so the dedicated-search discipline continues every run even when nothing turns up.</p>
+
+<!-- ====================== MARKETS ====================== -->
+<h2>Markets</h2>
+<div class="delta-callout"><strong>Delta since last run:</strong> a broad, synchronized AI-stack rally across every market that has traded today, with no single identified catalyst — this is a premarket/completed-Asia read, not yet a US close.</div>
+
+<p>Completed Asian sessions: SK Hynix closed +5.41% and Samsung +4.55% in Seoul, with the KOSPI up 4.4% broadly; TSMC closed +1.63% in Taipei on what local coverage called "late buying." ASML traded +4.30% live in Amsterdam. US premarket (direct quote checks around 8:07am ET, after the standing data feed returned a false "no trade" read for every US name): NVDA $153.56 (+2.85%), Broadcom $311.56 (+3.56%), TSMC ADR $353.50 (+3.26%), Micron $637.13 (+5.97%), CoreWeave $44.88 (+5.42%), Nebius $91.18 (+7.28%), plus smaller gains across Microsoft, Alphabet, Meta, Amazon, and Palantir. All figures are measured against Wednesday November 25's close, since markets were shut Thursday for Thanksgiving. No oil, VIX, or Bitcoin print specific to today was found this morning — a genuine data gap on a thin, pre-holiday-close session, not a no-change finding; Wednesday's confirmed closes (VIX 28.29, WTI roughly $83.99) remain the last reads on file.</p>
+
+<p><strong>Read:</strong> this is an unusually broad and large move for a holiday-week premarket session — proportionally similar across chips, memory, networking, and neoclouds — and it is running in the opposite direction from this week's NVIDIA governance deterioration described below, with no fundamental trigger identified despite a dedicated search. Today's session closes early at 1:00pm ET on thin volume; weight the move accordingly rather than reading it as a verdict on the governance story, and treat Monday's full-volume session as the real test.</p>
+
+<!-- ====================== AI / NVIDIA ====================== -->
+<h2>AI Ecosystem</h2>
+<div class="delta-callout"><strong>Delta since last run:</strong> no escalation in the governance story itself, but two real developments underneath it — Bessent's export-control deadline lapsed silently, and NVIDIA sharply tightened Southeast Asia export compliance.</div>
+
+<p><strong>AI analyst source reviewed:</strong> <code>research/2026/2026-11-27-update.md</code> (report date 2026-11-27, as of roughly 6:10am Mountain / 8:10am Eastern) — the first new upstream report since Wednesday, since the source correctly skipped Thanksgiving. Next expected report: Monday, December 1.</p>
+
+<p>No new board action, 8-K, or NVIDIA statement addresses the second-affair report, the reported board-reconvening discussion, or S&amp;P's CreditWatch Negative placement from earlier this week. A direct search this morning corroborates that silence, though it also surfaced older, already-resolved chapters of this saga — the November 8 investigation announcement, the November 12 resignation filing, and chair Harvey Jones's November 17 earnings-call line that the board had "no plans to reinstate" Huang — all of which predate and were superseded by the November 23 unanimous reinstatement. That whiplash is itself a reminder of how fast and non-linear this story has moved, not new information today.</p>
+
+<p><strong>Treasury Secretary Bessent's roughly ten-day deadline</strong> — set around November 15, asking NVIDIA's board and outside counsel whether shell companies were used to evade China export controls — has now lapsed with no public response found from NVIDIA, its board, or Treasury. This is a live, overdue overhang heading into December 1's closed-door House interview and the December 3 Senate Banking hearing (still the working date in most reporting, though not every outlet treats it as fully locked).</p>
+
+<p><strong>NVIDIA has cut its authorized AI-chip customer list across Singapore, Malaysia, and Japan by more than half</strong> and now requires cloud partners on new contracts to keep at least 51% non-Chinese business — the sharpest enforcement step yet under the November 16-17 BIS rule. Reuters separately reports smuggled B300 servers reselling inside China at roughly 2x US list price (around $1 million versus the roughly $550,000 list price). <strong>Read-through is two-sided:</strong> tighter enforcement shrinks near-term Southeast Asian channel revenue at the margin, while the scale of the China resale premium is itself evidence of unmet compute demand there — not a clean signal for the computational-abundance thesis in either direction. Separately, the Netherlands' trade minister is lobbying against the proposed MATCH Act, which would extend US export curbs to ASML's DUV immersion tools — early-stage policy friction, not law.</p>
+
+<p>On Polymarket this morning: AI bubble burst by December 31, 2026 ticked up to <strong>16.1% Yes</strong> (from Thursday's 14.5%), and by June 30, 2027 to <strong>39% Yes</strong> (from 35%) — both still well below Wednesday's panic peak (36.25% and 53.5%) but no longer falling. CoreWeave's $4B investment-grade loan remains unpriced, now more than two weeks past its original window.</p>
+
+<p><strong>Read:</strong> a governance story that looks quiet on the surface — no new NVIDIA statement — is sitting underneath two real developments: a Treasury deadline that lapsed without consequence so far, and a materially tightened export-compliance regime. Meanwhile the equity tape is doing something hard to explain: rallying hard on no identified news, on a thin holiday-week session. Treat today's rally with real skepticism given the early close and thin volume; it is not evidence the governance risk has been resolved or dismissed by the market. <strong>Bear case:</strong> a silently blown Treasury deadline plus tightening export enforcement are both incremental negatives that the rally is simply ignoring for reasons that don't hold up under a dedicated search. <strong>Bull case:</strong> the hard demand-side evidence (Dell's record backlog, NVDA's own Q3, the broad-based nature of today's move across chips, memory, and neoclouds) may be the more durable signal, and a thin holiday session isn't where governance risk typically gets priced anyway.</p>
+
+<!-- ====================== PORTFOLIO ====================== -->
+<h2>Portfolio Tickers</h2>
+<div class="delta-callout"><strong>221st consecutive zero-position day.</strong> A broad premarket rally is lifting every named ticker with no confirmed company-specific driver — this is a markets-wide story, not portfolio-ticker news.</div>
+
+<p>Premarket moves vs. Wednesday's close: NVDA +2.85%, Broadcom +3.56%, TSMC ADR +3.26%, Micron +5.97%, CoreWeave +5.42%, Nebius +7.28%, Amazon +2.38%. No dedicated company-specific news was found this morning on Amazon, TSMC, Micron, AMD, XLE, Blue Owl, Apollo, or Ares Capital beyond the broad rally itself. CoreWeave's $4B investment-grade loan remains unpriced — a fresh check this morning found the same November 10-13 framing (Morgan Stanley and MUFG arranging, 7-7.5% yield guide), now more than two weeks past its original window, with no new pricing, size, rating, or collateral detail. The reported $22.6B TSMC Texas facility and Trump's reported Arizona groundbreaking visit remain unconfirmed by any primary source found this morning. Broadcom's Google/TPU order-cut overhang remains unconfirmed by either company.</p>
+
+<p><strong>Read:</strong> a 221st zero-position session landing on a thin, early-close holiday session is a non-event on its own. Today's rally is being driven by something outside any single named ticker's news — per the markets and AI sections above — and should not be read as a resolution of this week's NVIDIA governance risk. Standing watch: whether today's rally holds into Monday's full-volume session, whether the CoreWeave loan finally prices, and primary-source confirmation of the TSMC Texas and Arizona reports.</p>
+
+<!-- ====================== PRIVATE CREDIT ====================== -->
+<h2>Private Credit</h2>
+<div class="delta-callout"><strong>Delta since last run:</strong> none. A dedicated search this morning on Blue Owl, Apollo, Ares Capital, and KKR found nothing dated this week.</div>
+
+<p>The only Blue Owl-related item surfaced was the already-logged November 4 Q3 print from Blue Owl Capital Corporation ($0.33/share adjusted net investment income). CoreWeave's $4B loan remains unpriced, same November 10-13 framing, now more than two weeks past its original window. No new redemption prints, NAV marks, or litigation developments were found on Blue Owl, Apollo, Ares Capital, or KKR.</p>
+
+<p><strong>Read:</strong> unchanged from Thursday. CoreWeave's continued non-pricing remains this file's cleanest live test of whether contract-backed AI financing clears on reasonable terms, and this morning adds no new information either way. Standing watch: whether the CoreWeave loan prices and at what spread, whether the New Mexico air-quality permit decision tied to the Blue Owl-developed Project Jupiter surfaces, and whether further bank AI-loan sales name other Blue Owl-linked projects.</p>
+
+<!-- ====================== POLYMARKET ====================== -->
+<h2>Polymarket Calibration</h2>
+<div class="delta-callout"><strong>Delta since last run:</strong> both AI-bubble contracts ticked up for the first time since Wednesday evening's reversal — a real divergence from today's hard equity rally.</div>
+
+<table>
+  <tr><th>Contract</th><th>Thursday morning</th><th>Friday morning</th><th>Move</th></tr>
+  <tr><td>AI bubble burst by Dec 31, 2026</td><td>14.5%</td><td><strong>16.1%</strong></td><td><strong>+1.6pp</strong></td></tr>
+  <tr><td>AI bubble burst by June 30, 2027</td><td>35%</td><td><strong>39%</strong></td><td><strong>+4pp</strong></td></tr>
+  <tr><td>Hormuz traffic normal by Dec 31</td><td>2.75%</td><td>not re-confirmed</td><td>&mdash;</td></tr>
+  <tr><td>US invades Iran before 2027</td><td>6.0%</td><td>not re-confirmed</td><td>&mdash;</td></tr>
+  <tr><td>Huang out as NVIDIA CEO again — by Dec 31, 2026 / Mar 31, 2027 / Dec 31, 2027</td><td>5.3% / 17% / 29%</td><td>not re-confirmed</td><td>&mdash;</td></tr>
+</table>
+
+<p><strong>Read:</strong> the AI-bubble buckets ticking up, even modestly, at the exact moment NVDA and the broader complex are rallying hard in premarket is a genuine disagreement — equities and this specific prediction-market pair are not reading this morning's tape the same way, unlike several recent sessions where the two moved in lockstep. The Hormuz, invade-Iran, and Huang-removal contracts could not be re-confirmed live this run; Polymarket's event pages returned only page boilerplate on this attempt, a client-side-rendering or tooling gap, not a confirmed-flat finding — carrying forward Thursday's last confirmed reads rather than treating them as unchanged. Per CLAUDE.md's standing rule, when Polymarket and the equity tape disagree the way they did this morning, that disagreement is itself the signal worth tracking, not a reason to default to either one.</p>
+
+<!-- ====================== WATCHLIST ====================== -->
+<div class="watchlist">
+  <h3 style="color: var(--accent); margin-top:0;">Flags for tonight's evening run</h3>
+  <ul>
+    <li>Whether today's broad AI-stack rally holds into the 1:00pm ET early close, or fades on thin volume.</li>
+    <li>Any NVIDIA, board, or Treasury statement addressing the lapsed Bessent export-control deadline.</li>
+    <li>A clean, complete Polymarket re-pull on the Hormuz, invade-Iran, and Huang-removal contracts — today's attempt was incomplete.</li>
+    <li>Whether the CoreWeave $4B loan finally prices, and at what spread.</li>
+    <li>December 1's closed-door House interview and the December 3 Senate Banking hearing (Huang) — watch for leaks or firmer date confirmation.</li>
+    <li>Monday's full-volume session as the real test of whether today's rally or this week's governance deterioration wins out.</li>
+  </ul>
+</div>
+
+<!-- ====================== PUNCHLINE ====================== -->
+<div class="punchline-box">
+  <h3>Bottom Line</h3>
+  <p>Today's tape and today's facts are pointing in opposite directions. The facts: NVIDIA's governance crisis remains unresolved, Treasury's own deadline for an answer on export-control evasion lapsed without one, and the company just took its most aggressive Southeast Asia compliance step yet — all incrementally negative, none of it good news dressed up as bad. The tape: a broad, 2-7% rally across chips, memory, and neoclouds in every market that's traded today, with no identified catalyst strong enough to explain it. Polymarket, the instrument this file trusts over headlines, is siding with the facts over the tape this morning — both AI-bubble contracts ticked up rather than following equities higher, a real divergence worth taking seriously rather than explaining away.</p>
+  <p><strong>Portfolio implication:</strong> 221 sessions at zero positions remains the standing call. A rally this broad, on a session this thin, with this much unresolved governance risk sitting underneath it, is not a basis for changing that — it's close to the textbook case for staying out and watching. The real test is Monday's full-volume session: if the rally holds once real liquidity returns and Polymarket's bubble contracts stop diverging from equities, that's a genuinely different signal than today's thin, catalyst-free bounce.</p>
+</div>
+
+<!-- ====================== SOURCES ====================== -->
+<h2>Sources</h2>
+<div class="sources">
+  <p><strong>AI ecosystem / NVIDIA governance:</strong> AI-ecosystem analyst premarket brief, <code>research/2026/2026-11-27-update.md</code>; <a href="https://www.techrepublic.com/article/news-nvidia-ai-chip-tracking-apac-singapore-china/">TechRepublic</a> and <a href="https://www.datacenterdynamics.com/en/news/nvidia-tells-data-center-partners-to-cut-china-exposure-limits-rtx-chip-sales-to-mainland">DataCenterDynamics</a> (Southeast Asia export-compliance tightening); Reuters (smuggled B300 resale pricing in China); <a href="https://sabq.org/en/article/l2ocda1">Sabq</a> and <a href="https://cryptobriefing.com/bessent-nvidia-board-export-controls-deadline/">Cryptobriefing</a> (Bessent export-control deadline); <a href="https://ioplus.nl/en/posts/dutch-reject-us-match-act-over-asml-export-controls">Ioplus</a> and <a href="https://thenextweb.com/news/dutch-government-pushes-back-on-us-match-act-over-asml-chip-tool-curbs">TheNextWeb</a> (Netherlands/MATCH Act); <a href="https://www.aljazeera.com/news/2026/11/13/nvidias-huang-lutnick-summoned-to-testify-to-us-senate">Al Jazeera</a> (Senate Banking hearing status).</p>
+  <p><strong>Portfolio / financing:</strong> <a href="https://aiweekly.co/alerts/coreweave-shops-4b-investment-grade-loan-at-7-75-half-the-yield-of-its-14-junk">AI Weekly</a> (CoreWeave $4B loan framing, unpriced).</p>
+  <p><strong>Polymarket (direct fetch, ~08:00 PT):</strong></p>
+  <ul>
+    <li><a href="https://polymarket.com/event/ai-bubble-burst-by">AI bubble burst (by Dec 31, 2026 / by June 30, 2027)</a></li>
+  </ul>
+  <p><strong>Iran / Israel:</strong> CENTCOM public releases; Al Jazeera, JNS, Al-Monitor — see <code>state/iran.md</code> for full citations and dating caveats.</p>
+  <p><strong>Full detail and standing flags:</strong> <code>state/iran.md</code>, <code>state/markets.md</code>, <code>state/ai.md</code>, <code>state/portfolio-context.md</code>, <code>state/private-credit.md</code>, <code>state/polymarket.md</code>.</p>
+</div>
+
+<div class="footer">
+  Daily News Brief compiled November 27, 2026 · Morning Brief · Day 273 · Pacific time throughout<br>
+  <em>Shortened US session today, closes 1:00pm ET on thin post-Thanksgiving volume. No confirmed VIX/oil/BTC print found this morning — a data gap, not a no-change finding.</em>
+</div>
+
+</div>
+
+</body>
+</html>
