@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily News Brief — November 26, 2026 Evening</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --surface: #121820;
+    --surface2: #1a2230;
+    --border: #243044;
+    --text: #c8d3e0;
+    --text-dim: #6b7d93;
+    --heading: #e8edf3;
+    --accent: #4fc3f7;
+    --accent2: #81c784;
+    --warn: #ffb74d;
+    --danger: #ef5350;
+    --gold: #ffd54f;
+    --purple: #b39ddb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 15px;
+  }
+  .header {
+    background: linear-gradient(135deg, #1a0a0a 0%, #2a0a1a 50%, #0a1a2e 100%);
+    border-bottom: 1px solid var(--danger);
+    padding: 50px 40px 40px;
+    text-align: center;
+  }
+  .header .day-tag {
+    display: inline-block;
+    background: rgba(239,83,80,0.2);
+    border: 1px solid rgba(239,83,80,0.4);
+    color: var(--danger);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 14px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: var(--heading);
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+  .header .subtitle {
+    font-size: 18px;
+    color: var(--warn);
+    font-weight: 400;
+  }
+  .header .subtitle-sub {
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-top: 10px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--heading);
+    margin: 48px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  h2:first-child { margin-top: 0; }
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 28px 0 12px;
+  }
+  p { margin-bottom: 14px; }
+  strong { color: var(--heading); }
+  em { color: var(--accent); font-style: italic; }
+  ul, ol { margin: 0 0 14px 22px; }
+  li { margin-bottom: 6px; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  table th {
+    text-align: left;
+    padding: 10px 14px;
+    background: var(--surface2);
+    color: var(--text-dim);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
+  table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  table tr:last-child td { border-bottom: none; }
+  table td:first-child {
+    font-weight: 700;
+    color: var(--heading);
+  }
+  .badge {
+    display: inline-block;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 6px;
+    vertical-align: middle;
+    text-transform: uppercase;
+  }
+  .badge-red { background: var(--danger); color: #fff; }
+  .badge-green { background: var(--accent2); color: var(--bg); }
+  .badge-blue { background: var(--accent); color: var(--bg); }
+  .badge-yellow { background: var(--warn); color: var(--bg); }
+  .badge-purple { background: var(--purple); color: var(--bg); }
+  .tldr-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.1), rgba(255,183,77,0.05));
+    border: 2px solid var(--danger);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin: 24px 0 32px;
+  }
+  .tldr-box h3 {
+    color: var(--danger);
+    margin-top: 0;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .delta-callout {
+    background: var(--surface2);
+    border-left: 3px solid var(--warn);
+    border-radius: 0 6px 6px 0;
+    padding: 12px 18px;
+    margin: 0 0 18px;
+    font-size: 13.5px;
+    color: var(--text-dim);
+  }
+  .delta-callout strong { color: var(--warn); }
+  .quote-box {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    padding: 16px 22px;
+    margin: 16px 0;
+    font-style: italic;
+    color: var(--text);
+    border-radius: 0 6px 6px 0;
+  }
+  .quote-box .src {
+    display: block;
+    margin-top: 8px;
+    font-style: normal;
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+  .punchline-box {
+    background: linear-gradient(135deg, rgba(239,83,80,0.08), rgba(79,195,247,0.05));
+    border: 2px solid rgba(239,83,80,0.3);
+    border-radius: 10px;
+    padding: 28px;
+    margin: 32px 0;
+    text-align: center;
+  }
+  .punchline-box h3 {
+    color: var(--danger);
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .punchline-box p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    max-width: 760px;
+    margin: 0 auto 10px;
+    color: var(--text);
+  }
+  .watchlist {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 24px;
+    margin: 20px 0;
+  }
+  .watchlist ul { margin-left: 20px; }
+  .watchlist ul li { margin-bottom: 8px; font-size: 14px; }
+  .sources { font-size: 12.5px; color: var(--text-dim); }
+  .sources a { color: var(--accent); text-decoration: none; }
+  .sources a:hover { text-decoration: underline; }
+  .footer {
+    border-top: 1px solid var(--border);
+    margin-top: 50px;
+    padding-top: 20px;
+    color: var(--text-dim);
+    font-size: 12px;
+    text-align: center;
+  }
+  .moved-table td.up { color: var(--accent2); font-weight: 700; }
+  .moved-table td.down { color: var(--danger); font-weight: 700; }
+  .moved-table td.flat { color: var(--text-dim); font-weight: 700; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="day-tag">Daily News Brief · Thursday Evening · Thanksgiving</div>
+  <h1>November 26, 2026 — Evening Wrap</h1>
+  <div class="subtitle">Nothing resolved: no NVIDIA statement tonight on the second-affair story or the reported board reconvening. Thin holiday-session quotes lean calm, not panicked — Friday's shortened session is the real test</div>
+  <div class="subtitle-sub">Run: ~17:30 PT · Day 272 · 220th consecutive zero-position day · US markets closed all day for Thanksgiving · Friday's shortened session (closes 1:00pm ET) is the first live read</div>
+</div>
+
+<div class="container">
+
+<!-- ====================== TL;DR ====================== -->
+<div class="tldr-box">
+  <h3>TL;DR — what changed and why it matters</h3>
+  <ul>
+    <li><strong>No NVIDIA statement, 8-K, or press release tonight</strong> addressed the NYT's second-affair report, the reported board-reconvening discussion, or S&amp;P's CreditWatch Negative placement. Checked directly against NVIDIA's own newsroom — the only governance release on file is still the Nov 23 reinstatement announcement.</li>
+    <li><strong>Thin, holiday-session quotes lean calm.</strong> Live snapshots tonight show NVDA at $150.00 (+0.47% vs. Wednesday's $149.30 close) and CoreWeave at $43.40 (+1.95%) — both modestly green, not extending any after-hours decline. Treat this as indicative only; it is not a confirmed session.</li>
+    <li><strong>The one Polymarket contract re-confirmed tonight held flat</strong> — "Huang out again by Mar 31, 2027" sits at 17% Yes, unchanged from this morning, on lighter volume. A broader re-pull of the AI-bubble, Hormuz, and other Huang-removal contracts could not be completed cleanly tonight — a tooling gap, not a confirmed no-change finding.</li>
+    <li><strong>Iran stayed quiet</strong> for an eleventh-plus consecutive run; nothing dated today found on any front.</li>
+    <li><strong>CoreWeave's $4B loan is still unpriced</strong>, now over two weeks past its original window — no update tonight.</li>
+  </ul>
+</div>
+
+<!-- ====================== MORNING -> EVENING ====================== -->
+<h2>Morning &rarr; Evening: What Moved</h2>
+<div class="delta-callout"><strong>Short answer:</strong> almost nothing, because almost nothing could move — no cash session, no NVIDIA statement, no new primary reporting. The one real addition is a thin, calm set of live quotes.</div>
+
+<table class="moved-table">
+  <tr><th>Item</th><th>This morning</th><th>Tonight</th><th>Status</th></tr>
+  <tr><td>NVIDIA board/company statement</td><td>None found</td><td>None found</td><td class="flat">Unchanged — genuine gap</td></tr>
+  <tr><td>NVDA price (live, thin holiday trade)</td><td>$149.30 (Wed close)</td><td>$150.00 (+0.47%)</td><td class="up">Modestly green</td></tr>
+  <tr><td>CoreWeave price (live, thin holiday trade)</td><td>$42.57 (Wed close)</td><td>$43.40 (+1.95%)</td><td class="up">Modestly green</td></tr>
+  <tr><td>Bitcoin</td><td>&mdash;</td><td>$60,482 (-0.35%)</td><td class="flat">Unremarkable</td></tr>
+  <tr><td>Polymarket: Huang out again by Mar 31, 2027</td><td>17% ($202K vol)</td><td>17% ($160K vol)</td><td class="flat">Flat, lighter volume</td></tr>
+  <tr><td>Polymarket: AI-bubble / Hormuz / invade-Iran / other Huang contracts</td><td>14.5% / 35% / 2.75% / 6.0% / 5.3% / 29%</td><td>Not re-confirmed — tooling gap</td><td class="flat">Carry to tomorrow</td></tr>
+  <tr><td>Iran / Gulf</td><td>No material change</td><td>No material change</td><td class="flat">Quiet, 11th+ run</td></tr>
+  <tr><td>CoreWeave $4B loan</td><td>Unpriced</td><td>Unpriced</td><td class="flat">No update</td></tr>
+</table>
+
+<p><strong>Read:</strong> the morning's framing — a governance story that reopened dramatically in the headlines but hasn't yet been tested by an actual market session or company response — held through the day because there was no mechanism for it to be tested. Tonight's one piece of real signal (thin-trade quotes on NVDA and CoreWeave both slightly green, not falling further) is worth carrying into tomorrow but shouldn't be mistaken for Friday's actual open.</p>
+
+<!-- ====================== AI / NVIDIA ====================== -->
+<h2>AI Ecosystem / NVIDIA</h2>
+<div class="delta-callout"><strong>Delta since this morning:</strong> none confirmed. No NVIDIA statement; thin live quotes lean calm rather than confirming a continued slide.</div>
+
+<p>A direct check of NVIDIA's own newsroom (nvidianews.nvidia.com) tonight found no release dated today addressing the New York Times' report of a second disclosed Huang relationship (VP of Healthcare Kimberly Powell), the reported board-reconvening discussion, or S&amp;P Global's CreditWatch Negative placement on NVIDIA's AA issuer rating. The newest item on the newsroom tonight was an unrelated GeForce NOW blog post. The only governance-related release on file remains Monday's (Nov 23) reinstatement announcement.</p>
+
+<p>Live IBKR snapshots tonight — thin holiday-session trade, not a confirmed cash session, treat as indicative only — show <strong>NVDA at $150.00 (+0.47% vs. Wednesday's $149.30 close)</strong> and <strong>CoreWeave at $43.40 (+1.95% vs. Wednesday's $42.57 close)</strong>. Both are modestly green. This pushes back against the "further after-hours decline" framing some secondary coverage used when the NYT story broke Wednesday night — though a thin, low-volume holiday print is not a reliable preview of how Friday's actual shortened session opens. Bitcoin: $60,482, -0.35%, unremarkable.</p>
+
+<p><strong>Read:</strong> this is a quiet night by construction, not by confirmation — there was no cash session and no company statement for anything to react to. The real test is still ahead. <strong>Bear case:</strong> a board that reportedly already knew about a code-of-conduct violation when it reinstated Huang three days earlier, and is now facing a second disclosed relationship and a CreditWatch Negative placement, doesn't need tonight's silence to be meaningful — silence itself, ahead of a shortened low-volume session, could simply mean the real reaction is being saved for Monday. <strong>Bull case:</strong> tonight's thin-trade quotes on NVDA and CoreWeave holding up, not falling further, and Polymarket's one re-confirmed contract (17% on a second removal by March) sitting exactly where it was this morning, is at least consistent with the market not treating this as an escalating crisis.</p>
+
+<!-- ====================== MARKETS ====================== -->
+<h2>Markets</h2>
+<div class="delta-callout"><strong>Delta since this morning:</strong> still no US cash session (expected) — the only addition is thin, indicative live quotes on two names plus bitcoin.</div>
+
+<p>US cash equities remained closed all day for Thanksgiving, as expected — not a gap on its own. Live IBKR snapshots tonight show NVDA last $150.00 (+0.47% vs. Wednesday's confirmed $149.30 close) and CoreWeave last $43.40 (+1.95% vs. Wednesday's $42.57 close); bitcoin $60,482 (-0.35%). All three are thin, holiday-session reads and should not be treated as a session result. No fresh, dated-today oil or Asian-index print was found tonight — Asia's Friday local session had not yet opened as of this run, an expected gap on a holiday evening rather than a tooling failure. No VIX print found tonight.</p>
+
+<p><strong>Read:</strong> the only new information tonight is sentiment-adjacent and thin. Real confirmation of whether Wednesday's governance story and S&amp;P's CreditWatch action get priced in has to wait for Friday's shortened session (closes 1:00pm ET) — the first live market reaction to everything that's accumulated since Wednesday's close.</p>
+
+<!-- ====================== IRAN ====================== -->
+<h2>Iran / Middle East Geopolitics</h2>
+<div class="delta-callout"><strong>Delta since this morning:</strong> none — an eleventh-plus consecutive quiet run.</div>
+
+<p>A dedicated search tonight for any Gulf incident, CENTCOM statement, Qatar-track update, or Eisenkot coalition movement found nothing dated today — the same bounded set of facts this file has carried all week. Eisenkot's Dec 6 mandate deadline is now 10 days out. Polymarket's Iran-related contracts were not independently re-confirmed tonight (see the Polymarket section below for the honest accounting of tonight's data-access gap); there is no reason to expect either moved given the complete absence of news.</p>
+
+<p><strong>Read:</strong> unchanged — still the quietest, most stable beat on file, now spanning eleven-plus consecutive runs without a corroborated new development.</p>
+
+<!-- ====================== PORTFOLIO ====================== -->
+<h2>Portfolio Tickers</h2>
+<div class="delta-callout"><strong>220th consecutive zero-position day.</strong> No dedicated filing/news check completed tonight on most of the 11 named tickers beyond live quotes on two of them.</div>
+
+<p>Live IBKR snapshots tonight (thin holiday trade, not a confirmed session): NVDA $150.00 (+0.47% vs. Wednesday's close), CoreWeave $43.40 (+1.95%) — both modestly green, not continuing any after-hours decline. CoreWeave's $4B investment-grade loan remains unpriced, no update tonight, still the same Nov 10-13 framing (Morgan Stanley/MUFG arranging, 7-7.5% yield guide), now over two weeks past its original window. No dedicated 8-K/news check was run tonight on AMZN, TSMC, MU, AMD, XLE, OWL, APO, or ARCC specifically — markets and the SEC are closed for the holiday, so new filings are unlikely, but that is an assumption, not a confirmed search result, and is being stated here as a gap rather than a no-change finding.</p>
+
+<p><strong>Read:</strong> a 220th zero-position session on a market holiday remains a non-event. Tonight's one new fact — NVDA and CoreWeave holding up in thin trade rather than extending a decline — is worth carrying into tomorrow but is not a substitute for Friday's actual session.</p>
+
+<!-- ====================== PRIVATE CREDIT ====================== -->
+<h2>Private Credit</h2>
+<div class="delta-callout"><strong>Delta since this morning:</strong> none. CoreWeave's loan remains unpriced; no new developments on OWL/APO/ARCC/KKR.</div>
+
+<p>A dedicated search this evening found the same Nov 10-13 framing on CoreWeave's $4B loan, now over two weeks past its original window, with no newer pricing, size, rating, or collateral update. No new redemption prints, NAV marks, or litigation developments found on OWL, APO, ARCC, or KKR tonight — expected, given the holiday closure.</p>
+
+<p><strong>Read:</strong> unchanged from this morning. CoreWeave's loan remains this file's cleanest live test of whether contract-backed AI financing clears on reasonable terms, and tonight adds no new information either way.</p>
+
+<!-- ====================== POLYMARKET ====================== -->
+<h2>Polymarket Calibration</h2>
+<div class="delta-callout"><strong>Delta since this morning:</strong> the one contract re-confirmed held flat; the rest of the tracked list could not be cleanly re-pulled tonight — a tooling gap, stated honestly rather than hidden.</div>
+
+<table>
+  <tr><th>Contract</th><th>This morning</th><th>Tonight</th><th>Move</th></tr>
+  <tr><td>Huang out again by Mar 31, 2027</td><td>17% ($202.4K vol)</td><td><strong>17%</strong> ($160.2K vol)</td><td>Flat, lighter volume</td></tr>
+  <tr><td>AI bubble burst by Dec 31, 2026</td><td>14.5%</td><td>Not re-confirmed</td><td>&mdash;</td></tr>
+  <tr><td>AI bubble burst by June 30, 2027</td><td>35%</td><td>Not re-confirmed</td><td>&mdash;</td></tr>
+  <tr><td>Hormuz traffic normal by Dec 31</td><td>2.75%</td><td>Not re-confirmed</td><td>&mdash;</td></tr>
+  <tr><td>US invades Iran before 2027</td><td>6.0%</td><td>Not re-confirmed</td><td>&mdash;</td></tr>
+  <tr><td>Huang out again by Dec 31, 2026</td><td>5.3%</td><td>Not re-confirmed</td><td>&mdash;</td></tr>
+  <tr><td>Huang out again by Dec 31, 2027</td><td>29%</td><td>Not re-confirmed</td><td>&mdash;</td></tr>
+</table>
+
+<p><strong>Read:</strong> the one clean data point available tonight — the March 2027 Huang-removal contract holding flat at 17% on lighter volume — is consistent with nothing new having happened for the market to react to (no NVIDIA statement, no new confirmed reporting). But this file cannot honestly claim the AI-bubble or Iran contracts are confirmed flat tonight, only that there's no specific reason to expect a move given the total news vacuum. A direct Gamma API pull hit a non-functioning search parameter tonight, and a fallback volume-sorted scan ran out of budget before reaching the rest of the tracked list — a tooling problem to fix with a clean pull tomorrow morning, not a finding to report as data.</p>
+
+<!-- ====================== WATCHLIST ====================== -->
+<div class="watchlist">
+  <h3 style="color: var(--accent); margin-top:0;">Overnight / Friday morning watch list</h3>
+  <ul>
+    <li><strong>Highest priority:</strong> any NVIDIA statement or 8-K addressing the second-affair story, the board-reconvening reports, or the S&amp;P CreditWatch placement.</li>
+    <li>Friday's shortened session (closes 1:00pm ET) — the first live market read on everything accumulated since Wednesday's close. Tonight's thin, calm quotes are not a reliable preview.</li>
+    <li>A clean, complete Polymarket re-pull on the full tracked list (AI-bubble buckets, Hormuz, invade-Iran, and all three Huang-removal date buckets).</li>
+    <li>Whether CoreWeave's $4B loan finally prices, now over two weeks late.</li>
+    <li>Primary-source confirmation or denial of the TSMC $22.6B Texas facility report and Trump's reported Arizona groundbreaking visit.</li>
+    <li>Asia's Friday session (Tokyo/Seoul/Taipei) — the first full session to price Wednesday night's NVIDIA story once it opens.</li>
+  </ul>
+</div>
+
+<!-- ====================== PUNCHLINE ====================== -->
+<div class="punchline-box">
+  <h3>Bottom Line</h3>
+  <p>Tonight is a non-event by construction — US markets are closed, NVIDIA hasn't said anything, and the primary reporting on the second-affair story and the board-reconvening discussion hasn't been added to or walked back since Wednesday night. The one genuinely new data point — thin, holiday-session quotes showing NVDA and CoreWeave both modestly green rather than extending any decline — is a weak signal worth noting, not a verdict. The honest headline is that nothing has actually been tested yet: no market session, no company statement, no fresh primary reporting.</p>
+  <p><strong>Portfolio implication:</strong> 220 sessions at zero positions remains the standing call, unchanged. Nothing tonight moves that bar either direction. Friday's shortened, low-volume session is still a weak read even when it arrives; the cleaner test is Monday's full session, once NVIDIA has had a realistic window to respond and real volume can confirm or reject tonight's calm, thin-trade signal.</p>
+</div>
+
+<!-- ====================== SOURCES ====================== -->
+<h2>Sources</h2>
+<div class="sources">
+  <p><strong>NVIDIA governance:</strong> NVIDIA's own newsroom (nvidianews.nvidia.com) — checked directly tonight, no new release found. See <code>state/ai.md</code> for the morning's primary-source citations (NYT, WSJ, Reuters, ABC News, Fox Business, Washington Post, S&amp;P/CNBC/Benzinga/Yahoo Finance coverage).</p>
+  <p><strong>Live market data:</strong> Interactive Brokers real-time snapshots (NVDA, CoreWeave, Bitcoin) — thin holiday-session trade, indicative only, not a confirmed cash session.</p>
+  <p><strong>Polymarket (Gamma API, ~17:00-17:30 PT):</strong></p>
+  <ul>
+    <li><a href="https://polymarket.com/">Jensen Huang removal / NVIDIA CEO contracts</a></li>
+  </ul>
+  <p><strong>Iran / Israel:</strong> dedicated search tonight, no new dated reporting found — see <code>state/iran.md</code> for standing citations.</p>
+  <p><strong>Full detail and standing flags:</strong> <code>state/iran.md</code>, <code>state/markets.md</code>, <code>state/ai.md</code>, <code>state/portfolio-context.md</code>, <code>state/private-credit.md</code>, <code>state/polymarket.md</code>.</p>
+</div>
+
+<div class="footer">
+  Daily News Brief compiled November 26, 2026 · Evening Wrap · Day 272 · Pacific time throughout<br>
+  <em>US markets closed all day for Thanksgiving. No NVIDIA statement found tonight. Shortened session Friday 11/27, closes 1:00pm ET.</em>
+</div>
+
+</div>
+
+</body>
+</html>
