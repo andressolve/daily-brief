@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daily News Brief — November 27, 2026 Evening</title>
+<title>Daily News Brief — November 28, 2026 Morning</title>
 <style>
   :root {
     --bg: #0b0e14;
@@ -151,14 +151,76 @@
   }
   .delta-callout {
     background: var(--surface2);
-    border-left: 3px solid var(--warn);
+    border-left: 3px solid var(--accent);
     border-radius: 0 6px 6px 0;
     padding: 12px 18px;
-    margin: 0 0 18px;
+    margin: 0 0 20px;
     font-size: 13.5px;
     color: var(--text-dim);
   }
-  .delta-callout strong { color: var(--warn); }
+  .delta-callout strong { color: var(--accent); }
+  .faction-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .faction-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px 26px;
+    border-left: 4px solid var(--border);
+  }
+  .faction-card.f-irgc { border-left-color: var(--danger); }
+  .faction-card.f-hawk { border-left-color: var(--warn); }
+  .faction-card.f-civ { border-left-color: var(--accent); }
+  .faction-card.f-ref { border-left-color: var(--accent2); }
+  .faction-card.f-cler { border-left-color: var(--purple); }
+  .faction-card h4 {
+    font-size: 16px;
+    color: var(--heading);
+    margin-bottom: 4px;
+  }
+  .faction-card .lead {
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .scenario-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+    margin: 20px 0;
+  }
+  .scenario-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 20px;
+  }
+  .scenario-card .pct {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+  .scenario-card h4 {
+    font-size: 14px;
+    color: var(--heading);
+    margin: 4px 0 10px;
+  }
+  .scenario-card p {
+    font-size: 13px;
+    color: var(--text);
+    margin: 0;
+  }
+  .scenario-card.red .pct { color: var(--danger); }
+  .scenario-card.yellow .pct { color: var(--warn); }
+  .scenario-card.green .pct { color: var(--accent2); }
+  .scenario-card.purple .pct { color: var(--purple); }
   .quote-box {
     background: var(--surface);
     border-left: 3px solid var(--accent);
@@ -174,6 +236,56 @@
     font-style: normal;
     font-size: 12px;
     color: var(--text-dim);
+  }
+  .honest-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--purple);
+    border-radius: 8px;
+    padding: 22px 26px;
+    margin: 24px 0;
+  }
+  .honest-box h3 {
+    color: var(--purple);
+    margin-top: 0;
+    margin-bottom: 14px;
+  }
+  .honest-box ol { margin-left: 20px; }
+  .honest-box ol li { margin-bottom: 12px; }
+  .timeline {
+    border-left: 2px solid var(--border);
+    margin: 16px 0 24px 10px;
+    padding-left: 22px;
+  }
+  .timeline .item {
+    position: relative;
+    margin-bottom: 18px;
+  }
+  .timeline .item::before {
+    content: '';
+    position: absolute;
+    left: -30px;
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--bg);
+  }
+  .timeline .item.red::before { background: var(--danger); }
+  .timeline .item.green::before { background: var(--accent2); }
+  .timeline .item.yellow::before { background: var(--warn); }
+  .timeline .date {
+    font-size: 11px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+  }
+  .timeline .text {
+    font-size: 14px;
+    color: var(--text);
+    margin-top: 4px;
   }
   .punchline-box {
     background: linear-gradient(135deg, rgba(239,83,80,0.08), rgba(79,195,247,0.05));
@@ -218,139 +330,115 @@
     font-size: 12px;
     text-align: center;
   }
-  .moved-table td.up { color: var(--accent2); font-weight: 700; }
-  .moved-table td.down { color: var(--danger); font-weight: 700; }
 </style>
 </head>
 <body>
 
 <div class="header">
-  <div class="day-tag">Daily News Brief · Friday Evening Wrap · Post-Thanksgiving Close</div>
-  <h1>November 27, 2026 — Evening Wrap</h1>
-  <div class="subtitle">The rally held and was real — but NVDA itself lagged its own sector while Polymarket's AI-bubble bet kept climbing. The tape bought AI-capex demand tonight, not NVIDIA's governance risk being resolved.</div>
-  <div class="subtitle-sub">Run: ~17:30 PT · Day 273 · 221st consecutive zero-position day · Shortened US session closed 1:00pm ET · Dec 1 House interview and Dec 3 Senate hearing (Huang) still on the calendar</div>
+  <div class="day-tag">Weekend Run &middot; Quiet Across Every Beat</div>
+  <h1>Daily News Brief — November 28, 2026</h1>
+  <div class="subtitle">Morning Brief</div>
+  <div class="subtitle-sub">Run: ~08:00 PT &middot; Day 274, Saturday &middot; No cash session &middot; Eisenkot's Dec 6 mandate deadline T&minus;8 days &middot; 222nd consecutive zero-position day &middot; Monday's full-volume session is the next real catalyst for NVDA/sector-gap and Polymarket's AI-bubble climb</div>
 </div>
 
 <div class="container">
 
-<!-- ====================== TL;DR ====================== -->
-<div class="tldr-box">
-  <h3>TL;DR — what changed and why it matters</h3>
-  <ul>
-    <li><strong>This morning's rally held into the close, confirmed by real volume.</strong> S&amp;P 500 closed +1.60%, Nasdaq +2.31% (S&amp;P's best week since April 2025, +5.6%). VIX closed 23.81, down ~11% from Wednesday — a genuine volatility unwind, not a thin-volume drift.</li>
-    <li><strong>But NVDA itself lagged its own sector.</strong> The PHLX Semiconductor Index closed +4.7%, with Micron and Marvell each up more than 7% — yet NVDA closed only +0.8% at $150.49 after trading lower most of the session. The market bought chips broadly; it didn't clearly buy NVIDIA's own governance story being behind it.</li>
-    <li><strong>Polymarket's AI-bubble contracts extended their climb — a third straight session higher, against the rally.</strong> Dec 31, 2026 bucket to 18.1% (from 16.1% this morning); June 30, 2027 bucket to 41% (from 39%). This is now a multi-session divergence, not one morning's noise.</li>
-    <li><strong>Still no NVIDIA, board, or Treasury statement</strong> on the lapsed Bessent export-control deadline, the second Huang-affair report, or the board-reconvening story. The silence from Wednesday night continues unbroken.</li>
-    <li><strong>CoreWeave's $4B loan remains unpriced</strong>, now creeping toward three weeks past its original window. The oil-market "tanker/Saudi facility attack" framing behind this week's crude gain checked out to be weeks-old incidents, not a fresh Gulf catalyst — the Iran beat stays quiet.</li>
-  </ul>
-</div>
+  <div class="tldr-box">
+    <h3>TL;DR — What Changed and Why It Matters</h3>
+    <ul>
+      <li><strong>Nothing escalated or resolved in the NVIDIA governance story over the weekend.</strong> No board statement, 8-K, or Treasury/Bessent response has addressed the lapsed export-control deadline, the second-affair reporting, or the board-reconvening story — now three full sessions of silence since it broke Wednesday night.</li>
+      <li><strong>Friday's close sharpened, not resolved, the key tension:</strong> a real, volume-backed chip/memory rally (S&P +1.60%, PHLX Semis +4.7%, VIX down ~11%) left NVDA itself lagging its own sector (+0.8% vs. peers up 5-16%), while Polymarket's AI-bubble contracts climbed for a third straight session even as equities rallied. Monday's full-volume session is the real test of which signal wins.</li>
+      <li><strong>Iran/Gulf logged a fourteenth-plus consecutive quiet run.</strong> No Gulf incident, CENTCOM statement, Qatar-track update, or Eisenkot coalition movement found this week. This is now the longest, cleanest de-escalation signal this file has tracked all year.</li>
+      <li><strong>A new supplemental research note sharpens the AI-capex bear case into something falsifiable.</strong> Across ~14 major banks' 2027 outlooks, J.P. Morgan's own fleet-breakeven model shows a ~$700B modeled demand surplus that a 29% enterprise-revenue shortfall would erase entirely — watch realized revenue (Dell/CoreWeave/Nebius-style data), not capex headlines.</li>
+      <li><strong>Markets are otherwise dark this weekend.</strong> Bitcoin, the only live read, drifted -0.78% to $59,290 — unremarkable. No Polymarket re-pull could be completed this morning; Friday evening's last confirmed levels are carried forward, unverified.</li>
+    </ul>
+  </div>
 
-<!-- ====================== MORNING -> EVENING ====================== -->
-<h2>Morning → Evening: What Moved</h2>
-<div class="delta-callout"><strong>Delta since this morning:</strong> the premarket rally not only held, it broadened and was confirmed by a real VIX decline — but the single most important open question (does NVDA itself participate) resolved "no," and Polymarket's AI-bubble pricing kept moving against the rally.</div>
+  <h2>Iran / Middle East Geopolitics</h2>
+  <div class="delta-callout"><strong>Delta since last run:</strong> none. Fourteenth-plus consecutive quiet run — no corroborated Gulf, CENTCOM, Qatar-track, or Eisenkot development found this week.</div>
+  <p>A dedicated search this morning for any Gulf incident, CENTCOM statement, Qatar-track update, Houthi/Riyadh activity, or Eisenkot coalition movement turned up nothing dated this week. Results kept circling back to the same two already-logged anchor facts: the confirmed November 19 Houthi missile strike on the Public Investment Fund's Riyadh headquarters tower (the second financial-district strike in under two weeks at the time), and the November 16 account of Gadi Eisenkot working toward a 48-seat minority government. Nothing newer than either has surfaced in over a week of dedicated searching.</p>
+  <p>Eisenkot's 28-day mandate clock, which began November 8 and runs to December 6 (extendable 14 days by Herzog), is now <strong>8 days out</strong>. His Yashar party reportedly has a fallback plan to force a minority-government vote if full coalition talks with the Haredi parties fail before the deadline. No public movement on that front has been reported since November 16 — now a stretch of nearly two weeks of silence on a deadline that is rapidly closing in.</p>
+  <p><strong>The structural read:</strong> this is the longest, cleanest de-escalation signal this beat has logged all year — fourteen-plus consecutive checkpoints (spanning weekday and weekend runs) without a corroborated new development on either the war track or the Israeli coalition track. The honest caveat this file has had to learn the hard way (twice, in mid-November, on the Sheikh Isa/Qeshm/Kuwait exchange and the PIF-tower sourcing confusion) is that a long quiet stretch has looked wrong before when search cadence lagged real events, not when the underlying situation had actually changed. That said, the current stretch has now survived multiple dedicated, outlet-specific re-checks (Al Jazeera, Times of Israel, Haaretz, JNS, CENTCOM's own releases) rather than just a general query returning nothing — a materially stronger basis for the "genuinely quiet" read than earlier in the month.</p>
+  <p><strong>Bear case:</strong> Eisenkot's silence is now approaching two weeks against a deadline 8 days out — that could mean talks are stuck in a way that isn't being reported, or a deal (or collapse) is being negotiated quietly before an announcement. <strong>Bull case:</strong> fourteen-plus quiet checkpoints across both tracks simultaneously, surviving dedicated primary-source re-checks, is a materially stronger signal than this file has had at any other point this cycle.</p>
+  <p><strong>Calibration vs. invest/CLAUDE.md (Apr 8):</strong> that file's framing predates both the Nov 8-19 Gulf/Houthi exchange and Eisenkot's coalition attempt entirely — it should not be read as current on either front. Reality has moved well past April's assumptions.</p>
 
-<table>
-  <tr><th>Metric</th><th>Morning (premarket)</th><th>Evening (confirmed close)</th><th>Read</th></tr>
-  <tr><td>S&amp;P 500</td><td>no confirmed print</td><td><strong>+1.60%</strong></td><td>Best week since April 2025</td></tr>
-  <tr><td>Nasdaq Composite</td><td>no confirmed print</td><td><strong>+2.31%</strong></td><td>Chips led</td></tr>
-  <tr><td>PHLX Semiconductor Index</td><td>no confirmed print</td><td><strong>+4.7%</strong></td><td>MU, MRVL each &gt;7%</td></tr>
-  <tr><td>NVDA</td><td>+2.85% premarket ($153.56)</td><td><strong>+0.8% ($150.49)</strong></td><td>Lagged its own sector all session</td></tr>
-  <tr><td>VIX</td><td>no confirmed print</td><td><strong>23.81 (-11% vs. Wed)</strong></td><td>Real risk unwind, not drift</td></tr>
-  <tr><td>WTI / Brent</td><td>no confirmed print</td><td><strong>$83.08 / $95.44</strong></td><td>Weekly oil gain traced to stale (not fresh) Gulf incidents</td></tr>
-  <tr><td>AI bubble burst by Dec 31, 2026 (Polymarket)</td><td>16.1%</td><td><strong>18.1%</strong></td><td>Third straight session higher</td></tr>
-  <tr><td>AI bubble burst by Jun 30, 2027 (Polymarket)</td><td>39%</td><td><strong>41%</strong></td><td>Same pattern</td></tr>
-</table>
+  <h2>Markets / Macro</h2>
+  <div class="delta-callout"><strong>Delta since last run:</strong> no cash session today (Saturday). Bitcoin, the only live read, drifted -0.78% overnight — unremarkable.</div>
+  <table>
+    <tr><th>Instrument</th><th>Level</th><th>Move</th><th>Note</th></tr>
+    <tr><td>Bitcoin (BTC)</td><td>$59,290.25</td><td style="color:var(--danger)">-0.78%</td><td>Direct IBKR snapshot; prior close $59,756.00. Only live read today.</td></tr>
+    <tr><td>S&P 500</td><td>close Fri 11/27</td><td style="color:var(--accent2)">+1.60%</td><td>Best week since April 2025 (+5.6% on the week). Last confirmed read; no session today.</td></tr>
+    <tr><td>Nasdaq Composite</td><td>close Fri 11/27</td><td style="color:var(--accent2)">+2.31%</td><td>Carried forward from Friday's close.</td></tr>
+    <tr><td>PHLX Semiconductor (SMH proxy)</td><td>close Fri 11/27</td><td style="color:var(--accent2)">+4.7%</td><td>MU and MRVL each >7%; SanDisk +15.96%.</td></tr>
+    <tr><td>VIX</td><td>close Fri 11/27</td><td style="color:var(--accent2)">23.81 (-11%)</td><td>Real volatility unwind vs. Wednesday's 26.80 — the cleanest confirmation Friday's rally reflected genuine risk appetite.</td></tr>
+    <tr><td>WTI crude</td><td>settle Fri 11/27</td><td style="color:var(--danger)">$83.08 (-0.7%)</td><td>Some coverage attributed the week's oil gain to fresh "tanker/Saudi facility attacks" — a dedicated check found no new attack dated this week; the cited incidents are weeks old (Al Jubail, late Oct; Yanbu, Aug).</td></tr>
+    <tr><td>Brent crude</td><td>settle Fri 11/27</td><td style="color:var(--danger)">$95.44 (-1.2% day, +~3% week)</td><td>Same backward-looking risk-premium framing applies.</td></tr>
+  </table>
+  <p>No cash, futures, or commodity session runs on Saturdays. Friday's close was a genuine confirmation of real risk appetite returning (VIX down 11% on real volume, not a thin holiday drift), but it left one specific question open: <strong>NVDA closed +0.8% at $150.49 while the rest of its own sector rallied 4.7-16%</strong> — a laggard within a rally it should have led. Coverage ties the underperformance to renewed attention on NVIDIA's Southeast Asia export-customer cuts (already known, not a fresh catalyst), not a new idiosyncratic shock. Monday's full-volume session is the first real test of whether that gap closes or widens.</p>
+  <p><strong>Bear case:</strong> a stock lagging its own sector's rally, for a second straight session, on a governance/compliance overhang the market has had four days to price and still hasn't resolved, is a real divergence — not noise. <strong>Bull case:</strong> the breadth and volume behind Friday's rally (not just NVDA-specific short-covering) suggests the broader AI-capex demand case is intact regardless of NVIDIA's company-specific legal exposure.</p>
 
-<!-- ====================== MARKETS ====================== -->
-<h2>Markets</h2>
-<div class="delta-callout"><strong>Delta since this morning:</strong> confirmed close, not a premarket read — the rally was real and broad, but NVDA underperformed its own sector.</div>
+  <h2>AI Ecosystem</h2>
+  <div class="delta-callout"><strong>Delta since last run:</strong> no escalation, no resolution on the governance story. One new supplemental research note (not the daily report) sharpens the AI-capex bear case.</div>
+  <p><strong>AI analyst source reviewed:</strong> <code>research/2026/2026-11-27-update.md</code> (report date 2026-11-27) remains the latest daily upstream report — the source runs weekdays only, so no new daily report was expected today; next is Monday 2026-11-30. A new supplemental note was published today: <code>research/2026/2026-11-28-bank-outlooks-ai-payback.md</code>, "What the 2027 bank outlooks assume about AI payback."</p>
+  <p>A dedicated search this morning found <strong>no NVIDIA board statement, 8-K, or Treasury/Bessent response</strong> addressing the lapsed export-control deadline, the second-disclosed-relationship story (Kimberly Powell, NVIDIA's VP of Healthcare), or the reported board-reconvening discussion first surfaced by the New York Times, WSJ, Reuters, ABC News, Fox Business, and the Washington Post on November 25-26. That silence — now spanning Wednesday night through this weekend — remains the single most-watched open thread on this beat. S&P Global's CreditWatch Negative placement on NVIDIA's AA rating (citing governance, key-man, and board-independence risk, with a possible one-notch cut within ~90 days) also remains unaddressed by the company.</p>
+  <p>Treasury Secretary Bessent's roughly ten-day deadline (set around November 15, asking NVIDIA's board and outside counsel whether shell companies were used to evade China export controls) lapsed around November 25 with no public response from NVIDIA, its board, or Treasury — now well past due, heading into the December 1 closed-door House Financial Services Committee interview with Huang and the December 3 Senate Banking Committee hearing.</p>
+  <h3>The bank-outlooks cross-check</h3>
+  <p>Today's supplemental research note synthesizes roughly fourteen major banks' 2027 outlooks on AI capital expenditure. Estimates for 2027 global AI investment range from ~$1.4T (UBS) to ~$1.8T (Morgan Stanley, Goldman Sachs). The most useful piece is J.P. Morgan Private Bank's own reproducible fleet-breakeven model: at a 15% pre-tax cost of capital and the bank's assumed hardware lifespans, a 129-GW fleet by end-2029 needs <strong>$2.93 per GPU-hour</strong> at 71% rented utilization to clear its revenue hurdle — implying $2.87T in required annual end-customer revenue against a modeled $3.57T of potential revenue (27M software engineers at $3,228/month, plus 60% of 357M other knowledge workers at $539/month). That's a roughly <strong>$700B modeled surplus</strong> — but <strong>a 29% shortfall in enterprise revenue alone erases it entirely.</strong> Separately, BofA/Merrill estimates a 20% cut to 2027 AI capex would lower AI-semiconductor EPS by 35-40% and S&P 500 EPS by 7-8% before secondary effects.</p>
+  <p>This is bank research, not news, and it changes no probability on file — but it gives Andres's standing "bear case on every take" mandate a sharper, falsifiable target than aggregate capex totals: the thing to actually watch is realized enterprise-revenue retention and expansion on production AI deployments (the kind of hard data Dell's backlog or CoreWeave/Nebius utilization figures represent), not announced capex dollars, which several of the surveyed banks' own outlooks note can diverge from actual demand realization.</p>
+  <p><strong>Bear case:</strong> the market has now had three full sessions since the second-affair story broke and still hasn't produced a resolution on NVIDIA's own governance risk, even as the broader sector rallies around it — that gap is the market's own uncertainty showing up in price, and the bank-outlooks synthesis gives a concrete number (a 29% enterprise-revenue shortfall) that would blow a hole in even the bullish capex case. <strong>Bull case:</strong> none of the governance reporting is yet company-confirmed, hard demand data (Dell's record $132.3B backlog, NVDA's own Q3 beat) remains untouched by any of this, and a rallying sector broadly suggests the market isn't pricing a capex pullback at all right now.</p>
 
-<p>S&amp;P 500 closed <strong>+1.60%</strong>, Nasdaq Composite <strong>+2.31%</strong> — the S&amp;P's best week since April 2025, up 5.6% for the week; the Dow rose roughly 591 points, its best week since 2022. The PHLX Semiconductor Index closed <strong>+4.7%</strong>; Micron and Marvell each gained more than 7%; SanDisk closed +15.96%. <strong>NVDA closed $150.49, +0.8%</strong> — a real gain, but it traded lower for much of the session and finished well behind the rest of the chip complex; coverage ties the underperformance to renewed attention on NVIDIA's Southeast Asia customer-list cuts, already known from this morning, not a new catalyst. <strong>VIX closed 23.81, down roughly 11% from Wednesday's 26.80</strong> — the cleanest single confirmation that today's rally reflects real risk appetite returning, not just thin-volume holiday drift. WTI settled $83.08 (-0.7% vs. Wednesday); Brent settled $95.44 (-1.2% on the day but +~3% on the week) — some coverage attributed the week's oil gain to "tanker attacks and Saudi facility attacks reviving supply fears," but a dedicated search tonight found no new attack dated this week; the referenced incidents (Al Jubail, late October; Yanbu, August) are weeks old, so this reads as backward-looking risk-premium framing, not a fresh Gulf catalyst. No confirmed Bitcoin close was found tonight — a genuine data gap.</p>
+  <h2>Portfolio Tickers</h2>
+  <div class="delta-callout"><strong>Delta since last run:</strong> 222nd consecutive zero-position day. No company-specific news found on any of the 11 named tickers since Friday's close.</div>
+  <table>
+    <tr><th>Ticker</th><th>Note</th></tr>
+    <tr><td>NVDA</td><td>Friday close $150.49 (+0.8%), lagging its own sector. Indicative weekend quote $149.80 (+0.33%) — thin trade, not a session result. No new company-specific news.</td></tr>
+    <tr><td>MU</td><td>Friday close >+7%, the cleanest portfolio-relevant move of the week, part of the broad chip/memory rally.</td></tr>
+    <tr><td>CRWV / NBIS / TSM</td><td>Most NVDA-adjacent names in this watchlist; Friday's rally does not yet read as "governance risk resolved" for these specifically, given NVDA's own lag. No new company-specific news this weekend.</td></tr>
+    <tr><td>AMZN, AMD, XLE, OWL, APO, ARCC</td><td>No dedicated company-specific news found beyond the broad sector move.</td></tr>
+    <tr><td>TSMC</td><td>Reported $22.6B Texas facility and Trump's reported Arizona groundbreaking visit remain unconfirmed by any primary source.</td></tr>
+  </table>
+  <p>222 consecutive sessions at zero positions. Monday's full-volume session is the next real pricing test for this watchlist — specifically whether NVDA, CRWV, NBIS, and TSM catch up to Friday's broader chip/memory rally or the gap widens further. Nothing this weekend changes the standing re-entry bar (a resolved, multi-session-confirmed setup), which remains deliberately high.</p>
 
-<p><strong>Read:</strong> today resolved part of the question flagged this morning — the rally held, with real volume and a real VIX decline behind it — but opened a sharper one: NVDA underperforming its own sector while the broader AI-stack rallies hard, at the same time Polymarket's AI-bubble buckets kept climbing, says the market is pricing NVIDIA-specific governance and compliance risk separately from sector-wide AI-capex optimism. Monday's full-volume session is the next real test, and it now carries a more specific question than this morning's framing: does NVDA catch up to its sector, or does the gap widen further.</p>
+  <h2>Private Credit</h2>
+  <div class="delta-callout"><strong>Delta since last run:</strong> none. CoreWeave's $4B loan remains unpriced.</div>
+  <p>A dedicated search this morning on Blue Owl, Apollo, Ares Capital, and KKR found no news dated this week — only older background (February's OBDC II redemption-cap episode, May's Apollo fund-sale headline, September's sector-wide withdrawal story), none of it new. CoreWeave's reported $4B investment-grade loan (Morgan Stanley/MUFG arranging, a 7-7.5% yield guide vs. its existing unsecured notes' mid-teens yield) remains unpriced, now creeping past <strong>three weeks</strong> beyond its original "could price next week" framing from the November 11 Bloomberg report.</p>
+  <p>This loan's continued non-pricing remains this file's cleanest live test of whether contract-backed AI-infrastructure financing can clear at reasonable terms in the current environment — a test that keeps getting pushed, not resolved. The earlier-logged cluster of bank AI-loan sales at a discount (ING, Société Générale, and an unconfirmed HSBC/Oracle-linked slice tied to Blue Owl's Project Jupiter) remains the sharper concrete evidence of financing stress on this beat than anything new this weekend.</p>
 
-<!-- ====================== AI / NVIDIA ====================== -->
-<h2>AI Ecosystem</h2>
-<div class="delta-callout"><strong>Delta since this morning:</strong> no new upstream report (none expected until Monday). The governance silence continues; NVDA's own underperformance and Polymarket's continued climb are tonight's real facts.</div>
+  <h2>Polymarket Calibration</h2>
+  <div class="delta-callout"><strong>Delta since last run:</strong> no live re-pull completed this morning (tooling gap). Carrying forward Friday evening's last confirmed reads, unverified.</div>
+  <table>
+    <tr><th>Contract</th><th>Friday PM (last confirmed)</th><th>This morning</th><th>Note</th></tr>
+    <tr><td>AI bubble burst by Dec 31, 2026</td><td>18.1% Yes</td><td>not re-confirmed</td><td>Third straight higher print through Friday (16.1% → 18.1%), climbing even as equities rallied.</td></tr>
+    <tr><td>AI bubble burst by June 30, 2027</td><td>41% Yes</td><td>not re-confirmed</td><td>Same pattern (39% → 41% Friday).</td></tr>
+    <tr><td>Huang out as NVIDIA CEO again (various dates)</td><td>not re-confirmed (3rd session)</td><td>not re-confirmed (4th session)</td><td>Last clean read Thursday AM: 5.3%/17%/29% across Dec 2026/Mar 2027/Dec 2027 windows. Standing client-side-rendering gap on this specific event page.</td></tr>
+    <tr><td>Hormuz traffic normal by Dec 31</td><td>2.75% (last confirmed)</td><td>not re-confirmed</td><td>Months-long drift near all-time lows.</td></tr>
+    <tr><td>US invades Iran before 2027</td><td>5.5-6.0% (last confirmed)</td><td>not re-confirmed</td><td>Near multi-week lows, flat for several consecutive reads.</td></tr>
+  </table>
+  <p><strong>Per Andres's standing rule, Polymarket wins over pundit takes when they disagree — and right now Polymarket is disagreeing with the equity tape.</strong> Friday's cash session rallied hard on real volume; Polymarket's AI-bubble contracts climbed anyway, for a third consecutive session. That divergence is unresolved heading into Monday and is this beat's top watch item: does the prediction market's slow-building skepticism get vindicated once real volume returns, or does it fade the way several prior single-session whipsaws on these same contracts have faded before.</p>
 
-<p><strong>AI analyst source reviewed:</strong> still <code>research/2026/2026-11-27-update.md</code> (report date 2026-11-27) — unchanged since this morning. The source runs weekdays only; next expected report is Monday, December 1.</p>
+  <div class="punchline-box">
+    <h3>Bottom Line / Portfolio Implication</h3>
+    <p>This is a genuinely quiet weekend layered on top of an unresolved tension from Friday's close: a broad, real chip-sector rally that NVIDIA's own stock didn't fully participate in, while Polymarket's AI-bubble pricing keeps drifting up despite that rally. Neither signal has been falsified yet — Monday's full-volume session is the actual test, not this weekend's silence. The new bank-outlooks research doesn't change the portfolio's zero-position stance (222 consecutive days), but it sharpens what would actually validate or break the computational-abundance thesis going forward: realized enterprise-AI revenue retention, not capex headlines, is the number that matters, and a 29% enterprise-revenue shortfall is enough to erase even J.P. Morgan's own bullish surplus. Iran remains the one unambiguously quiet beat — fourteen-plus consecutive checkpoints without a corroborated development is the cleanest de-escalation signal this file has tracked all year, though Eisenkot's December 6 deadline (8 days out) is close enough that a surprise there shouldn't be ruled out. No position changes are warranted from anything in this brief; the standing re-entry bar (a resolved, multi-session-confirmed setup) stays high into Monday.</p>
+  </div>
 
-<p>No board statement, 8-K, or Treasury response addressed the second-affair report, the board-reconvening reports, or the lapsed Bessent deadline tonight — the silence from Wednesday night continues unbroken into a second full session past the deadline's lapse. NVDA's underperformance within today's broad rally is the notable fact: the market bought Micron, Marvell, and the sector broadly, but NVDA specifically lagged, trading lower for much of the session before a modest late recovery to +0.8%.</p>
+  <h2>Sources</h2>
+  <div class="sources">
+    <p>
+      <a href="https://nvidianews.nvidia.com/news/nvidia-board-reinstates-jensen-huang-as-president-ceo-and-board-director">NVIDIA board reinstatement release, Nov 23</a> &middot;
+      <a href="https://www.aljazeera.com/news/2026/11/19/saudi-led-coalition-intercepts-houthi-missiles-targeting-riyadh-and-south">Al Jazeera — Houthi missiles targeting Riyadh, Nov 19</a> &middot;
+      <a href="https://www.scmp.com/news/world/middle-east/article/3375108/houthis-hit-riyadhs-tallest-skyscraper-strike-saudi-wealth-fund-hq">SCMP — Houthis hit Riyadh's tallest skyscraper</a> &middot;
+      <a href="https://www.aljazeera.com/news/2026/11/16/is-israels-opposition-less-right-wing-than-netanyahu">Al Jazeera — Eisenkot coalition status, Nov 16</a> &middot;
+      <a href="https://aiweekly.co/alerts/coreweave-shops-4b-investment-grade-loan-at-7-75-half-the-yield-of-its-14-junk">CoreWeave $4B loan terms, AI Weekly</a> &middot;
+      <a href="https://sabq.org/en/article/l2ocda1">Bessent gives NVIDIA board 10 days on export-control concerns</a> &middot;
+      <a href="https://www.jpmorgan.com/content/dam/jpmorgan/documents/wealth-management/outlook-2027.pdf#page=39">J.P. Morgan Private Bank 2027 Outlook (AI fleet-breakeven model, p.39)</a> &middot;
+      <a href="https://www.ml.com/content/dam/ML/ecomm/pdf/CMO_Merrill_11-16-2026_ada.pdf">BofA/Merrill Capital Market Outlook, Nov 16 (AI capex EPS sensitivity)</a>
+    </p>
+    <p>Full beat-by-beat sourcing and prior-run detail: see <code>state/*.md</code> and <code>daily/2026-11-28-morning.md</code> in the working repository.</p>
+  </div>
 
-<p>On Polymarket tonight, both AI-bubble buckets extended their climb: Dec 31, 2026 bucket to <strong>18.1% Yes</strong> (from this morning's 16.1%, from Thursday's 14.5% — a third consecutive higher print); June 30, 2027 bucket to <strong>41% Yes</strong> (from 39% this morning). Both remain well below Wednesday morning's panic peak (36.25%/53.5%), but the direction — three straight sessions higher against a backdrop of a +1.6% S&amp;P close and a +4.7% chip-sector close — is the notable fact tonight, not the absolute level. The Huang-removal contracts could not be cleanly re-confirmed for a third straight session; Polymarket's event page for that specific market rendered only navigation boilerplate again, the same client-side-rendering gap logged the last two runs.</p>
-
-<p><strong>Read:</strong> today did not resolve the tension flagged this morning — it sharpened it. A real, broad, volume-backed rally says risk appetite genuinely returned; NVDA's own underperformance within that rally, plus Polymarket's AI-bubble buckets climbing for a third straight session, says the market is not treating NVIDIA's specific governance and compliance risk as resolved even while buying the rest of the complex. <strong>Bear case:</strong> a stock that lags its own sector on a day the sector rallies 4.7% is a stock the market is actively discounting for company-specific reasons, not noise. <strong>Bull case:</strong> +0.8% is still a green close, not a selloff, and a single session's relative underperformance against a backdrop of zero new negative information is a thin basis for calling this a verdict.</p>
-
-<!-- ====================== PORTFOLIO ====================== -->
-<h2>Portfolio Tickers</h2>
-<div class="delta-callout"><strong>221st consecutive zero-position day.</strong> MU's &gt;7% close is the cleanest portfolio-relevant move tonight; NVDA's lag within the same rally is the more important signal for the NVDA-adjacent names this file tracks.</div>
-
-<p>MU closed up more than 7% on the day, part of the broad chip/memory rally. NVDA itself closed only +0.8%, lagging the rest of the chip complex — coverage ties this to renewed attention on NVIDIA's Southeast Asia customer-list cuts, not a new company-specific shock. No dedicated company-specific news found today on Amazon, TSMC, AMD, XLE, Blue Owl, Apollo, or Ares Capital beyond the broad sector rally. CoreWeave's $4B investment-grade loan remains unpriced tonight — same November 10-13 framing, now closer to three weeks past its original window. TSMC's reported $22.6B Texas facility and Trump's reported Arizona groundbreaking visit remain unconfirmed by any primary source.</p>
-
-<p><strong>Read:</strong> today's close argues the broad rally was real, which is constructive for the sector-wide names this file tracks (MU), but NVDA's own lag within that rally — alongside Polymarket's AI-bubble buckets climbing for a third straight session — means this is not yet a clean "governance risk resolved" signal for the single most NVDA-adjacent names in this watchlist (CRWV, NBIS, TSM). Standing watch: whether NVDA closes the gap with its own sector on Monday's full-volume session, whether the CoreWeave loan finally prices, and primary-source confirmation of the TSMC Texas/Arizona reports.</p>
-
-<!-- ====================== PRIVATE CREDIT ====================== -->
-<h2>Private Credit</h2>
-<div class="delta-callout"><strong>Delta since this morning:</strong> none. CoreWeave's $4B loan remains unpriced; no new Blue Owl, Apollo, Ares Capital, or KKR developments found tonight.</div>
-
-<p>A dedicated check this evening found no news dated today on Blue Owl, Apollo, Ares Capital, or KKR, and no pricing update on CoreWeave's loan — same framing as this morning, now creeping toward three weeks past the loan's original window.</p>
-
-<p><strong>Read:</strong> unchanged. CoreWeave's continued non-pricing remains this file's cleanest live test of whether contract-backed AI financing clears on reasonable terms, and today's broad chip-sector rally didn't move this needle either way.</p>
-
-<!-- ====================== POLYMARKET ====================== -->
-<h2>Polymarket Calibration</h2>
-<div class="delta-callout"><strong>Delta since this morning:</strong> both AI-bubble buckets rose again tonight — a third consecutive higher print, now a real multi-session divergence from the rallying equity tape.</div>
-
-<table>
-  <tr><th>Contract</th><th>Friday morning</th><th>Friday evening</th><th>Move</th></tr>
-  <tr><td>AI bubble burst by Dec 31, 2026</td><td>16.1%</td><td><strong>18.1%</strong></td><td><strong>+2.0pp</strong></td></tr>
-  <tr><td>AI bubble burst by June 30, 2027</td><td>39%</td><td><strong>41%</strong></td><td><strong>+2pp</strong></td></tr>
-  <tr><td>Hormuz traffic normal by Dec 31</td><td>not re-confirmed</td><td>not re-confirmed</td><td>carrying forward 2.75%</td></tr>
-  <tr><td>US invades Iran before 2027</td><td>not re-confirmed</td><td>not re-confirmed</td><td>carrying forward 5.5-6.0%</td></tr>
-  <tr><td>Huang out as NVIDIA CEO again (various dates)</td><td>not re-confirmed</td><td>not re-confirmed</td><td>tooling gap, 3rd straight session</td></tr>
-</table>
-
-<p><strong>Read:</strong> prediction markets and equities read today's session differently. Equities bought the rally — real volume, VIX down sharply. Polymarket's AI-bubble gauges kept marking up medium-term risk for a third straight session. Per Andres's standing rule that Polymarket wins when it disagrees with the tape, this divergence deserves explicit attention tomorrow morning, not a passing mention. The Huang-removal contract page has now failed to render live data for three consecutive runs — worth trying a direct Gamma API pull instead of the polymarket.com event page next time.</p>
-
-<!-- ====================== WATCHLIST ====================== -->
-<div class="watchlist">
-  <h3 style="color: var(--accent); margin-top:0;">Overnight / tomorrow-morning watch list</h3>
-  <ul>
-    <li>Monday's full-volume session — the real test of whether NVDA closes the gap with its own sector or the gap widens further.</li>
-    <li>Any NVIDIA, board, or Treasury statement on the lapsed Bessent export-control deadline, now well past due.</li>
-    <li>Whether Polymarket's AI-bubble buckets' three-session climb extends or reverses.</li>
-    <li>Whether the CoreWeave $4B loan finally prices, and at what spread.</li>
-    <li>December 1's closed-door House interview (Huang) and December 2 (NVIDIA GC Teter) — watch for leaks.</li>
-    <li>A clean Polymarket re-pull on the Huang-removal contracts via a different fetch method.</li>
-    <li>Asia/Gulf overnight session — no specific catalyst flagged, standard watch given the quiet Iran beat.</li>
-  </ul>
-</div>
-
-<!-- ====================== PUNCHLINE ====================== -->
-<div class="punchline-box">
-  <h3>Bottom Line</h3>
-  <p>The rally this morning's brief was skeptical of turned out to be real — confirmed by actual trading volume and a genuine ~11% drop in the VIX, not a thin, catalyst-free bounce. But "the market rallied" and "NVIDIA's governance risk is behind it" are two different claims, and only the first one is supported by today's close. NVDA lagging a sector that rallied 4.7%, on the same day Polymarket's AI-bubble contracts extended a three-session climb, is the market telling two different stories about the same company at once: broad AI-capex demand looks durable, but NVIDIA's own compliance and succession overhang is still being priced as a distinct, unresolved risk.</p>
-  <p><strong>Portfolio implication:</strong> 221 sessions at zero positions remains the standing call, and tonight's close doesn't change that math. If anything, NVDA's own underperformance within a rallying sector is a cleaner argument for staying out of the single most exposed names (NVDA, CRWV, NBIS) than this morning's broad, unexplained bounce was — the market itself hasn't decided whether to treat NVIDIA as a sector name or a special-situation name right now. Monday's full-volume session, not tonight's thin post-holiday close, is still the test that matters.</p>
-</div>
-
-<!-- ====================== SOURCES ====================== -->
-<h2>Sources</h2>
-<div class="sources">
-  <p><strong>Markets close:</strong> <a href="https://stockanalysis.com/news/sp-500-caps-best-week-in-over-a-year/">StockAnalysis.com</a> (S&amp;P 500, Nasdaq, PHLX Semiconductor Index close); swingfolio.com and theweekendspread.substack.com market-close aggregators (VIX, WTI, Brent settlement levels); journalarta.com (NVDA close, Dow move).</p>
-  <p><strong>AI ecosystem / NVIDIA governance:</strong> AI-ecosystem analyst premarket brief, <code>research/2026/2026-11-27-update.md</code>; tldrdailynews.com (Southeast Asia export-compliance reports weighing on NVDA).</p>
-  <p><strong>Portfolio / financing:</strong> <a href="https://aiweekly.co/alerts/coreweave-shops-4b-investment-grade-loan-at-7-75-half-the-yield-of-its-14-junk">AI Weekly</a> (CoreWeave $4B loan framing, still unpriced).</p>
-  <p><strong>Polymarket (direct fetch, ~17:30 PT):</strong></p>
-  <ul>
-    <li><a href="https://polymarket.com/event/ai-bubble-burst-by">AI bubble burst (by Dec 31, 2026 / by June 30, 2027)</a></li>
-  </ul>
-  <p><strong>Iran / Gulf:</strong> UKMTO notices; no primary source dated today — see <code>state/iran.md</code> for full citations.</p>
-  <p><strong>Full detail and standing flags:</strong> <code>state/iran.md</code>, <code>state/markets.md</code>, <code>state/ai.md</code>, <code>state/portfolio-context.md</code>, <code>state/private-credit.md</code>, <code>state/polymarket.md</code>.</p>
-</div>
-
-<div class="footer">
-  Daily News Brief compiled November 27, 2026 · Evening Wrap · Day 273 · Pacific time throughout<br>
-  <em>No confirmed Bitcoin close found tonight — a data gap, not a no-change finding. Huang-removal Polymarket contracts unreadable for a third straight session (tooling gap).</em>
-</div>
+  <div class="footer">
+    Andres's daily news analyst &middot; Structural reads, not headline regurgitation &middot; All timestamps Pacific time &middot; Generated 2026-11-28 ~08:00 PT
+  </div>
 
 </div>
 
